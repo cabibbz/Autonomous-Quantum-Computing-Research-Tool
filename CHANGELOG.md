@@ -109,3 +109,23 @@
 **Next:** I3 for W state (complete archetype table), discord under noise, concurrence/negativity, 2D cluster states, Integrated Information (Phi)
 
 [Full report: sprints/sprint_005.md]
+
+### Sprint 006 — 2026-03-31 — Entanglement Monotones: Concurrence, Negativity & Monogamy
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **6a: Pairwise concurrence & negativity** — GHZ: zero (all multipartite). W: uniform C=2/n across all pairs. Cluster: zero (all multipartite, like GHZ).
+- **6b: Noise sensitivity** — Half-cut negativity decays identically for all three under depolarizing noise (non-discriminating). W pairwise concurrence dies at p≈14%.
+- **6c: Entanglement spectrum** — Negativity across ALL bipartitions. GHZ: flat (0.5 everywhere). W: grows with cut size (0.37→0.50). Cluster: explosive (0.5 to 3.5, geometry-dependent).
+
+**Surprises:**
+- Cluster state can have **7x more entanglement** than GHZ at certain bipartitions — "entanglement hotspots"
+- W state has **zero residual tangle** (CKW monogamy saturated) — ALL its entanglement is pairwise, zero genuine tripartite
+- GHZ and W are opposite extremes of monogamy: GHZ = all multipartite, W = all pairwise
+- Entanglement spectrum is the most powerful single discriminator found so far
+
+**Key insight:** Three distinct entanglement *topologies*: Democratic (GHZ, flat spectrum), Distributed (W, growing spectrum), Geometric (Cluster, explosive spectrum). The topology determines computational utility — Cluster's geometry-dependent entanglement is why MBQC works.
+
+**Next:** I3 for W state, 2D cluster states, entanglement spectrum under qubit loss, local noise models, GME witnesses
+
+[Full report: sprints/sprint_006.md]
