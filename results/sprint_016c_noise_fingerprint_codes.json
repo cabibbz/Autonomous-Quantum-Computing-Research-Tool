@@ -1,0 +1,258 @@
+{
+  "p_test": 0.1,
+  "codes": {
+    "five_qubit": {
+      "n": 5,
+      "has_correction": true,
+      "noise_data": {
+        "depolarizing": {
+          "zero": {
+            "fid_uncoded": 0.933333,
+            "fid_coded": 0.946995,
+            "retention": 1.0,
+            "improvement": 0.013661
+          },
+          "one": {
+            "fid_uncoded": 0.933333,
+            "fid_coded": 0.946995,
+            "retention": 1.0,
+            "improvement": 0.013661
+          },
+          "plus": {
+            "fid_uncoded": 0.933333,
+            "fid_coded": 0.946995,
+            "retention": 1.0,
+            "improvement": 0.013661
+          }
+        },
+        "amplitude_damping": {
+          "zero": {
+            "fid_uncoded": 1.0,
+            "fid_coded": 0.983063,
+            "retention": 1.0,
+            "improvement": -0.016937
+          },
+          "one": {
+            "fid_uncoded": 0.9,
+            "fid_coded": 0.983065,
+            "retention": 1.0,
+            "improvement": 0.083065
+          },
+          "plus": {
+            "fid_uncoded": 0.974342,
+            "fid_coded": 0.985607,
+            "retention": 1.0,
+            "improvement": 0.011266
+          }
+        },
+        "phase_damping": {
+          "zero": {
+            "fid_uncoded": 1.0,
+            "fid_coded": 0.99375,
+            "retention": 1.0,
+            "improvement": -0.00625
+          },
+          "one": {
+            "fid_uncoded": 1.0,
+            "fid_coded": 0.99375,
+            "retention": 1.0,
+            "improvement": -0.00625
+          },
+          "plus": {
+            "fid_uncoded": 0.974342,
+            "fid_coded": 0.996873,
+            "retention": 1.0,
+            "improvement": 0.022531
+          }
+        },
+        "bit_flip": {
+          "zero": {
+            "fid_uncoded": 0.9,
+            "fid_coded": 0.95904,
+            "retention": 1.0,
+            "improvement": 0.05904
+          },
+          "one": {
+            "fid_uncoded": 0.9,
+            "fid_coded": 0.95904,
+            "retention": 1.0,
+            "improvement": 0.05904
+          },
+          "plus": {
+            "fid_uncoded": 1.0,
+            "fid_coded": 0.919,
+            "retention": 1.0,
+            "improvement": -0.081
+          }
+        },
+        "phase_flip": {
+          "zero": {
+            "fid_uncoded": 1.0,
+            "fid_coded": 0.919,
+            "retention": 1.0,
+            "improvement": -0.081
+          },
+          "one": {
+            "fid_uncoded": 1.0,
+            "fid_coded": 0.919,
+            "retention": 1.0,
+            "improvement": -0.081
+          },
+          "plus": {
+            "fid_uncoded": 0.9,
+            "fid_coded": 0.95904,
+            "retention": 1.0,
+            "improvement": 0.05904
+          }
+        }
+      }
+    },
+    "steane": {
+      "n": 7,
+      "has_correction": false,
+      "noise_data": {
+        "depolarizing": {
+          "zero": {
+            "fid_uncoded": 0.933333,
+            "fid_coded": 0.999284,
+            "retention": 0.47883,
+            "improvement": 0.06595
+          },
+          "one": {
+            "fid_uncoded": 0.933333,
+            "fid_coded": 0.999284,
+            "retention": 0.47883,
+            "improvement": 0.06595
+          },
+          "plus": {
+            "fid_uncoded": 0.933333,
+            "fid_coded": 0.999284,
+            "retention": 0.47883,
+            "improvement": 0.06595
+          }
+        },
+        "amplitude_damping": {
+          "zero": {
+            "fid_uncoded": 1.0,
+            "fid_coded": 1.0,
+            "retention": 0.69515,
+            "improvement": 0.0
+          },
+          "one": {
+            "fid_uncoded": 0.9,
+            "fid_coded": 0.999485,
+            "retention": 0.69515,
+            "improvement": 0.099485
+          },
+          "plus": {
+            "fid_uncoded": 0.974342,
+            "fid_coded": 0.999871,
+            "retention": 0.69515,
+            "improvement": 0.025529
+          }
+        },
+        "phase_damping": {
+          "zero": {
+            "fid_uncoded": 1.0,
+            "fid_coded": 1.0,
+            "retention": 0.83375,
+            "improvement": 0.0
+          },
+          "one": {
+            "fid_uncoded": 1.0,
+            "fid_coded": 1.0,
+            "retention": 0.83375,
+            "improvement": 0.0
+          },
+          "plus": {
+            "fid_uncoded": 0.974342,
+            "fid_coded": 0.999872,
+            "retention": 0.83375,
+            "improvement": 0.025531
+          }
+        },
+        "bit_flip": {
+          "zero": {
+            "fid_uncoded": 0.9,
+            "fid_coded": 0.990499,
+            "retention": 0.4834,
+            "improvement": 0.090499
+          },
+          "one": {
+            "fid_uncoded": 0.9,
+            "fid_coded": 0.990499,
+            "retention": 0.4834,
+            "improvement": 0.090499
+          },
+          "plus": {
+            "fid_uncoded": 1.0,
+            "fid_coded": 1.0,
+            "retention": 0.4834,
+            "improvement": 0.0
+          }
+        },
+        "phase_flip": {
+          "zero": {
+            "fid_uncoded": 1.0,
+            "fid_coded": 1.0,
+            "retention": 0.4834,
+            "improvement": 0.0
+          },
+          "one": {
+            "fid_uncoded": 1.0,
+            "fid_coded": 1.0,
+            "retention": 0.4834,
+            "improvement": 0.0
+          },
+          "plus": {
+            "fid_uncoded": 0.9,
+            "fid_coded": 0.990499,
+            "retention": 0.4834,
+            "improvement": 0.090499
+          }
+        }
+      }
+    }
+  },
+  "sweep": {
+    "p_values": [
+      0.0,
+      0.05,
+      0.1,
+      0.2,
+      0.3
+    ],
+    "code": "five_qubit",
+    "state": "plus",
+    "fidelities": {
+      "depolarizing": [
+        1.0,
+        0.985112,
+        0.946995,
+        0.8339,
+        0.71168
+      ],
+      "phase_damping": [
+        1.0,
+        0.999219,
+        0.996873,
+        0.987463,
+        0.971667
+      ],
+      "bit_flip": [
+        1.0,
+        0.977437,
+        0.919,
+        0.744,
+        0.559
+      ],
+      "phase_flip": [
+        1.0,
+        0.988689,
+        0.95904,
+        0.86528,
+        0.74872
+      ]
+    }
+  }
+}
