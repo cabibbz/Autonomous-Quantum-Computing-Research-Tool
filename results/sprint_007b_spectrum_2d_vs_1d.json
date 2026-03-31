@@ -1,0 +1,975 @@
+{
+  "n_qubits": 6,
+  "grid": "2x3",
+  "cluster_1d_6": {
+    "bipartitions": [
+      {
+        "A": [
+          0
+        ],
+        "B": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "size_A": 1,
+        "negativity": 0.5
+      },
+      {
+        "A": [
+          1
+        ],
+        "B": [
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        "size_A": 1,
+        "negativity": 0.5
+      },
+      {
+        "A": [
+          2
+        ],
+        "B": [
+          0,
+          1,
+          3,
+          4,
+          5
+        ],
+        "size_A": 1,
+        "negativity": 0.5
+      },
+      {
+        "A": [
+          3
+        ],
+        "B": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "size_A": 1,
+        "negativity": 0.5
+      },
+      {
+        "A": [
+          4
+        ],
+        "B": [
+          0,
+          1,
+          2,
+          3,
+          5
+        ],
+        "size_A": 1,
+        "negativity": 0.5
+      },
+      {
+        "A": [
+          5
+        ],
+        "B": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "size_A": 1,
+        "negativity": 0.5
+      },
+      {
+        "A": [
+          0,
+          1
+        ],
+        "B": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 0.5
+      },
+      {
+        "A": [
+          0,
+          2
+        ],
+        "B": [
+          1,
+          3,
+          4,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5
+      },
+      {
+        "A": [
+          0,
+          3
+        ],
+        "B": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5
+      },
+      {
+        "A": [
+          0,
+          4
+        ],
+        "B": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5
+      },
+      {
+        "A": [
+          0,
+          5
+        ],
+        "B": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "size_A": 2,
+        "negativity": 1.5
+      },
+      {
+        "A": [
+          1,
+          2
+        ],
+        "B": [
+          0,
+          3,
+          4,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5
+      },
+      {
+        "A": [
+          1,
+          3
+        ],
+        "B": [
+          0,
+          2,
+          4,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5
+      },
+      {
+        "A": [
+          1,
+          4
+        ],
+        "B": [
+          0,
+          2,
+          3,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5
+      },
+      {
+        "A": [
+          1,
+          5
+        ],
+        "B": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "size_A": 2,
+        "negativity": 1.5
+      },
+      {
+        "A": [
+          2,
+          3
+        ],
+        "B": [
+          0,
+          1,
+          4,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5
+      },
+      {
+        "A": [
+          2,
+          4
+        ],
+        "B": [
+          0,
+          1,
+          3,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5
+      },
+      {
+        "A": [
+          2,
+          5
+        ],
+        "B": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "size_A": 2,
+        "negativity": 1.5
+      },
+      {
+        "A": [
+          3,
+          4
+        ],
+        "B": [
+          0,
+          1,
+          2,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5
+      },
+      {
+        "A": [
+          3,
+          5
+        ],
+        "B": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "size_A": 2,
+        "negativity": 1.5
+      },
+      {
+        "A": [
+          4,
+          5
+        ],
+        "B": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "size_A": 2,
+        "negativity": 0.5
+      },
+      {
+        "A": [
+          0,
+          1,
+          2
+        ],
+        "B": [
+          3,
+          4,
+          5
+        ],
+        "size_A": 3,
+        "negativity": 0.5
+      },
+      {
+        "A": [
+          0,
+          1,
+          3
+        ],
+        "B": [
+          2,
+          4,
+          5
+        ],
+        "size_A": 3,
+        "negativity": 1.5
+      },
+      {
+        "A": [
+          0,
+          1,
+          4
+        ],
+        "B": [
+          2,
+          3,
+          5
+        ],
+        "size_A": 3,
+        "negativity": 1.5
+      },
+      {
+        "A": [
+          0,
+          1,
+          5
+        ],
+        "B": [
+          2,
+          3,
+          4
+        ],
+        "size_A": 3,
+        "negativity": 1.5
+      },
+      {
+        "A": [
+          0,
+          2,
+          3
+        ],
+        "B": [
+          1,
+          4,
+          5
+        ],
+        "size_A": 3,
+        "negativity": 1.5
+      },
+      {
+        "A": [
+          0,
+          2,
+          4
+        ],
+        "B": [
+          1,
+          3,
+          5
+        ],
+        "size_A": 3,
+        "negativity": 3.5
+      },
+      {
+        "A": [
+          0,
+          2,
+          5
+        ],
+        "B": [
+          1,
+          3,
+          4
+        ],
+        "size_A": 3,
+        "negativity": 3.5
+      },
+      {
+        "A": [
+          0,
+          3,
+          4
+        ],
+        "B": [
+          1,
+          2,
+          5
+        ],
+        "size_A": 3,
+        "negativity": 3.5
+      },
+      {
+        "A": [
+          0,
+          3,
+          5
+        ],
+        "B": [
+          1,
+          2,
+          4
+        ],
+        "size_A": 3,
+        "negativity": 3.5
+      },
+      {
+        "A": [
+          0,
+          4,
+          5
+        ],
+        "B": [
+          1,
+          2,
+          3
+        ],
+        "size_A": 3,
+        "negativity": 1.5
+      }
+    ],
+    "summary": {
+      "1": {
+        "mean": 0.5,
+        "std": 0.0,
+        "min": 0.5,
+        "max": 0.5,
+        "count": 6
+      },
+      "2": {
+        "mean": 1.366667,
+        "std": 0.339935,
+        "min": 0.5,
+        "max": 1.5,
+        "count": 15
+      },
+      "3": {
+        "mean": 2.2,
+        "std": 1.1,
+        "min": 0.5,
+        "max": 3.5,
+        "count": 10
+      }
+    }
+  },
+  "cluster_2d_2x3": {
+    "bipartitions": [
+      {
+        "A": [
+          0
+        ],
+        "B": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "size_A": 1,
+        "negativity": 0.5,
+        "topology": "single"
+      },
+      {
+        "A": [
+          1
+        ],
+        "B": [
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        "size_A": 1,
+        "negativity": 0.5,
+        "topology": "single"
+      },
+      {
+        "A": [
+          2
+        ],
+        "B": [
+          0,
+          1,
+          3,
+          4,
+          5
+        ],
+        "size_A": 1,
+        "negativity": 0.5,
+        "topology": "single"
+      },
+      {
+        "A": [
+          3
+        ],
+        "B": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "size_A": 1,
+        "negativity": 0.5,
+        "topology": "single"
+      },
+      {
+        "A": [
+          4
+        ],
+        "B": [
+          0,
+          1,
+          2,
+          3,
+          5
+        ],
+        "size_A": 1,
+        "negativity": 0.5,
+        "topology": "single"
+      },
+      {
+        "A": [
+          5
+        ],
+        "B": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "size_A": 1,
+        "negativity": 0.5,
+        "topology": "single"
+      },
+      {
+        "A": [
+          0,
+          1
+        ],
+        "B": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5,
+        "topology": "|A|=2_connected"
+      },
+      {
+        "A": [
+          0,
+          2
+        ],
+        "B": [
+          1,
+          3,
+          4,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5,
+        "topology": "|A|=2_disconnected"
+      },
+      {
+        "A": [
+          0,
+          3
+        ],
+        "B": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5,
+        "topology": "|A|=2_connected"
+      },
+      {
+        "A": [
+          0,
+          4
+        ],
+        "B": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5,
+        "topology": "|A|=2_disconnected"
+      },
+      {
+        "A": [
+          0,
+          5
+        ],
+        "B": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "size_A": 2,
+        "negativity": 1.5,
+        "topology": "|A|=2_disconnected"
+      },
+      {
+        "A": [
+          1,
+          2
+        ],
+        "B": [
+          0,
+          3,
+          4,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5,
+        "topology": "|A|=2_connected"
+      },
+      {
+        "A": [
+          1,
+          3
+        ],
+        "B": [
+          0,
+          2,
+          4,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5,
+        "topology": "|A|=2_disconnected"
+      },
+      {
+        "A": [
+          1,
+          4
+        ],
+        "B": [
+          0,
+          2,
+          3,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5,
+        "topology": "|A|=2_connected"
+      },
+      {
+        "A": [
+          1,
+          5
+        ],
+        "B": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "size_A": 2,
+        "negativity": 1.5,
+        "topology": "|A|=2_disconnected"
+      },
+      {
+        "A": [
+          2,
+          3
+        ],
+        "B": [
+          0,
+          1,
+          4,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5,
+        "topology": "|A|=2_disconnected"
+      },
+      {
+        "A": [
+          2,
+          4
+        ],
+        "B": [
+          0,
+          1,
+          3,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5,
+        "topology": "|A|=2_disconnected"
+      },
+      {
+        "A": [
+          2,
+          5
+        ],
+        "B": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "size_A": 2,
+        "negativity": 1.5,
+        "topology": "|A|=2_connected"
+      },
+      {
+        "A": [
+          3,
+          4
+        ],
+        "B": [
+          0,
+          1,
+          2,
+          5
+        ],
+        "size_A": 2,
+        "negativity": 1.5,
+        "topology": "|A|=2_connected"
+      },
+      {
+        "A": [
+          3,
+          5
+        ],
+        "B": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "size_A": 2,
+        "negativity": 1.5,
+        "topology": "|A|=2_disconnected"
+      },
+      {
+        "A": [
+          4,
+          5
+        ],
+        "B": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "size_A": 2,
+        "negativity": 1.5,
+        "topology": "|A|=2_connected"
+      },
+      {
+        "A": [
+          0,
+          1,
+          2
+        ],
+        "B": [
+          3,
+          4,
+          5
+        ],
+        "size_A": 3,
+        "negativity": 3.5,
+        "topology": "|A|=3_connected"
+      },
+      {
+        "A": [
+          0,
+          1,
+          3
+        ],
+        "B": [
+          2,
+          4,
+          5
+        ],
+        "size_A": 3,
+        "negativity": 1.5,
+        "topology": "|A|=3_connected"
+      },
+      {
+        "A": [
+          0,
+          1,
+          4
+        ],
+        "B": [
+          2,
+          3,
+          5
+        ],
+        "size_A": 3,
+        "negativity": 3.5,
+        "topology": "|A|=3_connected"
+      },
+      {
+        "A": [
+          0,
+          1,
+          5
+        ],
+        "B": [
+          2,
+          3,
+          4
+        ],
+        "size_A": 3,
+        "negativity": 1.5,
+        "topology": "|A|=3_disconnected"
+      },
+      {
+        "A": [
+          0,
+          2,
+          3
+        ],
+        "B": [
+          1,
+          4,
+          5
+        ],
+        "size_A": 3,
+        "negativity": 3.5,
+        "topology": "|A|=3_disconnected"
+      },
+      {
+        "A": [
+          0,
+          2,
+          4
+        ],
+        "B": [
+          1,
+          3,
+          5
+        ],
+        "size_A": 3,
+        "negativity": 3.5,
+        "topology": "|A|=3_disconnected"
+      },
+      {
+        "A": [
+          0,
+          2,
+          5
+        ],
+        "B": [
+          1,
+          3,
+          4
+        ],
+        "size_A": 3,
+        "negativity": 3.5,
+        "topology": "|A|=3_disconnected"
+      },
+      {
+        "A": [
+          0,
+          3,
+          4
+        ],
+        "B": [
+          1,
+          2,
+          5
+        ],
+        "size_A": 3,
+        "negativity": 1.5,
+        "topology": "|A|=3_connected"
+      },
+      {
+        "A": [
+          0,
+          3,
+          5
+        ],
+        "B": [
+          1,
+          2,
+          4
+        ],
+        "size_A": 3,
+        "negativity": 3.5,
+        "topology": "|A|=3_disconnected"
+      },
+      {
+        "A": [
+          0,
+          4,
+          5
+        ],
+        "B": [
+          1,
+          2,
+          3
+        ],
+        "size_A": 3,
+        "negativity": 1.5,
+        "topology": "|A|=3_disconnected"
+      }
+    ],
+    "summary": {
+      "1": {
+        "mean": 0.5,
+        "std": 0.0,
+        "min": 0.5,
+        "max": 0.5,
+        "count": 6
+      },
+      "2": {
+        "mean": 1.5,
+        "std": 0.0,
+        "min": 1.5,
+        "max": 1.5,
+        "count": 15
+      },
+      "3": {
+        "mean": 2.7,
+        "std": 0.979796,
+        "min": 1.5,
+        "max": 3.5,
+        "count": 10
+      }
+    },
+    "connected_vs_disconnected": {
+      "connected_mean": 1.98,
+      "disconnected_mean": 2.071429,
+      "n_connected": 25,
+      "n_disconnected": 14
+    }
+  },
+  "comparison": {
+    "1d_std": 0.897447,
+    "2d_std": 0.964511,
+    "1d_range": [
+      0.5,
+      3.5
+    ],
+    "2d_range": [
+      0.5,
+      3.5
+    ]
+  }
+}
