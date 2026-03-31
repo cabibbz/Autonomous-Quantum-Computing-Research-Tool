@@ -1,7 +1,7 @@
 # Sprint 015 — Code Diversity: Does Distance Alone Determine Information Structure?
 
 **Date:** 2026-03-31
-**Status:** In progress
+**Status:** Complete (3/3 experiments)
 
 ## Motivation
 

@@ -291,3 +291,23 @@
 **Next:** Steane [[7,1,3]] code (CSS code structure), concatenated codes, threshold theorem exploration, real hardware QEC, topological codes (toric code)
 
 [Full report: sprints/sprint_014.md]
+
+### Sprint 015 — 2026-03-31 — Code Diversity: Does Distance Alone Determine Information Structure?
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **15a: Entanglement structure** — Three distance-3 codes have fundamentally different information topologies. [[5,1,3]]: perfect democracy (MI=0 everywhere, I3=-1.0 for ALL triples). Steane: selective (MI=0, but only 7/35 triples have I3=-1.0). Shor: hierarchical (within-block MI=1.0, cross-block I3=-1.0).
+- **15b: Performance comparison** — Shor (9 qubits) has BEST break-even (>0.30) despite worst topology. [[5,1,3]] breaks even at ~0.15. Per-qubit efficiency nearly identical (~0.03) — symmetric noise can't distinguish topologies.
+- **15c: Page curves** — Singleton bound (k ≥ n-d+1) universal for all three codes. But Page curve SHAPE is code-specific: [[5,1,3]] = perfect knife-edge, Steane = bimodal (subsets either work or don't), Shor = gradual staircase with intermediate recovery capped at MI=1.0.
+
+**Surprises:**
+- **Shor code is STRONGEST under depolarizing noise** despite having the most MI leakage (total MI=9.0 vs 0.0 for others) — more qubits = more redundancy trumps better information hiding
+- **Steane Page curve is bimodal at k=3:** some 3-qubit subsets recover everything (MI=2.0), others get nothing (MI=0.0) — Hamming geometry determines which subsets work
+- **Shor Page curve has intermediate plateaus at MI=1.0** — you can recover block-level information before full logical information. Two recovery thresholds from concatenation.
+- **Per-qubit break-even efficiency (~0.03) is nearly identical** across all three codes — depolarizing noise is "topology-blind"
+
+**Key insight:** Distance determines the *threshold* (Singleton bound), but code architecture determines the *shape* of information recovery. Three new QEC archetypes parallel the entanglement archetypes from Sprints 005-006: Democratic ([[5,1,3]]/GHZ-like symmetry), Selective (Steane/geometry-dependent), Hierarchical (Shor/concatenation). The Page curve shape is a new diagnostic that captures code structure beyond distance — it's the static Hayden-Preskill protocol.
+
+**Next:** Structured noise (dephasing/amplitude damping) on code families (should break topology-blindness), concatenated code threshold theorem, toric/surface code entanglement structure, real hardware QEC comparison
+
+[Full report: sprints/sprint_015.md]
