@@ -66,3 +66,28 @@ Key connections to prior work:
 The body-order hierarchy from Sprint 010 now has a QEC interpretation:
 - 3-qubit code = GHZ-type (2-body correlations → corrects only 1 error type)
 - [[5,1,3]] code = symmetric 3-body (→ corrects ALL single-qubit errors)
+
+### 14b: Error Correction Performance
+
+**3-qubit bit-flip code under bit-flip noise:**
+- Works perfectly as designed: at p=0.1, fidelity 0.972 (coded) vs 0.900 (uncoded)
+- Coded ALWAYS better than uncoded up to p=0.5
+- |+⟩ state maintains fidelity 1.0 at all noise levels (|+⟩ is an X eigenstate — bit-flips don't affect it)
+- Theoretical: corrects any single bit-flip, fails only on 2+ flips → P_fail = 3p²(1-p) + p³
+
+**[[5,1,3]] code under depolarizing noise:**
+- **Break-even at p ≈ 14%** — below this threshold, the code helps
+- At p=0.1: fidelity 0.947 (coded) vs 0.933 (uncoded)
+- At p=0.3: coded is WORSE (0.712 vs 0.800) — too many multi-qubit errors overwhelm correction
+- Performance is **logical-state independent** — |0⟩, |1⟩, |+⟩ all identical (confirms symmetric protection)
+
+**3-qubit code under depolarizing noise (control experiment):**
+- **WORSE than uncoded** even at p=0.1 (0.826 vs 0.933)
+- The bit-flip correction introduces logical errors when phase errors occur
+- Confirms: entanglement structure determines error correction capability
+
+**Key findings:**
+1. The break-even threshold (14%) is close to the CHSH violation death point (9.5% from Sprint 002) — both measure when quantum advantage disappears
+2. Code performance is state-independent for the [[5,1,3]] code — a direct consequence of its uniform entanglement structure (all-symmetric MI=0, I3=-1.0)
+3. The 3-qubit code's failure under depolarizing noise is predicted by its GHZ-like entanglement: 2-body (ZZ) correlations can only detect Z-type errors, leaving X/Y errors invisible
+4. Error correction works when noise rate is below the code's "entanglement capacity" — the rate at which multi-qubit errors overwhelm the syndrome space
