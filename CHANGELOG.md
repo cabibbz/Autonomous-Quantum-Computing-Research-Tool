@@ -129,3 +129,11 @@
 **Next:** I3 for W state, 2D cluster states, entanglement spectrum under qubit loss, local noise models, GME witnesses
 
 [Full report: sprints/sprint_006.md]
+
+### Sprint 007 — 2026-03-31 — 2D Cluster States: Does Geometry Shape Entanglement?
+**Status:** In progress
+
+**Plan:**
+- **7a:** W-state I3 (gap-fill) + 2D cluster MI & I3
+- **7b:** Entanglement spectrum: 2D vs 1D cluster
+- **7c:** 2D cluster under qubit loss (corner vs edge vs interior)
