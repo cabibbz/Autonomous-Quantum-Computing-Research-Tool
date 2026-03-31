@@ -1,0 +1,454 @@
+{
+  "cluster_1d": {
+    "forward": [
+      {
+        "total_mi": 0.0,
+        "max_mi": 0.0,
+        "sparsity": 0.0,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 0,
+        "label": "H\u2297n",
+        "layer": 0
+      },
+      {
+        "total_mi": 2.0,
+        "max_mi": 2.0,
+        "sparsity": 0.0667,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 1,
+        "label": "CZ(0,1)",
+        "layer": 1
+      },
+      {
+        "total_mi": 3.0,
+        "max_mi": 1.0,
+        "sparsity": 0.2,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 3,
+        "label": "CZ(1,2)",
+        "layer": 2
+      },
+      {
+        "total_mi": 2.0,
+        "max_mi": 1.0,
+        "sparsity": 0.1333,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 2,
+        "label": "CZ(2,3)",
+        "layer": 3
+      },
+      {
+        "total_mi": 2.0,
+        "max_mi": 1.0,
+        "sparsity": 0.1333,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 2,
+        "label": "CZ(3,4)",
+        "layer": 4
+      },
+      {
+        "total_mi": 2.0,
+        "max_mi": 1.0,
+        "sparsity": 0.1333,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 2,
+        "label": "CZ(4,5)",
+        "layer": 5
+      }
+    ],
+    "reverse": [
+      {
+        "total_mi": 0.0,
+        "max_mi": 0.0,
+        "sparsity": 0.0,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 0,
+        "label": "H\u2297n",
+        "layer": 0
+      },
+      {
+        "total_mi": 2.0,
+        "max_mi": 2.0,
+        "sparsity": 0.0667,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 1,
+        "label": "CZ(4,5)",
+        "layer": 1
+      },
+      {
+        "total_mi": 3.0,
+        "max_mi": 1.0,
+        "sparsity": 0.2,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 3,
+        "label": "CZ(3,4)",
+        "layer": 2
+      },
+      {
+        "total_mi": 2.0,
+        "max_mi": 1.0,
+        "sparsity": 0.1333,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 2,
+        "label": "CZ(2,3)",
+        "layer": 3
+      },
+      {
+        "total_mi": 2.0,
+        "max_mi": 1.0,
+        "sparsity": 0.1333,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 2,
+        "label": "CZ(1,2)",
+        "layer": 4
+      },
+      {
+        "total_mi": 2.0,
+        "max_mi": 1.0,
+        "sparsity": 0.1333,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 2,
+        "label": "CZ(0,1)",
+        "layer": 5
+      }
+    ],
+    "outside_in": [
+      {
+        "total_mi": 0.0,
+        "max_mi": 0.0,
+        "sparsity": 0.0,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 0,
+        "label": "H\u2297n",
+        "layer": 0
+      },
+      {
+        "total_mi": 2.0,
+        "max_mi": 2.0,
+        "sparsity": 0.0667,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 1,
+        "label": "CZ(0,1)",
+        "layer": 1
+      },
+      {
+        "total_mi": 4.0,
+        "max_mi": 2.0,
+        "sparsity": 0.1333,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 2,
+        "label": "CZ(4,5)",
+        "layer": 2
+      },
+      {
+        "total_mi": 5.0,
+        "max_mi": 2.0,
+        "sparsity": 0.2667,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 4,
+        "label": "CZ(1,2)",
+        "layer": 3
+      },
+      {
+        "total_mi": 6.0,
+        "max_mi": 1.0,
+        "sparsity": 0.4,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 6,
+        "label": "CZ(3,4)",
+        "layer": 4
+      },
+      {
+        "total_mi": 2.0,
+        "max_mi": 1.0,
+        "sparsity": 0.1333,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 2,
+        "label": "CZ(2,3)",
+        "layer": 5
+      }
+    ],
+    "inside_out": [
+      {
+        "total_mi": 0.0,
+        "max_mi": 0.0,
+        "sparsity": 0.0,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 0,
+        "label": "H\u2297n",
+        "layer": 0
+      },
+      {
+        "total_mi": 2.0,
+        "max_mi": 2.0,
+        "sparsity": 0.0667,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 1,
+        "label": "CZ(2,3)",
+        "layer": 1
+      },
+      {
+        "total_mi": 3.0,
+        "max_mi": 1.0,
+        "sparsity": 0.2,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 3,
+        "label": "CZ(1,2)",
+        "layer": 2
+      },
+      {
+        "total_mi": 2.0,
+        "max_mi": 1.0,
+        "sparsity": 0.1333,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 2,
+        "label": "CZ(3,4)",
+        "layer": 3
+      },
+      {
+        "total_mi": 2.0,
+        "max_mi": 1.0,
+        "sparsity": 0.1333,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 2,
+        "label": "CZ(0,1)",
+        "layer": 4
+      },
+      {
+        "total_mi": 2.0,
+        "max_mi": 1.0,
+        "sparsity": 0.1333,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 2,
+        "label": "CZ(4,5)",
+        "layer": 5
+      }
+    ]
+  },
+  "ghz": {
+    "forward": [
+      {
+        "total_mi": 0.0,
+        "max_mi": 0.0,
+        "sparsity": 0.0,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 0,
+        "label": "H(0)",
+        "layer": 0
+      },
+      {
+        "total_mi": 2.0,
+        "max_mi": 2.0,
+        "sparsity": 0.0667,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 1,
+        "label": "CX(0,1)",
+        "layer": 1
+      },
+      {
+        "total_mi": 3.0,
+        "max_mi": 1.0,
+        "sparsity": 0.2,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 3,
+        "label": "CX(0,2)",
+        "layer": 2
+      },
+      {
+        "total_mi": 6.0,
+        "max_mi": 1.0,
+        "sparsity": 0.4,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 6,
+        "label": "CX(0,3)",
+        "layer": 3
+      },
+      {
+        "total_mi": 10.0,
+        "max_mi": 1.0,
+        "sparsity": 0.6667,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 10,
+        "label": "CX(0,4)",
+        "layer": 4
+      },
+      {
+        "total_mi": 15.0,
+        "max_mi": 1.0,
+        "sparsity": 1.0,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 15,
+        "label": "CX(0,5)",
+        "layer": 5
+      }
+    ],
+    "reverse": [
+      {
+        "total_mi": 0.0,
+        "max_mi": 0.0,
+        "sparsity": 0.0,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 0,
+        "label": "H(0)",
+        "layer": 0
+      },
+      {
+        "total_mi": 2.0,
+        "max_mi": 2.0,
+        "sparsity": 0.0667,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 1,
+        "label": "CX(0,5)",
+        "layer": 1
+      },
+      {
+        "total_mi": 3.0,
+        "max_mi": 1.0,
+        "sparsity": 0.2,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 3,
+        "label": "CX(0,4)",
+        "layer": 2
+      },
+      {
+        "total_mi": 6.0,
+        "max_mi": 1.0,
+        "sparsity": 0.4,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 6,
+        "label": "CX(0,3)",
+        "layer": 3
+      },
+      {
+        "total_mi": 10.0,
+        "max_mi": 1.0,
+        "sparsity": 0.6667,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 10,
+        "label": "CX(0,2)",
+        "layer": 4
+      },
+      {
+        "total_mi": 15.0,
+        "max_mi": 1.0,
+        "sparsity": 1.0,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 15,
+        "label": "CX(0,1)",
+        "layer": 5
+      }
+    ],
+    "outside_in": [
+      {
+        "total_mi": 0.0,
+        "max_mi": 0.0,
+        "sparsity": 0.0,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 0,
+        "label": "H(0)",
+        "layer": 0
+      },
+      {
+        "total_mi": 2.0,
+        "max_mi": 2.0,
+        "sparsity": 0.0667,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 1,
+        "label": "CX(0,1)",
+        "layer": 1
+      },
+      {
+        "total_mi": 3.0,
+        "max_mi": 1.0,
+        "sparsity": 0.2,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 3,
+        "label": "CX(0,5)",
+        "layer": 2
+      },
+      {
+        "total_mi": 6.0,
+        "max_mi": 1.0,
+        "sparsity": 0.4,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 6,
+        "label": "CX(0,2)",
+        "layer": 3
+      },
+      {
+        "total_mi": 10.0,
+        "max_mi": 1.0,
+        "sparsity": 0.6667,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 10,
+        "label": "CX(0,4)",
+        "layer": 4
+      },
+      {
+        "total_mi": 15.0,
+        "max_mi": 1.0,
+        "sparsity": 1.0,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 15,
+        "label": "CX(0,3)",
+        "layer": 5
+      }
+    ],
+    "alternating": [
+      {
+        "total_mi": 0.0,
+        "max_mi": 0.0,
+        "sparsity": 0.0,
+        "hc_entropy": 0.0,
+        "n_significant_pairs": 0,
+        "label": "H(0)",
+        "layer": 0
+      },
+      {
+        "total_mi": 2.0,
+        "max_mi": 2.0,
+        "sparsity": 0.0667,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 1,
+        "label": "CX(0,3)",
+        "layer": 1
+      },
+      {
+        "total_mi": 3.0,
+        "max_mi": 1.0,
+        "sparsity": 0.2,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 3,
+        "label": "CX(0,1)",
+        "layer": 2
+      },
+      {
+        "total_mi": 6.0,
+        "max_mi": 1.0,
+        "sparsity": 0.4,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 6,
+        "label": "CX(0,5)",
+        "layer": 3
+      },
+      {
+        "total_mi": 10.0,
+        "max_mi": 1.0,
+        "sparsity": 0.6667,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 10,
+        "label": "CX(0,2)",
+        "layer": 4
+      },
+      {
+        "total_mi": 15.0,
+        "max_mi": 1.0,
+        "sparsity": 1.0,
+        "hc_entropy": 1.0,
+        "n_significant_pairs": 15,
+        "label": "CX(0,4)",
+        "layer": 5
+      }
+    ]
+  }
+}
