@@ -1,0 +1,348 @@
+{
+  "n_qubits": 6,
+  "page_entropy": 2.9098315599444398,
+  "state_metrics": {
+    "GHZ": {
+      "n_2q_gates": 5,
+      "half_entropy": 1.0,
+      "half_entropy_fraction": 0.3333333333333333,
+      "total_mi": 15.0,
+      "avg_otoc": 0.9999999999999991,
+      "entropy_per_gate": 0.2
+    },
+    "W": {
+      "n_2q_gates": 5,
+      "half_entropy": 0.9709505944546706,
+      "half_entropy_fraction": 0.3236501981515569,
+      "total_mi": 2.3844352650567684,
+      "avg_otoc": 0.9999999999999997,
+      "entropy_per_gate": 0.19419011889093413
+    },
+    "Cluster_1D": {
+      "n_2q_gates": 5,
+      "half_entropy": 1.0000000000000018,
+      "half_entropy_fraction": 0.3333333333333339,
+      "total_mi": 2.000000000000005,
+      "avg_otoc": 0.9999999999999982,
+      "entropy_per_gate": 0.20000000000000034
+    }
+  },
+  "post_scramble": {
+    "GHZ": [
+      {
+        "extra_layers": 0,
+        "half_entropy_mean": 1.0,
+        "half_entropy_std": 0.0,
+        "otoc_mean": 0.9999999999999991,
+        "otoc_std": 0.0
+      },
+      {
+        "extra_layers": 1,
+        "half_entropy_mean": 1.5186806101236079,
+        "half_entropy_std": 0.21693745978383946,
+        "otoc_mean": 0.6744365567417514,
+        "otoc_std": 0.06842999071790212
+      },
+      {
+        "extra_layers": 2,
+        "half_entropy_mean": 1.5186806101236079,
+        "half_entropy_std": 0.21693745978383924,
+        "otoc_mean": 0.6744365567417517,
+        "otoc_std": 0.06842999071790277
+      },
+      {
+        "extra_layers": 3,
+        "half_entropy_mean": 1.988708355749599,
+        "half_entropy_std": 0.15687063200534793,
+        "otoc_mean": 0.3004316966767513,
+        "otoc_std": 0.040006402454627124
+      },
+      {
+        "extra_layers": 4,
+        "half_entropy_mean": 1.9887083557495988,
+        "half_entropy_std": 0.156870632005348,
+        "otoc_mean": 0.3004316966767512,
+        "otoc_std": 0.04000640245462707
+      },
+      {
+        "extra_layers": 5,
+        "half_entropy_mean": 2.1807827828177118,
+        "half_entropy_std": 0.09351891182397146,
+        "otoc_mean": 0.10668563130647574,
+        "otoc_std": 0.07317885492713547
+      },
+      {
+        "extra_layers": 6,
+        "half_entropy_mean": 2.180782782817712,
+        "half_entropy_std": 0.09351891182397204,
+        "otoc_mean": 0.10668563130647583,
+        "otoc_std": 0.0731788549271356
+      },
+      {
+        "extra_layers": 7,
+        "half_entropy_mean": 2.2450327010414215,
+        "half_entropy_std": 0.08206282745785257,
+        "otoc_mean": 0.03606334352471148,
+        "otoc_std": 0.027414454274833532
+      },
+      {
+        "extra_layers": 8,
+        "half_entropy_mean": 2.245032701041421,
+        "half_entropy_std": 0.08206282745785225,
+        "otoc_mean": 0.036063343524711466,
+        "otoc_std": 0.027414454274833525
+      },
+      {
+        "extra_layers": 9,
+        "half_entropy_mean": 2.2640545289729053,
+        "half_entropy_std": 0.10075792024944781,
+        "otoc_mean": 0.017448513199754406,
+        "otoc_std": 0.008641841806324973
+      },
+      {
+        "extra_layers": 10,
+        "half_entropy_mean": 2.264054528972905,
+        "half_entropy_std": 0.10075792024944846,
+        "otoc_mean": 0.0174485131997544,
+        "otoc_std": 0.008641841806324966
+      }
+    ],
+    "W": [
+      {
+        "extra_layers": 0,
+        "half_entropy_mean": 0.9709505944546706,
+        "half_entropy_std": 0.0,
+        "otoc_mean": 0.9999999999999997,
+        "otoc_std": 0.0
+      },
+      {
+        "extra_layers": 1,
+        "half_entropy_mean": 1.4655026802014615,
+        "half_entropy_std": 0.1638432283195195,
+        "otoc_mean": 0.603100931401447,
+        "otoc_std": 0.054725749498218686
+      },
+      {
+        "extra_layers": 2,
+        "half_entropy_mean": 1.4655026802014597,
+        "half_entropy_std": 0.16384322831951922,
+        "otoc_mean": 0.6031009314014473,
+        "otoc_std": 0.05472574949821898
+      },
+      {
+        "extra_layers": 3,
+        "half_entropy_mean": 1.9197789713849625,
+        "half_entropy_std": 0.20793157404796672,
+        "otoc_mean": 0.2699664043284932,
+        "otoc_std": 0.04264871491566199
+      },
+      {
+        "extra_layers": 4,
+        "half_entropy_mean": 1.9197789713849618,
+        "half_entropy_std": 0.207931574047967,
+        "otoc_mean": 0.26996640432849317,
+        "otoc_std": 0.04264871491566185
+      },
+      {
+        "extra_layers": 5,
+        "half_entropy_mean": 2.110042120833638,
+        "half_entropy_std": 0.10594909681165406,
+        "otoc_mean": 0.09178416659339474,
+        "otoc_std": 0.043433763280568326
+      },
+      {
+        "extra_layers": 6,
+        "half_entropy_mean": 2.110042120833638,
+        "half_entropy_std": 0.10594909681165443,
+        "otoc_mean": 0.09178416659339478,
+        "otoc_std": 0.04343376328056834
+      },
+      {
+        "extra_layers": 7,
+        "half_entropy_mean": 2.219380850075847,
+        "half_entropy_std": 0.08938448695291613,
+        "otoc_mean": 0.028389533590635126,
+        "otoc_std": 0.014050954921356336
+      },
+      {
+        "extra_layers": 8,
+        "half_entropy_mean": 2.219380850075847,
+        "half_entropy_std": 0.08938448695291625,
+        "otoc_mean": 0.028389533590635112,
+        "otoc_std": 0.01405095492135633
+      },
+      {
+        "extra_layers": 9,
+        "half_entropy_mean": 2.246636946403303,
+        "half_entropy_std": 0.11732511168561298,
+        "otoc_mean": 0.02194561325684428,
+        "otoc_std": 0.009821678795527502
+      },
+      {
+        "extra_layers": 10,
+        "half_entropy_mean": 2.246636946403303,
+        "half_entropy_std": 0.11732511168561277,
+        "otoc_mean": 0.02194561325684428,
+        "otoc_std": 0.009821678795527509
+      }
+    ],
+    "Cluster_1D": [
+      {
+        "extra_layers": 0,
+        "half_entropy_mean": 1.0000000000000018,
+        "half_entropy_std": 0.0,
+        "otoc_mean": 0.9999999999999982,
+        "otoc_std": 0.0
+      },
+      {
+        "extra_layers": 1,
+        "half_entropy_mean": 1.5852872854746973,
+        "half_entropy_std": 0.20164257367947416,
+        "otoc_mean": 0.6742207744851256,
+        "otoc_std": 0.05970167684644764
+      },
+      {
+        "extra_layers": 2,
+        "half_entropy_mean": 1.5852872854746964,
+        "half_entropy_std": 0.20164257367947347,
+        "otoc_mean": 0.6742207744851261,
+        "otoc_std": 0.05970167684644809
+      },
+      {
+        "extra_layers": 3,
+        "half_entropy_mean": 1.9510990758260138,
+        "half_entropy_std": 0.136376237364925,
+        "otoc_mean": 0.2906687501718998,
+        "otoc_std": 0.03379401300843196
+      },
+      {
+        "extra_layers": 4,
+        "half_entropy_mean": 1.9510990758260138,
+        "half_entropy_std": 0.13637623736492557,
+        "otoc_mean": 0.29066875017189964,
+        "otoc_std": 0.033794013008431836
+      },
+      {
+        "extra_layers": 5,
+        "half_entropy_mean": 2.1681651843531955,
+        "half_entropy_std": 0.0781926906559629,
+        "otoc_mean": 0.0982646592087775,
+        "otoc_std": 0.053278764254989994
+      },
+      {
+        "extra_layers": 6,
+        "half_entropy_mean": 2.1681651843531955,
+        "half_entropy_std": 0.07819269065596292,
+        "otoc_mean": 0.09826465920877755,
+        "otoc_std": 0.053278764254989994
+      },
+      {
+        "extra_layers": 7,
+        "half_entropy_mean": 2.2592419957131593,
+        "half_entropy_std": 0.09595637377553956,
+        "otoc_mean": 0.04152907034102017,
+        "otoc_std": 0.025017103643188123
+      },
+      {
+        "extra_layers": 8,
+        "half_entropy_mean": 2.2592419957131593,
+        "half_entropy_std": 0.09595637377553967,
+        "otoc_mean": 0.04152907034102015,
+        "otoc_std": 0.025017103643188095
+      },
+      {
+        "extra_layers": 9,
+        "half_entropy_mean": 2.2920834427335093,
+        "half_entropy_std": 0.08497903727932445,
+        "otoc_mean": 0.020934213710965197,
+        "otoc_std": 0.01015688179268484
+      },
+      {
+        "extra_layers": 10,
+        "half_entropy_mean": 2.2920834427335093,
+        "half_entropy_std": 0.08497903727932461,
+        "otoc_mean": 0.020934213710965183,
+        "otoc_std": 0.010156881792684824
+      }
+    ],
+    "Random": [
+      {
+        "extra_layers": 0,
+        "half_entropy_mean": 0.0,
+        "half_entropy_std": 0.0,
+        "otoc_mean": 1.0,
+        "otoc_std": 0.0
+      },
+      {
+        "extra_layers": 1,
+        "half_entropy_mean": 0.5900978996981564,
+        "half_entropy_std": 0.29939662140683315,
+        "otoc_mean": 0.8610360306042735,
+        "otoc_std": 0.06607090081310286
+      },
+      {
+        "extra_layers": 2,
+        "half_entropy_mean": 0.5900978996981567,
+        "half_entropy_std": 0.29939662140683365,
+        "otoc_mean": 0.8610360306042737,
+        "otoc_std": 0.06607090081310278
+      },
+      {
+        "extra_layers": 3,
+        "half_entropy_mean": 1.3850054400410496,
+        "half_entropy_std": 0.2628806636229144,
+        "otoc_mean": 0.4846437607756793,
+        "otoc_std": 0.03992476180782452
+      },
+      {
+        "extra_layers": 4,
+        "half_entropy_mean": 1.3850054400410494,
+        "half_entropy_std": 0.26288066362291435,
+        "otoc_mean": 0.4846437607756792,
+        "otoc_std": 0.039924761807824595
+      },
+      {
+        "extra_layers": 5,
+        "half_entropy_mean": 1.8765495069437979,
+        "half_entropy_std": 0.18964764930302427,
+        "otoc_mean": 0.19210490766558325,
+        "otoc_std": 0.13936420109272732
+      },
+      {
+        "extra_layers": 6,
+        "half_entropy_mean": 1.8765495069437976,
+        "half_entropy_std": 0.18964764930302455,
+        "otoc_mean": 0.19210490766558336,
+        "otoc_std": 0.13936420109272737
+      },
+      {
+        "extra_layers": 7,
+        "half_entropy_mean": 2.0614778030233003,
+        "half_entropy_std": 0.13021456724346872,
+        "otoc_mean": 0.053300667126476735,
+        "otoc_std": 0.04792922284219827
+      },
+      {
+        "extra_layers": 8,
+        "half_entropy_mean": 2.0614778030233003,
+        "half_entropy_std": 0.13021456724346903,
+        "otoc_mean": 0.053300667126476686,
+        "otoc_std": 0.04792922284219817
+      },
+      {
+        "extra_layers": 9,
+        "half_entropy_mean": 2.131144044148088,
+        "half_entropy_std": 0.08682928610396284,
+        "otoc_mean": 0.0231936571137967,
+        "otoc_std": 0.01948217637451198
+      },
+      {
+        "extra_layers": 10,
+        "half_entropy_mean": 2.1311440441480873,
+        "half_entropy_std": 0.08682928610396283,
+        "otoc_mean": 0.02319365711379669,
+        "otoc_std": 0.01948217637451198
+      }
+    ]
+  }
+}
