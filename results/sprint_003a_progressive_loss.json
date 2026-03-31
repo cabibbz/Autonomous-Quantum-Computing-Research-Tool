@@ -1,0 +1,123 @@
+{
+  "GHZ": {
+    "initial_qubits": 8,
+    "progressive_loss": [
+      {
+        "qubits_lost": 0,
+        "remaining": 8,
+        "half_cut_entropy": 1.0
+      },
+      {
+        "qubits_lost": 1,
+        "remaining": 7,
+        "half_cut_entropy": 1.0
+      },
+      {
+        "qubits_lost": 2,
+        "remaining": 6,
+        "half_cut_entropy": 1.0
+      },
+      {
+        "qubits_lost": 3,
+        "remaining": 5,
+        "half_cut_entropy": 1.0
+      },
+      {
+        "qubits_lost": 4,
+        "remaining": 4,
+        "half_cut_entropy": 1.0
+      },
+      {
+        "qubits_lost": 5,
+        "remaining": 3,
+        "half_cut_entropy": 1.0
+      },
+      {
+        "qubits_lost": 6,
+        "remaining": 2,
+        "half_cut_entropy": 1.0
+      }
+    ]
+  },
+  "W": {
+    "initial_qubits": 8,
+    "progressive_loss": [
+      {
+        "qubits_lost": 0,
+        "remaining": 8,
+        "half_cut_entropy": 1.0000000000000009
+      },
+      {
+        "qubits_lost": 1,
+        "remaining": 7,
+        "half_cut_entropy": 0.9544340029249649
+      },
+      {
+        "qubits_lost": 2,
+        "remaining": 6,
+        "half_cut_entropy": 0.954434002924965
+      },
+      {
+        "qubits_lost": 3,
+        "remaining": 5,
+        "half_cut_entropy": 0.8112781244591328
+      },
+      {
+        "qubits_lost": 4,
+        "remaining": 4,
+        "half_cut_entropy": 0.8112781244591334
+      },
+      {
+        "qubits_lost": 5,
+        "remaining": 3,
+        "half_cut_entropy": 0.5435644431995964
+      },
+      {
+        "qubits_lost": 6,
+        "remaining": 2,
+        "half_cut_entropy": 0.5435644431995964
+      }
+    ]
+  },
+  "Cluster": {
+    "initial_qubits": 8,
+    "progressive_loss": [
+      {
+        "qubits_lost": 0,
+        "remaining": 8,
+        "half_cut_entropy": 1.0000000000000007
+      },
+      {
+        "qubits_lost": 1,
+        "remaining": 7,
+        "half_cut_entropy": 1.9999999999999996
+      },
+      {
+        "qubits_lost": 2,
+        "remaining": 6,
+        "half_cut_entropy": 1.9999999999999996
+      },
+      {
+        "qubits_lost": 3,
+        "remaining": 5,
+        "half_cut_entropy": 1.9999999999999991
+      },
+      {
+        "qubits_lost": 4,
+        "remaining": 4,
+        "half_cut_entropy": 1.9999999999999991
+      },
+      {
+        "qubits_lost": 5,
+        "remaining": 3,
+        "half_cut_entropy": 1.0000000000000007
+      },
+      {
+        "qubits_lost": 6,
+        "remaining": 2,
+        "half_cut_entropy": 1.0000000000000007
+      }
+    ]
+  },
+  "runtime_seconds": 1.3698883056640625
+}
