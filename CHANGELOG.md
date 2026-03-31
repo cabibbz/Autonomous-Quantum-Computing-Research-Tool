@@ -68,3 +68,21 @@
 **Next:** 2D cluster states, projective measurement vs trace, mutual information, IIT/Phi
 
 [Full report: sprints/sprint_003.md]
+
+### Sprint 004 — 2026-03-31 — Mutual Information & Tripartite Information
+**Status:** Complete (2/2 experiments)
+
+**Completed:**
+- **4a: Pairwise mutual information** — Finally distinguishes all three states. GHZ: uniform maximal MI. W: uniform weak MI. Cluster: sparse, only nearest-neighbor MI.
+- **4b: Tripartite information** — GHZ has I3=+1.0 (redundant/classical-like). Cluster has I3 down to **-1.0** for consecutive triples — genuinely irreducible 3-body quantum correlations.
+
+**Surprises:**
+- GHZ's correlations are structurally classical (positive I3) despite being "maximally entangled" — it's a broadcast channel in superposition
+- Cluster state geometry is directly visible in I3: only consecutive-on-chain triples show negative I3
+- Hierarchy of measures: entropy < single-qubit entropy < MI < I3 in discriminating power
+
+**Key insight:** Negative tripartite information = information spread across 3 subsystems that no pair can recover. This is the operational meaning of genuine multipartite entanglement and connects to quantum error correction.
+
+**Next:** Integrated information (Phi), quantum discord, real hardware test
+
+[Full report: sprints/sprint_004.md]
