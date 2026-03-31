@@ -29,5 +29,29 @@ Used the analytic formula E(a,b)=cos(a-b) for Phi+ state — verified against st
 
 **Insight:** Quantum advantage in CHSH is not generic — it requires specific angle choices. ~80% of measurement settings don't violate the classical bound at all. This makes the violation more remarkable: nature supports correlations stronger than classical physics allows, but only if you know where to look.
 
-### Experiment 2b: CHSH Under Noise
-(pending)
+### Experiment 2b: CHSH Under Depolarizing Noise
+
+Swept depolarizing noise rate p from 0% to 30% on all gates (1q and 2q), measuring CHSH S at optimal angles with 20k shots per setting.
+
+**Results:**
+| Noise rate | S | Violates? |
+|-----------|------|-----------|
+| 0.00 | 2.826 | Yes |
+| 0.05 | 2.374 | Yes |
+| 0.09 | 2.040 | Barely |
+| **0.095** | **2.000** | **Critical point** |
+| 0.10 | 1.963 | No |
+| 0.15 | 1.619 | No |
+| 0.20 | 1.303 | No |
+| 0.30 | 0.811 | No |
+
+**Critical noise rate: ~9.5% depolarizing error per gate.**
+
+At this point, quantum correlations become indistinguishable from classical ones.
+
+**Insights:**
+- Quantum advantage in CHSH is surprisingly fragile — only ~10% noise kills it
+- The degradation is roughly exponential: S decays as ~(1-p)^k where k relates to circuit depth
+- At p=0.30, S=0.81 — well into classical territory, approaching the uncorrelated limit of 0
+- This has implications for real hardware: IBM's current error rates (~0.1-1% per gate) should allow CHSH violation, but more complex protocols may not survive
+- The critical threshold is a hard physical boundary — no error mitigation strategy changes when S *actually* violates the bound, only when we can *detect* the violation through noise

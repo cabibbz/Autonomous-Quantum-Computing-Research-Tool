@@ -1,0 +1,136 @@
+{
+  "experiment": "chsh_noise_sensitivity",
+  "noise_type": "depolarizing",
+  "noise_on": "all gates (1q and 2q)",
+  "shots": 20000,
+  "sweep": [
+    {
+      "noise_rate": 0.0,
+      "S": 2.8262
+    },
+    {
+      "noise_rate": 0.01,
+      "S": 2.74
+    },
+    {
+      "noise_rate": 0.02,
+      "S": 2.649
+    },
+    {
+      "noise_rate": 0.03,
+      "S": 2.537
+    },
+    {
+      "noise_rate": 0.04,
+      "S": 2.4505999999999997
+    },
+    {
+      "noise_rate": 0.05,
+      "S": 2.3739
+    },
+    {
+      "noise_rate": 0.06,
+      "S": 2.2931
+    },
+    {
+      "noise_rate": 0.07,
+      "S": 2.1884
+    },
+    {
+      "noise_rate": 0.08,
+      "S": 2.1121000000000003
+    },
+    {
+      "noise_rate": 0.09,
+      "S": 2.0397
+    },
+    {
+      "noise_rate": 0.1,
+      "S": 1.9625
+    },
+    {
+      "noise_rate": 0.11,
+      "S": 1.8781999999999999
+    },
+    {
+      "noise_rate": 0.12,
+      "S": 1.807
+    },
+    {
+      "noise_rate": 0.13,
+      "S": 1.7265000000000001
+    },
+    {
+      "noise_rate": 0.14,
+      "S": 1.6757
+    },
+    {
+      "noise_rate": 0.15,
+      "S": 1.6191
+    },
+    {
+      "noise_rate": 0.16,
+      "S": 1.5297
+    },
+    {
+      "noise_rate": 0.17,
+      "S": 1.5065
+    },
+    {
+      "noise_rate": 0.18,
+      "S": 1.4028
+    },
+    {
+      "noise_rate": 0.19,
+      "S": 1.3602
+    },
+    {
+      "noise_rate": 0.2,
+      "S": 1.3028
+    },
+    {
+      "noise_rate": 0.21,
+      "S": 1.2489999999999999
+    },
+    {
+      "noise_rate": 0.22,
+      "S": 1.2090999999999998
+    },
+    {
+      "noise_rate": 0.23,
+      "S": 1.155
+    },
+    {
+      "noise_rate": 0.24,
+      "S": 1.0881
+    },
+    {
+      "noise_rate": 0.25,
+      "S": 1.0213
+    },
+    {
+      "noise_rate": 0.26,
+      "S": 1.0108
+    },
+    {
+      "noise_rate": 0.27,
+      "S": 0.9638
+    },
+    {
+      "noise_rate": 0.28,
+      "S": 0.9118999999999999
+    },
+    {
+      "noise_rate": 0.29,
+      "S": 0.8573
+    },
+    {
+      "noise_rate": 0.3,
+      "S": 0.8111999999999999
+    }
+  ],
+  "critical_noise_rate": 0.09514248704663211,
+  "S_at_zero_noise": 2.8262,
+  "S_at_max_noise": 0.8111999999999999,
+  "runtime_seconds": 23.438204765319824
+}
