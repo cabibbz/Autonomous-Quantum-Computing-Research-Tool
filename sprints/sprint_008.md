@@ -1,7 +1,7 @@
 # Sprint 008 — Integrated Information Theory: How "Whole" Are Quantum States?
 
 **Date:** 2026-03-31
-**Status:** In progress
+**Status:** Complete (3/3 experiments)
 
 ## Motivation
 
@@ -89,4 +89,71 @@ So Phi is determined entirely by the **weakest bipartition** — the cut that lo
 
 **Goal:** Phi for mixed states after tracing out qubits. For mixed states, I(A:Ā) = S(A) + S(Ā) - S(AĀ), and S(AĀ) ≠ 0. Does 2D cluster maintain higher Phi than 1D under loss?
 
-**Results:** *(pending)*
+**Results:**
+
+**Single qubit loss (n=6 → n=5):**
+
+| State | Φ(baseline) | Φ(1 lost) | Retention | Position-dependent? |
+|-------|-------------|-----------|-----------|---------------------|
+| GHZ | 2.0 | 1.0 (uniform) | 50% | No |
+| W | 1.3 | 0.918 (uniform) | 70.6% | No |
+| Cluster 1D | 2.0 | 1.0–2.0 | 58.3% avg | **YES** |
+| Cluster 2D | 2.0 | **2.0 (uniform)** | **100%** | No |
+
+**Two qubit loss (n=6 → n=4):**
+
+| State | Φ(2 lost) | Retention | Position-dependent? |
+|-------|-----------|-----------|---------------------|
+| GHZ | 1.0 (uniform) | 50% | No |
+| W | 0.732 (uniform) | 56.3% | No |
+| Cluster 1D | **0.0–1.0** | 33.3% avg | **YES** (Φ=0 for 5 of 15 pairs!) |
+| Cluster 2D | 1.0–2.0 | 60% avg | Mild (3 pairs retain Φ=2.0) |
+
+**Key findings:**
+
+1. **2D Cluster is perfectly robust to single qubit loss.** Phi stays at 2.0 regardless of which qubit is lost — the ONLY state with 100% Phi retention. This mirrors the position-independent entropy behavior found in Sprint 007c.
+
+2. **1D Cluster can be completely shattered.** Losing 2 qubits that break the chain (e.g., q0+q2, q2+q3) can drive Phi to **zero** — the system becomes fully decomposable, with zero integration. 5 of 15 possible two-qubit losses completely destroy integration.
+
+3. **GHZ is robustly mediocre.** Loses exactly 50% of Phi on any single qubit loss, uniformly. Never reaches zero. Its rigid structure means uniform degradation — no catastrophic failure, but no resilience either.
+
+4. **W retains the highest FRACTION under single loss (70.6%)** despite starting with the lowest Phi. Its democratic pairwise structure means losing one qubit removes only 1/n of the correlations. But it starts so low that its absolute Phi is still the smallest.
+
+5. **Cluster 1D is the most fragile.** Mean Phi retention of 33.3% under two-qubit loss, with complete disintegration possible. The chain topology has critical links that, when both are broken, fragment the system into uncorrelated subsystems.
+
+**Insight:** Phi under qubit loss reveals a fundamental distinction between **topological** and **geometric** robustness:
+- 2D Cluster: Topological — multiple paths connect any pair of qubits, so no single loss can isolate a subsystem. Phi is perfectly maintained.
+- 1D Cluster: Geometric — linear chain has critical links. Breaking two links can fragment the chain, driving Phi to zero.
+- GHZ: Algebraic — all qubits contribute equally to one global superposition. Losing any qubit degrades the superposition uniformly.
+- W: Democratic — correlations are distributed pairwise, so loss is proportional.
+
+This directly connects to quantum error correction: surface codes (built on 2D cluster topology) can tolerate local errors precisely because no local damage can fragment the code's integrated information structure.
+
+---
+
+## Sprint 008 Summary
+
+**Three experiments on Quantum Integrated Information (Phi):**
+
+1. **8a (Phi spectrum):** Raw Phi can't distinguish GHZ from Cluster (both = 2.0). Normalized Phi reveals 2D Cluster is 2x more integrated. MI variance captures structural differences.
+
+2. **8b (Phi under noise):** Depolarizing noise is too uniform to discriminate — GHZ and Cluster_1D have identical Phi curves. No interesting phase transitions.
+
+3. **8c (Phi under qubit loss):** The discriminating experiment. 2D Cluster is **perfectly robust** (100% Phi retention under single loss). 1D Cluster is **catastrophically fragile** (Phi → 0 for certain two-qubit losses). This connects Phi directly to topological protection in quantum error correction.
+
+**The big picture:** Phi measures system *integration* — how much the whole exceeds the sum of its parts at the weakest point. The hierarchy of robustness is:
+
+**2D Cluster > GHZ > W > 1D Cluster** (under qubit loss)
+
+This is different from every other ranking we've found:
+- Entanglement (negativity): 2D Cluster >> GHZ = W = 1D Cluster
+- Discord: W > GHZ = Cluster = 0
+- Tripartite info: Cluster (I3=-1) > W (I3≈0) > GHZ (I3=+1)
+
+Phi under loss is the first measure that makes 1D Cluster look *worse* than GHZ. The chain topology's advantage (rich local entanglement, negative I3) comes at the cost of fragility to targeted damage.
+
+**Next sprint ideas:**
+- Local noise models (amplitude damping on specific qubits) — will structured noise discriminate better than depolarizing?
+- Genuine multipartite entanglement (GME) witnesses — can we detect entanglement that survives all bipartitions?
+- Real IBM hardware comparison — CHSH or small-state tomography on actual QPU
+- Quantum error correction codes: compare [[5,1,3]] code integration to these natural states

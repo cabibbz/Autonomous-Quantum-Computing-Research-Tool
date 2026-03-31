@@ -151,9 +151,21 @@
 [Full report: sprints/sprint_007.md]
 
 ### Sprint 008 — 2026-03-31 — Integrated Information Theory: How "Whole" Are Quantum States?
-**Status:** In progress
+**Status:** Complete (3/3 experiments)
 
-**Plan:**
-- **8a:** Phi (quantum integrated information) + MI spectrum for GHZ, W, Cluster-1D, Cluster-2D
-- **8b:** Phi under depolarizing noise — integration vs entanglement degradation
-- **8c:** Phi under qubit loss — mixed-state integration
+**Completed:**
+- **8a: Phi and MI spectrum** — Raw Phi can't distinguish GHZ from Cluster (both 2.0). Normalized Phi reveals 2D Cluster is 2x more integrated. W has lowest Phi (1.3).
+- **8b: Phi under noise** — Depolarizing noise too uniform to discriminate. GHZ and Cluster_1D have identical Phi curves. No phase transitions.
+- **8c: Phi under qubit loss** — 2D Cluster perfectly robust (100% Phi retention under single loss). 1D Cluster catastrophically fragile (Phi→0 for 5/15 two-qubit losses). GHZ uniformly loses 50%.
+
+**Surprises:**
+- 2D Cluster is the ONLY state with 100% Phi retention under single qubit loss — topological protection in action
+- 1D Cluster can be completely shattered (Phi=0) by losing two chain-breaking qubits — worse than GHZ
+- W retains the highest FRACTION of Phi (70.6%) despite having the lowest absolute value
+- Phi under loss gives a unique robustness ranking: 2D Cluster > GHZ > W > 1D Cluster — different from every other measure
+
+**Key insight:** Phi under qubit loss distinguishes topological (2D, multiple paths, no critical links) from geometric (1D, chain topology, critical links) protection. This connects directly to why surface codes (2D cluster topology) work for quantum error correction — no local damage can fragment the code's integrated information.
+
+**Next:** Local/structured noise models, GME witnesses, real hardware test, quantum error correction codes
+
+[Full report: sprints/sprint_008.md]
