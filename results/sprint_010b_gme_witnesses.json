@@ -1,0 +1,99 @@
+{
+  "n_qubits": 6,
+  "gme_witnesses": {
+    "GHZ": {
+      "bisep_bound": 0.5,
+      "fidelity": 1.0,
+      "witness_value": -0.5,
+      "is_gme": true,
+      "gme_margin": 0.5
+    },
+    "W": {
+      "bisep_bound": 0.833333,
+      "fidelity": 1.0,
+      "witness_value": -0.166667,
+      "is_gme": true,
+      "gme_margin": 0.166667
+    },
+    "Cluster_1D": {
+      "bisep_bound": 0.5,
+      "fidelity": 1.0,
+      "witness_value": -0.5,
+      "is_gme": true,
+      "gme_margin": 0.5
+    },
+    "Cluster_2D": {
+      "bisep_bound": 0.5,
+      "fidelity": 1.0,
+      "witness_value": -0.5,
+      "is_gme": true,
+      "gme_margin": 0.5
+    }
+  },
+  "noise_sensitivity": {
+    "GHZ": {
+      "gme_death_threshold": 0.55
+    },
+    "W": {
+      "gme_death_threshold": 0.2
+    },
+    "Cluster_1D": {
+      "gme_death_threshold": 0.55
+    },
+    "Cluster_2D": {
+      "gme_death_threshold": 0.55
+    }
+  },
+  "cross_fidelity": {
+    "GHZ": {
+      "GHZ": 1.0,
+      "W": 0.0,
+      "Cluster_1D": 0.0,
+      "Cluster_2D": 0.0
+    },
+    "W": {
+      "GHZ": 0.0,
+      "W": 1.0,
+      "Cluster_1D": 0.09375,
+      "Cluster_2D": 0.09375
+    },
+    "Cluster_1D": {
+      "GHZ": 0.0,
+      "W": 0.09375,
+      "Cluster_1D": 1.0,
+      "Cluster_2D": 0.015625
+    },
+    "Cluster_2D": {
+      "GHZ": 0.0,
+      "W": 0.09375,
+      "Cluster_1D": 0.015625,
+      "Cluster_2D": 1.0
+    }
+  },
+  "cross_witness": {
+    "GHZ": {
+      "GHZ": -0.5,
+      "W": 0.5,
+      "Cluster_1D": 0.5,
+      "Cluster_2D": 0.5
+    },
+    "W": {
+      "GHZ": 0.833333,
+      "W": -0.166667,
+      "Cluster_1D": 0.739583,
+      "Cluster_2D": 0.739583
+    },
+    "Cluster_1D": {
+      "GHZ": 0.5,
+      "W": 0.40625,
+      "Cluster_1D": -0.5,
+      "Cluster_2D": 0.484375
+    },
+    "Cluster_2D": {
+      "GHZ": 0.5,
+      "W": 0.40625,
+      "Cluster_1D": 0.484375,
+      "Cluster_2D": -0.5
+    }
+  }
+}
