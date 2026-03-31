@@ -1,0 +1,190 @@
+{
+  "n_qubits": 8,
+  "n_bh": 4,
+  "max_layers": 12,
+  "n_instances": 8,
+  "qubit_map": {
+    "reference_R": [
+      7
+    ],
+    "alice_message_A": [
+      0
+    ],
+    "black_hole_system": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "early_radiation_B_prime": [
+      4,
+      5,
+      6
+    ],
+    "late_radiation_D1": [
+      0
+    ],
+    "late_radiation_D2": [
+      0,
+      1
+    ]
+  },
+  "layer_data": [
+    {
+      "layer": 0,
+      "MI_R_Bprime_mean": -4.440892098500626e-16,
+      "MI_R_Bprime_std": 0.0,
+      "MI_R_Bprime_D1_mean": 2.0000000000000018,
+      "MI_R_Bprime_D1_std": 0.0,
+      "MI_R_Bprime_D2_mean": 1.999999999999997,
+      "MI_R_Bprime_D2_std": 0.0,
+      "MI_R_D1_only_mean": 2.0000000000000004,
+      "MI_R_D1_only_std": 0.0,
+      "S_R_mean": 1.0000000000000002
+    },
+    {
+      "layer": 1,
+      "MI_R_Bprime_mean": 4.440892098500626e-16,
+      "MI_R_Bprime_std": 8.881784197001252e-16,
+      "MI_R_Bprime_D1_mean": 1.5490823979951256,
+      "MI_R_Bprime_D1_std": 0.19769574985700242,
+      "MI_R_Bprime_D2_mean": 1.563147422748205,
+      "MI_R_Bprime_D2_std": 0.22357888918092447,
+      "MI_R_D1_only_mean": 0.40229633462532655,
+      "MI_R_D1_only_std": 0.20053336277015507,
+      "S_R_mean": 1.0000000000000002
+    },
+    {
+      "layer": 2,
+      "MI_R_Bprime_mean": 7.771561172376096e-16,
+      "MI_R_Bprime_std": 1.1267533089989422e-15,
+      "MI_R_Bprime_D1_mean": 1.474323418770171,
+      "MI_R_Bprime_D1_std": 0.3285594070667536,
+      "MI_R_Bprime_D2_mean": 1.6400279583093123,
+      "MI_R_Bprime_D2_std": 0.2513841299154555,
+      "MI_R_D1_only_mean": 0.24930711114549517,
+      "MI_R_D1_only_std": 0.27541570785895103,
+      "S_R_mean": 1.0000000000000004
+    },
+    {
+      "layer": 3,
+      "MI_R_Bprime_mean": 1.0547118733938987e-15,
+      "MI_R_Bprime_std": 7.986663869107379e-16,
+      "MI_R_Bprime_D1_mean": 1.3680619793664945,
+      "MI_R_Bprime_D1_std": 0.22369574714543483,
+      "MI_R_Bprime_D2_mean": 1.7169068716085214,
+      "MI_R_Bprime_D2_std": 0.21050762217677943,
+      "MI_R_D1_only_mean": 0.07895654489587398,
+      "MI_R_D1_only_std": 0.05273825912893053,
+      "S_R_mean": 1.0000000000000004
+    },
+    {
+      "layer": 4,
+      "MI_R_Bprime_mean": 1.2212453270876722e-15,
+      "MI_R_Bprime_std": 7.611305586242616e-16,
+      "MI_R_Bprime_D1_mean": 1.3382689091947402,
+      "MI_R_Bprime_D1_std": 0.13399293501952084,
+      "MI_R_Bprime_D2_mean": 1.7566276226991344,
+      "MI_R_Bprime_D2_std": 0.22933745809215228,
+      "MI_R_D1_only_mean": 0.022269256308236257,
+      "MI_R_D1_only_std": 0.01481228835279344,
+      "S_R_mean": 1.0000000000000002
+    },
+    {
+      "layer": 5,
+      "MI_R_Bprime_mean": 1.7208456881689926e-15,
+      "MI_R_Bprime_std": 1.003815992552122e-15,
+      "MI_R_Bprime_D1_mean": 1.3839708843298908,
+      "MI_R_Bprime_D1_std": 0.053585942129655256,
+      "MI_R_Bprime_D2_mean": 1.8427272225298446,
+      "MI_R_Bprime_D2_std": 0.03310468342248614,
+      "MI_R_D1_only_mean": 0.028796819499757376,
+      "MI_R_D1_only_std": 0.015584075815098426,
+      "S_R_mean": 1.0000000000000004
+    },
+    {
+      "layer": 6,
+      "MI_R_Bprime_mean": 1.5543122344752192e-15,
+      "MI_R_Bprime_std": 1.0175362097255202e-15,
+      "MI_R_Bprime_D1_mean": 1.3990295346511668,
+      "MI_R_Bprime_D1_std": 0.07368043548828723,
+      "MI_R_Bprime_D2_mean": 1.8366240021482223,
+      "MI_R_Bprime_D2_std": 0.07365353733618,
+      "MI_R_D1_only_mean": 0.05623136115030061,
+      "MI_R_D1_only_std": 0.06660242673154397,
+      "S_R_mean": 1.0000000000000004
+    },
+    {
+      "layer": 7,
+      "MI_R_Bprime_mean": 1.27675647831893e-15,
+      "MI_R_Bprime_std": 1.8369075269502375e-15,
+      "MI_R_Bprime_D1_mean": 1.4061598311285284,
+      "MI_R_Bprime_D1_std": 0.050705034854615416,
+      "MI_R_Bprime_D2_mean": 1.880872936426183,
+      "MI_R_Bprime_D2_std": 0.023323636637744016,
+      "MI_R_D1_only_mean": 0.044038769974714814,
+      "MI_R_D1_only_std": 0.028734004870135672,
+      "S_R_mean": 1.0000000000000004
+    },
+    {
+      "layer": 8,
+      "MI_R_Bprime_mean": 1.942890293094024e-15,
+      "MI_R_Bprime_std": 1.063440672225858e-15,
+      "MI_R_Bprime_D1_mean": 1.3823074250615222,
+      "MI_R_Bprime_D1_std": 0.04528230119907208,
+      "MI_R_Bprime_D2_mean": 1.8505561979693481,
+      "MI_R_Bprime_D2_std": 0.03107845813229946,
+      "MI_R_D1_only_mean": 0.022917924276196933,
+      "MI_R_D1_only_std": 0.007255668621588878,
+      "S_R_mean": 1.0000000000000004
+    },
+    {
+      "layer": 9,
+      "MI_R_Bprime_mean": 2.4980018054066022e-15,
+      "MI_R_Bprime_std": 2.140600972550959e-15,
+      "MI_R_Bprime_D1_mean": 1.40595457746443,
+      "MI_R_Bprime_D1_std": 0.034950521055427564,
+      "MI_R_Bprime_D2_mean": 1.8553341762208706,
+      "MI_R_Bprime_D2_std": 0.02001397518710548,
+      "MI_R_D1_only_mean": 0.02714980206310419,
+      "MI_R_D1_only_std": 0.005790919854322622,
+      "S_R_mean": 1.0000000000000007
+    },
+    {
+      "layer": 10,
+      "MI_R_Bprime_mean": 2.220446049250313e-15,
+      "MI_R_Bprime_std": 8.005932084973442e-16,
+      "MI_R_Bprime_D1_mean": 1.4150968821853538,
+      "MI_R_Bprime_D1_std": 0.062327425774774764,
+      "MI_R_Bprime_D2_mean": 1.8773839210611274,
+      "MI_R_Bprime_D2_std": 0.022524325667259208,
+      "MI_R_D1_only_mean": 0.030086977292774875,
+      "MI_R_D1_only_std": 0.01766872260368282,
+      "S_R_mean": 1.0000000000000007
+    },
+    {
+      "layer": 11,
+      "MI_R_Bprime_mean": 1.4988010832439613e-15,
+      "MI_R_Bprime_std": 1.6002238762302194e-15,
+      "MI_R_Bprime_D1_mean": 1.4055395059347677,
+      "MI_R_Bprime_D1_std": 0.03773865128367252,
+      "MI_R_Bprime_D2_mean": 1.8650519063059516,
+      "MI_R_Bprime_D2_std": 0.0284567029947974,
+      "MI_R_D1_only_mean": 0.02528436657066488,
+      "MI_R_D1_only_std": 0.01187562043466247,
+      "S_R_mean": 1.0000000000000007
+    },
+    {
+      "layer": 12,
+      "MI_R_Bprime_mean": 2.609024107869118e-15,
+      "MI_R_Bprime_std": 2.0160561883625225e-15,
+      "MI_R_Bprime_D1_mean": 1.4461376287004264,
+      "MI_R_Bprime_D1_std": 0.018215714567927296,
+      "MI_R_Bprime_D2_mean": 1.8743208316535545,
+      "MI_R_Bprime_D2_std": 0.030929498965159865,
+      "MI_R_D1_only_mean": 0.034000699853077104,
+      "MI_R_D1_only_std": 0.014707269232492621,
+      "S_R_mean": 1.0000000000000009
+    }
+  ]
+}
