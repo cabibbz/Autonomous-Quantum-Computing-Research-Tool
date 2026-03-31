@@ -1,0 +1,89 @@
+{
+  "states": {
+    "GHZ_n4": {
+      "name": "GHZ",
+      "n_qubits": 4,
+      "half_cut_entropy": 1.0,
+      "single_qubit_entropy": 1.0,
+      "entropy_after_qubit_loss": 1.0
+    },
+    "W_n4": {
+      "name": "W",
+      "n_qubits": 4,
+      "half_cut_entropy": 1.000000000000001,
+      "single_qubit_entropy": 0.8112781244591329,
+      "entropy_after_qubit_loss": 0.8112781244591328
+    },
+    "Cluster_n4": {
+      "name": "Cluster",
+      "n_qubits": 4,
+      "half_cut_entropy": 1.0000000000000002,
+      "single_qubit_entropy": 1.0000000000000002,
+      "entropy_after_qubit_loss": 1.0000000000000002
+    },
+    "Product_n4": {
+      "name": "Product",
+      "n_qubits": 4,
+      "half_cut_entropy": 9.61027951144475e-16,
+      "single_qubit_entropy": 1.6017132519074586e-16,
+      "entropy_after_qubit_loss": 1.6017132519074586e-16
+    },
+    "GHZ_n6": {
+      "name": "GHZ",
+      "n_qubits": 6,
+      "half_cut_entropy": 1.0,
+      "single_qubit_entropy": 1.0,
+      "entropy_after_qubit_loss": 1.0
+    },
+    "W_n6": {
+      "name": "W",
+      "n_qubits": 6,
+      "half_cut_entropy": 1.000000000000003,
+      "single_qubit_entropy": 0.650022421648354,
+      "entropy_after_qubit_loss": 0.9182958340544897
+    },
+    "Cluster_n6": {
+      "name": "Cluster",
+      "n_qubits": 6,
+      "half_cut_entropy": 1.0000000000000018,
+      "single_qubit_entropy": 1.0,
+      "entropy_after_qubit_loss": 1.9999999999999996
+    },
+    "Product_n6": {
+      "name": "Product",
+      "n_qubits": 6,
+      "half_cut_entropy": 1.5364667215586753e-15,
+      "single_qubit_entropy": 1.4415419267167124e-15,
+      "entropy_after_qubit_loss": 3.0135397176380054e-15
+    },
+    "GHZ_n8": {
+      "name": "GHZ",
+      "n_qubits": 8,
+      "half_cut_entropy": 1.0,
+      "single_qubit_entropy": 1.0,
+      "entropy_after_qubit_loss": 1.0
+    },
+    "W_n8": {
+      "name": "W",
+      "n_qubits": 8,
+      "half_cut_entropy": 1.0000000000000009,
+      "single_qubit_entropy": 0.5435644431995961,
+      "entropy_after_qubit_loss": 0.9544340029249649
+    },
+    "Cluster_n8": {
+      "name": "Cluster",
+      "n_qubits": 8,
+      "half_cut_entropy": 1.0000000000000007,
+      "single_qubit_entropy": 1.0,
+      "entropy_after_qubit_loss": 1.9999999999999996
+    },
+    "Product_n8": {
+      "name": "Product",
+      "n_qubits": 8,
+      "half_cut_entropy": 2.514988312631104e-15,
+      "single_qubit_entropy": 1.4415419267167124e-15,
+      "entropy_after_qubit_loss": 2.2423985526704407e-15
+    }
+  },
+  "runtime_seconds": 1.6372942924499512
+}

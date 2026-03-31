@@ -33,3 +33,20 @@
 **Next:** Map CHSH violation landscape, explore noise effects, small-scale entanglement comparison
 
 [Full report: sprints/sprint_001.md]
+
+### Sprint 002 — 2026-03-31 — CHSH Landscape, Noise, & Entanglement Zoo
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **2a: CHSH angle landscape** — only 19.9% of measurement angles violate classical bound. Max S=2.828 at known optimal.
+- **2b: Noise sensitivity** — depolarizing noise kills CHSH violation at **p≈9.5%**. S degrades exponentially.
+- **2c: Entanglement zoo** — GHZ, W, Cluster, Product states at n=4,6,8. Half-cut entropy is 1.0 for ALL entangled states (can't distinguish them). But single-qubit and qubit-loss metrics reveal real differences.
+
+**Surprises:**
+- **Cluster states get MORE entangled when you lose a qubit** (entropy 1.0 -> 2.0). Removing a qubit projects neighbors into entangled pairs. No classical analog.
+- W state entanglement "dilutes" with system size — single-qubit entropy drops from 0.81 (n=4) to 0.54 (n=8)
+- Half-cut entropy is too coarse to distinguish qualitatively different entanglement structures
+
+**Next:** Deeper investigation of cluster state qubit-loss phenomenon. Entanglement robustness under noise by state type. Try real IBM hardware for CHSH.
+
+[Full report: sprints/sprint_002.md]
