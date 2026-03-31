@@ -4,3 +4,5 @@ __pycache__/
 logs/
 *.egg-info/
 .env
+~/
+.claude/.ralph-loop.local.md
