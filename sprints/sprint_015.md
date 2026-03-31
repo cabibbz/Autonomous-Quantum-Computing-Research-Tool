@@ -83,3 +83,31 @@ Only 7 of 35 triples have I3 = -1.0; the remaining 28 have I3 = 0.0. Zero MI eve
 
 The Shor code's total MI of 9.0 means **each block internally reveals the logical state** — it's three correlated GHZ states. This suggests it should be weaker under noise that can exploit within-block correlations.
 
+### 15b: Error Correction Performance Comparison
+
+Depolarizing noise at p=0 to 0.3, comparing coded (encode → noise → syndrome correct → decode) vs uncoded fidelity.
+
+**Break-even thresholds (coded fidelity = uncoded fidelity):**
+
+| Code | Break-even p | Fidelity @ p=0.1 | Fidelity @ p=0.2 | Fidelity @ p=0.3 |
+|---|---|---|---|---|
+| Uncoded | — | 0.933 | 0.867 | 0.800 |
+| [[5,1,3]] | **~0.15** | 0.947 | 0.834 | 0.712 |
+| Steane [[7,1,3]] | **~0.22** | 0.966 | 0.887 | 0.778 |
+| Shor [[9,1,3]] | **>0.30** | 0.978 | 0.921 | 0.831 |
+
+**Key findings:**
+- Performance is completely logical-state independent (|0⟩ and |+⟩ give identical curves for all codes)
+- **Shor code has the BEST performance** despite having the "worst" information topology (MI=9.0 of pairwise leakage)
+- Ranking by break-even: Shor (>0.30) >> Steane (~0.22) >> [[5,1,3]] (~0.15)
+- At low noise (p=0.02): Shor fidelity 0.999, Steane 0.998, [[5,1,3]] 0.997 — all excellent
+
+**The surprise:** 15a predicted Shor should be weakest (within-block MI leakage exposes logical state). But Shor is actually **strongest** under depolarizing noise. Why?
+
+**Resolution:** More physical qubits = more redundancy = more error-correcting power, even with information leakage. The Shor code's 9 qubits provide more "room" for noise to act without corrupting the logical state. The relevant comparison isn't break-even threshold but **break-even threshold per physical qubit**:
+- [[5,1,3]]: 0.15/5 = 0.030 per qubit — most **efficient**
+- Steane: 0.22/7 = 0.031 per qubit
+- Shor: 0.30/9 = 0.033 per qubit
+
+Per-qubit efficiency is remarkably similar (~0.03), suggesting that for depolarizing noise, raw qubit count matters more than information topology. The topology differences from 15a would matter for **structured** noise (cf. Sprint 009).
+
