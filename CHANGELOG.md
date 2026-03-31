@@ -270,3 +270,24 @@
 **Next:** Scrambling vs circuit complexity, decoupling with structured (non-random) unitaries, real hardware noise effects on recovery, quantum error correction connection
 
 [Full report: sprints/sprint_013.md]
+
+### Sprint 014 — 2026-03-31 — Quantum Error Correction: Entanglement as Information Protection
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **14a: QEC code entanglement** — 3-qubit bit-flip code is literally GHZ (MI=1.0, I3=0). [[5,1,3]] perfect code: ZERO pairwise MI, I3=-1.0 for ALL triples (perfectly symmetric), negativity spectrum perfectly uniform. The code is a "perfected cluster state."
+- **14b: Error correction performance** — 3-qubit code corrects bit-flips perfectly but WORSE than uncoded under depolarizing noise. [[5,1,3]] code: break-even at p≈14% depolarizing. Performance is logical-state independent.
+- **14c: QEC meets scrambling** — [[5,1,3]] MI recovery shows a sharp Page curve: MI=0.0 for any 1-2 qubits, jumps to 2.0 for any 3+ qubits. GHZ leaks MI=1.0 to every single qubit. Logical Z operator spreads to weight 5 — invisible at 1-body and 2-body level.
+
+**Surprises:**
+- **[[5,1,3]] code has the Page curve without dynamics** — sharp transition from zero to full MI at k=3 qubits, identical to Hayden-Preskill post-scrambling behavior
+- **QEC codes are static scramblers** — the encoding circuit achieves the same information democratization that random circuits need many layers for
+- **Code distance = body-order of information** — the minimum Pauli weight needed to detect logical info equals the code distance (connects Sprint 010's body-order hierarchy to QEC)
+- **3-qubit code fails under depolarizing because it's GHZ** — its 2-body correlations expose the logical state to every single-qubit measurement, so Z/Y errors corrupt it
+- **Break-even threshold (14%) is close to CHSH death (9.5%)** — both measure when quantum advantage vanishes under noise
+
+**Key insight:** QEC, scrambling (Sprint 012), and Hayden-Preskill (Sprint 013) are the same phenomenon viewed differently. QEC codes are designed, efficient scramblers. The encoding circuit spreads information across subsystems so that no small subset can access or corrupt it. The code distance is the "scrambling radius" — minimum qubits needed for recovery. The Page curve, decoupling theorem, and Singleton bound are all manifestations of how information distributes across quantum subsystems. This unifies quantum computing, quantum gravity, and information theory through a single framework.
+
+**Next:** Steane [[7,1,3]] code (CSS code structure), concatenated codes, threshold theorem exploration, real hardware QEC, topological codes (toric code)
+
+[Full report: sprints/sprint_014.md]

@@ -1,7 +1,7 @@
 # Sprint 014 — Quantum Error Correction: Entanglement as Information Protection
 
 **Date:** 2026-03-31
-**Status:** In progress
+**Status:** Complete (3/3 experiments)
 
 ## Motivation
 
