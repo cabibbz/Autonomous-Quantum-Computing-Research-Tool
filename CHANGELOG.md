@@ -209,3 +209,23 @@
 **Next:** Real hardware test, combined T1+T2 noise model, quantum error correction codes, entanglement dynamics during circuit construction
 
 [Full report: sprints/sprint_010.md]
+
+### Sprint 011 — 2026-03-31 — Entanglement Dynamics: How Entanglement Builds Gate by Gate
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **11a: Entanglement trajectory** — Half-cut entropy is a step function: zero until first cross-cut gate, then jumps to full value. 2D cluster unique: linear staircase (each vertical edge adds exactly 1.0 entropy).
+- **11b: MI dynamics** — GHZ/W build MI monotonically. Cluster states are NON-MONOTONIC — adding CZ gates destroys pairwise MI. 2D cluster collapses from MI=6.0 to ZERO — all correlations move to 3+ body.
+- **11c: Gate ordering** — GHZ is completely path-independent (permutation symmetry). Cluster is wildly path-dependent: outside-in ordering reaches 3x the final MI before a single gate destroys 67% of it.
+
+**Surprises:**
+- **Entangling gates can destroy correlations** — CZ gates on cluster states reduce total pairwise MI by converting it into irreducible multipartite structure
+- **2D cluster construction annihilates ALL pairwise MI** — the final state has zero MI for all 15 qubit pairs (n=6). Everything is 3+ body.
+- **GHZ MI trajectory is order-invariant** — all 4 orderings produce identical sequences (0,2,3,6,10,15). Reflects full permutation symmetry.
+- **Outside-in cluster construction shows a "phase transition"** — MI drops from 6.0 to 2.0 in a single gate (67% destruction)
+
+**Key insight:** Entangling gates don't just create correlations — they can *restructure* them, converting pairwise MI into irreducible multipartite correlations. GHZ is path-independent (democratic structure). Cluster is path-dependent (geometric structure). The construction-time MI trajectory is a fingerprint of the entanglement topology. The outside-in "phase transition" is the time-reverse of measurement-based computation: one gate locks up pairwise correlations into multipartite form; one measurement releases them.
+
+**Next:** Entanglement speed limits, circuit complexity from entanglement, real hardware comparison, scrambling/OTOCs, random circuit dynamics
+
+[Full report: sprints/sprint_011.md]
