@@ -58,7 +58,30 @@ So Phi is determined entirely by the **weakest bipartition** — the cut that lo
 
 **Goal:** How does Phi degrade under noise? Compare to half-cut negativity degradation (Sprint 006b). Does integration die faster or slower than entanglement?
 
-**Results:** *(pending)*
+**Results:**
+
+**Phi and negativity under depolarizing noise (n=6):**
+
+| State | Φ(p=0) | Neg(p=0) | Φ(p=0.1) | Neg(p=0.1) | Death(Φ) | Death(Neg) |
+|-------|--------|----------|----------|------------|----------|------------|
+| GHZ | 2.0 | 0.5 | 1.76 | 0.45 | p=1.0 | p=1.0 |
+| W | 1.3 | 0.5 | 1.17 | 0.45 | p=1.0 | p=1.0 |
+| Cluster 1D | 2.0 | 0.5 | 1.76 | 0.45 | p=1.0 | p=1.0 |
+| Cluster 2D | 2.0 | **3.5** | 1.76 | **3.1** | p=1.0 | p=0.9 |
+
+**Key findings:**
+
+1. **GHZ and Cluster_1D have identical Phi curves.** At every noise level, their Phi values match exactly. This is because both have the same MIP (any single-qubit cut) and S(single qubit) = 1.0 for both. Depolarizing noise affects them identically at this scale.
+
+2. **W always has the lowest Phi** — consistently ~65% of GHZ/Cluster at every noise level.
+
+3. **No interesting phase transitions.** Under uniform depolarizing noise, Phi decays smoothly for all states and only reaches zero at p=1.0 (fully mixed). This confirms that depolarizing noise is "too uniform" to reveal structural differences in integration.
+
+4. **2D Cluster's advantage shows in negativity, not Phi.** Half-cut negativity starts at 3.5 (7x GHZ) and remains much higher throughout. But Phi is identical to GHZ/1D-Cluster because the MIP is still a single-qubit cut.
+
+5. **Depolarizing noise preserves ranking.** Phi ordering (GHZ = Cluster ≥ W) is invariant under noise. The noise doesn't create any crossovers.
+
+**Insight:** Depolarizing noise is too "democratic" — it affects all qubits equally, so it can't distinguish states whose weakest link is the same (single-qubit cut). Local or structured noise (amplitude damping, dephasing on specific qubits) would be more discriminating. This experiment confirms Phi's limitation: it only sees the weakest link, not the overall structure.
 
 ---
 
