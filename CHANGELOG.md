@@ -86,3 +86,26 @@
 **Next:** Integrated information (Phi), quantum discord, real hardware test
 
 [Full report: sprints/sprint_004.md]
+
+### Sprint 005 — 2026-03-31 — Quantum Discord: Classical vs Quantum Correlations
+**Status:** Complete (2/2 experiments)
+
+**Completed:**
+- **5a: Pairwise quantum discord** — GHZ has ZERO discord (100% classical pairwise). W has 74% quantum fraction — most quantum state. Cluster has zero discord for all pairs.
+- **5b: Discord at 1-vs-2 scale** — Cluster state has zero discord even measuring one qubit against a pair. W discord increases to 0.37. GHZ stays zero.
+
+**Surprises:**
+- GHZ is "maximally entangled" but has ZERO quantum correlations in any pair — its 2-qubit RDM is a classical mixture
+- Cluster states have zero discord at ALL pairwise scales despite having I3=-1.0 (irreducibly multipartite correlations)
+- W state is the ONLY one with nonzero discord — it's the most "quantum" at the pairwise level despite being less entangled than GHZ
+
+**Key insight:** Discord and I3 are orthogonal measures. I3 measures correlation *structure* (decomposable vs irreducible). Discord measures correlation *nature* (classical vs quantum). Cluster states are "structural quantum" — quantumness is in the pattern of correlations, not in any individual correlation. This explains why MBQC works with local classical measurements.
+
+**Three archetypes confirmed:**
+- GHZ = classical broadcast in superposition (MI=1, discord=0, I3=+1)
+- W = quantum sharing (MI=0.38, discord=0.28, 74% quantum)
+- Cluster = structural quantum (MI sparse, discord=0, I3=-1)
+
+**Next:** I3 for W state (complete archetype table), discord under noise, concurrence/negativity, 2D cluster states, Integrated Information (Phi)
+
+[Full report: sprints/sprint_005.md]
