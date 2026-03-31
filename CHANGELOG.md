@@ -189,3 +189,23 @@
 **Next:** GME witnesses, real hardware test (compare noise fingerprint to theory), quantum error correction codes, combined T1+T2 noise model
 
 [Full report: sprints/sprint_009.md]
+
+### Sprint 010 — 2026-03-31 — GME Witnesses & Efficient Entanglement Detection
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **10a: Pauli profiles** — Each archetype has a unique Pauli fingerprint. GHZ: all-pairs ZZ=1. W: uniform Z,XX,YY,ZZ. Cluster 1D: only neighbor XZ. Cluster 2D: ALL 1-body and 2-body expectations ZERO.
+- **10b: GME witnesses** — Fidelity-based witnesses detect GME in all states. W has weakest margin (0.167) and earliest noise death (p=0.20). GHZ/Clusters identical (margin 0.500, death p=0.55). Cross-detection perfectly diagonal.
+- **10c: Minimal classifier** — 4-measurement decision tree achieves 100% classification accuracy. Robust to 40% depolarizing noise. 182x compression vs full tomography.
+
+**Surprises:**
+- **2D cluster is invisible at the 2-body level** — zero expectations for ALL 153 single-qubit and two-qubit Pauli operators. All correlations are genuinely 3+ body.
+- Each archetype lives at a different **body-order**: W=1-body (Z), GHZ=2-body (ZZ), Cluster_1D=2-body (XZ), Cluster_2D=3-body (XZZ)
+- **W is hardest to witness** despite being most noise-robust — high biseparable overlap (α=0.833) means narrow detection window
+- The correct measurements are exactly the **stabilizer generators** — witnessing ≡ stabilizer verification
+
+**Key insight:** The body-order hierarchy is a natural classifier. Each entanglement class is characterized by the *minimum* Pauli weight needed to detect it. 2D cluster's 3-body invisibility is not a deficiency but the source of its computational power — no local/pairwise measurement reveals information about the encoded computation.
+
+**Next:** Real hardware test, combined T1+T2 noise model, quantum error correction codes, entanglement dynamics during circuit construction
+
+[Full report: sprints/sprint_010.md]
