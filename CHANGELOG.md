@@ -50,3 +50,21 @@
 **Next:** Deeper investigation of cluster state qubit-loss phenomenon. Entanglement robustness under noise by state type. Try real IBM hardware for CHSH.
 
 [Full report: sprints/sprint_002.md]
+
+### Sprint 003 — 2026-03-31 — Cluster State Entanglement Under Qubit Loss
+**Status:** Complete (2/2 experiments)
+
+**Completed:**
+- **3a: Progressive loss** — GHZ stays rigid (1.0 always), W decays monotonically, Cluster jumps to 2.0 and plateaus before dropping
+- **3b: Position-dependent loss** — Sharp boundary at the half-cut: losing qubits 0-2 gives entropy 2.0, qubits 3-7 gives 1.0. Two-qubit loss can reach **entropy 3.0** (triple the original!)
+
+**Surprises:**
+- Entropy increase from qubit loss depends on the qubit's position relative to the measurement bipartition, not on the qubit's role in the state
+- Two-qubit loss can unlock **3 bits** of entanglement that were "hidden" in the original state
+- GHZ is astonishingly rigid: lose 6 of 8 qubits, still exactly 1 bit of entanglement
+
+**Key insight:** Cluster states contain "trapped" entanglement that is released by qubit loss. This connects to measurement-based quantum computing — computation by entanglement destruction.
+
+**Next:** 2D cluster states, projective measurement vs trace, mutual information, IIT/Phi
+
+[Full report: sprints/sprint_003.md]
