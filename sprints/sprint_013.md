@@ -69,8 +69,29 @@ Sprint 012 established that scrambling delocalizes information — GHZ can be ma
 4. **Information is never lost:** |D|=4 always gives MI=2.0 regardless of scrambling depth.
 5. **Cumulative:** Each additional captured qubit provides diminishing returns (1.39 → 1.86 → 1.97 → 2.00).
 
-### 13c: Geometry Comparison — 1D vs All-to-All
-[Results pending]
+### 13c: Geometry Comparison — 1D vs All-to-All Recovery
+
+**Question:** Does scrambling geometry affect how fast information delocalizes?
+
+**Equalization speed (spread < 0.1):**
+- 1D brick-wall: layer 9
+- All-to-all: layer 7
+
+**Light cone effect in 1D:**
+| Layer | 1D q=0 (Alice) | 1D q=3 (far) | A2A q=0 | A2A q=3 |
+|-------|---------------|--------------|---------|---------|
+| 0     | 2.000         | 0.000        | 2.000   | 0.000   |
+| 1     | 1.618         | 0.000        | 1.519   | 0.227   |
+| 2     | 1.489         | 0.000        | 1.511   | 0.763   |
+| 3     | 1.412         | 0.900        | 1.209   | 1.399   |
+| 6     | 1.379         | 1.327        | 1.452   | 1.388   |
+| 10    | 1.407         | 1.411        | 1.403   | 1.412   |
+
+**Key findings:**
+1. **1D shows clear light cone:** qubit 3 (farthest from Alice) has MI=0.000 until layer 3. Info propagates at finite speed.
+2. **All-to-all has no light cone:** qubit 3 gets MI=0.227 at layer 1 already. No distance barrier.
+3. **Both converge to same asymptotic recovery:** ~1.4 per qubit, ~1.87 for 2-qubit radiation. Geometry affects speed but not capacity.
+4. **Alice's entry position doesn't matter after scrambling:** edge vs center gives spread 0.13 vs 0.10 at depth 10. The scrambler erases positional information.
 
 ## Analysis
 [Pending]
