@@ -229,3 +229,24 @@
 **Next:** Entanglement speed limits, circuit complexity from entanglement, real hardware comparison, scrambling/OTOCs, random circuit dynamics
 
 [Full report: sprints/sprint_011.md]
+
+### Sprint 012 — 2026-03-31 — Quantum Scrambling: How Fast Does Information Spread?
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **12a: Random circuit scrambling** — Tracked entropy, MI, I3 over 15 layers of random gates. All-to-all scrambles ~2x faster initially but both geometries converge by layer 10. Half-cut entropy plateaus at ~80% of Page value.
+- **12b: OTOCs** — 1D shows clear light cone: scrambling time scales linearly with distance (t_scr = 1,3,3,5,5). All-to-all achieves fast scrambling (t_scr ≈ 3, distance-independent).
+- **12c: Structured vs random** — GHZ/W/Cluster all have OTOC = 1.0 despite creating entanglement. Structured entanglement ≠ scrambling. Post-preparation convergence identical regardless of starting state.
+
+**Surprises:**
+- **GHZ has OTOC = 1.0 despite MI = 15.0** — maximal correlations, zero scrambling. Entanglement and scrambling are fundamentally different concepts.
+- **1D light cone** exactly mirrors brick-wall geometry: 2 layers per brick width
+- **All-to-all saturates the MSS fast-scrambling bound** for n=6
+- **Structured states don't help scrambling** — starting from GHZ/W/Cluster gives no speed advantage over |0⟩
+- **80% Page entropy barrier** — 15 layers can't reach random-state limit. Full scrambling may require exponential depth.
+
+**Key insight:** Entanglement creates correlations; scrambling *delocalizes* them. GHZ is the perfect demonstration: maximally entangled, zero scrambled. The scrambling trajectory has three phases: (1) entanglement creation (MI↑), (2) correlation restructuring (MI↓, S↑), (3) approach to universal scrambled state. All starting points converge — this is the quantum circuit analog of thermalization.
+
+**Next:** Hayden-Preskill protocol, scrambling vs circuit complexity, real hardware OTOCs, error correction vs scrambling
+
+[Full report: sprints/sprint_012.md]
