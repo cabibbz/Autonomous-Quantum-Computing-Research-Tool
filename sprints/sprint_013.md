@@ -40,8 +40,34 @@ Sprint 012 established that scrambling delocalizes information — GHZ can be ma
 - **MI(R:D1 only) → 0** — late radiation alone is useless. Bob NEEDS early radiation.
 - At the decoupling threshold |D|+|B'| = |BH| (1+3=4), recovery is partial (~1.4/2.0 = 70%). With |D|=2 (above threshold), recovery reaches ~94%.
 
-### 13b: Minimum Radiation for Recovery
-[Results pending]
+### 13b: Per-Qubit Recovery — The Hayden-Preskill Miracle
+
+**Question:** Before scrambling, does it matter WHICH qubit Bob captures? After scrambling?
+
+**Results — Per-qubit MI(R : B'∪{q}):**
+| Depth | q=0 (Alice) | q=1   | q=2   | q=3   | Spread |
+|-------|-------------|-------|-------|-------|--------|
+| 0     | 2.000       | 0.000 | 0.000 | 0.000 | 2.000  |
+| 1     | 1.626       | 0.285 | 0.956 | 0.261 | 1.365  |
+| 3     | 1.395       | 1.305 | 1.103 | 1.307 | 0.292  |
+| 6     | 1.433       | 1.357 | 1.393 | 1.420 | 0.076  |
+| 10    | 1.388       | 1.405 | 1.401 | 1.405 | 0.018  |
+
+**Cumulative recovery (depth=10):**
+| Late radiation |D| | MI(R:B'∪D) |
+|------------------|------------|
+| 0                | 0.000      |
+| 1                | 1.388      |
+| 2                | 1.855      |
+| 3                | 1.971      |
+| 4                | 2.000      |
+
+**The miracle:**
+1. **Before scrambling:** Only Alice's specific qubit gives MI=2.0. The other 3 give exactly 0. You must know WHERE her info is.
+2. **After scrambling:** ALL qubits give MI≈1.4. ANY single qubit works equally well. The info is delocalized.
+3. **Spread drops 2.000 → 0.018** — a 100x reduction. Scrambling erases position dependence.
+4. **Information is never lost:** |D|=4 always gives MI=2.0 regardless of scrambling depth.
+5. **Cumulative:** Each additional captured qubit provides diminishing returns (1.39 → 1.86 → 1.97 → 2.00).
 
 ### 13c: Geometry Comparison — 1D vs All-to-All
 [Results pending]
