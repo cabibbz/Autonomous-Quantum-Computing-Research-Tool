@@ -149,3 +149,11 @@
 **Next:** Integrated Information Theory (Phi), local noise models, squarer 2D geometries (3x3)
 
 [Full report: sprints/sprint_007.md]
+
+### Sprint 008 — 2026-03-31 — Integrated Information Theory: How "Whole" Are Quantum States?
+**Status:** In progress
+
+**Plan:**
+- **8a:** Phi (quantum integrated information) + MI spectrum for GHZ, W, Cluster-1D, Cluster-2D
+- **8b:** Phi under depolarizing noise — integration vs entanglement degradation
+- **8c:** Phi under qubit loss — mixed-state integration
