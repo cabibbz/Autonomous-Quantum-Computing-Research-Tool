@@ -169,3 +169,23 @@
 **Next:** Local/structured noise models, GME witnesses, real hardware test, quantum error correction codes
 
 [Full report: sprints/sprint_008.md]
+
+### Sprint 009 — 2026-03-31 — Structured Noise: How Different Error Channels Shape Entanglement
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **9a: Amplitude damping (T1)** — W state most robust (Phi survives to γ≈1.0, negativity to γ≈0.9). GHZ most fragile (Phi death γ≈0.9, negativity death γ≈0.7).
+- **9b: Phase damping (T2)** — GHZ Phi **never dies** (plateaus at 1.0 — classical correlations survive). Cluster states devastated (Phi death at λ≈1.0, negativity at λ≈0.6). W Phi also never reaches zero.
+- **9c: Noise fingerprint** — Each state has a unique 6D noise response signature. W is most "noise-agnostic" (lowest asymmetry 0.135). Depolarizing is uniformly gentlest. Structured noise discriminates states far better than symmetric noise.
+
+**Surprises:**
+- GHZ has a **split personality** under dephasing: best Phi retention (50.5%) but worst negativity retention (11.8%). Dephased GHZ is a perfectly correlated classical mixture — all correlation, zero entanglement.
+- **Cluster states are weakest against dephasing** — the exact dominant noise in superconducting qubits. This is the specific obstacle for MBQC on real hardware.
+- W state is universally robust — no noise channel specifically targets its structure (single-excitation superposition distributes damage evenly)
+- Depolarizing noise is the gentlest for ALL states — structured noise concentrates damage on specific state features
+
+**Key insight:** Phi measures correlation structure, not quantumness — GHZ retains full Phi under complete dephasing because classical correlations survive. The noise fingerprint (response across multiple channels) is a potential diagnostic for entanglement class identification. Cluster state dephasing-fragility explains why surface codes use syndrome measurements rather than preserving cluster states directly.
+
+**Next:** GME witnesses, real hardware test (compare noise fingerprint to theory), quantum error correction codes, combined T1+T2 noise model
+
+[Full report: sprints/sprint_009.md]
