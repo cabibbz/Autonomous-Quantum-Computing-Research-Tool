@@ -1,0 +1,479 @@
+{
+  "n_qubits": 6,
+  "n_measurements_needed": 4,
+  "full_tomography_settings": 728,
+  "compression_ratio": 182,
+  "pure_state_results": {
+    "GHZ": {
+      "features": {
+        "Z0": 0.0,
+        "ZZ01": 1.0,
+        "XZ01": 0.0,
+        "XZZ_2d": 0.0
+      },
+      "prediction": "GHZ",
+      "correct": true
+    },
+    "W": {
+      "features": {
+        "Z0": 0.666667,
+        "ZZ01": 0.333333,
+        "XZ01": 0.0,
+        "XZZ_2d": 0.0
+      },
+      "prediction": "W",
+      "correct": true
+    },
+    "Cluster_1D": {
+      "features": {
+        "Z0": 0.0,
+        "ZZ01": 0.0,
+        "XZ01": 1.0,
+        "XZZ_2d": 0.0
+      },
+      "prediction": "Cluster_1D",
+      "correct": true
+    },
+    "Cluster_2D": {
+      "features": {
+        "Z0": 0.0,
+        "ZZ01": 0.0,
+        "XZ01": 0.0,
+        "XZZ_2d": 1.0
+      },
+      "prediction": "Cluster_2D",
+      "correct": true
+    },
+    "Product": {
+      "features": {
+        "Z0": 0.0,
+        "ZZ01": 0.0,
+        "XZ01": 0.0,
+        "XZZ_2d": 0.0
+      },
+      "prediction": "Product",
+      "correct": true
+    }
+  },
+  "noise_robustness": {
+    "0": {
+      "GHZ": {
+        "prediction": "GHZ",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 1.0,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      },
+      "W": {
+        "prediction": "W",
+        "correct": true,
+        "features": {
+          "Z0": 0.666667,
+          "ZZ01": 0.333333,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      },
+      "Cluster_1D": {
+        "prediction": "Cluster_1D",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 1.0,
+          "XZZ_2d": 0.0
+        }
+      },
+      "Cluster_2D": {
+        "prediction": "Cluster_2D",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.0,
+          "XZZ_2d": 1.0
+        }
+      },
+      "Product": {
+        "prediction": "Product",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      }
+    },
+    "0.05": {
+      "GHZ": {
+        "prediction": "GHZ",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.95,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      },
+      "W": {
+        "prediction": "W",
+        "correct": true,
+        "features": {
+          "Z0": 0.633333,
+          "ZZ01": 0.316667,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      },
+      "Cluster_1D": {
+        "prediction": "Cluster_1D",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.95,
+          "XZZ_2d": 0.0
+        }
+      },
+      "Cluster_2D": {
+        "prediction": "Cluster_2D",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.95
+        }
+      },
+      "Product": {
+        "prediction": "Product",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      }
+    },
+    "0.1": {
+      "GHZ": {
+        "prediction": "GHZ",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.9,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      },
+      "W": {
+        "prediction": "W",
+        "correct": true,
+        "features": {
+          "Z0": 0.6,
+          "ZZ01": 0.3,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      },
+      "Cluster_1D": {
+        "prediction": "Cluster_1D",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.9,
+          "XZZ_2d": 0.0
+        }
+      },
+      "Cluster_2D": {
+        "prediction": "Cluster_2D",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.9
+        }
+      },
+      "Product": {
+        "prediction": "Product",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      }
+    },
+    "0.15": {
+      "GHZ": {
+        "prediction": "GHZ",
+        "correct": true,
+        "features": {
+          "Z0": -0.0,
+          "ZZ01": 0.85,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      },
+      "W": {
+        "prediction": "W",
+        "correct": true,
+        "features": {
+          "Z0": 0.566667,
+          "ZZ01": 0.283333,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      },
+      "Cluster_1D": {
+        "prediction": "Cluster_1D",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.85,
+          "XZZ_2d": 0.0
+        }
+      },
+      "Cluster_2D": {
+        "prediction": "Cluster_2D",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.85
+        }
+      },
+      "Product": {
+        "prediction": "Product",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      }
+    },
+    "0.2": {
+      "GHZ": {
+        "prediction": "GHZ",
+        "correct": true,
+        "features": {
+          "Z0": -0.0,
+          "ZZ01": 0.8,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      },
+      "W": {
+        "prediction": "W",
+        "correct": true,
+        "features": {
+          "Z0": 0.533333,
+          "ZZ01": 0.266667,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      },
+      "Cluster_1D": {
+        "prediction": "Cluster_1D",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.8,
+          "XZZ_2d": 0.0
+        }
+      },
+      "Cluster_2D": {
+        "prediction": "Cluster_2D",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.8
+        }
+      },
+      "Product": {
+        "prediction": "Product",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      }
+    },
+    "0.3": {
+      "GHZ": {
+        "prediction": "GHZ",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.7,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      },
+      "W": {
+        "prediction": "W",
+        "correct": true,
+        "features": {
+          "Z0": 0.466667,
+          "ZZ01": 0.233333,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      },
+      "Cluster_1D": {
+        "prediction": "Cluster_1D",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.7,
+          "XZZ_2d": 0.0
+        }
+      },
+      "Cluster_2D": {
+        "prediction": "Cluster_2D",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.7
+        }
+      },
+      "Product": {
+        "prediction": "Product",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      }
+    },
+    "0.4": {
+      "GHZ": {
+        "prediction": "GHZ",
+        "correct": true,
+        "features": {
+          "Z0": -0.0,
+          "ZZ01": 0.6,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      },
+      "W": {
+        "prediction": "W",
+        "correct": true,
+        "features": {
+          "Z0": 0.4,
+          "ZZ01": 0.2,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      },
+      "Cluster_1D": {
+        "prediction": "Cluster_1D",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.6,
+          "XZZ_2d": 0.0
+        }
+      },
+      "Cluster_2D": {
+        "prediction": "Cluster_2D",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.6
+        }
+      },
+      "Product": {
+        "prediction": "Product",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      }
+    },
+    "0.5": {
+      "GHZ": {
+        "prediction": "Unknown",
+        "correct": false,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.5,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      },
+      "W": {
+        "prediction": "W",
+        "correct": true,
+        "features": {
+          "Z0": 0.333333,
+          "ZZ01": 0.166667,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      },
+      "Cluster_1D": {
+        "prediction": "Unknown",
+        "correct": false,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.5,
+          "XZZ_2d": 0.0
+        }
+      },
+      "Cluster_2D": {
+        "prediction": "Unknown",
+        "correct": false,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.5
+        }
+      },
+      "Product": {
+        "prediction": "Product",
+        "correct": true,
+        "features": {
+          "Z0": 0.0,
+          "ZZ01": 0.0,
+          "XZ01": 0.0,
+          "XZZ_2d": 0.0
+        }
+      }
+    }
+  },
+  "stabilizer_sums": {
+    "Cluster_1D_on_self": 6.0
+  }
+}
