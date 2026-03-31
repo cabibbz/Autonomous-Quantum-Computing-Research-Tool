@@ -250,3 +250,23 @@
 **Next:** Hayden-Preskill protocol, scrambling vs circuit complexity, real hardware OTOCs, error correction vs scrambling
 
 [Full report: sprints/sprint_012.md]
+
+### Sprint 013 — 2026-03-31 — Hayden-Preskill Protocol: Information Recovery from Scrambling
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **13a: MI recovery vs scrambling depth** — 8-qubit Hayden-Preskill setup. Before scrambling, MI(R:B'∪D1)=2.0 trivially (D1 IS Alice's qubit). After scrambling, drops to ~1.4 (1 qubit) or ~1.87 (2 qubits). Early radiation alone: MI=0 always. Late radiation alone: MI→0.
+- **13b: Per-qubit recovery** — The Hayden-Preskill miracle quantified. Spread (position-dependence) drops from 2.000 to 0.018 over 10 layers. Before scrambling, only Alice's specific qubit works. After: ALL qubits equally useful.
+- **13c: Geometry comparison** — 1D brick-wall equalizes at layer 9; all-to-all at layer 7. 1D shows clear light cone (far qubit MI=0 until layer 3). Both converge to identical asymptotic recovery. Entry position irrelevant after scrambling.
+
+**Surprises:**
+- **Scrambling makes recovery EASIER, not harder** — without scrambling you need Alice's exact qubit; with scrambling, any qubit works
+- **1D light cone visible in recovery** — qubit 3 has MI=0.000 for layers 0-2, then jumps to 0.9 at layer 3. Information front speed = 1 qubit/layer.
+- **The "Page curve" is visible** — early radiation alone: MI=0. Late radiation alone: MI→0. Combined: MI→2.0. This is the information-theoretic signature of the black hole information paradox resolution.
+- **70% recovery at threshold, 94% one qubit above** — the decoupling theorem predicts partial recovery at |D|+|B'|=|BH|, and we see exactly this.
+
+**Key insight:** The Hayden-Preskill protocol demonstrates that scrambling converts a position-dependent recovery problem into a position-independent one. This is the operational meaning of information scrambling: not destruction, but democratization. The black hole doesn't destroy information — it makes every output qubit equally informative. Combined with early radiation (entanglement with the initial state), recovery becomes possible from any small subset of late output. This connects scrambling (Sprint 012) to the Page curve and resolves the apparent paradox of information loss.
+
+**Next:** Scrambling vs circuit complexity, decoupling with structured (non-random) unitaries, real hardware noise effects on recovery, quantum error correction connection
+
+[Full report: sprints/sprint_013.md]

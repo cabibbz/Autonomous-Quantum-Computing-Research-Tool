@@ -1,7 +1,7 @@
 # Sprint 013 — Hayden-Preskill Protocol: Information Recovery from Quantum Scrambling
 
 **Date:** 2026-03-31
-**Status:** In Progress
+**Status:** Complete
 
 ## Motivation
 
@@ -94,4 +94,30 @@ Sprint 012 established that scrambling delocalizes information — GHZ can be ma
 4. **Alice's entry position doesn't matter after scrambling:** edge vs center gives spread 0.13 vs 0.10 at depth 10. The scrambler erases positional information.
 
 ## Analysis
-[Pending]
+
+### The Hayden-Preskill Protocol Works
+
+We've demonstrated the Hayden-Preskill thought experiment on an 8-qubit simulator. The core result: scrambling transforms information recovery from a needle-in-a-haystack problem to a uniform one.
+
+### Three Phases of Information Recovery
+
+1. **Pre-scrambling (layer 0):** Information is localized. Only Alice's specific qubit enables recovery. This is the "classical" regime — you need to know where the info is.
+
+2. **Partial scrambling (layers 1-6):** Information delocalizes progressively. The spread (position-dependence) drops from 2.0 to 0.08. The 1D geometry shows a clear light cone — far qubits are unreachable until the scrambling front arrives.
+
+3. **Full scrambling (layers 7+):** Information is uniformly delocalized. ANY qubit of late radiation is equally useful. The geometry no longer matters — 1D and all-to-all converge to the same recovery capacity.
+
+### Connection to Black Hole Information
+
+This is a concrete simulation of the black hole information paradox resolution:
+- **Early radiation (B') alone: MI = 0** — Hawking radiation before the Page time carries no info about what fell in
+- **Late radiation (D) alone: MI → 0** — a few qubits of late radiation are useless alone
+- **Early + late radiation: MI → 2.0** — the COMBINATION enables recovery. This is the "Page curve" turning point.
+- **The scrambling makes recovery EASIER, not harder** — without scrambling, you need Alice's exact qubit. With scrambling, any qubit works.
+
+### Key Quantitative Results
+
+- **Decoupling threshold:** |D| + |B'| ≥ |BH| gives ~70% recovery (MI ≈ 1.4/2.0). One qubit above threshold gives ~94% (MI ≈ 1.87).
+- **Equalization speed:** all-to-all 30% faster than 1D (7 vs 9 layers), consistent with Sprint 012's fast-scrambling results.
+- **Light cone in 1D:** information front reaches distance d at layer ~d, exactly matching the brick-wall geometry.
+- **Asymptotic independence:** final recovery is identical regardless of geometry, entry position, or scrambling depth (once sufficient).
