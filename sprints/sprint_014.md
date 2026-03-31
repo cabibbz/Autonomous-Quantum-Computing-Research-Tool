@@ -91,3 +91,46 @@ The body-order hierarchy from Sprint 010 now has a QEC interpretation:
 2. Code performance is state-independent for the [[5,1,3]] code — a direct consequence of its uniform entanglement structure (all-symmetric MI=0, I3=-1.0)
 3. The 3-qubit code's failure under depolarizing noise is predicted by its GHZ-like entanglement: 2-body (ZZ) correlations can only detect Z-type errors, leaving X/Y errors invisible
 4. Error correction works when noise rate is below the code's "entanglement capacity" — the rate at which multi-qubit errors overwhelm the syndrome space
+
+### 14c: QEC Meets Scrambling — Information Spreading in Code States
+
+**MI recovery pattern (reference qubit entangled with logical, measured against k physical qubits):**
+
+| k qubits | [[5,1,3]] | 3-qubit (GHZ) | GHZ (n=5) |
+|---|---|---|---|
+| 1 | **0.0** | 1.0 | 1.0 |
+| 2 | **0.0** | 1.0 | 1.0 |
+| 3 | **2.0** | 2.0 | 1.0 |
+| 4 | 2.0 | — | 1.0 |
+| 5 | 2.0 | — | 2.0 |
+
+**This is the Page curve from Sprint 013!** The [[5,1,3]] code has a sharp phase transition at k=3 (just over half): below, zero information; above, full recovery. GHZ leaks MI=1.0 to every single qubit but only reaches full recovery (MI=2.0) when ALL qubits are available.
+
+**Operator spreading:**
+- [[5,1,3]]: ALL single-qubit ⟨Z⟩ = 0.0. ALL two-qubit ⟨Z_iZ_j⟩ = 0.0. Logical Z (= ZZZZZ) has been spread to weight 5 — invisible at 1-body and 2-body level.
+- 3-qubit code: ⟨Z⟩ = ±1.0 on every physical qubit — logical state immediately visible. Zero spreading.
+
+**Quantum Singleton bound verified:**
+- [[5,1,3]] code: need n-d+1 = 3 qubits for recovery → confirmed: MI(ref : any 3) = 2.0 exactly
+- Any 2 qubits: MI = 0.0 exactly — completely decoupled from logical information
+- This is the decoupling theorem in action
+
+**Connection to previous sprints:**
+
+1. **Sprint 013 (Hayden-Preskill):** Scrambling converts position-dependent recovery to position-independent. The [[5,1,3]] code does the same WITHOUT dynamics — it's a "frozen scrambler." Any 3 qubits are equally useful, just as any late-radiation qubit was equally useful post-scrambling.
+
+2. **Sprint 010 (Pauli profiles):** The 2D cluster was "invisible" at the 2-body level. The [[5,1,3]] code is invisible at the 1-body AND 2-body level. The minimum body-order to detect the logical information equals the code distance. **Code distance = body-order of information.**
+
+3. **Sprint 012 (Scrambling):** GHZ had OTOC=1.0 (zero scrambling) despite maximal MI. Here, GHZ/3-qubit code leaks MI=1.0 to every single qubit — this is WHY it can't correct general errors. Information that isn't spread can be locally corrupted.
+
+**The grand unification:**
+
+| Concept | Static (QEC) | Dynamic (Scrambling) |
+|---|---|---|
+| Information spreading | Encoding circuit | Random circuit evolution |
+| Recovery threshold | Quantum Singleton bound (n-d+1) | Decoupling theorem (n/2 + O(1)) |
+| Position independence | Any k ≥ n-d+1 qubits work | Any late-radiation qubit works |
+| Page curve | MI=0 below threshold, MI=2 above | MI=0 for early radiation, MI=2 combined |
+| Information security | d-1 qubits reveal nothing | Pre-scrambling qubits reveal nothing |
+
+**Key insight:** QEC codes are static scramblers. The encoding circuit is a designed, efficient scrambler that achieves the same information-theoretic properties (decoupling, democratization, Page-curve behavior) that random circuits achieve through depth. The code distance is the "scrambling radius" — the minimum number of qubits that can access the logical information. This connects quantum computing (QEC), quantum gravity (Hayden-Preskill, Page curve), and information theory (channel capacity) through a single framework: **how information is distributed across subsystems.**
