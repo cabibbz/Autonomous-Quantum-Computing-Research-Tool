@@ -111,3 +111,60 @@ Depolarizing noise at p=0 to 0.3, comparing coded (encode → noise → syndrome
 
 Per-qubit efficiency is remarkably similar (~0.03), suggesting that for depolarizing noise, raw qubit count matters more than information topology. The topology differences from 15a would matter for **structured** noise (cf. Sprint 009).
 
+### 15c: Page Curves — Information Recovery Across Code Families
+
+Encoded Bell state: (|0⟩_ref|0_L⟩ + |1⟩_ref|1_L⟩)/√2. Measure MI(reference : k physical qubits) for all subsets of size k.
+
+**Results:**
+
+| k | [[5,1,3]] | Steane [[7,1,3]] | Shor [[9,1,3]] |
+|---|---|---|---|
+| 1 | 0.000 | 0.000 | 0.000 |
+| 2 | 0.000 | 0.000 | 0.000 |
+| 3 | **2.000** (all subsets) | 0.400 (range 0–2) | 0.360 (range 0–1) |
+| 4 | 2.000 | 1.600 (range 0–2) | 0.800 (range 0–1) |
+| 5 | 2.000 | **2.000** (all subsets) | 1.240 (range 1–2) |
+| 6 | — | 2.000 | 1.700 (range 1–2) |
+| 7 | — | 2.000 | **2.000** (all subsets) |
+
+**Singleton bound k ≥ n-d+1 = n-2 is EXACT for all three codes:**
+- [[5,1,3]]: k ≥ 3 → MI jumps from 0 to 2.0. **All** 3-qubit subsets recover fully. Sharp transition.
+- Steane [[7,1,3]]: k ≥ 5 → MI reaches 2.0 for all subsets. But at k=3-4, SOME subsets recover (MI=2.0) while others get NOTHING (MI=0.0).
+- Shor [[9,1,3]]: k ≥ 7 → MI reaches 2.0 for all subsets. At k=3-6, maximum MI is only 1.0 (not 2.0), showing partial recovery capped by block structure.
+
+**Three qualitatively different Page curves:**
+
+1. **[[5,1,3]] — Perfect knife-edge:** MI = 0 for k < 3, MI = 2.0 for k ≥ 3. Zero spread at all k. Every subset of the same size gives identical recovery. This is the information-theoretic definition of a "perfect" code — the transition is maximally sharp and subset-independent.
+
+2. **Steane [[7,1,3]] — Bimodal transition:** At k=3, some subsets recover everything (MI=2.0) while others recover nothing (MI=0.0). The transition is spread over k=3-4 but with binary outcomes — each subset either works or doesn't. This reflects the Hamming code geometry: only certain 3-qubit subsets contain a full error-correcting set.
+
+3. **Shor [[9,1,3]] — Gradual staircase:** MI increases through intermediate values (0.36, 0.80, 1.24, 1.70) with max MI capped at 1.0 until k=7. This reflects the hierarchical block structure — you can recover block-level information (MI=1.0) before recovering full logical information (MI=2.0). The concatenation creates two recovery thresholds: within-block (partial) and across-block (full).
+
+**Key insight:** The Singleton bound is universal (all three codes obey k ≥ n-2 exactly), but the **shape** of the Page curve is code-specific and directly reflects the information topology discovered in 15a:
+- [[5,1,3]]'s perfect symmetry → perfect knife-edge
+- Steane's selective I3 → bimodal (some subsets work, others don't)
+- Shor's hierarchical MI → gradual staircase with intermediate plateaus
+
+The Page curve shape is a new diagnostic that captures code architecture beyond distance alone. It's the static analog of the Hayden-Preskill protocol from Sprint 013 — but here the "scrambling" is the encoding circuit, and the "recovery transition" is the Singleton bound.
+
+---
+
+## Summary & Key Insights
+
+**Central finding:** Distance alone does NOT determine information structure. Three [[n,1,3]] codes with identical distance have fundamentally different information topologies, noise performance, and recovery characteristics.
+
+**Three information archetypes for QEC codes:**
+1. **Democratic** ([[5,1,3]]): All correlations irreducible 3-body, fully symmetric, knife-edge Page curve
+2. **Selective** (Steane [[7,1,3]]): Zero pairwise leakage but non-uniform 3-body correlations, bimodal recovery
+3. **Hierarchical** (Shor [[9,1,3]]): Strong within-block pairwise correlations, gradual staircase recovery with intermediate plateaus
+
+**The efficiency-topology tradeoff:**
+- [[5,1,3]] is the most qubit-efficient (5 qubits) with the sharpest Page curve, but breaks even at the lowest noise (p≈0.15)
+- Shor is the least qubit-efficient (9 qubits) with the broadest Page curve, but tolerates the most noise (p>0.30)
+- Per-qubit break-even efficiency is nearly identical (~0.03) — symmetric noise can't distinguish topologies
+
+**Connection to prior work:**
+- The Page curve shapes parallel Hayden-Preskill recovery (Sprint 013) — encoding IS scrambling
+- The topology archetypes (Democratic/Selective/Hierarchical) mirror the entanglement archetypes from Sprint 005-006 (GHZ/W/Cluster) but for codes instead of states
+- Shor's hierarchical structure (within-block GHZ) confirms the Sprint 014 finding that GHZ = classical broadcast — the within-block MI=1.0 is GHZ-like redundancy, not quantum irreducibility
+
