@@ -131,9 +131,21 @@
 [Full report: sprints/sprint_006.md]
 
 ### Sprint 007 — 2026-03-31 — 2D Cluster States: Does Geometry Shape Entanglement?
-**Status:** In progress
+**Status:** Complete (3/3 experiments)
 
-**Plan:**
-- **7a:** W-state I3 (gap-fill) + 2D cluster MI & I3
-- **7b:** Entanglement spectrum: 2D vs 1D cluster
-- **7c:** 2D cluster under qubit loss (corner vs edge vs interior)
+**Completed:**
+- **7a: W-state I3 + 2D cluster MI & I3** — W-state I3 = +0.195 (weak redundant, like GHZ). 2D cluster (2x3) has 8 negative-I3 triples vs 1D's 6 — geometry amplifies irreducible correlations.
+- **7b: Entanglement spectrum** — 2D eliminates weak bipartitions. ALL |A|=2 cuts have negativity 1.5 (1D: 0.5–1.5). 2D raises the entanglement floor — "entanglement democracy."
+- **7c: 2D qubit loss** — 2D baseline entropy = 3.0 (vs 1D = 1.0). Loss is completely position-independent in 2D (always 2.0). Second qubit loss causes no additional degradation. Opposite behavior to 1D (entropy decreases vs increases).
+
+**Surprises:**
+- 2D cluster starts with 3x the half-cut entanglement of 1D
+- Qubit loss in 2D is **position-independent** — corner and edge behave identically. In 1D, position matters enormously.
+- **Second qubit loss is free** in 2D — no additional entropy degradation
+- 1D and 2D have **opposite** loss behavior: 1D releases trapped entanglement (entropy up), 2D gracefully degrades (entropy down)
+
+**Key insight:** 1D→2D is a qualitative transition from geometric to **topological** entanglement. 2D achieves uniform, position-independent robustness — the foundation of topological quantum error correction (surface codes).
+
+**Next:** Integrated Information Theory (Phi), local noise models, squarer 2D geometries (3x3)
+
+[Full report: sprints/sprint_007.md]

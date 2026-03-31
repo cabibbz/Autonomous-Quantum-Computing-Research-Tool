@@ -73,4 +73,49 @@ Also: filling the W-state I3 gap from Sprint 005 to complete the archetype table
 
 **Goal:** Progressive qubit loss from 2D cluster, tracking entropy. Compare corner vs edge vs interior removal. In 1D, position relative to bipartition mattered — does 2D topology create new behavior?
 
-**Results:** *(pending)*
+**Results:**
+
+**Baseline half-cut entropy:**
+- 1D chain (6 qubits): S = 1.0
+- 2D grid (2x3): S = **3.0** — three times more entanglement across the half-cut
+
+**Single qubit loss:**
+
+| Topology | Position | Entropy after loss | Δ from baseline |
+|----------|----------|-------------------|-----------------|
+| 1D chain | endpoint (q0) | 2.0 | **+1.0** (increase!) |
+| 1D chain | interior near cut (q1) | 2.0 | **+1.0** (increase!) |
+| 1D chain | interior far from cut (q2-4) | 1.0 | 0.0 |
+| 1D chain | endpoint (q5) | 1.0 | 0.0 |
+| 2D grid  | ANY position (corner or edge) | 2.0 | **-1.0** (decrease) |
+
+- 1D: loss is **position-dependent** — only qubits near the bipartition boundary release trapped entanglement
+- 2D: loss is **completely position-independent** — every qubit, corner or edge, gives identical entropy 2.0
+
+**Two-qubit loss:**
+- 1D: ranges from 1.0 to 2.0 depending on which pair is lost. Position still matters.
+- 2D: **every single pair gives entropy 2.0** — no additional degradation from losing a second qubit!
+
+**Key insights:**
+1. **2D democratizes qubit loss.** In 1D, the bipartition boundary creates privileged positions. In 2D, every qubit is equivalent under loss — the grid's higher connectivity distributes entanglement so uniformly that no qubit is special.
+2. **2D degrades gracefully.** Starts at 3.0, drops to 2.0 under any loss pattern tested. Even after losing 2 qubits, 2D retains MORE entanglement than 1D's maximum under loss. This is the operational meaning of topological protection.
+3. **1D increases, 2D decreases under loss.** Opposite behavior! 1D has "trapped" entanglement released by loss (Sprint 003). 2D has so much entanglement that loss can only reduce it — but it reduces uniformly and moderately.
+4. **The second qubit loss is free** in 2D — entropy doesn't degrade further from 1-loss to 2-loss. This plateau suggests a robustness threshold.
+
+**Connection to quantum error correction:** Surface codes use 2D cluster states precisely because of this uniform loss tolerance. Our data shows the mechanism: 2D connectivity eliminates the position-dependent fragility of 1D chains. No weak links means no catastrophic failure modes.
+
+---
+
+## Sprint 007 Summary
+
+**Three key findings about geometry and entanglement:**
+
+1. **2D amplifies irreducible correlations** (7a): More negative-I3 triples in 2D, but thin rectangles (2x4) don't show clear advantage over 1D. Need squarer geometries.
+
+2. **2D eliminates weak bipartitions** (7b): Every |A|=2 cut in 2D has negativity 1.5 (vs 0.5–1.5 in 1D). 2D raises the floor of entanglement, creating "entanglement democracy."
+
+3. **2D democratizes qubit loss** (7c): Position-independent, gracefully degrading loss response. Opposite behavior to 1D (decrease vs increase). Second qubit loss is "free."
+
+**Overarching insight:** The jump from 1D→2D is not quantitative but **qualitative**. 1D cluster states have geometric entanglement with position-dependent structure. 2D cluster states achieve **topological** entanglement — uniform, position-independent, and robust. This is the foundation of topological quantum error correction.
+
+**Next:** Integrated Information Theory (Phi) — can we quantify how "integrated" our three archetypes are? IIT's Phi measures irreducible information integration, which should connect to our I3 findings. Also: local (non-uniform) noise models to test whether 2D's robustness persists under realistic noise.

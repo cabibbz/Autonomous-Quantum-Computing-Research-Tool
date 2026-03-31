@@ -1,0 +1,392 @@
+{
+  "n_qubits": 6,
+  "grid": "2x3",
+  "cluster_1d_single_loss": [
+    {
+      "qubit": 0,
+      "position": "endpoint",
+      "entropy": 2.0,
+      "delta": 1.0,
+      "grid_pos": null
+    },
+    {
+      "qubit": 1,
+      "position": "interior",
+      "entropy": 2.0,
+      "delta": 1.0,
+      "grid_pos": null
+    },
+    {
+      "qubit": 2,
+      "position": "interior",
+      "entropy": 1.0,
+      "delta": -0.0,
+      "grid_pos": null
+    },
+    {
+      "qubit": 3,
+      "position": "interior",
+      "entropy": 1.0,
+      "delta": -0.0,
+      "grid_pos": null
+    },
+    {
+      "qubit": 4,
+      "position": "interior",
+      "entropy": 1.0,
+      "delta": -0.0,
+      "grid_pos": null
+    },
+    {
+      "qubit": 5,
+      "position": "endpoint",
+      "entropy": 1.0,
+      "delta": -0.0,
+      "grid_pos": null
+    }
+  ],
+  "cluster_2d_single_loss": [
+    {
+      "qubit": 0,
+      "position": "corner",
+      "entropy": 2.0,
+      "delta": -1.0,
+      "grid_pos": [
+        0,
+        0
+      ]
+    },
+    {
+      "qubit": 1,
+      "position": "edge",
+      "entropy": 2.0,
+      "delta": -1.0,
+      "grid_pos": [
+        0,
+        1
+      ]
+    },
+    {
+      "qubit": 2,
+      "position": "corner",
+      "entropy": 2.0,
+      "delta": -1.0,
+      "grid_pos": [
+        0,
+        2
+      ]
+    },
+    {
+      "qubit": 3,
+      "position": "corner",
+      "entropy": 2.0,
+      "delta": -1.0,
+      "grid_pos": [
+        1,
+        0
+      ]
+    },
+    {
+      "qubit": 4,
+      "position": "edge",
+      "entropy": 2.0,
+      "delta": -1.0,
+      "grid_pos": [
+        1,
+        1
+      ]
+    },
+    {
+      "qubit": 5,
+      "position": "corner",
+      "entropy": 2.0,
+      "delta": -1.0,
+      "grid_pos": [
+        1,
+        2
+      ]
+    }
+  ],
+  "cluster_1d_two_loss": [
+    {
+      "qubits": [
+        0,
+        1
+      ],
+      "pair_type": "endpoint+interior",
+      "entropy": 2.0,
+      "delta": 1.0
+    },
+    {
+      "qubits": [
+        0,
+        2
+      ],
+      "pair_type": "endpoint+interior",
+      "entropy": 2.0,
+      "delta": 1.0
+    },
+    {
+      "qubits": [
+        0,
+        3
+      ],
+      "pair_type": "endpoint+interior",
+      "entropy": 2.0,
+      "delta": 1.0
+    },
+    {
+      "qubits": [
+        0,
+        4
+      ],
+      "pair_type": "endpoint+interior",
+      "entropy": 2.0,
+      "delta": 1.0
+    },
+    {
+      "qubits": [
+        0,
+        5
+      ],
+      "pair_type": "endpoint+endpoint",
+      "entropy": 2.0,
+      "delta": 1.0
+    },
+    {
+      "qubits": [
+        1,
+        2
+      ],
+      "pair_type": "interior+interior",
+      "entropy": 2.0,
+      "delta": 1.0
+    },
+    {
+      "qubits": [
+        1,
+        3
+      ],
+      "pair_type": "interior+interior",
+      "entropy": 2.0,
+      "delta": 1.0
+    },
+    {
+      "qubits": [
+        1,
+        4
+      ],
+      "pair_type": "interior+interior",
+      "entropy": 2.0,
+      "delta": 1.0
+    },
+    {
+      "qubits": [
+        1,
+        5
+      ],
+      "pair_type": "interior+endpoint",
+      "entropy": 2.0,
+      "delta": 1.0
+    },
+    {
+      "qubits": [
+        2,
+        3
+      ],
+      "pair_type": "interior+interior",
+      "entropy": 1.0,
+      "delta": -0.0
+    },
+    {
+      "qubits": [
+        2,
+        4
+      ],
+      "pair_type": "interior+interior",
+      "entropy": 1.0,
+      "delta": -0.0
+    },
+    {
+      "qubits": [
+        2,
+        5
+      ],
+      "pair_type": "interior+endpoint",
+      "entropy": 1.0,
+      "delta": -0.0
+    },
+    {
+      "qubits": [
+        3,
+        4
+      ],
+      "pair_type": "interior+interior",
+      "entropy": 1.0,
+      "delta": -0.0
+    },
+    {
+      "qubits": [
+        3,
+        5
+      ],
+      "pair_type": "interior+endpoint",
+      "entropy": 1.0,
+      "delta": -0.0
+    },
+    {
+      "qubits": [
+        4,
+        5
+      ],
+      "pair_type": "interior+endpoint",
+      "entropy": 1.0,
+      "delta": -0.0
+    }
+  ],
+  "cluster_2d_two_loss": [
+    {
+      "qubits": [
+        0,
+        1
+      ],
+      "pair_type": "corner+edge",
+      "entropy": 2.0,
+      "delta": -1.0
+    },
+    {
+      "qubits": [
+        0,
+        2
+      ],
+      "pair_type": "corner+corner",
+      "entropy": 2.0,
+      "delta": -1.0
+    },
+    {
+      "qubits": [
+        0,
+        3
+      ],
+      "pair_type": "corner+corner",
+      "entropy": 2.0,
+      "delta": -1.0
+    },
+    {
+      "qubits": [
+        0,
+        4
+      ],
+      "pair_type": "corner+edge",
+      "entropy": 2.0,
+      "delta": -1.0
+    },
+    {
+      "qubits": [
+        0,
+        5
+      ],
+      "pair_type": "corner+corner",
+      "entropy": 2.0,
+      "delta": -1.0
+    },
+    {
+      "qubits": [
+        1,
+        2
+      ],
+      "pair_type": "edge+corner",
+      "entropy": 2.0,
+      "delta": -1.0
+    },
+    {
+      "qubits": [
+        1,
+        3
+      ],
+      "pair_type": "edge+corner",
+      "entropy": 2.0,
+      "delta": -1.0
+    },
+    {
+      "qubits": [
+        1,
+        4
+      ],
+      "pair_type": "edge+edge",
+      "entropy": 2.0,
+      "delta": -1.0
+    },
+    {
+      "qubits": [
+        1,
+        5
+      ],
+      "pair_type": "edge+corner",
+      "entropy": 2.0,
+      "delta": -1.0
+    },
+    {
+      "qubits": [
+        2,
+        3
+      ],
+      "pair_type": "corner+corner",
+      "entropy": 2.0,
+      "delta": -1.0
+    },
+    {
+      "qubits": [
+        2,
+        4
+      ],
+      "pair_type": "corner+edge",
+      "entropy": 2.0,
+      "delta": -1.0
+    },
+    {
+      "qubits": [
+        2,
+        5
+      ],
+      "pair_type": "corner+corner",
+      "entropy": 2.0,
+      "delta": -1.0
+    },
+    {
+      "qubits": [
+        3,
+        4
+      ],
+      "pair_type": "corner+edge",
+      "entropy": 2.0,
+      "delta": -1.0
+    },
+    {
+      "qubits": [
+        3,
+        5
+      ],
+      "pair_type": "corner+corner",
+      "entropy": 2.0,
+      "delta": -1.0
+    },
+    {
+      "qubits": [
+        4,
+        5
+      ],
+      "pair_type": "edge+corner",
+      "entropy": 2.0,
+      "delta": -1.0
+    }
+  ],
+  "comparison": {
+    "baseline_1d": 1.0,
+    "baseline_2d": 3.0,
+    "max_entropy_1loss_1d": 2.0,
+    "max_entropy_1loss_2d": 2.0,
+    "max_entropy_2loss_1d": 2.0,
+    "max_entropy_2loss_2d": 2.0
+  }
+}
