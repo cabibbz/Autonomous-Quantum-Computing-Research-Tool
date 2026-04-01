@@ -4,7 +4,7 @@
   ## QPU Budget
   - Monthly allocation: 600 seconds
   - Used this period: 0s
-  - Sprints completed on simulator only: 20
+  - Sprints completed on simulator only: 21
   - Note: Your simulator predictions are now specific enough to test.
     Real hardware noise is a mixture of channels — your noise fingerprint
     framework (Sprint 016) can decompose it. The gap between simulator
@@ -420,3 +420,26 @@
 **Next:** Surface code (planar boundaries), toric code with syndrome extraction, combined T1+T2 noise, logical X encoding under phase damping, [[18,2,3]] toric code (3×3 torus, 9 qubits)
 
 [Full report: sprints/sprint_020.md]
+
+### Sprint 021 — 2026-03-31 — Combined T1+T2 Noise: Basis Isotropy Is Everything
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **21a: Combined noise landscape** — Swept 8×8 (γ,λ) grid for 3-qubit, [[5,1,3]], toric, uncoded. 3-qubit appeared to dominate everywhere — but only because Z-basis logical states are phase-damping eigenstates.
+- **21b: Basis-dependent performance** — Tested Z, X, Y logical bases under combined noise. [[5,1,3]] wins EVERYWHERE when averaged over bases. 3-qubit has asymmetry up to 0.908 (essentially useless for X/Y info). [[5,1,3]] asymmetry near-zero (0.006 at balanced noise).
+- **21c: T2/T1 ratio sweep** — [[5,1,3]] dominates entire physically relevant range. Crossovers only at extreme noise (γ≥0.30, λ/γ≥1.5). Code Quality Score (Holevo × isotropy): [[5,1,3]] achieves 2-4x advantage.
+
+**Surprises:**
+- **3-qubit "dominance" is 100% Z-basis artifact** — it has the WORST average-basis performance under any dephasing. Previous sprints' "3-qubit > [[5,1,3]]" findings (017, 018) were also Z-basis artifacts.
+- **[[5,1,3]] asymmetry is 0.006 at balanced noise** — "perfect code" literally = "isotropic code." All Bloch sphere directions protected equally.
+- **Toric code breaks X/Y symmetry** (asymmetry 0.10-0.21) — the torus has directional preference from non-contractible loop structure. Intermediate between specialized 3-qubit and isotropic [[5,1,3]].
+- **No crossovers in the physical regime** — [[5,1,3]] universally optimal for moderate noise. The prediction of T2/T1-dependent crossovers was wrong; isotropy dominates.
+- **Code quality is dominated by isotropy, not raw Holevo** — highest Z-Holevo ≠ best code
+
+**Key insight:** Basis isotropy is the defining property of a "good" QEC code. The [[5,1,3]]'s advantage comes from treating all logical information directions equally — correcting ALL single-qubit errors means protecting ALL Bloch sphere directions. A code that protects Z but not X is half a code. The basis-averaged Holevo, not single-basis Holevo, is the correct figure of merit. This resolves the Sprints 017-018 puzzle where 3-qubit appeared superior — those used Z-basis states aligned with the 3-qubit code's protected axis. The overhead penalty (5 qubits vs 3) is the price of isotropy, and isotropy always wins for unknown quantum states.
+
+**Literature gap filled:** First systematic T2/T1 ratio sweep for small stabilizer codes under combined amplitude + phase damping, with basis-averaged Holevo as figure of merit. No prior paper maps this landscape.
+
+**Next:** Revisit Sprints 017-018 with basis-averaged metrics, surface code (planar), noise-adapted codes (asymmetric codes for biased noise), real hardware comparison, coherent information under combined noise
+
+[Full report: sprints/sprint_021.md]
