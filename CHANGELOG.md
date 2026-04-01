@@ -551,3 +551,24 @@
 **Next:** Fault-tolerant syndrome extraction with flag qubits, repeated syndrome measurement with majority vote, Steane-style encoded ancilla extraction, or shift to larger codes where syndrome overhead is proportionally smaller.
 
 [Full report: sprints/sprint_026.md]
+
+### Sprint 027 — 2026-03-31 — Flag-FT Syndrome Extraction: Solving the Wrong Problem
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **27a: Flag circuit** — Built flag-FT syndrome extraction: 13 qubits (5 data + 4 ancilla + 4 flag), 24 2Q gates (8 extra flag CNOTs). Flag correctly detects ALL weight-2 propagation errors. Standard decoder 0/8 on weight-2 errors, flagged decoder 8/8. Zero false flags on single-qubit errors.
+- **27b: Flag-FT vs bare** — At hardware noise (p2q=0.008), flag-FT avg Holevo 0.329 vs bare 0.327 vs passive 0.511. Flag-FT improvement over bare: +0.002 (negligible). Only 0.098% of shots used the flagged correction.
+- **27c: Error rate sweep** — Flag-FT never beats passive at ANY p2q (0.0001 to 0.02). Correction itself hurts at ALL noise levels (bare corrected 0.02-0.04 worse than bare uncorrected). Flag advantage over bare: at most +0.003 at very low noise, zero or negative elsewhere.
+
+**Surprises:**
+- **Flag qubits solve the wrong problem** — weight-2 propagation (Sprint 026's root cause) is correctly detected, but it's only one of many failure modes. Fixing it doesn't fix active correction.
+- **Only 0.1% of shots use flagged correction** — the weight-2 propagation events that flags detect are rare relative to other error sources
+- **Correction hurts independently of syndrome circuit quality** — bare_corrected < bare_uncorrected at ALL noise levels. The syndrome information is too noisy for correction to help.
+- **Flag rate scales linearly with p2q** — from 0.4% to 15%, confirming flags are noise-driven, but most are false alarms (don't match weight-2 syndrome)
+- **8 extra flag CNOTs nearly cancel any benefit** — the flag gates themselves introduce errors at rate comparable to the errors they help correct
+
+**Key insight:** Single-round syndrome extraction is fundamentally insufficient for QEC advantage, even with fault-tolerant gadgets. Sprints 026-027 together prove this comprehensively: bare syndrome fails because of error propagation (026), flag-FT syndrome fixes propagation but fails because a single noisy syndrome measurement provides insufficient information (027). The threshold theorem requires THREE components working together: (1) FT gadgets to prevent propagation (flags — done), (2) repeated syndrome measurement for reliable syndrome (majority vote over d rounds — NOT done), (3) time-aware decoding. We've only implemented (1). The path forward requires repeated measurements or fundamentally different approaches (Steane extraction, larger codes).
+
+**Next:** Repeated syndrome measurement with majority vote (3 rounds), Steane-style encoded ancilla extraction, memory experiments (multiple correction cycles), or shift to larger distance codes where syndrome overhead is proportionally smaller.
+
+[Full report: sprints/sprint_027.md]

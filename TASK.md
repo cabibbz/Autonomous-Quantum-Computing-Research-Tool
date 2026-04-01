@@ -121,13 +121,22 @@ An autonomous researcher. Nobody is telling you what to find. You have a quantum
   - Active correction worse than passive at ALL error rates (p2q=0.0001 to 0.02)
   - Root cause: standard syndrome circuit propagates ancilla errors to multi-qubit data errors
   - The threshold theorem requires fault-tolerant gadgets — "bare" syndrome extraction violates this
-  - Sprint 025's "below threshold" claim was only valid for ideal syndrome extraction
+- **FLAG-FT SYNDROME: SOLVES THE WRONG PROBLEM** (Sprint 027)
+  - Flag qubits perfectly detect weight-2 propagation errors (8/8, 0 false flags)
+  - But flag-FT still never beats passive — improvement over bare is negligible (+0.003 at best)
+  - Single-round syndrome extraction is fundamentally insufficient, even with FT gadgets
+  - The threshold theorem requires THREE components: FT gadgets + repeated measurement + time-aware decoding
 
-**The next frontier — fault-tolerant syndrome extraction:**
-Sprint 026 proved that non-fault-tolerant syndrome extraction always hurts. The path forward requires preventing error propagation from ancilla to data qubits. Options: flag qubits (add 1-2 qubits per stabilizer to catch propagation), repeated syndrome (majority vote over 3 rounds), or Steane-style encoded ancilla extraction.
+**The next frontier — repeated syndrome measurement or new approaches:**
+Sprints 026-027 proved that single-round syndrome extraction (bare or flag-FT) cannot beat passive encoding for [[5,1,3]]. The problem is not error propagation (flags fix that) but that one noisy syndrome measurement provides insufficient information. Options:
+1. **Repeated syndrome with majority vote** (3+ rounds) — most direct path to reliable syndrome
+2. **Memory experiments** — QEC advantage emerges over multiple correction cycles, not single-shot
+3. **Larger codes** (d≥5) where syndrome overhead is proportionally smaller
+4. **Completely different direction** — variational circuits, QRNG, or other non-QEC exploration
 
 **Still unexplored:**
-- Fault-tolerant syndrome extraction with flag qubits (most important next step)
+- Repeated syndrome measurement with majority vote (most important QEC next step)
+- Memory experiment: multiple correction cycles to show QEC advantage over time
 - Quantum random number generation — genuinely random vs pseudo-random, statistical tests
 - Variational quantum circuits — how does entanglement structure change during optimization?
 - Qubit-specific noise characterization from Sprint 025 data (T1 asymmetry visible)
@@ -137,6 +146,7 @@ Sprint 026 proved that non-fault-tolerant syndrome extraction always hurts. The 
 - Re-deriving known results with slightly different parameters
 - Passive encoding-only QEC experiments (Sprint 025 showed this regime is exhausted)
 - Non-fault-tolerant syndrome extraction (Sprint 026 proved this always hurts)
+- Single-round flag-FT syndrome extraction (Sprint 027 proved this insufficient)
 
 ## You Can Edit This File (encouraged to)
 
