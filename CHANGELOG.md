@@ -443,3 +443,17 @@
 **Next:** Revisit Sprints 017-018 with basis-averaged metrics, surface code (planar), noise-adapted codes (asymmetric codes for biased noise), real hardware comparison, coherent information under combined noise
 
 [Full report: sprints/sprint_021.md]
+
+### Sprint 022 — 2026-03-31 — Noise-Adapted Codes: When Does Bias-Awareness Beat Isotropy?
+**Status:** In Progress
+
+**Question:** Sprint 021 proved [[5,1,3]] wins universally via isotropy. But real hardware has biased noise (T2 << T1). Can a code specialized for the dominant error beat the isotropic code? At what bias ratio?
+
+**Codes:** 3-qubit bit-flip (X-specialized), 3-qubit phase-flip (Z-specialized), [[5,1,3]] (isotropic), uncoded.
+
+**Literature:** XZZX surface code shows bias-tailoring works at large scale. Small-scale crossover analysis is the gap.
+
+**Experiments:**
+- 22a: Specialized codes under biased noise (Z-dominated)
+- 22b: Optimal code map across (γ, λ) landscape
+- 22c: Information-theoretic cost of isotropy under known bias
