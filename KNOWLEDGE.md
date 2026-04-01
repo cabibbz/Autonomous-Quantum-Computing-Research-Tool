@@ -33,17 +33,9 @@ MI uniformity coefficient of variation classifies transition TYPE by curve shape
 
 **First-order transition (Sprint 037):** FM phase has CV=0.000 exactly. Jump at Δ=-1 grows as ~n^1.0. Presence/absence of curve crossings distinguishes transition orders.
 
-**Critical exponent (Sprint 037→038):** Crossing-point fit gives ν=0.755 at n=8-32, but data collapse (Sprint 038) proves this is a finite-size artifact. Optimal collapse ν converges: 0.80 (all sizes) → 1.04 (n≥16) → 1.12 (n≥24). Ising ν=1 is confirmed. The collapse quality landscape is extremely flat near ν=1 (0.3% difference from optimal), making crossing-point extraction fragile.
+**Critical exponent (Sprints 037-038):** Data collapse confirms Ising ν=1 for TFIM. Crossing-point extraction fragile due to flat landscape.
 
-**Potts q=3 MI-CV crossings CONFIRMED at true g_c (Sprint 050).** MI-CV crossing between n=8 and n=12 at g≈0.26, below the self-dual g_c=1/3 (finite-size shift). In ordered phase (g<0.24): CV(n=12)<CV(n=8). In disordered phase (g>0.28): CV(n=12)>CV(n=8). Same qualitative crossing signature as TFIM. The Sprint 038-039 crossings near g≈0.9 were in the disordered phase but the qualitative conclusion (crossings = second-order) is vindicated.
-
-**MI-CV universality class discrimination (Sprint 039) needs re-examination.** The ν and slope exponent results from Sprints 038-039 were at wrong g values. Re-extraction at g_c=1/3 with larger sizes is needed.
-
-**Potts q=4 MI-CV (Sprints 040, 046):** q=4 is the marginal point. **Sprint 040 Gell-Mann data was misleading** — reported crossings at g_c≈0.893 that don't exist with direct MPS. Direct MPS (Sprint 046, n=8,12,16): NO crossing near g_c. Curves monotonically ordered n=16>n=12>n=8 at all g≥0.50. CV minimum at g≈0.40-0.50 (maximally Democratic ordered phase). Derivative dCV/dg at g_c≈0.89 scales with n: 0.86 (n=8) → 1.05 (n=12) → 1.18 (n=16). Slope ratio gives ν≥2.2, trending upward → BKT-like. Standard FSS collapse fails at q=4.
-
-**q=5 clock MI-CV (Sprint 041):** q=5 clock model STILL shows crossing curves at n=8,12, disproving prediction that crossings would vanish. Crossing at g_c≈0.673 — a 10x larger shift than q=3→4 (0.220 vs 0.030). Slope at g=1.0 halves vs q=4 (0.86 vs 1.72). CV systematically lower than q=4 above transition (0.521 vs 0.727 at g=1.0 n=8).
-
-**~~g_c scaling law (Sprint 044)~~ INVALIDATED (Sprint 049).** Previous g_c values for q≥3 were WRONG. The "g_c scaling law" should not be used.
+**Potts MI-CV crossings CONFIRMED at true g_c (Sprint 050).** Qualitative crossing signature vindicated. q=4 MI-CV has no crossings (marginal). Old ν estimates from MI-CV were wrong (Sprint 053).
 
 **Potts critical points.** Our Hamiltonian H = -Jδ(s_i,s_j) - g(X+X†):
 
@@ -90,13 +82,9 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 4. Data collapse (43%) — **DO NOT USE at n≤10**
 5. MI-CV data collapse — **DO NOT USE** (gave ν=2.0 where true is 0.85)
 
-**DMRG excited states fail for Potts.** orthogonal_to gives gap=0. The no-conservation-law Potts Hamiltonian confuses the orthogonality projection.
+**DMRG excited states fail for Potts.** orthogonal_to gives gap=0.
 
-**Dead-pair bias AND χ convergence in MI-CV (Sprint 048).** Two confounded effects at large d:
-1. **Dead-pair bias**: fraction of near-zero MI pairs differs between sizes (n=8: 25%, n=12: 17% at d=10), inflating n=8 CV relative to n=12.
-2. **MI non-convergence**: energy converges at χ=20 but MI doesn't. At d=10, χ=20→40 changes mean MI by 44% while energy changes by 0.0005%. Dead pairs partially vanish at higher χ.
-
-**Rule of thumb: MI-CV requires χ > d² for reliable results.** At d=2 (q=2), χ=20 is fine (d²=4). At d=10 (q=10), need χ > 100. Results for q≥7 (d²≥49) should be scrutinized. q=2,3 results are reliable.
+**MI-CV requires χ > d² for reliable results.** At d=2 (q=2), χ=20 is fine. At d=10 (q=10), need χ>100. Dead-pair bias + MI non-convergence confound at large d.
 
 ## Entropy and Central Charge (Sprints 049, 054-056)
 
@@ -150,6 +138,31 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 **Physical interpretation:** c(q)~ln(q) growth is explained by the proliferation of (q-1) spin field primaries below the energy scale. Each primary contributes effective degrees of freedom.
 
 **POTENTIALLY NOVEL:** Complete operator content (degeneracy pattern, harmonic ratios, energy field position) of 1D quantum q-state Potts CFT for q>4 appears previously unmeasured.
+
+## Scaling Dimension x₁(q) (Sprint 058)
+
+**Method:** Absolute x₁ from CFT Casimir energy + gap on periodic chains. Two sizes give v·c (from E₀/N) and v·x₁ (from Δ₁·N), yielding c/x₁ independent of v.
+
+**c/x₁ ratio (model-independent, no c needed):**
+
+| q | c/x₁ (best pair) | Pair | 2q | x₁ (using measured c) |
+|---|-------------------|------|-----|----------------------|
+| 2 | 4.013 | (10,12) | 4 | 0.1246 |
+| 3 | 5.984 | (8,10) | 6 | 0.1337 |
+| 4 | 8.536 | (8,10) | 8 | 0.1172 |
+| 5 | 10.840 | (6,8) | 10 | 0.1015 |
+| 7 | 15.109 | (4,6) | 14 | 0.0860 |
+| 10 | 16.856 | (4,6) | 20 | 0.0831 |
+
+**c/x₁ = 2q EXACT for q=2,3.** For q≥4: c/x₁ grows sub-linearly, significantly below 2q at q=10 (16.9 vs 20). No simple formula found.
+
+**x₁ peaks at q=3 (2/15 ≈ 0.133).** Decreasing for q>3, approaching 0 as q→∞. The peak is related to q=3 being the maximum of the exact Potts CFT spin dimension before the minimal model series ends at q=4.
+
+**q=4 has logarithmic FSS corrections.** The excess (c/x₁ - 8)·N² grows as ~N², confirming sub-power-law (logarithmic) convergence. Consistent with marginal Ashkin-Teller point. Cannot determine if c/x₁(∞) = 8.0 or ~8.5 from n≤10.
+
+**Anomalous FSS for q≥5.** Δ₁·N INCREASES with N (sign-flipped correction vs q≤4). Means x₁ is underestimated at small sizes. Coincides with c>1 and novel CFT regime.
+
+**POTENTIALLY NOVEL:** x₁(q) for q≥5 previously unmeasured. Combined with c(q), ν(q), g_c(q), and operator content, this provides the most complete characterization of the novel q>4 Potts CFT family.
 
 **Entropy profile overshoot grows with q at fixed n:** At n=16: 8.7% (q=3), 14.4% (q=4), ~20% (q=5). At n=8: ~25% (q=7). Large-q profile method requires larger n — q=7+ is computationally infeasible at n≥12 with chi=20.
 

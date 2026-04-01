@@ -241,3 +241,24 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - Harmonic ratios approach k² from below — free boson is asymptotic limit
 
 [Full report: sprints/sprint_057.md]
+
+### Sprint 058 — x₁(q) Scaling Dimensions: Peak at q=3, Sub-linear c/x₁ Growth
+**Status:** Complete (5 experiments).
+
+**New computations:** q=4 at n=10 (dim=10⁶, 15s), q=5 at n=8 (dim=390k, 9s), q=10 at n=6 (dim=10⁶, 19s). Extended Sprint 057 data to larger sizes for precise x₁ extraction.
+
+**c/x₁ = 2q EXACT for q=2,3, but NOT for q≥4.** Model-independent ratio c/x₁ extracted from Casimir energy + gap: 4.01 (q=2), 5.98 (q=3), 8.54 (q=4), 10.84 (q=5), 15.11 (q=7), 16.86 (q=10). Sub-linear growth — q=10 gives 16.9, far below 2q=20. No simple formula fits.
+
+**x₁ peaks at q=3.** x₁(q): 0.125, 0.133, 0.117, 0.101, 0.086, 0.083 for q=2,3,4,5,7,10. Non-monotonic: rises from q=2→3, falls for q>3 toward 0.
+
+**Logarithmic FSS corrections at q=4.** Excess (c/x₁−8)·N² grows as ~N² (not constant), confirming sub-power-law correction. Consistent with marginal Ashkin-Teller point.
+
+**Δ₁·N sign flip at q≥5.** For q≤4, Δ₁·N decreases with N (normal). For q≥5, it INCREASES — anomalous finite-size behavior unique to the novel CFT regime.
+
+**Surprises:**
+- c/x₁(q=10) = 16.9, definitively ruling out c/x₁ = 2q for large q
+- Δ₁·N sign flip at q=5 — qualitative change in FSS corrections
+- q=4 log corrections make 8.0 vs 8.5 distinction impossible at n≤10
+- x₁(q=7) ≈ x₁(q=10) ≈ 0.08 — possible saturation at large q
+
+[Full report: sprints/sprint_058.md]
