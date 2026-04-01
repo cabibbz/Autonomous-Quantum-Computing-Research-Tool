@@ -1,0 +1,107 @@
+{
+  "sweep": [
+    {
+      "p2q": 0.0001,
+      "p1q": 1e-05,
+      "uncoded": 0.9531,
+      "passive": 0.8283,
+      "active": 0.7674,
+      "trivial_syndrome_frac": 0.9777,
+      "active_minus_passive": -0.0609
+    },
+    {
+      "p2q": 0.0003,
+      "p1q": 2.9999999999999997e-05,
+      "uncoded": 0.9532,
+      "passive": 0.8274,
+      "active": 0.7597,
+      "trivial_syndrome_frac": 0.9732,
+      "active_minus_passive": -0.0677
+    },
+    {
+      "p2q": 0.0005,
+      "p1q": 5e-05,
+      "uncoded": 0.9535,
+      "passive": 0.8204,
+      "active": 0.7456,
+      "trivial_syndrome_frac": 0.9697,
+      "active_minus_passive": -0.0748
+    },
+    {
+      "p2q": 0.001,
+      "p1q": 0.0001,
+      "uncoded": 0.9532,
+      "passive": 0.8069,
+      "active": 0.7165,
+      "trivial_syndrome_frac": 0.9574,
+      "active_minus_passive": -0.0904
+    },
+    {
+      "p2q": 0.002,
+      "p1q": 0.0002,
+      "uncoded": 0.9534,
+      "passive": 0.7814,
+      "active": 0.668,
+      "trivial_syndrome_frac": 0.9348,
+      "active_minus_passive": -0.1134
+    },
+    {
+      "p2q": 0.003,
+      "p1q": 0.00030000000000000003,
+      "uncoded": 0.9548,
+      "passive": 0.7545,
+      "active": 0.6236,
+      "trivial_syndrome_frac": 0.9147,
+      "active_minus_passive": -0.1309
+    },
+    {
+      "p2q": 0.005,
+      "p1q": 0.0005,
+      "uncoded": 0.9531,
+      "passive": 0.709,
+      "active": 0.5494,
+      "trivial_syndrome_frac": 0.8726,
+      "active_minus_passive": -0.1596
+    },
+    {
+      "p2q": 0.008,
+      "p1q": 0.0008,
+      "uncoded": 0.9534,
+      "passive": 0.6472,
+      "active": 0.4534,
+      "trivial_syndrome_frac": 0.8134,
+      "active_minus_passive": -0.1938
+    },
+    {
+      "p2q": 0.01,
+      "p1q": 0.001,
+      "uncoded": 0.9531,
+      "passive": 0.6114,
+      "active": 0.3985,
+      "trivial_syndrome_frac": 0.7768,
+      "active_minus_passive": -0.2129
+    },
+    {
+      "p2q": 0.015,
+      "p1q": 0.0015,
+      "uncoded": 0.9521,
+      "passive": 0.5285,
+      "active": 0.2952,
+      "trivial_syndrome_frac": 0.6937,
+      "active_minus_passive": -0.2333
+    },
+    {
+      "p2q": 0.02,
+      "p1q": 0.002,
+      "uncoded": 0.9496,
+      "passive": 0.4596,
+      "active": 0.2194,
+      "trivial_syndrome_frac": 0.6172,
+      "active_minus_passive": -0.2402
+    }
+  ],
+  "p_ro": 0.005,
+  "crossover_active_passive": null,
+  "crossover_passive_uncoded": null,
+  "elapsed_seconds": 10.2
+}
