@@ -55,26 +55,7 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - **047** — ν(q=7)≈0.5. q=4 confirmed unique BKT peak. (WRONG, Sprint 053)
 - **048** — Dead-pair bias invalidates raw MI-CV at d≥10. χ convergence ≠ MI convergence.
 
-### Sprint 049 — Correlation Length & Entropy FSS: q=3 Potts Critical Point WRONG
-**Status:** Complete (6 experiments).
-
-**TFIM central charge c validated.** Entropy S(g_c=1.0, n) at n=16-64 gives c = 0.529, with pairwise estimates converging: 0.544 → 0.532 → 0.523 → 0.516 toward exact c=0.500.
-
-**Correlation length from correlator decay works but is finite-size limited.** ξ matches exact ξ=1/ln(g) far from g_c (5% at g=2) but saturates at ξ~n/4. Naive ν extraction gives 0.62 (n=40), 0.72 (n=80) — well below ν=1.
-
-**Entropy FSS does NOT give ν.** Logarithmic singularity S ~ ln(ξ) defeats power-law collapse. Best collapse at ν=3, not ν=1.
-
-**q=3 Potts critical point at g_c ≈ 0.33, NOT 1.0.** Exact diag confirms S=0.047 at g=1.0 (deep disordered phase). True phase transition between g≈0.25-0.35 where entropy grows logarithmically with n and central charge estimate crosses c=4/5.
-
-**10 sprints of Potts results (038-048) were at wrong g.** MI-CV crossings near g≈1.0 are a disordered-phase crossover. All Potts g_c values, the g_c scaling law, and ν(q) results need re-examination.
-
-**Surprises:**
-- q=3 at g=1.0 has S=0.047 — confirmed by exact diag, not a DMRG failure
-- GHZ entropy S=ln(3) persists to g≈0.20 in ordered phase
-- TFIChain Z₂ conservation is essential — PottsChain has NO conservation
-- Most expensive mistake: 10 sprints of Potts physics at the wrong critical point
-
-[Full report: sprints/sprint_049.md]
+- **049** — q=3 Potts g_c WRONG (was at 1.0, true ≈ 0.33). 10 sprints of Potts results invalidated. Entropy FSS gives c not ν.
 
 ### Sprint 050 — True Potts Critical Points via Self-Duality & MI-CV Vindication
 **Status:** Complete (3 experiments).
@@ -292,3 +273,28 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - sigma^k–sigma cross-channel couplings are nonzero (Z maps charge k→k+1)
 
 [Full report: sprints/sprint_060.md]
+
+### Sprint 061 — Large-q Limit: Free Boson Convergence at q=15-30
+**Status:** Complete (4 experiments).
+
+**CFT data extended to q=30 at n=4.** Exact diag with periodic BC, dim up to 810k (q=30 n=4). Z_q charge resolution via symmetry generator G=X₁⊗...⊗Xₙ cleanly separates epsilon (charge 0) from sigma² (charge 2).
+
+**Harmonic ratios converge to free boson k² as O(q^{-3}).** At q=30: R(σ²)/4=0.9985 (0.15% deficit), R(σ³)/9=0.9967, R(σ⁴)/16=0.9942, R(σ⁵)/25=0.9911. Convergence rate q^{-3.0} to q^{-3.2} depending on harmonic — much faster than naive O(1/q).
+
+**x₁ does NOT saturate.** From n=4 descendant gap: x₁(15)≈0.071, x₁(20)≈0.055, x₁(25)≈0.045, x₁(30)≈0.038. Continues toward 0.
+
+**Epsilon and sigma² diverge at large q.** R(σ²) → 4 (free boson). R(ε) grows as ~0.88·q at n=4. They are ALWAYS in different Z_q charge sectors.
+
+**C_sse continues decreasing:** 0.093 (q=15), 0.063 (q=20), 0.047 (q=25), 0.038 (q=30). Power law ~q^{-1.2} at n=4.
+
+**n=4,5 energy gap crossings unreliable for large q.** q=10 calibration shows 21% FSS correction needed (vs 5% for n=4,6). Odd-n sublattice effect. Formula g_c predictions used instead.
+
+**POTENTIALLY NOVEL:** First charge-resolved conformal spectrum of Hermitian q-state Potts for q=15-30. The O(q^{-3}) convergence rate to free boson and the R_epsilon~q growth are new measurements.
+
+**Surprises:**
+- Harmonic ratio convergence is O(q^{-3}), not O(1/q) — no known prediction
+- R_epsilon grows linearly with q at n=4 while R_sigma² saturates at 4
+- x₁ continues decreasing to 0.038 at q=30, no saturation
+- n=4,5 pairs need 21% FSS correction (vs 5% for n=4,6) — odd-n effect
+
+[Full report: sprints/sprint_061.md]

@@ -131,11 +131,11 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 | 7 | 2+2+2 | σ²: 3.32, σ³: 5.95 | 8.1 |
 | 10 | 4 pairs+1 | σ²: 3.66, σ³: 7.69 | 8.3 |
 
-**NOT a free boson.** Free boson predicts x(σᵏ)/x(σ) = k². Measured ratios always BELOW k², but approach k² as q→∞. The q→∞ limit is a free boson; finite q has non-perturbative Z_q corrections.
+**NOT a free boson at finite q, but converges as O(q^{-3}) (Sprint 061).** Free boson predicts R(σᵏ)/R(σ) = k². Measured ratios always BELOW k², approaching with corrections that scale as q^{-3.0} (k=2), q^{-3.2} (k=3,4). At q=30: σ² at 99.85% of k²=4. Requires Z_q charge resolution to separate σ² (charge 2) from ε (charge 0).
 
-**Energy field R_ε = x_ε/x_σ** has minimum at q=3 (R=6), increases for q>3 toward ~8+. The energy operator is pushed above all spin harmonics.
+**Energy field R_ε grows with q at n=4.** Minimum at q=3 (R=6). For q≥10 at n=4: R_eps ≈ 0.88·q (linear growth). Sigma² and epsilon are ALWAYS in different charge sectors and DIVERGE, not merge. At larger n (q=10, n=6), R_eps=8.3 — may saturate in thermodynamic limit.
 
-**Physical interpretation:** c(q)~ln(q) growth is explained by the proliferation of (q-1) spin field primaries below the energy scale. Each primary contributes effective degrees of freedom.
+**Physical interpretation:** c(q)~ln(q) growth from proliferation of (q-1) spin field primaries. Free boson is the q→∞ limit on a decompactifying circle: R ~ √(ln q) explains c ~ ln(q) and x₁ → 0.
 
 **POTENTIALLY NOVEL:** Complete operator content (degeneracy pattern, harmonic ratios, energy field position) of 1D quantum q-state Potts CFT for q>4 appears previously unmeasured.
 
@@ -156,7 +156,7 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 
 **c/x₁ = 2q EXACT for q=2,3.** For q≥4: c/x₁ grows sub-linearly, significantly below 2q at q=10 (16.9 vs 20). No simple formula found.
 
-**x₁ peaks at q=3 (2/15 ≈ 0.133).** Decreasing for q>3, approaching 0 as q→∞. The peak is related to q=3 being the maximum of the exact Potts CFT spin dimension before the minimal model series ends at q=4.
+**x₁ peaks at q=3 (2/15 ≈ 0.133).** Decreasing for q>3, NOT saturating. From n=4 descendant gap: x₁(15)≈0.071, x₁(20)≈0.055, x₁(30)≈0.038. Approaches 0 as q→∞ ~ q^{-0.3} (best-n fit) or faster.
 
 **q=4 has logarithmic FSS corrections.** The excess (c/x₁ - 8)·N² grows as ~N², confirming sub-power-law (logarithmic) convergence. Consistent with marginal Ashkin-Teller point. Cannot determine if c/x₁(∞) = 8.0 or ~8.5 from n≤10.
 
@@ -182,7 +182,7 @@ Validated: q=2 Ising converges to exact C=1/2 with 0.4% error at n=12.
 | 7 | 0.272 | 6 | ~10% |
 | 10 | ~0.21 | 6 | ~10% |
 
-**C_sse peaks at q=3 (~0.54), then decreases monotonically.** For q≥4, approximate scaling C_sse ~ q^{-0.8}. No simple analytic formula found. Approaches 0 as q→∞.
+**C_sse peaks at q=3 (~0.54), then decreases monotonically.** Power law: C_sse ~ 1.5·q^{-0.87} (best-n, q≤10) or ~2.3·q^{-1.19} (n=4, q≤30). Extended to q=30 at n=4 via charge resolution: C_sse(30)≈0.038. Approaches 0 as q→∞ (epsilon decouples).
 
 **Epsilon identification pitfall for large q:** At q≥7, sigma harmonics (sigma^2, sigma^3, ...) densely populate R < R_epsilon. Naive charge detection fails because degenerate pairs (charges k, q-k) in superposition average to misleading charge values. Must use R_epsilon from independent spectrum measurements to identify epsilon correctly.
 
