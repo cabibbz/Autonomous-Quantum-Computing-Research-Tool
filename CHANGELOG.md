@@ -324,3 +324,22 @@ Explicit operator counting: U(1)=0.143 > Z₂=0.099 > S₃=0.072 > Z₃=0.040 (H
 - MI-CV crossing g_c=0.244, 6% below predicted g_c=0.259
 
 [Full report: sprints/sprint_047.md]
+
+### Sprint 048 — ν(q=10): Dead-Pair Bias Invalidates Raw MI-CV at Large d
+**Status:** Complete (5 experiments).
+
+**q=10 raw MI-CV shows NO crossings at χ=20.** n=12 CV is below n=8 CV at ALL tested g values (gap -0.08 to -0.18). Sprint 043's χ=10 "crossing confirmed" is INVALIDATED — bad ground state at χ=10, not a real crossing.
+
+**Dead-pair bias mechanism discovered.** At d=10, n=8 has 25% dead MI pairs (< 0.01) vs n=12 has 17%. This asymmetric fraction inflates n=8 CV relative to n=12, creating spurious crossing absence. When dead pairs are filtered: n=12 CV > n=8 CV at ALL g values — same BKT-like pattern as q=4 (no crossings, monotonically ordered).
+
+**Energy convergence ≠ MI convergence (χ test).** At n=8 g=0.20: χ=20 CV=0.601, χ=30 CV=0.588, χ=40 CV=0.370. Energy converges (5th decimal) but mean MI jumps 44% (1.26→1.82). Dead pairs are partially χ artifacts. MI-CV at d=10 needs χ >> 40 (probably χ > d²=100).
+
+**Raw MI-CV unreliable for d ≥ 10.** Dead-pair fraction varies systematically with n, corrupting size-dependent analyses. Filtering removes the artifact but doesn't restore crossings — q=10 filtered behavior matches q=4 (BKT-like).
+
+**Surprises:**
+- Raw MI-CV gives OPPOSITE size ordering from filtered (n12<n8 raw vs n12>n8 filtered)
+- n=8 CV remarkably flat (3% variation) — d=10 smears the transition
+- q=10 matches q=4 BKT pattern, NOT q=7 mean-field — BKT may recur at large q
+- Sprint 043's landmark result (q=10 crossings) was doubly wrong (χ + dead pairs)
+
+[Full report: sprints/sprint_048.md]

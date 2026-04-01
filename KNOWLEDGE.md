@@ -47,11 +47,11 @@ MI uniformity coefficient of variation classifies transition TYPE by curve shape
 
 **g_c scaling law (Sprint 044).** For 1D quantum Potts: g_c = 1.0 for q=2,3 (self-duality protected), and g_c ≈ 0.87*(q-3)^(-0.85) for q≥4. Verified by blind prediction of g_c(7)=0.263 vs measured 0.259 (1.6% error). Full data: q=2→1.0, q=3→1.0, q=4→0.893, q=5→0.45 (revised Sprint 045, was 0.41), q=7→0.259, q=10→0.246. The pole at q=3 reflects self-duality breaking. Exponent 0.85 ≈ 5/6 (q=3 Potts ν). Large-q regime flattening begins at q≈7. χ≥20 required for d≥7 (χ=10 gives 25% CV inflation). For clock model: 0.93 (q=2) → 0.923 (q=3) → 0.893 (q=4) → 0.673 (q=5).
 
-**1D quantum Potts is NEVER first-order (Sprint 043).** Tested q=10 (crossing confirmed at g_c≈0.246) and q=20 (identical to q=10 at χ=10, continuous half-chain entropy). All tested q (2, 3, 4, 5, 10, 20) show second-order MI-CV crossings. At q≥10, ground states converge to a universal large-q regime where only the {|0⟩, |1⟩, |q-1⟩} subspace is active. Physical mechanism: the extreme anisotropy of the 1D quantum→2D classical mapping suppresses the entropic mechanism that drives first-order transitions in 2D.
+**1D quantum Potts is NEVER first-order (Sprint 043).** Tested q=5, 10, 20 — all show continuous transitions. ~~q=10 crossing confirmed at g_c≈0.246~~ (Sprint 043 used χ=10, INVALIDATED by Sprint 048 at χ=20). At q≥10, ground states converge to a universal large-q regime where only the {|0⟩, |1⟩, |q-1⟩} subspace is active. Physical mechanism: the extreme anisotropy of the 1D quantum→2D classical mapping suppresses the entropic mechanism that drives first-order transitions in 2D.
 
 **Clock ≠ Potts for q≥4 (Sprints 041-042).** TeNPy's ClockChain uses cos(2π(s_i-s_j)/q) coupling, which equals Potts δ(s_i,s_j) only for q=2,3. For q≥5, models differ: Clock g_c=0.67 vs Potts g_c=0.41, Potts slope 5.7x steeper. Custom PottsChain model built (Sprint 042) with projector coupling. Both show second-order crossings — the 2D classical "q>4 → first-order" does NOT apply to 1D quantum Potts with transverse field. Anisotropic quantum-classical correspondence preserves second-order character.
 
-**ν(q) extraction (Sprints 045-047).** ν has a SHARP PEAK at q=4, with q=4 the only value without MI-CV crossings:
+**ν(q) extraction (Sprints 045-048).** ν has a SHARP PEAK at q=4. q=4 and q=10 both lack MI-CV crossings:
 
 | q | ν | MI-CV crossings? | Nature |
 |---|---|-----------------|--------|
@@ -59,13 +59,22 @@ MI uniformity coefficient of variation classifies transition TYPE by curve shape
 | 3 | 5/6 | Yes | Standard 2nd-order (minimum ν) |
 | 4 | ≥2.2 (diverging?) | **No** | **Marginal/BKT-like** |
 | 5 | ~2.0 | Yes | Large-ν 2nd-order |
-| 7 | ~0.5 | Yes | Near mean-field |
+| 7 | ~0.5 | Yes (needs filtered re-check) | Near mean-field |
+| 10 | unreliable | **No** (raw AND filtered) | **BKT-like (Sprint 048)** |
 
 q=4 is qualitatively different: slope ratio ν estimates INCREASE with n (1.92 → 2.71 from n=8,12 to n=12,16). Standard FSS collapse fails — constrained at g_c≈0.89, ν→∞. MI-CV curves don't cross near g_c. This is the 1D quantum signature of the 2D classical q=4 Potts BKT marginality.
 
-q=7 (Sprint 047): CROSSING CURVES RETURN at g_c≈0.244. ν≈0.5 from disordered-side slope ratio (uncertain, only n=8,12). n=8 has a sharp CV kink that smooths at n=12 — standard FSS behavior. ν drops 4x from q=5 (2.0) to q=7 (0.5), approaching mean-field.
+q=7 (Sprint 047): CROSSING CURVES RETURN at g_c≈0.244. ν≈0.5 from disordered-side slope ratio (uncertain, only n=8,12). n=8 has a sharp CV kink that smooths at n=12 — standard FSS behavior. **CAUTION:** q=7 crossings may be affected by dead-pair bias (not yet re-examined with filtering).
 
-ν(q) picture: standard (q≤3) → BKT peak at q=4 (only crossing-less value) → large ν at q=5 → mean-field approach for q≥7. Self-duality breaking at q=3→4 drives the BKT peak.
+q=10 (Sprint 048): NO crossings in raw MI-CV (n=12 < n=8 everywhere). But this is a **dead-pair bias artifact** — when near-zero MI pairs are filtered out, n=12 > n=8 everywhere (same q=4 BKT pattern). ν extraction unreliable from n=8,12 alone.
+
+ν(q) picture: standard (q≤3) → BKT peak at q=4 → large ν at q=5 → standard at q=7 → BKT again at q=10(?). Possibly non-monotonic BKT character rather than simple peak at q=4.
+
+**Dead-pair bias AND χ convergence in MI-CV (Sprint 048).** Two confounded effects at large d:
+1. **Dead-pair bias**: fraction of near-zero MI pairs differs between sizes (n=8: 25%, n=12: 17% at d=10), inflating n=8 CV relative to n=12.
+2. **MI non-convergence**: energy converges at χ=20 but MI doesn't. At d=10, χ=20→40 changes mean MI by 44% while energy changes by 0.0005%. Dead pairs partially vanish at higher χ.
+
+**Rule of thumb: MI-CV requires χ > d² for reliable results.** At d=2 (q=2), χ=20 is fine (d²=4). At d=10 (q=10), need χ > 100. Results for q≥7 (d²≥49) should be scrutinized. q=2,3 results are reliable.
 
 **Technique: All-pairs MI.** Two methods:
 1. Gell-Mann correlation reconstruction: **ONLY reliable for d≤3** (validated: diff=0 at n=8 for d=2,3). For d=4, small systematic errors create artificial MI-CV crossings (Sprint 046). For d=5, errors up to 11x (Sprint 045). DO NOT USE for d≥4.
