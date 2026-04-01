@@ -275,3 +275,20 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - q=5 old ν≈2.0 may be approximately correct (measured near true g_c)
 
 [Full report: sprints/sprint_051.md]
+
+### Sprint 052 — g_c(q) Scaling Law: √(q-1) Formula + q=10 Verification
+**Status:** Complete (4 experiments).
+
+**g_c(q) ≈ (1/5)√(q-1) + 1/20.** Best 2-parameter fit to 6 data points (q=2-10), χ²/dof=0.40. Coefficients are simple fractions (a=1/5, b=1/20). Gives exact q=2, <5% error for all tested q. **POTENTIALLY NOVEL.**
+
+**q=10 measured for first time: g_c ≈ 0.684.** Energy gap Δ·N crossing at n=4,6 gives raw 0.652, corrected to 0.684 with 4.8% FSS correction. 5-point prediction (0.616) was 10% too low — logarithmic growth too slow, √(q-1) is correct.
+
+**FSS corrections recalibrated by size pair.** n=4,6 pairs need 4.8% correction (not 2.5%). q=7 corrected upward from 0.524 to 0.535.
+
+**Surprises:**
+- g_c ∝ √(q-1) — simplest formula wins, free exponent 0.516 ≈ 1/2
+- Integer-coefficient formula (4√(q-1)+1)/20 fits all 6 points
+- g_c(q) diverges — no saturation at large q
+- 5-point prediction underestimated q=10 by 10%
+
+[Full report: sprints/sprint_052.md]

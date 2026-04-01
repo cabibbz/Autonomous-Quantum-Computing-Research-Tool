@@ -46,17 +46,23 @@ MI uniformity coefficient of variation classifies transition TYPE by curve shape
 **~~g_c scaling law (Sprint 044)~~ INVALIDATED (Sprint 049).** Previous g_c values for q≥3 were WRONG. The "g_c scaling law" should not be used.
 
 **Potts critical points.** Our Hamiltonian H = -Jδ(s_i,s_j) - g(X+X†):
-- q=2: g_c = 0.250 (exact, self-duality)
-- q=3: g_c = 0.333 (exact, self-duality)
-- q=4: g_c ≈ 0.39 (energy gap Δ·N crossing, n=6,8 at 0.382 + ~2.5% FSS correction)
-- q=5: g_c ≈ 0.44 (energy gap crossing, n=6,8 at 0.430 + correction)
-- q=7: g_c ≈ 0.52 (energy gap crossing, n=4,6 at 0.511 + correction)
 
-**g_c INCREASES with q** (Sprint 051). Physical mechanism: q-fold ground-state degeneracy requires stronger transverse field X+X† to destroy order. X+X† only creates nearest-state transitions (|s⟩→|s±1⟩), so mixing q states takes longer as q grows.
+| q | g_c | Method | Size pair | Raw crossing |
+|---|-----|--------|-----------|-------------|
+| 2 | 0.250 | Self-duality (exact) | — | — |
+| 3 | 0.333 | Self-duality (exact) | — | — |
+| 4 | 0.392 | Energy gap | n=6,8 | 0.382 |
+| 5 | 0.441 | Energy gap | n=6,8 | 0.430 |
+| 7 | 0.535 | Energy gap | n=4,6 | 0.511 |
+| 10 | 0.684 | Energy gap | n=4,6 | 0.652 |
+
+**g_c(q) scaling law (Sprint 052): g_c ≈ (1/5)√(q-1) + 1/20.** Best 2-parameter fit (χ²/dof=0.40). Gives exact q=2, <5% error for all tested q. Predicts g_c(20)≈0.92, g_c(50)≈1.45. g_c diverges as √q — no saturation. **POTENTIALLY NOVEL** — no prior measurement of g_c(q) found for this Hamiltonian.
+
+Physical mechanism: q-fold ground-state degeneracy requires stronger transverse field X+X† to destroy order. X+X† only creates nearest-state transitions (|s⟩→|s±1⟩), so mixing q states takes longer as q grows.
 
 Self-duality (Kramers-Wannier) gives exact g_c for q=2,3 only ({X, X^{q-1}} spans all generators). For q≥4, X+X^{q-1} misses intermediate powers → self-duality broken.
 
-**Energy gap method (Sprint 051).** At criticality, Δ = E₁-E₀ ∝ 1/N (CFT). Δ·N is scale-invariant at g_c. Validated: q=2 crossings converge to 0.246 (1.5% from exact), q=3 to 0.325 (2.5% from exact). Crossings approach g_c from below with ~2-3% error for largest available pair. Avoids all MI-CV complications (dead pairs, χ convergence, Gell-Mann errors). Requires exact diag (n≤8 for q=4, n≤6 for q=7).
+**Energy gap method (Sprint 051).** At criticality, Δ = E₁-E₀ ∝ 1/N (CFT). Δ·N is scale-invariant at g_c. **FSS correction depends on size pair** (Sprint 052): n=4,6 pairs need 4.8% correction, n=6,8 pairs need 2.5%. Calibrated from q=2,3 exact values. Crossings approach g_c from below. Avoids MI-CV complications.
 
 For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossings and are similarly suspect — these were disordered-phase crossovers.
 
@@ -72,8 +78,8 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 | 3 | 5/6 | ~0.9 | 0.333 (exact) | **WRONG g, need redo** |
 | 4 | ≥2.2 | ~0.89 | ~0.39 | **WRONG g, need redo** |
 | 5 | ~2.0 | ~0.45 | ~0.44 | **Close! May be salvageable** |
-| 7 | ~0.5 | ~0.26 | ~0.52 | **WRONG g by 2×** |
-| 10 | unreliable | ~0.25 | Unknown (>0.52) | **WRONG g** |
+| 7 | ~0.5 | ~0.26 | ~0.535 | **WRONG g by 2×** |
+| 10 | unreliable | ~0.25 | ~0.684 | **WRONG g** |
 
 q=5 previous measurement at g≈0.45 was close to true g_c≈0.44 — ν≈2.0 result may be approximately correct. All others need redo at correct g_c.
 
