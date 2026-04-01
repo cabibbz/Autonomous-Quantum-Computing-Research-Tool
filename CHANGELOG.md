@@ -4,7 +4,7 @@
   ## QPU Budget
   - Monthly allocation: 600 seconds
   - Used this period: 0s
-  - Sprints completed on simulator only: 19
+  - Sprints completed on simulator only: 20
   - Note: Your simulator predictions are now specific enough to test.
     Real hardware noise is a mixture of channels — your noise fingerprint
     framework (Sprint 016) can decompose it. The gap between simulator
@@ -399,3 +399,24 @@
 **Next:** Toric/surface code entanglement structure, combined T1+T2 noise model, capacity-achieving codes, real hardware comparison
 
 [Full report: sprints/sprint_019.md]
+
+### Sprint 020 — 2026-03-31 — Topological Codes: The Toric Code's Entanglement Structure
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **20a: Entanglement structure** — Toric [[8,2,2]] has total pairwise MI=4.0 (4 specific pairs at MI=1.0) and I3=0 for ALL 56 triples. The OPPOSITE of [[5,1,3]] (MI=0, I3=-1.0 everywhere). Non-uniform negativity spectrum (range 0.5-3.5).
+- **20b: Topological degeneracy** — All 4 ground states perfectly indistinguishable at single-qubit level (trace distance=0). Distinguishable ONLY at 2-qubit level, and only for 4 specific pairs = non-contractible loops = logical operators. All states have identical entropy at every scale.
+- **20c: Page curve & noise** — Toric Page curve is gradual+bimodal (subsets either recover all or nothing, fraction increases with size). [[5,1,3]] is knife-edge (all-or-nothing at d=3). Both codes IMMUNE to phase damping (Holevo=1.0 at all noise levels) — logical Z information commutes with dephasing.
+
+**Surprises:**
+- **Toric code has ZERO I3 everywhere** — all correlations are pairwise, no irreducible multipartite structure. The exact opposite of [[5,1,3]].
+- **The 4 MI-correlated pairs ARE the non-contractible loops** — (0,1), (2,3), (4,6), (5,7) are edge pairs related by torus translation. Information is stored in topology, not multipartite entanglement.
+- **Phase damping preserves logical information perfectly** for both codes — the logical Z basis commutes with Z-noise. Fidelity drops but distinguishability doesn't.
+- **Kitaev-Preskill TEE = 0** on the 2×2 torus — too small for area-law/topological separation. TEE needs much larger systems.
+- **Toric Page curve is bimodal** at each subset size — completely unlike the uniform behavior of algebraic codes.
+
+**Key insight:** The toric code is a fourth QEC archetype: Topological. Unlike algebraic codes that hide information in irreducible multipartite correlations (I3 < 0), the toric code stores information in the topology of the torus via maximal pairwise correlations along non-contractible loops (I3 = 0). This is the information-theoretic fingerprint of topological order: correlations are strong and pairwise, but they wrap around the manifold — no local region can detect them because they require following a path that circumnavigates the torus. The four archetypes are now: Democratic ([[5,1,3]]), Selective (Steane), Hierarchical (Shor), Topological (Toric).
+
+**Next:** Surface code (planar boundaries), toric code with syndrome extraction, combined T1+T2 noise, logical X encoding under phase damping, [[18,2,3]] toric code (3×3 torus, 9 qubits)
+
+[Full report: sprints/sprint_020.md]

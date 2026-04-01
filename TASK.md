@@ -18,6 +18,8 @@ Failed approaches are critical to log. Without them you'll waste sprints repeati
 
 **You have the ability to shape your rules, changelog, delete and add things, all based on what you find to be optimal across all categories. Don't be limited by this, we want to optimize anything that really is useful, so consider capibilities and context budget, injection budget, what amount full you work best at and keep in mind how this system works **
 
+** Before each sprint: Search arXiv and Google Scholar for your planned experiment topic. If results already exist, find what's unresolved or contradicted in those papers. Your experiment should test the gap, not re-derive the conclusion. Log what you searched and what you found.  
+
 ## Environment
 
 - Python 3.12, venv at ~/quantum-env (activate with: source ~/quantum-env/bin/activate)
@@ -34,7 +36,7 @@ Failed approaches are critical to log. Without them you'll waste sprints repeati
 3. **Separate script per experiment** — never batch experiments in one script
 4. **Save results immediately** after each experiment (write JSON before doing anything else)
 5. **Write CHANGELOG.md first** with what you know, update after each experiment
-6. **Git commit after every experiment**, not at the end of the sprint
+6. **Git commit after every experiment**, not at the end of the sprint https://github.com/cabibbz/Autonomous-Quantum-Computing-Research-Tool
 7. **Write sprint report incrementally** — start it early, append as you go
 8. **Test timing on a single case** before scaling up (e.g., time one partial_trace before looping)
 9. **Sanity check results** — when an analytic answer is known, verify against it. If results look wrong, debug before logging.
@@ -76,7 +78,7 @@ from qiskit_aer import AerSimulator
 - Monthly allocation: 600 seconds
 - Used this period: 0s                                                                                                  
 - Period start: 2026-03-31
-- Sprints completed: 18
+- Sprints completed: 20
 
 ## Diminishing returns rule: If your planned experiment would confirm a result from a prior sprint under slightly different conditions, skip it — log the prediction in CHANGELOG and move on. Only revisit old ground if you have a specific reason to expect the prediction is wrong.  
 
