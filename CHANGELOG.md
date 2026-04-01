@@ -465,3 +465,15 @@
 **Next:** Concatenated bias-tailoring (Shor = phase-flip inside bit-flip), surface code at d=2, real hardware QEC test, entanglement-assisted codes under bias
 
 [Full report: sprints/sprint_022.md]
+
+### Sprint 023 — 2026-03-31 — Concatenated Bias-Tailoring: Does Two-Level Structure Unlock Specialization?
+**Status:** In Progress
+
+**Question:** Sprint 022 showed single-level specialization never beats isotropy. Does the Shor code's two-level concatenation (phase-flip inside bit-flip) create a "specialization zone" that single-level codes can't access?
+
+**Literature:** Elevator codes (arXiv:2601.10786) show concatenated bias-tailoring works at large scale (bias >7×10⁴). No prior basis-averaged comparison of Shor vs [[5,1,3]] under combined T1+T2.
+
+**Experiments:**
+- 23a: Shor [[9,1,3]] vs all codes across (γ,λ) landscape — basis-averaged Holevo
+- 23b: Inner vs outer protection decomposition — which level handles which noise?
+- 23c: Concatenation depth scaling — predict crossover to bias advantage
