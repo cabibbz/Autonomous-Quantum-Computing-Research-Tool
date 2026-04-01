@@ -86,3 +86,36 @@ Key questions:
 2. MI uniformity CV: FM ≈ 0 (uniform), XY ≈ 0.79, Néel ≈ 1.11 — monotonic increase
 3. The XY phase is NOT uniformly Scale-Free — entropy and MI vary continuously within it
 4. The Néel phase has I3 > 0 and growing — resembles GHZ-like redundant correlations (staggered order = "antiferromagnetic broadcast")
+
+### 30b: XXZ Archetype Classification
+
+**Method:** Sz=0 sector projection for FM phase (fixes degeneracy). 10 representative Δ values. Archetype distance computed from (avg_MI, MI_CV, avg_I3, nn_MI_fraction).
+
+**Archetype Map:**
+
+| Phase | Δ | S_half | avg_MI | MI_CV | avg_I3 | Best Archetype |
+|-------|---|--------|--------|-------|--------|----------------|
+| FM deep | -2.0 | 1.413 | 0.781 | 0.217 | +0.612 | Democratic (GHZ) |
+| FM near | -1.2 | 1.923 | 0.500 | 0.142 | +0.153 | Distributed (W) |
+| FM transition | -1.0 | 1.469 | 0.629 | 0.000 | +0.356 | Democratic (GHZ) |
+| XY near-FM | -0.5 | 1.085 | 0.492 | 0.541 | +0.154 | Scale-Free |
+| XY isotropic | 0.0 | 1.039 | 0.424 | 0.960 | +0.053 | Scale-Free |
+| XY near-BKT | 0.5 | 1.029 | 0.395 | 1.211 | +0.009 | Scale-Free |
+| XY at 0.9 | 0.9 | 1.026 | 0.387 | 1.286 | -0.004 | Geometric (Cluster) |
+| BKT transition | 1.0 | 1.026 | 0.387 | 1.289 | -0.005 | Geometric (Cluster) |
+| Néel near | 1.5 | 1.029 | 0.395 | 1.225 | +0.008 | Scale-Free |
+| Néel deep | 3.0 | 1.045 | 0.501 | 0.703 | +0.175 | Scale-Free |
+
+**Key Discoveries:**
+
+1. **The XY phase is NOT uniformly Scale-Free** — it evolves continuously from Scale-Free (near FM) through to Geometric/Cluster-like (near BKT). MI_CV increases monotonically from 0.54 to 1.29.
+
+2. **The BKT transition is invisible in archetype space** — Δ=0.9 and Δ=1.0 are nearly identical. No sharp transition. The BKT point is just where the Geometric crossover reaches maximum. This contrasts sharply with the TFIM Ising transition, which was clearly visible.
+
+3. **The FM transition (Δ=-1) IS sharp** — clean Democratic with MI_CV=0.000 (perfectly uniform MI). First-order transition produces an abrupt archetype change.
+
+4. **Deep Néel evolves BACK toward Democratic** — staggered order is "antiferromagnetic GHZ" = (|↑↓↑↓...⟩ + |↓↑↓↑...⟩)/√2. I3 grows positive with Δ.
+
+5. **The XXZ traces a LOOP in archetype space:** Democratic → Scale-Free → Geometric → Scale-Free → Democratic. The phase diagram is a continuous journey through archetype space, unlike TFIM's sharp GHZ → Scale-Free → Product path.
+
+6. **The I3 sign change at Δ ≈ 0.7** (inside XY phase, before BKT) marks where correlations transition from redundant (broadcast) to irreducible (geometric). This is NOT at a thermodynamic phase boundary.

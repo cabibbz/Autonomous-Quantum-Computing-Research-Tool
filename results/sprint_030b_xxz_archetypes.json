@@ -1,0 +1,212 @@
+{
+  "FM deep (\u0394=-2)": {
+    "avg_MI": 0.7807808825747184,
+    "mi_uniformity": 0.21656990376069696,
+    "nn_mi_fraction": 0.3565903902310798,
+    "avg_I3": 0.6124148019682604,
+    "i3_sign": "positive",
+    "fraction_negative_I3": 0.0,
+    "avg_negativity": 0.8518041250104529,
+    "neg_uniformity": 0.24513191501562454,
+    "half_cut_entropy": 1.412953849428428,
+    "energy": -1.6355056993854198,
+    "gap": 0.00042351985599364816,
+    "delta": -2.0,
+    "archetype_distances": {
+      "Democratic (GHZ)": 2.21247017424975,
+      "Distributed (W)": 3.171948591940601,
+      "Geometric (Cluster)": 5.710719211473327,
+      "Scale-Free (Crit)": 6.191774492886155
+    },
+    "best_archetype": "Democratic (GHZ)"
+  },
+  "FM near (\u0394=-1.2)": {
+    "avg_MI": 0.49979352859674314,
+    "mi_uniformity": 0.14191597987082158,
+    "nn_mi_fraction": 0.3129510745590823,
+    "avg_I3": 0.15248459509243523,
+    "i3_sign": "positive",
+    "fraction_negative_I3": 0.0,
+    "avg_negativity": 1.2136088424672162,
+    "neg_uniformity": 0.28655281286496764,
+    "half_cut_entropy": 1.9233888088025302,
+    "energy": -1.2271280267327092,
+    "gap": 0.05361232088757539,
+    "delta": -1.2,
+    "archetype_distances": {
+      "Democratic (GHZ)": 1.7277651801780893,
+      "Distributed (W)": 1.4739425382225595,
+      "Geometric (Cluster)": 3.3602179613563226,
+      "Scale-Free (Crit)": 1.7010715192104016
+    },
+    "best_archetype": "Distributed (W)"
+  },
+  "FM transition (\u0394=-1)": {
+    "avg_MI": 0.6290494055453312,
+    "mi_uniformity": 9.720431459661822e-16,
+    "nn_mi_fraction": 0.3333333333333336,
+    "avg_I3": 0.356143810225275,
+    "i3_sign": "positive",
+    "fraction_negative_I3": 0.0,
+    "avg_negativity": 0.9363976791564237,
+    "neg_uniformity": 0.21786897492904234,
+    "half_cut_entropy": 1.46899559358928,
+    "energy": -1.2500000000000007,
+    "gap": 0.1339745962155623,
+    "delta": -1.0,
+    "archetype_distances": {
+      "Democratic (GHZ)": 0.7431400722895783,
+      "Distributed (W)": 1.019394171917928,
+      "Geometric (Cluster)": 4.444615648765588,
+      "Scale-Free (Crit)": 3.735407204571016
+    },
+    "best_archetype": "Democratic (GHZ)"
+  },
+  "XY near-FM (\u0394=-0.5)": {
+    "avg_MI": 0.4915723455065206,
+    "mi_uniformity": 0.5413535550436492,
+    "nn_mi_fraction": 0.5338289815876662,
+    "avg_I3": 0.15382790291695794,
+    "i3_sign": "positive",
+    "fraction_negative_I3": 0.0,
+    "avg_negativity": 1.276487201540686,
+    "neg_uniformity": 0.41473188340668304,
+    "half_cut_entropy": 1.0853838532916948,
+    "energy": -1.453399983471946,
+    "gap": 0.10141903052994428,
+    "delta": -0.5,
+    "archetype_distances": {
+      "Democratic (GHZ)": 5.537362310011538,
+      "Distributed (W)": 5.461444835701329,
+      "Geometric (Cluster)": 3.20602050120762,
+      "Scale-Free (Crit)": 1.5824963697998466
+    },
+    "best_archetype": "Scale-Free (Crit)"
+  },
+  "XY isotropic (\u0394=0)": {
+    "avg_MI": 0.42434939256587206,
+    "mi_uniformity": 0.9597908598978827,
+    "nn_mi_fraction": 0.6816730536566044,
+    "avg_I3": 0.05328763032171361,
+    "i3_sign": "positive",
+    "fraction_negative_I3": 0.0,
+    "avg_negativity": 1.3945860187234727,
+    "neg_uniformity": 0.5040501930302748,
+    "half_cut_entropy": 1.039176793167518,
+    "energy": -1.7469796037174636,
+    "gap": 0.222520933956317,
+    "delta": 0.0,
+    "archetype_distances": {
+      "Democratic (GHZ)": 9.720244470893018,
+      "Distributed (W)": 9.685414219352209,
+      "Geometric (Cluster)": 2.577195712789882,
+      "Scale-Free (Crit)": 1.5419996740507844
+    },
+    "best_archetype": "Scale-Free (Crit)"
+  },
+  "XY near-BKT (\u0394=0.5)": {
+    "avg_MI": 0.3950818531348813,
+    "mi_uniformity": 1.2111582210586262,
+    "nn_mi_fraction": 0.7670547592573118,
+    "avg_I3": 0.008533302557971644,
+    "i3_sign": "mixed",
+    "fraction_negative_I3": 0.3,
+    "avg_negativity": 1.4462967422304158,
+    "neg_uniformity": 0.5432542042632641,
+    "half_cut_entropy": 1.028926434685295,
+    "energy": -2.097887638257846,
+    "gap": 0.353399231316901,
+    "delta": 0.5,
+    "archetype_distances": {
+      "Democratic (GHZ)": 12.23901194247483,
+      "Distributed (W)": 12.22139696519488,
+      "Geometric (Cluster)": 2.3005124968533566,
+      "Scale-Free (Crit)": 2.1023341591492963
+    },
+    "best_archetype": "Scale-Free (Crit)"
+  },
+  "XY at \u0394=0.9": {
+    "avg_MI": 0.3868218618460062,
+    "mi_uniformity": 1.2864244439167916,
+    "nn_mi_fraction": 0.7924253967493408,
+    "avg_I3": -0.004144101387517663,
+    "i3_sign": "mixed",
+    "fraction_negative_I3": 0.4,
+    "avg_negativity": 1.4604477468377455,
+    "neg_uniformity": 0.5529454508862082,
+    "half_cut_entropy": 1.0263937731363495,
+    "energy": -2.4112233521134216,
+    "gap": 0.4632976249977214,
+    "delta": 0.9,
+    "archetype_distances": {
+      "Democratic (GHZ)": 12.993717285088902,
+      "Distributed (W)": 12.980546549223826,
+      "Geometric (Cluster)": 2.223860598853,
+      "Scale-Free (Crit)": 2.2966074215774683
+    },
+    "best_archetype": "Geometric (Cluster)"
+  },
+  "BKT transition (\u0394=1)": {
+    "avg_MI": 0.38648757325299493,
+    "mi_uniformity": 1.2893648417922723,
+    "nn_mi_fraction": 0.7934192342645443,
+    "avg_I3": -0.004657175021513959,
+    "i3_sign": "mixed",
+    "fraction_negative_I3": 0.4,
+    "avg_negativity": 1.4609983386118746,
+    "neg_uniformity": 0.5532907385834117,
+    "half_cut_entropy": 1.0262943679666017,
+    "energy": -2.493577133887917,
+    "gap": 0.49158177698938754,
+    "delta": 1.0,
+    "archetype_distances": {
+      "Democratic (GHZ)": 13.023208650171474,
+      "Distributed (W)": 13.01021273705185,
+      "Geometric (Cluster)": 2.220788008133204,
+      "Scale-Free (Crit)": 2.304350199605361
+    },
+    "best_archetype": "Geometric (Cluster)"
+  },
+  "N\u00e9el near (\u0394=1.5)": {
+    "avg_MI": 0.3947212006354954,
+    "mi_uniformity": 1.2249975408658165,
+    "nn_mi_fraction": 0.7714676380011319,
+    "avg_I3": 0.008016696693511816,
+    "i3_sign": "mixed",
+    "fraction_negative_I3": 0.3,
+    "avg_negativity": 1.448309602688257,
+    "neg_uniformity": 0.5462846114986329,
+    "half_cut_entropy": 1.0285179461433565,
+    "energy": -2.927335890893256,
+    "gap": 0.4385566778904182,
+    "delta": 1.5,
+    "archetype_distances": {
+      "Democratic (GHZ)": 12.377477451798681,
+      "Distributed (W)": 12.36019802742768,
+      "Geometric (Cluster)": 2.2962818944358263,
+      "Scale-Free (Crit)": 2.137797101867342
+    },
+    "best_archetype": "Scale-Free (Crit)"
+  },
+  "N\u00e9el deep (\u0394=3)": {
+    "avg_MI": 0.5012445158056558,
+    "mi_uniformity": 0.7025372193193633,
+    "nn_mi_fraction": 0.5889336133996405,
+    "avg_I3": 0.17529641864564866,
+    "i3_sign": "positive",
+    "fraction_negative_I3": 0.0,
+    "avg_negativity": 1.3042243617149887,
+    "neg_uniformity": 0.4829853975814398,
+    "half_cut_entropy": 1.044712495669781,
+    "energy": -4.410861026745949,
+    "gap": 0.2597533198673805,
+    "delta": 3.0,
+    "archetype_distances": {
+      "Democratic (GHZ)": 7.134452949549142,
+      "Distributed (W)": 7.077328923924669,
+      "Geometric (Cluster)": 3.2673127944310347,
+      "Scale-Free (Crit)": 1.9208182889821448
+    },
+    "best_archetype": "Scale-Free (Crit)"
+  }
+}
