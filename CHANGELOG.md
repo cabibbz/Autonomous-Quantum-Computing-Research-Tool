@@ -230,3 +230,21 @@ Explicit operator counting: U(1)=0.143 > Z₂=0.099 > S₃=0.072 > Z₃=0.040 (H
 - Larger d continues to give lower CV above transition
 
 [Full report: sprints/sprint_041.md]
+
+### Sprint 043 — First-Order Search: q=10, q=20 Potts — All Second-Order
+**Status:** Complete (4 experiments).
+
+**New technique: direct MPS contraction for ρ_ij.** Replaces Gell-Mann correlation reconstruction for d≥10. Computes all-pairs MI in 1.4s at d=10, n=8 (vs estimated minutes for 9801 Gell-Mann correlations). Enables MI-CV at arbitrarily large local dimension.
+
+**q=10 Potts: CROSSING confirmed at g_c≈0.246.** Clear MI-CV crossing between n=8 and n=12: CV increases with n for g≤0.20 (disordered), decreases for g≥0.25 (ordered). NOT first-order.
+
+**q=20 Potts: universal large-q regime.** At χ=10, q=20 ground states are identical to q=10 (energies match to 4+ significant figures). Half-chain entropy rises continuously (0→0.95→1.04), no discontinuity. The relevant excitations live in {|0⟩, |1⟩, |q-1⟩} subspace for all q≥10.
+
+**Conclusion: 1D quantum Potts with transverse field is second-order for ALL tested q (2-20).** g_c decreases monotonically: 1.0 (q=2) → 1.0 (q=3) → 0.89 (q=4) → 0.41 (q=5) → 0.25 (q=10). The 2D classical "q>4 → first-order" rule does not apply in 1D quantum.
+
+**Surprises:**
+- q=20 ground states IDENTICAL to q=10 at χ=10 — universal large-q regime
+- g_c shift rate slows: Δg=0.48 (q=4→5) vs Δg=0.16 (q=5→10) — diminishing shift per q
+- Direct MPS contraction removes the d²-bottleneck entirely
+
+[Full report: sprints/sprint_043.md]

@@ -45,11 +45,15 @@ MI uniformity coefficient of variation classifies transition TYPE by curve shape
 
 **q=5 clock MI-CV (Sprint 041):** q=5 clock model STILL shows crossing curves at n=8,12, disproving prediction that crossings would vanish. Crossing at g_c≈0.673 — a 10x larger shift than q=3→4 (0.220 vs 0.030). Slope at g=1.0 halves vs q=4 (0.86 vs 1.72). CV systematically lower than q=4 above transition (0.521 vs 0.727 at g=1.0 n=8).
 
-**Crossing point shifts with q (n=8,12):** g_c = 0.93 (q=2) → 0.923 (q=3) → 0.893 (q=4) → 0.673 (q=5). Shift accelerates dramatically at q=5 (Δg = 0.007, 0.030, 0.220). Consistent with clock model approaching XY limit.
+**Crossing point shifts with q (Potts, n=8,12):** g_c = 1.0 (q=2) → 1.0 (q=3) → 0.89 (q=4) → 0.41 (q=5) → 0.25 (q=10). g_c decreases monotonically with q. For clock model: 0.93 (q=2) → 0.923 (q=3) → 0.893 (q=4) → 0.673 (q=5).
+
+**1D quantum Potts is NEVER first-order (Sprint 043).** Tested q=10 (crossing confirmed at g_c≈0.246) and q=20 (identical to q=10 at χ=10, continuous half-chain entropy). All tested q (2, 3, 4, 5, 10, 20) show second-order MI-CV crossings. At q≥10, ground states converge to a universal large-q regime where only the {|0⟩, |1⟩, |q-1⟩} subspace is active. Physical mechanism: the extreme anisotropy of the 1D quantum→2D classical mapping suppresses the entropic mechanism that drives first-order transitions in 2D.
 
 **Clock ≠ Potts for q≥4 (Sprints 041-042).** TeNPy's ClockChain uses cos(2π(s_i-s_j)/q) coupling, which equals Potts δ(s_i,s_j) only for q=2,3. For q≥5, models differ: Clock g_c=0.67 vs Potts g_c=0.41, Potts slope 5.7x steeper. Custom PottsChain model built (Sprint 042) with projector coupling. Both show second-order crossings — the 2D classical "q>4 → first-order" does NOT apply to 1D quantum Potts with transverse field. Anisotropic quantum-classical correspondence preserves second-order character.
 
-**Technique:** All-pairs MI via correlation-function reconstruction of ρ_ij from MPS. Exact for physical states (validated: diff=0 at n=8). Extended to d=3 (Gell-Mann, Sprint 038), d=4 (SU(4), Sprint 040), d=5 (SU(5), Sprint 041, ~16.5s/point at n=8).
+**Technique: All-pairs MI.** Two methods:
+1. Gell-Mann correlation reconstruction: exact for d≤5 (validated: diff=0 at n=8). Extended to d=3 (Sprint 038), d=4 (Sprint 040), d=5 (Sprint 041, ~16.5s/point). Scales as O(d⁴) correlation calls — impractical for d≥10.
+2. **Direct MPS tensor contraction (Sprint 043):** computes ρ_ij by contracting MPS tensors directly. O(n·χ²·d) per pair. 1.4s for 28 pairs at d=10, n=8. Works for ANY d. Replaces Gell-Mann approach for d≥10.
 
 ## Archetype Boundaries ≠ Phase Boundaries
 I3 sign change occurs at Δ≈0.7 in XXZ, inside the XY phase — not at either thermodynamic transition (Δ=-1 or Δ=1). The entanglement phase diagram has its own topology distinct from thermodynamics.
@@ -91,3 +95,5 @@ Backend: ibm_kingston (Heron, 156 qubits). 20s QPU used.
 - **Potts q=4**: GHZ-4 → Product (crossing signature like q=3, marginal corrections not yet visible)
 - **Clock q=5**: GHZ-5 → Product (crossings persist but shifted to g≈0.67, slope halved vs q=4)
 - **Potts q=5**: GHZ-5 → Product (crossings at g≈0.41, slope 5.7x steeper than clock, NOT first-order)
+- **Potts q=10**: GHZ-10 → Product (crossings at g≈0.25, confirmed second-order)
+- **Potts q=20**: GHZ-20 → Product (identical to q=10 at χ=10, continuous entropy, second-order)
