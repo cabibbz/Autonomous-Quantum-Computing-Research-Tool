@@ -1,0 +1,846 @@
+{
+  "sprint": "028a",
+  "description": "Repeated syndrome extraction circuit \u2014 build and verify",
+  "circuit": {
+    "n_rounds": 3,
+    "total_qubits": 17,
+    "gates": {
+      "h": 24,
+      "cx": 24,
+      "cz": 24,
+      "barrier": 3
+    },
+    "depth": 30,
+    "total_2q_gates": 48,
+    "ancilla_layout": [
+      [
+        5,
+        6,
+        7,
+        8
+      ],
+      [
+        9,
+        10,
+        11,
+        12
+      ],
+      [
+        13,
+        14,
+        15,
+        16
+      ]
+    ]
+  },
+  "verification_data_errors": {
+    "majority_correct": 30,
+    "total": 30,
+    "all_rounds_correct": 30
+  },
+  "verification_ancilla_errors": {
+    "majority_overrides": 12,
+    "total": 12,
+    "details": [
+      {
+        "target_round": 0,
+        "target_stabilizer": 0,
+        "target_ancilla": 5,
+        "round_syndromes": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_correct": true,
+        "target_bit_flipped": true,
+        "other_rounds_clean": true
+      },
+      {
+        "target_round": 0,
+        "target_stabilizer": 1,
+        "target_ancilla": 6,
+        "round_syndromes": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_correct": true,
+        "target_bit_flipped": true,
+        "other_rounds_clean": true
+      },
+      {
+        "target_round": 0,
+        "target_stabilizer": 2,
+        "target_ancilla": 7,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_correct": true,
+        "target_bit_flipped": true,
+        "other_rounds_clean": true
+      },
+      {
+        "target_round": 0,
+        "target_stabilizer": 3,
+        "target_ancilla": 8,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_correct": true,
+        "target_bit_flipped": true,
+        "other_rounds_clean": true
+      },
+      {
+        "target_round": 1,
+        "target_stabilizer": 0,
+        "target_ancilla": 9,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_correct": true,
+        "target_bit_flipped": true,
+        "other_rounds_clean": true
+      },
+      {
+        "target_round": 1,
+        "target_stabilizer": 1,
+        "target_ancilla": 10,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_correct": true,
+        "target_bit_flipped": true,
+        "other_rounds_clean": true
+      },
+      {
+        "target_round": 1,
+        "target_stabilizer": 2,
+        "target_ancilla": 11,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_correct": true,
+        "target_bit_flipped": true,
+        "other_rounds_clean": true
+      },
+      {
+        "target_round": 1,
+        "target_stabilizer": 3,
+        "target_ancilla": 12,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_correct": true,
+        "target_bit_flipped": true,
+        "other_rounds_clean": true
+      },
+      {
+        "target_round": 2,
+        "target_stabilizer": 0,
+        "target_ancilla": 13,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_correct": true,
+        "target_bit_flipped": true,
+        "other_rounds_clean": true
+      },
+      {
+        "target_round": 2,
+        "target_stabilizer": 1,
+        "target_ancilla": 14,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_correct": true,
+        "target_bit_flipped": true,
+        "other_rounds_clean": true
+      },
+      {
+        "target_round": 2,
+        "target_stabilizer": 2,
+        "target_ancilla": 15,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_correct": true,
+        "target_bit_flipped": true,
+        "other_rounds_clean": true
+      },
+      {
+        "target_round": 2,
+        "target_stabilizer": 3,
+        "target_ancilla": 16,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_correct": true,
+        "target_bit_flipped": true,
+        "other_rounds_clean": true
+      }
+    ]
+  },
+  "verification_propagation": {
+    "majority_trivial": 12,
+    "total": 12,
+    "details": [
+      {
+        "target_round": 0,
+        "target_stabilizer": 0,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_is_trivial": true,
+        "dominant_frac": 1.0
+      },
+      {
+        "target_round": 0,
+        "target_stabilizer": 1,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_is_trivial": true,
+        "dominant_frac": 1.0
+      },
+      {
+        "target_round": 0,
+        "target_stabilizer": 2,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_is_trivial": true,
+        "dominant_frac": 1.0
+      },
+      {
+        "target_round": 0,
+        "target_stabilizer": 3,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_is_trivial": true,
+        "dominant_frac": 1.0
+      },
+      {
+        "target_round": 1,
+        "target_stabilizer": 0,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_is_trivial": true,
+        "dominant_frac": 1.0
+      },
+      {
+        "target_round": 1,
+        "target_stabilizer": 1,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_is_trivial": true,
+        "dominant_frac": 1.0
+      },
+      {
+        "target_round": 1,
+        "target_stabilizer": 2,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_is_trivial": true,
+        "dominant_frac": 1.0
+      },
+      {
+        "target_round": 1,
+        "target_stabilizer": 3,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_is_trivial": true,
+        "dominant_frac": 1.0
+      },
+      {
+        "target_round": 2,
+        "target_stabilizer": 0,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_is_trivial": true,
+        "dominant_frac": 1.0
+      },
+      {
+        "target_round": 2,
+        "target_stabilizer": 1,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_is_trivial": true,
+        "dominant_frac": 1.0
+      },
+      {
+        "target_round": 2,
+        "target_stabilizer": 2,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_is_trivial": true,
+        "dominant_frac": 1.0
+      },
+      {
+        "target_round": 2,
+        "target_stabilizer": 3,
+        "round_syndromes": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "majority_syndrome": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "majority_is_trivial": true,
+        "dominant_frac": 1.0
+      }
+    ]
+  },
+  "elapsed_seconds": 0.5
+}
