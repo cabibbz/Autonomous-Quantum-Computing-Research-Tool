@@ -572,3 +572,23 @@
 **Next:** Repeated syndrome measurement with majority vote (3 rounds), Steane-style encoded ancilla extraction, memory experiments (multiple correction cycles), or shift to larger distance codes where syndrome overhead is proportionally smaller.
 
 [Full report: sprints/sprint_027.md]
+
+### Sprint 028 — 2026-03-31 — Repeated Syndrome Measurement: Gate Overhead Kills
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **28a: Repeated syndrome circuit** — Built 3-round repeated extraction: 17 qubits (5 data + 12 ancilla), 48 2Q gates, depth 30. All data error syndromes correct (30/30). All ancilla readout errors overridden by majority vote (12/12).
+- **28b: Repeated vs single vs passive** — At hardware noise (p2q=0.008): 3-round majority Holevo 0.273 < 1-round 0.329 < passive 0.510. More rounds = worse. Syndrome agreement only 59.4% across rounds.
+- **28c: Error rate and rounds sweep** — Active correction NEVER beats passive at ANY p2q (0.0001 to 0.02) or round count (1, 3, 5). At lowest noise (p2q=0.0001), 3-round is closest to passive but still -0.014 below.
+
+**Surprises:**
+- **More rounds = worse performance** — each round adds 16 2Q gates that damage data more than the improved syndrome can fix
+- **3-round has better isotropy than 1-round** (0.026 vs 0.077) — majority vote DOES improve syndrome quality, but gate overhead overwhelms this
+- **Even at p2q=0.0001 (100× below hardware), active correction STILL loses** — the gate overhead from encoding + syndrome is inherently too high for d=3
+- **Gate count is the killer metric**: passive=10 CX, 1-round=26 CX, 3-round=58 CX. Code can correct 1 error; 58 gates at any nonzero error rate produce >>1 error
+
+**Key insight:** Gate overhead is the fundamental barrier to active QEC at [[5,1,3]] scale. The syndrome circuit needs 16 2Q gates per round — more than the code's distance can tolerate at any realistic error rate. This completes the Sprint 026-028 arc: bare fails (propagation), flag-FT fails (single round insufficient), repeated fails (gate overhead). The threshold theorem works in the asymptotic limit (large codes, growing d), not at d=3 with 5 qubits. Google's below-threshold result uses d=5,7 surface codes precisely because the gate-to-distance ratio is more favorable at larger scale.
+
+**Next:** Steane-style encoded ancilla extraction (avoids gate overhead), memory experiment (error accumulation rate), or shift to completely new territory (variational circuits, QRNG). The small-scale QEC story is now comprehensively mapped: Sprints 014-028 span from code structure through noise landscape to active correction, proving that [[5,1,3]] is too small for practical active QEC.
+
+[Full report: sprints/sprint_028.md]
