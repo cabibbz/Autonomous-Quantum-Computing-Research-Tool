@@ -1,0 +1,1514 @@
+{
+  "sprint": "023c",
+  "description": "Isotropy-adjusted comparison: which figure of merit makes Shor vs [[5,1,3]] decision?",
+  "grid_size": 6,
+  "noise_values": [
+    0.05,
+    0.12,
+    0.19,
+    0.26,
+    0.33,
+    0.4
+  ],
+  "grid_results": {
+    "(0.05,0.05)": {
+      "uncoded": {
+        "Z": 0.855,
+        "X": 0.833,
+        "Y": 0.833,
+        "average": 0.8403,
+        "min_basis": 0.833,
+        "max_basis": 0.855,
+        "asymmetry": 0.022,
+        "isotropy": 0.978,
+        "quality": 0.833,
+        "per_qubit_avg": 0.8403,
+        "per_qubit_min": 0.833
+      },
+      "[[5,1,3]]": {
+        "Z": 0.9621,
+        "X": 0.9627,
+        "Y": 0.9627,
+        "average": 0.9625,
+        "min_basis": 0.9621,
+        "max_basis": 0.9627,
+        "asymmetry": 0.0007,
+        "isotropy": 0.9993,
+        "quality": 0.9621,
+        "per_qubit_avg": 0.1925,
+        "per_qubit_min": 0.1924
+      },
+      "shor-9": {
+        "Z": 0.9594,
+        "X": 0.9976,
+        "Y": 0.9579,
+        "average": 0.9716,
+        "min_basis": 0.9579,
+        "max_basis": 0.9976,
+        "asymmetry": 0.0397,
+        "isotropy": 0.9603,
+        "quality": 0.9579,
+        "per_qubit_avg": 0.108,
+        "per_qubit_min": 0.1064
+      }
+    },
+    "(0.05,0.12)": {
+      "uncoded": {
+        "Z": 0.855,
+        "X": 0.7461,
+        "Y": 0.7461,
+        "average": 0.7824,
+        "min_basis": 0.7461,
+        "max_basis": 0.855,
+        "asymmetry": 0.1089,
+        "isotropy": 0.8911,
+        "quality": 0.7461,
+        "per_qubit_avg": 0.7824,
+        "per_qubit_min": 0.7461
+      },
+      "[[5,1,3]]": {
+        "Z": 0.9197,
+        "X": 0.9296,
+        "Y": 0.9296,
+        "average": 0.9263,
+        "min_basis": 0.9197,
+        "max_basis": 0.9296,
+        "asymmetry": 0.0099,
+        "isotropy": 0.9901,
+        "quality": 0.9197,
+        "per_qubit_avg": 0.1853,
+        "per_qubit_min": 0.1839
+      },
+      "shor-9": {
+        "Z": 0.8632,
+        "X": 0.9975,
+        "Y": 0.8623,
+        "average": 0.9077,
+        "min_basis": 0.8623,
+        "max_basis": 0.9975,
+        "asymmetry": 0.1353,
+        "isotropy": 0.8647,
+        "quality": 0.8623,
+        "per_qubit_avg": 0.1009,
+        "per_qubit_min": 0.0958
+      }
+    },
+    "(0.05,0.19)": {
+      "uncoded": {
+        "Z": 0.855,
+        "X": 0.668,
+        "Y": 0.668,
+        "average": 0.7304,
+        "min_basis": 0.668,
+        "max_basis": 0.855,
+        "asymmetry": 0.1869,
+        "isotropy": 0.8131,
+        "quality": 0.668,
+        "per_qubit_avg": 0.7304,
+        "per_qubit_min": 0.668
+      },
+      "[[5,1,3]]": {
+        "Z": 0.8713,
+        "X": 0.8951,
+        "Y": 0.8951,
+        "average": 0.8872,
+        "min_basis": 0.8713,
+        "max_basis": 0.8951,
+        "asymmetry": 0.0238,
+        "isotropy": 0.9762,
+        "quality": 0.8713,
+        "per_qubit_avg": 0.1774,
+        "per_qubit_min": 0.1743
+      },
+      "shor-9": {
+        "Z": 0.7436,
+        "X": 0.9975,
+        "Y": 0.7429,
+        "average": 0.828,
+        "min_basis": 0.7429,
+        "max_basis": 0.9975,
+        "asymmetry": 0.2546,
+        "isotropy": 0.7454,
+        "quality": 0.7429,
+        "per_qubit_avg": 0.092,
+        "per_qubit_min": 0.0825
+      }
+    },
+    "(0.05,0.26)": {
+      "uncoded": {
+        "Z": 0.855,
+        "X": 0.5959,
+        "Y": 0.5959,
+        "average": 0.6823,
+        "min_basis": 0.5959,
+        "max_basis": 0.855,
+        "asymmetry": 0.2591,
+        "isotropy": 0.7409,
+        "quality": 0.5959,
+        "per_qubit_avg": 0.6823,
+        "per_qubit_min": 0.5959
+      },
+      "[[5,1,3]]": {
+        "Z": 0.8211,
+        "X": 0.8597,
+        "Y": 0.8597,
+        "average": 0.8468,
+        "min_basis": 0.8211,
+        "max_basis": 0.8597,
+        "asymmetry": 0.0386,
+        "isotropy": 0.9614,
+        "quality": 0.8211,
+        "per_qubit_avg": 0.1694,
+        "per_qubit_min": 0.1642
+      },
+      "shor-9": {
+        "Z": 0.6154,
+        "X": 0.9975,
+        "Y": 0.6149,
+        "average": 0.7426,
+        "min_basis": 0.6149,
+        "max_basis": 0.9975,
+        "asymmetry": 0.3826,
+        "isotropy": 0.6174,
+        "quality": 0.6149,
+        "per_qubit_avg": 0.0825,
+        "per_qubit_min": 0.0683
+      }
+    },
+    "(0.05,0.33)": {
+      "uncoded": {
+        "Z": 0.855,
+        "X": 0.5282,
+        "Y": 0.5282,
+        "average": 0.6371,
+        "min_basis": 0.5282,
+        "max_basis": 0.855,
+        "asymmetry": 0.3268,
+        "isotropy": 0.6732,
+        "quality": 0.5282,
+        "per_qubit_avg": 0.6371,
+        "per_qubit_min": 0.5282
+      },
+      "[[5,1,3]]": {
+        "Z": 0.7718,
+        "X": 0.8229,
+        "Y": 0.8229,
+        "average": 0.8059,
+        "min_basis": 0.7718,
+        "max_basis": 0.8229,
+        "asymmetry": 0.0511,
+        "isotropy": 0.9489,
+        "quality": 0.7718,
+        "per_qubit_avg": 0.1612,
+        "per_qubit_min": 0.1544
+      },
+      "shor-9": {
+        "Z": 0.4888,
+        "X": 0.9975,
+        "Y": 0.4885,
+        "average": 0.6583,
+        "min_basis": 0.4885,
+        "max_basis": 0.9975,
+        "asymmetry": 0.509,
+        "isotropy": 0.491,
+        "quality": 0.4885,
+        "per_qubit_avg": 0.0731,
+        "per_qubit_min": 0.0543
+      }
+    },
+    "(0.05,0.40)": {
+      "uncoded": {
+        "Z": 0.855,
+        "X": 0.464,
+        "Y": 0.464,
+        "average": 0.5943,
+        "min_basis": 0.464,
+        "max_basis": 0.855,
+        "asymmetry": 0.391,
+        "isotropy": 0.609,
+        "quality": 0.464,
+        "per_qubit_avg": 0.5943,
+        "per_qubit_min": 0.464
+      },
+      "[[5,1,3]]": {
+        "Z": 0.7251,
+        "X": 0.7839,
+        "Y": 0.7839,
+        "average": 0.7643,
+        "min_basis": 0.7251,
+        "max_basis": 0.7839,
+        "asymmetry": 0.0588,
+        "isotropy": 0.9412,
+        "quality": 0.7251,
+        "per_qubit_avg": 0.1529,
+        "per_qubit_min": 0.145
+      },
+      "shor-9": {
+        "Z": 0.3713,
+        "X": 0.9975,
+        "Y": 0.3711,
+        "average": 0.5799,
+        "min_basis": 0.3711,
+        "max_basis": 0.9975,
+        "asymmetry": 0.6264,
+        "isotropy": 0.3736,
+        "quality": 0.3711,
+        "per_qubit_avg": 0.0644,
+        "per_qubit_min": 0.0412
+      }
+    },
+    "(0.12,0.05)": {
+      "uncoded": {
+        "Z": 0.7249,
+        "X": 0.7523,
+        "Y": 0.7523,
+        "average": 0.7432,
+        "min_basis": 0.7249,
+        "max_basis": 0.7523,
+        "asymmetry": 0.0274,
+        "isotropy": 0.9726,
+        "quality": 0.7249,
+        "per_qubit_avg": 0.7432,
+        "per_qubit_min": 0.7249
+      },
+      "[[5,1,3]]": {
+        "Z": 0.8969,
+        "X": 0.8976,
+        "Y": 0.8976,
+        "average": 0.8974,
+        "min_basis": 0.8969,
+        "max_basis": 0.8976,
+        "asymmetry": 0.0008,
+        "isotropy": 0.9992,
+        "quality": 0.8969,
+        "per_qubit_avg": 0.1795,
+        "per_qubit_min": 0.1794
+      },
+      "shor-9": {
+        "Z": 0.9298,
+        "X": 0.9767,
+        "Y": 0.9145,
+        "average": 0.9404,
+        "min_basis": 0.9145,
+        "max_basis": 0.9767,
+        "asymmetry": 0.0622,
+        "isotropy": 0.9378,
+        "quality": 0.9145,
+        "per_qubit_avg": 0.1045,
+        "per_qubit_min": 0.1016
+      }
+    },
+    "(0.12,0.12)": {
+      "uncoded": {
+        "Z": 0.7249,
+        "X": 0.6785,
+        "Y": 0.6785,
+        "average": 0.694,
+        "min_basis": 0.6785,
+        "max_basis": 0.7249,
+        "asymmetry": 0.0464,
+        "isotropy": 0.9536,
+        "quality": 0.6785,
+        "per_qubit_avg": 0.694,
+        "per_qubit_min": 0.6785
+      },
+      "[[5,1,3]]": {
+        "Z": 0.84,
+        "X": 0.8427,
+        "Y": 0.8427,
+        "average": 0.8418,
+        "min_basis": 0.84,
+        "max_basis": 0.8427,
+        "asymmetry": 0.0026,
+        "isotropy": 0.9974,
+        "quality": 0.84,
+        "per_qubit_avg": 0.1684,
+        "per_qubit_min": 0.168
+      },
+      "shor-9": {
+        "Z": 0.8182,
+        "X": 0.9758,
+        "Y": 0.8071,
+        "average": 0.867,
+        "min_basis": 0.8071,
+        "max_basis": 0.9758,
+        "asymmetry": 0.1687,
+        "isotropy": 0.8313,
+        "quality": 0.8071,
+        "per_qubit_avg": 0.0963,
+        "per_qubit_min": 0.0897
+      }
+    },
+    "(0.12,0.19)": {
+      "uncoded": {
+        "Z": 0.7249,
+        "X": 0.6103,
+        "Y": 0.6103,
+        "average": 0.6485,
+        "min_basis": 0.6103,
+        "max_basis": 0.7249,
+        "asymmetry": 0.1146,
+        "isotropy": 0.8854,
+        "quality": 0.6103,
+        "per_qubit_avg": 0.6485,
+        "per_qubit_min": 0.6103
+      },
+      "[[5,1,3]]": {
+        "Z": 0.7776,
+        "X": 0.7908,
+        "Y": 0.7908,
+        "average": 0.7864,
+        "min_basis": 0.7776,
+        "max_basis": 0.7908,
+        "asymmetry": 0.0133,
+        "isotropy": 0.9867,
+        "quality": 0.7776,
+        "per_qubit_avg": 0.1573,
+        "per_qubit_min": 0.1555
+      },
+      "shor-9": {
+        "Z": 0.6936,
+        "X": 0.9753,
+        "Y": 0.6855,
+        "average": 0.7848,
+        "min_basis": 0.6855,
+        "max_basis": 0.9753,
+        "asymmetry": 0.2898,
+        "isotropy": 0.7102,
+        "quality": 0.6855,
+        "per_qubit_avg": 0.0872,
+        "per_qubit_min": 0.0762
+      }
+    },
+    "(0.12,0.26)": {
+      "uncoded": {
+        "Z": 0.7249,
+        "X": 0.5462,
+        "Y": 0.5462,
+        "average": 0.6058,
+        "min_basis": 0.5462,
+        "max_basis": 0.7249,
+        "asymmetry": 0.1787,
+        "isotropy": 0.8213,
+        "quality": 0.5462,
+        "per_qubit_avg": 0.6058,
+        "per_qubit_min": 0.5462
+      },
+      "[[5,1,3]]": {
+        "Z": 0.7118,
+        "X": 0.7403,
+        "Y": 0.7403,
+        "average": 0.7308,
+        "min_basis": 0.7118,
+        "max_basis": 0.7403,
+        "asymmetry": 0.0285,
+        "isotropy": 0.9715,
+        "quality": 0.7118,
+        "per_qubit_avg": 0.1462,
+        "per_qubit_min": 0.1424
+      },
+      "shor-9": {
+        "Z": 0.5669,
+        "X": 0.9751,
+        "Y": 0.5612,
+        "average": 0.7011,
+        "min_basis": 0.5612,
+        "max_basis": 0.9751,
+        "asymmetry": 0.414,
+        "isotropy": 0.586,
+        "quality": 0.5612,
+        "per_qubit_avg": 0.0779,
+        "per_qubit_min": 0.0624
+      }
+    },
+    "(0.12,0.33)": {
+      "uncoded": {
+        "Z": 0.7249,
+        "X": 0.4854,
+        "Y": 0.4854,
+        "average": 0.5653,
+        "min_basis": 0.4854,
+        "max_basis": 0.7249,
+        "asymmetry": 0.2395,
+        "isotropy": 0.7605,
+        "quality": 0.4854,
+        "per_qubit_avg": 0.5653,
+        "per_qubit_min": 0.4854
+      },
+      "[[5,1,3]]": {
+        "Z": 0.6451,
+        "X": 0.6905,
+        "Y": 0.6905,
+        "average": 0.6753,
+        "min_basis": 0.6451,
+        "max_basis": 0.6905,
+        "asymmetry": 0.0454,
+        "isotropy": 0.9546,
+        "quality": 0.6451,
+        "per_qubit_avg": 0.1351,
+        "per_qubit_min": 0.129
+      },
+      "shor-9": {
+        "Z": 0.4459,
+        "X": 0.975,
+        "Y": 0.4418,
+        "average": 0.6209,
+        "min_basis": 0.4418,
+        "max_basis": 0.975,
+        "asymmetry": 0.5332,
+        "isotropy": 0.4668,
+        "quality": 0.4418,
+        "per_qubit_avg": 0.069,
+        "per_qubit_min": 0.0491
+      }
+    },
+    "(0.12,0.40)": {
+      "uncoded": {
+        "Z": 0.7249,
+        "X": 0.4273,
+        "Y": 0.4273,
+        "average": 0.5265,
+        "min_basis": 0.4273,
+        "max_basis": 0.7249,
+        "asymmetry": 0.2976,
+        "isotropy": 0.7024,
+        "quality": 0.4273,
+        "per_qubit_avg": 0.5265,
+        "per_qubit_min": 0.4273
+      },
+      "[[5,1,3]]": {
+        "Z": 0.5793,
+        "X": 0.6409,
+        "Y": 0.6409,
+        "average": 0.6204,
+        "min_basis": 0.5793,
+        "max_basis": 0.6409,
+        "asymmetry": 0.0616,
+        "isotropy": 0.9384,
+        "quality": 0.5793,
+        "per_qubit_avg": 0.1241,
+        "per_qubit_min": 0.1159
+      },
+      "shor-9": {
+        "Z": 0.336,
+        "X": 0.9749,
+        "Y": 0.3332,
+        "average": 0.548,
+        "min_basis": 0.3332,
+        "max_basis": 0.9749,
+        "asymmetry": 0.6417,
+        "isotropy": 0.3583,
+        "quality": 0.3332,
+        "per_qubit_avg": 0.0609,
+        "per_qubit_min": 0.037
+      }
+    },
+    "(0.19,0.05)": {
+      "uncoded": {
+        "Z": 0.6231,
+        "X": 0.6822,
+        "Y": 0.6822,
+        "average": 0.6625,
+        "min_basis": 0.6231,
+        "max_basis": 0.6822,
+        "asymmetry": 0.0592,
+        "isotropy": 0.9408,
+        "quality": 0.6231,
+        "per_qubit_avg": 0.6625,
+        "per_qubit_min": 0.6231
+      },
+      "[[5,1,3]]": {
+        "Z": 0.8129,
+        "X": 0.8203,
+        "Y": 0.8203,
+        "average": 0.8178,
+        "min_basis": 0.8129,
+        "max_basis": 0.8203,
+        "asymmetry": 0.0074,
+        "isotropy": 0.9926,
+        "quality": 0.8129,
+        "per_qubit_avg": 0.1636,
+        "per_qubit_min": 0.1626
+      },
+      "shor-9": {
+        "Z": 0.8863,
+        "X": 0.9271,
+        "Y": 0.8398,
+        "average": 0.8844,
+        "min_basis": 0.8398,
+        "max_basis": 0.9271,
+        "asymmetry": 0.0873,
+        "isotropy": 0.9127,
+        "quality": 0.8398,
+        "per_qubit_avg": 0.0983,
+        "per_qubit_min": 0.0933
+      }
+    },
+    "(0.19,0.12)": {
+      "uncoded": {
+        "Z": 0.6231,
+        "X": 0.618,
+        "Y": 0.618,
+        "average": 0.6197,
+        "min_basis": 0.618,
+        "max_basis": 0.6231,
+        "asymmetry": 0.005,
+        "isotropy": 0.995,
+        "quality": 0.618,
+        "per_qubit_avg": 0.6197,
+        "per_qubit_min": 0.618
+      },
+      "[[5,1,3]]": {
+        "Z": 0.75,
+        "X": 0.7507,
+        "Y": 0.7507,
+        "average": 0.7504,
+        "min_basis": 0.75,
+        "max_basis": 0.7507,
+        "asymmetry": 0.0006,
+        "isotropy": 0.9994,
+        "quality": 0.75,
+        "per_qubit_avg": 0.1501,
+        "per_qubit_min": 0.15
+      },
+      "shor-9": {
+        "Z": 0.7625,
+        "X": 0.9239,
+        "Y": 0.7271,
+        "average": 0.8045,
+        "min_basis": 0.7271,
+        "max_basis": 0.9239,
+        "asymmetry": 0.1968,
+        "isotropy": 0.8032,
+        "quality": 0.7271,
+        "per_qubit_avg": 0.0894,
+        "per_qubit_min": 0.0808
+      }
+    },
+    "(0.19,0.19)": {
+      "uncoded": {
+        "Z": 0.6231,
+        "X": 0.5577,
+        "Y": 0.5577,
+        "average": 0.5795,
+        "min_basis": 0.5577,
+        "max_basis": 0.6231,
+        "asymmetry": 0.0654,
+        "isotropy": 0.9346,
+        "quality": 0.5577,
+        "per_qubit_avg": 0.5795,
+        "per_qubit_min": 0.5577
+      },
+      "[[5,1,3]]": {
+        "Z": 0.6844,
+        "X": 0.6891,
+        "Y": 0.6891,
+        "average": 0.6875,
+        "min_basis": 0.6844,
+        "max_basis": 0.6891,
+        "asymmetry": 0.0046,
+        "isotropy": 0.9954,
+        "quality": 0.6844,
+        "per_qubit_avg": 0.1375,
+        "per_qubit_min": 0.1369
+      },
+      "shor-9": {
+        "Z": 0.636,
+        "X": 0.9225,
+        "Y": 0.6096,
+        "average": 0.7227,
+        "min_basis": 0.6096,
+        "max_basis": 0.9225,
+        "asymmetry": 0.3129,
+        "isotropy": 0.6871,
+        "quality": 0.6096,
+        "per_qubit_avg": 0.0803,
+        "per_qubit_min": 0.0677
+      }
+    },
+    "(0.19,0.26)": {
+      "uncoded": {
+        "Z": 0.6231,
+        "X": 0.5004,
+        "Y": 0.5004,
+        "average": 0.5413,
+        "min_basis": 0.5004,
+        "max_basis": 0.6231,
+        "asymmetry": 0.1227,
+        "isotropy": 0.8773,
+        "quality": 0.5004,
+        "per_qubit_avg": 0.5413,
+        "per_qubit_min": 0.5004
+      },
+      "[[5,1,3]]": {
+        "Z": 0.6167,
+        "X": 0.6314,
+        "Y": 0.6314,
+        "average": 0.6265,
+        "min_basis": 0.6167,
+        "max_basis": 0.6314,
+        "asymmetry": 0.0148,
+        "isotropy": 0.9852,
+        "quality": 0.6167,
+        "per_qubit_avg": 0.1253,
+        "per_qubit_min": 0.1233
+      },
+      "shor-9": {
+        "Z": 0.5135,
+        "X": 0.9218,
+        "Y": 0.4941,
+        "average": 0.6431,
+        "min_basis": 0.4941,
+        "max_basis": 0.9218,
+        "asymmetry": 0.4277,
+        "isotropy": 0.5723,
+        "quality": 0.4941,
+        "per_qubit_avg": 0.0715,
+        "per_qubit_min": 0.0549
+      }
+    },
+    "(0.19,0.33)": {
+      "uncoded": {
+        "Z": 0.6231,
+        "X": 0.4456,
+        "Y": 0.4456,
+        "average": 0.5047,
+        "min_basis": 0.4456,
+        "max_basis": 0.6231,
+        "asymmetry": 0.1775,
+        "isotropy": 0.8225,
+        "quality": 0.4456,
+        "per_qubit_avg": 0.5047,
+        "per_qubit_min": 0.4456
+      },
+      "[[5,1,3]]": {
+        "Z": 0.5481,
+        "X": 0.5766,
+        "Y": 0.5766,
+        "average": 0.5671,
+        "min_basis": 0.5481,
+        "max_basis": 0.5766,
+        "asymmetry": 0.0285,
+        "isotropy": 0.9715,
+        "quality": 0.5481,
+        "per_qubit_avg": 0.1134,
+        "per_qubit_min": 0.1096
+      },
+      "shor-9": {
+        "Z": 0.3999,
+        "X": 0.9214,
+        "Y": 0.3861,
+        "average": 0.5691,
+        "min_basis": 0.3861,
+        "max_basis": 0.9214,
+        "asymmetry": 0.5353,
+        "isotropy": 0.4647,
+        "quality": 0.3861,
+        "per_qubit_avg": 0.0632,
+        "per_qubit_min": 0.0429
+      }
+    },
+    "(0.19,0.40)": {
+      "uncoded": {
+        "Z": 0.6231,
+        "X": 0.3929,
+        "Y": 0.3929,
+        "average": 0.4696,
+        "min_basis": 0.3929,
+        "max_basis": 0.6231,
+        "asymmetry": 0.2301,
+        "isotropy": 0.7699,
+        "quality": 0.3929,
+        "per_qubit_avg": 0.4696,
+        "per_qubit_min": 0.3929
+      },
+      "[[5,1,3]]": {
+        "Z": 0.4803,
+        "X": 0.5238,
+        "Y": 0.5238,
+        "average": 0.5093,
+        "min_basis": 0.4803,
+        "max_basis": 0.5238,
+        "asymmetry": 0.0436,
+        "isotropy": 0.9564,
+        "quality": 0.4803,
+        "per_qubit_avg": 0.1019,
+        "per_qubit_min": 0.0961
+      },
+      "shor-9": {
+        "Z": 0.299,
+        "X": 0.9212,
+        "Y": 0.2893,
+        "average": 0.5032,
+        "min_basis": 0.2893,
+        "max_basis": 0.9212,
+        "asymmetry": 0.6318,
+        "isotropy": 0.3682,
+        "quality": 0.2893,
+        "per_qubit_avg": 0.0559,
+        "per_qubit_min": 0.0321
+      }
+    },
+    "(0.26,0.05)": {
+      "uncoded": {
+        "Z": 0.5373,
+        "X": 0.619,
+        "Y": 0.619,
+        "average": 0.5917,
+        "min_basis": 0.5373,
+        "max_basis": 0.619,
+        "asymmetry": 0.0817,
+        "isotropy": 0.9183,
+        "quality": 0.5373,
+        "per_qubit_avg": 0.5917,
+        "per_qubit_min": 0.5373
+      },
+      "[[5,1,3]]": {
+        "Z": 0.7161,
+        "X": 0.7343,
+        "Y": 0.7343,
+        "average": 0.7282,
+        "min_basis": 0.7161,
+        "max_basis": 0.7343,
+        "asymmetry": 0.0182,
+        "isotropy": 0.9818,
+        "quality": 0.7161,
+        "per_qubit_avg": 0.1456,
+        "per_qubit_min": 0.1432
+      },
+      "shor-9": {
+        "Z": 0.8242,
+        "X": 0.8463,
+        "Y": 0.7334,
+        "average": 0.8013,
+        "min_basis": 0.7334,
+        "max_basis": 0.8463,
+        "asymmetry": 0.1129,
+        "isotropy": 0.8871,
+        "quality": 0.7334,
+        "per_qubit_avg": 0.089,
+        "per_qubit_min": 0.0815
+      }
+    },
+    "(0.26,0.12)": {
+      "uncoded": {
+        "Z": 0.5373,
+        "X": 0.5624,
+        "Y": 0.5624,
+        "average": 0.554,
+        "min_basis": 0.5373,
+        "max_basis": 0.5624,
+        "asymmetry": 0.0251,
+        "isotropy": 0.9749,
+        "quality": 0.5373,
+        "per_qubit_avg": 0.554,
+        "per_qubit_min": 0.5373
+      },
+      "[[5,1,3]]": {
+        "Z": 0.6524,
+        "X": 0.6564,
+        "Y": 0.6564,
+        "average": 0.655,
+        "min_basis": 0.6524,
+        "max_basis": 0.6564,
+        "asymmetry": 0.004,
+        "isotropy": 0.996,
+        "quality": 0.6524,
+        "per_qubit_avg": 0.131,
+        "per_qubit_min": 0.1305
+      },
+      "shor-9": {
+        "Z": 0.6941,
+        "X": 0.8402,
+        "Y": 0.6234,
+        "average": 0.7192,
+        "min_basis": 0.6234,
+        "max_basis": 0.8402,
+        "asymmetry": 0.2168,
+        "isotropy": 0.7832,
+        "quality": 0.6234,
+        "per_qubit_avg": 0.0799,
+        "per_qubit_min": 0.0693
+      }
+    },
+    "(0.26,0.19)": {
+      "uncoded": {
+        "Z": 0.5373,
+        "X": 0.5087,
+        "Y": 0.5087,
+        "average": 0.5182,
+        "min_basis": 0.5087,
+        "max_basis": 0.5373,
+        "asymmetry": 0.0286,
+        "isotropy": 0.9714,
+        "quality": 0.5087,
+        "per_qubit_avg": 0.5182,
+        "per_qubit_min": 0.5087
+      },
+      "[[5,1,3]]": {
+        "Z": 0.5887,
+        "X": 0.5902,
+        "Y": 0.5902,
+        "average": 0.5897,
+        "min_basis": 0.5887,
+        "max_basis": 0.5902,
+        "asymmetry": 0.0015,
+        "isotropy": 0.9985,
+        "quality": 0.5887,
+        "per_qubit_avg": 0.1179,
+        "per_qubit_min": 0.1177
+      },
+      "shor-9": {
+        "Z": 0.57,
+        "X": 0.8376,
+        "Y": 0.5163,
+        "average": 0.6413,
+        "min_basis": 0.5163,
+        "max_basis": 0.8376,
+        "asymmetry": 0.3213,
+        "isotropy": 0.6787,
+        "quality": 0.5163,
+        "per_qubit_avg": 0.0713,
+        "per_qubit_min": 0.0574
+      }
+    },
+    "(0.26,0.26)": {
+      "uncoded": {
+        "Z": 0.5373,
+        "X": 0.4573,
+        "Y": 0.4573,
+        "average": 0.484,
+        "min_basis": 0.4573,
+        "max_basis": 0.5373,
+        "asymmetry": 0.08,
+        "isotropy": 0.92,
+        "quality": 0.4573,
+        "per_qubit_avg": 0.484,
+        "per_qubit_min": 0.4573
+      },
+      "[[5,1,3]]": {
+        "Z": 0.5243,
+        "X": 0.5303,
+        "Y": 0.5303,
+        "average": 0.5283,
+        "min_basis": 0.5243,
+        "max_basis": 0.5303,
+        "asymmetry": 0.006,
+        "isotropy": 0.994,
+        "quality": 0.5243,
+        "per_qubit_avg": 0.1057,
+        "per_qubit_min": 0.1049
+      },
+      "shor-9": {
+        "Z": 0.4547,
+        "X": 0.8361,
+        "Y": 0.4147,
+        "average": 0.5685,
+        "min_basis": 0.4147,
+        "max_basis": 0.8361,
+        "asymmetry": 0.4214,
+        "isotropy": 0.5786,
+        "quality": 0.4147,
+        "per_qubit_avg": 0.0632,
+        "per_qubit_min": 0.0461
+      }
+    },
+    "(0.26,0.33)": {
+      "uncoded": {
+        "Z": 0.5373,
+        "X": 0.408,
+        "Y": 0.408,
+        "average": 0.4511,
+        "min_basis": 0.408,
+        "max_basis": 0.5373,
+        "asymmetry": 0.1293,
+        "isotropy": 0.8707,
+        "quality": 0.408,
+        "per_qubit_avg": 0.4511,
+        "per_qubit_min": 0.408
+      },
+      "[[5,1,3]]": {
+        "Z": 0.46,
+        "X": 0.4749,
+        "Y": 0.4749,
+        "average": 0.4699,
+        "min_basis": 0.46,
+        "max_basis": 0.4749,
+        "asymmetry": 0.0148,
+        "isotropy": 0.9852,
+        "quality": 0.46,
+        "per_qubit_avg": 0.094,
+        "per_qubit_min": 0.092
+      },
+      "shor-9": {
+        "Z": 0.3508,
+        "X": 0.8353,
+        "Y": 0.3218,
+        "average": 0.5026,
+        "min_basis": 0.3218,
+        "max_basis": 0.8353,
+        "asymmetry": 0.5135,
+        "isotropy": 0.4865,
+        "quality": 0.3218,
+        "per_qubit_avg": 0.0558,
+        "per_qubit_min": 0.0358
+      }
+    },
+    "(0.26,0.40)": {
+      "uncoded": {
+        "Z": 0.5373,
+        "X": 0.3603,
+        "Y": 0.3603,
+        "average": 0.4193,
+        "min_basis": 0.3603,
+        "max_basis": 0.5373,
+        "asymmetry": 0.177,
+        "isotropy": 0.823,
+        "quality": 0.3603,
+        "per_qubit_avg": 0.4193,
+        "per_qubit_min": 0.3603
+      },
+      "[[5,1,3]]": {
+        "Z": 0.3967,
+        "X": 0.423,
+        "Y": 0.423,
+        "average": 0.4142,
+        "min_basis": 0.3967,
+        "max_basis": 0.423,
+        "asymmetry": 0.0263,
+        "isotropy": 0.9737,
+        "quality": 0.3967,
+        "per_qubit_avg": 0.0828,
+        "per_qubit_min": 0.0793
+      },
+      "shor-9": {
+        "Z": 0.2602,
+        "X": 0.8349,
+        "Y": 0.2399,
+        "average": 0.445,
+        "min_basis": 0.2399,
+        "max_basis": 0.8349,
+        "asymmetry": 0.595,
+        "isotropy": 0.405,
+        "quality": 0.2399,
+        "per_qubit_avg": 0.0494,
+        "per_qubit_min": 0.0267
+      }
+    },
+    "(0.33,0.05)": {
+      "uncoded": {
+        "Z": 0.4625,
+        "X": 0.5603,
+        "Y": 0.5603,
+        "average": 0.5277,
+        "min_basis": 0.4625,
+        "max_basis": 0.5603,
+        "asymmetry": 0.0979,
+        "isotropy": 0.9021,
+        "quality": 0.4625,
+        "per_qubit_avg": 0.5277,
+        "per_qubit_min": 0.4625
+      },
+      "[[5,1,3]]": {
+        "Z": 0.6116,
+        "X": 0.6418,
+        "Y": 0.6418,
+        "average": 0.6317,
+        "min_basis": 0.6116,
+        "max_basis": 0.6418,
+        "asymmetry": 0.0301,
+        "isotropy": 0.9699,
+        "quality": 0.6116,
+        "per_qubit_avg": 0.1263,
+        "per_qubit_min": 0.1223
+      },
+      "shor-9": {
+        "Z": 0.7407,
+        "X": 0.7374,
+        "Y": 0.6017,
+        "average": 0.6933,
+        "min_basis": 0.6017,
+        "max_basis": 0.7407,
+        "asymmetry": 0.1389,
+        "isotropy": 0.8611,
+        "quality": 0.6017,
+        "per_qubit_avg": 0.077,
+        "per_qubit_min": 0.0669
+      }
+    },
+    "(0.33,0.12)": {
+      "uncoded": {
+        "Z": 0.4625,
+        "X": 0.5104,
+        "Y": 0.5104,
+        "average": 0.4944,
+        "min_basis": 0.4625,
+        "max_basis": 0.5104,
+        "asymmetry": 0.0479,
+        "isotropy": 0.9521,
+        "quality": 0.4625,
+        "per_qubit_avg": 0.4944,
+        "per_qubit_min": 0.4625
+      },
+      "[[5,1,3]]": {
+        "Z": 0.5512,
+        "X": 0.5618,
+        "Y": 0.5618,
+        "average": 0.5582,
+        "min_basis": 0.5512,
+        "max_basis": 0.5618,
+        "asymmetry": 0.0105,
+        "isotropy": 0.9895,
+        "quality": 0.5512,
+        "per_qubit_avg": 0.1116,
+        "per_qubit_min": 0.1102
+      },
+      "shor-9": {
+        "Z": 0.6123,
+        "X": 0.7287,
+        "Y": 0.5028,
+        "average": 0.6146,
+        "min_basis": 0.5028,
+        "max_basis": 0.7287,
+        "asymmetry": 0.2259,
+        "isotropy": 0.7741,
+        "quality": 0.5028,
+        "per_qubit_avg": 0.0683,
+        "per_qubit_min": 0.0559
+      }
+    },
+    "(0.33,0.19)": {
+      "uncoded": {
+        "Z": 0.4625,
+        "X": 0.4625,
+        "Y": 0.4625,
+        "average": 0.4625,
+        "min_basis": 0.4625,
+        "max_basis": 0.4625,
+        "asymmetry": 0.0,
+        "isotropy": 1.0,
+        "quality": 0.4625,
+        "per_qubit_avg": 0.4625,
+        "per_qubit_min": 0.4625
+      },
+      "[[5,1,3]]": {
+        "Z": 0.4926,
+        "X": 0.4954,
+        "Y": 0.4954,
+        "average": 0.4945,
+        "min_basis": 0.4926,
+        "max_basis": 0.4954,
+        "asymmetry": 0.0029,
+        "isotropy": 0.9971,
+        "quality": 0.4926,
+        "per_qubit_avg": 0.0989,
+        "per_qubit_min": 0.0985
+      },
+      "shor-9": {
+        "Z": 0.4958,
+        "X": 0.7249,
+        "Y": 0.4116,
+        "average": 0.5441,
+        "min_basis": 0.4116,
+        "max_basis": 0.7249,
+        "asymmetry": 0.3132,
+        "isotropy": 0.6868,
+        "quality": 0.4116,
+        "per_qubit_avg": 0.0605,
+        "per_qubit_min": 0.0457
+      }
+    },
+    "(0.33,0.26)": {
+      "uncoded": {
+        "Z": 0.4625,
+        "X": 0.4165,
+        "Y": 0.4165,
+        "average": 0.4318,
+        "min_basis": 0.4165,
+        "max_basis": 0.4625,
+        "asymmetry": 0.046,
+        "isotropy": 0.954,
+        "quality": 0.4165,
+        "per_qubit_avg": 0.4318,
+        "per_qubit_min": 0.4165
+      },
+      "[[5,1,3]]": {
+        "Z": 0.4346,
+        "X": 0.4369,
+        "Y": 0.4369,
+        "average": 0.4361,
+        "min_basis": 0.4346,
+        "max_basis": 0.4369,
+        "asymmetry": 0.0023,
+        "isotropy": 0.9977,
+        "quality": 0.4346,
+        "per_qubit_avg": 0.0872,
+        "per_qubit_min": 0.0869
+      },
+      "shor-9": {
+        "Z": 0.3911,
+        "X": 0.7228,
+        "Y": 0.3278,
+        "average": 0.4806,
+        "min_basis": 0.3278,
+        "max_basis": 0.7228,
+        "asymmetry": 0.3949,
+        "isotropy": 0.6051,
+        "quality": 0.3278,
+        "per_qubit_avg": 0.0534,
+        "per_qubit_min": 0.0364
+      }
+    },
+    "(0.33,0.33)": {
+      "uncoded": {
+        "Z": 0.4625,
+        "X": 0.372,
+        "Y": 0.372,
+        "average": 0.4022,
+        "min_basis": 0.372,
+        "max_basis": 0.4625,
+        "asymmetry": 0.0905,
+        "isotropy": 0.9095,
+        "quality": 0.372,
+        "per_qubit_avg": 0.4022,
+        "per_qubit_min": 0.372
+      },
+      "[[5,1,3]]": {
+        "Z": 0.3774,
+        "X": 0.3839,
+        "Y": 0.3839,
+        "average": 0.3818,
+        "min_basis": 0.3774,
+        "max_basis": 0.3839,
+        "asymmetry": 0.0065,
+        "isotropy": 0.9935,
+        "quality": 0.3774,
+        "per_qubit_avg": 0.0764,
+        "per_qubit_min": 0.0755
+      },
+      "shor-9": {
+        "Z": 0.299,
+        "X": 0.7216,
+        "Y": 0.2527,
+        "average": 0.4244,
+        "min_basis": 0.2527,
+        "max_basis": 0.7216,
+        "asymmetry": 0.4688,
+        "isotropy": 0.5312,
+        "quality": 0.2527,
+        "per_qubit_avg": 0.0472,
+        "per_qubit_min": 0.0281
+      }
+    },
+    "(0.33,0.40)": {
+      "uncoded": {
+        "Z": 0.4625,
+        "X": 0.3289,
+        "Y": 0.3289,
+        "average": 0.3734,
+        "min_basis": 0.3289,
+        "max_basis": 0.4625,
+        "asymmetry": 0.1336,
+        "isotropy": 0.8664,
+        "quality": 0.3289,
+        "per_qubit_avg": 0.3734,
+        "per_qubit_min": 0.3289
+      },
+      "[[5,1,3]]": {
+        "Z": 0.3217,
+        "X": 0.3355,
+        "Y": 0.3355,
+        "average": 0.3309,
+        "min_basis": 0.3217,
+        "max_basis": 0.3355,
+        "asymmetry": 0.0138,
+        "isotropy": 0.9862,
+        "quality": 0.3217,
+        "per_qubit_avg": 0.0662,
+        "per_qubit_min": 0.0643
+      },
+      "shor-9": {
+        "Z": 0.2203,
+        "X": 0.7209,
+        "Y": 0.1874,
+        "average": 0.3762,
+        "min_basis": 0.1874,
+        "max_basis": 0.7209,
+        "asymmetry": 0.5334,
+        "isotropy": 0.4666,
+        "quality": 0.1874,
+        "per_qubit_avg": 0.0418,
+        "per_qubit_min": 0.0208
+      }
+    },
+    "(0.40,0.05)": {
+      "uncoded": {
+        "Z": 0.3958,
+        "X": 0.505,
+        "Y": 0.505,
+        "average": 0.4686,
+        "min_basis": 0.3958,
+        "max_basis": 0.505,
+        "asymmetry": 0.1092,
+        "isotropy": 0.8908,
+        "quality": 0.3958,
+        "per_qubit_avg": 0.4686,
+        "per_qubit_min": 0.3958
+      },
+      "[[5,1,3]]": {
+        "Z": 0.5046,
+        "X": 0.5454,
+        "Y": 0.5454,
+        "average": 0.5318,
+        "min_basis": 0.5046,
+        "max_basis": 0.5454,
+        "asymmetry": 0.0408,
+        "isotropy": 0.9592,
+        "quality": 0.5046,
+        "per_qubit_avg": 0.1064,
+        "per_qubit_min": 0.1009
+      },
+      "shor-9": {
+        "Z": 0.6364,
+        "X": 0.6075,
+        "Y": 0.4571,
+        "average": 0.567,
+        "min_basis": 0.4571,
+        "max_basis": 0.6364,
+        "asymmetry": 0.1794,
+        "isotropy": 0.8206,
+        "quality": 0.4571,
+        "per_qubit_avg": 0.063,
+        "per_qubit_min": 0.0508
+      }
+    },
+    "(0.40,0.12)": {
+      "uncoded": {
+        "Z": 0.3958,
+        "X": 0.4608,
+        "Y": 0.4608,
+        "average": 0.4391,
+        "min_basis": 0.3958,
+        "max_basis": 0.4608,
+        "asymmetry": 0.065,
+        "isotropy": 0.935,
+        "quality": 0.3958,
+        "per_qubit_avg": 0.4391,
+        "per_qubit_min": 0.3958
+      },
+      "[[5,1,3]]": {
+        "Z": 0.4504,
+        "X": 0.4686,
+        "Y": 0.4686,
+        "average": 0.4626,
+        "min_basis": 0.4504,
+        "max_basis": 0.4686,
+        "asymmetry": 0.0182,
+        "isotropy": 0.9818,
+        "quality": 0.4504,
+        "per_qubit_avg": 0.0925,
+        "per_qubit_min": 0.0901
+      },
+      "shor-9": {
+        "Z": 0.5183,
+        "X": 0.5977,
+        "Y": 0.3764,
+        "average": 0.4975,
+        "min_basis": 0.3764,
+        "max_basis": 0.5977,
+        "asymmetry": 0.2213,
+        "isotropy": 0.7787,
+        "quality": 0.3764,
+        "per_qubit_avg": 0.0553,
+        "per_qubit_min": 0.0418
+      }
+    },
+    "(0.40,0.19)": {
+      "uncoded": {
+        "Z": 0.3958,
+        "X": 0.4183,
+        "Y": 0.4183,
+        "average": 0.4108,
+        "min_basis": 0.3958,
+        "max_basis": 0.4183,
+        "asymmetry": 0.0224,
+        "isotropy": 0.9776,
+        "quality": 0.3958,
+        "per_qubit_avg": 0.4108,
+        "per_qubit_min": 0.3958
+      },
+      "[[5,1,3]]": {
+        "Z": 0.399,
+        "X": 0.4059,
+        "Y": 0.4059,
+        "average": 0.4036,
+        "min_basis": 0.399,
+        "max_basis": 0.4059,
+        "asymmetry": 0.0069,
+        "isotropy": 0.9931,
+        "quality": 0.399,
+        "per_qubit_avg": 0.0807,
+        "per_qubit_min": 0.0798
+      },
+      "shor-9": {
+        "Z": 0.4147,
+        "X": 0.5932,
+        "Y": 0.3048,
+        "average": 0.4376,
+        "min_basis": 0.3048,
+        "max_basis": 0.5932,
+        "asymmetry": 0.2884,
+        "isotropy": 0.7116,
+        "quality": 0.3048,
+        "per_qubit_avg": 0.0486,
+        "per_qubit_min": 0.0339
+      }
+    },
+    "(0.40,0.26)": {
+      "uncoded": {
+        "Z": 0.3958,
+        "X": 0.3771,
+        "Y": 0.3771,
+        "average": 0.3834,
+        "min_basis": 0.3771,
+        "max_basis": 0.3958,
+        "asymmetry": 0.0187,
+        "isotropy": 0.9813,
+        "quality": 0.3771,
+        "per_qubit_avg": 0.3834,
+        "per_qubit_min": 0.3771
+      },
+      "[[5,1,3]]": {
+        "Z": 0.3491,
+        "X": 0.3515,
+        "Y": 0.3515,
+        "average": 0.3507,
+        "min_basis": 0.3491,
+        "max_basis": 0.3515,
+        "asymmetry": 0.0024,
+        "isotropy": 0.9976,
+        "quality": 0.3491,
+        "per_qubit_avg": 0.0701,
+        "per_qubit_min": 0.0698
+      },
+      "shor-9": {
+        "Z": 0.324,
+        "X": 0.5908,
+        "Y": 0.2408,
+        "average": 0.3852,
+        "min_basis": 0.2408,
+        "max_basis": 0.5908,
+        "asymmetry": 0.35,
+        "isotropy": 0.65,
+        "quality": 0.2408,
+        "per_qubit_avg": 0.0428,
+        "per_qubit_min": 0.0268
+      }
+    },
+    "(0.40,0.33)": {
+      "uncoded": {
+        "Z": 0.3958,
+        "X": 0.3373,
+        "Y": 0.3373,
+        "average": 0.3568,
+        "min_basis": 0.3373,
+        "max_basis": 0.3958,
+        "asymmetry": 0.0586,
+        "isotropy": 0.9414,
+        "quality": 0.3373,
+        "per_qubit_avg": 0.3568,
+        "per_qubit_min": 0.3373
+      },
+      "[[5,1,3]]": {
+        "Z": 0.3006,
+        "X": 0.3033,
+        "Y": 0.3033,
+        "average": 0.3024,
+        "min_basis": 0.3006,
+        "max_basis": 0.3033,
+        "asymmetry": 0.0027,
+        "isotropy": 0.9973,
+        "quality": 0.3006,
+        "per_qubit_avg": 0.0605,
+        "per_qubit_min": 0.0601
+      },
+      "shor-9": {
+        "Z": 0.2458,
+        "X": 0.5894,
+        "Y": 0.1844,
+        "average": 0.3398,
+        "min_basis": 0.1844,
+        "max_basis": 0.5894,
+        "asymmetry": 0.4049,
+        "isotropy": 0.5951,
+        "quality": 0.1844,
+        "per_qubit_avg": 0.0378,
+        "per_qubit_min": 0.0205
+      }
+    },
+    "(0.40,0.40)": {
+      "uncoded": {
+        "Z": 0.3958,
+        "X": 0.2985,
+        "Y": 0.2985,
+        "average": 0.3309,
+        "min_basis": 0.2985,
+        "max_basis": 0.3958,
+        "asymmetry": 0.0973,
+        "isotropy": 0.9027,
+        "quality": 0.2985,
+        "per_qubit_avg": 0.3309,
+        "per_qubit_min": 0.2985
+      },
+      "[[5,1,3]]": {
+        "Z": 0.2538,
+        "X": 0.2601,
+        "Y": 0.2601,
+        "average": 0.258,
+        "min_basis": 0.2538,
+        "max_basis": 0.2601,
+        "asymmetry": 0.0063,
+        "isotropy": 0.9937,
+        "quality": 0.2538,
+        "per_qubit_avg": 0.0516,
+        "per_qubit_min": 0.0508
+      },
+      "shor-9": {
+        "Z": 0.1799,
+        "X": 0.5885,
+        "Y": 0.1361,
+        "average": 0.3015,
+        "min_basis": 0.1361,
+        "max_basis": 0.5885,
+        "asymmetry": 0.4525,
+        "isotropy": 0.5475,
+        "quality": 0.1361,
+        "per_qubit_avg": 0.0335,
+        "per_qubit_min": 0.0151
+      }
+    }
+  },
+  "summary_wins": {
+    "average": {
+      "uncoded": 2,
+      "[[5,1,3]]": 10,
+      "shor-9": 24
+    },
+    "min_basis": {
+      "uncoded": 4,
+      "[[5,1,3]]": 29,
+      "shor-9": 3
+    },
+    "per_qubit_avg": {
+      "uncoded": 36,
+      "[[5,1,3]]": 0,
+      "shor-9": 0
+    },
+    "per_qubit_min": {
+      "uncoded": 36,
+      "[[5,1,3]]": 0,
+      "shor-9": 0
+    }
+  },
+  "elapsed_seconds": 112.1
+}
