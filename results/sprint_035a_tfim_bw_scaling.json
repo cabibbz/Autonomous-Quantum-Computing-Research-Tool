@@ -1,0 +1,131 @@
+{
+  "experiment": "035a",
+  "description": "TFIM BW locality size scaling",
+  "data": {
+    "critical": {
+      "8": {
+        "n": 8,
+        "n_A": 4,
+        "method": "exact",
+        "E0": -9.837951447459416,
+        "entropy_bits": 0.5152749590579357,
+        "fidelity": 0.9911052811731469,
+        "overlap": 0.9503585873537005,
+        "var_captured": 0.9031814445569207,
+        "alpha_opt": 6.078075742768633,
+        "spectrum_corr": 0.9964127248408348,
+        "n_significant_evals": 6,
+        "pauli_fraction": 0.9085417968264268,
+        "time_seconds": 0.023966073989868164
+      },
+      "10": {
+        "n": 10,
+        "n_A": 5,
+        "method": "exact",
+        "E0": -12.381489999654738,
+        "entropy_bits": 0.5468570255335955,
+        "fidelity": 0.9042138271706275,
+        "overlap": 0.8210598461502014,
+        "var_captured": 0.6741392709601925,
+        "alpha_opt": 4.05617673844532,
+        "spectrum_corr": 0.9536972373902864,
+        "n_significant_evals": 6,
+        "pauli_fraction": 0.6747410482067633,
+        "time_seconds": 0.4260251522064209
+      },
+      "12": {
+        "n": 12,
+        "n_A": 6,
+        "method": "DMRG",
+        "E0": -14.925971109908637,
+        "entropy_bits": 0.5720519713656326,
+        "fidelity": 0.6789333023481555,
+        "overlap": 0.68265302849371,
+        "var_captured": 0.466015157311634,
+        "alpha_opt": 2.4091890693892446,
+        "spectrum_corr": 0.8755813299103451,
+        "n_significant_evals": 6,
+        "pauli_fraction": 0.46944619320445186,
+        "time_seconds": 6.08666205406189
+      },
+      "16": {
+        "n": 16,
+        "n_A": 8,
+        "method": "DMRG",
+        "E0": -20.01638790048509,
+        "entropy_bits": 0.6108505224115983,
+        "fidelity": 0.129444538897869,
+        "overlap": 0.4413914263240627,
+        "var_captured": 0.19482639123239043,
+        "alpha_opt": 0.7451451035904891,
+        "spectrum_corr": 0.7645530822489762,
+        "n_significant_evals": 6,
+        "pauli_fraction": 0.20054922118901733,
+        "time_seconds": 10.099196434020996
+      },
+      "20": {
+        "n": 20,
+        "n_A": 10,
+        "method": "DMRG",
+        "E0": -25.10779711162381,
+        "entropy_bits": 0.6402672376983907,
+        "fidelity": 0.008082675468638821,
+        "overlap": 0.2687690040506447,
+        "var_captured": 0.07223677753837521,
+        "alpha_opt": 0.2130030297163643,
+        "spectrum_corr": 0.6734669181137843,
+        "n_significant_evals": 8,
+        "pauli_fraction": 0.07596909532035251,
+        "time_seconds": 29.63110661506653
+      }
+    },
+    "ordered": {
+      "8": {
+        "n": 8,
+        "n_A": 4,
+        "method": "exact",
+        "E0": -7.6405925535900705,
+        "entropy_bits": 0.9934364088593766,
+        "fidelity": 0.9972996679906971,
+        "overlap": 0.9405468290248573,
+        "var_captured": 0.8846283375887143,
+        "alpha_opt": 8.032069915344172,
+        "spectrum_corr": 0.9996078307717241,
+        "n_significant_evals": 6,
+        "pauli_fraction": 0.89080731459823,
+        "time_seconds": 0.08315491676330566
+      },
+      "10": {
+        "n": 10,
+        "n_A": 5,
+        "method": "exact",
+        "E0": -9.765503957927187,
+        "entropy_bits": 1.0014577038993537,
+        "fidelity": 0.9522142630154071,
+        "overlap": 0.7928019263154807,
+        "var_captured": 0.628534894369537,
+        "alpha_opt": 5.0546183544766965,
+        "spectrum_corr": 0.998754338322346,
+        "n_significant_evals": 6,
+        "pauli_fraction": 0.6304291896641461,
+        "time_seconds": 0.30003833770751953
+      },
+      "12": {
+        "n": 12,
+        "n_A": 6,
+        "method": "DMRG",
+        "E0": -11.89204487293882,
+        "entropy_bits": 1.0035169930903551,
+        "fidelity": 0.7350268639569986,
+        "overlap": 0.6418826120798398,
+        "var_captured": 0.4120132876904382,
+        "alpha_opt": 2.8171871977177187,
+        "spectrum_corr": 0.9818162601745642,
+        "n_significant_evals": 6,
+        "pauli_fraction": 0.41660301774348857,
+        "time_seconds": 4.878175973892212
+      }
+    }
+  },
+  "total_runtime": 51.59589648246765
+}
