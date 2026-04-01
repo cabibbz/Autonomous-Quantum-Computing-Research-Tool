@@ -70,3 +70,31 @@ At h/J = 1 (critical point), the system transitions from ferromagnetic order (h 
    - Finite-size effects are massive for these small systems
 
 **Surprise:** The TFIM ordered phase is our old friend GHZ — the "classical broadcast in superposition" from Sprint 005. The phase transition is literally GHZ → Product, with I3 sign change as the sharpest qualitative marker.
+
+### 29b: VQE Optimization Dynamics — Ordered Phase is Hardest
+
+**Setup:** 6-qubit HVA (4 layers, 44 params), COBYLA optimizer (200 iters), h/J = 0.5, 1.0, 2.0.
+
+**Key findings:**
+
+1. **VQE difficulty scales with entanglement:**
+   - Disordered (h=2.0): 0.28% energy error — product-like state easy to approximate
+   - Critical (h=1.0): 2.6% error — harder but manageable
+   - Ordered (h=0.5): 10.4% error — GHZ-like long-range correlations are hardest
+
+2. **VQE gets I3 sign WRONG for ordered phase:**
+   - VQE avg I3 = -0.04 (negative), exact = +0.73 (positive)
+   - VQE has NOT found the GHZ-like structure — it found a locally correlated state instead
+   - For critical and disordered phases, VQE gets I3 sign correct
+
+3. **Entanglement trajectory: product → target structure:**
+   - Initial |+⟩^n starts at S ≈ 0 (product state)
+   - Entanglement builds monotonically during optimization
+   - Final entropy: 0.54 (VQE) vs 1.00 (exact) for ordered phase — only half the entanglement built
+
+4. **VQE automatically finds near-correct entanglement for easy phases:**
+   - Disordered: S=0.119 (VQE) vs 0.127 (exact) — within 6%
+   - Critical: S=0.331 vs 0.467 — 29% deficit
+   - Ordered: S=0.539 vs 1.003 — 46% deficit
+
+**Surprise:** VQE's energy-minimization naturally builds the correct entanglement structure for product-like states but FAILS to discover GHZ-like long-range correlations. The HVA ansatz with nearest-neighbor gates builds entanglement locally; GHZ requires global coherence that needs more layers or different topology.
