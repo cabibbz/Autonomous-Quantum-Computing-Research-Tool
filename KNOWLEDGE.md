@@ -47,7 +47,7 @@ MI uniformity coefficient of variation classifies transition TYPE by curve shape
 
 **Crossing point shifts with q (n=8,12):** g_c = 0.93 (q=2) → 0.923 (q=3) → 0.893 (q=4) → 0.673 (q=5). Shift accelerates dramatically at q=5 (Δg = 0.007, 0.030, 0.220). Consistent with clock model approaching XY limit.
 
-**Clock ≠ Potts for q≥4 (Sprint 041).** TeNPy's ClockChain uses cos(2π(s_i-s_j)/q) coupling, which equals Potts δ(s_i,s_j) only for q=2,3. For q≥5, the clock model has an intermediate "floating" BKT phase absent in Potts. Testing true Potts first-order transition requires custom Kronecker-delta model.
+**Clock ≠ Potts for q≥4 (Sprints 041-042).** TeNPy's ClockChain uses cos(2π(s_i-s_j)/q) coupling, which equals Potts δ(s_i,s_j) only for q=2,3. For q≥5, models differ: Clock g_c=0.67 vs Potts g_c=0.41, Potts slope 5.7x steeper. Custom PottsChain model built (Sprint 042) with projector coupling. Both show second-order crossings — the 2D classical "q>4 → first-order" does NOT apply to 1D quantum Potts with transverse field. Anisotropic quantum-classical correspondence preserves second-order character.
 
 **Technique:** All-pairs MI via correlation-function reconstruction of ρ_ij from MPS. Exact for physical states (validated: diff=0 at n=8). Extended to d=3 (Gell-Mann, Sprint 038), d=4 (SU(4), Sprint 040), d=5 (SU(5), Sprint 041, ~16.5s/point at n=8).
 
@@ -90,3 +90,4 @@ Backend: ibm_kingston (Heron, 156 qubits). 20s QPU used.
 - **Potts q=3**: GHZ-3 → Product (like TFIM but with triplet spectrum from Z₃)
 - **Potts q=4**: GHZ-4 → Product (crossing signature like q=3, marginal corrections not yet visible)
 - **Clock q=5**: GHZ-5 → Product (crossings persist but shifted to g≈0.67, slope halved vs q=4)
+- **Potts q=5**: GHZ-5 → Product (crossings at g≈0.41, slope 5.7x steeper than clock, NOT first-order)

@@ -205,6 +205,13 @@ Explicit operator counting: U(1)=0.143 > Z₂=0.099 > S₃=0.072 > Z₃=0.040 (H
 
 [Full report: sprints/sprint_040.md]
 
+### Sprint 042 — True q=5 Potts MI-CV: Second-Order, Not First-Order
+**Status:** Complete (5 experiments).
+
+**Custom Potts model built with Kronecker-delta coupling.** True q=5 Potts shows CROSSING curves at g_c≈0.41, disproving the first-order prediction. Potts transition 5.7x steeper than clock (slope 4.5-6.1 vs 0.8-1.0) but same qualitative second-order signature. The 2D classical "q>4 → first-order" rule does NOT apply to 1D quantum Potts with transverse field.
+
+[Full report: sprints/sprint_042.md]
+
 ### Sprint 041 — q=5 Clock MI-CV: Crossings Persist, Shifted Dramatically
 **Status:** Complete (4 experiments).
 
