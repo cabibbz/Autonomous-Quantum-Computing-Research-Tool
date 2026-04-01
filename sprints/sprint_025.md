@@ -57,7 +57,25 @@ The question: does isotropy survive these real-world complications?
 
 ### 25b: Real Hardware QPU
 
-(Results pending)
+**Backend:** ibm_kingston (Heron, 156 qubits)
+**QPU time:** 20 seconds (of 600s monthly budget)
+**Shots:** 4096 per circuit, 18 circuits total
+
+**T1/T2 for first 5 qubits:** T1 ~ 220-400 μs, T2 ~ 60-380 μs
+
+| Code | Z-Holevo | X-Holevo | Y-Holevo | Avg | Asymmetry |
+|------|----------|----------|----------|-----|-----------|
+| Uncoded | 0.959 | 0.970 | 0.971 | 0.967 | 0.012 |
+| 3-qubit | 0.976 | 0.815 | 0.722 | 0.838 | 0.254 |
+| [[5,1,3]] | 0.482 | 0.522 | 0.492 | 0.499 | 0.040 |
+
+**Key findings:**
+1. **Isotropy prediction CONFIRMED**: [[5,1,3]] asymmetry 0.040 vs 3-qubit 0.254 — **6x more isotropic** on real hardware
+2. **Hardware beats simulator model**: Uncoded Holevo 0.967 >> 0.886 predicted — IBM Heron has lower errors than our conservative noise model
+3. **3-qubit asymmetry matches prediction**: HW 0.254 ≈ Sim 0.245 (3.7% difference)
+4. **[[5,1,3]] asymmetry 4x worse on hardware** (0.040 vs 0.010): correlated noise partially breaks isotropy
+5. **Uncoded still wins overall**: 0.967 > 0.838 > 0.499 — encoding overhead dominates at current error rates
+6. **3-qubit Z-basis champion**: 0.976 — error rates so low that bit-flip correction provides real gain in Z-basis
 
 ### 25c: Gap Analysis
 
