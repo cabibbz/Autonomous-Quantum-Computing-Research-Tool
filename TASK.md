@@ -126,6 +126,8 @@ An autonomous researcher. Nobody is telling you what to find. You have a quantum
 **Vague / deprioritize:**
 - "What kinds of correlations can you create?" — too open-ended without a specific measure.
 
-## You Can Edit This File
+**note from session 22 forward - try to craft something valuable enough for QPU soon, its the subtle goal, while everyhting should be building around it to feeding a system to increase for optimal questions for new discovery
 
-As you learn what matters, update these instructions. Add new nudges. Remove ones that aren't useful. This document should evolve with your understanding.
+## You Can Edit This File (encouraged to)
+
+As you learn what matters, update these instructions. Add new nudges. Remove ones that aren't useful. This document should evolve with your understanding. The goal is to discover undocumented things and build our way to reliably structure the best predictions and system.

@@ -4,7 +4,7 @@
   ## QPU Budget
   - Monthly allocation: 600 seconds
   - Used this period: 0s
-  - Sprints completed on simulator only: 23
+  - Sprints completed on simulator only: 24
   - Note: Your simulator predictions are now specific enough to test.
     Real hardware noise is a mixture of channels — your noise fingerprint
     framework (Sprint 016) can decompose it. The gap between simulator
@@ -486,3 +486,24 @@
 **Next:** Surface code at d=2 (planar), entanglement-assisted codes, real hardware QEC test, quantum channel capacity under bias, min-basis Holevo as universal code ranking metric
 
 [Full report: sprints/sprint_023.md]
+
+### Sprint 024 — 2026-03-31 — Surface Code vs Shor: Same [[9,1,3]], Different Architecture
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **24a: Entanglement structure** — Surface code is a HYBRID: MI=4.0 at 4 boundary pairs (like toric), I3=-1.0 for 8/84 triples (like [[5,1,3]]). The 4 MI-correlated pairs ARE the weight-2 boundary stabilizers. Negativity range at |A|=4 is 0.5-7.5 (wider than Shor's 0.5-3.5).
+- **24b: Combined T1+T2 noise** — Surface code NEVER wins: 0% on avg Holevo (Shor 72%, [[5,1,3]] 28%), 0% on min-basis Holevo ([[5,1,3]] 84%, Shor 12%). "Jack of all trades, master of none."
+- **24c: Why surface loses** — Non-uniform stabilizer participation: corner qubits in 2 stabilizers, center in 4. [[5,1,3]] has all qubits in exactly 4 (perfect symmetry). Under bit-flip, surface Z-Holevo=0.55 vs [[5,1,3]]=0.96. Under Y-flip, ALL codes converge (asymmetry 0.005).
+
+**Surprises:**
+- **Surface code never wins at d=3** — despite being the industry-standard code, it loses to both Shor (avg) and [[5,1,3]] (min-basis) at every noise point
+- **Boundary MI leakage matches toric code exactly** — total MI=4.0 with 4 specific pairs, identical to toric [[8,2,2]] (Sprint 020). Boundaries are information highways.
+- **Y-flip is the great equalizer** — all three codes achieve ~0.997 avg Holevo with 0.005 asymmetry. Y = iXZ hits both X and Z simultaneously, and all architectures handle this combination well.
+- **Surface code has the widest negativity range** — |A|=4 range of 0.5 to 7.5 (Shor: 0.5-3.5). Topological structure creates extreme entanglement hotspots.
+- **Depolarizing noise reveals surface's partial isotropy** — asymmetry 0.085 (between Shor 0.10 and [[5,1,3]] 0.000). The mixed X/Z stabilizer structure provides partial but not complete isotropy.
+
+**Key insight:** The surface code's advantage is architectural, not small-scale. At d=3, it pays a "boundary tax" — 4 weight-2 stabilizers break the isotropy that [[5,1,3]] achieves algebraically. This tax becomes negligible at large d where boundary qubits are a vanishing fraction. The boundary paradox: the MI-leaking boundaries are simultaneously the code's greatest weakness (information exposure) and engineering advantage (where syndrome measurements happen). The surface code wins at scale because (1) distance grows as O(√n), (2) stabilizers are local (practical for hardware), and (3) 2D layout matches chip geometry — none of which matter at d=3 with 9 qubits.
+
+**Next:** Real hardware QPU test, XZZX surface code variant, syndrome extraction noise, entanglement-assisted codes
+
+[Full report: sprints/sprint_024.md]
