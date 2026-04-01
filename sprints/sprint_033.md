@@ -78,4 +78,40 @@ n=8 (dim_A = 81), swept h/J from 0.01 to 2.0.
 - The symmetry group determines the ordered-phase degeneracy pattern, but both look similar in disordered phase.
 
 ### 33c: BW Locality for Potts — S₃ vs Z₂ vs U(1)
-[pending]
+**Status:** Complete
+
+n=8, subsystem A = left 4 sites (dim_A = 81). Swept h/J from 0.05 to 2.0.
+
+**Results:**
+| h/J | Phase | Potts Locality | BW Variance Captured | Best Envelope |
+|-----|-------|---------------|---------------------|--------------|
+| 0.05 | Deep ordered | 51.1% | 49.9% | linear |
+| 0.15 | Ordered | 65.8% | 65.1% | linear |
+| 0.25 | Critical | **76.5%** (peak) | 75.8% | linear |
+| 0.50 | Disordered | 59.2% | 58.8% | linear |
+| 1.00 | Deep disordered | 45.9% | 44.7% | linear |
+
+**KEY RESULT — Sprint 032's prediction is WRONG:**
+| Model | Symmetry | |G| | d | Peak BW Locality |
+|-------|----------|-----|---|-----------------|
+| XXZ | U(1) | ∞ | 2 | **100.0%** |
+| TFIM | Z₂ | 2 | 2 | **91%** |
+| Potts | S₃ | 6 | 3 | **76.5%** |
+
+S₃ has order 6 (between Z₂=2 and U(1)=∞), but gives the LOWEST BW locality!
+
+**Why the prediction fails:**
+1. BW locality = fraction of H_E captured by physical Hamiltonian terms
+2. The relevant quantity is NOT |G| but the ratio of Hamiltonian terms to symmetry-allowed terms
+3. For d=2 (qubit): operator space has 4^{n_A} = 256 terms. Z₂/U(1) strongly constrain which operators appear.
+4. For d=3 (qutrit): operator space has 9^{n_A} = 6561 terms. Even S₃ (order 6) allows many more non-Hamiltonian operators.
+5. S₃ allows additional 2-body invariants beyond δ and P+P†: e.g., P_i P_j + P_i† P_j†, P_i P_j† + P_i† P_j — these are S₃-invariant but NOT in the physical Hamiltonian.
+6. U(1) is special: for d=2, it forces ALL 2-body terms to be XX+YY+ZZ type, which ARE the Hamiltonian terms.
+
+**Corrected principle:** BW locality is controlled by the ratio dim(Hamiltonian operator space) / dim(symmetry-allowed operator space). Group size alone is insufficient; local Hilbert space dimension matters crucially.
+
+**Coupling profiles confirm BW envelope:**
+- δ coefficients decrease from far-from-cut to near-cut: 10.1 → 7.3 → 3.5 (h/J=0.10)
+- P+P† coefficients similarly decrease: 0.80 → 0.58 → 0.54 → 0.16
+- Entanglement temperature gradient IS Unruh-like (hot at cut, cold in bulk)
+- BW picture qualitatively correct even though quantitatively weaker (76.5% vs 91-100%)
