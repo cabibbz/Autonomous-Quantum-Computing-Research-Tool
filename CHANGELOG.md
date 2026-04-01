@@ -292,3 +292,20 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - 5-point prediction underestimated q=10 by 10%
 
 [Full report: sprints/sprint_052.md]
+
+### Sprint 053 — ν(q) at True Critical Points: Method Validated, Old ν Values WRONG
+**Status:** Complete (6 experiments).
+
+**Corrected energy gap slope method validated.** d(Δ·N)/dg ~ N^{1/ν}·(1+b/N) with b=0.86 calibrated from q=3 (ν=5/6 exact). Achieves <1% error for q=2 (ν=1.00), 3% for q=3 (ν=0.86 vs 5/6). Data collapse is WORST method (43% error at n≤10).
+
+**ν(q=3,4,5) ≈ 0.82-0.86, nearly constant.** q=2: 1.00 (exact 1.0). q=3: 0.86 (exact 5/6). q=4: 0.82 (3 size pairs all agree). q=5: 0.85 (1 pair). q=7: 0.97 (1 pair, low confidence). q=10: 1.12 (1 pair, suspect).
+
+**ALL old ν values for q≥4 WRONG.** Old q=4 ν≥2.2, q=5 ν≈2.0, q=7 ν≈0.5 — all artifacts of MI-CV data collapse at wrong critical points. The "BKT peak" at q=4 and "non-monotonic ν(q)" were entirely artifactual.
+
+**Surprises:**
+- ν(q=4) = 0.82, NOT ≥2.2 — no BKT behavior
+- ν(q=5) = 0.85, NOT 2.0 — MI-CV collapse overestimates ν by ~2.5×
+- Data collapse is worst ν method (43% error) — corrected power-law is best (3%)
+- ν nearly constant ~0.85 for q=3,4,5 — near-universal exponent
+
+[Full report: sprints/sprint_053.md]

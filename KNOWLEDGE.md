@@ -70,18 +70,27 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 
 **Clock ≠ Potts for q≥4 (Sprints 041-042).** TeNPy's ClockChain uses cos(2π(s_i-s_j)/q) coupling, which equals Potts δ(s_i,s_j) only for q=2,3. For q≥5, models differ: Clock g_c=0.67 vs Potts g_c=0.41, Potts slope 5.7x steeper. Custom PottsChain model built (Sprint 042) with projector coupling. Both show second-order crossings — the 2D classical "q>4 → first-order" does NOT apply to 1D quantum Potts with transverse field. Anisotropic quantum-classical correspondence preserves second-order character.
 
-**~~ν(q) extraction (Sprints 045-048)~~ SUSPECT (Sprint 049).** All ν values for q≥3 were measured at WRONG g values. Only ν(q=2) = 1.0 is confirmed.
+**ν(q) extraction (Sprint 053).** Corrected energy gap slope method: d(Δ·N)/dg ~ N^{1/ν}·(1+b/N), b=0.86 from q=3 calibration. Validated: <1% for q=2, 3% for q=3.
 
-| q | Previous ν | Measured at g | True g_c (Sprint 051) | Status |
-|---|-----------|---------------|----------------------|--------|
-| 2 | 1.0 | 1.0 (TFIChain) | 0.25 (our Potts) / 1.0 (TFIChain) ✓ | **Confirmed** |
-| 3 | 5/6 | ~0.9 | 0.333 (exact) | **WRONG g, need redo** |
-| 4 | ≥2.2 | ~0.89 | ~0.39 | **WRONG g, need redo** |
-| 5 | ~2.0 | ~0.45 | ~0.44 | **Close! May be salvageable** |
-| 7 | ~0.5 | ~0.26 | ~0.535 | **WRONG g by 2×** |
-| 10 | unreliable | ~0.25 | ~0.684 | **WRONG g** |
+| q | g_c | ν (corrected) | Confidence | 2D classical exact |
+|---|-----|---------------|------------|-------------------|
+| 2 | 0.250 | 1.00 | High (3 pairs) | 1.0 |
+| 3 | 0.333 | 0.86 | High (4 sizes) | 5/6 = 0.833 |
+| 4 | 0.392 | 0.82 | High (3 pairs, all agree) | 2/3 + logs |
+| 5 | 0.441 | 0.85 | Medium (1 pair) | — (1st order in 2D) |
+| 7 | 0.535 | 0.97 | Low (1 pair) | — |
+| 10 | 0.684 | 1.12 | Low (1 pair (4,5)) | — |
 
-q=5 previous measurement at g≈0.45 was close to true g_c≈0.44 — ν≈2.0 result may be approximately correct. All others need redo at correct g_c.
+**ν(q=3,4,5) ≈ 0.82-0.86, nearly constant.** Contrasts with old non-monotonic picture (ν=5/6 → ≥2.2 → 2.0 → 0.5) which was entirely artifact. Old values from MI-CV data collapse at wrong g_c.
+
+**Method ranking for ν extraction (Sprint 053):**
+1. Corrected power-law (3% error) — BEST with ≥3 sizes
+2. 1/N extrapolation of pairwise ν (3%) — BEST, needs ≥3 consecutive pairs
+3. Direct power-law fit (15%) — rough estimate
+4. Data collapse (43%) — **DO NOT USE at n≤10**
+5. MI-CV data collapse — **DO NOT USE** (gave ν=2.0 where true is 0.85)
+
+**DMRG excited states fail for Potts.** orthogonal_to gives gap=0. The no-conservation-law Potts Hamiltonian confuses the orthogonality projection.
 
 **Dead-pair bias AND χ convergence in MI-CV (Sprint 048).** Two confounded effects at large d:
 1. **Dead-pair bias**: fraction of near-zero MI pairs differs between sizes (n=8: 25%, n=12: 17% at d=10), inflating n=8 CV relative to n=12.

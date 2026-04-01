@@ -1,30 +1,30 @@
 # Current State — Rewrite this completely each sprint
 
 ## Last Sprint
-Sprint 052 — g_c(q) Scaling Law: √(q-1) Formula + q=10 Verification
+Sprint 053 — ν(q) at True Critical Points: Method Validated, Old ν Values WRONG
 
 ## Active Research Thread
-**g_c(q) ≈ (1/5)√(q-1) + 1/20 for 1D quantum Potts.** Fits 6 data points (q=2-10) to <5% error. Potentially novel — no prior measurement found.
+**ν(q) extraction via corrected energy gap slopes.** Validated to 3% accuracy for q=3 (exact 5/6) and <1% for q=2 (exact 1).
 
-| q | g_c (corrected) | Formula prediction | Error |
-|---|-----------------|-------------------|-------|
-| 2 | 0.250 (exact) | 0.250 | 0.0% |
-| 3 | 0.333 (exact) | 0.333 | 0.05% |
-| 4 | 0.392 | 0.396 | 1.2% |
-| 5 | 0.441 | 0.450 | 2.1% |
-| 7 | 0.535 | 0.540 | 0.9% |
-| 10 | 0.684 | 0.650 | 4.9% |
+| q | g_c | ν (corrected) | Confidence |
+|---|-----|---------------|------------|
+| 2 | 0.250 | 1.00 | High (3 size pairs, <1% from exact) |
+| 3 | 0.333 | 0.86 | High (4 sizes, 3% from exact 5/6) |
+| 4 | 0.392 | 0.82 | High (3 size pairs, all agree) |
+| 5 | 0.441 | 0.85 | Medium (1 size pair only) |
+| 7 | 0.535 | 0.97 | Low (1 pair, b-calibration may not transfer) |
+| 10 | 0.684 | 1.12 | Low (1 pair (4,5), suspect) |
 
-**FSS corrections are size-pair dependent:** n=4,6 → 4.8%, n=6,8 → 2.5%.
+**Key insight:** ν(q=3,4,5) ≈ 0.82-0.86, nearly constant. Old non-monotonic picture was artifact.
 
 ## QPU Budget
 - Used: 20s of 600s (Sprint 025: ibm_kingston)
 - Remaining: 580s
 
 ## Top 3 Next Experiments
-1. **ν(q=3) at true g_c=1/3** — Data collapse near g=0.33. Known exact ν=5/6. Validates ν extraction at correct g_c.
-2. **g_c(q) formula verification at q=15 or q=20** — Energy gap at q=15 (dim 15^4=50k at n=4, 15^6=11M at n=6). Tests formula prediction g_c(15)≈0.80.
-3. **ν(q=5) recheck** — Old ν≈2.0 measured near g≈0.45, close to true g_c≈0.44. Quick validation with energy gap + MI-CV at correct g_c.
+1. **ν(q=7) with more sizes** — Need n=8 (7^8=5.7M, too large for exact diag). Try DMRG with penalty method for excited state, or use iDMRG for direct ν from correlation length.
+2. **Central charge c(q) at true g_c** — Extract c from entropy scaling S=(c/6)ln(n) at correct g_c for q=3,4,5. Known: c=4/5 (q=3), c=1 (q=4). Tests whether our Potts model reproduces CFT predictions.
+3. **QPU validation of g_c(q=3)=1/3** — Prepare q=3 Potts ground state on hardware at g≈0.33 and g≈0.50. Measure order parameter. Budget allows it.
 
 ## What's Been Ruled Out
 - Small-scale QEC active correction (Sprints 026-028)
@@ -34,13 +34,15 @@ Sprint 052 — g_c(q) Scaling Law: √(q-1) Formula + q=10 Verification
 - Raw MI-CV for d≥10 (Sprint 048)
 - Entropy FSS for ν extraction (Sprint 049)
 - All Sprints 038-048 Potts g_c values: WRONG (Sprint 049)
-- Old g_c scaling law g_c ∝ (q-3)^{-0.85}: INVALIDATED — g_c increases
+- Old g_c scaling law g_c ∝ (q-3)^{-0.85}: INVALIDATED
 - Self-duality for q≥4: BROKEN (Sprint 050)
-- Logarithmic g_c(q) growth: too slow, √(q-1) is correct (Sprint 052)
+- **Data collapse for ν extraction at n≤10: UNRELIABLE (Sprint 053, 43% error)**
+- **MI-CV data collapse for ν: UNRELIABLE (Sprint 053)**
+- **All Sprint 045-047 ν values for q≥3: WRONG (Sprint 053)**
 
 ## Key Tools Available
-- Exact diag: n≤10 (q=2), n≤8 (q=3,4), n≤6 (q=5,7,10), n≤4 (q=15,20)
-- DMRG (TeNPy): n>10, 1D only. PottsChain has NO conservation (slow).
+- Exact diag: n≤10 (q=2), n≤8 (q=3,4), n≤6 (q=5,7), n≤5 (q=10)
+- DMRG (TeNPy): ground state only (excited states failed for Potts)
 - Energy gap Δ·N crossing: best method for g_c (exact diag, FSS-corrected)
-- Direct MPS contraction MI: all-pairs MI for ANY d
+- Corrected power-law slope: best method for ν (need ≥3 sizes, b=0.86)
 - IBM QPU: 580s remaining
