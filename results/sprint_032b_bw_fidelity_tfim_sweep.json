@@ -1,0 +1,791 @@
+{
+  "experiment": "032b",
+  "description": "BW fidelity across TFIM phase diagram",
+  "parameters": {
+    "n": 8,
+    "n_A": 4,
+    "n_points": 25
+  },
+  "envelope_types": [
+    "linear",
+    "sin_inv",
+    "uniform",
+    "log"
+  ],
+  "sweep_results": [
+    {
+      "h_over_J": 0.1,
+      "energy_gap": 1.9799999861902506e-08,
+      "entropy_bits": 1.0000089340852867,
+      "locality_fraction": 0.6710174946447774,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.8134268352285463,
+          "variance_captured": 0.6616632162699287,
+          "alpha": 2.1012307895569684
+        },
+        "sin_inv": {
+          "fidelity": 0.8161625105022539,
+          "variance_captured": 0.6661212435493418,
+          "alpha": 7.828990162764472
+        },
+        "uniform": {
+          "fidelity": 0.7631618804264353,
+          "variance_captured": 0.5824160557360124,
+          "alpha": 5.1764351419789785
+        },
+        "log": {
+          "fidelity": 0.8050138159744296,
+          "variance_captured": 0.6480472439097125,
+          "alpha": 4.382291044714126
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.6661212435493418
+    },
+    {
+      "h_over_J": 0.2,
+      "energy_gap": 4.915199999899755e-06,
+      "entropy_bits": 1.0001141567946217,
+      "locality_fraction": 0.7270310487906462,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.8509477865841333,
+          "variance_captured": 0.7241121354924358,
+          "alpha": 2.22855797728148
+        },
+        "sin_inv": {
+          "fidelity": 0.851660733433636,
+          "variance_captured": 0.7253260048727193,
+          "alpha": 8.244900632556547
+        },
+        "uniform": {
+          "fidelity": 0.7944292865556991,
+          "variance_captured": 0.6311178913373972,
+          "alpha": 5.438248514580789
+        },
+        "log": {
+          "fidelity": 0.8403263033632191,
+          "variance_captured": 0.706148296124093,
+          "alpha": 4.636264660892945
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.7253260048727193
+    },
+    {
+      "h_over_J": 0.30000000000000004,
+      "energy_gap": 0.00011941020369565791,
+      "entropy_bits": 1.0003761825406756,
+      "locality_fraction": 0.7920638609927192,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.8872273941357942,
+          "variance_captured": 0.7871724489049918,
+          "alpha": 2.267926848040466
+        },
+        "sin_inv": {
+          "fidelity": 0.8875238489593462,
+          "variance_captured": 0.7876985824716124,
+          "alpha": 8.328325718354337
+        },
+        "uniform": {
+          "fidelity": 0.8220840646775458,
+          "variance_captured": 0.6758222093967554,
+          "alpha": 5.45480088223723
+        },
+        "log": {
+          "fidelity": 0.8745299822352606,
+          "variance_captured": 0.764802689828405,
+          "alpha": 4.707030191653674
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.7876985824716124
+    },
+    {
+      "h_over_J": 0.4,
+      "energy_gap": 0.0011010079021023245,
+      "entropy_bits": 0.9998560504363733,
+      "locality_fraction": 0.8559944763456462,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.9215443920838947,
+          "variance_captured": 0.8492440665812748,
+          "alpha": 2.262741913906384
+        },
+        "sin_inv": {
+          "fidelity": 0.922161103350745,
+          "variance_captured": 0.8503811005330629,
+          "alpha": 8.241162390728904
+        },
+        "uniform": {
+          "fidelity": 0.8521283952990658,
+          "variance_captured": 0.7261228020749614,
+          "alpha": 5.384826462157539
+        },
+        "log": {
+          "fidelity": 0.9091931341024598,
+          "variance_captured": 0.8266321550990536,
+          "alpha": 4.697602601160642
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.8503811005330629
+    },
+    {
+      "h_over_J": 0.5,
+      "energy_gap": 0.005859889207592062,
+      "entropy_bits": 0.9934364088593775,
+      "locality_fraction": 0.8908070856952656,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.9394749588091411,
+          "variance_captured": 0.8826131982294371,
+          "alpha": 2.2251566134321377
+        },
+        "sin_inv": {
+          "fidelity": 0.9405467239847505,
+          "variance_captured": 0.8846281399984468,
+          "alpha": 8.03206891223847
+        },
+        "uniform": {
+          "fidelity": 0.8671016651114211,
+          "variance_captured": 0.7518652976389992,
+          "alpha": 5.236029361219842
+        },
+        "log": {
+          "fidelity": 0.9280583257293045,
+          "variance_captured": 0.8612922559554801,
+          "alpha": 4.622133860982201
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.8846281399984468
+    },
+    {
+      "h_over_J": 0.6,
+      "energy_gap": 0.02152805743891051,
+      "entropy_bits": 0.9663794918211912,
+      "locality_fraction": 0.9087585980970952,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.9484434891358727,
+          "variance_captured": 0.8995450520842284,
+          "alpha": 2.162058868377389
+        },
+        "sin_inv": {
+          "fidelity": 0.9499177336901354,
+          "variance_captured": 0.9023437007790034,
+          "alpha": 7.732777214146034
+        },
+        "uniform": {
+          "fidelity": 0.8735293848791211,
+          "variance_captured": 0.7630535862472954,
+          "alpha": 5.028193979525718
+        },
+        "log": {
+          "fidelity": 0.9380536889149778,
+          "variance_captured": 0.8799447232869977,
+          "alpha": 4.493181287262083
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.9023437007790034
+    },
+    {
+      "h_over_J": 0.7000000000000001,
+      "energy_gap": 0.05952600775830774,
+      "entropy_bits": 0.895998762012329,
+      "locality_fraction": 0.9180297972767097,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.9529990648733664,
+          "variance_captured": 0.9082072176495108,
+          "alpha": 2.0752747826080085
+        },
+        "sin_inv": {
+          "fidelity": 0.9549048868148857,
+          "variance_captured": 0.9118433428629498,
+          "alpha": 7.35661902792409
+        },
+        "uniform": {
+          "fidelity": 0.8755747743910506,
+          "variance_captured": 0.7666311855499388,
+          "alpha": 4.769758529489827
+        },
+        "log": {
+          "fidelity": 0.9435352403100196,
+          "variance_captured": 0.8902587497068863,
+          "alpha": 4.31413248239034
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.9118433428629498
+    },
+    {
+      "h_over_J": 0.8,
+      "energy_gap": 0.1301980305176933,
+      "entropy_bits": 0.7766863690066903,
+      "locality_fraction": 0.9209434918159548,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.9543949451409841,
+          "variance_captured": 0.9108697113106616,
+          "alpha": 1.9724409513572467
+        },
+        "sin_inv": {
+          "fidelity": 0.956657683470417,
+          "variance_captured": 0.9151939233429848,
+          "alpha": 6.9336129799222155
+        },
+        "uniform": {
+          "fidelity": 0.8744406047335065,
+          "variance_captured": 0.7646463712067004,
+          "alpha": 4.481447888833274
+        },
+        "log": {
+          "fidelity": 0.945680116395949,
+          "variance_captured": 0.8943108825466555,
+          "alpha": 4.1008038516305
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.9151939233429848
+    },
+    {
+      "h_over_J": 0.85,
+      "energy_gap": 0.17877844086925165,
+      "entropy_bits": 0.7073418196859451,
+      "locality_fraction": 0.9198791695879005,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.9538400001421657,
+          "variance_captured": 0.9098107458712067,
+          "alpha": 1.9184329778539178
+        },
+        "sin_inv": {
+          "fidelity": 0.9561828986670918,
+          "variance_captured": 0.9142857357034017,
+          "alpha": 6.716649713294876
+        },
+        "uniform": {
+          "fidelity": 0.8725602832545428,
+          "variance_captured": 0.7613614479132478,
+          "alpha": 4.334032570769971
+        },
+        "log": {
+          "fidelity": 0.9454052813496008,
+          "variance_captured": 0.893791146003718,
+          "alpha": 3.9883564145616512
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.9142857357034017
+    },
+    {
+      "h_over_J": 0.8999999999999999,
+      "energy_gap": 0.23547378151342002,
+      "entropy_bits": 0.6383821756057401,
+      "locality_fraction": 0.9173760969094364,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.9525770512431397,
+          "variance_captured": 0.9074030385550749,
+          "alpha": 1.8638081521705985
+        },
+        "sin_inv": {
+          "fidelity": 0.9549350709642465,
+          "variance_captured": 0.9119009897574903,
+          "alpha": 6.500004116874934
+        },
+        "uniform": {
+          "fidelity": 0.8699310874100294,
+          "variance_captured": 0.7567800968423963,
+          "alpha": 4.187064404666919
+        },
+        "log": {
+          "fidelity": 0.9443602850351807,
+          "variance_captured": 0.8918163479517275,
+          "alpha": 3.874408648239771
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.9119009897574903
+    },
+    {
+      "h_over_J": 0.95,
+      "energy_gap": 0.29927502713929854,
+      "entropy_bits": 0.5736585514375157,
+      "locality_fraction": 0.9136117483074403,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.9506876219366458,
+          "variance_captured": 0.9038069545035546,
+          "alpha": 1.8092732252526489
+        },
+        "sin_inv": {
+          "fidelity": 0.9530079015809231,
+          "variance_captured": 0.9082240604756747,
+          "alpha": 6.286168436653084
+        },
+        "uniform": {
+          "fidelity": 0.8666689575400621,
+          "variance_captured": 0.7511150819635779,
+          "alpha": 4.042292683894769
+        },
+        "log": {
+          "fidelity": 0.94264005318453,
+          "variance_captured": 0.888570269867734,
+          "alpha": 3.76050959815969
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.9082240604756747
+    },
+    {
+      "h_over_J": 1.0,
+      "energy_gap": 0.3690734378532099,
+      "entropy_bits": 0.5152749590579397,
+      "locality_fraction": 0.9085606440434554,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.9481426827447813,
+          "variance_captured": 0.8989745468424708,
+          "alpha": 1.7556848789279393
+        },
+        "sin_inv": {
+          "fidelity": 0.9503700340276378,
+          "variance_captured": 0.9032032015776933,
+          "alpha": 6.077987784484035
+        },
+        "uniform": {
+          "fidelity": 0.8627364672358323,
+          "variance_captured": 0.7443142118985648,
+          "alpha": 3.9014877408350586
+        },
+        "log": {
+          "fidelity": 0.9402158702532358,
+          "variance_captured": 0.8840058826760496,
+          "alpha": 3.648455581479631
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.9032032015776933
+    },
+    {
+      "h_over_J": 1.0499999999999998,
+      "energy_gap": 0.44381751465421004,
+      "entropy_bits": 0.4638920010255603,
+      "locality_fraction": 0.9040137064733995,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.9458796209991237,
+          "variance_captured": 0.8946882574214459,
+          "alpha": 1.7011483070240112
+        },
+        "sin_inv": {
+          "fidelity": 0.9480989761502927,
+          "variance_captured": 0.8988916685772332,
+          "alpha": 5.86962702719715
+        },
+        "uniform": {
+          "fidelity": 0.8594775826744557,
+          "variance_captured": 0.738701715119926,
+          "alpha": 3.7624989212638846
+        },
+        "log": {
+          "fidelity": 0.9381427414226895,
+          "variance_captured": 0.8801118032840793,
+          "alpha": 3.5347950464225137
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.8988916685772332
+    },
+    {
+      "h_over_J": 1.0999999999999999,
+      "energy_gap": 0.522589871345815,
+      "entropy_bits": 0.4192682139798121,
+      "locality_fraction": 0.8987907111665545,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.9432650003944764,
+          "variance_captured": 0.8897488609691917,
+          "alpha": 1.6479824168926762
+        },
+        "sin_inv": {
+          "fidelity": 0.9454639480004702,
+          "variance_captured": 0.8939020769686356,
+          "alpha": 5.668311295791126
+        },
+        "uniform": {
+          "fidelity": 0.8560418103289321,
+          "variance_captured": 0.7328075810312354,
+          "alpha": 3.629014461401554
+        },
+        "log": {
+          "fidelity": 0.9357206751068654,
+          "variance_captured": 0.8755731818224477,
+          "alpha": 3.4240546500008313
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.8939020769686356
+    },
+    {
+      "h_over_J": 1.15,
+      "energy_gap": 0.6046279902605001,
+      "entropy_bits": 0.3807240186708122,
+      "locality_fraction": 0.8929359630185809,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.9403135310312235,
+          "variance_captured": 0.8841895366404078,
+          "alpha": 1.5964812465485907
+        },
+        "sin_inv": {
+          "fidelity": 0.9424821686260894,
+          "variance_captured": 0.8882726381781365,
+          "alpha": 5.474867271532484
+        },
+        "uniform": {
+          "fidelity": 0.8524469651714373,
+          "variance_captured": 0.7266658284299929,
+          "alpha": 3.5014894630889657
+        },
+        "log": {
+          "fidelity": 0.9329676894362766,
+          "variance_captured": 0.8704287095320646,
+          "alpha": 3.3168515149684836
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.8882726381781365
+    },
+    {
+      "h_over_J": 1.2,
+      "energy_gap": 0.6893150817362788,
+      "entropy_bits": 0.34744016171060144,
+      "locality_fraction": 0.8865090499352568,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.9370503072646755,
+          "variance_captured": 0.8780632783448228,
+          "alpha": 1.5468068290584833
+        },
+        "sin_inv": {
+          "fidelity": 0.9391813649402988,
+          "variance_captured": 0.8820616362511229,
+          "alpha": 5.28966405395292
+        },
+        "uniform": {
+          "fidelity": 0.8487358889408406,
+          "variance_captured": 0.7203526091761991,
+          "alpha": 3.3801517106138643
+        },
+        "log": {
+          "fidelity": 0.9299148214166847,
+          "variance_captured": 0.8647415750904246,
+          "alpha": 3.213536316021792
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.8820616362511229
+    },
+    {
+      "h_over_J": 1.4,
+      "energy_gap": 1.0461138665674525,
+      "entropy_bits": 0.25228356141680414,
+      "locality_fraction": 0.8562174776461207,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.9212985858612137,
+          "variance_captured": 0.8487910843098723,
+          "alpha": 1.3671726527265478
+        },
+        "sin_inv": {
+          "fidelity": 0.9233152305721966,
+          "variance_captured": 0.8525110150065884,
+          "alpha": 4.6307753882089795
+        },
+        "uniform": {
+          "fidelity": 0.8326750727637193,
+          "variance_captured": 0.6933477768020655,
+          "alpha": 2.9530056827791022
+        },
+        "log": {
+          "fidelity": 0.9150879161546935,
+          "variance_captured": 0.8373858942923397,
+          "alpha": 2.8405420876619587
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.8525110150065884
+    },
+    {
+      "h_over_J": 1.6,
+      "energy_gap": 1.4199051293867306,
+      "entropy_bits": 0.1940938739676509,
+      "locality_fraction": 0.8211018752278578,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.9023736109228487,
+          "variance_captured": 0.8142781336899404,
+          "alpha": 1.2164635409712836
+        },
+        "sin_inv": {
+          "fidelity": 0.9044170963971695,
+          "variance_captured": 0.8179702842554868,
+          "alpha": 4.090343313951461
+        },
+        "uniform": {
+          "fidelity": 0.815423288881925,
+          "variance_captured": 0.6649151400510152,
+          "alpha": 2.6077089099801016
+        },
+        "log": {
+          "fidelity": 0.8972376990159567,
+          "variance_captured": 0.8050354885354486,
+          "alpha": 2.5284745526177597
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.8179702842554868
+    },
+    {
+      "h_over_J": 1.8,
+      "energy_gap": 1.8025345044188867,
+      "entropy_bits": 0.1554357978372055,
+      "locality_fraction": 0.7857061985067771,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.882787101488264,
+          "variance_captured": 0.7793130665540503,
+          "alpha": 1.0903162479426138
+        },
+        "sin_inv": {
+          "fidelity": 0.8847562501820031,
+          "variance_captured": 0.7827936222361195,
+          "alpha": 3.645026806890115
+        },
+        "uniform": {
+          "fidelity": 0.797403914597135,
+          "variance_captured": 0.6358530030148349,
+          "alpha": 2.322953160385596
+        },
+        "log": {
+          "fidelity": 0.8784114842006536,
+          "variance_captured": 0.7716067355755949,
+          "alpha": 2.2668049938108448
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.7827936222361195
+    },
+    {
+      "h_over_J": 2.0,
+      "energy_gap": 2.1902471398840646,
+      "entropy_bits": 0.12809969083985823,
+      "locality_fraction": 0.7633660842033329,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.870618332678177,
+          "variance_captured": 0.7579762811953288,
+          "alpha": 0.9829969287717862
+        },
+        "sin_inv": {
+          "fidelity": 0.8718507214093314,
+          "variance_captured": 0.7601236804219713,
+          "alpha": 3.2687499342220687
+        },
+        "uniform": {
+          "fidelity": 0.7810239299489556,
+          "variance_captured": 0.6099983791529113,
+          "alpha": 2.070565192218656
+        },
+        "log": {
+          "fidelity": 0.8656903950105118,
+          "variance_captured": 0.7494198600134558,
+          "alpha": 2.041422437944447
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.7601236804219713
+    },
+    {
+      "h_over_J": 2.2,
+      "energy_gap": 2.5811231175524867,
+      "entropy_bits": 0.10786710592382348,
+      "locality_fraction": 0.7412731344543563,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.8580534131902513,
+          "variance_captured": 0.7362556598874401,
+          "alpha": 0.8917520967916858
+        },
+        "sin_inv": {
+          "fidelity": 0.8588913605450996,
+          "variance_captured": 0.7376943692190123,
+          "alpha": 2.953385347169589
+        },
+        "uniform": {
+          "fidelity": 0.765003492099414,
+          "variance_captured": 0.5852303429242984,
+          "alpha": 1.8600743389358343
+        },
+        "log": {
+          "fidelity": 0.8528068315522128,
+          "variance_captured": 0.7272794919421242,
+          "alpha": 1.8504920578465431
+        }
+      },
+      "best_envelope": "sin_inv",
+      "best_variance_captured": 0.7376943692190123
+    },
+    {
+      "h_over_J": 2.4000000000000004,
+      "energy_gap": 2.9740915666870933,
+      "entropy_bits": 0.09236965439599035,
+      "locality_fraction": 0.726567670701937,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.8498709765710671,
+          "variance_captured": 0.7222806768178595,
+          "alpha": 0.8144969866175782
+        },
+        "sin_inv": {
+          "fidelity": 0.8497799568217658,
+          "variance_captured": 0.7221259750160023,
+          "alpha": 2.6868147517791687
+        },
+        "uniform": {
+          "fidelity": 0.7534277571074518,
+          "variance_captured": 0.567653385179965,
+          "alpha": 1.6844489707130317
+        },
+        "log": {
+          "fidelity": 0.8436973964221279,
+          "variance_captured": 0.7118252967294769,
+          "alpha": 1.6877857205962807
+        }
+      },
+      "best_envelope": "linear",
+      "best_variance_captured": 0.7222806768178595
+    },
+    {
+      "h_over_J": 2.6,
+      "energy_gap": 3.368512132039008,
+      "entropy_bits": 0.0801782347443805,
+      "locality_fraction": 0.7120455878167082,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.8416169600631763,
+          "variance_captured": 0.7083191074659816,
+          "alpha": 0.7478775524040968
+        },
+        "sin_inv": {
+          "fidelity": 0.8406082726253125,
+          "variance_captured": 0.7066222680061118,
+          "alpha": 2.4585657953682643
+        },
+        "uniform": {
+          "fidelity": 0.7422146063736905,
+          "variance_captured": 0.5508825219144522,
+          "alpha": 1.534979834848723
+        },
+        "log": {
+          "fidelity": 0.8345015805871818,
+          "variance_captured": 0.6963928880025043,
+          "alpha": 1.5475520344902183
+        }
+      },
+      "best_envelope": "linear",
+      "best_variance_captured": 0.7083191074659816
+    },
+    {
+      "h_over_J": 2.8,
+      "energy_gap": 3.763979877431524,
+      "entropy_bits": 0.07038020569684748,
+      "locality_fraction": 0.7014598565228412,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.835323210401827,
+          "variance_captured": 0.6977648658360145,
+          "alpha": 0.6903107749935156
+        },
+        "sin_inv": {
+          "fidelity": 0.8341363506699444,
+          "variance_captured": 0.6957834515089723,
+          "alpha": 2.2644290799332327
+        },
+        "uniform": {
+          "fidelity": 0.7358578253302669,
+          "variance_captured": 0.5414867390997895,
+          "alpha": 1.412539465744127
+        },
+        "log": {
+          "fidelity": 0.8282017131985899,
+          "variance_captured": 0.6859180777450794,
+          "alpha": 1.4280793979097335
+        }
+      },
+      "best_envelope": "linear",
+      "best_variance_captured": 0.6977648658360145
+    },
+    {
+      "h_over_J": 3.0,
+      "energy_gap": 4.1602268158320115,
+      "entropy_bits": 0.06236595526315844,
+      "locality_fraction": 0.6922475643486258,
+      "envelope_results": {
+        "linear": {
+          "fidelity": 0.8296583787653334,
+          "variance_captured": 0.6883330254555213,
+          "alpha": 0.6400913476147649
+        },
+        "sin_inv": {
+          "fidelity": 0.8286014516270086,
+          "variance_captured": 0.686580365638386,
+          "alpha": 2.096631092845427
+        },
+        "uniform": {
+          "fidelity": 0.7312665514518033,
+          "variance_captured": 0.5347507692722127,
+          "alpha": 1.3083894795914437
+        },
+        "log": {
+          "fidelity": 0.8228811875335105,
+          "variance_captured": 0.6771334487965606,
+          "alpha": 1.324471600921964
+        }
+      },
+      "best_envelope": "linear",
+      "best_variance_captured": 0.6883330254555213
+    }
+  ],
+  "max_locality": {
+    "h_over_J": 0.8,
+    "value": 0.9209434918159548
+  },
+  "max_bw_variance": {
+    "h_over_J": 0.8,
+    "value": 0.9151939233429848,
+    "envelope": "sin_inv"
+  },
+  "phase_averages": {
+    "ordered": {
+      "avg_locality": 0.8521901120156151,
+      "avg_best_bw": 0.8469722763871012
+    },
+    "critical": {
+      "avg_locality": 0.9062442024977124,
+      "avg_best_bw": 0.9010552518998092
+    },
+    "disordered": {
+      "avg_locality": 0.7799482238529449,
+      "avg_best_bw": 0.7761931746494377
+    }
+  },
+  "runtime_seconds": 0.8207318782806396
+}

@@ -56,3 +56,22 @@ This connects our entanglement spectral analysis to one of the deepest results i
 - Weight distribution of residual: 55% weight-1, 38% weight-2, 6% weight-3
 
 **Surprise:** BW locality is extremely strong (91%) even at n=8, but the standard finite-size CFT envelope fails. The correct envelope appears to be approximately linear in distance from cut, not sinusoidal. This may be a finite-size effect or an open-boundary subtlety.
+
+### 32b: BW Fidelity Across TFIM Phase Diagram
+
+**Sweep:** h/J = 0.1 to 3.0, 25 points. Four envelope types tested: linear, sin_inv, uniform, log.
+
+**Key findings:**
+- **Locality peaks at h/J ≈ 0.80** (92.1%), NOT at criticality (h/J=1.0, 90.9%)
+  - Slight shift into ordered phase — may be finite-size effect
+  - Gap at h/J=0.80 is 0.13 (small but nonzero)
+- **sin_inv envelope wins 21/25 points** — β ∝ sin(π(n_A - i)/L), consistent with distance-from-cut scaling
+- Phase averages:
+  - Ordered: locality 85.2%, best BW variance 84.7%
+  - Critical: locality 90.6%, best BW variance 90.1%
+  - Disordered: locality 78.0%, best BW variance 77.6%
+- **BW works in ALL phases** — even deep disordered (h/J=3.0) has 69% locality
+- Uniform envelope always worst (68% avg) — position dependence IS essential
+- Linear vs sin_inv nearly identical (<0.3% difference) — hard to distinguish at n=8
+
+**Surprise:** BW locality does NOT peak at the critical point where CFT applies. It peaks slightly in the ordered phase (h/J≈0.8) and decreases monotonically into the disordered phase. This suggests BW locality is a general property of ground states of local Hamiltonians, not specific to CFT. The ordered phase has *more* local entanglement structure because ZZ correlations are dominant and match the physical Hamiltonian directly.
