@@ -64,9 +64,19 @@ At n=8, g=0.20:
 | 30 | 0.588 | -7.409415 | 1.512 | 191s |
 | 40 | 0.370 | -7.409442 | 1.824 | 263s |
 
-**CRITICAL: Energy converges (5th decimal) but MI does NOT.** Mean MI jumps 44% from χ=20→40. The "dead pairs" at χ=20 are partially artifacts — they acquire non-zero MI at higher χ. CV drops 38% from χ=30→40. At d=10, χ=40 captures only 40/10000 possible Schmidt values.
+**CRITICAL: Energy converges (5th decimal) but MI does NOT.** Mean MI jumps 44% from χ=20→40. The "dead pairs" at χ=20 are partially artifacts — they acquire non-zero MI at higher χ.
 
-**Energy convergence ≠ MI convergence for large d.** This is because MI requires accurate local 2-site density matrices, not just the global energy. The bond dimension needed for MI convergence is much larger than for energy convergence when d is large.
+Full convergence table (all 12 runs):
+| g | n | χ=20 CV | χ=30 CV | χ=40 CV | χ=40 n12-n8 |
+|---|---|---|---|---|---|
+| 0.20 | 8 | 0.601 | 0.588 | 0.370 | |
+| 0.20 | 12 | 0.481 | 0.416 | 0.406 | **+0.036** |
+| 0.30 | 8 | 0.616 | 0.224 | 0.224 | |
+| 0.30 | 12 | 0.537 | 0.475 | 0.460 | **+0.236** |
+
+**At χ=40, n=12 > n=8 at BOTH g values.** The χ=20 ordering (n=12 < n=8) is completely inverted! At g=0.30, n=8 converges at χ=30 (CV=0.224 stable) while n=12 is still decreasing. The disordered-side gap (+0.236) is 6.5x larger than ordered-side (+0.036), suggesting a crossing might emerge with finer g-resolution.
+
+**Energy convergence ≠ MI convergence for large d.** MI requires accurate local 2-site density matrices, not just the global energy. At d=10, χ=20 is grossly insufficient for MI despite being adequate for energy. n=8 at g=0.30 converges at χ≈30; n=12 needs χ≥40+.
 
 ### 048e: Filtered MI-CV — Dead-Pair Bias Mechanism
 **CRITICAL METHODOLOGICAL FINDING.**
@@ -103,8 +113,8 @@ When near-zero MI pairs are filtered out (threshold = 0.01):
 - DMRG energy convergence is NOT sufficient to trust MI-derived quantities at large d
 
 ## Implications
-1. **MI-CV FSS requires χ > d² for reliable results.** At d=10, need χ > 100 (infeasible for current setup).
-2. **Alternative FSS probes needed for large d:** half-chain entropy (S vs g peak), correlation length from transfer matrix, or entanglement spectrum gaps. These depend on fewer density matrix elements than all-pairs MI.
+1. **MI-CV FSS requires χ ≥ ~3d for n=8 convergence** (empirically, χ=30 converges at d=10 for n=8 in disordered phase). For n=12, need χ ≥ ~4d. The χ > d² rule is overly conservative.
+2. **At converged χ, q=10 likely HAS crossings.** χ=40 shows n=12 > n=8 everywhere with gap growing into disordered phase (+0.036 → +0.236). A crossing would require n=12 < n=8 somewhere in ordered phase, which might emerge at higher χ where n=8 g=0.20 is still dropping.
 3. **Previous q=10 and q=20 results (Sprint 043) should be treated as qualitative only.**
-4. **q=2,3 MI-CV results (d=2,3) are reliable** — χ=20 is well above d²=4,9.
-5. **q=4,5,7 results (d=4,5,7) need scrutiny** — χ=20 gives d²=16,25,49, marginal to insufficient.
+4. **q=2,3 MI-CV results (d=2,3) are reliable** — χ=20 is well above convergence threshold.
+5. **q=4 results (d=4, χ=20) marginal** — χ=20/d=5 may be borderline. q=5 (χ=20/d=4) and q=7 (χ=20/d=2.9) need re-examination.
