@@ -45,14 +45,18 @@ MI uniformity coefficient of variation classifies transition TYPE by curve shape
 
 **~~g_c scaling law (Sprint 044)~~ INVALIDATED (Sprint 049).** Previous g_c values for q≥3 were WRONG. The "g_c scaling law" should not be used.
 
-**Exact Potts critical points (Sprint 050 — self-duality).** Our Hamiltonian H = -Jδ(s_i,s_j) - g(X+X†) is self-dual for q=2,3 only:
-- q=2: g_c = J/4 = 0.25 (corresponds to TFIChain g_c=1.0 via J_TFI=J/2, h_TFI=2g)
-- q=3: g_c = J/3 = 0.333 (EXACT from Kramers-Wannier duality)
-- q≥4: self-duality BROKEN (X+X† ≠ Σ_{k=1}^{q-1} X^k). g_c unknown.
-  - q=4: pseudo-critical at g≈0.34 (n=8), true g_c in [0.30, 0.40]
-  - q=5+: not yet determined
+**Potts critical points.** Our Hamiltonian H = -Jδ(s_i,s_j) - g(X+X†):
+- q=2: g_c = 0.250 (exact, self-duality)
+- q=3: g_c = 0.333 (exact, self-duality)
+- q=4: g_c ≈ 0.39 (energy gap Δ·N crossing, n=6,8 at 0.382 + ~2.5% FSS correction)
+- q=5: g_c ≈ 0.44 (energy gap crossing, n=6,8 at 0.430 + correction)
+- q=7: g_c ≈ 0.52 (energy gap crossing, n=4,6 at 0.511 + correction)
 
-The self-duality works because for q=2,3, {X, X^{q-1}} = {X^1, ..., X^{q-1}} (the field spans ALL non-trivial generators). For q≥4, X+X^{q-1} misses intermediate powers (X², etc.).
+**g_c INCREASES with q** (Sprint 051). Physical mechanism: q-fold ground-state degeneracy requires stronger transverse field X+X† to destroy order. X+X† only creates nearest-state transitions (|s⟩→|s±1⟩), so mixing q states takes longer as q grows.
+
+Self-duality (Kramers-Wannier) gives exact g_c for q=2,3 only ({X, X^{q-1}} spans all generators). For q≥4, X+X^{q-1} misses intermediate powers → self-duality broken.
+
+**Energy gap method (Sprint 051).** At criticality, Δ = E₁-E₀ ∝ 1/N (CFT). Δ·N is scale-invariant at g_c. Validated: q=2 crossings converge to 0.246 (1.5% from exact), q=3 to 0.325 (2.5% from exact). Crossings approach g_c from below with ~2-3% error for largest available pair. Avoids all MI-CV complications (dead pairs, χ convergence, Gell-Mann errors). Requires exact diag (n≤8 for q=4, n≤6 for q=7).
 
 For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossings and are similarly suspect — these were disordered-phase crossovers.
 
@@ -62,16 +66,16 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 
 **~~ν(q) extraction (Sprints 045-048)~~ SUSPECT (Sprint 049).** All ν values for q≥3 were measured at WRONG g values. Only ν(q=2) = 1.0 is confirmed.
 
-| q | Previous ν | Measured at g | True g_c | Status |
-|---|-----------|---------------|----------|--------|
-| 2 | 1.0 | 1.0 (TFIChain) | 1.0 ✓ | **Confirmed** |
+| q | Previous ν | Measured at g | True g_c (Sprint 051) | Status |
+|---|-----------|---------------|----------------------|--------|
+| 2 | 1.0 | 1.0 (TFIChain) | 0.25 (our Potts) / 1.0 (TFIChain) ✓ | **Confirmed** |
 | 3 | 5/6 | ~0.9 | 0.333 (exact) | **WRONG g, need redo** |
-| 4 | ≥2.2 | ~0.89 | ~0.34 (est.) | **WRONG g** |
-| 5 | ~2.0 | ~0.45 | Unknown | **Suspect** |
-| 7 | ~0.5 | ~0.26 | Unknown | **Suspect** |
-| 10 | unreliable | ~0.25 | Unknown | **Suspect** |
+| 4 | ≥2.2 | ~0.89 | ~0.39 | **WRONG g, need redo** |
+| 5 | ~2.0 | ~0.45 | ~0.44 | **Close! May be salvageable** |
+| 7 | ~0.5 | ~0.26 | ~0.52 | **WRONG g by 2×** |
+| 10 | unreliable | ~0.25 | Unknown (>0.52) | **WRONG g** |
 
-q=5,7,10 measured g values might be closer to true g_c since they were already low. Need to verify by entropy/gap methods.
+q=5 previous measurement at g≈0.45 was close to true g_c≈0.44 — ν≈2.0 result may be approximately correct. All others need redo at correct g_c.
 
 **Dead-pair bias AND χ convergence in MI-CV (Sprint 048).** Two confounded effects at large d:
 1. **Dead-pair bias**: fraction of near-zero MI pairs differs between sizes (n=8: 25%, n=12: 17% at d=10), inflating n=8 CV relative to n=12.

@@ -249,3 +249,29 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - q=4 pseudo-critical drifts DOWNWARD with n (0.35→0.34), opposite to q=3
 
 [Full report: sprints/sprint_050.md]
+
+### Sprint 051 — Energy Gap Method: g_c INCREASES with q, Reversing Old Picture
+**Status:** Complete (5 experiments).
+
+**Energy gap Δ·N crossing validated and applied.** At criticality, Δ = E₁-E₀ ∝ 1/N, so Δ·N is scale-invariant at g_c. Validated on q=2 (crossings→0.246 vs exact 0.250) and q=3 (crossings→0.325 vs exact 0.333). Systematic convergence from below, ~2-3% error.
+
+**g_c(q) INCREASES with q:**
+| q | g_c |
+|---|-----|
+| 2 | 0.250 (exact) |
+| 3 | 0.333 (exact) |
+| 4 | ~0.39 |
+| 5 | ~0.44 |
+| 7 | ~0.52 |
+
+**Physical mechanism:** q-fold ground-state degeneracy requires stronger transverse field X+X† to destroy order. X+X† only creates nearest-state transitions, so mixing time grows with q.
+
+**Reverses 10 sprints of wrong results.** Old trend (g_c decreasing) was from MI-CV disordered-phase crossovers. q=5 old estimate (0.41) was closest to truth (0.44) — accidentally near true g_c.
+
+**Surprises:**
+- g_c INCREASES with q — opposite to invalidated scaling law
+- q=7 g_c ≈ 0.52, not 0.26 — off by factor of 2
+- Energy gap converges faster than entropy or MI-CV (~2% error vs ~30%)
+- q=5 old ν≈2.0 may be approximately correct (measured near true g_c)
+
+[Full report: sprints/sprint_051.md]
