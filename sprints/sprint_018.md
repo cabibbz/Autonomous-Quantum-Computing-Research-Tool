@@ -45,7 +45,33 @@
 
 ## Experiment 18b: [[5,1,3]] Holevo Information — Phase Transition for a General Code
 
-*Status: pending*
+**Setup:** Compare Holevo information (logical distinguishability of |0_L⟩ vs |1_L⟩) for uncoded, 3-qubit bit-flip code, and [[5,1,3]] code, all under depolarizing noise. Also compare fidelity for |0⟩ and |+⟩ logical states.
+
+**Result:** The 3-qubit code dominates [[5,1,3]] at ALL depolarizing noise levels for Holevo information.
+
+| p     | Uncoded | 3-qubit | [[5,1,3]] |
+|-------|---------|---------|-----------|
+| 0.01  | 0.942   | 0.998   | 0.992     |
+| 0.05  | 0.789   | 0.968   | 0.888     |
+| 0.10  | 0.647   | 0.902   | 0.701     |
+| 0.15  | 0.531   | 0.816   | 0.513     |
+| 0.20  | 0.434   | 0.720   | 0.351     |
+| 0.30  | 0.278   | 0.519   | 0.134     |
+| 0.50  | 0.082   | 0.174   | 0.005     |
+
+**Key findings:**
+
+1. **3-qubit code ALWAYS beats [[5,1,3]] under depolarizing** — extends Sprint 017b's fidelity finding to the information-theoretic domain. The advantage is even larger for Holevo: at p=0.15, 3-qubit retains 82% vs [[5,1,3]]'s 51%.
+
+2. **[[5,1,3]] Holevo crosses below uncoded at p≈0.13** — encoding actively destroys logical information at moderate noise. The 5 qubits are 5 noise targets; the ability to correct all error types can't compensate for the increased attack surface.
+
+3. **Massive state asymmetry in 3-qubit code:** |0⟩ fidelity excellent (0.987 at p=0.10) but |+⟩ fidelity WORSE than uncoded at all p (0.826 vs 0.933 at p=0.10). The code can't correct phase flips. Yet Holevo (which measures |0⟩ vs |1⟩ distinguishability) stays high because it only needs Z-basis discrimination.
+
+4. **[[5,1,3]] is state-symmetric** — |0⟩ and |+⟩ fidelities are identical (both 0.947 at p=0.10). The code treats all errors equally. But this generality costs 5 qubits = 5 noise targets.
+
+5. **[[5,1,3]] Holevo curve is steeper** — drops from 0.99 to 0.005 between p=0.01 and p=0.50 (200x drop). Uncoded: 0.94 to 0.08 (12x). The code amplifies the transition but around the wrong "threshold" for depolarizing noise.
+
+**Surprise:** Holevo information reveals a fundamental tension: specialized codes (3-qubit) preserve more information under symmetric noise because they concentrate protection on one error type. General codes ([[5,1,3]]) spread protection evenly but pay an overhead tax. The "best" code depends entirely on what information you're trying to protect, not just the noise rate. This is the information-theoretic version of Sprint 017b's fidelity result — and the effect is even more dramatic.
 
 ---
 
