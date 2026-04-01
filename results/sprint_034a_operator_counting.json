@@ -1,0 +1,137 @@
+{
+  "experiment": "034a",
+  "description": "G-invariant operator counting for BW locality prediction",
+  "single_site": {
+    "Z\u2082": {
+      "d": 2,
+      "group_order": "2",
+      "total_traceless_hermitian": 3,
+      "invariant_traceless_hermitian": "1",
+      "ratio": 0.3333333333333333
+    },
+    "U(1)": {
+      "d": 2,
+      "group_order": "\u221e",
+      "total_traceless_hermitian": 3,
+      "invariant_traceless_hermitian": "1",
+      "ratio": 0.3333333333333333
+    },
+    "Z\u2083": {
+      "d": 3,
+      "group_order": "3",
+      "total_traceless_hermitian": 8,
+      "invariant_traceless_hermitian": "1",
+      "ratio": 0.125
+    },
+    "S\u2083": {
+      "d": 3,
+      "group_order": "6",
+      "total_traceless_hermitian": 8,
+      "invariant_traceless_hermitian": "1",
+      "ratio": 0.125
+    }
+  },
+  "two_site": {
+    "Z\u2082": {
+      "d": 2,
+      "group_order": "2",
+      "total_traceless_hermitian": 15,
+      "invariant_traceless_hermitian": "5",
+      "ratio": 0.3333333333333333
+    },
+    "U(1)": {
+      "d": 2,
+      "group_order": "\u221e",
+      "total_traceless_hermitian": 15,
+      "invariant_traceless_hermitian": "4",
+      "ratio": 0.26666666666666666
+    },
+    "Z\u2083": {
+      "d": 3,
+      "group_order": "3",
+      "total_traceless_hermitian": 80,
+      "invariant_traceless_hermitian": "14",
+      "ratio": 0.175
+    },
+    "S\u2083": {
+      "d": 3,
+      "group_order": "6",
+      "total_traceless_hermitian": 80,
+      "invariant_traceless_hermitian": "9",
+      "ratio": 0.1125
+    }
+  },
+  "multi_site": {
+    "Z\u2082": {
+      "d": 2,
+      "dim_A": 16,
+      "group_order": "2",
+      "model": "TFIM",
+      "total_traceless_hermitian": 255,
+      "invariant_traceless_hermitian": "71",
+      "ratio_inv_to_total": 0.2784313725490196,
+      "hamiltonian_terms": 7,
+      "ratio_H_to_inv": 0.09859154929577464
+    },
+    "U(1)": {
+      "d": 2,
+      "dim_A": 16,
+      "group_order": "\u221e",
+      "model": "XXZ",
+      "total_traceless_hermitian": 255,
+      "invariant_traceless_hermitian": "42",
+      "ratio_inv_to_total": 0.16470588235294117,
+      "hamiltonian_terms": 6,
+      "ratio_H_to_inv": 0.14285714285714285
+    },
+    "Z\u2083_2site": {
+      "d": 3,
+      "dim_A": 9,
+      "group_order": "3",
+      "model": "Clock",
+      "n_A": 2,
+      "total_traceless_hermitian": 80,
+      "invariant_traceless_hermitian": "14",
+      "ratio_inv_to_total": 0.175,
+      "hamiltonian_terms": 3,
+      "ratio_H_to_inv": 0.21428571428571427
+    },
+    "S\u2083_2site": {
+      "d": 3,
+      "dim_A": 9,
+      "group_order": "6",
+      "model": "Potts",
+      "n_A": 2,
+      "total_traceless_hermitian": 80,
+      "invariant_traceless_hermitian": "9",
+      "ratio_inv_to_total": 0.1125,
+      "hamiltonian_terms": 3,
+      "ratio_H_to_inv": 0.3333333333333333
+    },
+    "Z\u2083_3site": {
+      "d": 3,
+      "dim_A": 27,
+      "group_order": "3",
+      "model": "Clock",
+      "n_A": 3,
+      "total_traceless_hermitian": 728,
+      "invariant_traceless_hermitian": "125",
+      "ratio_inv_to_total": 0.1717032967032967,
+      "hamiltonian_terms": 5,
+      "ratio_H_to_inv": 0.04
+    },
+    "S\u2083_3site": {
+      "d": 3,
+      "dim_A": 27,
+      "group_order": "6",
+      "model": "Potts",
+      "n_A": 3,
+      "total_traceless_hermitian": 728,
+      "invariant_traceless_hermitian": "69",
+      "ratio_inv_to_total": 0.09478021978021978,
+      "hamiltonian_terms": 5,
+      "ratio_H_to_inv": 0.07246376811594203
+    }
+  },
+  "runtime_seconds": 2.1118812561035156
+}
