@@ -282,3 +282,28 @@ Explicit operator counting: U(1)=0.143 > Z₂=0.099 > S₃=0.072 > Z₃=0.040 (H
 - Finite-size crossing points 30% below thermodynamic g_c (large ν amplifies finite-size effects)
 
 [Full report: sprints/sprint_045.md]
+
+### Sprint 046 — ν(q=4) Extraction: Marginal Point Shows BKT-like Behavior
+**Status:** Complete (6 experiments).
+
+**ν(q=4) ≥ 2.2 and trending upward with system size.** Slope ratio near g_c≈0.89: ν=1.92 (n=8,12) → 2.71 (n=12,16). This INCREASES with n — signature of BKT or logarithmic corrections at the marginal q=4 point.
+
+**Standard FSS collapse FAILS at q=4.** Constrained at g_c=0.89, optimizer hits ν→∞ with poor quality. Free collapse finds g_c≈0.53 (fitting CV minimum, not phase transition). MI-CV curves don't cross near g_c — monotonically ordered n=16>n=12>n=8 at all g≥0.50.
+
+**Sprint 040 Gell-Mann data at d=4 was misleading.** Gell-Mann showed crossings at g_c≈0.893 that don't exist with direct MPS. Gell-Mann now unreliable for d≥4 (previously claimed d≤4 safe, but only validated at d=2,3).
+
+**ν(q) updated: q=4 is the marginal/BKT peak.**
+| q | ν | Nature |
+|---|---|--------|
+| 2 | 1.0 | Standard 2nd-order |
+| 3 | 5/6 | Standard 2nd-order (minimum) |
+| 4 | ≥2.2 (diverging?) | Marginal/BKT-like |
+| 5 | ~2.0 | Large-ν 2nd-order |
+
+**Surprises:**
+- ν estimate INCREASES with n (1.92→2.71) — first BKT signature in the q series
+- NO MI-CV crossings near g_c — qualitatively different from all other tested q
+- Gell-Mann misleading at d=4, not just d≥5
+- CV minimum at g≈0.4-0.5 far below g_c — ordered phase has complex MI structure
+
+[Full report: sprints/sprint_046.md]

@@ -41,7 +41,7 @@ MI uniformity coefficient of variation classifies transition TYPE by curve shape
 
 **Slope exponent as second discriminator:** Potts slope ~ n^1.36, TFIM slope ~ n^1.1. Consistent with 1/ν scaling (Potts 1/ν=1.2 > Ising 1/ν=1.0), with finite-size inflation.
 
-**Potts q=4 MI-CV (Sprint 040):** q=4 (marginal point where 2D Potts transitions from second-order to first-order) shows crossing curves at n=8,12 — same second-order signature as q=3 and TFIM. Crossing at g_c≈0.893 (further below self-dual than q=3's 0.923). Slope at g=1.0 is LOWER than q=3 (1.72 vs 2.27 at n=8). q=4 CV is systematically lower than q=3 above transition (ratio 0.87-0.95) — larger d distributes correlations more evenly. Marginal/BKT character not visible at n≤12.
+**Potts q=4 MI-CV (Sprints 040, 046):** q=4 is the marginal point. **Sprint 040 Gell-Mann data was misleading** — reported crossings at g_c≈0.893 that don't exist with direct MPS. Direct MPS (Sprint 046, n=8,12,16): NO crossing near g_c. Curves monotonically ordered n=16>n=12>n=8 at all g≥0.50. CV minimum at g≈0.40-0.50 (maximally Democratic ordered phase). Derivative dCV/dg at g_c≈0.89 scales with n: 0.86 (n=8) → 1.05 (n=12) → 1.18 (n=16). Slope ratio gives ν≥2.2, trending upward → BKT-like. Standard FSS collapse fails at q=4.
 
 **q=5 clock MI-CV (Sprint 041):** q=5 clock model STILL shows crossing curves at n=8,12, disproving prediction that crossings would vanish. Crossing at g_c≈0.673 — a 10x larger shift than q=3→4 (0.220 vs 0.030). Slope at g=1.0 halves vs q=4 (0.86 vs 1.72). CV systematically lower than q=4 above transition (0.521 vs 0.727 at g=1.0 n=8).
 
@@ -51,19 +51,24 @@ MI uniformity coefficient of variation classifies transition TYPE by curve shape
 
 **Clock ≠ Potts for q≥4 (Sprints 041-042).** TeNPy's ClockChain uses cos(2π(s_i-s_j)/q) coupling, which equals Potts δ(s_i,s_j) only for q=2,3. For q≥5, models differ: Clock g_c=0.67 vs Potts g_c=0.41, Potts slope 5.7x steeper. Custom PottsChain model built (Sprint 042) with projector coupling. Both show second-order crossings — the 2D classical "q>4 → first-order" does NOT apply to 1D quantum Potts with transverse field. Anisotropic quantum-classical correspondence preserves second-order character.
 
-**ν(q) extraction (Sprint 045).** Data collapse across n=8,12,16 at q=5 gives ν(q=5)≈2.0 (g_c≈0.45). Independently confirmed by slope scaling: slope~n^0.49 → ν≈2.05. ν is NON-MONOTONIC in q:
+**ν(q) extraction (Sprints 045-046).** ν is NON-MONOTONIC in q, with q=4 showing BKT-like behavior:
 
-| q | ν | 1/ν | Source |
-|---|---|-----|--------|
-| 2 | 1.0 | 1.0 | Ising exact |
-| 3 | 5/6 | 1.2 | Potts exact |
-| 5 | ~2.0 | ~0.5 | Sprint 045 |
+| q | ν | 1/ν | Method | Nature |
+|---|---|-----|--------|--------|
+| 2 | 1.0 | 1.0 | Ising exact | Standard 2nd-order |
+| 3 | 5/6 | 1.2 | Potts exact | Standard 2nd-order (minimum) |
+| 4 | ≥2.2 (diverging?) | ≤0.45 | Slope ratio, trending up (Sprint 046) | **Marginal/BKT-like** |
+| 5 | ~2.0 | ~0.5 | Data collapse (Sprint 045) | Large-ν 2nd-order |
 
-ν decreases q=2→3, then INCREASES sharply q=3→5. Large ν at q=5 means transition is "almost first-order" — correlation length diverges slowly (ξ~|g-g_c|^(-2)), giving wide crossover and enormous finite-size effects (crossing points 30% below thermodynamic g_c). The self-duality breaking at q=3→4 fundamentally alters transition character.
+q=5 data collapse: ν≈2.0 (g_c≈0.45), confirmed by slope scaling: slope~n^0.49 → ν≈2.05.
+
+q=4 is qualitatively different: slope ratio ν estimates INCREASE with n (1.92 → 2.71 from n=8,12 to n=12,16). Standard FSS collapse fails — constrained at g_c≈0.89, ν→∞. MI-CV curves don't cross near g_c (n=16>n=12>n=8 at all g≥0.50). This is the 1D quantum signature of the 2D classical q=4 Potts BKT marginality.
+
+ν minimum is at q=3. Self-duality breaking at q=3→4 fundamentally alters transition character. Large ν (q≥4) means wide crossover regions and finite-size crossing points far below thermodynamic g_c.
 
 **Technique: All-pairs MI.** Two methods:
-1. Gell-Mann correlation reconstruction: **ONLY reliable for d≤4** (validated: diff=0 at n=8 for d=2,3). For d=5, errors up to 11x (Sprint 045). DO NOT USE for d≥5.
-2. **Direct MPS tensor contraction (Sprint 043):** computes ρ_ij by contracting MPS tensors directly. O(n·χ²·d) per pair. 1.4s for 28 pairs at d=10, n=8. Works for ANY d. **The only reliable method for d≥5.**
+1. Gell-Mann correlation reconstruction: **ONLY reliable for d≤3** (validated: diff=0 at n=8 for d=2,3). For d=4, small systematic errors create artificial MI-CV crossings (Sprint 046). For d=5, errors up to 11x (Sprint 045). DO NOT USE for d≥4.
+2. **Direct MPS tensor contraction (Sprint 043):** computes ρ_ij by contracting MPS tensors directly. O(n·χ²·d) per pair. 1.4s for 28 pairs at d=10, n=8. Works for ANY d. **The only reliable method for d≥4.**
 
 ## Archetype Boundaries ≠ Phase Boundaries
 I3 sign change occurs at Δ≈0.7 in XXZ, inside the XY phase — not at either thermodynamic transition (Δ=-1 or Δ=1). The entanglement phase diagram has its own topology distinct from thermodynamics.
