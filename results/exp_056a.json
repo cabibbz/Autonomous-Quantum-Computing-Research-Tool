@@ -1,0 +1,87 @@
+{
+  "experiment": "056a",
+  "description": "c(q) formula fitting and predictions",
+  "data_used": {
+    "q": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "c_exact": [
+      0.5,
+      0.8,
+      1.0,
+      null
+    ],
+    "c_measured": [
+      null,
+      null,
+      null,
+      1.1
+    ],
+    "c_error": [
+      null,
+      null,
+      null,
+      0.1
+    ]
+  },
+  "formulas": {
+    "quadratic": {
+      "coeffs": [
+        -0.04999999999999936,
+        0.5499999999999986,
+        -0.40000000000000085
+      ],
+      "form": "a*q^2 + b*q + c"
+    },
+    "logarithmic": {
+      "params": [
+        0.6662010839324515,
+        0.05264195378955327
+      ],
+      "form": "a*ln(q) + b"
+    },
+    "power_law": {
+      "params": [
+        0.5308729824185827,
+        0.5456429064924921
+      ],
+      "form": "a*(q-1)^b"
+    },
+    "inv_power": {
+      "params": [
+        0.5087534073537191,
+        2.1672220636304353
+      ],
+      "form": "1 - a/(q-1)^b"
+    }
+  },
+  "predictions": {
+    "5": {
+      "quadratic": 1.1000000000000083,
+      "logarithmic": 1.1248512355751328,
+      "power_law": 1.1310983973019741,
+      "minimal_model_cont": 0.8337620594202979,
+      "coulomb_real_cont": 0.8779243448828196,
+      "inv_power": 0.9747820584330891
+    },
+    "7": {
+      "quadratic": 1.000000000000021,
+      "logarithmic": 1.349009404325361,
+      "power_law": 1.4111829914955607,
+      "minimal_model_cont": 0.5029629800275401,
+      "coulomb_real_cont": 0.701372854406221,
+      "inv_power": 0.9895267668368513
+    },
+    "10": {
+      "quadratic": 0.10000000000004955,
+      "logarithmic": 1.5866266385888912,
+      "power_law": 1.7606226303888015,
+      "minimal_model_cont": 0.03646543688602866,
+      "coulomb_real_cont": 0.5128720227141923,
+      "inv_power": 0.9956503740561599
+    }
+  }
+}
