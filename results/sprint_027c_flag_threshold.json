@@ -1,0 +1,107 @@
+{
+  "sprint": "027c",
+  "description": "Error rate sweep: flag-FT vs bare vs passive",
+  "shots": 30000,
+  "sweep": [
+    {
+      "p2q": 0.0001,
+      "p1q": 6.25e-06,
+      "p_ro": 0.001,
+      "passive": 0.9502,
+      "bare": 0.9281,
+      "flag_ft": 0.9279,
+      "flag_rate": 0.0038,
+      "match_rate": 1e-05,
+      "bare_nocorrect": 0.945
+    },
+    {
+      "p2q": 0.0003,
+      "p1q": 1.875e-05,
+      "p_ro": 0.001,
+      "passive": 0.94,
+      "bare": 0.9109,
+      "flag_ft": 0.914,
+      "flag_rate": 0.0041,
+      "match_rate": 0.0,
+      "bare_nocorrect": 0.9227
+    },
+    {
+      "p2q": 0.0005,
+      "p1q": 3.125e-05,
+      "p_ro": 0.001,
+      "passive": 0.9334,
+      "bare": 0.8921,
+      "flag_ft": 0.8954,
+      "flag_rate": 0.0041,
+      "match_rate": 0.0,
+      "bare_nocorrect": 0.9074
+    },
+    {
+      "p2q": 0.001,
+      "p1q": 6.25e-05,
+      "p_ro": 0.002,
+      "passive": 0.888,
+      "bare": 0.8181,
+      "flag_ft": 0.8177,
+      "flag_rate": 0.0079,
+      "match_rate": 2e-05,
+      "bare_nocorrect": 0.8395
+    },
+    {
+      "p2q": 0.002,
+      "p1q": 0.000125,
+      "p_ro": 0.004,
+      "passive": 0.8074,
+      "bare": 0.7014,
+      "flag_ft": 0.7002,
+      "flag_rate": 0.0158,
+      "match_rate": 8e-05,
+      "bare_nocorrect": 0.7309
+    },
+    {
+      "p2q": 0.004,
+      "p1q": 0.00025,
+      "p_ro": 0.008,
+      "passive": 0.6804,
+      "bare": 0.5333,
+      "flag_ft": 0.5301,
+      "flag_rate": 0.0315,
+      "match_rate": 0.00029,
+      "bare_nocorrect": 0.5682
+    },
+    {
+      "p2q": 0.008,
+      "p1q": 0.0005,
+      "p_ro": 0.016,
+      "passive": 0.5009,
+      "bare": 0.3188,
+      "flag_ft": 0.3185,
+      "flag_rate": 0.0627,
+      "match_rate": 0.00105,
+      "bare_nocorrect": 0.3616
+    },
+    {
+      "p2q": 0.012,
+      "p1q": 0.00075,
+      "p_ro": 0.024,
+      "passive": 0.3722,
+      "bare": 0.1965,
+      "flag_ft": 0.1947,
+      "flag_rate": 0.0924,
+      "match_rate": 0.00211,
+      "bare_nocorrect": 0.2371
+    },
+    {
+      "p2q": 0.02,
+      "p1q": 0.00125,
+      "p_ro": 0.04,
+      "passive": 0.2116,
+      "bare": 0.0759,
+      "flag_ft": 0.0755,
+      "flag_rate": 0.1505,
+      "match_rate": 0.00554,
+      "bare_nocorrect": 0.1025
+    }
+  ],
+  "elapsed_seconds": 224.4
+}
