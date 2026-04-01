@@ -12,6 +12,34 @@
 
 ---
 
+## Experiment 17b: Depolarizing Noise — When Does Encoding Hurt?
+
+**Setup:** Compare uncoded, 3-qubit bit-flip code, and [[5,1,3]] code under depolarizing noise (X, Y, Z errors each with probability p/3). 100k shots per point.
+
+**Result:** The two codes have dramatically different depolarizing responses.
+
+| p     | Uncoded | 3q-BF  | [[5,1,3]] | Winner |
+|-------|---------|--------|-----------|--------|
+| 0.00  | 1.000   | 1.000  | 1.000     | tie    |
+| 0.02  | 0.990   | 1.000  | 0.996     | 3q-BF  |
+| 0.05  | 0.974   | 0.998  | 0.977     | 3q-BF  |
+| 0.08  | 0.961   | 0.995  | 0.946     | 3q-BF  |
+| 0.10  | 0.949   | 0.993  | 0.919     | 3q-BF  |
+| 0.15  | 0.926   | 0.984  | 0.835     | 3q-BF  |
+| 0.20  | 0.901   | 0.972  | 0.737     | 3q-BF  |
+| 0.30  | 0.849   | 0.939  | 0.528     | 3q-BF  |
+| 0.50  | 0.751   | 0.844  | 0.188     | 3q-BF  |
+
+**Key findings:**
+- **3-qubit bit-flip code beats uncoded at ALL noise levels** for Z-basis states — no crossover. Under depolarizing noise, the bit-flip component (probability 2p/3) is still correctable, and majority vote helps even though Z/Y errors are uncorrected.
+- **[[5,1,3]] crosses below uncoded at p≈0.077** — despite correcting ALL single-qubit errors, the 5-qubit code has more qubits to corrupt, and weight-2 errors (uncorrectable) dominate quickly.
+- **Phase flips are invisible to Z-basis measurement** — both coded and uncoded show fidelity=1.0 under pure phase-flip noise when measuring in Z. The bit-flip code's "weakness" to phase flips only manifests for superposition states.
+- **The "best" code depends on the noise** — 3-qubit bit-flip (specialized) dominates [[5,1,3]] (general) under depolarizing because fewer qubits = fewer targets. Generality costs overhead.
+
+**Surprise:** The simple 3-qubit code is MORE robust than the "perfect" [[5,1,3]] code under depolarizing noise. The reason: [[5,1,3]] uses 5 qubits (5 noise targets) to correct all single-qubit errors, but the 3-qubit code uses only 3 qubits and its majority vote still suppresses the bit-flip component. The [[5,1,3]]'s ability to correct phase errors doesn't help when errors are symmetric — it's paying a 5-qubit tax for capabilities it doesn't need.
+
+---
+
 ## Experiment 17a: Concatenated Bit-Flip Code — Threshold Emergence
 
 **Result:** Simulated results match theory to 4 decimal places. Concatenation works as predicted.
