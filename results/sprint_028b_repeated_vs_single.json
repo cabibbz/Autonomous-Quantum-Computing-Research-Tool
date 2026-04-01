@@ -1,0 +1,108 @@
+{
+  "sprint": "028b",
+  "description": "Repeated syndrome (3 rounds, majority vote) vs single-round vs passive",
+  "noise_model": {
+    "p1q": 0.0005,
+    "p2q": 0.008,
+    "p_readout": 0.015
+  },
+  "shots": 50000,
+  "results": {
+    "uncoded": {
+      "Z": {
+        "err": 0.01514,
+        "holevo": 0.8868
+      },
+      "X": {
+        "err": 0.01561,
+        "holevo": 0.884
+      },
+      "Y": {
+        "err": 0.01514,
+        "holevo": 0.8868
+      }
+    },
+    "passive": {
+      "Z": {
+        "err": 0.10713,
+        "holevo": 0.5088
+      },
+      "X": {
+        "err": 0.10639,
+        "holevo": 0.5111
+      },
+      "Y": {
+        "err": 0.10682,
+        "holevo": 0.5098
+      }
+    },
+    "active_1round": {
+      "Z": {
+        "err_corrected": 0.16031,
+        "holevo_corrected": 0.3649,
+        "err_uncorrected": 0.15893,
+        "holevo_uncorrected": 0.3683
+      },
+      "X": {
+        "err_corrected": 0.17346,
+        "holevo_corrected": 0.3344,
+        "err_uncorrected": 0.15761,
+        "holevo_uncorrected": 0.3714
+      },
+      "Y": {
+        "err_corrected": 0.19524,
+        "holevo_corrected": 0.2877,
+        "err_uncorrected": 0.15977,
+        "holevo_uncorrected": 0.3662
+      }
+    },
+    "active_3round": {
+      "Z": {
+        "err_majority": 0.19497,
+        "holevo_majority": 0.2882,
+        "err_nocorr": 0.24192,
+        "holevo_nocorr": 0.2018,
+        "err_last_round": 0.18788,
+        "holevo_last_round": 0.303,
+        "syndrome_agreement": 0.5944,
+        "depth": 57,
+        "transpile_time": 0.0,
+        "sim_time": 6.0
+      },
+      "X": {
+        "err_majority": 0.20435,
+        "holevo_majority": 0.2695,
+        "err_nocorr": 0.24352,
+        "holevo_nocorr": 0.1992,
+        "err_last_round": 0.19845,
+        "holevo_last_round": 0.2812,
+        "syndrome_agreement": 0.5939,
+        "depth": 57,
+        "transpile_time": 0.0,
+        "sim_time": 5.9
+      },
+      "Y": {
+        "err_majority": 0.20789,
+        "holevo_majority": 0.2626,
+        "err_nocorr": 0.24447,
+        "holevo_nocorr": 0.1976,
+        "err_last_round": 0.21863,
+        "holevo_last_round": 0.2423,
+        "syndrome_agreement": 0.5934,
+        "depth": 58,
+        "transpile_time": 0.0,
+        "sim_time": 5.7
+      }
+    }
+  },
+  "summary": {
+    "avg_holevo_uncoded": 0.8859,
+    "avg_holevo_passive": 0.5099,
+    "avg_holevo_1round": 0.329,
+    "avg_holevo_3round": 0.2734,
+    "delta_3round_vs_passive": -0.2365,
+    "delta_3round_vs_uncoded": -0.6124,
+    "three_round_beats_passive": false
+  },
+  "elapsed_seconds": 19.6
+}
