@@ -50,7 +50,13 @@ Monotonic trend at every g value: CV systematically decreases (ordered side) or 
 
 ### 039b2: Potts n=24 sparse
 
-n=24 at d=3 with chi=40 exceeds 60s per point — too slow for the time budget. Skipped; n=8,12,16 provide sufficient data for collapse analysis.
+n=24 at d=3 with chi=40 takes ~274s per point (far exceeds 60s limit). Got one point:
+
+| g/J | n=8 CV | n=12 CV | n=16 CV | n=24 CV |
+|-----|--------|---------|---------|---------|
+| 0.80 | 0.341 | 0.271 | 0.236 | 0.203 |
+
+Monotonic decrease on ordered side confirmed at 4 sizes. Single point insufficient for collapse but validates the trend.
 
 ### 039c: Data Collapse — ν=5/6 vs ν=1
 
