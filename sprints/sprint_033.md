@@ -53,7 +53,29 @@ Swept h/J from 0.01 to 3.0 for n=6 (dim=729) with n=8 (dim=6561) at key points.
 **Surprise:** The critical point is NOT at h/J=1 (self-dual) for this convention. The transverse field P+P† has max eigenvalue 2, making the effective field 2h and shifting the critical point to h/J ≈ 0.2-0.3.
 
 ### 33b: Potts Entanglement Spectrum at Criticality
-[pending]
+**Status:** Complete
+
+n=8 (dim_A = 81), swept h/J from 0.01 to 2.0.
+
+**Results:**
+| h/J | Phase | Rank | Gap | Degeneracy Pattern |
+|-----|-------|------|-----|-------------------|
+| 0.05 | Ordered | 9 | 0.001 | **[3, 3, 3]** — perfect triplets |
+| 0.15 | Near-critical | 15 | 0.089 | [1, 2, 1, 2, 2, ...] |
+| 0.225 | Critical | 24 | 0.609 | [1, 2, 1, 2, 2, 1, ...] |
+| 0.50 | Disordered | 15 | 3.954 | [1, 2, 2, 1, 2, ...] |
+| 1.00 | Deep disordered | 9 | 5.631 | [1, 2, 2, 1, 2, 1] |
+
+**Key findings:**
+1. **Z₃ → triplet structure in ordered phase**: GHZ-3 state has perfect [3,3,3] triplet degeneracy. This is the Z₃ fingerprint — NOT present in TFIM (which has Z₂ → doublets).
+2. **Triplet → doublet transition**: As h/J increases, spectrum transitions from triplets [3,3,3] to doublets [1,2,1,2,...]. The Z₃ symmetry becomes invisible at the spectral level in disordered phase.
+3. **Critical spectrum dominated by 3 levels**: Gap between ξ₂=0.609 and ξ₃=7.43 is huge. The dominant levels are singlet + doublet.
+4. **Schmidt rank peaks at 24** near criticality (vs max 81).
+5. **NPR minimum at criticality** (0.10) — most spread-out spectrum.
+
+**Comparison to TFIM (Sprint 031b):**
+- TFIM: doublets throughout (Z₂). Potts: triplets→doublets (Z₃→broken).
+- The symmetry group determines the ordered-phase degeneracy pattern, but both look similar in disordered phase.
 
 ### 33c: BW Locality for Potts — S₃ vs Z₂ vs U(1)
 [pending]
