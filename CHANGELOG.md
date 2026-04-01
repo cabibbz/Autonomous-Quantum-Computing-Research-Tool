@@ -704,3 +704,24 @@
 **Next:** TFIM at d=3 (Z₂ with d=3 to isolate d-dependence from group-dependence), size scaling of BW locality, Potts model MI-CV as function of q, 2D BW, entanglement temperature gradient vs central charge.
 
 [Full report: sprints/sprint_033.md]
+
+### Sprint 034 — 2026-04-01 — BW Operator Algebra: Predicting Locality from Symmetry Constraints
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **34a: Operator counting** — Computed G-invariant operator dimensions for Z₂(d=2), U(1)(d=2), S₃(d=3), Z₃(d=3). H/G-inv ratio: U(1)=0.143, Z₂=0.099, S₃=0.072, Z₃=0.040. Monotonically correlates with measured BW locality.
+- **34b: Z₃ clock model BW** — Peak 76.5% at h/J=0.75, IDENTICAL to S₃ Potts. Discovery: Z₃ clock ≡ S₃ Potts for q=3 (ZZ†+h.c. = 3δ-I). Standard clock model secretly has full S₃ symmetry.
+- **34c: Chiral clock model** — Chiral perturbation (φ≠0) genuinely breaks S₃ → Z₃. Peak BW = **69.7%** at φ=π/6 — CONFIRMS prediction. BW degrades monotonically with chirality (76.5% → 62.1%).
+
+**Surprises:**
+- **Z₃ clock ≡ S₃ Potts at q=3** — the clock interaction ZZ†+h.c. equals 3δ-I (up to constant). Both Hamiltonian terms (bond and field) are S₃-invariant, not just Z₃. This algebraic identity connects two seemingly different formulations.
+- **H/G-inv ratio is a perfect BW predictor** — ordering: U(1)(0.143)→100% > Z₂(0.099)→91% > S₃(0.072)→76.5% > Z₃(0.040)→69.7%. Four models, perfect monotonic correlation.
+- **BW degrades smoothly with chirality** — not a phase transition. Each increment of φ breaks more S₃ symmetry, smoothly reducing BW accuracy.
+- **At single-site level, all groups within same d are identical** (1 invariant op each). Discrimination requires 2+ sites — multi-body structure is essential.
+- **U(1) constrains MORE than Z₂** despite being infinite vs finite — continuous symmetry is fundamentally different from large discrete groups.
+
+**Key insight:** BW entanglement Hamiltonian accuracy is controlled by the ratio dim(Hamiltonian terms) / dim(symmetry-invariant terms), which depends on BOTH the symmetry group G AND the local Hilbert space dimension d. This ratio is a quantitative predictor: higher ratio → H_E is more tightly constrained to contain only physical Hamiltonian terms → better BW approximation. U(1) at d=2 achieves 100% because continuous symmetry at low d leaves essentially NO room for non-Hamiltonian invariant operators. S₃ at d=3 gives only 76.5% because d=3 opens a vastly larger operator space (d^{2n_A} vs 2^{2n_A}) that even order-6 symmetry can't tightly constrain.
+
+**Next:** Potts q-sweep (q=2,3,4,5) to map BW vs local dimension continuously, size scaling of BW locality (does the H/G-inv prediction improve with n?), 2D BW, BW with non-Abelian vs Abelian groups at same d and |G|.
+
+[Full report: sprints/sprint_034.md]

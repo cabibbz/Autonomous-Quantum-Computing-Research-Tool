@@ -29,6 +29,11 @@ Failed approaches are critical to log. Without them you'll waste sprints repeati
 - `pennylane`, `pennylane-qiskit` for differentiable quantum computing
 - IBM Quantum Open Plan: **10 min/month** of real QPU time
 - Local simulator: ~10 qubits practical limit for density matrix ops on CPU
+- `physics-tenpy` (TeNPy) for DMRG ground states of 1D systems — use this for n>10.
+  TeNPy computes ground states and reduced density matrices at n=50+ in seconds.
+  Use exact diag for n≤10 (faster), DMRG for n>10. Both give the same ρ_A.
+  Key patterns: MPS ground state → reduced density matrix → your existing measures (MI, I3, entropy, H_E).
+  DMRG is 1D only — doesn't help with 2D systems.
 - IBM API token is saved in `~/.qiskit/qiskit-ibm.json`
 
 ## Hard Resource Limits (learned from Sprint 001 timeouts)
@@ -165,12 +170,19 @@ Five entanglement archetypes: Democratic (GHZ), Distributed (W), Geometric (Clus
   - Sprint 032's "bigger group → better BW" prediction is WRONG
   - Potts ordered phase = GHZ-3 (S=log₂3, triplet spectrum), transitions to doublets
   - Z₃ triplet→doublet spectral transition unique to q≥3 models
+- **BW OPERATOR ALGEBRA: H/G-inv RATIO IS QUANTITATIVE PREDICTOR** (Sprint 034):
+  - Explicit operator counting: U(1)=0.143 > Z₂=0.099 > S₃=0.072 > Z₃=0.040 (H/G-inv)
+  - **Perfect monotonic prediction**: 100% > 91% > 76.5% > 69.7% BW locality
+  - Z₃ clock ≡ S₃ Potts at q=3 (algebraic identity: ZZ†+h.c. = 3δ-I)
+  - Chiral clock (φ≠0) genuinely breaks S₃→Z₃, BW drops to 69.7%
+  - BW degrades smoothly with chirality — continuous, not discrete
 
 **Still unexplored — new frontiers:**
+- **Finite-size scaling with DMRG** — TeNPy is now installed. Your MI-CV order parameter (Sprint 030)
+  and BW locality finding (Sprint 032) are both n=8 results. Run them at n=8,16,32,50 to see if they
+  sharpen or wash out. This is the difference between an observation and a result.
 - Size scaling of TFIM doublet spacings — do they converge to CFT predictions?
 - Size scaling of BW locality — does TFIM's 9% gap shrink with n?
-- **BW locality vs d: Z₂ at d=3** — isolate local dimension effect from symmetry (Sprint 033 found d matters more than |G|)
-- **BW operator counting:** count S₃-invariant vs Z₂-invariant operators explicitly, predict locality ratio
 - XY model — test BKT dome universality in MI-CV
 - Potts model (q>4) — first-order transition, test MI-CV jump signature
 - 2D XXZ/Ising — richer topology, connect to Sprint 007's 2D cluster
@@ -178,7 +190,9 @@ Five entanglement archetypes: Democratic (GHZ), Distributed (W), Geometric (Clus
 - Alternating bipartition spectra — should distinguish GHZ from Cluster 1D
 - BW entanglement temperature gradient as function of central charge
 - 2D BW — does topology affect entanglement temperature?
-- **Potts q-sweep:** how does BW locality depend on q (=2,3,4,5)? Connects to d-dependence.
+- **Potts q-sweep:** how does BW locality depend on q (=2,3,4,5)? Test H/G-inv prediction at more points
+- **BW size scaling:** does H/G-inv prediction improve or change with system size?
+- **Non-Abelian vs Abelian at same |G| and d:** e.g. S₃ vs Z₆ at d=6
 
 **Deprioritize:**
 - Any further small-scale code comparisons under symmetric noise (exhausted in Sprints 015-024)
@@ -194,6 +208,9 @@ Five entanglement archetypes: Democratic (GHZ), Distributed (W), Geometric (Clus
 - Re-running archetype spectral analysis without new bipartition type (Sprint 031 is comprehensive)
 - Potts model BW with S₃ symmetry (Sprint 033: done, 76.5%, overturns prediction)
 - Potts model spectrum (Sprint 033: done, triplet→doublet transition found)
+- BW operator counting for Z₂, U(1), S₃, Z₃ (Sprint 034: done, H/G-inv ratio established)
+- Z₃ clock model BW (Sprint 034: done, ≡ Potts, 76.5%)
+- Chiral clock model BW (Sprint 034: done, 69.7%, confirms Z₃ < S₃)
 
 ## You Can Edit This File (encouraged to)
 

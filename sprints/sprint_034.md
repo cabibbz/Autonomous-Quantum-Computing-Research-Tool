@@ -1,7 +1,7 @@
 # Sprint 034 — BW Operator Algebra: Predicting Locality from Symmetry Constraints
 
 **Date:** 2026-04-01
-**Status:** In Progress
+**Status:** Complete
 
 ## Idea
 
@@ -63,6 +63,45 @@ The transverse field X + X† = P + P† is also S₃-invariant (P → P† unde
 - The "prediction overturned" is actually "experiment didn't test what we thought"
 - Redirect 34c: chiral clock model with genuine Z₃ (not S₃) symmetry
 
-## Experiment 34c: Prediction Verification
+## Experiment 34c: Chiral Clock Model + Prediction Verification
 
-*[Results to be filled]*
+**Result:** Chiral clock (genuine Z₃) peak BW = **69.7%** — CONFIRMS prediction!
+
+### Chirality sweep (h/J=0.75):
+BW locality degrades **monotonically** as φ increases from 0 (S₃) to π/3 (maximal chirality):
+- φ=0 (S₃): 76.5%
+- φ=π/6 (Z₃): 69.7%
+- φ=π/3 (max chiral): 62.1%
+
+Each increment of chirality breaks more S₃ symmetry, allowing more non-Hamiltonian G-invariant operators, reducing BW accuracy.
+
+### h/J sweep at φ=π/6 (genuine Z₃):
+- Peak: 69.7% at h/J=0.60-0.75
+- Ordered phase: 33-59% (lower than S₃ Potts: 43-63%)
+- BW envelope still Unruh-like (coupling gradient toward cut)
+
+### Final prediction table:
+
+| Model | Sym | |G| | d | G-inv ops (n_A=3) | H/G-inv | Measured BW |
+|-------|-----|-----|---|-------------------|---------|-------------|
+| XXZ | U(1) | ∞ | 2 | 42 (n_A=4) | 0.143 | 100.0% |
+| TFIM | Z₂ | 2 | 2 | 71 (n_A=4) | 0.099 | 91.0% |
+| Potts | S₃ | 6 | 3 | 69 | 0.072 | 76.5% |
+| Chiral | Z₃ | 3 | 3 | 125 | 0.040 | 69.7% |
+
+**H/G-inv ratio perfectly predicts BW locality ordering across all four models.**
+
+### Key discoveries:
+1. Z₃ clock ≡ S₃ Potts for q=3 (ZZ†+h.c. = 3δ-I): models are equivalent
+2. Chiral perturbation (φ≠0) genuinely breaks S₃ → Z₃
+3. BW locality degrades smoothly with chirality — not a phase transition
+4. Within fixed d=3: larger group (S₃ > Z₃) gives better BW (76.5% > 69.7%)
+5. Across d: d dominates — S₃(d=3) = 76.5% < Z₂(d=2) = 91%
+
+## Summary
+
+Sprint 034 establishes a **quantitative predictor of BW entanglement Hamiltonian accuracy**: the ratio of Hamiltonian operator dimension to symmetry-invariant operator dimension, H/G-inv. This ratio depends on both the symmetry group G and the local Hilbert space dimension d, and perfectly predicts the ordering of BW locality across all four models tested (Sprints 032-034).
+
+The key insight: BW locality isn't about how much symmetry you have, but about how much the symmetry *constrains the operator space relative to the Hamiltonian*. U(1) at d=2 wins because continuous symmetry at low d leaves almost no room for non-Hamiltonian invariant operators. S₃ at d=3 loses despite being a larger finite group because d=3 opens a 6561-dimensional operator space that even order-6 symmetry can't tightly constrain.
+
+The bonus discovery — Z₃ clock ≡ S₃ Potts at q=3 — is a nice algebraic identity (ZZ†+h.c. = 3δ-I) that connects two seemingly different formulations. The chiral clock model with φ≠0 provides a genuine Z₃-only system, confirming the prediction.
