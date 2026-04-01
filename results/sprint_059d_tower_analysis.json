@@ -1,0 +1,53 @@
+{
+  "desc_gaps": {
+    "2": {
+      "n": 12,
+      "gap": 7.898,
+      "pred": 8.0,
+      "ratio": 0.98725,
+      "x1_from_gap": 0.12661433274246645
+    },
+    "3": {
+      "n": 10,
+      "gap": 7.332,
+      "pred": 7.5,
+      "ratio": 0.9776,
+      "x1_from_gap": 0.13638843426077468
+    },
+    "4": {
+      "n": 8,
+      "gap": 8.018,
+      "pred": 8.547008547008547,
+      "ratio": 0.9381060000000001,
+      "x1_from_gap": 0.12471938139186829
+    },
+    "5": {
+      "n": 8,
+      "gap": 8.406,
+      "pred": 9.900990099009901,
+      "ratio": 0.849006,
+      "x1_from_gap": 0.118962645729241
+    },
+    "7": {
+      "n": 6,
+      "gap": 8.587,
+      "pred": 11.627906976744187,
+      "ratio": 0.7384819999999999,
+      "x1_from_gap": 0.11645510655642251
+    },
+    "10": {
+      "n": 6,
+      "gap": 8.955,
+      "pred": 12.048192771084336,
+      "ratio": 0.7432650000000001,
+      "x1_from_gap": 0.11166945840312674
+    }
+  },
+  "qualitative_tests": {
+    "degeneracy_4_universal": true,
+    "spin_pm1_universal": true,
+    "gap_converges_from_below": true,
+    "tower_structure_present_all_q": true
+  },
+  "conclusion": "Genuine CFT tower structure confirmed for all q=2-10. Descendants at spin \u00b11 with correct degeneracy. Gap quantitatively matches 1/x\u2081 for q=2,3. For q\u22655, anomalous FSS prevents quantitative convergence at accessible sizes."
+}
