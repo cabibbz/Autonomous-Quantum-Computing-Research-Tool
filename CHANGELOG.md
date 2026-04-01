@@ -507,3 +507,15 @@
 **Next:** Real hardware QPU test, XZZX surface code variant, syndrome extraction noise, entanglement-assisted codes
 
 [Full report: sprints/sprint_024.md]
+
+### Sprint 025 — 2026-03-31 — Real Hardware QPU Test: Does [[5,1,3]] Basis Isotropy Survive?
+**Status:** In Progress
+
+**Goal:** Test the central prediction from Sprints 021-024 on real IBM hardware: [[5,1,3]]'s basis isotropy should make it universally superior to 3-qubit repetition codes. Real hardware noise (correlated, qubit-specific, crosstalk) may break this.
+
+**QPU budget:** 0s used → planning ~30-60s for this sprint
+
+**Experiments planned:**
+- 25a: Simulator baseline with gate-level noise model
+- 25b: Real hardware QPU submission
+- 25c: Gap analysis (simulator vs hardware)
