@@ -1,212 +1,141 @@
 #!/usr/bin/env python3
-"""Sprint 063b: Test c·x₁ ≈ 0.112 for the Z_5 clock model.
+"""Sprint 063b: Test c·x₁ for the Z_5 clock model (REWRITTEN for speed).
 
-The clock model uses cos(2π(s_i-s_j)/q) coupling instead of Potts δ(s_i,s_j).
-Same Z_q symmetry but different Hamiltonian. If c·x₁ ≈ constant is universal
-to Z_q-symmetric models, it should hold for clock too.
+Clock model: H = -J Σ cos(2π(s_i-s_{i+1})/q) - g Σ (X + X†)
+Build Hamiltonian using diagonal coupling matrix instead of q² projectors.
 
-Clock q=5: g_c ≈ 0.67 from MI-CV crossings (Sprint 041-042, but these
-were MI-CV based — may be inaccurate). We'll use energy gap method.
-
-For clock: H = -J Σ cos(2π(s_i-s_{i+1})/q) - g Σ (X + X†)
-Compare with: Potts: H = -J Σ δ(s_i,s_{i+1}) - g Σ (X + X†)
-
-Method:
-1. Find g_c via energy gap Δ·N crossing
-2. Measure x₁ from gap ratios at g_c
-3. Measure c from Casimir energy or entropy profile
+Plan:
+1. Find g_c via energy gap Δ·N crossing (n=4,6)
+2. Extract c/x₁ from Casimir energy + gap
+3. Get c from DMRG entropy profile
 4. Compute c·x₁
 """
 import numpy as np
-from scipy.sparse import csr_matrix, kron as sp_kron, eye as sp_eye
+from scipy.sparse import csr_matrix, kron as sp_kron, eye as sp_eye, diags
 from scipy.sparse.linalg import eigsh
 import json, time
 
 def clock_hamiltonian_periodic(n, q, g):
-    """Clock model Hamiltonian with periodic BC.
-    H = -Σ cos(2π(s_i-s_{i+1})/q) - g·Σ(X+X†)
-    """
+    """Clock model with periodic BC. Efficient construction."""
     dim = q**n
-    eye_q = np.eye(q)
+    eye_q = sp_eye(q, format='csr')
 
-    # Clock coupling: cos(2π(s_i-s_j)/q)
-    coupling = np.zeros((q**2, q**2))
-    for si in range(q):
-        for sj in range(q):
-            coupling[si*q+sj, si*q+sj] = np.cos(2*np.pi*(si-sj)/q)
+    # Clock coupling matrix (q×q): M[a,b] = cos(2π(a-b)/q)
+    # This is diagonal in a×b basis: the 2-site operator is just the diagonal
+    clock_2site = np.zeros(q**2)
+    for a in range(q):
+        for b in range(q):
+            clock_2site[a*q + b] = np.cos(2*np.pi*(a-b)/q)
+    clock_op = diags(clock_2site, 0, shape=(q**2, q**2), format='csr')
 
-    # Transverse field X + X†
+    # X + X† matrix
     X = np.zeros((q, q))
     for s in range(q):
         X[(s+1) % q, s] = 1.0
-    XpXd = X + X.T
+    XpXd = csr_matrix(X + X.T)
 
     H = csr_matrix((dim, dim))
 
-    # Nearest-neighbor coupling (periodic)
-    for i in range(n):
-        j = (i + 1) % n
-        if i < j:
-            left = q**i if i > 0 else 1
-            middle = q**(j-i-1) if j-i-1 > 0 else 1
-            right = q**(n-j-1) if n-j-1 > 0 else 1
-            op = csr_matrix(coupling)
-            if i > 0:
-                op = sp_kron(sp_eye(left), op, format='csr')
-            if j-i-1 > 0:
-                # This won't work for non-adjacent sites, need different approach for boundary
-                pass
-            if n-j-1 > 0:
-                op = sp_kron(op, sp_eye(right), format='csr')
-            H = H - op
-        else:
-            # Boundary bond (n-1, 0): need to handle specially
-            # Build as Σ_{si,sj} cos(2π(si-sj)/q) |si>_{n-1}<si|_{n-1} ⊗ |sj>_0<sj|_0
-            for si in range(q):
-                for sj in range(q):
-                    coeff = np.cos(2*np.pi*(si-sj)/q)
-                    if abs(coeff) < 1e-15:
-                        continue
-                    proj_0 = np.zeros((q, q)); proj_0[sj, sj] = 1.0
-                    proj_n = np.zeros((q, q)); proj_n[si, si] = 1.0
-                    ops = [eye_q] * n
-                    ops[0] = proj_0
-                    ops[n-1] = proj_n
-                    r = csr_matrix(ops[0])
-                    for op in ops[1:]:
-                        r = sp_kron(r, csr_matrix(op), format='csr')
-                    H = H - coeff * r
+    # Bulk bonds (i, i+1) for i=0..n-2
+    for i in range(n - 1):
+        left = q**i
+        right = q**(n - i - 2)
+        op = clock_op
+        if left > 1:
+            op = sp_kron(sp_eye(left), op, format='csr')
+        if right > 1:
+            op = sp_kron(op, sp_eye(right), format='csr')
+        H = H - op
+
+    # Boundary bond (n-1, 0) — build via permutation
+    # Need to contract sites 0 and n-1 which are far apart in tensor product
+    # Use explicit diagonal: for each basis state, add cos(2π(s_{n-1}-s_0)/q)
+    diag_boundary = np.zeros(dim)
+    for idx in range(dim):
+        s0 = idx % q
+        sn = (idx // (q**(n-1))) % q
+        diag_boundary[idx] = np.cos(2*np.pi*(sn - s0)/q)
+    H = H - diags(diag_boundary, 0, shape=(dim, dim), format='csr')
 
     # Transverse field
     for i in range(n):
-        ops = [eye_q] * n
-        ops[i] = XpXd
-        r = csr_matrix(ops[0])
-        for op in ops[1:]:
-            r = sp_kron(r, csr_matrix(op), format='csr')
-        H = H - g * r
+        left = q**i
+        right = q**(n - i - 1)
+        op = XpXd
+        if left > 1:
+            op = sp_kron(sp_eye(left), op, format='csr')
+        if right > 1:
+            op = sp_kron(op, sp_eye(right), format='csr')
+        H = H - g * op
 
     return H
 
-# Step 1: Find g_c for clock q=5 via energy gap crossing
-print("=" * 70)
-print("CLOCK q=5: ENERGY GAP METHOD FOR g_c")
-print("=" * 70)
 
 q = 5
+print("=" * 70)
+print(f"CLOCK q={q}: ENERGY GAP g_c SCAN")
+print("=" * 70)
 
-# Scan g values
+# Coarse scan
 g_vals = np.arange(0.50, 1.00, 0.05)
-print(f"\n{'g':>6} {'Δ·4':>10} {'Δ·6':>10}")
+gap_data = {4: {}, 6: {}}
 
-gap_n4 = {}
-gap_n6 = {}
-
+t0_total = time.time()
 for g in g_vals:
     for n in [4, 6]:
         dim = q**n
-        if dim > 2_000_000:
-            continue
+        t0 = time.time()
         H = clock_hamiltonian_periodic(n, q, g)
-        k_eig = min(4, dim-2)
-        evals, _ = eigsh(H, k=k_eig, which='SA')
+        evals, _ = eigsh(H, k=4, which='SA')
         evals = np.sort(evals)
-        gap = evals[1] - evals[0]
-        gap_n = gap * n
-        if n == 4:
-            gap_n4[g] = gap_n
-        else:
-            gap_n6[g] = gap_n
+        gap_data[n][g] = (evals[1] - evals[0]) * n
+        dt = time.time() - t0
 
-    g4 = gap_n4.get(g, float('nan'))
-    g6 = gap_n6.get(g, float('nan'))
-    print(f"{g:>6.3f} {g4:>10.6f} {g6:>10.6f}")
+    print(f"  g={g:.3f}: Δ·4={gap_data[4][g]:.6f}, Δ·6={gap_data[6][g]:.6f}")
 
 # Find crossing
-print("\n--- Finding Δ·N crossing ---")
-g_list = sorted(gap_n4.keys())
+gc_clock = None
+g_list = sorted(gap_data[4].keys())
 for i in range(len(g_list)-1):
     g1, g2 = g_list[i], g_list[i+1]
-    if g1 in gap_n6 and g2 in gap_n6:
-        diff1 = gap_n4[g1] - gap_n6[g1]
-        diff2 = gap_n4[g2] - gap_n6[g2]
-        if diff1 * diff2 < 0:
-            g_cross = g1 + (-diff1) * (g2 - g1) / (diff2 - diff1)
-            print(f"  Crossing at g ≈ {g_cross:.4f}")
+    diff1 = gap_data[4][g1] - gap_data[6][g1]
+    diff2 = gap_data[4][g2] - gap_data[6][g2]
+    if diff1 * diff2 < 0:
+        gc_clock = g1 + (-diff1) * (g2 - g1) / (diff2 - diff1)
+        print(f"\n  Coarse crossing at g ≈ {gc_clock:.4f}")
 
-# Refine around crossing
-print("\n--- Refining crossing ---")
-g_fine = np.arange(0.60, 0.80, 0.01)
-gap_n4_f = {}
-gap_n6_f = {}
+# Refine
+if gc_clock:
+    g_fine = np.arange(gc_clock - 0.05, gc_clock + 0.05, 0.005)
+    for g in g_fine:
+        for n in [4, 6]:
+            H = clock_hamiltonian_periodic(n, q, g)
+            evals, _ = eigsh(H, k=4, which='SA')
+            evals = np.sort(evals)
+            gap_data[n][g] = (evals[1] - evals[0]) * n
 
-for g in g_fine:
-    for n in [4, 6]:
-        dim = q**n
-        H = clock_hamiltonian_periodic(n, q, g)
-        k_eig = min(4, dim-2)
-        evals, _ = eigsh(H, k=k_eig, which='SA')
-        evals = np.sort(evals)
-        gap = evals[1] - evals[0]
-        gap_n = gap * n
-        if n == 4:
-            gap_n4_f[g] = gap_n
-        else:
-            gap_n6_f[g] = gap_n
-
-g_list_f = sorted(gap_n4_f.keys())
-gc_clock = None
-for i in range(len(g_list_f)-1):
-    g1, g2 = g_list_f[i], g_list_f[i+1]
-    if g1 in gap_n6_f and g2 in gap_n6_f:
-        diff1 = gap_n4_f[g1] - gap_n6_f[g1]
-        diff2 = gap_n4_f[g2] - gap_n6_f[g2]
+    g_list = sorted([g for g in gap_data[4].keys() if gc_clock - 0.06 < g < gc_clock + 0.06])
+    for i in range(len(g_list)-1):
+        g1, g2 = g_list[i], g_list[i+1]
+        diff1 = gap_data[4][g1] - gap_data[6][g1]
+        diff2 = gap_data[4][g2] - gap_data[6][g2]
         if diff1 * diff2 < 0:
             gc_clock = g1 + (-diff1) * (g2 - g1) / (diff2 - diff1)
             print(f"  Refined crossing at g_c ≈ {gc_clock:.4f}")
+            break
 
-if gc_clock is None:
-    # Try n=4,8
-    print("  No n=4,6 crossing found. Trying wider scan...")
-    gc_clock = 0.70  # Fallback estimate from Sprint 042
-
-# Apply 4.8% FSS correction (from Potts calibration)
-gc_corrected = gc_clock * 1.048
-print(f"  Raw crossing: {gc_clock:.4f}")
+gc_corrected = gc_clock * 1.048  # FSS correction
+print(f"\n  Raw crossing: {gc_clock:.4f}")
 print(f"  FSS-corrected (+4.8%): {gc_corrected:.4f}")
 
-# Step 2: Measure spectrum at g_c
-print(f"\n\n{'='*70}")
-print(f"SPECTRUM AT g_c = {gc_clock:.4f} (raw crossing)")
+print(f"\n  Total scan time: {time.time()-t0_total:.1f}s")
+
+# Extract c/x₁ at both g_c values
+print(f"\n{'='*70}")
+print("c/x₁ EXTRACTION FROM SPECTRUM")
 print(f"{'='*70}")
 
-for gc_use in [gc_clock, gc_corrected]:
-    print(f"\n--- g = {gc_use:.4f} ---")
-    for n in [4, 6, 8]:
-        dim = q**n
-        if dim > 500_000:
-            continue
-        t0 = time.time()
-        H = clock_hamiltonian_periodic(n, q, gc_use)
-        k_eig = min(8, dim-2)
-        evals, _ = eigsh(H, k=k_eig, which='SA')
-        evals = np.sort(evals)
-        dt = time.time() - t0
-
-        E0 = evals[0]
-        delta1 = evals[1] - evals[0]
-
-        # CFT: x₁ = Δ₁·N/(2π·v), and E₀/N = e_∞ - πvc/(6N²)
-        # From two sizes: v·c = -6/π · (E₀(n)/n - E₀(n')/n') · n²·n'²/(n'²-n²)
-
-        print(f"  n={n}: E₀/N={E0/n:.8f}, Δ₁={delta1:.8f}, Δ₁·N={delta1*n:.6f} ({dt:.1f}s)")
-
-# Step 3: Extract c and x₁ from size pairs
-print(f"\n\n{'='*70}")
-print("c AND x₁ EXTRACTION")
-print(f"{'='*70}")
-
-results = {"q": q, "model": "clock"}
+results = {"q": q, "model": "clock", "gc_raw": float(gc_clock), "gc_corrected": float(gc_corrected)}
 
 for gc_label, gc_use in [("raw", gc_clock), ("corrected", gc_corrected)]:
     print(f"\n--- g_c = {gc_use:.4f} ({gc_label}) ---")
@@ -218,73 +147,33 @@ for gc_label, gc_use in [("raw", gc_clock), ("corrected", gc_corrected)]:
         dim = q**n
         if dim > 500_000:
             continue
+        t0 = time.time()
         H = clock_hamiltonian_periodic(n, q, gc_use)
         k_eig = min(6, dim-2)
         evals, _ = eigsh(H, k=k_eig, which='SA')
         evals = np.sort(evals)
+        dt = time.time() - t0
+
         E0_per_site[n] = evals[0] / n
         delta1_n[n] = (evals[1] - evals[0]) * n
+        print(f"  n={n}: E₀/N={E0_per_site[n]:.8f}, Δ₁·N={delta1_n[n]:.6f} ({dt:.1f}s)")
 
-    # Extract v·c and v·x₁ from pairs
     sizes = sorted(E0_per_site.keys())
     for i in range(len(sizes)):
         for j in range(i+1, len(sizes)):
             n1, n2 = sizes[i], sizes[j]
-            # E₀/N = e_∞ - πvc/(6N²)
-            # e₁ - e₂ = πvc/6 · (1/n₁² - 1/n₂²)
             e_diff = E0_per_site[n1] - E0_per_site[n2]
             inv_diff = 1.0/n1**2 - 1.0/n2**2
             vc = 6 * e_diff / (np.pi * inv_diff)
+            vx1 = delta1_n[n2] / (2 * np.pi)
+            cx1_ratio = vc / vx1
+            print(f"  Pair ({n1},{n2}): c/x₁ = {cx1_ratio:.3f}")
 
-            # Δ₁·N = 2πv·x₁
-            # Average from the two sizes
-            vx1_1 = delta1_n[n1] / (2 * np.pi)
-            vx1_2 = delta1_n[n2] / (2 * np.pi)
-
-            cx1_1 = vc * vx1_1 / (vc / (2*np.pi*vx1_1))**0 # c·x₁ = (vc)·(vx₁)/v² = vc·vx₁/(vc/c·vx₁/x₁)...
-            # Simpler: c/x₁ = vc/(vx₁), c·x₁ = vc·vx₁/v²
-            # But v² = vc·vx₁ · (1/(c·x₁))... circular.
-            # Instead: c/x₁ = vc/vx₁ (model-independent ratio)
-
-            cx1_ratio = vc / vx1_1
-            cx1_ratio2 = vc / vx1_2
-
-            # To get c·x₁: need c and x₁ separately.
-            # c·x₁ = (vc)·(vx₁) / v² and v = vc/c = vx₁·2π·x₁/Δ₁N...
-            # Actually: c = vc/v, x₁ = vx₁·(2π)/v... no.
-            #
-            # From Casimir: vc is known.
-            # From gap: vx₁ = Δ₁N/(2π) is known.
-            # c/x₁ = vc/vx₁ is model-independent.
-            # c·x₁ = (vc)·(vx₁)/v². Need v separately.
-            #
-            # v can be extracted from: Δ₁ = 2πv·x₁/N → v = Δ₁·N/(2πx₁)
-            # But we don't know x₁. We know vx₁ = Δ₁N/(2π).
-            #
-            # Actually: c·x₁ = vc · vx₁ / v² = 1/(c/x₁) · c² = not helpful.
-            #
-            # Better: c²/(c/x₁) = c·x₁. And c = vc/v. We need v.
-            #
-            # Alternative: from vc and vx₁:
-            # v = sqrt(vc · vx₁ / (c/x₁ · x₁²))... still circular.
-            #
-            # The model-independent quantity is c/x₁ = vc/vx₁.
-            # To get c·x₁ we need the PRODUCT vc · vx₁ = v² · c · x₁ / 1
-            # so c·x₁ = (vc · vx₁) / v².
-            #
-            # We can get v from higher levels or from the descendant gap.
-            # But simpler: if we know c from an independent method (DMRG entropy),
-            # then x₁ = c/(c/x₁).
-
-            print(f"  Pair ({n1},{n2}): vc = {vc:.6f}, vx₁(n₁) = {vx1_1:.6f}, vx₁(n₂) = {vx1_2:.6f}")
-            print(f"    c/x₁ = {cx1_ratio:.3f} (using n₁), {cx1_ratio2:.3f} (using n₂)")
-
-    results[f"gc_{gc_label}"] = gc_use
     results[f"E0_per_site_{gc_label}"] = {str(n): float(v) for n, v in E0_per_site.items()}
     results[f"delta1_n_{gc_label}"] = {str(n): float(v) for n, v in delta1_n.items()}
 
-# Step 4: Get c from DMRG entropy profile
-print(f"\n\n{'='*70}")
+# DMRG entropy profile for c
+print(f"\n{'='*70}")
 print("c FROM DMRG ENTROPY PROFILE")
 print(f"{'='*70}")
 
@@ -300,7 +189,6 @@ class ClockSite(Site):
     def __init__(self, q):
         leg = npc.LegCharge.from_trivial(q)
         Site.__init__(self, leg, [str(a) for a in range(q)], sort_charge=False)
-        # Clock coupling: cos(2π(si-sj)/q) needs projectors
         for a in range(q):
             P = np.zeros((q, q), dtype=complex); P[a, a] = 1.0
             self.add_op(f'P{a}', P)
@@ -318,7 +206,6 @@ class ClockChain(CouplingMPOModel, NearestNeighborModel):
         J = model_params.get('J', 1.0)
         g = model_params.get('g', 1.0)
         q = model_params.get('q', 5)
-        # Clock coupling: -J·cos(2π(si-sj)/q) = -J·Σ_{a,b} cos(2π(a-b)/q) Pa_i Pb_j
         for a in range(q):
             for b in range(q):
                 coeff = np.cos(2*np.pi*(a-b)/q)
@@ -337,66 +224,72 @@ def extract_c_profile(S_profile, n):
     slope, _ = np.linalg.lstsq(A, S[mask], rcond=None)[0]
     return float(6 * slope)
 
-gc_test = gc_clock  # Use raw crossing for DMRG too
+for gc_label, gc_use in [("raw", gc_clock)]:
+    print(f"\n--- g_c = {gc_use:.4f} ({gc_label}) ---")
+    for n_dmrg in [12, 16, 24]:
+        t0 = time.time()
+        model = ClockChain({'L': n_dmrg, 'q': q, 'J': 1.0, 'g': gc_use, 'bc_MPS': 'finite'})
+        np.random.seed(42 + n_dmrg + q)
+        init = [np.random.randint(q) for _ in range(n_dmrg)]
+        psi = MPS.from_product_state(model.lat.mps_sites(), init, bc='finite')
+        eng = dmrg.TwoSiteDMRGEngine(psi, model, {
+            'mixer': True, 'max_E_err': 1e-10,
+            'trunc_params': {'chi_max': 30, 'svd_min': 1e-12},
+            'max_sweeps': 30,
+        })
+        E0, _ = eng.run()
+        S_prof = [float(s) for s in psi.entanglement_entropy()]
+        chi_act = max(psi.chi)
+        dt = time.time() - t0
 
-for n_dmrg in [12, 16, 24]:
-    t0 = time.time()
-    model = ClockChain({'L': n_dmrg, 'q': q, 'J': 1.0, 'g': gc_test, 'bc_MPS': 'finite'})
-    np.random.seed(42 + n_dmrg + q)
-    init = [np.random.randint(q) for _ in range(n_dmrg)]
-    psi = MPS.from_product_state(model.lat.mps_sites(), init, bc='finite')
-    eng = dmrg.TwoSiteDMRGEngine(psi, model, {
-        'mixer': True, 'max_E_err': 1e-10,
-        'trunc_params': {'chi_max': 30, 'svd_min': 1e-12},
-        'max_sweeps': 30,
-    })
-    E0, _ = eng.run()
-    S_prof = [float(s) for s in psi.entanglement_entropy()]
-    chi_act = max(psi.chi)
-    dt = time.time() - t0
+        c_val = extract_c_profile(S_prof, n_dmrg)
+        print(f"  n={n_dmrg}: c={c_val:.4f}, chi={chi_act}, time={dt:.1f}s", flush=True)
+        results[f"dmrg_n{n_dmrg}_{gc_label}"] = {"c": c_val, "chi": chi_act, "time": round(dt, 1)}
 
-    c_val = extract_c_profile(S_prof, n_dmrg)
-    print(f"  n={n_dmrg}: c={c_val:.4f}, chi={chi_act}, time={dt:.1f}s")
-
-    results[f"dmrg_n{n_dmrg}"] = {"c": c_val, "chi": chi_act, "time": round(dt, 1)}
-
-    if dt > 120:
-        print("  Too slow, stopping.")
-        break
+        if dt > 120:
+            print("  Too slow, stopping DMRG.")
+            break
 
 # Summary
 print(f"\n\n{'='*70}")
-print("SUMMARY: CLOCK q=5 vs POTTS q=5")
+print("SUMMARY: CLOCK q=5 c·x₁")
 print(f"{'='*70}")
 
-# Potts q=5 data
-potts_c = 1.10
-potts_x1 = 0.1015
-potts_cx1 = potts_c * potts_x1
+# Get best c/x₁ from spectrum
+for gc_label in ["raw"]:
+    key_e = f"E0_per_site_{gc_label}"
+    key_d = f"delta1_n_{gc_label}"
+    sizes = sorted(results[key_e].keys(), key=int)
+    if len(sizes) >= 2:
+        n1, n2 = int(sizes[-2]), int(sizes[-1])
+        e1 = results[key_e][str(n1)]
+        e2 = results[key_e][str(n2)]
+        vc = 6 * (e1 - e2) / (np.pi * (1/n1**2 - 1/n2**2))
+        vx1 = results[key_d][str(n2)] / (2 * np.pi)
+        cx1_ratio = vc / vx1
+        results[f"cx1_ratio_{gc_label}"] = float(cx1_ratio)
 
-print(f"\nPotts q=5: c={potts_c:.3f}, x₁={potts_x1:.4f}, c·x₁={potts_cx1:.5f}")
+        # Get best c from DMRG
+        for n_key in [24, 16, 12]:
+            dmrg_key = f"dmrg_n{n_key}_{gc_label}"
+            if dmrg_key in results:
+                c_clock = results[dmrg_key]["c"]
+                x1_clock = c_clock / cx1_ratio
+                cx1_clock = c_clock * x1_clock
+                print(f"\nClock q=5 (g_c={results[f'gc_{gc_label}']:.4f}):")
+                print(f"  c = {c_clock:.4f} (DMRG n={n_key})")
+                print(f"  c/x₁ = {cx1_ratio:.3f} (spectrum ({n1},{n2}))")
+                print(f"  x₁ = {x1_clock:.4f}")
+                print(f"  c·x₁ = {cx1_clock:.5f}")
+                results[f"c_clock"] = c_clock
+                results[f"x1_clock"] = float(x1_clock)
+                results[f"cx1_clock"] = float(cx1_clock)
+                break
 
-# Clock: use c/x₁ from spectrum + c from DMRG
-clock_c = results.get("dmrg_n16", results.get("dmrg_n12", {})).get("c", None)
-if clock_c:
-    # c/x₁ from spectrum pair
-    # Find best pair
-    for gc_label in ["raw", "corrected"]:
-        key_e = f"E0_per_site_{gc_label}"
-        key_d = f"delta1_n_{gc_label}"
-        if key_e in results:
-            sizes = sorted(results[key_e].keys(), key=int)
-            if len(sizes) >= 2:
-                n1, n2 = int(sizes[0]), int(sizes[1])
-                e1, e2 = results[key_e][sizes[0]], results[key_e][sizes[1]]
-                vc = 6 * (e1 - e2) / (np.pi * (1/n1**2 - 1/n2**2))
-                vx1 = results[key_d][sizes[1]] / (2 * np.pi)
-                cx1_ratio = vc / vx1
-                clock_x1 = clock_c / cx1_ratio
-                clock_cx1 = clock_c * clock_x1
-                print(f"\nClock q=5 ({gc_label}): c={clock_c:.3f}, c/x₁={cx1_ratio:.3f}, x₁={clock_x1:.4f}, c·x₁={clock_cx1:.5f}")
-
-print(f"\nTarget: c·x₁ = 0.112 ± 0.005 (Potts pattern)")
+# Compare
+print(f"\n--- Comparison ---")
+print(f"  Potts q=5: c=1.10, x₁=0.1015, c·x₁=0.1117")
+print(f"  Target: c·x₁ ≈ 0.112 ± 0.005")
 
 with open("results/sprint_063b_clock_cx1.json", "w") as f:
     json.dump(results, f, indent=2, default=str)

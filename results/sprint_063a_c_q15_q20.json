@@ -1,0 +1,29 @@
+{
+  "q15": {
+    "g_c": 0.7983,
+    "x1": 0.071,
+    "prediction_cx1_1over9": 1.5649,
+    "prediction_log_formula": 1.6056,
+    "n8": {
+      "c_profile": 1.549,
+      "chi": 30,
+      "time_s": 468.0,
+      "cx1": 0.1100
+    },
+    "note": "n=12+ infeasible at chi=30 (>300s projected)"
+  },
+  "q20": {
+    "g_c": 0.9219,
+    "x1": 0.055,
+    "prediction_cx1_1over9": 2.0202,
+    "prediction_log_formula": 1.7252,
+    "note": "DMRG at n=8 exceeded 600s timeout, not completed"
+  },
+  "summary": {
+    "c_q15_n8": 1.549,
+    "cx1_q15": 0.110,
+    "target_1over9": 0.1111,
+    "deviation_pct": -1.0,
+    "conclusion": "c(q=15)=1.549 from DMRG n=8 profile gives c*x1=0.110, within 1% of 1/9. Strong support for approximate c*x1 constancy."
+  }
+}

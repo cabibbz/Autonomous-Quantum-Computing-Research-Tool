@@ -60,7 +60,9 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 
 **1D quantum Potts is NEVER first-order (Sprint 043).** Tested q=5, 10, 20 — all show continuous transitions. ~~q=10 crossing confirmed at g_c≈0.246~~ (Sprint 043 used χ=10, INVALIDATED by Sprint 048 at χ=20). At q≥10, ground states converge to a universal large-q regime where only the {|0⟩, |1⟩, |q-1⟩} subspace is active. Physical mechanism: the extreme anisotropy of the 1D quantum→2D classical mapping suppresses the entropic mechanism that drives first-order transitions in 2D.
 
-**Clock ≠ Potts for q≥4 (Sprints 041-042).** TeNPy's ClockChain uses cos(2π(s_i-s_j)/q) coupling, which equals Potts δ(s_i,s_j) only for q=2,3. For q≥5, models differ: Clock g_c=0.67 vs Potts g_c=0.41, Potts slope 5.7x steeper. Custom PottsChain model built (Sprint 042) with projector coupling. Both show second-order crossings — the 2D classical "q>4 → first-order" does NOT apply to 1D quantum Potts with transverse field. Anisotropic quantum-classical correspondence preserves second-order character.
+**Clock ≠ Potts for q≥4 (Sprints 041-042, 063).** TeNPy's ClockChain uses cos(2π(s_i-s_j)/q) coupling, which equals Potts δ(s_i,s_j) only for q=2,3. For q≥5, models differ quantitatively: Clock g_c(q=5)=0.52 vs Potts g_c(q=5)=0.44 (both from energy gap method). Clock c(q=5)≈1.17, Potts c(q=5)≈1.10 — clock is "more critical." c·x₁ is model-dependent: ~0.146 (clock) vs ~0.112 (Potts). Both show second-order transitions — the 2D classical "q>4 → first-order" does NOT apply to 1D quantum models.
+
+**Old clock g_c estimates from MI-CV (Sprint 041-042) are WRONG.** MI-CV gave g_c≈0.67 for clock q=5; energy gap gives 0.52. Same disordered-phase crossover artifact as early Potts work.
 
 **ν(q) extraction (Sprint 053).** Corrected energy gap slope method: d(Δ·N)/dg ~ N^{1/ν}·(1+b/N), b=0.86 from q=3 calibration. Validated: <1% for q=2, 3% for q=3.
 
@@ -164,7 +166,9 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 
 **x₁(q) best fit (Sprint 062a):** x₁ ≈ 0.206·q^(-0.449), RMS=0.010. Neither 1/ln(q) nor power of ln(q-1) fits well.
 
-**c·x₁ ≈ 1/9 for q≥3 (Sprint 062).** The product c(q)·x₁(q) = 0.112 ± 0.005 for q=3-10, close to 1/9=0.111. q=2 Ising is an outlier (c·x₁=1/16=0.0625). This is model-independent and constrains the CFT: if c~ln(q) then x₁~1/(9·ln(q)). **POTENTIALLY NOVEL.**
+**c·x₁ ≈ 0.112 for Potts q≥3 (Sprints 062-063).** Product c(q)·x₁(q) = 0.112 ± 0.005 for q=3-15 Potts. NOT exactly 1/9 (q=3 exact is 8/75=0.1067). q=2 Ising is an outlier (c·x₁=1/16). Potts-specific: clock q=5 gives c·x₁≈0.146 (30% higher). The near-constancy is approximate, useful for predictions but not an exact identity.
+
+**c(q=15) = 1.549 (DMRG n=8, Sprint 063a).** Gives c·x₁ = 0.110, supporting c·x₁ constancy up to q=15.
 
 **Single compact boson RULED OUT (Sprint 062a).** c>1 for q≥5 is incompatible with any single free boson (always c=1). Multiple effective DOF required.
 

@@ -319,3 +319,21 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - q=10 twist sector ratios at n=4 saturate near k=4
 
 [Full report: sprints/sprint_062.md]
+
+### Sprint 063 — Testing c·x₁: Independent c(q=15), Clock Model, Exact Analysis
+**Status:** Complete (3 experiments).
+
+**c(q=15) = 1.549 (DMRG n=8).** Gives c·x₁ = 0.110, within 1% of target 0.111. Pattern holds up to q=15. q=20 DMRG infeasible (>600s).
+
+**c·x₁ is Potts-specific, NOT Z_q-universal.** Clock q=5 gives c·x₁ ≈ 0.146 (30% above Potts 0.112). The cos(2π·Δs/q) coupling creates different CFT data than δ(s_i,s_j).
+
+**c·x₁ is NOT exactly 1/9.** Exact q=3 value is 8/75 = 0.10667 (4% below 1/9). Approximate constancy is a coincidence of the particular q-dependences.
+
+**Clock g_c(q=5) = 0.52, not 0.67.** Energy gap method corrects old MI-CV estimate. Clock c(q=5) ≈ 1.17 > Potts 1.10.
+
+**Surprises:**
+- c·x₁ holds to 1% at q=15 despite being approximate
+- Clock c > Potts c at same q — cos coupling is "more critical"
+- Minimal model c·x₁ → 0 as m→∞ (opposite to Potts trend)
+
+[Full report: sprints/sprint_063.md]
