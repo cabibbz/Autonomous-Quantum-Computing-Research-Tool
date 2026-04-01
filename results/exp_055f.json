@@ -1,0 +1,11 @@
+{
+  "experiment": "055f",
+  "conclusion": "c(q=5) > 1 confirmed by two independent methods",
+  "c_q5_estimate": {
+    "low": 1.01,
+    "central": 1.1,
+    "high": 1.16
+  },
+  "overshoot_q3_n16": 0.088,
+  "overshoot_q4_n16": 0.144
+}

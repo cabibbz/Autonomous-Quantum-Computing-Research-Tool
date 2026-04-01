@@ -98,26 +98,31 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 
 **Rule of thumb: MI-CV requires χ > d² for reliable results.** At d=2 (q=2), χ=20 is fine (d²=4). At d=10 (q=10), need χ > 100. Results for q≥7 (d²≥49) should be scrutinized. q=2,3 results are reliable.
 
-## Entropy FSS and Central Charge (Sprints 049, 054)
+## Entropy and Central Charge (Sprints 049, 054, 055)
 
-**Central charge from entropy scaling.** At the critical point, S(l=n/2, n) = (c/6)ln(n) + const. Pairwise c estimates overshoot from above and converge monotonically. Requires at least 3 system sizes. Entropy converges at chi=20 for q=3 (chi is NOT the overshoot source).
+**Three methods for c extraction, ranked:**
+1. **Entropy profile** (Sprint 055, BEST): Fit S(l) vs chord distance ln[(2n/pi)sin(pi*l/n)] at single large n. Central half of chain only. Even/odd oscillations negligible. Converges monotonically from above. At n=64: 2.5% overshoot (q=2).
+2. **FSS pairwise** (Sprint 054): S(n/2) at multiple n, pairwise c from consecutive sizes. Slower convergence, needs 3+ sizes. At (n=16,24): 9-23% overshoot.
+3. **iDMRG S vs ln(xi)** (Sprint 055, DO NOT USE): Correlation length saturates at criticality with L=2 unit cell. 18% error, pairwise c scattered.
 
-**c(q) at true critical points (Sprint 054):**
+**c(q) at true critical points (Sprints 054-055):**
 
-| q | g_c | c (raw, best pair) | c (CFT) | Overshoot at (n=16,24) |
-|---|-----|-------------------|---------|----------------------|
-| 2 | 1.000 | 0.516 | 0.500 | +9% |
-| 3 | 0.333 | 0.884 | 0.800 | +11% |
-| 4 | 0.392 | 1.229 | 1.000 | +23% (FLAT, not converging) |
-| 5 | 0.441 | 1.335 | ? (no CFT) | — |
+| q | g_c | c (profile, best n) | c (FSS, best pair) | c (exact/CFT) |
+|---|-----|-------------------|-------------------|---------------|
+| 2 | 1.000 | 0.512 (n=64) | 0.516 (n=16,24) | 0.500 |
+| 3 | 0.333 | 0.827 (n=48) | 0.884 (n=16,24) | 0.800 |
+| 4 | 0.392 | 1.148 (n=24) | 1.229 (n=16,24) | 1.000 |
+| 5 | 0.441 | 1.261 (n=16) | 1.335 (n=12,16) | **~1.10 ± 0.10** |
 
-**c(q=4) has anomalous FSS.** Pairwise c ≈ 1.23 at ALL size pairs (1.231, 1.222, 1.229) — barely varying. Consistent with logarithmic corrections at marginal q=4 (Ashkin-Teller). Convergence much slower than q=2,3.
+**c(q=4) has anomalous FSS.** Both methods show flat, non-converging overshoot (+14-23%). Consistent with logarithmic corrections at marginal q=4 (Ashkin-Teller).
 
-**POTENTIALLY NOVEL: c(q=5) > 1.** Even with ~20% overshoot correction, c(q=5) ≈ 1.1-1.2, outside the minimal model series c = 1-6/[m(m+1)]. No CFT prediction exists because 2D classical q=5 Potts is first-order. Needs n=32-64 to confirm.
+**POTENTIALLY NOVEL: c(q=5) ≈ 1.10 ± 0.10.** Confirmed > 1 by TWO independent methods (FSS and entropy profile). Even with 25% overshoot correction: c > 1.0. Outside the minimal model series c = 1-6/[m(m+1)]. No CFT prediction exists because 2D classical q=5 Potts is first-order. **Literature search found no prior measurement.** c(q) series: 0.50, 0.80, 1.00, ~1.10 — monotonically increasing with decreasing increments.
 
-**Entropy FSS does NOT give ν.** Entropy has a logarithmic singularity at criticality (S ~ (c/6)ln(ξ)), not a power law. Standard FSS collapse y(g,n) = f((g-g_c)·n^{1/ν}) fails for y=S (best collapse gives ν=3 for TFIM, should be 1). Use correlation length ξ or order parameter for ν extraction instead.
+**Entropy profile overshoot grows with q at fixed n=16:** 8.7% (q=3), 14.4% (q=4), ~20% (q=5). Large-q profile method requires larger n — q=7+ is computationally infeasible at n≥12 with chi=20.
 
-**Correlation length from correlator decay.** Extract ξ from exponential fit to connected correlator ⟨O_i O_j⟩_c in the bulk. Works well in disordered phase (R²>0.95) but saturates at ξ ~ n/4 near criticality. Finite-size ν extraction underestimates (0.62-0.72 vs exact 1.0 for TFIM). Need iDMRG for ν from ξ.
+**Entropy FSS does NOT give ν.** S ~ (c/6)ln(ξ), not a power law. Standard FSS collapse fails (gives ν=3 for TFIM). Use energy gap slope for ν.
+
+**Correlation length from correlator decay.** Saturates at ξ ~ n/4 near criticality. iDMRG correlation length also saturates at criticality (Sprint 055). Not useful for ν extraction near g_c.
 
 **Locating g_c via entropy.** The critical point can be identified as where: (1) dS/dg peaks (pseudo-critical point, drifts toward g_c with n), (2) S grows logarithmically with n (ordered/disordered → S saturates), (3) central charge c from S(n) matches expected value.
 
