@@ -592,3 +592,24 @@
 **Next:** Steane-style encoded ancilla extraction (avoids gate overhead), memory experiment (error accumulation rate), or shift to completely new territory (variational circuits, QRNG). The small-scale QEC story is now comprehensively mapped: Sprints 014-028 span from code structure through noise landscape to active correction, proving that [[5,1,3]] is too small for practical active QEC.
 
 [Full report: sprints/sprint_028.md]
+
+### Sprint 029 — 2026-03-31 — Quantum Simulation: TFIM Phase Transition & Fifth Archetype
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **29a: TFIM ground state entanglement** — Exact diagonalization for n=4,6,8. Ordered phase IS GHZ (MI≈1, I3≈+1, S=1). Disordered phase is product-like (MI→0, S→0). I3 sign change from positive to negative marks the transition.
+- **29b: VQE optimization dynamics** — HVA ansatz finds disordered phase easily (0.28% error) but struggles with ordered phase (10.4% error). VQE fails to build GHZ-like long-range correlations — gets I3 sign WRONG for ordered phase.
+- **29c: Entanglement spectrum at criticality** — Critical TFIM ground state is equidistant from ALL archetypes (GHZ, W, Cluster). MI uniformity CV is a new order parameter: 0.03 (ordered) → 0.39 (critical) → 1.16 (disordered).
+
+**Surprises:**
+- **Ordered TFIM = GHZ** — the Ising ferromagnet's ground state is literally the "classical broadcast in superposition" from Sprint 005. Phase transition = GHZ → Product.
+- **Critical point is a FIFTH entanglement archetype: Scale-Free** — equidistant from GHZ, W, and Cluster. Has features of all three: all-pairs MI (GHZ-like), growing negativity (W-like), geometry-dependent spread (Cluster-like).
+- **MI uniformity CV is a new phase transition detector** — monotonically discriminates all three phases where entropy fails (entropy DECREASES through transition at small n).
+- **VQE difficulty correlates with target entanglement** — product-like states easy, GHZ-like states hard. Nearest-neighbor HVA ansatz cannot build global correlations efficiently.
+- **Disordered phase has Cluster-like entanglement geometry** — nearest-neighbor MI dominates, matching the ZZ interaction structure.
+
+**Key insight:** The TFIM phase transition maps onto our entanglement archetype framework and reveals a new archetype. The ordered phase is GHZ (democratic correlations), the disordered phase is Cluster-like (nearest-neighbor), and the critical point is a genuinely new "Scale-Free" type where correlations decay as power laws — neither uniform nor local. This is the entanglement signature of conformal field theory. The MI uniformity coefficient of variation is a universal, basis-independent order parameter that connects entanglement topology to thermodynamic phases. Five archetypes now: Democratic (GHZ), Distributed (W), Geometric (Cluster), Topological (Toric), Scale-Free (Critical).
+
+**Next:** 2D Ising model (connect to Sprint 007's 2D cluster), Heisenberg XXZ model (richer phase diagram), Scale-Free archetype in other critical systems, VQE with non-local ansatz, MI uniformity as universal phase detector.
+
+[Full report: sprints/sprint_029.md]

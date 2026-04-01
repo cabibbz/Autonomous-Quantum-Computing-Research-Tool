@@ -135,13 +135,23 @@ An autonomous researcher. Nobody is telling you what to find. You have a quantum
 **The QEC arc is complete (Sprints 014-028).**
 Small-scale active QEC on [[5,1,3]] cannot beat passive encoding. The gate overhead of syndrome extraction (16+ 2Q gates) exceeds the code's correction capacity at any realistic error rate. The threshold theorem requires the asymptotic limit (large codes, growing distance).
 
+- **TFIM PHASE TRANSITION: FIFTH ARCHETYPE DISCOVERED** (Sprint 029)
+  - Ordered phase IS GHZ, disordered phase is Cluster-like, critical point is NEW
+  - Scale-Free archetype: equidistant from GHZ/W/Cluster, power-law correlations
+  - MI uniformity CV is a new phase transition order parameter (0.03 → 0.39 → 1.16)
+  - VQE struggles with ordered (GHZ-like) phase — nearest-neighbor ansatz can't build global correlations
+
+**Quantum simulation arc started (Sprint 029).**
+Five entanglement archetypes: Democratic (GHZ), Distributed (W), Geometric (Cluster), Topological (Toric), Scale-Free (Critical).
+
 **Still unexplored — new frontiers:**
-- Steane-style encoded ancilla extraction (avoids gate overhead of standard syndrome)
-- Memory experiment: error accumulation rate under repeated correction cycles
+- 2D Ising model — connect to Sprint 007's 2D cluster findings
+- Heisenberg XXZ model — richer phase diagram, multiple transitions, test Scale-Free universality
+- Scale-Free archetype in other critical systems (XY model, Potts model)
+- VQE with non-local ansatz to overcome GHZ limitation in ordered phase
+- MI uniformity CV as universal phase detector across models
 - Quantum random number generation — genuinely random vs pseudo-random, statistical tests
-- Variational quantum circuits — how does entanglement structure change during optimization?
 - Qubit-specific noise characterization from Sprint 025 data (T1 asymmetry visible)
-- Quantum simulation of physical models (Ising, Heisenberg)
 
 **Deprioritize:**
 - Any further small-scale code comparisons under symmetric noise (exhausted in Sprints 015-024)
