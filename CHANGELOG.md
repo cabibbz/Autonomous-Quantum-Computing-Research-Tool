@@ -311,3 +311,23 @@
 **Next:** Structured noise (dephasing/amplitude damping) on code families (should break topology-blindness), concatenated code threshold theorem, toric/surface code entanglement structure, real hardware QEC comparison
 
 [Full report: sprints/sprint_015.md]
+
+### Sprint 016 — 2026-03-31 — Structured Noise on QEC Codes: Breaking Topology-Blindness
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **16a: Amplitude damping** — |0>_L trivially immune (amp damping pushes toward |0>). |1>_L reveals real response. [[5,1,3]] has near-zero state asymmetry (0.78%) — perfect code treats both logical states almost equally. Steane has 17.2% asymmetry but near-perfect conditional fidelity (0.999). Steane codespace retention drops to 12.5% at γ=0.5.
+- **16b: Phase damping** — |0>_L immune (Z eigenstate). [[5,1,3]] correction HURTS |0>_L (0.844 vs 1.0 uncorrected) — overcorrects what wasn't broken. Steane has LESS asymmetry under dephasing (3.4%) than [[5,1,3]] (7.6%) — opposite of amplitude damping.
+- **16c: Noise fingerprint** — Two fundamentally different error strategies. [[5,1,3]]: "keep and correct" (100% retention, moderate fidelity). Steane: "filter and project" (near-perfect fidelity, population leakage). Bit flip ↔ phase flip perfectly conjugate for BOTH codes.
+
+**Surprises:**
+- **Correction can backfire** — [[5,1,3]] syndrome correction worsens fidelity when noise is already aligned with a basis state (amplitude damping on |0>, phase damping on Z-basis)
+- **Two error correction strategies:** [[5,1,3]] keeps everything in codespace (100% retention) but corrects imperfectly. Steane projects out errors (0.999 fidelity) but loses population (retention as low as 47.9%)
+- **X↔Z duality visible in both codes** — bit flip and phase flip responses are exactly conjugate, revealing hidden symmetry even in the non-CSS [[5,1,3]] code
+- **Steane phase damping retention (83.4%) >> amplitude damping (69.5%)** — phase errors less disruptive to CSS codespace
+
+**Key insight:** Error correction codes implement distinct error management strategies invisible under symmetric noise. [[5,1,3]] is a unitary corrector (sometimes overcorrects). Steane is a non-unitary filter (discards bad states). This distinction dominates under structured noise — exactly the regime of real hardware where T2 << T1. The noise fingerprint (response across channels × states) is a complete diagnostic of code architecture.
+
+**Next:** Concatenated code threshold theorem, toric/surface code entanglement structure, combined T1+T2 noise model, real hardware QEC
+
+[Full report: sprints/sprint_016.md]
