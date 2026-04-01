@@ -98,3 +98,42 @@ At h/J = 1 (critical point), the system transitions from ferromagnetic order (h 
    - Ordered: S=0.539 vs 1.003 — 46% deficit
 
 **Surprise:** VQE's energy-minimization naturally builds the correct entanglement structure for product-like states but FAILS to discover GHZ-like long-range correlations. The HVA ansatz with nearest-neighbor gates builds entanglement locally; GHZ requires global coherence that needs more layers or different topology.
+
+### 29c: Entanglement Spectrum — Critical Point is a NEW Archetype
+
+**Setup:** Full negativity spectrum across all bipartitions for n=6. Compared TFIM ground states (ordered h/J=0.3, critical h/J=0.8, disordered h/J=2.0) to archetype states (GHZ, W, Cluster_1D).
+
+**Key findings:**
+
+1. **Ordered phase IS GHZ (confirmed by spectrum):**
+   - Negativity flat across all partition sizes (std ≈ 0.01-0.03)
+   - Total MI = 13.9 (vs GHZ's 15.0)
+   - MI uniformity CV = 0.03 (vs GHZ's 0.00)
+   - Cosine similarity to GHZ: 0.998
+
+2. **Critical point is a NEW archetype — doesn't match ANY existing one:**
+   - Negativity GROWS with partition size (0.38 → 0.67 → 0.81) — W-like
+   - But has LARGE spread at each size (range 0.40-1.04 at |A|=3) — Cluster-like
+   - Non-zero MI for all pairs — GHZ-like
+   - MI uniformity CV = 0.39 — between GHZ (0.0) and Cluster (2.5)
+   - Similar cosine similarity to all three archetypes (~0.96) — equidistant!
+
+3. **MI uniformity CV is a NEW phase transition order parameter:**
+   - Ordered: 0.03 (nearly uniform, GHZ-like)
+   - Critical: 0.39 (partially structured)
+   - Disordered: 1.16 (highly non-uniform, nearest-neighbor dominated)
+   - Smooth monotonic transition — discriminates phases where entropy fails
+
+4. **Disordered phase has Cluster-like geometry:**
+   - Nearest-neighbor MI dominates (CV = 1.16)
+   - Highest cosine similarity to Cluster_1D (0.970)
+   - Makes sense: residual ZZ coupling creates nearest-neighbor correlations
+
+**Surprise:** The critical TFIM ground state is equidistant from ALL our archetypes. It borrows features from each: GHZ's all-pairs MI, W's growing negativity, Cluster's geometry dependence. This is the entanglement signature of conformal invariance — power-law correlations that are neither uniform (GHZ) nor local (Cluster) nor pair-distributed (W). The critical point is a genuine FIFTH archetype: **Scale-Free entanglement**.
+
+**New archetype classification:**
+| Phase | MI pattern | Negativity | MI uniformity | Nearest archetype |
+|-------|-----------|------------|---------------|-------------------|
+| Ordered | uniform high | flat 0.5 | 0.03 | GHZ |
+| Critical | distance-dependent | growing, wide range | 0.39 | NONE (new) |
+| Disordered | nearest-neighbor | small, geometry-dependent | 1.16 | Cluster_1D |
