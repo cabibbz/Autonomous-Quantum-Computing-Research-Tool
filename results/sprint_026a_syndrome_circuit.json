@@ -1,0 +1,749 @@
+{
+  "sprint": "026a",
+  "description": "Syndrome extraction circuit for [[5,1,3]] \u2014 build and verify",
+  "encoding_circuit": {
+    "gates": {
+      "cx": 10,
+      "h": 7,
+      "s": 5,
+      "y": 2,
+      "swap": 1,
+      "x": 1
+    },
+    "depth": 16
+  },
+  "syndrome_circuit": {
+    "gates": {
+      "h": 8,
+      "cx": 8,
+      "cz": 8
+    },
+    "depth": 10,
+    "total_2q_gates": 16
+  },
+  "syndrome_table": {
+    "(0, 0, 0, 0)": "None",
+    "(0, 0, 0, 1)": "(0, 'X')",
+    "(1, 0, 1, 1)": "(0, 'Y')",
+    "(1, 0, 1, 0)": "(0, 'Z')",
+    "(1, 0, 0, 0)": "(1, 'X')",
+    "(1, 1, 0, 1)": "(1, 'Y')",
+    "(0, 1, 0, 1)": "(1, 'Z')",
+    "(1, 1, 0, 0)": "(2, 'X')",
+    "(1, 1, 1, 0)": "(2, 'Y')",
+    "(0, 0, 1, 0)": "(2, 'Z')",
+    "(0, 1, 1, 0)": "(3, 'X')",
+    "(1, 1, 1, 1)": "(3, 'Y')",
+    "(1, 0, 0, 1)": "(3, 'Z')",
+    "(0, 0, 1, 1)": "(4, 'X')",
+    "(0, 1, 1, 1)": "(4, 'Y')",
+    "(0, 1, 0, 0)": "(4, 'Z')"
+  },
+  "algebraic_verification": {
+    "correct": 30,
+    "total": 30
+  },
+  "circuit_verification": {
+    "syndrome_matches": 30,
+    "total": 30,
+    "details": [
+      {
+        "error": "X on q0",
+        "logical": "0",
+        "measured_syndrome": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "expected_syndrome": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "X on q0",
+        "logical": "1",
+        "measured_syndrome": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "expected_syndrome": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Y on q0",
+        "logical": "0",
+        "measured_syndrome": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "expected_syndrome": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Y on q0",
+        "logical": "1",
+        "measured_syndrome": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "expected_syndrome": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Z on q0",
+        "logical": "0",
+        "measured_syndrome": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "expected_syndrome": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Z on q0",
+        "logical": "1",
+        "measured_syndrome": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "expected_syndrome": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "X on q1",
+        "logical": "0",
+        "measured_syndrome": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "expected_syndrome": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "X on q1",
+        "logical": "1",
+        "measured_syndrome": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "expected_syndrome": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Y on q1",
+        "logical": "0",
+        "measured_syndrome": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "expected_syndrome": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Y on q1",
+        "logical": "1",
+        "measured_syndrome": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "expected_syndrome": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Z on q1",
+        "logical": "0",
+        "measured_syndrome": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "expected_syndrome": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Z on q1",
+        "logical": "1",
+        "measured_syndrome": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "expected_syndrome": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "X on q2",
+        "logical": "0",
+        "measured_syndrome": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "expected_syndrome": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "X on q2",
+        "logical": "1",
+        "measured_syndrome": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "expected_syndrome": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Y on q2",
+        "logical": "0",
+        "measured_syndrome": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "expected_syndrome": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Y on q2",
+        "logical": "1",
+        "measured_syndrome": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "expected_syndrome": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Z on q2",
+        "logical": "0",
+        "measured_syndrome": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "expected_syndrome": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Z on q2",
+        "logical": "1",
+        "measured_syndrome": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "expected_syndrome": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "X on q3",
+        "logical": "0",
+        "measured_syndrome": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "expected_syndrome": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "X on q3",
+        "logical": "1",
+        "measured_syndrome": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "expected_syndrome": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Y on q3",
+        "logical": "0",
+        "measured_syndrome": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "expected_syndrome": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Y on q3",
+        "logical": "1",
+        "measured_syndrome": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "expected_syndrome": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Z on q3",
+        "logical": "0",
+        "measured_syndrome": [
+          1,
+          0,
+          0,
+          1
+        ],
+        "expected_syndrome": [
+          1,
+          0,
+          0,
+          1
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Z on q3",
+        "logical": "1",
+        "measured_syndrome": [
+          1,
+          0,
+          0,
+          1
+        ],
+        "expected_syndrome": [
+          1,
+          0,
+          0,
+          1
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "X on q4",
+        "logical": "0",
+        "measured_syndrome": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "expected_syndrome": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "X on q4",
+        "logical": "1",
+        "measured_syndrome": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "expected_syndrome": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Y on q4",
+        "logical": "0",
+        "measured_syndrome": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "expected_syndrome": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Y on q4",
+        "logical": "1",
+        "measured_syndrome": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "expected_syndrome": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Z on q4",
+        "logical": "0",
+        "measured_syndrome": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "expected_syndrome": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      },
+      {
+        "error": "Z on q4",
+        "logical": "1",
+        "measured_syndrome": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "expected_syndrome": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "dominant_fraction": 1.0,
+        "match": true
+      }
+    ]
+  },
+  "full_cycle_verification": {
+    "perfect_recoveries": 30,
+    "total": 30,
+    "details": [
+      {
+        "error": "X on q0",
+        "logical": "0",
+        "fidelity": 1.0
+      },
+      {
+        "error": "X on q0",
+        "logical": "1",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Y on q0",
+        "logical": "0",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Y on q0",
+        "logical": "1",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Z on q0",
+        "logical": "0",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Z on q0",
+        "logical": "1",
+        "fidelity": 1.0
+      },
+      {
+        "error": "X on q1",
+        "logical": "0",
+        "fidelity": 1.0
+      },
+      {
+        "error": "X on q1",
+        "logical": "1",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Y on q1",
+        "logical": "0",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Y on q1",
+        "logical": "1",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Z on q1",
+        "logical": "0",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Z on q1",
+        "logical": "1",
+        "fidelity": 1.0
+      },
+      {
+        "error": "X on q2",
+        "logical": "0",
+        "fidelity": 1.0
+      },
+      {
+        "error": "X on q2",
+        "logical": "1",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Y on q2",
+        "logical": "0",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Y on q2",
+        "logical": "1",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Z on q2",
+        "logical": "0",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Z on q2",
+        "logical": "1",
+        "fidelity": 1.0
+      },
+      {
+        "error": "X on q3",
+        "logical": "0",
+        "fidelity": 1.0
+      },
+      {
+        "error": "X on q3",
+        "logical": "1",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Y on q3",
+        "logical": "0",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Y on q3",
+        "logical": "1",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Z on q3",
+        "logical": "0",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Z on q3",
+        "logical": "1",
+        "fidelity": 1.0
+      },
+      {
+        "error": "X on q4",
+        "logical": "0",
+        "fidelity": 1.0
+      },
+      {
+        "error": "X on q4",
+        "logical": "1",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Y on q4",
+        "logical": "0",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Y on q4",
+        "logical": "1",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Z on q4",
+        "logical": "0",
+        "fidelity": 1.0
+      },
+      {
+        "error": "Z on q4",
+        "logical": "1",
+        "fidelity": 1.0
+      }
+    ]
+  },
+  "elapsed_seconds": 0.3
+}
