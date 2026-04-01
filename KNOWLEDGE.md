@@ -162,7 +162,31 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 
 **Anomalous FSS for q≥5.** Δ₁·N INCREASES with N (sign-flipped correction vs q≤4). Means x₁ is underestimated at small sizes. Coincides with c>1 and novel CFT regime.
 
-**POTENTIALLY NOVEL:** x₁(q) for q≥5 previously unmeasured. Combined with c(q), ν(q), g_c(q), and operator content, this provides the most complete characterization of the novel q>4 Potts CFT family.
+**POTENTIALLY NOVEL:** x₁(q) for q≥5 previously unmeasured. Combined with c(q), ν(q), g_c(q), operator content, and OPE coefficients, this provides the most complete characterization of the novel q>4 Potts CFT family.
+
+## OPE Coefficients (Sprint 060)
+
+**Method:** Ratio of matrix elements of clock operator Z between CFT eigenstates on periodic chain.
+C_{sigma*,sigma,epsilon} = |<epsilon|Z_0|sigma>| / |<0|Z_0|sigma>|
+
+Z = diag(1, omega, ..., omega^{q-1}) has Z_q charge +1. Selection rule: <a|Z|b> nonzero only if charge(a) = charge(b)+1 mod q. Ratio method automatically selects sigma* component from degenerate pair.
+
+Validated: q=2 Ising converges to exact C=1/2 with 0.4% error at n=12.
+
+| q | C_sse (extrap.) | largest n | error at n_max |
+|---|----------------|-----------|----------------|
+| 2 | 0.503 | 12 | 0.4% |
+| 3 | 0.540 | 10 | ~3% |
+| 4 | 0.464 | 8 | ~7% |
+| 5 | 0.376 | 8 | ~7% |
+| 7 | 0.272 | 6 | ~10% |
+| 10 | ~0.21 | 6 | ~10% |
+
+**C_sse peaks at q=3 (~0.54), then decreases monotonically.** For q≥4, approximate scaling C_sse ~ q^{-0.8}. No simple analytic formula found. Approaches 0 as q→∞.
+
+**Epsilon identification pitfall for large q:** At q≥7, sigma harmonics (sigma^2, sigma^3, ...) densely populate R < R_epsilon. Naive charge detection fails because degenerate pairs (charges k, q-k) in superposition average to misleading charge values. Must use R_epsilon from independent spectrum measurements to identify epsilon correctly.
+
+**POTENTIALLY NOVEL:** First C_{sigma*,sigma,epsilon} measurement for Hermitian q-state Potts at q=5,7,10. Peak at q=3 and monotonic decrease previously unreported.
 
 ## Conformal Tower Structure (Sprint 059)
 

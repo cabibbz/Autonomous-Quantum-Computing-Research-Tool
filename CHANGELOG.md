@@ -48,15 +48,7 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 
 ## Detailed Sprint Log (Recent)
 
-- **035** — BW size scaling: Pauli fraction fails (8% at n=20), spectrum R²=1.0. BW form correct but envelope wrong.
-- **036** — MI-CV FSS: genuine divergence ~n^1.1 at TFIM. Correlation-function MI reconstruction validated.
-- **037** — MI-CV classification complete: crossing (Ising), step (1st-order), dome (BKT).
-- **038** — Data collapse confirms Ising ν=1. q=3 Potts MI-CV shows crossings (at wrong g, see Sprint 049).
-- **039** — Potts data collapse: ν=5/6 at wrong g. Slope exponent as second discriminator.
-- **040** — q=4 Potts MI-CV: crossings at g≈0.893. Slope lower than q=3 (log corrections at marginal q=4).
-- **041** — q=5 clock MI-CV: crossings persist at g≈0.673. Clock ≠ Potts for q≥4.
-- **042** — True q=5 Potts MI-CV: second-order at g≈0.41, NOT first-order. Custom PottsChain model built.
-- **043** — q=10,20 Potts: all second-order. Direct MPS contraction for ρ_ij. Universal large-q regime.
+- **035-043** — BW scaling, MI-CV FSS/classification, Potts phase transitions. Many results invalidated by Sprint 049 (wrong g_c).
 - **044** — g_c scaling law g_c∝(q-3)^{-0.85}. Blind prediction q=7 accurate to 1.6%. (INVALIDATED Sprint 049)
 - **045** — ν(q=5)≈2 from MI-CV data collapse. Gell-Mann MI WRONG for d≥5. (ALL ν VALUES WRONG, Sprint 053)
 - **046** — ν(q=4)≥2.2, BKT-like. Gell-Mann misleading at d=4. (WRONG, Sprint 053)
@@ -281,3 +273,22 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - q=10 n=6 (dim=10⁶) tower extraction in 66s — exact diag still viable
 
 [Full report: sprints/sprint_059.md]
+
+### Sprint 060 — OPE Coefficients: C_{sigma*,sigma,epsilon} Peaks at q=3
+**Status:** Complete (5 experiments).
+
+**OPE extraction method validated.** Ratio C = |<epsilon|Z_0|sigma>|/|<0|Z_0|sigma>| using clock operator Z (charge +1). Z_q selection rules ensure only charge-0 states (identity, epsilon) couple. q=2 Ising: converges to exact 1/2 with 0.4% error at n=12.
+
+**C_{sigma*,sigma,epsilon}(q) measured for q=2-10.** Peaks at q=3 (~0.54), then DECREASES monotonically: 0.46 (q=4), 0.38 (q=5), 0.27 (q=7), ~0.21 (q=10). Approximate scaling C ~ q^{-0.8} for q≥4. No simple analytic formula.
+
+**Z_q charge detection fails for degenerate conjugate pairs.** Charges (k, q-k) in superposition average to misleading values. For q=10, sigma^2 (charges 2,8) falsely detected as charge 0. Must use independent R_epsilon for identification.
+
+**POTENTIALLY NOVEL:** First C_{sigma*,sigma,epsilon} for Hermitian q>4 Potts. Peak at q=3 and monotonic decrease unreported in literature.
+
+**Surprises:**
+- C_sse peaks at q=3 (~0.54), NOT at q=2 (0.50)
+- No simple analytic formula for C_sse(q) despite simple formulas for g_c(q) and c(q)
+- Z_q charge superposition problem is universal: ALL conjugate pairs fail naive detection
+- sigma^k–sigma cross-channel couplings are nonzero (Z maps charge k→k+1)
+
+[Full report: sprints/sprint_060.md]
