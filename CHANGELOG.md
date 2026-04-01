@@ -262,3 +262,22 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - x₁(q=7) ≈ x₁(q=10) ≈ 0.08 — possible saturation at large q
 
 [Full report: sprints/sprint_058.md]
+
+### Sprint 059 — Conformal Tower Analysis: Genuine CFT Confirmed for q>4 Potts
+**Status:** Complete (4 experiments).
+
+**Momentum-resolved conformal towers measured for q=2,3,4,5,7,10.** Translation operator T diagonalized within degenerate eigenspaces to extract conformal spin. Method validated on q=2 (Ising) and q=3 (W₃ CFT) with <2.5% descendant gap error.
+
+**Genuine CFT structure confirmed for ALL q.** Four qualitative tests pass universally: (1) descendant degeneracy = 4 (q≥3) or 2 (q=2), exact; (2) descendant momentum = spin ±1; (3) gap converges from below; (4) tower organization Identity→σ pairs→ε→L₋₁σ.
+
+**Descendant gap matches 1/x₁ for q=2,3 (~2% error).** For q≥5, anomalous FSS gives 15-25% gap error at accessible sizes — same sign-flipped corrections as Sprint 058. Qualitative structure perfect despite quantitative gap offset.
+
+**POTENTIALLY NOVEL:** First momentum-resolved conformal tower for q>4 Hermitian Potts chain. Previous work (Lao et al. PRB 2019) found drifting towers assuming first-order; Tang et al. (PRL 2024) needed non-Hermitian model. Our towers converge because transition is genuinely second-order.
+
+**Surprises:**
+- Tower structure qualitatively identical for ALL q=2-10 — no transition at q=4
+- Descendant degeneracy 4 is exact, not approximate, for all q≥3
+- ε field nearly merges with L₋₁σ at large q (R_ε ≈ 9 vs R_desc ≈ 10 for q=10)
+- q=10 n=6 (dim=10⁶) tower extraction in 66s — exact diag still viable
+
+[Full report: sprints/sprint_059.md]
