@@ -106,3 +106,23 @@ S₃ (order 6, d=3): 76.5% BW locality — LOWER than Z₂ (91%, d=2). Overturns
 Explicit operator counting: U(1)=0.143 > Z₂=0.099 > S₃=0.072 > Z₃=0.040 (H/G-inv ratio). Perfect monotonic correlation with BW locality: 100% > 91% > 76.5% > 69.7%. Z₃ clock ≡ S₃ Potts at q=3. Chiral clock genuinely breaks S₃→Z₃, BW drops to 69.7%.
 
 [Full report: sprints/sprint_034.md]
+
+### Sprint 035 — BW Size Scaling: Pauli Fraction Fails, Spectrum Succeeds
+**Status:** Complete (3 experiments).
+
+**CRITICAL FINDING: Sprint 032's "91% TFIM locality" is a finite-size illusion.** Same Pauli fraction metric gives 47% at n=12 and 8% at n=20. The metric breaks because ||H_E||² grows exponentially while TFIM operator count grows linearly.
+
+**But BW FORM is correct at spectrum level.** Entanglement spectrum R²=1.0 at ALL tested sizes (n=8→16) when TFIM-type coefficients are fitted independently. The physically relevant eigenvalues live in the TFIM operator subspace. Overfitting caveat: only 3-4 significant eigenvalues vs 7-15 fitting parameters.
+
+**The BW envelope is wrong.** Standard sin_inv envelope gives R²≈0.15 across all sizes. The β(i) profile at finite size with open boundaries is far from the CFT prediction.
+
+**Full density matrix reconstruction fails catastrophically.** Projected entropy: 0.76 vs 0.52 exact at n=8, blowing up to 9.7 vs 0.64 at n=20 (1400% error). Non-TFIM terms collectively encode low-rank structure.
+
+**MI-CV sharpens with system size.** TFIM transition slope increases (n=8→16). Ordered phase stable (CV≈0.05). XXZ BKT dome narrows.
+
+**Surprises:**
+- Spectrum R²=1.0 while Pauli fraction=8% — metrics disagree by 12×
+- S_projected/S_exact diverges from 1.5× to 15× with system size
+- BW envelope is far more wrong than BW form
+
+[Full report: sprints/sprint_035.md]

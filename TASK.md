@@ -51,6 +51,8 @@ Failed approaches are critical to log. Without them you'll waste sprints repeati
 7. **Test timing on a single case** before scaling up
 8. **Sanity check results** — when an analytic answer is known, verify against it
 9. **Document everything** — in case we get cut off, document in STATE.md and sprint report so we can pick back up
+10. **TeNPy basis convention**: TFIChain uses H = -J·XX - g·Z (NOT ZZ+X). Bond operators = Sigmax⊗Sigmax, field = Sigmaz. Always verify operator convention when mixing exact diag and DMRG.
+11. **BW metrics**: Pauli fraction is WRONG for large systems (exponential denominator). Use spectrum-level R² or fidelity instead. The sin_inv envelope is wrong at finite size.
 
 ## The Sprint Loop
 
