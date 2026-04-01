@@ -265,3 +265,20 @@ Explicit operator counting: U(1)=0.143 > Z₂=0.099 > S₃=0.072 > Z₃=0.040 (H
 - The "cliff" is between q=3 and q=5, driven by self-duality breaking at q=3
 
 [Full report: sprints/sprint_044.md]
+
+### Sprint 045 — ν(q) Extraction: ν(q=5)≈2, Universality Class Changes with q
+**Status:** Complete (6 experiments).
+
+**ν(q=5) ≈ 2.0 from data collapse.** Joint (ν, g_c) optimization across n=8,12,16 (all direct MPS contraction, χ=20). Free fit: ν=2.24, g_c=0.446. ν=2 nearly as good (ratio 1.04). Independently confirmed: slope~n^0.49 → ν≈2.05. Ising (ν=1) is 3.7x worse, Potts q=3 (ν=5/6) is 5.8x worse.
+
+**ν(q) is NON-MONOTONIC.** q=2: ν=1, q=3: ν=5/6, q=5: ν≈2. Decreases q=2→3, then increases sharply. Large ν at q=5 means transition is "almost first-order" — wide crossover, enormous finite-size effects.
+
+**Sprint 042d Gell-Mann MI was WRONG for q=5.** Errors up to 11x (g=0.50: CV=1.36 → 0.12). Gell-Mann correlation reconstruction unreliable for d≥5. Direct MPS contraction (Sprint 043) is essential.
+
+**Surprises:**
+- ν=2 at q=5 — opposite to mean-field prediction of ν→1/2
+- Non-monotonic ν(q): decreases then increases
+- Gell-Mann method fails catastrophically at q=5
+- Finite-size crossing points 30% below thermodynamic g_c (large ν amplifies finite-size effects)
+
+[Full report: sprints/sprint_045.md]
