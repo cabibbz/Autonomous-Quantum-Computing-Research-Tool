@@ -172,3 +172,19 @@ Explicit operator counting: U(1)=0.143 > Z₂=0.099 > S₃=0.072 > Z₃=0.040 (H
 - Potts CV is systematically higher than TFIM above transition — larger d amplifies MI inhomogeneity
 
 [Full report: sprints/sprint_038.md]
+
+### Sprint 039 — Potts Data Collapse: MI-CV Distinguishes Universality Classes
+**Status:** Complete (3 experiments).
+
+**Potts n=16 MI-CV confirms crossing at three sizes.** CV decreases with n in ordered phase (g=0.8: 0.341→0.271→0.236) and increases in disordered phase (g=1.0: 0.826→0.961→1.051). Crossing point drifts: g_c=0.923 (n=8,12) → 0.955 (n=12,16), converging toward self-dual g=1.0.
+
+**Data collapse distinguishes Potts from Ising.** Joint optimization of (ν, g_c): Potts ν=5/6 gives 14% better collapse than Ising ν=1 (quality ratio 0.862 at n=12-16). Optimal ν converges from 0.81 (all sizes) to 0.87 (large sizes), approaching 5/6≈0.833. CAUTION: Fixed g_c=1.0 gives wrong answer (Ising wins) due to finite-size shift.
+
+**Slope exponent provides second discriminator.** Potts slope ~ n^1.36 vs TFIM slope ~ n^1.1, consistent with 1/ν scaling (Potts 1/ν=1.2 > Ising 1/ν=1.0).
+
+**Surprises:**
+- Fixed g_c=1.0 gives WRONG universality class — joint optimization essential
+- Slope exponent 1.36 overshoots 1/ν=1.2 — same finite-size inflation as TFIM
+- n=24 qutrit DMRG without symmetry exceeds 60s/point — needs Z₃ conserve
+
+[Full report: sprints/sprint_039.md]

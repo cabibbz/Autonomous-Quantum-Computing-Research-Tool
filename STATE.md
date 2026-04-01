@@ -1,19 +1,19 @@
 # Current State — Rewrite this completely each sprint
 
 ## Last Sprint
-Sprint 038 — Data Collapse & Potts MI-CV
+Sprint 039 — Potts Data Collapse: ν=5/6 vs ν=1
 
 ## Active Research Thread
-MI-CV as universal phase transition classifier. Data collapse confirms Ising universality (optimal ν→1 with increasing n). Potts q=3 shows same crossing signature, extending MI-CV to d>2 via Gell-Mann basis.
+MI-CV as universal phase transition classifier. Data collapse now distinguishes universality classes: Potts ν=5/6 gives 14% better collapse than Ising ν=1 (joint-optimized). Slope exponent (n^1.36 Potts vs n^1.1 Ising) provides second discriminator.
 
 ## QPU Budget
 - Used: 20s of 600s (Sprint 025: ibm_kingston, 18 circuits)
 - Remaining: 580s
 
 ## Top 3 Next Experiments
-1. **Potts n=16 + data collapse** — Get n=16 Potts MI-CV (needs ~40s), extract ν from crossing points. Compare Potts collapse with ν=5/6 vs ν=1 to distinguish universality classes via MI-CV.
-2. **2D Potts q=5 MI-CV** — q=5 Potts is first-order in 2D. Does MI-CV show step function (no crossing) for d>2? Would validate that crossing/no-crossing diagnostic is universal.
-3. **Entanglement Hamiltonian at first-order** — Is BW valid at the FM→XY transition (Δ=-1 in XXZ)? First-order may break BW locality. Connect BW to MI-CV.
+1. **q=4 Potts MI-CV** — q=4 Potts is marginal (BKT-like). Does MI-CV show dome signature instead of crossing? Would complete the MI-CV classification: crossing=2nd order, step=1st order, dome=BKT.
+2. **Potts n=24-32 with Z₃ conserve** — Need Z₃ symmetry in DMRG to reach larger sizes. Would sharpen ν convergence from 0.87→5/6.
+3. **Universal scaling functions** — After collapse, plot TFIM and Potts scaling functions F(x) on same axes. If visually distinct, MI-CV captures not just ν but the full universal function.
 
 ## What's Been Ruled Out
 - Small-scale QEC active correction: exhaustively proven to fail for [[5,1,3]] (Sprints 026-028)
@@ -21,7 +21,9 @@ MI-CV as universal phase transition classifier. Data collapse confirms Ising uni
 - NN-only MI-CV: dominated by boundary effects (Sprint 036)
 - BW sin_inv envelope: wrong at finite size (Sprint 035)
 - Simple power-law fit for ν at n≤32: corrections to scaling too large (Sprint 037)
-- ν=0.755 from crossing points: artifact of corrections to scaling; data collapse gives ν≈1 (Sprint 038)
+- ν=0.755 from crossing points: artifact (Sprint 038)
+- Fixed g_c collapse: misleading due to finite-size g_c shift (Sprint 039)
+- n=24 qutrit DMRG without symmetry: too slow (>60s per point) (Sprint 039)
 
 ## Key Tools Available
 - Exact diag: n≤10

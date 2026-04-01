@@ -35,7 +35,11 @@ MI uniformity coefficient of variation classifies transition TYPE by curve shape
 
 **Critical exponent (Sprint 037→038):** Crossing-point fit gives ν=0.755 at n=8-32, but data collapse (Sprint 038) proves this is a finite-size artifact. Optimal collapse ν converges: 0.80 (all sizes) → 1.04 (n≥16) → 1.12 (n≥24). Ising ν=1 is confirmed. The collapse quality landscape is extremely flat near ν=1 (0.3% difference from optimal), making crossing-point extraction fragile.
 
-**Potts q=3 MI-CV (Sprint 038):** 1D 3-state Potts shows same crossing signature as TFIM, confirming second-order classification. Crossing at g≈0.85-0.90 (n=8 vs n=12). Potts transition is steeper than Ising at same n (CV=0.826 vs 0.727 at critical point, n=8). Potts universality class has ν=5/6 — MI-CV data collapse should distinguish this from Ising ν=1.
+**Potts q=3 MI-CV (Sprints 038-039):** 1D 3-state Potts shows same crossing signature as TFIM at n=8,12,16. Crossing point drifts: g_c=0.923 (8,12) → 0.955 (12,16), converging toward self-dual g=1.0.
+
+**MI-CV distinguishes universality classes (Sprint 039).** Joint-optimized data collapse (ν and g_c free) at n=8-16: Potts ν=5/6 gives 14% better collapse than Ising ν=1 (quality ratio 0.86). Optimal ν converges from 0.81 (all sizes) toward 0.87 (large sizes), approaching 5/6≈0.833. CAUTION: Fixed g_c=1.0 gives misleading answer (Ising wins) due to finite-size g_c shift — must jointly optimize.
+
+**Slope exponent as second discriminator:** Potts slope ~ n^1.36, TFIM slope ~ n^1.1. Consistent with 1/ν scaling (Potts 1/ν=1.2 > Ising 1/ν=1.0), with finite-size inflation.
 
 **Technique:** All-pairs MI via correlation-function reconstruction of ρ_ij from MPS. Exact for physical states (validated: diff=0 at n=8). Extended to d=3 (qutrits) using 8 Gell-Mann matrices as operator basis (Sprint 038).
 
