@@ -220,3 +220,24 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - q=4 overshoot 8.7% worse than calibration model — log corrections propagate
 
 [Full report: sprints/sprint_056.md]
+
+### Sprint 057 — Operator Content & Scaling Dimensions: What CFT Describes q>4 Potts?
+**Status:** Complete (6 experiments).
+
+**CFT spectrum method validated.** Energy gap ratios on periodic chains give scaling dimension ratios. q=2 (Ising): R_ε/R_σ → 8.0 at n=12, matching x_ε/x_σ = 1/(1/8) = 8 exactly. q=3 (W₃): R → 6.0 for energy, 10 for disorder, matching CFT. Absolute x₁ extraction: 0.3% error for q=2,3.
+
+**Z_q spin field degeneracy pattern DISCOVERED.** Exactly (q-1) spin field primaries organized as ⌊(q-1)/2⌋ conjugate pairs (+ 1 self-conjugate if q even). Confirmed for q=2,3,4,5,7,10. This is the operator content of a previously uncharacterized CFT for q>4.
+
+**Harmonic ratios x(σᵏ)/x(σ) are sub-quadratic.** NOT a free boson (k² prediction fails by 20-139%). Ratios approach k² as q→∞ — the free boson is the large-q limit. No closed-form formula found.
+
+**Energy field R_ε has minimum at q=3 (=6), increases for q>3.** The energy operator is pushed above all spin harmonics.
+
+**POTENTIALLY NOVEL:** Complete operator content of 1D quantum Potts CFT for q>4 appears previously unmeasured. The degeneracy structure, harmonic ratios, and physical mechanism (q-1 primaries → c~ln(q)) are new.
+
+**Surprises:**
+- q=4 σ² at R=1.68, not 4 (free boson) or 2 (sin²) — no simple formula
+- q=10 σ⁵ is a clean singlet at n=4, confirming even-q self-conjugation
+- Energy field ratio R_ε non-monotonic (minimum at q=3)
+- Harmonic ratios approach k² from below — free boson is asymptotic limit
+
+[Full report: sprints/sprint_057.md]

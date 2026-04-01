@@ -126,6 +126,31 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 
 **POTENTIALLY NOVEL: c(q≥5) outside minimal models.** c(q=5)≈1.10, c(q=7)≈1.3, c(q=10)≈1.4 — all above c=1 and growing. No CFT predictions exist for q>4 Potts (2D classical is first-order). **Literature search found no prior measurements.** The c(q) ~ ln(q) growth formula is also novel.
 
+## CFT Operator Content (Sprint 057)
+
+**Method:** Energy spectrum on periodic chain at g_c. Ratios R_n = (E_n-E_0)/(E_1-E_0) = x_n/x_1 are universal. Validated on q=2 (Ising) and q=3 (W₃ CFT).
+
+**Z_q spin field degeneracy pattern.** The spectrum contains exactly (q-1) spin field primaries:
+- ⌊(q-1)/2⌋ conjugate pairs (σᵏ, σ^{q-k}) for k=1,...,⌊(q-1)/2⌋
+- Plus 1 self-conjugate σ^{q/2} if q is even
+
+| q | Structure | Harmonic ratios R(σᵏ/σ) | R(ε/σ) |
+|---|-----------|-------------------------|--------|
+| 2 | 1 (self-conj) | — | 8.0 |
+| 3 | 2 (pair) | — | 6.0 |
+| 4 | 2+1 | σ²: 1.68 | 6.6 |
+| 5 | 2+2 | σ²: 2.41 | 7.1 |
+| 7 | 2+2+2 | σ²: 3.32, σ³: 5.95 | 8.1 |
+| 10 | 4 pairs+1 | σ²: 3.66, σ³: 7.69 | 8.3 |
+
+**NOT a free boson.** Free boson predicts x(σᵏ)/x(σ) = k². Measured ratios always BELOW k², but approach k² as q→∞. The q→∞ limit is a free boson; finite q has non-perturbative Z_q corrections.
+
+**Energy field R_ε = x_ε/x_σ** has minimum at q=3 (R=6), increases for q>3 toward ~8+. The energy operator is pushed above all spin harmonics.
+
+**Physical interpretation:** c(q)~ln(q) growth is explained by the proliferation of (q-1) spin field primaries below the energy scale. Each primary contributes effective degrees of freedom.
+
+**POTENTIALLY NOVEL:** Complete operator content (degeneracy pattern, harmonic ratios, energy field position) of 1D quantum q-state Potts CFT for q>4 appears previously unmeasured.
+
 **Entropy profile overshoot grows with q at fixed n:** At n=16: 8.7% (q=3), 14.4% (q=4), ~20% (q=5). At n=8: ~25% (q=7). Large-q profile method requires larger n — q=7+ is computationally infeasible at n≥12 with chi=20.
 
 **Entropy FSS does NOT give ν.** S ~ (c/6)ln(ξ), not a power law. Standard FSS collapse fails (gives ν=3 for TFIM). Use energy gap slope for ν.
