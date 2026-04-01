@@ -188,3 +188,19 @@ Explicit operator counting: U(1)=0.143 > Z₂=0.099 > S₃=0.072 > Z₃=0.040 (H
 - n=24 qutrit DMRG without symmetry exceeds 60s/point — needs Z₃ conserve
 
 [Full report: sprints/sprint_039.md]
+
+### Sprint 040 — q=4 Potts MI-CV: Marginal Transition Shows Crossing, Not Dome
+**Status:** Complete (3 experiments).
+
+**q=4 Potts shows crossing curves, not dome.** Despite q=4 being the marginal boundary (2D Potts goes first-order at q>4), MI-CV at n=8,12 shows the same crossing signature as q=3 and TFIM. Crossing at g_c≈0.893, further below self-dual than q=3 (0.923).
+
+**q=4 slope LOWER than q=3.** At g=1.0: q=4 slope 1.72 (n=8), 2.71 (n=12) vs q=3 slope 2.27, 3.98. Logarithmic corrections at q=4 suppress finite-size slope.
+
+**q=4 CV systematically lower than q=3 above transition.** Ratio q4/q3 ≈ 0.87-0.95 in disordered phase. Larger d distributes correlations more evenly.
+
+**Surprises:**
+- Marginal q=4 does NOT show dome — crossings dominate at n≤12
+- q=4 slope LOWER than q=3 — logarithmic corrections suppress slope
+- Larger d gives MORE uniform MI (lower CV) above transition
+
+[Full report: sprints/sprint_040.md]

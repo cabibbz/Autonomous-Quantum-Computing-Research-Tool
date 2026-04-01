@@ -1,19 +1,19 @@
 # Current State — Rewrite this completely each sprint
 
 ## Last Sprint
-Sprint 039 — Potts Data Collapse: ν=5/6 vs ν=1
+Sprint 040 — q=4 Potts MI-CV: Marginal transition shows crossing, not dome
 
 ## Active Research Thread
-MI-CV as universal phase transition classifier. Data collapse now distinguishes universality classes: Potts ν=5/6 gives 14% better collapse than Ising ν=1 (joint-optimized). Slope exponent (n^1.36 Potts vs n^1.1 Ising) provides second discriminator.
+MI-CV as universal phase transition classifier. q=4 Potts (marginal point where 2D Potts goes first-order) still shows crossing curves at n=8,12, same as q=3 and TFIM. Marginal character not visible at these sizes — possibly hidden by logarithmic corrections.
 
 ## QPU Budget
 - Used: 20s of 600s (Sprint 025: ibm_kingston, 18 circuits)
 - Remaining: 580s
 
 ## Top 3 Next Experiments
-1. **q=4 Potts MI-CV** — q=4 Potts is marginal (BKT-like). Does MI-CV show dome signature instead of crossing? Would complete the MI-CV classification: crossing=2nd order, step=1st order, dome=BKT.
-2. **Potts n=24-32 with Z₃ conserve** — Need Z₃ symmetry in DMRG to reach larger sizes. Would sharpen ν convergence from 0.87→5/6.
-3. **Universal scaling functions** — After collapse, plot TFIM and Potts scaling functions F(x) on same axes. If visually distinct, MI-CV captures not just ν but the full universal function.
+1. **q=5 Potts MI-CV** — q=5 is definitively first-order (above marginal q=4). Should show step function (no crossings). This would be the definitive test: crossings at q≤4, step at q≥5.
+2. **q=4 at n=16** — Test if logarithmic corrections at q=4 start broadening the crossing region at larger sizes. Would reveal marginal character.
+3. **Universal scaling functions** — Plot collapsed F(x) for q=2,3,4 on same axes. Visually distinct curves = MI-CV captures full universal function.
 
 ## What's Been Ruled Out
 - Small-scale QEC active correction: exhaustively proven to fail for [[5,1,3]] (Sprints 026-028)
@@ -24,9 +24,11 @@ MI-CV as universal phase transition classifier. Data collapse now distinguishes 
 - ν=0.755 from crossing points: artifact (Sprint 038)
 - Fixed g_c collapse: misleading due to finite-size g_c shift (Sprint 039)
 - n=24 qutrit DMRG without symmetry: too slow (>60s per point) (Sprint 039)
+- q=4 marginal showing dome: shows crossing at n=8,12 (Sprint 040)
 
 ## Key Tools Available
 - Exact diag: n≤10
 - DMRG (TeNPy): n>10, 1D systems only
-- Correlation-function MI reconstruction: all-pairs MI from MPS at any size (d=2 Pauli, d=3 Gell-Mann)
+- Correlation-function MI reconstruction: all-pairs MI from MPS at any size (d=2 Pauli, d=3 Gell-Mann, d=4 SU(4) generators)
 - IBM QPU: 580s remaining, ibm_kingston (Heron, 156 qubits)
+- SU(d) generalized Gell-Mann basis: implemented for d=3,4. ~6.5s/point at d=4 n=8, ~18s at d=4 n=12

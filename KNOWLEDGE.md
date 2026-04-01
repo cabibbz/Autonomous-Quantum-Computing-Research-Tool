@@ -41,7 +41,11 @@ MI uniformity coefficient of variation classifies transition TYPE by curve shape
 
 **Slope exponent as second discriminator:** Potts slope ~ n^1.36, TFIM slope ~ n^1.1. Consistent with 1/ν scaling (Potts 1/ν=1.2 > Ising 1/ν=1.0), with finite-size inflation.
 
-**Technique:** All-pairs MI via correlation-function reconstruction of ρ_ij from MPS. Exact for physical states (validated: diff=0 at n=8). Extended to d=3 (qutrits) using 8 Gell-Mann matrices as operator basis (Sprint 038).
+**Potts q=4 MI-CV (Sprint 040):** q=4 (marginal point where 2D Potts transitions from second-order to first-order) shows crossing curves at n=8,12 — same second-order signature as q=3 and TFIM. Crossing at g_c≈0.893 (further below self-dual than q=3's 0.923). Slope at g=1.0 is LOWER than q=3 (1.72 vs 2.27 at n=8). q=4 CV is systematically lower than q=3 above transition (ratio 0.87-0.95) — larger d distributes correlations more evenly. Marginal/BKT character not visible at n≤12.
+
+**Crossing point shifts with q:** g_c(n=8,12) = ~0.93 (q=2, TFIM) → 0.923 (q=3) → 0.893 (q=4). Finite-size shift grows with q.
+
+**Technique:** All-pairs MI via correlation-function reconstruction of ρ_ij from MPS. Exact for physical states (validated: diff=0 at n=8). Extended to d=3 (Gell-Mann, Sprint 038) and d=4 (SU(4) generators, Sprint 040).
 
 ## Archetype Boundaries ≠ Phase Boundaries
 I3 sign change occurs at Δ≈0.7 in XXZ, inside the XY phase — not at either thermodynamic transition (Δ=-1 or Δ=1). The entanglement phase diagram has its own topology distinct from thermodynamics.
@@ -79,4 +83,5 @@ Backend: ibm_kingston (Heron, 156 qubits). 20s QPU used.
 ## Phase Diagram Trajectories
 - **TFIM**: Democratic(GHZ) → Scale-Free → Product (one-way)
 - **XXZ**: Democratic → Scale-Free → Geometric → Scale-Free → Democratic (loop)
-- **Potts**: GHZ-3 → Product (like TFIM but with triplet spectrum from Z₃)
+- **Potts q=3**: GHZ-3 → Product (like TFIM but with triplet spectrum from Z₃)
+- **Potts q=4**: GHZ-4 → Product (crossing signature like q=3, marginal corrections not yet visible)
