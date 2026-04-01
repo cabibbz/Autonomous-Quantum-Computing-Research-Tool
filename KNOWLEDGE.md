@@ -35,40 +35,43 @@ MI uniformity coefficient of variation classifies transition TYPE by curve shape
 
 **Critical exponent (Sprint 037→038):** Crossing-point fit gives ν=0.755 at n=8-32, but data collapse (Sprint 038) proves this is a finite-size artifact. Optimal collapse ν converges: 0.80 (all sizes) → 1.04 (n≥16) → 1.12 (n≥24). Ising ν=1 is confirmed. The collapse quality landscape is extremely flat near ν=1 (0.3% difference from optimal), making crossing-point extraction fragile.
 
-**Potts q=3 MI-CV (Sprints 038-039):** 1D 3-state Potts shows same crossing signature as TFIM at n=8,12,16. Crossing point drifts: g_c=0.923 (8,12) → 0.955 (12,16), converging toward self-dual g=1.0.
+**Potts q=3 MI-CV crossings CONFIRMED at true g_c (Sprint 050).** MI-CV crossing between n=8 and n=12 at g≈0.26, below the self-dual g_c=1/3 (finite-size shift). In ordered phase (g<0.24): CV(n=12)<CV(n=8). In disordered phase (g>0.28): CV(n=12)>CV(n=8). Same qualitative crossing signature as TFIM. The Sprint 038-039 crossings near g≈0.9 were in the disordered phase but the qualitative conclusion (crossings = second-order) is vindicated.
 
-**MI-CV distinguishes universality classes (Sprint 039).** Joint-optimized data collapse (ν and g_c free) at n=8-16: Potts ν=5/6 gives 14% better collapse than Ising ν=1 (quality ratio 0.86). Optimal ν converges from 0.81 (all sizes) toward 0.87 (large sizes), approaching 5/6≈0.833. CAUTION: Fixed g_c=1.0 gives misleading answer (Ising wins) due to finite-size g_c shift — must jointly optimize.
-
-**Slope exponent as second discriminator:** Potts slope ~ n^1.36, TFIM slope ~ n^1.1. Consistent with 1/ν scaling (Potts 1/ν=1.2 > Ising 1/ν=1.0), with finite-size inflation.
+**MI-CV universality class discrimination (Sprint 039) needs re-examination.** The ν and slope exponent results from Sprints 038-039 were at wrong g values. Re-extraction at g_c=1/3 with larger sizes is needed.
 
 **Potts q=4 MI-CV (Sprints 040, 046):** q=4 is the marginal point. **Sprint 040 Gell-Mann data was misleading** — reported crossings at g_c≈0.893 that don't exist with direct MPS. Direct MPS (Sprint 046, n=8,12,16): NO crossing near g_c. Curves monotonically ordered n=16>n=12>n=8 at all g≥0.50. CV minimum at g≈0.40-0.50 (maximally Democratic ordered phase). Derivative dCV/dg at g_c≈0.89 scales with n: 0.86 (n=8) → 1.05 (n=12) → 1.18 (n=16). Slope ratio gives ν≥2.2, trending upward → BKT-like. Standard FSS collapse fails at q=4.
 
 **q=5 clock MI-CV (Sprint 041):** q=5 clock model STILL shows crossing curves at n=8,12, disproving prediction that crossings would vanish. Crossing at g_c≈0.673 — a 10x larger shift than q=3→4 (0.220 vs 0.030). Slope at g=1.0 halves vs q=4 (0.86 vs 1.72). CV systematically lower than q=4 above transition (0.521 vs 0.727 at g=1.0 n=8).
 
-**~~g_c scaling law (Sprint 044)~~ INVALIDATED (Sprint 049).** Previous g_c values for q≥3 Potts were WRONG — MI-CV crossings near g≈1.0 are a disordered-phase crossover, not the phase transition. Exact diag (Sprint 049) shows q=3 Potts g_c ≈ 0.33, not 1.0. The "g_c scaling law" g_c(q) = 0.87*(q-3)^{-0.85} was fitted to incorrect critical points and should not be used. True g_c values for q≥3 need to be re-determined using entropy scaling / central charge method.
+**~~g_c scaling law (Sprint 044)~~ INVALIDATED (Sprint 049).** Previous g_c values for q≥3 were WRONG. The "g_c scaling law" should not be used.
 
-Only q=2 TFIM g_c = 1.0 is confirmed (has Z₂ conservation, validated by entropy FSS Sprint 049).
+**Exact Potts critical points (Sprint 050 — self-duality).** Our Hamiltonian H = -Jδ(s_i,s_j) - g(X+X†) is self-dual for q=2,3 only:
+- q=2: g_c = J/4 = 0.25 (corresponds to TFIChain g_c=1.0 via J_TFI=J/2, h_TFI=2g)
+- q=3: g_c = J/3 = 0.333 (EXACT from Kramers-Wannier duality)
+- q≥4: self-duality BROKEN (X+X† ≠ Σ_{k=1}^{q-1} X^k). g_c unknown.
+  - q=4: pseudo-critical at g≈0.34 (n=8), true g_c in [0.30, 0.40]
+  - q=5+: not yet determined
 
-For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossings and are similarly suspect.
+The self-duality works because for q=2,3, {X, X^{q-1}} = {X^1, ..., X^{q-1}} (the field spans ALL non-trivial generators). For q≥4, X+X^{q-1} misses intermediate powers (X², etc.).
+
+For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossings and are similarly suspect — these were disordered-phase crossovers.
 
 **1D quantum Potts is NEVER first-order (Sprint 043).** Tested q=5, 10, 20 — all show continuous transitions. ~~q=10 crossing confirmed at g_c≈0.246~~ (Sprint 043 used χ=10, INVALIDATED by Sprint 048 at χ=20). At q≥10, ground states converge to a universal large-q regime where only the {|0⟩, |1⟩, |q-1⟩} subspace is active. Physical mechanism: the extreme anisotropy of the 1D quantum→2D classical mapping suppresses the entropic mechanism that drives first-order transitions in 2D.
 
 **Clock ≠ Potts for q≥4 (Sprints 041-042).** TeNPy's ClockChain uses cos(2π(s_i-s_j)/q) coupling, which equals Potts δ(s_i,s_j) only for q=2,3. For q≥5, models differ: Clock g_c=0.67 vs Potts g_c=0.41, Potts slope 5.7x steeper. Custom PottsChain model built (Sprint 042) with projector coupling. Both show second-order crossings — the 2D classical "q>4 → first-order" does NOT apply to 1D quantum Potts with transverse field. Anisotropic quantum-classical correspondence preserves second-order character.
 
-**~~ν(q) extraction (Sprints 045-048)~~ SUSPECT (Sprint 049).** All ν values for q≥3 were measured at WRONG g values (far from true g_c). Only ν(q=2) = 1.0 is confirmed (Ising exact, validated by TFIM entropy FSS).
+**~~ν(q) extraction (Sprints 045-048)~~ SUSPECT (Sprint 049).** All ν values for q≥3 were measured at WRONG g values. Only ν(q=2) = 1.0 is confirmed.
 
-Previous MI-CV crossings near g≈0.9-1.0 for q=3-10 Potts were in the disordered phase. The extracted ν values and qualitative signatures (crossings vs no-crossings) may not reflect the actual phase transition.
-
-| q | Previous ν | Previous MI-CV g | True g_c (Sprint 049) | Status |
-|---|-----------|------------------|----------------------|--------|
-| 2 | 1.0 | g_c=1.0 | g_c=1.0 ✓ | **Confirmed** |
-| 3 | 5/6 | ~0.9 | ~0.33 | **WRONG g** |
-| 4 | ≥2.2 | ~0.89 | Unknown | **WRONG g** |
+| q | Previous ν | Measured at g | True g_c | Status |
+|---|-----------|---------------|----------|--------|
+| 2 | 1.0 | 1.0 (TFIChain) | 1.0 ✓ | **Confirmed** |
+| 3 | 5/6 | ~0.9 | 0.333 (exact) | **WRONG g, need redo** |
+| 4 | ≥2.2 | ~0.89 | ~0.34 (est.) | **WRONG g** |
 | 5 | ~2.0 | ~0.45 | Unknown | **Suspect** |
 | 7 | ~0.5 | ~0.26 | Unknown | **Suspect** |
 | 10 | unreliable | ~0.25 | Unknown | **Suspect** |
 
-Note: q=5,7,10 g values might be closer to true g_c since the previous "g_c" was already low.
+q=5,7,10 measured g values might be closer to true g_c since they were already low. Need to verify by entropy/gap methods.
 
 **Dead-pair bias AND χ convergence in MI-CV (Sprint 048).** Two confounded effects at large d:
 1. **Dead-pair bias**: fraction of near-zero MI pairs differs between sizes (n=8: 25%, n=12: 17% at d=10), inflating n=8 CV relative to n=12.
