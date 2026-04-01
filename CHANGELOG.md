@@ -615,10 +615,22 @@
 [Full report: sprints/sprint_029.md]
 
 ### Sprint 030 — 2026-03-31 — Heisenberg XXZ Model: Is Scale-Free Universal at All Critical Points?
-**Status:** In Progress
+**Status:** Complete (3/3 experiments)
 
-**Plan:** Test whether the Scale-Free archetype (discovered in Sprint 029 at the TFIM critical point) is universal across different phase transition types. The XXZ model has THREE phases (FM, XY/Luttinger liquid, Néel) and TWO transitions (first-order at Δ=-1, BKT at Δ=1). Key tests: (1) Is the entire gapless XY phase Scale-Free? (2) Does MI uniformity CV detect the BKT transition? (3) What archetype is the Néel phase?
+**Completed:**
+- **30a: XXZ ground state sweep** — Exact diag n=6, Δ from -2 to 3 (67 points). FM transition (Δ=-1) shows entropy spike to 1.647. XY phase critical throughout with MI-CV ~0.5-1.3. BKT transition (Δ=1) invisible at n=6. Néel phase has positive growing I3.
+- **30b: Archetype classification** — FM=Democratic(GHZ), XY evolves Scale-Free→Geometric, BKT indistinguishable from late XY. Deep Néel→Democratic (staggered order = antiferromagnetic GHZ). Phase diagram traces LOOP in archetype space.
+- **30c: MI-CV phase detector** — MI-CV peaks at BKT as smooth dome (not sharp). |dCV/dΔ| at FM=1.18 vs BKT=0.11 (11x stronger). MI-CV peak grows with n (1.0→1.3→1.5). MI-CV shape fingerprints transition type: jump=first-order, inflection=Ising, dome=BKT.
 
-**Literature:** Entanglement entropy in XXZ well-studied, but no archetype mapping or MI-CV phase detection exists. BKT transition notoriously hard to detect with local order parameters.
+**Surprises:**
+- **XY phase NOT uniformly Scale-Free** — evolves from Scale-Free through Geometric. Gapless critical phase has internal archetype structure.
+- **BKT transition invisible in archetype space** — Δ=0.9 and Δ=1.0 indistinguishable. No sharp archetype change.
+- **I3 sign change at Δ≈0.7 INSIDE XY phase** — not at thermodynamic boundary. Archetype boundaries ≠ phase boundaries.
+- **XXZ traces a LOOP: Democratic→Scale-Free→Geometric→Scale-Free→Democratic** — unlike TFIM's one-way path.
+- **MI-CV shape classifies transition TYPE** — first-order=jump, Ising=inflection, BKT=dome. Information geometry encodes universality class.
 
-*(Results updated as experiments complete)*
+**Key insight:** The MI-CV is not just an order parameter but a transition-type classifier. Its curve shape — discontinuous jump (first-order), monotonic inflection (Ising/second-order), or smooth dome (BKT/infinite-order) — encodes the thermodynamic order of the phase transition. This connects information geometry to universality classes. The entanglement archetype framework maps multiple models successfully but reveals that archetype boundaries don't always align with phase boundaries — the entanglement "phase diagram" has its own topology.
+
+**Next:** XY model (BKT dome universality), Potts model (first-order jump test), 2D XXZ, entanglement Hamiltonian spectrum, MI-CV scaling exponent at BKT.
+
+[Full report: sprints/sprint_030.md]

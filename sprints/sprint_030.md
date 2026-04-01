@@ -156,3 +156,24 @@ The FM transition is DRAMATICALLY sharper than BKT in ALL measures. MI-CV has th
 - **Second-order Ising (TFIM):** Monotonic increase with inflection point → moderate derivative
 - **BKT (infinite-order):** Smooth dome with peak → small derivative that grows with system size
 - The MI-CV "shape" (jump vs inflection vs dome) fingerprints the transition TYPE, not just its location
+
+## Summary & Key Insights
+
+**Sprint 030 mapped the Heisenberg XXZ model's full phase diagram onto the entanglement archetype framework, testing the universality of the Scale-Free archetype discovered in Sprint 029.**
+
+### Surprises
+1. **The XY phase is NOT uniformly Scale-Free** — it evolves continuously from Scale-Free (near FM) to Geometric/Cluster-like (near BKT). The gapless critical phase has internal archetype structure.
+2. **The BKT transition is invisible in archetype space** — Δ=0.9 and Δ=1.0 are indistinguishable. No sharp archetype change at this infinite-order transition.
+3. **Deep Néel = antiferromagnetic GHZ** — staggered order produces GHZ-like positive I3, growing with Δ. The XXZ traces a LOOP in archetype space: Democratic → Scale-Free → Geometric → Scale-Free → Democratic.
+4. **MI-CV shape fingerprints transition type** — first-order = jump, Ising = inflection, BKT = smooth dome. The transition's thermodynamic order is encoded in the MI-CV curve geometry.
+5. **MI-CV peak grows with system size at BKT** (1.0 → 1.3 → 1.5 for n=4,6,8) — suggesting logarithmic divergence consistent with BKT's essential singularity.
+
+### Key Insight
+Phase transitions are NOT just "where" correlations change, but "how" they change. The MI-CV curve shape encodes the thermodynamic order of the transition: discontinuous (first-order), power-law (second-order/Ising), or essential singularity (BKT). This connects information geometry to universality classes — the MI-CV is not just an order parameter but a classifier of transition types. The entanglement archetype framework successfully maps multiple models but reveals that archetype boundaries don't always align with thermodynamic phase boundaries (the I3 sign change at Δ≈0.7 is inside the XY phase).
+
+### Next Sprint Ideas
+- **XY model** — another BKT transition, test MI-CV dome universality
+- **Potts model** — first-order transition at q>4, test MI-CV jump signature
+- **2D XXZ** — richer topology, connect to Sprint 007's 2D cluster findings
+- **Entanglement Hamiltonian** — the reduced density matrix's spectrum encodes more than entropy
+- **MI-CV scaling exponent** — extract logarithmic correction at BKT with larger n (needs optimization)

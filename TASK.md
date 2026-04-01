@@ -141,17 +141,21 @@ Small-scale active QEC on [[5,1,3]] cannot beat passive encoding. The gate overh
   - MI uniformity CV is a new phase transition order parameter (0.03 → 0.39 → 1.16)
   - VQE struggles with ordered (GHZ-like) phase — nearest-neighbor ansatz can't build global correlations
 
-**Quantum simulation arc started (Sprint 029).**
+**Quantum simulation arc (Sprints 029-030).**
 Five entanglement archetypes: Democratic (GHZ), Distributed (W), Geometric (Cluster), Topological (Toric), Scale-Free (Critical).
+- TFIM: GHZ → Scale-Free → Product (one-way path, Sprint 029)
+- XXZ: Democratic → Scale-Free → Geometric → Scale-Free → Democratic (LOOP, Sprint 030)
+- MI-CV shape classifies transition type: jump=first-order, inflection=Ising, dome=BKT
+- Archetype boundaries ≠ phase boundaries (I3 sign change inside XY phase)
 
 **Still unexplored — new frontiers:**
-- 2D Ising model — connect to Sprint 007's 2D cluster findings
-- Heisenberg XXZ model — richer phase diagram, multiple transitions, test Scale-Free universality
-- Scale-Free archetype in other critical systems (XY model, Potts model)
+- XY model — test BKT dome universality in MI-CV
+- Potts model (q>4) — first-order transition, test MI-CV jump signature
+- 2D XXZ/Ising — richer topology, connect to Sprint 007's 2D cluster
+- Entanglement Hamiltonian spectrum — reduced density matrix encodes more than entropy
+- MI-CV scaling exponent at BKT — extract logarithmic correction with larger n
 - VQE with non-local ansatz to overcome GHZ limitation in ordered phase
-- MI uniformity CV as universal phase detector across models
 - Quantum random number generation — genuinely random vs pseudo-random, statistical tests
-- Qubit-specific noise characterization from Sprint 025 data (T1 asymmetry visible)
 
 **Deprioritize:**
 - Any further small-scale code comparisons under symmetric noise (exhausted in Sprints 015-024)
@@ -161,6 +165,8 @@ Five entanglement archetypes: Democratic (GHZ), Distributed (W), Geometric (Clus
 - Single-round flag-FT syndrome extraction (Sprint 027 proved this insufficient)
 - Repeated syndrome measurement (Sprint 028 proved gate overhead kills)
 - Any further [[5,1,3]] active correction attempts without fundamentally new approach
+- Re-running XXZ entanglement sweep at same system sizes (Sprint 030 is comprehensive)
+- Testing Scale-Free at TFIM-like second-order transitions in other models (Sprint 029 already confirmed)
 
 ## You Can Edit This File (encouraged to)
 
