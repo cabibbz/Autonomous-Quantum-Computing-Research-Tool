@@ -1,0 +1,341 @@
+{
+  "p_values": [
+    0.0,
+    0.01,
+    0.02,
+    0.05,
+    0.08,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.4,
+    0.5
+  ],
+  "three_qubit_bitflip": [
+    {
+      "h_syndrome": -0.0,
+      "h_error": -0.0,
+      "h_error_given_syndrome": 0,
+      "p_correct": 1.0,
+      "h_logical_outcome": 0.0,
+      "mi_syndrome_logical": 0.0,
+      "syndrome_probs": {
+        "(0, 0)": 1.0,
+        "(1, 0)": 0.0,
+        "(1, 1)": 0.0,
+        "(0, 1)": 0.0
+      },
+      "n_syndromes": 4,
+      "max_h_syndrome": 2.0
+    },
+    {
+      "h_syndrome": 0.239959,
+      "h_error": 0.242379,
+      "h_error_given_syndrome": 0.002421,
+      "p_correct": 0.999702,
+      "h_logical_outcome": 0.00392,
+      "mi_syndrome_logical": 0.001499,
+      "syndrome_probs": {
+        "(0, 0)": 0.9703,
+        "(1, 0)": 0.0099,
+        "(1, 1)": 0.0099,
+        "(0, 1)": 0.0099
+      },
+      "n_syndromes": 4,
+      "max_h_syndrome": 2.0
+    },
+    {
+      "h_syndrome": 0.415859,
+      "h_error": 0.424322,
+      "h_error_given_syndrome": 0.008463,
+      "p_correct": 0.998816,
+      "h_logical_outcome": 0.013218,
+      "mi_syndrome_logical": 0.004755,
+      "syndrome_probs": {
+        "(0, 0)": 0.9412,
+        "(1, 0)": 0.0196,
+        "(1, 1)": 0.0196,
+        "(0, 1)": 0.0196
+      },
+      "n_syndromes": 4,
+      "max_h_syndrome": 2.0
+    },
+    {
+      "h_syndrome": 0.816606,
+      "h_error": 0.859191,
+      "h_error_given_syndrome": 0.042585,
+      "p_correct": 0.99275,
+      "h_logical_outcome": 0.061953,
+      "mi_syndrome_logical": 0.019368,
+      "syndrome_probs": {
+        "(0, 0)": 0.8575,
+        "(1, 0)": 0.0475,
+        "(1, 1)": 0.0475,
+        "(0, 1)": 0.0475
+      },
+      "n_syndromes": 4,
+      "max_h_syndrome": 2.0
+    },
+    {
+      "h_syndrome": 1.111585,
+      "h_error": 1.206538,
+      "h_error_given_syndrome": 0.094952,
+      "p_correct": 0.981824,
+      "h_logical_outcome": 0.131073,
+      "mi_syndrome_logical": 0.036121,
+      "syndrome_probs": {
+        "(0, 0)": 0.7792,
+        "(1, 0)": 0.0736,
+        "(1, 1)": 0.0736,
+        "(0, 1)": 0.0736
+      },
+      "n_syndromes": 4,
+      "max_h_syndrome": 2.0
+    },
+    {
+      "h_syndrome": 1.269405,
+      "h_error": 1.406987,
+      "h_error_given_syndrome": 0.137582,
+      "p_correct": 0.972,
+      "h_logical_outcome": 0.184261,
+      "mi_syndrome_logical": 0.046678,
+      "syndrome_probs": {
+        "(0, 0)": 0.73,
+        "(1, 0)": 0.09,
+        "(1, 1)": 0.09,
+        "(0, 1)": 0.09
+      },
+      "n_syndromes": 4,
+      "max_h_syndrome": 2.0
+    },
+    {
+      "h_syndrome": 1.566037,
+      "h_error": 1.829521,
+      "h_error_given_syndrome": 0.263484,
+      "p_correct": 0.93925,
+      "h_logical_outcome": 0.330415,
+      "mi_syndrome_logical": 0.066931,
+      "syndrome_probs": {
+        "(0, 0)": 0.6175,
+        "(1, 0)": 0.1275,
+        "(1, 1)": 0.1275,
+        "(0, 1)": 0.1275
+      },
+      "n_syndromes": 4,
+      "max_h_syndrome": 2.0
+    },
+    {
+      "h_syndrome": 1.759628,
+      "h_error": 2.165784,
+      "h_error_given_syndrome": 0.406157,
+      "p_correct": 0.896,
+      "h_logical_outcome": 0.481549,
+      "mi_syndrome_logical": 0.075392,
+      "syndrome_probs": {
+        "(0, 0)": 0.52,
+        "(1, 0)": 0.16,
+        "(1, 1)": 0.16,
+        "(0, 1)": 0.16
+      },
+      "n_syndromes": 4,
+      "max_h_syndrome": 2.0
+    },
+    {
+      "h_syndrome": 1.880241,
+      "h_error": 2.433834,
+      "h_error_given_syndrome": 0.553594,
+      "p_correct": 0.84375,
+      "h_logical_outcome": 0.625262,
+      "mi_syndrome_logical": 0.071669,
+      "syndrome_probs": {
+        "(0, 0)": 0.4375,
+        "(1, 0)": 0.1875,
+        "(1, 1)": 0.1875,
+        "(0, 1)": 0.1875
+      },
+      "n_syndromes": 4,
+      "max_h_syndrome": 2.0
+    },
+    {
+      "h_syndrome": 1.949198,
+      "h_error": 2.643873,
+      "h_error_given_syndrome": 0.694674,
+      "p_correct": 0.784,
+      "h_logical_outcome": 0.752796,
+      "mi_syndrome_logical": 0.058122,
+      "syndrome_probs": {
+        "(0, 0)": 0.37,
+        "(1, 0)": 0.21,
+        "(1, 1)": 0.21,
+        "(0, 1)": 0.21
+      },
+      "n_syndromes": 4,
+      "max_h_syndrome": 2.0
+    },
+    {
+      "h_syndrome": 1.996624,
+      "h_error": 2.912852,
+      "h_error_given_syndrome": 0.916228,
+      "p_correct": 0.648,
+      "h_logical_outcome": 0.935842,
+      "mi_syndrome_logical": 0.019614,
+      "syndrome_probs": {
+        "(0, 0)": 0.28,
+        "(1, 0)": 0.24,
+        "(1, 1)": 0.24,
+        "(0, 1)": 0.24
+      },
+      "n_syndromes": 4,
+      "max_h_syndrome": 2.0
+    },
+    {
+      "h_syndrome": 2.0,
+      "h_error": 3.0,
+      "h_error_given_syndrome": 1.0,
+      "p_correct": 0.5,
+      "h_logical_outcome": 1.0,
+      "mi_syndrome_logical": 0.0,
+      "syndrome_probs": {
+        "(0, 0)": 0.25,
+        "(1, 0)": 0.25,
+        "(1, 1)": 0.25,
+        "(0, 1)": 0.25
+      },
+      "n_syndromes": 4,
+      "max_h_syndrome": 2.0
+    }
+  ],
+  "five_qubit_depolarizing": [
+    {
+      "h_syndrome": -0.0,
+      "h_error": -0.0,
+      "h_error_given_syndrome": 0,
+      "p_correct": 1.0,
+      "h_logical_outcome": 0.0,
+      "mi_syndrome_logical": 0.0,
+      "n_syndromes": 16,
+      "max_h_syndrome": 4.0
+    },
+    {
+      "h_syndrome": 0.473644,
+      "h_error": 0.483214,
+      "h_error_given_syndrome": 0.00957,
+      "p_correct": 0.999348,
+      "h_logical_outcome": 0.00784,
+      "mi_syndrome_logical": 0.002831,
+      "n_syndromes": 16,
+      "max_h_syndrome": 4.0
+    },
+    {
+      "h_syndrome": 0.831752,
+      "h_error": 0.865699,
+      "h_error_given_syndrome": 0.033947,
+      "p_correct": 0.99745,
+      "h_logical_outcome": 0.025643,
+      "mi_syndrome_logical": 0.008586,
+      "n_syndromes": 16,
+      "max_h_syndrome": 4.0
+    },
+    {
+      "h_syndrome": 1.654456,
+      "h_error": 1.828225,
+      "h_error_given_syndrome": 0.173769,
+      "p_correct": 0.985112,
+      "h_logical_outcome": 0.111683,
+      "mi_syndrome_logical": 0.031596,
+      "n_syndromes": 16,
+      "max_h_syndrome": 4.0
+    },
+    {
+      "h_syndrome": 2.255251,
+      "h_error": 2.644881,
+      "h_error_given_syndrome": 0.38963,
+      "p_correct": 0.964443,
+      "h_logical_outcome": 0.221534,
+      "mi_syndrome_logical": 0.05413,
+      "n_syndromes": 16,
+      "max_h_syndrome": 4.0
+    },
+    {
+      "h_syndrome": 2.572082,
+      "h_error": 3.137459,
+      "h_error_given_syndrome": 0.565377,
+      "p_correct": 0.946995,
+      "h_logical_outcome": 0.299029,
+      "mi_syndrome_logical": 0.066388,
+      "n_syndromes": 16,
+      "max_h_syndrome": 4.0
+    },
+    {
+      "h_syndrome": 3.154189,
+      "h_error": 4.237923,
+      "h_error_given_syndrome": 1.083734,
+      "p_correct": 0.89424,
+      "h_logical_outcome": 0.486993,
+      "mi_syndrome_logical": 0.084293,
+      "n_syndromes": 16,
+      "max_h_syndrome": 4.0
+    },
+    {
+      "h_syndrome": 3.522028,
+      "h_error": 5.194603,
+      "h_error_given_syndrome": 1.672575,
+      "p_correct": 0.8339,
+      "h_logical_outcome": 0.648704,
+      "mi_syndrome_logical": 0.084979,
+      "n_syndromes": 16,
+      "max_h_syndrome": 4.0
+    },
+    {
+      "h_syndrome": 3.7468,
+      "h_error": 6.037594,
+      "h_error_given_syndrome": 2.290794,
+      "p_correct": 0.771605,
+      "h_logical_outcome": 0.775203,
+      "mi_syndrome_logical": 0.073283,
+      "n_syndromes": 16,
+      "max_h_syndrome": 4.0
+    },
+    {
+      "h_syndrome": 3.876773,
+      "h_error": 6.783898,
+      "h_error_given_syndrome": 2.907126,
+      "p_correct": 0.71168,
+      "h_logical_outcome": 0.866541,
+      "mi_syndrome_logical": 0.05526,
+      "n_syndromes": 16,
+      "max_h_syndrome": 4.0
+    },
+    {
+      "h_syndrome": 3.979685,
+      "h_error": 8.024678,
+      "h_error_given_syndrome": 4.044993,
+      "p_correct": 0.610438,
+      "h_logical_outcome": 0.964517,
+      "mi_syndrome_logical": 0.020577,
+      "n_syndromes": 16,
+      "max_h_syndrome": 4.0
+    },
+    {
+      "h_syndrome": 3.998438,
+      "h_error": 8.962406,
+      "h_error_given_syndrome": 4.963968,
+      "p_correct": 0.54321,
+      "h_logical_outcome": 0.994606,
+      "mi_syndrome_logical": 0.003629,
+      "n_syndromes": 16,
+      "max_h_syndrome": 4.0
+    }
+  ],
+  "description": "Syndrome-error mutual information analysis for QEC codes",
+  "measures": {
+    "h_syndrome": "Shannon entropy of syndrome distribution H(S)",
+    "h_error": "Shannon entropy of error distribution H(E)",
+    "h_error_given_syndrome": "Residual error entropy H(E|S) = H(E) - H(S)",
+    "p_correct": "Probability of successful correction",
+    "h_logical_outcome": "Binary entropy of correction success H(L)",
+    "mi_syndrome_logical": "MI between syndrome and correction outcome MI(S:L)"
+  }
+}

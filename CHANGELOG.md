@@ -353,3 +353,13 @@
 **Next:** Toric/surface code entanglement structure, combined T1+T2 noise model, Holevo information for [[5,1,3]], real hardware QEC, syndrome-error mutual information
 
 [Full report: sprints/sprint_017.md]
+
+### Sprint 018 — 2026-03-31 — Syndrome Information: The Measurement Side of Error Correction
+**Status:** In progress
+
+**Plan:**
+- **18a:** Syndrome-error MI — how much information does the syndrome carry about the error pattern?
+- **18b:** [[5,1,3]] Holevo information — does the general code show the same phase transition as bit-flip code?
+- **18c:** Syndrome MI at threshold — does syndrome information undergo its own phase transition?
+
+[Full report: sprints/sprint_018.md]
