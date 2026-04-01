@@ -343,3 +343,24 @@ Explicit operator counting: U(1)=0.143 > Z₂=0.099 > S₃=0.072 > Z₃=0.040 (H
 - Sprint 043's landmark result (q=10 crossings) was doubly wrong (χ + dead pairs)
 
 [Full report: sprints/sprint_048.md]
+
+### Sprint 049 — Correlation Length & Entropy FSS: q=3 Potts Critical Point WRONG
+**Status:** Complete (6 experiments).
+
+**TFIM central charge c validated.** Entropy S(g_c=1.0, n) at n=16-64 gives c = 0.529, with pairwise estimates converging: 0.544 → 0.532 → 0.523 → 0.516 toward exact c=0.500.
+
+**Correlation length from correlator decay works but is finite-size limited.** ξ matches exact ξ=1/ln(g) far from g_c (5% at g=2) but saturates at ξ~n/4. Naive ν extraction gives 0.62 (n=40), 0.72 (n=80) — well below ν=1.
+
+**Entropy FSS does NOT give ν.** Logarithmic singularity S ~ ln(ξ) defeats power-law collapse. Best collapse at ν=3, not ν=1.
+
+**q=3 Potts critical point at g_c ≈ 0.33, NOT 1.0.** Exact diag confirms S=0.047 at g=1.0 (deep disordered phase). True phase transition between g≈0.25-0.35 where entropy grows logarithmically with n and central charge estimate crosses c=4/5.
+
+**10 sprints of Potts results (038-048) were at wrong g.** MI-CV crossings near g≈1.0 are a disordered-phase crossover. All Potts g_c values, the g_c scaling law, and ν(q) results need re-examination.
+
+**Surprises:**
+- q=3 at g=1.0 has S=0.047 — confirmed by exact diag, not a DMRG failure
+- GHZ entropy S=ln(3) persists to g≈0.20 in ordered phase
+- TFIChain Z₂ conservation is essential — PottsChain has NO conservation
+- Most expensive mistake: 10 sprints of Potts physics at the wrong critical point
+
+[Full report: sprints/sprint_049.md]

@@ -24,6 +24,8 @@ Failed approaches are critical to log. Without them you'll waste sprints repeati
 ### Research rules
 - **Diminishing returns:** If your experiment would confirm a prior result under slightly different conditions, skip it — log the prediction and move on. Only revisit if you expect the prediction is *wrong*.
 - **Literature check:** Before each sprint, search arXiv and Google Scholar for your topic. If results exist, find what's *unresolved* or *contradicted*. Test the gap, not the conclusion.
+- **Hardware validation rule:** When a simulator result is mature enough to have specific numerical predictions at n≤10, plan a hardware test. You have QPU time that expires monthly — unspent time is wasted. Every ~10 sprints, ask yourself: what's my strongest simulator prediction that hardware could confirm or break?
+- **Novelty detection:** When you find a quantitative result (a formula, a scaling exponent, a phase boundary, a critical value), search specifically for that result in the literature. If you can't find it, flag it explicitly in the sprint report: "**POTENTIALLY NOVEL:** [result]. Literature search found no prior measurement of [specific thing]." Then copy the sprint report to `unpublished/` so novel findings don't get buried in the archive.
 - **You can shape your own rules.** Edit any file based on what you find optimal. Consider context budget and how this system works.
 
 ## Environment
@@ -43,7 +45,7 @@ Failed approaches are critical to log. Without them you'll waste sprints repeati
 ## Hard Resource Limits
 
 1. **Max 10 qubits** for exact diag density matrix operations. Use DMRG (TeNPy) for n>10.
-2. **Max 60 seconds** per bash command — design experiments to fit
+2. **Max 300 seconds** per bash command — design experiments to fit
 3. **Separate script per experiment** — never batch experiments in one script
 4. **Save results immediately** after each experiment (write JSON before doing anything else)
 5. **Git commit after every experiment** (repo: https://github.com/cabibbz/Autonomous-Quantum-Computing-Research-Tool)

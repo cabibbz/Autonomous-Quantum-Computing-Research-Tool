@@ -45,36 +45,46 @@ MI uniformity coefficient of variation classifies transition TYPE by curve shape
 
 **q=5 clock MI-CV (Sprint 041):** q=5 clock model STILL shows crossing curves at n=8,12, disproving prediction that crossings would vanish. Crossing at g_c≈0.673 — a 10x larger shift than q=3→4 (0.220 vs 0.030). Slope at g=1.0 halves vs q=4 (0.86 vs 1.72). CV systematically lower than q=4 above transition (0.521 vs 0.727 at g=1.0 n=8).
 
-**g_c scaling law (Sprint 044).** For 1D quantum Potts: g_c = 1.0 for q=2,3 (self-duality protected), and g_c ≈ 0.87*(q-3)^(-0.85) for q≥4. Verified by blind prediction of g_c(7)=0.263 vs measured 0.259 (1.6% error). Full data: q=2→1.0, q=3→1.0, q=4→0.893, q=5→0.45 (revised Sprint 045, was 0.41), q=7→0.259, q=10→0.246. The pole at q=3 reflects self-duality breaking. Exponent 0.85 ≈ 5/6 (q=3 Potts ν). Large-q regime flattening begins at q≈7. χ≥20 required for d≥7 (χ=10 gives 25% CV inflation). For clock model: 0.93 (q=2) → 0.923 (q=3) → 0.893 (q=4) → 0.673 (q=5).
+**~~g_c scaling law (Sprint 044)~~ INVALIDATED (Sprint 049).** Previous g_c values for q≥3 Potts were WRONG — MI-CV crossings near g≈1.0 are a disordered-phase crossover, not the phase transition. Exact diag (Sprint 049) shows q=3 Potts g_c ≈ 0.33, not 1.0. The "g_c scaling law" g_c(q) = 0.87*(q-3)^{-0.85} was fitted to incorrect critical points and should not be used. True g_c values for q≥3 need to be re-determined using entropy scaling / central charge method.
+
+Only q=2 TFIM g_c = 1.0 is confirmed (has Z₂ conservation, validated by entropy FSS Sprint 049).
+
+For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossings and are similarly suspect.
 
 **1D quantum Potts is NEVER first-order (Sprint 043).** Tested q=5, 10, 20 — all show continuous transitions. ~~q=10 crossing confirmed at g_c≈0.246~~ (Sprint 043 used χ=10, INVALIDATED by Sprint 048 at χ=20). At q≥10, ground states converge to a universal large-q regime where only the {|0⟩, |1⟩, |q-1⟩} subspace is active. Physical mechanism: the extreme anisotropy of the 1D quantum→2D classical mapping suppresses the entropic mechanism that drives first-order transitions in 2D.
 
 **Clock ≠ Potts for q≥4 (Sprints 041-042).** TeNPy's ClockChain uses cos(2π(s_i-s_j)/q) coupling, which equals Potts δ(s_i,s_j) only for q=2,3. For q≥5, models differ: Clock g_c=0.67 vs Potts g_c=0.41, Potts slope 5.7x steeper. Custom PottsChain model built (Sprint 042) with projector coupling. Both show second-order crossings — the 2D classical "q>4 → first-order" does NOT apply to 1D quantum Potts with transverse field. Anisotropic quantum-classical correspondence preserves second-order character.
 
-**ν(q) extraction (Sprints 045-048).** ν has a SHARP PEAK at q=4. q=4 and q=10 both lack MI-CV crossings:
+**~~ν(q) extraction (Sprints 045-048)~~ SUSPECT (Sprint 049).** All ν values for q≥3 were measured at WRONG g values (far from true g_c). Only ν(q=2) = 1.0 is confirmed (Ising exact, validated by TFIM entropy FSS).
 
-| q | ν | MI-CV crossings? | Nature |
-|---|---|-----------------|--------|
-| 2 | 1.0 | Yes | Standard 2nd-order |
-| 3 | 5/6 | Yes | Standard 2nd-order (minimum ν) |
-| 4 | ≥2.2 (diverging?) | **No** | **Marginal/BKT-like** |
-| 5 | ~2.0 | Yes | Large-ν 2nd-order |
-| 7 | ~0.5 | Yes (needs filtered re-check) | Near mean-field |
-| 10 | unreliable | **No** (raw AND filtered) | **BKT-like (Sprint 048)** |
+Previous MI-CV crossings near g≈0.9-1.0 for q=3-10 Potts were in the disordered phase. The extracted ν values and qualitative signatures (crossings vs no-crossings) may not reflect the actual phase transition.
 
-q=4 is qualitatively different: slope ratio ν estimates INCREASE with n (1.92 → 2.71 from n=8,12 to n=12,16). Standard FSS collapse fails — constrained at g_c≈0.89, ν→∞. MI-CV curves don't cross near g_c. This is the 1D quantum signature of the 2D classical q=4 Potts BKT marginality.
+| q | Previous ν | Previous MI-CV g | True g_c (Sprint 049) | Status |
+|---|-----------|------------------|----------------------|--------|
+| 2 | 1.0 | g_c=1.0 | g_c=1.0 ✓ | **Confirmed** |
+| 3 | 5/6 | ~0.9 | ~0.33 | **WRONG g** |
+| 4 | ≥2.2 | ~0.89 | Unknown | **WRONG g** |
+| 5 | ~2.0 | ~0.45 | Unknown | **Suspect** |
+| 7 | ~0.5 | ~0.26 | Unknown | **Suspect** |
+| 10 | unreliable | ~0.25 | Unknown | **Suspect** |
 
-q=7 (Sprint 047): CROSSING CURVES RETURN at g_c≈0.244. ν≈0.5 from disordered-side slope ratio (uncertain, only n=8,12). n=8 has a sharp CV kink that smooths at n=12 — standard FSS behavior. **CAUTION:** q=7 crossings may be affected by dead-pair bias (not yet re-examined with filtering).
-
-q=10 (Sprint 048): NO crossings in raw MI-CV (n=12 < n=8 everywhere). But this is a **dead-pair bias artifact** — when near-zero MI pairs are filtered out, n=12 > n=8 everywhere (same q=4 BKT pattern). ν extraction unreliable from n=8,12 alone.
-
-ν(q) picture: standard (q≤3) → BKT peak at q=4 → large ν at q=5 → standard at q=7 → BKT again at q=10(?). Possibly non-monotonic BKT character rather than simple peak at q=4.
+Note: q=5,7,10 g values might be closer to true g_c since the previous "g_c" was already low.
 
 **Dead-pair bias AND χ convergence in MI-CV (Sprint 048).** Two confounded effects at large d:
 1. **Dead-pair bias**: fraction of near-zero MI pairs differs between sizes (n=8: 25%, n=12: 17% at d=10), inflating n=8 CV relative to n=12.
 2. **MI non-convergence**: energy converges at χ=20 but MI doesn't. At d=10, χ=20→40 changes mean MI by 44% while energy changes by 0.0005%. Dead pairs partially vanish at higher χ.
 
 **Rule of thumb: MI-CV requires χ > d² for reliable results.** At d=2 (q=2), χ=20 is fine (d²=4). At d=10 (q=10), need χ > 100. Results for q≥7 (d²≥49) should be scrutinized. q=2,3 results are reliable.
+
+## Entropy FSS and Central Charge (Sprint 049)
+
+**Central charge from entropy scaling.** At the critical point, S(l=n/2, n) = (c/6)ln(n) + const. TFIM validated: c = 0.529 from full fit, pairwise converges 0.544 → 0.516 → exact 0.500. Requires at least 3 system sizes for a reliable fit.
+
+**Entropy FSS does NOT give ν.** Entropy has a logarithmic singularity at criticality (S ~ (c/6)ln(ξ)), not a power law. Standard FSS collapse y(g,n) = f((g-g_c)·n^{1/ν}) fails for y=S (best collapse gives ν=3 for TFIM, should be 1). Use correlation length ξ or order parameter for ν extraction instead.
+
+**Correlation length from correlator decay.** Extract ξ from exponential fit to connected correlator ⟨O_i O_j⟩_c in the bulk. Works well in disordered phase (R²>0.95) but saturates at ξ ~ n/4 near criticality. Finite-size ν extraction underestimates (0.62-0.72 vs exact 1.0 for TFIM). Need iDMRG for ν from ξ.
+
+**Locating g_c via entropy.** The critical point can be identified as where: (1) dS/dg peaks (pseudo-critical point, drifts toward g_c with n), (2) S grows logarithmically with n (ordered/disordered → S saturates), (3) central charge c from S(n) matches expected value.
 
 **Technique: All-pairs MI.** Two methods:
 1. Gell-Mann correlation reconstruction: **ONLY reliable for d≤3** (validated: diff=0 at n=8 for d=2,3). For d=4, small systematic errors create artificial MI-CV crossings (Sprint 046). For d=5, errors up to 11x (Sprint 045). DO NOT USE for d≥4.
