@@ -636,13 +636,22 @@
 [Full report: sprints/sprint_030.md]
 
 ### Sprint 031 — 2026-04-01 — Entanglement Spectrum: What the RDM Hides Beyond Entropy
-**Status:** In Progress
+**Status:** Complete (3/3 experiments)
 
-**Idea:** The reduced density matrix eigenvalue spectrum (entanglement spectrum) encodes far more than entropy (which is just -Σ λ log λ). The spectrum shape — flat, peaked, gapped, power-law — should fingerprint entanglement archetypes and reveal structure at phase transitions invisible to scalar measures. A 2025 paper (arXiv 2509.03588) showed entanglement phase transitions can be disconnected from bulk transitions in XXZ — connects to our Sprint 030 finding (I3 sign change at Δ≈0.7 inside XY phase).
+**Completed:**
+- **31a: Archetype spectra** — GHZ and Cluster 1D are spectrally identical at half-cut (both rank 2, degenerate). Cluster 2D is rank 16 perfectly flat. Scale-Free has rank 9 with steep power-law (NPR=0.14) — highest rank among 1D states but lowest entropy.
+- **31b: TFIM spectrum** — Critical point shows **CFT doublet structure**: entanglement energies have alternating spacings of ~1.0 and ~2.75, characteristic of c=1/2 Ising CFT with two primary fields. Entropy peak at h/J=0.29 (finite-size shift). Schmidt rank peaks at 10 in critical region.
+- **31c: XXZ spectrum** — Universal **doublet degeneracy** (4 pairs, rank 8) throughout entire XY phase from U(1) Sz conservation. BKT transition causes spectral collapse: rank 8→6→4→1, degeneracies break, gap opens — all in narrow window Δ=0.9-1.05. I3 sign change at Δ≈0.7 is INVISIBLE in spectrum.
 
-**Experiments:**
-- 31a: Entanglement spectrum of 5 archetypes (GHZ, W, Cluster 1D, 2D, Scale-Free)
-- 31b: Spectrum across TFIM phase diagram (gap closing at criticality?)
-- 31c: Spectrum across XXZ (entanglement-bulk transition dissociation?)
+**Surprises:**
+- **Three distinct "phase diagrams" coexist**: thermodynamic (Δ=-1, Δ=1), archetype/I3 (Δ≈0.7), spectral/degeneracy (Δ≈0.95-1.0). None align with each other.
+- **CFT doublet structure at TFIM criticality** — alternating spacings 1.0 and 2.75, encoding two primary fields of the Ising CFT. Invisible to any scalar measure.
+- **GHZ = Cluster 1D at spectral level** — half-cut can't distinguish them. You need I3 or discord, confirming these measures capture fundamentally different information than the spectrum.
+- **Scale-Free paradox**: highest Schmidt rank (9) but lowest entropy (0.515) among 1D states. Most eigenvalues are negligible — information is concentrated in ~2 dominant terms.
+- **Entanglement gap anti-correlates with energy gap** (r=-0.48) — critical points have both small energy and small entanglement gaps, but the relationship is only moderate.
 
-**Results:** (updating as experiments complete)
+**Key insight:** The entanglement spectrum is a **symmetry probe**, while MI/I3 are **topology probes**. These capture orthogonal information: the XXZ spectrum's doublet structure reflects U(1) conservation (invisible to I3), while the I3 sign change reflects correlation topology (invisible to the spectrum). This establishes three complementary levels of entanglement description: scalar (entropy = amount), correlation (MI/I3 = topology), spectral (eigenvalue distribution = symmetry content). Different phase transitions are visible at different levels — no single measure captures everything.
+
+**Next:** Size scaling of TFIM doublet spacings, entanglement Hamiltonian locality (Bisognano-Wichmann), Potts model spectrum (different CFT), alternating bipartition to distinguish GHZ from Cluster 1D spectrally.
+
+[Full report: sprints/sprint_031.md]

@@ -141,21 +141,27 @@ Small-scale active QEC on [[5,1,3]] cannot beat passive encoding. The gate overh
   - MI uniformity CV is a new phase transition order parameter (0.03 → 0.39 → 1.16)
   - VQE struggles with ordered (GHZ-like) phase — nearest-neighbor ansatz can't build global correlations
 
-**Quantum simulation arc (Sprints 029-030).**
+**Quantum simulation arc (Sprints 029-031).**
 Five entanglement archetypes: Democratic (GHZ), Distributed (W), Geometric (Cluster), Topological (Toric), Scale-Free (Critical).
 - TFIM: GHZ → Scale-Free → Product (one-way path, Sprint 029)
 - XXZ: Democratic → Scale-Free → Geometric → Scale-Free → Democratic (LOOP, Sprint 030)
 - MI-CV shape classifies transition type: jump=first-order, inflection=Ising, dome=BKT
 - Archetype boundaries ≠ phase boundaries (I3 sign change inside XY phase)
+- **THREE LEVELS of entanglement description** (Sprint 031):
+  - Scalar (entropy) = amount, Correlation (MI/I3) = topology, Spectral (eigenvalues) = symmetry
+  - Each level has its own "phase diagram" — none align with each other
+  - TFIM critical point has CFT doublet structure (c=1/2 Ising) invisible to scalar measures
+  - XXZ has universal doublet degeneracy from U(1) symmetry; BKT = spectral collapse
 
 **Still unexplored — new frontiers:**
+- Size scaling of TFIM doublet spacings — do they converge to CFT predictions?
+- Entanglement Hamiltonian locality (Bisognano-Wichmann theorem test)
+- Potts model spectrum (different CFT, c>1/2) — different multiplet structure?
 - XY model — test BKT dome universality in MI-CV
 - Potts model (q>4) — first-order transition, test MI-CV jump signature
 - 2D XXZ/Ising — richer topology, connect to Sprint 007's 2D cluster
-- Entanglement Hamiltonian spectrum — reduced density matrix encodes more than entropy
 - MI-CV scaling exponent at BKT — extract logarithmic correction with larger n
-- VQE with non-local ansatz to overcome GHZ limitation in ordered phase
-- Quantum random number generation — genuinely random vs pseudo-random, statistical tests
+- Alternating bipartition spectra — should distinguish GHZ from Cluster 1D
 
 **Deprioritize:**
 - Any further small-scale code comparisons under symmetric noise (exhausted in Sprints 015-024)
@@ -167,6 +173,8 @@ Five entanglement archetypes: Democratic (GHZ), Distributed (W), Geometric (Clus
 - Any further [[5,1,3]] active correction attempts without fundamentally new approach
 - Re-running XXZ entanglement sweep at same system sizes (Sprint 030 is comprehensive)
 - Testing Scale-Free at TFIM-like second-order transitions in other models (Sprint 029 already confirmed)
+- Half-cut entanglement spectrum of 1D states at same system size (Sprint 031: GHZ=Cluster 1D, need alternating cut)
+- Re-running archetype spectral analysis without new bipartition type (Sprint 031 is comprehensive)
 
 ## You Can Edit This File (encouraged to)
 
