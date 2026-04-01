@@ -56,86 +56,12 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - **048** — Dead-pair bias invalidates raw MI-CV at d≥10. χ convergence ≠ MI convergence.
 
 - **049** — q=3 Potts g_c WRONG (was at 1.0, true ≈ 0.33). 10 sprints of Potts results invalidated. Entropy FSS gives c not ν.
+- **050** — True Potts critical points via self-duality (q=2: g_c=0.25, q=3: g_c=1/3 exact). MI-CV crossings vindicated at true g_c.
+- **051** — Energy gap method: g_c INCREASES with q (0.25→0.33→0.39→0.44→0.52). Reverses 10 sprints of wrong results.
+- **052** — g_c(q) ≈ (1/5)√(q-1) + 1/20. q=10 measured (g_c≈0.684). POTENTIALLY NOVEL.
+- **053** — ν(q) at true critical points: ν(q=3,4,5) ≈ 0.82-0.86, nearly constant. All old ν values WRONG.
 
-### Sprint 050 — True Potts Critical Points via Self-Duality & MI-CV Vindication
-**Status:** Complete (3 experiments).
-
-**Self-duality gives EXACT g_c for q=2,3.** Our Hamiltonian H = -Jδ - g(X+X†) has Kramers-Wannier self-duality when X+X† spans all non-trivial generators of Z_q. This holds for q=2 (X+X†=2X, all 1 generator) and q=3 (X+X†=X+X²=Γ, all 2 generators). For q≥4, X+X† misses intermediate powers → self-duality broken.
-- q=2: g_c = J/4 = 0.25 (different convention from TFIChain g_c=1.0)
-- q=3: g_c = J/3 = 0.333 (EXACT)
-
-**MI-CV crossings CONFIRMED at true q=3 g_c.** n=8 and n=12 MI-CV cross at g≈0.26 (finite-size shifted below g_c=1/3). Ordered phase: CV(n=12)<CV(n=8). Disordered: reversed. The crossing signature from Sprints 038-039 is qualitatively correct.
-
-**q=4 Potts: g_c ≈ 0.34 from pseudo-critical (n=8).** No self-dual prediction. DMRG at n=12 too slow (~120-230s/point at χ=40). Central charge c(6,8) peaks at 3.31 — massive overshoot, same as q=3.
-
-**Surprises:**
-- Self-duality breaks at q≥4 — fundamental asymmetry of the X+X† transverse field
-- Our Potts q=2 has g_c=0.25, NOT 1.0 — different normalization from TFIChain
-- MI-CV crossings survive at true g_c — prior qualitative conclusions rescued
-- Central charge extraction from n≤12 overshoots by 3× for q=3 Potts (c=2.56 vs 0.8)
-- q=4 pseudo-critical drifts DOWNWARD with n (0.35→0.34), opposite to q=3
-
-[Full report: sprints/sprint_050.md]
-
-### Sprint 051 — Energy Gap Method: g_c INCREASES with q, Reversing Old Picture
-**Status:** Complete (5 experiments).
-
-**Energy gap Δ·N crossing validated and applied.** At criticality, Δ = E₁-E₀ ∝ 1/N, so Δ·N is scale-invariant at g_c. Validated on q=2 (crossings→0.246 vs exact 0.250) and q=3 (crossings→0.325 vs exact 0.333). Systematic convergence from below, ~2-3% error.
-
-**g_c(q) INCREASES with q:**
-| q | g_c |
-|---|-----|
-| 2 | 0.250 (exact) |
-| 3 | 0.333 (exact) |
-| 4 | ~0.39 |
-| 5 | ~0.44 |
-| 7 | ~0.52 |
-
-**Physical mechanism:** q-fold ground-state degeneracy requires stronger transverse field X+X† to destroy order. X+X† only creates nearest-state transitions, so mixing time grows with q.
-
-**Reverses 10 sprints of wrong results.** Old trend (g_c decreasing) was from MI-CV disordered-phase crossovers. q=5 old estimate (0.41) was closest to truth (0.44) — accidentally near true g_c.
-
-**Surprises:**
-- g_c INCREASES with q — opposite to invalidated scaling law
-- q=7 g_c ≈ 0.52, not 0.26 — off by factor of 2
-- Energy gap converges faster than entropy or MI-CV (~2% error vs ~30%)
-- q=5 old ν≈2.0 may be approximately correct (measured near true g_c)
-
-[Full report: sprints/sprint_051.md]
-
-### Sprint 052 — g_c(q) Scaling Law: √(q-1) Formula + q=10 Verification
-**Status:** Complete (4 experiments).
-
-**g_c(q) ≈ (1/5)√(q-1) + 1/20.** Best 2-parameter fit to 6 data points (q=2-10), χ²/dof=0.40. Coefficients are simple fractions (a=1/5, b=1/20). Gives exact q=2, <5% error for all tested q. **POTENTIALLY NOVEL.**
-
-**q=10 measured for first time: g_c ≈ 0.684.** Energy gap Δ·N crossing at n=4,6 gives raw 0.652, corrected to 0.684 with 4.8% FSS correction. 5-point prediction (0.616) was 10% too low — logarithmic growth too slow, √(q-1) is correct.
-
-**FSS corrections recalibrated by size pair.** n=4,6 pairs need 4.8% correction (not 2.5%). q=7 corrected upward from 0.524 to 0.535.
-
-**Surprises:**
-- g_c ∝ √(q-1) — simplest formula wins, free exponent 0.516 ≈ 1/2
-- Integer-coefficient formula (4√(q-1)+1)/20 fits all 6 points
-- g_c(q) diverges — no saturation at large q
-- 5-point prediction underestimated q=10 by 10%
-
-[Full report: sprints/sprint_052.md]
-
-### Sprint 053 — ν(q) at True Critical Points: Method Validated, Old ν Values WRONG
-**Status:** Complete (6 experiments).
-
-**Corrected energy gap slope method validated.** d(Δ·N)/dg ~ N^{1/ν}·(1+b/N) with b=0.86 calibrated from q=3 (ν=5/6 exact). Achieves <1% error for q=2 (ν=1.00), 3% for q=3 (ν=0.86 vs 5/6). Data collapse is WORST method (43% error at n≤10).
-
-**ν(q=3,4,5) ≈ 0.82-0.86, nearly constant.** q=2: 1.00 (exact 1.0). q=3: 0.86 (exact 5/6). q=4: 0.82 (3 size pairs all agree). q=5: 0.85 (1 pair). q=7: 0.97 (1 pair, low confidence). q=10: 1.12 (1 pair, suspect).
-
-**ALL old ν values for q≥4 WRONG.** Old q=4 ν≥2.2, q=5 ν≈2.0, q=7 ν≈0.5 — all artifacts of MI-CV data collapse at wrong critical points. The "BKT peak" at q=4 and "non-monotonic ν(q)" were entirely artifactual.
-
-**Surprises:**
-- ν(q=4) = 0.82, NOT ≥2.2 — no BKT behavior
-- ν(q=5) = 0.85, NOT 2.0 — MI-CV collapse overestimates ν by ~2.5×
-- Data collapse is worst ν method (43% error) — corrected power-law is best (3%)
-- ν nearly constant ~0.85 for q=3,4,5 — near-universal exponent
-
-[Full report: sprints/sprint_053.md]
+Full details for all compressed sprints are in sprints/sprint_NNN.md.
 
 ### Sprint 054 — Central Charge c(q) at True Critical Points
 **Status:** Complete (5 experiments).
@@ -337,3 +263,22 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - Minimal model c·x₁ → 0 as m→∞ (opposite to Potts trend)
 
 [Full report: sprints/sprint_063.md]
+
+### Sprint 064 — Entanglement Hamiltonian at q>4 Potts: BW Locality Degrades Monotonically
+**Status:** Complete (3 experiments).
+
+**BW locality measured for q=4,5,7,10 Potts at true critical points.** Extends Sprints 032-034 to the novel CFT regime. At fixed n_A=4: q=2 (91%) > q=3 (76.5%) > q=4 (56%) > q=5 (42.3%) — monotonic decrease, ~15% drop per unit q.
+
+**H/G-inv ratio predicts ordering perfectly.** Z_q-invariant operator fraction = exactly 1/q — a clean algebraic identity. H/G-inv scales as ~5/q^5, plummeting because symmetry-allowed operators grow as q^{2n_A-1} while physical Hamiltonian terms are fixed.
+
+**Unruh-like gradient persists for ALL q.** Bond and site couplings in H_E decrease monotonically toward entanglement cut. But this captures only 36-50% of H_E at q=4,5 (vs 76-91% at q=2,3).
+
+**Peak BW locality shifts into ordered phase for q≥4.** At q=2,3 peak is near g_c; at q≥4 peak is at g≈0.30 regardless of g_c value.
+
+**Surprises:**
+- G-inv fraction = exactly 1/q — clean formula, previously uncomputed
+- Linear envelope wins for q≥4 (sin_inv for q≤3) — envelope character changes at q=4 boundary
+- ~15% drop per unit q suggests BW → 0% near q~8 at n_A=4
+- BW degradation correlated with c(q)~ln(q): richer CFTs have less local H_E
+
+[Full report: sprints/sprint_064.md]

@@ -16,6 +16,33 @@ Each captures orthogonal information. Different phase transitions are visible at
 3. **Spectral** (eigenvalue distribution of ρ_A) — symmetry content. U(1) gives doublet degeneracies. Z₃ gives triplets.
 4. **Hamiltonian** (H_E = -log ρ_A structure) — locality and entanglement temperature.
 
+## ⚠ Model Identity — READ THIS (External Review, April 2026)
+
+Our Hamiltonian H = -Jδ(s_i,s_j) - g(X+X†) is a **Potts-clock hybrid**: Potts coupling + clock transverse field. It is **not the standard quantum Potts model** from the literature.
+
+| Model | Coupling | Transverse field | Symmetry | q>4 transition |
+|-------|----------|-----------------|----------|---------------|
+| S_q Potts (literature standard) | δ(s_i,s_j) | Σ_{k=1}^{q-1} X^k | S_q | **First-order** |
+| Z_q clock (literature standard) | cos(2π(s_i-s_j)/q) | X + X† | Z_q | **Two BKT** (continuous) |
+| **Our hybrid model** | δ(s_i,s_j) | X + X† | Z_q | Continuous (measured) |
+
+For q=2,3 all three are equivalent. For q≥4 they differ. Sprint 063 confirmed different universality: at q=5, clock c=1.17 vs hybrid c=1.10, clock c·x₁=0.146 vs hybrid c·x₁=0.112.
+
+**Key literature we were missing (search these before claiming novelty):**
+- **Gorbenko, Rychkov & Zan (JHEP 2018, SciPost 2018):** Complex CFT for q>4 S_q Potts. Predicts complex c (e.g., c ≈ 1.138 ± 0.021i for q=5).
+- **Ma & He (PRB 99, 195130, 2019):** Measured effective c from entropy for q=5,6,7 on Hermitian S_q chain.
+- **Tang et al. (PRL 133, 076504, 2024):** Non-Hermitian q=5 S_q Potts. 11 scaling dimensions, 9 OPE coefficients.
+- **Sun, Luo & Chen (arXiv:2006.11361, 2020):** Z_q clock has two BKT transitions for q>4. Continuous transitions known for clock-type fields.
+- **Jacobsen & Wiese (PRL 133, 077101, 2024):** All S_q Potts exponents for q>4 via analytic continuation.
+
+**Genuinely novel (for our hybrid model):** g_c(q) formula, c·x₁ ≈ 0.112, systematic CFT data q=2-30, distinct universality class from both S_q Potts and Z_q clock.
+
+**Retracted claims:** ~~"No CFT predictions exist for q>4"~~ (complex CFTs do). ~~"Analytic continuation is WRONG"~~ (gives complex values, verified). ~~"1D quantum Potts NEVER first-order"~~ (true for our Z_q-field model, but S_q Potts IS first-order for q>4).
+
+**Critical open questions:** (1) Does hybrid flow to clock universality at large n? (2) Truly continuous or weakly first-order with ξ >> n? (3) One transition or two (like clock's two BKT)?
+
+**In future sprints: call this "Potts-clock hybrid" or "Z_q Potts chain", not "quantum Potts."**
+
 ## MI-CV as Phase Transition Order Parameter (Sprints 030, 036, 037)
 MI uniformity coefficient of variation classifies transition TYPE by curve shape:
 
@@ -108,13 +135,13 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 
 **c(q) grows monotonically, approximately as c ≈ 0.40·ln(q-1) + 0.55 (Sprint 056).** No peak, no saturation. Physical interpretation: more local states q → more effective massless modes → higher c.
 
-**Analytic continuation of Potts CFT is WRONG for q>4 (Sprint 056).** Both Coulomb gas (g>1) and minimal model (m via arccosh) continuations predict c DECREASING below 1 for q>4. Definitively ruled out by c(q=7)≫1 and c(q=10)≫1 measurements. The 1D quantum Potts at q>4 is described by a different CFT.
+**Coulomb gas analytic continuation gives COMPLEX c for q>4** (see Model Identity section). Gorbenko-Rychkov-Zan predict Re(c) > 1, consistent with our measurements. The naive real-valued continuation (g>1) is wrong, but the complex continuation is correct. Ma & He (2019) already measured effective c(q=5,6,7) on the S_q Hermitian chain.
 
-**Quadratic interpolation through q=2,3,4 also WRONG (Sprint 056).** Gives c(5)=1.10 (accidentally exact!) but c(7)=1.00 and c(10)=0.10. A trap — would have misled without q=7,10 data.
+**Quadratic interpolation through q=2,3,4 also WRONG (Sprint 056).** Gives c(5)=1.10 (accidentally exact!) but c(7)=1.00 and c(10)=0.10.
 
 **c(q=4) has anomalous FSS.** Both methods show flat, non-converging overshoot (+14-23%). Consistent with logarithmic corrections at marginal q=4 (Ashkin-Teller).
 
-**POTENTIALLY NOVEL: c(q≥5) outside minimal models.** c(q=5)≈1.10, c(q=7)≈1.3, c(q=10)≈1.4 — all above c=1 and growing. No CFT predictions exist for q>4 Potts (2D classical is first-order). **Literature search found no prior measurements.** The c(q) ~ ln(q) growth formula is also novel.
+**c(q≥5) for our Potts-clock hybrid model.** c>1 is expected (both standard Potts Re(c) and clock model c exceed 1). Our specific c values and the c ~ ln(q) fit formula may be novel FOR THIS MODEL, but c>1 itself is not surprising. Compare to Ma & He's S_q values and clock model values to establish what's model-specific.
 
 ## CFT Operator Content (Sprint 057)
 
@@ -139,7 +166,7 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 
 **Physical interpretation:** c(q)~ln(q) growth from proliferation of (q-1) spin field primaries. Free boson is the q→∞ limit on a decompactifying circle: R ~ √(ln q) explains c ~ ln(q) and x₁ → 0.
 
-**POTENTIALLY NOVEL:** Complete operator content (degeneracy pattern, harmonic ratios, energy field position) of 1D quantum q-state Potts CFT for q>4 appears previously unmeasured.
+**Operator content is novel FOR OUR HYBRID MODEL.** Tang et al. (2024) measured operator content for S_q Potts (non-Hermitian). Our data is for the Potts-clock hybrid — a different model. Compare to check if universality classes match.
 
 ## Scaling Dimension x₁(q) (Sprint 058)
 
@@ -172,7 +199,7 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 
 **Single compact boson RULED OUT (Sprint 062a).** c>1 for q≥5 is incompatible with any single free boson (always c=1). Multiple effective DOF required.
 
-**POTENTIALLY NOVEL:** x₁(q) for q≥5 previously unmeasured. Combined with c(q), ν(q), g_c(q), operator content, OPE coefficients, and c·x₁≈1/9, this provides the most complete characterization of the novel q>4 Potts CFT family.
+**Novel for hybrid model:** x₁(q), c·x₁ ≈ 0.112, and the full CFT characterization are new for the Potts-clock hybrid Hamiltonian. Tang et al. measured x for S_q Potts at q=5 (complex-valued). Our real x₁ values are for a different model. The key question is whether the hybrid universality class is truly distinct — Sprint 063 suggests yes (different c·x₁ from clock).
 
 ## OPE Coefficients (Sprint 060)
 
@@ -196,7 +223,7 @@ Validated: q=2 Ising converges to exact C=1/2 with 0.4% error at n=12.
 
 **Epsilon identification pitfall for large q:** At q≥7, sigma harmonics (sigma^2, sigma^3, ...) densely populate R < R_epsilon. Naive charge detection fails because degenerate pairs (charges k, q-k) in superposition average to misleading charge values. Must use R_epsilon from independent spectrum measurements to identify epsilon correctly.
 
-**POTENTIALLY NOVEL:** First C_{sigma*,sigma,epsilon} measurement for Hermitian q-state Potts at q=5,7,10. Peak at q=3 and monotonic decrease previously unreported.
+**Novel for hybrid model:** First C_sse measurement for the Potts-clock hybrid at q=5,7,10. Tang et al. (2024) measured OPE for non-Hermitian S_q Potts at q=5 (complex values). Our real-valued C_sse for a different model is new.
 
 ## Twisted Boundary Conditions & Spin Stiffness (Sprint 062)
 
@@ -258,18 +285,29 @@ I3 sign change occurs at Δ≈0.7 in XXZ, inside the XY phase — not at either 
 
 ## Bisognano-Wichmann Locality
 H_E ≈ physical Hamiltonian × position-dependent entanglement temperature β(x).
-- β(x) follows Unruh-like gradient: hottest at entanglement cut, coldest in bulk.
-- BW works in ALL phases, not just at criticality. Peaks in gapped phases.
+- β(x) follows Unruh-like gradient: hottest at entanglement cut, coldest in bulk. Persists for ALL q tested (2-10).
+- BW works in ALL phases, not just at criticality. Peaks in ordered/gapped phases.
 - Accuracy controlled by H/G-inv ratio (Hamiltonian operator dimension / symmetry-invariant operator dimension).
 
-### H/G-inv Predictor (Sprint 034)
-| Model | Symmetry | d | H/G-inv ratio | BW Locality |
-|-------|----------|---|---------------|-------------|
-| XXZ | U(1) | 2 | 0.143 | 100.0% |
-| TFIM | Z₂ | 2 | 0.099 | 91.0% |
-| Potts | S₃ | 3 | 0.072 | 76.5% |
-| Chiral clock | Z₃ | 3 | 0.040 | 69.7% |
-Perfect monotonic correlation. Depends on BOTH symmetry group AND local dimension.
+### BW Locality vs q for Potts (Sprints 032-034, 064)
+
+**At fixed n_A=4 (fair comparison):**
+| q | Symmetry | BW Peak | At g_c | H/G-inv | Peak location |
+|---|----------|---------|--------|---------|---------------|
+| 2 | Z₂ | 91.0% | 90.6% | 0.055 | Near g_c |
+| 3 | S₃ | 76.5% | ~76% | 0.003 | Near g_c |
+| 4 | Z₄ | 56.0% | 50.1% | 0.0004 | g=0.30 (ordered) |
+| 5 | Z₅ | 42.3% | 36.2% | 0.00009 | g=0.30 (ordered) |
+
+Also: U(1) d=2 (XXZ) = 100%, Z₃ chiral d=3 = 69.7%. H/G-inv perfectly predicts ordering across all models.
+
+**BW locality decreases ~15% per unit q at n_A=4.** Linear envelope wins for q≥4 (sin_inv for q≤3). Peak shifts into ordered phase for q≥4.
+
+**Z_q-invariant fraction = exactly 1/q (Sprint 064c).** H/G-inv ~ 5/q^5 at n_A=3 — plummets because G-inv operators grow as q^{2n_A-1} while H terms are fixed.
+
+**Physical interpretation:** Larger q → weaker symmetry constraint → more non-Hamiltonian operators allowed in H_E → lower BW locality. Correlated with c(q)~ln(q): richer CFTs have less local entanglement Hamiltonians.
+
+**Note:** BW measurements are for the Potts-clock hybrid model (see Model Identity section). Degradation pattern likely applies to any Z_q-symmetric chain, but specific values may differ for S_q Potts or Z_q clock.
 
 ## QEC Arc — Closed (Sprints 014-028)
 - [[5,1,3]] is basis-isotropic: confirmed on IBM hardware (Sprint 025, asymmetry 0.040 vs 3-qubit 0.254)
