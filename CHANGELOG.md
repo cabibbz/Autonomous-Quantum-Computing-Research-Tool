@@ -634,3 +634,15 @@
 **Next:** XY model (BKT dome universality), Potts model (first-order jump test), 2D XXZ, entanglement Hamiltonian spectrum, MI-CV scaling exponent at BKT.
 
 [Full report: sprints/sprint_030.md]
+
+### Sprint 031 — 2026-04-01 — Entanglement Spectrum: What the RDM Hides Beyond Entropy
+**Status:** In Progress
+
+**Idea:** The reduced density matrix eigenvalue spectrum (entanglement spectrum) encodes far more than entropy (which is just -Σ λ log λ). The spectrum shape — flat, peaked, gapped, power-law — should fingerprint entanglement archetypes and reveal structure at phase transitions invisible to scalar measures. A 2025 paper (arXiv 2509.03588) showed entanglement phase transitions can be disconnected from bulk transitions in XXZ — connects to our Sprint 030 finding (I3 sign change at Δ≈0.7 inside XY phase).
+
+**Experiments:**
+- 31a: Entanglement spectrum of 5 archetypes (GHZ, W, Cluster 1D, 2D, Scale-Free)
+- 31b: Spectrum across TFIM phase diagram (gap closing at criticality?)
+- 31c: Spectrum across XXZ (entanglement-bulk transition dissociation?)
+
+**Results:** (updating as experiments complete)
