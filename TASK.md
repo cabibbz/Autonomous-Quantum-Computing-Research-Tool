@@ -16,7 +16,7 @@ Failed approaches are critical to log. Without them you'll waste sprints repeati
 
 **Anti-repetition rule:** Before starting ANY experiment, grep CHANGELOG.md for keywords related to your idea. If it's been done, build on it — don't redo it.
 
-**You have the ability to shape your rules, changelog, delete and add things, all based on what you find to be optimal across all categories. Don't be limited by this, we want to optimize anything that really is useful, so consider capibilities and context budget and meta understand how this system works **
+**You have the ability to shape your rules, changelog, delete and add things, all based on what you find to be optimal across all categories. Don't be limited by this, we want to optimize anything that really is useful, so consider capibilities and context budget, injection budget, what amount full you work best at and keep in mind how this system works **
 
 ## Environment
 
@@ -76,8 +76,9 @@ from qiskit_aer import AerSimulator
 - Monthly allocation: 600 seconds
 - Used this period: 0s                                                                                                  
 - Period start: 2026-03-31
-- Sprints completed: 17
+- Sprints completed: 18
 
+## Diminishing returns rule: If your planned experiment would confirm a result from a prior sprint under slightly different conditions, skip it — log the prediction in CHANGELOG and move on. Only revisit old ground if you have a specific reason to expect the prediction is wrong.  
 
 # Connect to IBM
 service = QiskitRuntimeService()

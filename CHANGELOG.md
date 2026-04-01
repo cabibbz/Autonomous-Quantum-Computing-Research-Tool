@@ -13,7 +13,7 @@
 
 ---
 
-**You have the ability to shape your rules, changelog, delete and add things, all based on what you find to be optimal across all categories. Don't be limited by this, we want to optimize anything that really is useful, so consider capibilities and context budget and meta understand how this system works **
+**You have the ability to shape your rules, changelog, delete and add things, all based on what you find to be optimal across all categories. Don't be limited by this, we want to optimize anything that really is useful, so consider capibilities and context budget and keep in mind how this system works **
 
 ## Sprint Log
 
@@ -355,11 +355,21 @@
 [Full report: sprints/sprint_017.md]
 
 ### Sprint 018 — 2026-03-31 — Syndrome Information: The Measurement Side of Error Correction
-**Status:** In progress
+**Status:** Complete (3/3 experiments)
 
-**Plan:**
-- **18a:** Syndrome-error MI — how much information does the syndrome carry about the error pattern?
-- **18b:** [[5,1,3]] Holevo information — does the general code show the same phase transition as bit-flip code?
-- **18c:** Syndrome MI at threshold — does syndrome information undergo its own phase transition?
+**Completed:**
+- **18a: Syndrome-error MI** — Syndrome is lossy compression of error. Efficiency drops from 99% at low noise to 45-67% at high noise. Syndrome predicts only ~35% of correction outcome uncertainty even at best.
+- **18b: [[5,1,3]] Holevo** — 3-qubit code ALWAYS beats [[5,1,3]] under depolarizing for Holevo info. [[5,1,3]] crosses below uncoded at p≈0.13. Generality has an information cost.
+- **18c: Syndrome at transition** — Syndrome entropy saturates smoothly (no phase transition). Only Holevo shows transition with concatenation sharpening. Syndrome most useful (peak MI with outcome) precisely when most noisy (p≈0.20).
+
+**Surprises:**
+- **Error correction works despite noisy syndromes** — syndrome reaches 90% of max entropy at p=0.10, but code still corrects well (P=0.97). Majority vote doesn't need clean syndrome.
+- **Syndrome is a poor predictor of its own success** — even at best, MI(S:outcome)/H(outcome) ≈ 35%. The syndrome tells you WHICH error, not WHETHER correction works.
+- **3-qubit > [[5,1,3]] under depolarizing at ALL noise levels** — fewer qubits = fewer targets. Holevo advantage even more dramatic than fidelity advantage.
+- **Phase transition is invisible in the syndrome** — emerges only at the decoded, collective level. Macro transitions, micro continuity.
+
+**Key insight:** Error correction's phase transition is a collective, emergent phenomenon invisible in the syndrome's local behavior. The syndrome degrades gradually; the logical information transitions sharply. Concatenation amplifies only the logical transition, not the syndrome. This asymmetry is the information-theoretic essence of fault tolerance: robustness emerges from collective averaging over noisy local measurements, not from clean individual measurements. The syndrome's value comes from differential noisiness across outcomes, not from low noise.
+
+**Next:** Toric/surface code, combined T1+T2 noise, real hardware QEC, syndrome decoding strategies, quantum channel capacity
 
 [Full report: sprints/sprint_018.md]

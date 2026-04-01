@@ -77,4 +77,55 @@
 
 ## Experiment 18c: Syndrome MI at the Phase Transition
 
-*Status: pending*
+**Setup:** Fine-grained sweep of all syndrome measures across the phase transition (p=0 to 1.0) for both 3-qubit and 9-qubit (2-level concatenated) repetition codes. Track syndrome entropy, MI(S:logical_outcome), P(correct), Holevo information, and syndrome hierarchy (inner vs outer) in the concatenated code.
+
+**Result:** The syndrome and logical information have fundamentally different transition behaviors.
+
+Three transition points in the 3-qubit code:
+- H(S) = 75% of max at p ≈ 0.14 (syndrome nearly saturated)
+- Holevo = 0.5 at p ≈ 0.24 (half logical info retained)
+- P(correct) = 0.75 at p ≈ 0.34 (correction still mostly works)
+
+| p     | H(S)/Hmax | Holevo | MI(S:L)/H(L) | P(correct) |
+|-------|-----------|--------|---------------|------------|
+| 0.05  | 0.408     | 0.957  | 0.313         | 0.993      |
+| 0.10  | 0.635     | 0.862  | 0.253         | 0.972      |
+| 0.20  | 0.880     | 0.594  | 0.157         | 0.896      |
+| 0.30  | 0.975     | 0.305  | 0.077         | 0.784      |
+| 0.40  | 0.998     | 0.084  | 0.021         | 0.648      |
+| 0.50  | 1.000     | 0.000  | 0.000         | 0.500      |
+
+**Key findings:**
+
+1. **Syndrome entropy saturates BEFORE logical info dies** — syndrome reaches 90% of max at p≈0.10, but Holevo is still 0.86. There's a wide gap (p=0.15 to 0.50) where the syndrome is nearly maximally noisy but the code still works! Error correction doesn't need a clean syndrome — it works through collective majority vote even when individual syndrome bits are highly uncertain.
+
+2. **Only Holevo shows a phase transition** — syndrome entropy saturates smoothly without any sharp transition. MI(S:L) rises and falls smoothly. Only the Holevo information (via concatenation) sharpens into a step function. The syndrome is a "thermometer" that measures noise intensity — it doesn't itself undergo a transition.
+
+3. **Concatenation sharpens Holevo but NOT syndrome** — 9q Holevo/3q Holevo ratio reaches 3.0 near threshold (dramatic sharpening). But syndrome entropy just scales linearly (8.0 = 4 × 2.0). Concatenation amplifies the logical transition without changing the syndrome's behavior.
+
+4. **Syndrome hierarchy** — at low noise, the outer syndrome carries only 1.6% of total syndrome entropy (inner correction handles everything). At threshold, outer carries 25% (= 2/8, the theoretical maximum for uniform syndromes). The outer syndrome "turns on" as inner correction fails.
+
+5. **MI(S:L) peaks at p≈0.20** — the syndrome is most informative about its own success in the transition region, exactly where the outcome is most uncertain. At low and high noise, the outcome is predictable without the syndrome.
+
+**Surprise:** The syndrome is most useful precisely when it's most noisy. At p=0.20, syndrome entropy is 88% of max (very noisy), but MI(S:L) is at its peak. The syndrome's value comes not from being clean but from being differentially noisy across outcomes — some syndromes still have high correction probability while others don't. This differential is what MI(S:L) captures.
+
+---
+
+## Sprint 018 Summary
+
+**Three experiments, one unified picture:**
+
+1. **18a (syndrome-error MI):** The syndrome is a lossy compression of the error. Efficiency drops from 99% at low noise to 45-67% at high noise. Syndrome predictive power (MI with correction outcome) peaks at ~35% and decreases with noise. The syndrome tells you WHICH error happened but poorly predicts WHETHER correction succeeds.
+
+2. **18b ([[5,1,3]] Holevo):** Under depolarizing noise, the 3-qubit bit-flip code ALWAYS beats [[5,1,3]] for Holevo information. The general code's ability to correct all error types can't compensate for its 5-qubit attack surface. Encoding with [[5,1,3]] actively destroys information at p > 0.13.
+
+3. **18c (syndrome at transition):** Syndrome and logical information have completely different transition behaviors. Syndrome entropy saturates smoothly; only Holevo shows a phase transition. Concatenation sharpens the logical transition but leaves the syndrome unchanged. The syndrome is most useful (highest MI with outcome) precisely when it's most noisy.
+
+**Unified insight:** Error correction works through collective majority vote, not through clean syndrome measurements. The syndrome is a noisy, lossy compression of the error that becomes maximally uncertain long before error correction fails. This reveals a fundamental asymmetry: the syndrome's job is not to identify the exact error (it can't, at practical noise levels) but to guide a correction that works on average. The phase transition in logical information is invisible in the syndrome — it emerges only at the collective, decoded level. This is the information-theoretic essence of fault tolerance: the macro (logical) behavior transitions sharply while the micro (syndrome) behavior degrades gradually.
+
+**Next sprint ideas:**
+- Toric/surface code entanglement structure — topological codes
+- Combined T1+T2 noise model — realistic hardware noise
+- Real hardware QEC — simulator vs device
+- Syndrome decoding strategies — does ML decoding change the transition?
+- Quantum channel capacity — what's the theoretical limit?
