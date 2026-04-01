@@ -1,0 +1,35 @@
+{
+  "q": 7,
+  "model": "clock",
+  "gc_raw": 0.3,
+  "gc_corrected": 0.3144,
+  "note": "No n=4,6 crossing found - gap monotonically increasing. g_c=0.300 is n=4 minimum. Likely BKT transition.",
+  "E0_per_site": {
+    "4": -1.25865809,
+    "6": -1.24884166
+  },
+  "delta1_n": {
+    "4": 0.162549,
+    "6": 0.157841
+  },
+  "cx1_ratio_46": 21.4935,
+  "spectrum_ratios_n4": [
+    1.0,
+    1.0,
+    3.82
+  ],
+  "spectrum_ratios_n6": [
+    1.0,
+    1.0,
+    3.881
+  ],
+  "dmrg_n8": "TIMEOUT - clock DMRG too slow at q=7",
+  "comparison": {
+    "hybrid_gc": 0.535,
+    "hybrid_cx1": 15.109,
+    "hybrid_c": 1.462,
+    "hybrid_x1": 0.09676351843272221,
+    "clock_gc_raw": 0.3,
+    "clock_cx1": 21.4935
+  }
+}

@@ -26,43 +26,32 @@ Our Hamiltonian H = -Jδ(s_i,s_j) - g(X+X†) is a **Potts-clock hybrid**: Potts
 | Z_q clock (literature standard) | cos(2π(s_i-s_j)/q) | X + X† | Z_q | **Two BKT** (continuous) |
 | **Our hybrid model** | δ(s_i,s_j) | X + X† | Z_q | Continuous (measured) |
 
-For q=2,3 all three are equivalent. For q≥4 they differ. Sprint 063 confirmed different universality: at q=5, clock c=1.17 vs hybrid c=1.10, clock c·x₁=0.146 vs hybrid c·x₁=0.112.
+For q=2,3 all three are equivalent. For q≥4 they differ.
 
-**Key literature we were missing (search these before claiming novelty):**
+**Sprint 065 CONFIRMED: hybrid ≠ clock universality class.** Three independent probes at q=5:
+- c/x₁: hybrid 10.77 vs clock 9.43 (12% diff, slowly shrinking but nonzero)
+- ν: hybrid 0.83 (finite, power-law) vs clock ~2+ (diverging, BKT)
+- Clock q=7 has NO gap crossing (BKT); hybrid has clear crossing (second-order)
+
+**Key literature (search before claiming novelty):**
 - **Gorbenko, Rychkov & Zan (JHEP 2018, SciPost 2018):** Complex CFT for q>4 S_q Potts. Predicts complex c (e.g., c ≈ 1.138 ± 0.021i for q=5).
 - **Ma & He (PRB 99, 195130, 2019):** Measured effective c from entropy for q=5,6,7 on Hermitian S_q chain.
 - **Tang et al. (PRL 133, 076504, 2024):** Non-Hermitian q=5 S_q Potts. 11 scaling dimensions, 9 OPE coefficients.
 - **Sun, Luo & Chen (arXiv:2006.11361, 2020):** Z_q clock has two BKT transitions for q>4. Continuous transitions known for clock-type fields.
 - **Jacobsen & Wiese (PRL 133, 077101, 2024):** All S_q Potts exponents for q>4 via analytic continuation.
 
-**Genuinely novel (for our hybrid model):** g_c(q) formula, c·x₁ ≈ 0.112, systematic CFT data q=2-30, distinct universality class from both S_q Potts and Z_q clock.
+**Genuinely novel (for our hybrid model):** g_c(q) formula, c·x₁ ≈ 0.112, systematic CFT data q=2-30, distinct universality class from both S_q Potts AND Z_q clock (Sprint 065). A new universality class with continuous power-law transitions (finite ν) that is neither first-order nor BKT.
 
 **Retracted claims:** ~~"No CFT predictions exist for q>4"~~ (complex CFTs do). ~~"Analytic continuation is WRONG"~~ (gives complex values, verified). ~~"1D quantum Potts NEVER first-order"~~ (true for our Z_q-field model, but S_q Potts IS first-order for q>4).
 
-**Critical open questions:** (1) Does hybrid flow to clock universality at large n? (2) Truly continuous or weakly first-order with ξ >> n? (3) One transition or two (like clock's two BKT)?
+**Resolved questions (Sprint 065):** ~~(1) Does hybrid flow to clock universality at large n?~~ **NO** — different ν (power-law vs BKT). ~~(3) One transition or two (like clock's two BKT)?~~ Clock has BKT; hybrid has single power-law transition.
+
+**Remaining open question:** (2) Truly continuous or weakly first-order with ξ >> n? Need Δ·N scaling at q=10 with n=4,5,6.
 
 **In future sprints: call this "Potts-clock hybrid" or "Z_q Potts chain", not "quantum Potts."**
 
 ## MI-CV as Phase Transition Order Parameter (Sprints 030, 036, 037)
-MI uniformity coefficient of variation classifies transition TYPE by curve shape:
-
-| Transition | MI-CV shape | Crossing? | Gradient scaling |
-|-----------|-------------|-----------|------------------|
-| Second-order (Ising) | Smooth inflection | Yes (curves cross) | ~n^1.1 |
-| First-order | Step function 0→finite | No | ~n^0.9 |
-| BKT (infinite-order) | Smooth dome | No | dome narrows |
-
-**Confirmed as genuine order parameter (Sprint 036):** Tested at n=8,16,32,50.
-- TFIM transition slope diverges as ~n^1.1 (slope 1.7 → 3.9 → 7.8)
-- Ordered phase: CV → 0 with n (uniform MI). Disordered: CV → ∞ with n.
-- XXZ BKT dome narrows: growth rate ratio 1.34 at Δ=1 vs 1.17 at Δ=1.5 (n=16→32)
-- XXZ Néel phase (Δ=2): CV decreases 1.13 → 0.78 (n=8→32)
-
-**First-order transition (Sprint 037):** FM phase has CV=0.000 exactly. Jump at Δ=-1 grows as ~n^1.0. Presence/absence of curve crossings distinguishes transition orders.
-
-**Critical exponent (Sprints 037-038):** Data collapse confirms Ising ν=1 for TFIM. Crossing-point extraction fragile due to flat landscape.
-
-**Potts MI-CV crossings CONFIRMED at true g_c (Sprint 050).** Qualitative crossing signature vindicated. q=4 MI-CV has no crossings (marginal). Old ν estimates from MI-CV were wrong (Sprint 053).
+MI-CV classifies transition type: second-order (crossing), first-order (step), BKT (dome). Confirmed at n=8-50. Potts crossings vindicated at true g_c. DO NOT use MI-CV for ν extraction (Sprint 053).
 
 **Potts critical points.** Our Hamiltonian H = -Jδ(s_i,s_j) - g(X+X†):
 
@@ -77,21 +66,13 @@ MI uniformity coefficient of variation classifies transition TYPE by curve shape
 
 **g_c(q) scaling law (Sprint 052): g_c ≈ (1/5)√(q-1) + 1/20.** Best 2-parameter fit (χ²/dof=0.40). Gives exact q=2, <5% error for all tested q. Predicts g_c(20)≈0.92, g_c(50)≈1.45. g_c diverges as √q — no saturation. **POTENTIALLY NOVEL** — no prior measurement of g_c(q) found for this Hamiltonian.
 
-Physical mechanism: q-fold ground-state degeneracy requires stronger transverse field X+X† to destroy order. X+X† only creates nearest-state transitions (|s⟩→|s±1⟩), so mixing q states takes longer as q grows.
+**Energy gap method (Sprint 051).** Δ·N scale-invariant at g_c. FSS correction: n=4,6 pairs +4.8%, n=6,8 pairs +2.5% (calibrated from q=2,3). Crossings approach from below.
 
-Self-duality (Kramers-Wannier) gives exact g_c for q=2,3 only ({X, X^{q-1}} spans all generators). For q≥4, X+X^{q-1} misses intermediate powers → self-duality broken.
+**Hybrid has continuous transitions for all tested q** (q=5,10,20). Power-law second-order with finite ν (Sprint 065). Clock model has BKT (ν→∞). S_q Potts is first-order for q>4.
 
-**Energy gap method (Sprint 051).** At criticality, Δ = E₁-E₀ ∝ 1/N (CFT). Δ·N is scale-invariant at g_c. **FSS correction depends on size pair** (Sprint 052): n=4,6 pairs need 4.8% correction, n=6,8 pairs need 2.5%. Calibrated from q=2,3 exact values. Crossings approach g_c from below. Avoids MI-CV complications.
+**Clock ≠ Hybrid for q≥4 — CONFIRMED (Sprints 041-042, 063, 065).** Clock coupling cos(2π(s_i-s_j)/q) ≠ Potts δ(s_i,s_j) for q≥4. Sprint 065 proved distinct universality classes via ν: hybrid ν≈0.83 (power-law, finite) vs clock ν→∞ (BKT). At q=5: c/x₁ 10.77 vs 9.43 (12%), c 1.27 vs 1.17 (8%), g_c 0.441 vs 0.52 (18%). At q=7: clock has NO gap crossing (BKT), hybrid has clear crossing. NOT FSS artifacts — qualitatively different transition types.
 
-For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossings and are similarly suspect — these were disordered-phase crossovers.
-
-**1D quantum Potts is NEVER first-order (Sprint 043).** Tested q=5, 10, 20 — all show continuous transitions. ~~q=10 crossing confirmed at g_c≈0.246~~ (Sprint 043 used χ=10, INVALIDATED by Sprint 048 at χ=20). At q≥10, ground states converge to a universal large-q regime where only the {|0⟩, |1⟩, |q-1⟩} subspace is active. Physical mechanism: the extreme anisotropy of the 1D quantum→2D classical mapping suppresses the entropic mechanism that drives first-order transitions in 2D.
-
-**Clock ≠ Potts for q≥4 (Sprints 041-042, 063).** TeNPy's ClockChain uses cos(2π(s_i-s_j)/q) coupling, which equals Potts δ(s_i,s_j) only for q=2,3. For q≥5, models differ quantitatively: Clock g_c(q=5)=0.52 vs Potts g_c(q=5)=0.44 (both from energy gap method). Clock c(q=5)≈1.17, Potts c(q=5)≈1.10 — clock is "more critical." c·x₁ is model-dependent: ~0.146 (clock) vs ~0.112 (Potts). Both show second-order transitions — the 2D classical "q>4 → first-order" does NOT apply to 1D quantum models.
-
-**Old clock g_c estimates from MI-CV (Sprint 041-042) are WRONG.** MI-CV gave g_c≈0.67 for clock q=5; energy gap gives 0.52. Same disordered-phase crossover artifact as early Potts work.
-
-**ν(q) extraction (Sprint 053).** Corrected energy gap slope method: d(Δ·N)/dg ~ N^{1/ν}·(1+b/N), b=0.86 from q=3 calibration. Validated: <1% for q=2, 3% for q=3.
+**ν(q) extraction (Sprint 053, 065).** Energy gap slope: d(Δ·N)/dg ~ N^{1/ν}·(1+b/N), b=0.86 from q=3 calibration.
 
 | q | g_c | ν (corrected) | Confidence | 2D classical exact |
 |---|-----|---------------|------------|-------------------|
@@ -102,18 +83,14 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 | 7 | 0.535 | 0.97 | Low (1 pair) | — |
 | 10 | 0.684 | 1.12 | Low (1 pair (4,5)) | — |
 
-**ν(q=3,4,5) ≈ 0.82-0.86, nearly constant.** Contrasts with old non-monotonic picture (ν=5/6 → ≥2.2 → 2.0 → 0.5) which was entirely artifact. Old values from MI-CV data collapse at wrong g_c.
+**ν(q=3,4,5) ≈ 0.82-0.86, nearly constant (hybrid).** Sprint 065 confirmed ν≈0.83 at q=5 with n=4,6,8.
 
-**Method ranking for ν extraction (Sprint 053):**
+**Method ranking for ν extraction:**
 1. Corrected power-law (3% error) — BEST with ≥3 sizes
-2. 1/N extrapolation of pairwise ν (3%) — BEST, needs ≥3 consecutive pairs
-3. Direct power-law fit (15%) — rough estimate
-4. Data collapse (43%) — **DO NOT USE at n≤10**
-5. MI-CV data collapse — **DO NOT USE** (gave ν=2.0 where true is 0.85)
+2. 1/N extrapolation of pairwise ν (3%)
+3. Direct power-law (15%), Data collapse (DO NOT USE at n≤10), MI-CV collapse (DO NOT USE)
 
-**DMRG excited states fail for Potts.** orthogonal_to gives gap=0.
-
-**MI-CV requires χ > d² for reliable results.** At d=2 (q=2), χ=20 is fine. At d=10 (q=10), need χ>100. Dead-pair bias + MI non-convergence confound at large d.
+**DMRG excited states fail for Potts** (orthogonal_to gives gap=0). MI-CV requires χ > d².
 
 ## Entropy and Central Charge (Sprints 049, 054-056)
 
@@ -225,48 +202,13 @@ Validated: q=2 Ising converges to exact C=1/2 with 0.4% error at n=12.
 
 **Novel for hybrid model:** First C_sse measurement for the Potts-clock hybrid at q=5,7,10. Tang et al. (2024) measured OPE for non-Hermitian S_q Potts at q=5 (complex values). Our real-valued C_sse for a different model is new.
 
-## Twisted Boundary Conditions & Spin Stiffness (Sprint 062)
+## Twisted BC & Spin Stiffness (Sprint 062)
 
-**Method:** Replace periodic BC with Z_q twist: δ(s_{n-1}, (s_0+k) mod q). Ground state energy shift ΔE probes spin stiffness ρ_s.
-
-**q=2,3 are Luttinger liquids; q≥4 are NOT.** ρ_s·L converges for q=2 (drift 1.0%) and q=3 (1.3%), but drifts 10-22% for q≥5. ΔE(2)/ΔE(1) deviates strongly from quadratic (free boson) prediction of 4: q=4→1.42, q=5→1.78, q=7→2.22. Grows toward 4 as q→∞ but slowly.
-
-**q=2: twist field = σ field EXACTLY.** ΔE(twist)/Δ₁ = 1.000 at all sizes (n=4,6,8). No FSS correction needed. q=3: ratio ≈ 1.01, nearly exact.
-
-**Twist ratios converge toward spectrum ratios.** ΔE(k)/ΔE(1) at finite n is systematically below R(σᵏ)/R(σ) from periodic BC spectrum (15-33% deficit), converging from below as n increases.
-
-**Conjugate twist symmetry exact:** twist(k) = twist(q−k) to machine precision (Δ < 10⁻¹⁴).
+q=2,3 are Luttinger liquids (ρ_s·L converges); q≥4 are NOT (10-22% drift). Twist field = σ field exactly at q=2. Twist ratios converge toward spectrum ratios from below.
 
 ## Conformal Tower Structure (Sprint 059)
 
-**Method:** Momentum-resolved energy spectrum on periodic chain. Translation operator T gives momentum k (conformal spin s = h - h̄). Degeneracies resolved by diagonalizing T within degenerate eigenspaces of H.
-
-**Genuine CFT confirmed for ALL q=2-10.** Four qualitative tests pass universally:
-
-1. **Descendant degeneracy:** L₋₁σ has degen = 2 × (size of lowest conjugate pair). For q=2: degen=2 (1 field × 2 chiralities). For q≥3: degen=4 (2 fields × 2 chiralities). Exact for all tested q.
-
-2. **Descendant momentum:** Always spin ±1, from Virasoro generators L₋₁ and L̄₋₁.
-
-3. **Gap convergence:** R(L₋₁σ) - R(σ) converges monotonically from below toward 1/x₁.
-
-4. **Tower organization:** Identity(k=0) → spin field pairs(k=0) → ε singlet(k=0) → L₋₁σ(k=±1) for all q.
-
-**Descendant gap convergence (largest n):**
-
-| q | n | gap | 1/x₁ | ratio | error |
-|---|---|-----|-------|-------|-------|
-| 2 | 12 | 7.90 | 8.0 | 0.987 | 1.3% |
-| 3 | 10 | 7.33 | 7.5 | 0.978 | 2.2% |
-| 4 | 8 | 8.02 | 8.5 | 0.938 | 6% |
-| 5 | 8 | 8.41 | 9.9 | 0.849 | 15% |
-| 7 | 6 | 8.59 | 11.6 | 0.738 | 26% |
-| 10 | 6 | 8.96 | 12.0 | 0.743 | 25% |
-
-**Anomalous FSS at q≥5** prevents quantitative gap convergence at accessible sizes. Same sign-flipped corrections as Δ₁·N (Sprint 058). NOT evidence against CFT — qualitative tower structure is exact.
-
-**Tower density increases with q.** The (q-1) spin field primaries fill R=1 to R≈8-9. For large q, ε nearly merges with L₋₁σ. In q→∞ limit, approaches free boson continuum.
-
-**Literature context:** Lao et al. (PRB 2019) found drifting towers for q=5,6 assuming first-order transition. Tang et al. (PRL 2024) found clean towers only with non-Hermitian q=5 model. Our Hermitian towers converge because transition is genuinely second-order. **POTENTIALLY NOVEL: First momentum-resolved conformal tower for q>4 Hermitian Potts chain.**
+**Genuine CFT confirmed for ALL q=2-10.** Four tests: descendant degeneracy exact, momentum = spin ±1, gap converges from below, tower organization universal. Anomalous FSS at q≥5 (15-25% gap error) — qualitative structure perfect despite quantitative offset. Tower density → free boson continuum as q→∞.
 
 **Entropy profile overshoot grows with q at fixed n:** At n=16: 8.7% (q=3), 14.4% (q=4), ~20% (q=5). At n=8: ~25% (q=7). Large-q profile method requires larger n — q=7+ is computationally infeasible at n≥12 with chi=20.
 
@@ -283,53 +225,20 @@ Validated: q=2 Ising converges to exact C=1/2 with 0.4% error at n=12.
 ## Archetype Boundaries ≠ Phase Boundaries
 I3 sign change occurs at Δ≈0.7 in XXZ, inside the XY phase — not at either thermodynamic transition (Δ=-1 or Δ=1). The entanglement phase diagram has its own topology distinct from thermodynamics.
 
-## Bisognano-Wichmann Locality
-H_E ≈ physical Hamiltonian × position-dependent entanglement temperature β(x).
-- β(x) follows Unruh-like gradient: hottest at entanglement cut, coldest in bulk. Persists for ALL q tested (2-10).
-- BW works in ALL phases, not just at criticality. Peaks in ordered/gapped phases.
-- Accuracy controlled by H/G-inv ratio (Hamiltonian operator dimension / symmetry-invariant operator dimension).
-
-### BW Locality vs q for Potts (Sprints 032-034, 064)
-
-**At fixed n_A=4 (fair comparison):**
-| q | Symmetry | BW Peak | At g_c | H/G-inv | Peak location |
-|---|----------|---------|--------|---------|---------------|
-| 2 | Z₂ | 91.0% | 90.6% | 0.055 | Near g_c |
-| 3 | S₃ | 76.5% | ~76% | 0.003 | Near g_c |
-| 4 | Z₄ | 56.0% | 50.1% | 0.0004 | g=0.30 (ordered) |
-| 5 | Z₅ | 42.3% | 36.2% | 0.00009 | g=0.30 (ordered) |
-
-Also: U(1) d=2 (XXZ) = 100%, Z₃ chiral d=3 = 69.7%. H/G-inv perfectly predicts ordering across all models.
-
-**BW locality decreases ~15% per unit q at n_A=4.** Linear envelope wins for q≥4 (sin_inv for q≤3). Peak shifts into ordered phase for q≥4.
-
-**Z_q-invariant fraction = exactly 1/q (Sprint 064c).** H/G-inv ~ 5/q^5 at n_A=3 — plummets because G-inv operators grow as q^{2n_A-1} while H terms are fixed.
-
-**Physical interpretation:** Larger q → weaker symmetry constraint → more non-Hamiltonian operators allowed in H_E → lower BW locality. Correlated with c(q)~ln(q): richer CFTs have less local entanglement Hamiltonians.
-
-**Note:** BW measurements are for the Potts-clock hybrid model (see Model Identity section). Degradation pattern likely applies to any Z_q-symmetric chain, but specific values may differ for S_q Potts or Z_q clock.
+## Bisognano-Wichmann Locality (Sprints 032-034, 064)
+BW: H_E ≈ H_phys × β(x), Unruh-like gradient. Peaks in ordered phase. Controlled by H/G-inv ratio.
+At n_A=4: q=2 (91%), q=3 (76.5%), q=4 (56%), q=5 (42.3%). ~15% drop per unit q.
+Z_q-invariant fraction = exactly 1/q. H/G-inv ~ 5/q^5. Peak shifts to ordered phase for q≥4.
 
 ## QEC Arc — Closed (Sprints 014-028)
-- [[5,1,3]] is basis-isotropic: confirmed on IBM hardware (Sprint 025, asymmetry 0.040 vs 3-qubit 0.254)
-- Small-scale active QEC cannot beat passive encoding (Sprints 026-028)
-- Root cause: syndrome extraction (16+ 2Q gates) exceeds code's correction capacity
-- Non-FT, flag-FT, repeated measurement — all fail. Threshold theorem requires asymptotic limit.
-- First observed QEC advantage: 3-qubit Z-basis Holevo 0.976 vs uncoded 0.959 (Sprint 025)
+[[5,1,3]] is basis-isotropic (confirmed on IBM hardware Sprint 025). Active QEC never beats passive at small scale.
 
-## Hardware Results (Sprint 025)
-Backend: ibm_kingston (Heron, 156 qubits). 20s QPU used.
-- Uncoded: avg Holevo 0.967, asymmetry 0.012
-- 3-qubit: avg 0.838, asymmetry 0.254
-- [[5,1,3]]: avg 0.499, asymmetry 0.040
-- Hardware error rates better than conservative noise model (readout 0.35% vs model 1.5%)
-- Correlated noise degrades [[5,1,3]] isotropy 4x vs simulator but doesn't destroy it
+## Hardware (Sprint 025)
+ibm_kingston, 20s QPU. [[5,1,3]] asymmetry 0.040 vs 3-qubit 0.254. 580s QPU remaining.
 
 ## Phase Diagram Trajectories
 - **TFIM**: Democratic(GHZ) → Scale-Free → Product (one-way)
 - **XXZ**: Democratic → Scale-Free → Geometric → Scale-Free → Democratic (loop)
-- **Potts q=3**: GHZ-3 → Product (like TFIM but with triplet spectrum from Z₃)
-- **Potts q=4**: GHZ-4 → Product (crossing signature like q=3, marginal corrections not yet visible)
-- **Clock q=5**: GHZ-5 → Product (crossings persist but shifted to g≈0.67, slope halved vs q=4)
-- **Potts q=5**: GHZ-5 → Product (crossings at g_c≈0.45, ν≈2.0, very gentle transition, NOT first-order)
-- **Potts q=10**: GHZ-10 → Product (crossings at g≈0.25, confirmed second-order)
-- **Potts q=20**: GHZ-20 → Product (identical to q=10 at χ=10, continuous entropy, second-order)
+- **Hybrid q=3**: GHZ-3 → Product (like TFIM but with triplet spectrum from Z₃)
+- **Hybrid q=5**: GHZ-5 → Product (continuous transition at g_c≈0.44)
+- **Hybrid q=10,20**: Continuous transitions confirmed

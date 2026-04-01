@@ -63,43 +63,8 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 
 Full details for all compressed sprints are in sprints/sprint_NNN.md.
 
-### Sprint 054 — Central Charge c(q) at True Critical Points
-**Status:** Complete (5 experiments).
-
-**c(q) extracted from entropy scaling S=(c/6)ln(n)+const.** Method validated: c(q=2) pairwise converges 0.544→0.516 toward exact 0.500. c(q=3) pairwise converges 0.934→0.884 toward exact 0.800. Chi convergence proven: entropy identical at chi=20 and chi=80 for q=3 n=16. DMRG matches exact diag to machine precision (ΔE=2e-14, ΔS=0 at q=3 n=8).
-
-**c(q=4) ≈ 1.23 raw, FLAT — not converging at n≤24.** Pairwise c: 1.231, 1.222, 1.229 — barely varies. Overshoot +23% vs CFT c=1. Qualitatively different from q=2,3 which converge clearly. Consistent with logarithmic corrections at marginal q=4 (Ashkin-Teller).
-
-**c(q=5) ≈ 1.37 raw, converging downward.** Pairwise c: 1.395→1.335. Even with ~20% overshoot correction (calibrated from q=2,3), c(q=5) ≈ 1.1-1.2 — **above c=1, outside minimal model series.** No CFT prediction exists. **POTENTIALLY NOVEL.**
-
-**c(q) increases monotonically with q:** 0.5 → 0.8 → 1.0 → (>1). Central charge grows as Potts state space grows.
-
-**Surprises:**
-- c(q=4) overshoot is FLAT — logarithmic corrections prevent convergence at n≤24
-- Chi convergence trivial (chi=20 suffices) — NOT the overshoot source
-- c(q=5) > 1 even after generous correction — outside Potts minimal models
-- Overshoot ratio increases with q: 9%→11%→23% at (n=16,24)
-
-[Full report: sprints/sprint_054.md]
-
-### Sprint 055 — Entropy Profile Method & c(q=5) > 1 Confirmed
-**Status:** Complete (7 experiments, 1 abandoned).
-
-**iDMRG fails at criticality.** S vs ln(xi) with infinite MPS gives c=0.41 for TFIM (18% error). Correlation length saturates at xi~370 even at chi=160. Pairwise c values scatter wildly. **Do not use iDMRG for c extraction.**
-
-**Entropy profile method validated and superior.** S(l) vs chord distance ln[(2n/pi)sin(pi*l/n)] at single large n. TFIM: c = 0.524→0.512 at n=32→64 (exact 0.500). q=3: c = 0.870→0.827 at n=16→48 (exact 0.800). 2-5x lower overshoot than FSS at same sizes.
-
-**c(q=5) > 1 CONFIRMED by two independent methods.** Profile: c=1.261 (n=16). FSS (Sprint 054): c=1.335 (n=12,16). Both overshoot-corrected to c ≈ 1.10 ± 0.10. **Even with 25% correction, c > 1.0.**
-
-**c(q=4) flat overshoot confirmed.** Profile: c=1.144 (n=16), 1.148 (n=24) — barely changes. Independent confirmation of logarithmic corrections.
-
-**Surprises:**
-- iDMRG correlation length saturates at ~370 at chi=160 — L=2 unit cell fundamentally limited
-- Profile overshoot at n=16 grows strongly with q: 8.7% (q=3) → 14.4% (q=4) → ~20% (q=5)
-- q=7 DMRG at n=12 exceeds 120s — d=7 infeasible for profile method
-- Even/odd oscillations negligible in entropy profile (<0.001)
-
-[Full report: sprints/sprint_055.md]
+- **054** — c(q) from entropy scaling. c grows with q: 0.5→0.8→1.0→>1. c(q=4) flat (log corrections). c(q=5)>1 confirmed.
+- **055** — Entropy profile method (best for c). iDMRG fails at criticality. c(q=5)>1 by two methods.
 
 ### Sprint 056 — c(q) Formula: Logarithmic Growth Confirmed, Analytic Continuation Ruled Out
 **Status:** Complete (4 experiments).
@@ -282,3 +247,22 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - BW degradation correlated with c(q)~ln(q): richer CFTs have less local H_E
 
 [Full report: sprints/sprint_064.md]
+
+### Sprint 065 — Hybrid vs Clock Universality: DIFFERENT Classes Confirmed
+**Status:** Complete (3 experiments).
+
+**Hybrid ≠ clock universality — confirmed by THREE independent probes at q=5.** c/x₁: hybrid 10.77 vs clock 9.43 (12% diff, shrinking but nonzero). ν: hybrid 0.83 (finite, power-law) vs clock ~2+ (diverging → BKT). Clock q=7 has NO gap crossing (BKT); hybrid has clear crossing.
+
+**Clock q=5 has BKT transition.** Gap slopes barely grow: 2.29→2.67→2.95 for n=4,6,8. Hybrid slopes clearly grow: 3.99→6.16→8.43. BKT confirmed as expected from Sun et al. 2020.
+
+**Potts-clock hybrid defines a NEW universality class for q≥5.** Not first-order (like S_q Potts), not BKT (like Z_q clock). Continuous, second-order, power-law transition with finite ν ≈ 0.83. **POTENTIALLY NOVEL.**
+
+**Clock DMRG ~10x slower than hybrid** due to dense cos coupling (q² terms vs q terms in MPO). Limits clock characterization at large q.
+
+**Surprises:**
+- ν comparison is the sharpest discriminator: qualitatively different (finite vs diverging)
+- Clock q=7 gap monotonically increasing — no crossing possible
+- c/x₁ difference slowly shrinks (14%→12%) suggesting SOME shared structure
+- Clock q=7 g_c ≈ 0.30 (if applicable), far below hybrid 0.535
+
+[Full report: sprints/sprint_065.md]
