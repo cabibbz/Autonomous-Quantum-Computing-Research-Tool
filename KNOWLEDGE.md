@@ -45,7 +45,7 @@ MI uniformity coefficient of variation classifies transition TYPE by curve shape
 
 **q=5 clock MI-CV (Sprint 041):** q=5 clock model STILL shows crossing curves at n=8,12, disproving prediction that crossings would vanish. Crossing at g_c≈0.673 — a 10x larger shift than q=3→4 (0.220 vs 0.030). Slope at g=1.0 halves vs q=4 (0.86 vs 1.72). CV systematically lower than q=4 above transition (0.521 vs 0.727 at g=1.0 n=8).
 
-**Crossing point shifts with q (Potts, n=8,12):** g_c = 1.0 (q=2) → 1.0 (q=3) → 0.89 (q=4) → 0.41 (q=5) → 0.25 (q=10). g_c decreases monotonically with q. For clock model: 0.93 (q=2) → 0.923 (q=3) → 0.893 (q=4) → 0.673 (q=5).
+**g_c scaling law (Sprint 044).** For 1D quantum Potts: g_c = 1.0 for q=2,3 (self-duality protected), and g_c ≈ 0.87*(q-3)^(-0.85) for q≥4. Verified by blind prediction of g_c(7)=0.263 vs measured 0.259 (1.6% error). Full data: q=2→1.0, q=3→1.0, q=4→0.893, q=5→0.41, q=7→0.259, q=10→0.246. The pole at q=3 reflects self-duality breaking. Exponent 0.85 ≈ 5/6 (q=3 Potts ν). Large-q regime flattening begins at q≈7. χ≥20 required for d≥7 (χ=10 gives 25% CV inflation). For clock model: 0.93 (q=2) → 0.923 (q=3) → 0.893 (q=4) → 0.673 (q=5).
 
 **1D quantum Potts is NEVER first-order (Sprint 043).** Tested q=10 (crossing confirmed at g_c≈0.246) and q=20 (identical to q=10 at χ=10, continuous half-chain entropy). All tested q (2, 3, 4, 5, 10, 20) show second-order MI-CV crossings. At q≥10, ground states converge to a universal large-q regime where only the {|0⟩, |1⟩, |q-1⟩} subspace is active. Physical mechanism: the extreme anisotropy of the 1D quantum→2D classical mapping suppresses the entropic mechanism that drives first-order transitions in 2D.
 

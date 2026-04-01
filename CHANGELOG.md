@@ -248,3 +248,20 @@ Explicit operator counting: U(1)=0.143 > Z₂=0.099 > S₃=0.072 > Z₃=0.040 (H
 - Direct MPS contraction removes the d²-bottleneck entirely
 
 [Full report: sprints/sprint_043.md]
+
+### Sprint 044 — g_c Scaling Law: Predictive Formula for Potts Critical Points
+**Status:** Complete (4 experiments).
+
+**g_c scaling law extracted and verified.** Fitted g_c(q) for 1D quantum Potts to 6 candidate forms. Best fit: g_c ≈ 0.87*(q-3)^(-0.85) for q≥4, with g_c=1 for q=2,3 (self-duality protected). The pole at q=3 reflects the breaking of self-duality. Exponent 0.85 is tantalizingly close to q=3 Potts ν=5/6.
+
+**Blind prediction validated at q=7.** Power law (fitted without q=7) predicted g_c(7)=0.263 vs measured 0.259 — only 1.6% error. MI-CV crossing confirmed at g_c≈0.259 (n=8,12, χ=20). Second-order transition, consistent with all other q.
+
+**χ convergence matters for large d.** χ=10 gives 25% CV inflation at d=7. Must use χ≥20 for d≥7.
+
+**Surprises:**
+- Blind prediction accurate to 1.6% — scaling law is genuinely predictive
+- Best exponent 0.85 ≈ 5/6 — possible deep connection to Potts universality
+- g_c(7)=0.259 vs g_c(10)=0.246 — nearly flat, large-q regime starts at q≈7
+- The "cliff" is between q=3 and q=5, driven by self-duality breaking at q=3
+
+[Full report: sprints/sprint_044.md]

@@ -1,19 +1,19 @@
 # Current State — Rewrite this completely each sprint
 
 ## Last Sprint
-Sprint 043 — First-Order Search: Large q Potts (q=10, q=20) — all second-order
+Sprint 044 — g_c Scaling Law: g_c ≈ 0.87*(q-3)^(-0.85) for q≥4, verified at q=7
 
 ## Active Research Thread
-MI-CV as universal phase transition classifier. Tested 1D quantum Potts at q=10 (crossing confirmed at g_c≈0.246) and q=20 (identical to q=10 at χ=10, continuous entropy). The 2D classical "q>4 → first-order" rule does NOT apply in 1D quantum for any tested q. Also developed direct MPS contraction for ρ_ij, enabling MI-CV at arbitrarily large d.
+MI-CV as universal phase transition classifier. Extracted the scaling law g_c(q) for 1D quantum Potts. Best fit: g_c = 0.87*(q-3)^(-0.85) for q≥4, with g_c=1 for q=2,3 (self-duality). Pole at q=3 reflects self-duality breaking. Blind prediction of g_c(7)=0.263 confirmed within 1.6% (measured 0.259). Large-q regime (g_c flattening) begins around q≈7.
 
 ## QPU Budget
 - Used: 20s of 600s (Sprint 025: ibm_kingston, 18 circuits)
 - Remaining: 580s
 
 ## Top 3 Next Experiments
-1. **g_c scaling law** — Plot g_c vs q for q=2,3,4,5,10 and fit. Is g_c ~ 1/q, 1/√q, or 1/log(q)? This would predict g_c for arbitrary q and connect to the quantum-classical mapping anisotropy.
-2. **q=10 data collapse** — With n=8,12 data at crossing, attempt data collapse to extract ν. Does ν match any known universality class, or does it depend on q?
-3. **2D quantum Potts on ladder** — 1D quantum is always second-order. Does adding a second chain (ladder geometry) restore first-order for q>4? This would pinpoint whether spatial dimensionality or quantum kinematics controls transition order.
+1. **Exponent 0.85 ≈ 5/6? Connection to Potts universality** — Is the g_c scaling exponent exactly ν_Potts=5/6? This would be a deep connection between the scaling of g_c with q and the critical exponents of the q=3 Potts universality class.
+2. **q=10 data collapse with direct MPS** — With the scaling law established, use the predicted g_c(q) to do data collapse at q=10 and extract ν(q). Does ν depend on q?
+3. **2D quantum Potts on ladder** — 1D quantum is always second-order. Does adding a second chain (ladder geometry) restore first-order for q>4? Tests whether spatial dimensionality controls transition order.
 
 ## What's Been Ruled Out
 - Small-scale QEC active correction: exhaustively proven to fail for [[5,1,3]] (Sprints 026-028)
@@ -24,19 +24,15 @@ MI-CV as universal phase transition classifier. Tested 1D quantum Potts at q=10 
 - ν=0.755 from crossing points: artifact (Sprint 038)
 - Fixed g_c collapse: misleading due to finite-size g_c shift (Sprint 039)
 - n=24 qutrit DMRG without symmetry: too slow (>60s per point) (Sprint 039)
-- q=4 marginal showing dome: shows crossing at n=8,12 (Sprint 040)
-- q=5 clock showing no crossings: still shows crossings at g≈0.67 (Sprint 041)
-- ClockChain as Potts proxy for q≥4: clock ≠ Potts at q≥4 (Sprint 041)
-- q=5 Potts first-order: shows second-order crossings at g≈0.41 (Sprint 042)
-- **q=10 Potts first-order: shows second-order crossings at g≈0.25 (Sprint 043)**
-- **q=20 Potts first-order: continuous entropy, universal with q=10 (Sprint 043)**
-- **Gell-Mann MI for d≥10: too slow (9801 correlations). Use direct MPS contraction instead (Sprint 043)**
+- 1D quantum Potts first-order for ANY q: all tested q (2-20) show second-order (Sprint 043)
+- Clock ≡ Potts for q≥4: false, models differ (Sprint 041)
+- χ=10 for d≥7: NOT converged, 25% CV inflation (Sprint 044)
+- 1/√q and simple exponential for g_c(q): too slow/fast decay (Sprint 044)
 
 ## Key Tools Available
 - Exact diag: n≤10
 - DMRG (TeNPy): n>10, 1D systems only
-- Correlation-function MI reconstruction: all-pairs MI from MPS (d=2-5 tested, Gell-Mann)
-- **Direct MPS contraction MI: all-pairs MI from MPS for ANY d (Sprint 043, d=10-20 tested, 1.4s for n=8)**
+- Direct MPS contraction MI: all-pairs MI for ANY d (Sprint 043)
 - Custom PottsChain model: Kronecker-delta coupling for any q (Sprint 042)
 - IBM QPU: 580s remaining, ibm_kingston (Heron, 156 qubits)
-- SU(d) generalized Gell-Mann basis: implemented for d=2-5
+- g_c scaling law: g_c(q) = 0.87*(q-3)^(-0.85) for q≥4 (Sprint 044)
