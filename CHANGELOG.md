@@ -307,3 +307,20 @@ Explicit operator counting: U(1)=0.143 > Z₂=0.099 > S₃=0.072 > Z₃=0.040 (H
 - CV minimum at g≈0.4-0.5 far below g_c — ordered phase has complex MI structure
 
 [Full report: sprints/sprint_046.md]
+
+### Sprint 047 — ν(q=7) Extraction: Crossings Return, q=4 Confirmed as BKT Peak
+**Status:** Complete (4 experiments).
+
+**q=7 MI-CV shows CROSSING CURVES.** n=8 and n=12 MI-CV curves cross at g_c≈0.244 (6% below scaling law prediction of 0.259). Ordered phase: n=12 CV < n=8 CV (e.g. 0.421 vs 0.597 at g=0.15). Disordered phase: n=12 CV > n=8 CV (e.g. 0.541 vs 0.438 at g=0.30). This is qualitatively identical to q=2,3,5 and qualitatively DIFFERENT from q=4 (no crossings).
+
+**ν(q=7) ≈ 0.5 (near mean-field).** Disordered-side slope ratio [0.26,0.30] gives ν≈0.49. Uncertain from only 2 sizes at coarse g-resolution, but clearly much smaller than q=5 (2.0) or q=4 (≥2.2).
+
+**q=4 confirmed as unique BKT peak.** It is the ONLY tested q (out of 2,3,4,5,7) that lacks MI-CV crossings. ν(q) has a sharp peak at q=4: 1.0 → 5/6 → ≥2.2 → 2.0 → 0.5.
+
+**Surprises:**
+- Crossings RETURN at q=7 — q=4 is uniquely crossing-less
+- ν drops 4x from q=5 (2.0) to q=7 (0.5) — approaches mean-field
+- n=8 has sharp CV kink at g_c that smooths at n=12
+- MI-CV crossing g_c=0.244, 6% below predicted g_c=0.259
+
+[Full report: sprints/sprint_047.md]

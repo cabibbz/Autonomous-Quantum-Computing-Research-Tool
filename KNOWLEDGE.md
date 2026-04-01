@@ -51,20 +51,21 @@ MI uniformity coefficient of variation classifies transition TYPE by curve shape
 
 **Clock ≠ Potts for q≥4 (Sprints 041-042).** TeNPy's ClockChain uses cos(2π(s_i-s_j)/q) coupling, which equals Potts δ(s_i,s_j) only for q=2,3. For q≥5, models differ: Clock g_c=0.67 vs Potts g_c=0.41, Potts slope 5.7x steeper. Custom PottsChain model built (Sprint 042) with projector coupling. Both show second-order crossings — the 2D classical "q>4 → first-order" does NOT apply to 1D quantum Potts with transverse field. Anisotropic quantum-classical correspondence preserves second-order character.
 
-**ν(q) extraction (Sprints 045-046).** ν is NON-MONOTONIC in q, with q=4 showing BKT-like behavior:
+**ν(q) extraction (Sprints 045-047).** ν has a SHARP PEAK at q=4, with q=4 the only value without MI-CV crossings:
 
-| q | ν | 1/ν | Method | Nature |
-|---|---|-----|--------|--------|
-| 2 | 1.0 | 1.0 | Ising exact | Standard 2nd-order |
-| 3 | 5/6 | 1.2 | Potts exact | Standard 2nd-order (minimum) |
-| 4 | ≥2.2 (diverging?) | ≤0.45 | Slope ratio, trending up (Sprint 046) | **Marginal/BKT-like** |
-| 5 | ~2.0 | ~0.5 | Data collapse (Sprint 045) | Large-ν 2nd-order |
+| q | ν | MI-CV crossings? | Nature |
+|---|---|-----------------|--------|
+| 2 | 1.0 | Yes | Standard 2nd-order |
+| 3 | 5/6 | Yes | Standard 2nd-order (minimum ν) |
+| 4 | ≥2.2 (diverging?) | **No** | **Marginal/BKT-like** |
+| 5 | ~2.0 | Yes | Large-ν 2nd-order |
+| 7 | ~0.5 | Yes | Near mean-field |
 
-q=5 data collapse: ν≈2.0 (g_c≈0.45), confirmed by slope scaling: slope~n^0.49 → ν≈2.05.
+q=4 is qualitatively different: slope ratio ν estimates INCREASE with n (1.92 → 2.71 from n=8,12 to n=12,16). Standard FSS collapse fails — constrained at g_c≈0.89, ν→∞. MI-CV curves don't cross near g_c. This is the 1D quantum signature of the 2D classical q=4 Potts BKT marginality.
 
-q=4 is qualitatively different: slope ratio ν estimates INCREASE with n (1.92 → 2.71 from n=8,12 to n=12,16). Standard FSS collapse fails — constrained at g_c≈0.89, ν→∞. MI-CV curves don't cross near g_c (n=16>n=12>n=8 at all g≥0.50). This is the 1D quantum signature of the 2D classical q=4 Potts BKT marginality.
+q=7 (Sprint 047): CROSSING CURVES RETURN at g_c≈0.244. ν≈0.5 from disordered-side slope ratio (uncertain, only n=8,12). n=8 has a sharp CV kink that smooths at n=12 — standard FSS behavior. ν drops 4x from q=5 (2.0) to q=7 (0.5), approaching mean-field.
 
-ν minimum is at q=3. Self-duality breaking at q=3→4 fundamentally alters transition character. Large ν (q≥4) means wide crossover regions and finite-size crossing points far below thermodynamic g_c.
+ν(q) picture: standard (q≤3) → BKT peak at q=4 (only crossing-less value) → large ν at q=5 → mean-field approach for q≥7. Self-duality breaking at q=3→4 drives the BKT peak.
 
 **Technique: All-pairs MI.** Two methods:
 1. Gell-Mann correlation reconstruction: **ONLY reliable for d≤3** (validated: diff=0 at n=8 for d=2,3). For d=4, small systematic errors create artificial MI-CV crossings (Sprint 046). For d=5, errors up to 11x (Sprint 045). DO NOT USE for d≥4.
