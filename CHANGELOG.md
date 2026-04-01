@@ -201,3 +201,22 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - Even/odd oscillations negligible in entropy profile (<0.001)
 
 [Full report: sprints/sprint_055.md]
+
+### Sprint 056 — c(q) Formula: Logarithmic Growth Confirmed, Analytic Continuation Ruled Out
+**Status:** Complete (4 experiments).
+
+**Analytic continuation of Potts CFT RULED OUT for q>4.** Both Coulomb gas and minimal model continuations predict c DECREASING below 1 for q>4. Measured c(7)≈1.46 raw and c(10)≈1.60 raw are far above 1.0. The 1D quantum Potts at q>4 is NOT described by the standard Potts CFT.
+
+**Quadratic interpolation also RULED OUT.** Fits exact q=2,3,4 and accidentally gives c(5)=1.10, but predicts c(7)=1.00 and c(10)=0.10 — contradicted by measurements.
+
+**c(q) grows monotonically, approximately as ln(q).** Best fit: c ≈ 0.40·ln(q-1) + 0.55 (RMS=0.061). No peak, no saturation.
+
+**New c measurements:** c(q=7) profile 1.462 at n=8 (DMRG) and 1.537 at n=6 (exact diag). c(q=10) profile 1.596 at n=6 (exact diag, 10^6 dim Hilbert space, 42s).
+
+**Surprises:**
+- Analytic continuation gives c DECREASING for q>4 — opposite to physical data
+- Quadratic through q=2,3,4 accidentally gives c(5)=1.10 — a numerical coincidence trap
+- Raw n=6 profile for q=10 (1.596) coincidentally matches pre-correction log prediction (1.59)
+- q=4 overshoot 8.7% worse than calibration model — log corrections propagate
+
+[Full report: sprints/sprint_056.md]

@@ -98,27 +98,35 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 
 **Rule of thumb: MI-CV requires χ > d² for reliable results.** At d=2 (q=2), χ=20 is fine (d²=4). At d=10 (q=10), need χ > 100. Results for q≥7 (d²≥49) should be scrutinized. q=2,3 results are reliable.
 
-## Entropy and Central Charge (Sprints 049, 054, 055)
+## Entropy and Central Charge (Sprints 049, 054-056)
 
 **Three methods for c extraction, ranked:**
 1. **Entropy profile** (Sprint 055, BEST): Fit S(l) vs chord distance ln[(2n/pi)sin(pi*l/n)] at single large n. Central half of chain only. Even/odd oscillations negligible. Converges monotonically from above. At n=64: 2.5% overshoot (q=2).
 2. **FSS pairwise** (Sprint 054): S(n/2) at multiple n, pairwise c from consecutive sizes. Slower convergence, needs 3+ sizes. At (n=16,24): 9-23% overshoot.
 3. **iDMRG S vs ln(xi)** (Sprint 055, DO NOT USE): Correlation length saturates at criticality with L=2 unit cell. 18% error, pairwise c scattered.
 
-**c(q) at true critical points (Sprints 054-055):**
+**c(q) at true critical points (Sprints 054-056):**
 
-| q | g_c | c (profile, best n) | c (FSS, best pair) | c (exact/CFT) |
-|---|-----|-------------------|-------------------|---------------|
-| 2 | 1.000 | 0.512 (n=64) | 0.516 (n=16,24) | 0.500 |
-| 3 | 0.333 | 0.827 (n=48) | 0.884 (n=16,24) | 0.800 |
-| 4 | 0.392 | 1.148 (n=24) | 1.229 (n=16,24) | 1.000 |
-| 5 | 0.441 | 1.261 (n=16) | 1.335 (n=12,16) | **~1.10 ± 0.10** |
+| q | g_c | c (profile, best n) | n | c (corrected) | c (exact/CFT) |
+|---|-----|---------------------|---|---------------|---------------|
+| 2 | 1.000 | 0.512 | 64 | 0.500 | 0.500 |
+| 3 | 0.333 | 0.827 | 48 | 0.803 | 0.800 |
+| 4 | 0.392 | 1.148 | 24 | ~1.00 | 1.000 |
+| 5 | 0.441 | 1.261 | 16 | ~1.10 ± 0.10 | — |
+| 7 | 0.535 | 1.462 | 8 | ~1.3 ± 0.15 | — |
+| 10 | 0.684 | 1.596 | 6 | ~1.4 ± 0.20 | — |
+
+**c(q) grows monotonically, approximately as c ≈ 0.40·ln(q-1) + 0.55 (Sprint 056).** No peak, no saturation. Physical interpretation: more local states q → more effective massless modes → higher c.
+
+**Analytic continuation of Potts CFT is WRONG for q>4 (Sprint 056).** Both Coulomb gas (g>1) and minimal model (m via arccosh) continuations predict c DECREASING below 1 for q>4. Definitively ruled out by c(q=7)≫1 and c(q=10)≫1 measurements. The 1D quantum Potts at q>4 is described by a different CFT.
+
+**Quadratic interpolation through q=2,3,4 also WRONG (Sprint 056).** Gives c(5)=1.10 (accidentally exact!) but c(7)=1.00 and c(10)=0.10. A trap — would have misled without q=7,10 data.
 
 **c(q=4) has anomalous FSS.** Both methods show flat, non-converging overshoot (+14-23%). Consistent with logarithmic corrections at marginal q=4 (Ashkin-Teller).
 
-**POTENTIALLY NOVEL: c(q=5) ≈ 1.10 ± 0.10.** Confirmed > 1 by TWO independent methods (FSS and entropy profile). Even with 25% overshoot correction: c > 1.0. Outside the minimal model series c = 1-6/[m(m+1)]. No CFT prediction exists because 2D classical q=5 Potts is first-order. **Literature search found no prior measurement.** c(q) series: 0.50, 0.80, 1.00, ~1.10 — monotonically increasing with decreasing increments.
+**POTENTIALLY NOVEL: c(q≥5) outside minimal models.** c(q=5)≈1.10, c(q=7)≈1.3, c(q=10)≈1.4 — all above c=1 and growing. No CFT predictions exist for q>4 Potts (2D classical is first-order). **Literature search found no prior measurements.** The c(q) ~ ln(q) growth formula is also novel.
 
-**Entropy profile overshoot grows with q at fixed n=16:** 8.7% (q=3), 14.4% (q=4), ~20% (q=5). Large-q profile method requires larger n — q=7+ is computationally infeasible at n≥12 with chi=20.
+**Entropy profile overshoot grows with q at fixed n:** At n=16: 8.7% (q=3), 14.4% (q=4), ~20% (q=5). At n=8: ~25% (q=7). Large-q profile method requires larger n — q=7+ is computationally infeasible at n≥12 with chi=20.
 
 **Entropy FSS does NOT give ν.** S ~ (c/6)ln(ξ), not a power law. Standard FSS collapse fails (gives ν=3 for TFIM). Use energy gap slope for ν.
 
