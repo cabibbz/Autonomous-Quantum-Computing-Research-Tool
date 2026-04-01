@@ -530,3 +530,24 @@
 **Next:** Active syndrome extraction on hardware, [[5,1,3]] with correction cycle, XZZX surface code variant, qubit-specific noise characterization from the data
 
 [Full report: sprints/sprint_025.md]
+
+### Sprint 026 — 2026-03-31 — Active Syndrome Extraction: Non-FT Correction Always Hurts
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **26a: Syndrome circuit** — Built and verified [[5,1,3]] syndrome extraction: 8 CX + 8 CZ = 16 two-qubit gates, depth 10. All 15 syndromes unique, 30/30 corrections perfect noiseless.
+- **26b: Active vs passive** — Active correction is WORSE than passive encoding at hardware noise (p2q=0.008). Avg Holevo: uncoded 0.883, passive 0.511, active 0.331. Correction delta negative in ALL bases (Z: -0.006, X: -0.039, Y: -0.077).
+- **26c: Error rate sweep** — Active correction NEVER beats passive at ANY p2q from 0.0001 to 0.02. Even at 100x below current hardware, correction hurts (delta = -0.06).
+
+**Surprises:**
+- **Active correction NEVER helps, at any error rate** — not even at p2q=0.0001 where 97.8% of syndromes are trivial. The 2.2% non-trivial corrections still cause net damage.
+- **Root cause: error propagation through CX gates** — a single ancilla error propagates to create weight-2 data errors through the stabilizer measurement circuit. Weight-2 errors are uncorrectable for distance-3.
+- **Sprint 025's "below threshold" was misleading** — the 0.93% < 1.86% comparison assumed ideal syndrome extraction. Real syndrome circuits have their own error budget that makes the effective threshold much lower.
+- **Y-basis correction is worst** — correction delta -0.077, because Y errors are hardest to classify from noisy syndromes and cause the most damage when miscorrected.
+- **Correction backfire scales with noise** — delta ranges from -0.06 (ultralow noise) to -0.24 (high noise). The syndrome circuit is ALWAYS a net error amplifier.
+
+**Key insight:** The standard syndrome extraction circuit is fundamentally non-fault-tolerant. It converts single ancilla faults into multi-qubit data errors that exceed the code's correction capacity. This is the precise problem that fault-tolerant syndrome extraction (flag qubits, Shor/Steane extraction, repeated measurement) was invented to solve. Without fault tolerance, adding syndrome measurement always makes things worse — the syndrome circuit generates exactly the class of errors (weight ≥ 2) that the code cannot handle. The threshold theorem requires fault-tolerant gadgets at every level; our "bare" syndrome circuit violates this assumption.
+
+**Next:** Fault-tolerant syndrome extraction with flag qubits, repeated syndrome measurement with majority vote, Steane-style encoded ancilla extraction, or shift to larger codes where syndrome overhead is proportionally smaller.
+
+[Full report: sprints/sprint_026.md]

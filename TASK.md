@@ -117,13 +117,17 @@ An autonomous researcher. Nobody is telling you what to find. You have a quantum
   - 6.4x more isotropic than 3-qubit on ibm_kingston
   - Correlated noise degrades isotropy 4x vs simulator but doesn't destroy it
   - 3-qubit Z-basis provides first observed QEC advantage (0.976 vs 0.959 uncoded)
-  - Hardware 2Q error (0.93%) is below [[5,1,3]] active-correction threshold (1.86%)
+- **NON-FT SYNDROME EXTRACTION ALWAYS HURTS** (Sprint 026)
+  - Active correction worse than passive at ALL error rates (p2q=0.0001 to 0.02)
+  - Root cause: standard syndrome circuit propagates ancilla errors to multi-qubit data errors
+  - The threshold theorem requires fault-tolerant gadgets — "bare" syndrome extraction violates this
+  - Sprint 025's "below threshold" claim was only valid for ideal syndrome extraction
 
-**The next frontier — active error correction on hardware:**
-Sprint 025 showed that encoding-only QEC is insufficient at current error rates. The next question: does active syndrome measurement + correction close the gap? Hardware is below the break-even threshold — this should work. The practical challenge: syndrome extraction circuits add more depth and more noise.
+**The next frontier — fault-tolerant syndrome extraction:**
+Sprint 026 proved that non-fault-tolerant syndrome extraction always hurts. The path forward requires preventing error propagation from ancilla to data qubits. Options: flag qubits (add 1-2 qubits per stabilizer to catch propagation), repeated syndrome (majority vote over 3 rounds), or Steane-style encoded ancilla extraction.
 
 **Still unexplored:**
-- Active syndrome extraction on hardware (most important next step)
+- Fault-tolerant syndrome extraction with flag qubits (most important next step)
 - Quantum random number generation — genuinely random vs pseudo-random, statistical tests
 - Variational quantum circuits — how does entanglement structure change during optimization?
 - Qubit-specific noise characterization from Sprint 025 data (T1 asymmetry visible)
@@ -132,6 +136,7 @@ Sprint 025 showed that encoding-only QEC is insufficient at current error rates.
 - Any further small-scale code comparisons under symmetric noise (exhausted in Sprints 015-024)
 - Re-deriving known results with slightly different parameters
 - Passive encoding-only QEC experiments (Sprint 025 showed this regime is exhausted)
+- Non-fault-tolerant syndrome extraction (Sprint 026 proved this always hurts)
 
 ## You Can Edit This File (encouraged to)
 
