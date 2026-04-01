@@ -1,0 +1,285 @@
+{
+  "sprint": "022c",
+  "description": "Why isotropy always wins: distance decomposition and efficiency analysis",
+  "analysis1_per_error": {
+    "p=0.05": {
+      "uncoded": {
+        "X": 0.8091,
+        "Y": 0.8091,
+        "Z": 0.8091,
+        "balance": 1.0
+      },
+      "3q-bitflip": {
+        "X": 0.9716,
+        "Y": 0.9716,
+        "Z": 0.6184,
+        "balance": 0.6365
+      },
+      "3q-phaseflip": {
+        "X": 0.6184,
+        "Y": 0.9716,
+        "Z": 0.9716,
+        "balance": 0.6365
+      },
+      "[[5,1,3]]": {
+        "X": 0.9954,
+        "Y": 0.9954,
+        "Z": 0.9954,
+        "balance": 1.0
+      }
+    },
+    "p=0.1": {
+      "uncoded": {
+        "X": 0.6873,
+        "Y": 0.6873,
+        "Z": 0.6873,
+        "balance": 1.0
+      },
+      "3q-bitflip": {
+        "X": 0.9083,
+        "Y": 0.9083,
+        "Z": 0.4656,
+        "balance": 0.5126
+      },
+      "3q-phaseflip": {
+        "X": 0.4656,
+        "Y": 0.9083,
+        "Z": 0.9083,
+        "balance": 0.5126
+      },
+      "[[5,1,3]]": {
+        "X": 0.9713,
+        "Y": 0.9713,
+        "Z": 0.9713,
+        "balance": 1.0
+      }
+    },
+    "p=0.15": {
+      "uncoded": {
+        "X": 0.5934,
+        "Y": 0.5934,
+        "Z": 0.5934,
+        "balance": 1.0
+      },
+      "3q-bitflip": {
+        "X": 0.8243,
+        "Y": 0.8243,
+        "Z": 0.3911,
+        "balance": 0.4744
+      },
+      "3q-phaseflip": {
+        "X": 0.3911,
+        "Y": 0.8243,
+        "Z": 0.8243,
+        "balance": 0.4744
+      },
+      "[[5,1,3]]": {
+        "X": 0.9204,
+        "Y": 0.9204,
+        "Z": 0.9204,
+        "balance": 1.0
+      }
+    },
+    "p=0.2": {
+      "uncoded": {
+        "X": 0.5187,
+        "Y": 0.5187,
+        "Z": 0.5187,
+        "balance": 1.0
+      },
+      "3q-bitflip": {
+        "X": 0.7292,
+        "Y": 0.7292,
+        "Z": 0.3559,
+        "balance": 0.4881
+      },
+      "3q-phaseflip": {
+        "X": 0.3559,
+        "Y": 0.7292,
+        "Z": 0.7292,
+        "balance": 0.4881
+      },
+      "[[5,1,3]]": {
+        "X": 0.8425,
+        "Y": 0.8425,
+        "Z": 0.8425,
+        "balance": 1.0
+      }
+    }
+  },
+  "analysis2_efficiency": {
+    "(0.05,0.05)": {
+      "uncoded": {
+        "holevo": 0.8403,
+        "n": 1,
+        "efficiency": 0.8403
+      },
+      "3q-bitflip": {
+        "holevo": 0.8087,
+        "n": 3,
+        "efficiency": 0.2696
+      },
+      "3q-phaseflip": {
+        "holevo": 0.8244,
+        "n": 3,
+        "efficiency": 0.2748
+      },
+      "[[5,1,3]]": {
+        "holevo": 0.9625,
+        "n": 5,
+        "efficiency": 0.1925
+      }
+    },
+    "(0.05,0.2)": {
+      "uncoded": {
+        "holevo": 0.7233,
+        "n": 1,
+        "efficiency": 0.7233
+      },
+      "3q-bitflip": {
+        "holevo": 0.5858,
+        "n": 3,
+        "efficiency": 0.1953
+      },
+      "3q-phaseflip": {
+        "holevo": 0.7711,
+        "n": 3,
+        "efficiency": 0.257
+      },
+      "[[5,1,3]]": {
+        "holevo": 0.8815,
+        "n": 5,
+        "efficiency": 0.1763
+      }
+    },
+    "(0.2,0.05)": {
+      "uncoded": {
+        "holevo": 0.6519,
+        "n": 1,
+        "efficiency": 0.6519
+      },
+      "3q-bitflip": {
+        "holevo": 0.6793,
+        "n": 3,
+        "efficiency": 0.2264
+      },
+      "3q-phaseflip": {
+        "holevo": 0.5982,
+        "n": 3,
+        "efficiency": 0.1994
+      },
+      "[[5,1,3]]": {
+        "holevo": 0.8056,
+        "n": 5,
+        "efficiency": 0.1611
+      }
+    },
+    "(0.1,0.1)": {
+      "uncoded": {
+        "holevo": 0.7316,
+        "n": 1,
+        "efficiency": 0.7316
+      },
+      "3q-bitflip": {
+        "holevo": 0.6839,
+        "n": 3,
+        "efficiency": 0.228
+      },
+      "3q-phaseflip": {
+        "holevo": 0.7026,
+        "n": 3,
+        "efficiency": 0.2342
+      },
+      "[[5,1,3]]": {
+        "holevo": 0.8813,
+        "n": 5,
+        "efficiency": 0.1763
+      }
+    },
+    "(0.2,0.2)": {
+      "uncoded": {
+        "holevo": 0.5648,
+        "n": 1,
+        "efficiency": 0.5648
+      },
+      "3q-bitflip": {
+        "holevo": 0.5127,
+        "n": 3,
+        "efficiency": 0.1709
+      },
+      "3q-phaseflip": {
+        "holevo": 0.5187,
+        "n": 3,
+        "efficiency": 0.1729
+      },
+      "[[5,1,3]]": {
+        "holevo": 0.6646,
+        "n": 5,
+        "efficiency": 0.1329
+      }
+    }
+  },
+  "analysis3_hybrid": {
+    "(0.05,0.05)": {
+      "[[5,1,3]]_1logical": 0.9625,
+      "hybrid_2logical": 1.6648,
+      "hybrid_type": "pf+unc",
+      "5uncoded_5logical": 4.2017,
+      "uncoded_per_qubit": 0.8403,
+      "513_per_qubit": 0.9625
+    },
+    "(0.05,0.2)": {
+      "[[5,1,3]]_1logical": 0.8815,
+      "hybrid_2logical": 1.4944,
+      "hybrid_type": "pf+unc",
+      "5uncoded_5logical": 3.6164,
+      "uncoded_per_qubit": 0.7233,
+      "513_per_qubit": 0.8815
+    },
+    "(0.05,0.4)": {
+      "[[5,1,3]]_1logical": 0.7643,
+      "hybrid_2logical": 1.2879,
+      "hybrid_type": "pf+unc",
+      "5uncoded_5logical": 2.9717,
+      "uncoded_per_qubit": 0.5943,
+      "513_per_qubit": 0.7643
+    },
+    "(0.1,0.1)": {
+      "[[5,1,3]]_1logical": 0.8813,
+      "hybrid_2logical": 1.4342,
+      "hybrid_type": "pf+unc",
+      "5uncoded_5logical": 3.658,
+      "uncoded_per_qubit": 0.7316,
+      "513_per_qubit": 0.8813
+    },
+    "(0.2,0.2)": {
+      "[[5,1,3]]_1logical": 0.6646,
+      "hybrid_2logical": 1.0836,
+      "hybrid_type": "pf+unc",
+      "5uncoded_5logical": 2.8241,
+      "uncoded_per_qubit": 0.5648,
+      "513_per_qubit": 0.6646
+    }
+  },
+  "analysis4_distances": {
+    "3q-bitflip": {
+      "d_X": 3,
+      "d_Y": 1,
+      "d_Z": 1,
+      "min_d": 1
+    },
+    "3q-phaseflip": {
+      "d_X": 1,
+      "d_Y": 1,
+      "d_Z": 3,
+      "min_d": 1
+    },
+    "[[5,1,3]]": {
+      "d_X": 3,
+      "d_Y": 3,
+      "d_Z": 3,
+      "min_d": 3
+    }
+  },
+  "elapsed_seconds": 0.3
+}
