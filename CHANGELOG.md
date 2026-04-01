@@ -158,3 +158,17 @@ Explicit operator counting: U(1)=0.143 > Z₂=0.099 > S₃=0.072 > Z₃=0.040 (H
 - No crossing at first-order is a qualitative signature, simpler than quantitative gradient analysis
 
 [Full report: sprints/sprint_037.md]
+
+### Sprint 038 — Data Collapse & Potts MI-CV
+**Status:** Complete (4 experiments).
+
+**Data collapse confirms Ising universality.** Consolidated TFIM MI-CV data (n=8-50) and tested scaling collapse CV(h,n) = F((h-h_c)·n^{1/ν}). Optimal ν converges toward Ising exact (ν=1): all sizes give ν=0.80, large sizes (n≥16) give ν=1.04, largest pair (n≥24) gives ν=1.12. The finite-size fit ν=0.755 (Sprint 037) is an artifact — it gives WORSE collapse than ν=1.
+
+**q=3 Potts MI-CV shows crossing curves.** Extended all-pairs MI to qutrits using Gell-Mann basis (8 generators). Potts transition at g/J=1 shows same crossing signature as TFIM: n=8 CV > n=12 CV in ordered phase, reversed in disordered phase. Crossing at g≈0.85-0.90. Potts transition is 14% steeper than TFIM at same n.
+
+**Surprises:**
+- ν=0.755 gives WORSE collapse than ν=1 — crossing-point ν extraction is fragile
+- Quality landscape extremely flat near ν=1 (0.3% from optimal) — explains why crossing points gave misleading ν
+- Potts CV is systematically higher than TFIM above transition — larger d amplifies MI inhomogeneity
+
+[Full report: sprints/sprint_038.md]

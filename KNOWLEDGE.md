@@ -33,9 +33,11 @@ MI uniformity coefficient of variation classifies transition TYPE by curve shape
 
 **First-order transition (Sprint 037):** FM phase has CV=0.000 exactly. Jump at Δ=-1 grows as ~n^1.0. Presence/absence of curve crossings distinguishes transition orders.
 
-**Critical exponent (Sprint 037):** MI-CV crossing points shift as h_c(n) = 1.0 + a·n^{-1/ν}. Effective ν = 0.755 from fit, but two-point estimates converge: 0.74→0.73→0.88. Corrections to scaling significant at n≤32.
+**Critical exponent (Sprint 037→038):** Crossing-point fit gives ν=0.755 at n=8-32, but data collapse (Sprint 038) proves this is a finite-size artifact. Optimal collapse ν converges: 0.80 (all sizes) → 1.04 (n≥16) → 1.12 (n≥24). Ising ν=1 is confirmed. The collapse quality landscape is extremely flat near ν=1 (0.3% difference from optimal), making crossing-point extraction fragile.
 
-**Technique:** All-pairs MI via correlation-function reconstruction of ρ_ij from MPS. Exact for physical states (validated: diff=0 at n=8).
+**Potts q=3 MI-CV (Sprint 038):** 1D 3-state Potts shows same crossing signature as TFIM, confirming second-order classification. Crossing at g≈0.85-0.90 (n=8 vs n=12). Potts transition is steeper than Ising at same n (CV=0.826 vs 0.727 at critical point, n=8). Potts universality class has ν=5/6 — MI-CV data collapse should distinguish this from Ising ν=1.
+
+**Technique:** All-pairs MI via correlation-function reconstruction of ρ_ij from MPS. Exact for physical states (validated: diff=0 at n=8). Extended to d=3 (qutrits) using 8 Gell-Mann matrices as operator basis (Sprint 038).
 
 ## Archetype Boundaries ≠ Phase Boundaries
 I3 sign change occurs at Δ≈0.7 in XXZ, inside the XY phase — not at either thermodynamic transition (Δ=-1 or Δ=1). The entanglement phase diagram has its own topology distinct from thermodynamics.
