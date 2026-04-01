@@ -39,7 +39,7 @@ for i in $(seq 1 $SPRINTS); do
     
     # Brief pause between sprints to avoid rate limits
     echo "--- Cooling down 30s before next sprint ---"
-    sleep 30
+    sleep 10
 done
 
 echo ""

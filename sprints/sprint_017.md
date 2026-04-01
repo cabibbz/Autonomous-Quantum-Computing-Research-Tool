@@ -40,6 +40,40 @@
 
 ---
 
+## Experiment 17c: Information Structure at the Threshold — Phase Transition in Logical MI
+
+**Setup:** Compute exact density matrices for 3-qubit and 9-qubit repetition codes under bit-flip noise. Track: total entropy, half-cut entropy, pairwise MI, I3, and logical MI (Holevo information = distinguishability of |0_L⟩ vs |1_L⟩).
+
+**Result:** The threshold manifests as a sharp transition in Holevo information, and concatenation dramatically sharpens it.
+
+| p     | Uncoded LMI | 3-qubit LMI | 9-qubit LMI | 3q Fidelity | 9q Fidelity |
+|-------|------------|-------------|-------------|-------------|-------------|
+| 0.00  | 1.000      | 1.000       | 1.000       | 1.000       | 1.000       |
+| 0.05  | 0.714      | 0.957       | 1.000       | 0.993       | 1.000       |
+| 0.10  | 0.531      | 0.862       | 0.995       | 0.972       | 0.998       |
+| 0.20  | 0.278      | 0.594       | 0.916       | 0.896       | 0.970       |
+| 0.30  | 0.119      | 0.305       | 0.642       | 0.784       | 0.880       |
+| 0.40  | 0.029      | 0.084       | 0.226       | 0.648       | 0.716       |
+| 0.50  | 0.000      | 0.000       | 0.000       | 0.500       | 0.500       |
+
+**Key findings:**
+
+1. **Pairwise MI is ZERO at all noise levels** — independent bit-flip noise on independent qubits produces independent marginals. The repetition code's correlations are invisible to pairwise MI. Error correction works through *collective* majority vote, not pairwise correlations. This is the classical analog of the 2D cluster state's "3-body invisibility" (Sprint 010).
+
+2. **Logical MI (Holevo information) is the right order parameter** — it measures how distinguishable |0_L⟩ and |1_L⟩ remain after noise. At p=0 it's 1 bit; at p=0.5 (threshold) it's exactly 0 bits.
+
+3. **Concatenation sharpens the transition exponentially** — at p=0.1: uncoded retains 53.1%, 3-qubit retains 86.2%, 9-qubit retains 99.5% of logical MI. Each level of concatenation pushes the curve toward a step function. In the limit of infinite concatenation, the Holevo information becomes a perfect step: 1 below threshold, 0 above.
+
+4. **Perfect p↔(1-p) symmetry** — bit-flip at rate p=1 is a deterministic NOT gate, equivalent to relabeling. All measures are symmetric around p=0.5.
+
+5. **Total entropy peaks at p=0.5** — the state becomes maximally mixed (3 bits for 3 qubits, 9 bits for 9 qubits). At p=0 and p=1, entropy is zero (pure states |000⟩ and |111⟩).
+
+6. **The threshold IS a phase transition in the thermodynamic limit** — the logical MI curve approaches a step function as concatenation increases, analogous to an order parameter in statistical mechanics. Below threshold: information survives (ordered phase). Above threshold: information destroyed (disordered phase). The concatenation level plays the role of system size.
+
+**Surprise:** The complete absence of pairwise MI in the repetition code under independent noise. Error correction capability is a purely *collective* property — no pair of qubits contains information about the logical state, but the majority of any triple does. This is the classical threshold theorem's core mechanism: redundancy without pairwise correlation.
+
+---
+
 ## Experiment 17a: Concatenated Bit-Flip Code — Threshold Emergence
 
 **Result:** Simulated results match theory to 4 decimal places. Concatenation works as predicted.
@@ -63,3 +97,22 @@
 - No crossover observed below threshold — for pure bit-flip noise on repetition code, encoding NEVER hurts (this will change for depolarizing)
 
 ---
+
+## Sprint 017 Summary
+
+**Three experiments, one unified picture:**
+
+1. **17a (concatenated threshold):** Verified the threshold theorem numerically. Theory matches simulation to 4 decimal places. Concatenation improves fidelity exponentially below p_th=0.5 and converges to 0.5 at threshold.
+
+2. **17b (depolarizing crossover):** The "best" code depends on the noise model. The simple 3-qubit bit-flip code outperforms the "perfect" [[5,1,3]] code under depolarizing noise because fewer qubits = fewer targets. Generality has an overhead cost.
+
+3. **17c (information at threshold):** The threshold is a genuine phase transition in Holevo information. Concatenation sharpens the transition toward a step function — the hallmark of a thermodynamic phase transition. Pairwise MI is identically zero at all noise levels, proving error correction is a purely collective phenomenon.
+
+**Unified insight:** The error correction threshold is an information-theoretic phase transition. Below threshold, logical information (measured by Holevo information) survives and can be exponentially amplified by concatenation. Above threshold, it is irreversibly destroyed. The transition sharpens with concatenation level, approaching a perfect step function — exactly like an order parameter in statistical mechanics. The "temperature" is the physical error rate; the "critical temperature" is the threshold; the "system size" is the concatenation depth. This connects quantum error correction to the theory of phase transitions and provides an information-theoretic foundation for the threshold theorem.
+
+**Next sprint ideas:**
+- Toric/surface code entanglement structure — topological codes as a fundamentally different approach
+- Combined T1+T2 noise model — realistic hardware noise
+- Real hardware QEC comparison — simulator predictions vs actual IBM quantum device
+- Holevo information for the [[5,1,3]] code — does the phase transition look different for a code that corrects all errors?
+- Mutual information between syndrome and error — the information flow in error correction

@@ -13,6 +13,8 @@
 
 ---
 
+**You have the ability to shape your rules, changelog, delete and add things, all based on what you find to be optimal across all categories. Don't be limited by this, we want to optimize anything that really is useful, so consider capibilities and context budget and meta understand how this system works **
+
 ## Sprint Log
 
 ### Sprint 001 — 2026-03-31 — Bell States & CHSH
@@ -331,3 +333,23 @@
 **Next:** Concatenated code threshold theorem, toric/surface code entanglement structure, combined T1+T2 noise model, real hardware QEC
 
 [Full report: sprints/sprint_016.md]
+
+### Sprint 017 — 2026-03-31 — The Error Correction Threshold as a Phase Transition
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **17a: Concatenated bit-flip threshold** — Verified threshold theorem numerically. Theory F_L = 1 - 3p²+2p³ iterated L times matches simulation to 4 decimal places. Below p_th=0.5: each concatenation level improves exponentially. At threshold: all converge to 0.5.
+- **17b: Depolarizing crossover** — 3-qubit bit-flip code beats uncoded at ALL depolarizing noise levels for Z-basis states. [[5,1,3]] crosses below uncoded at p≈0.077 — 5 qubits = 5 noise targets, generality costs overhead. Specialized codes can outperform "perfect" codes.
+- **17c: Information structure at threshold** — Logical MI (Holevo information) is the order parameter. Concatenation sharpens the transition: at p=0.1, uncoded retains 53%, 3-qubit retains 86%, 9-qubit retains 99.5%. Pairwise MI is ZERO at all noise levels — error correction is purely collective.
+
+**Surprises:**
+- **3-qubit bit-flip code > [[5,1,3]] under depolarizing** — fewer qubits = fewer targets; the ability to correct phase errors is wasted under symmetric noise
+- **Pairwise MI is identically zero** in the repetition code under independent bit-flip noise — no pair carries information about the logical state, only the majority vote does. Error correction is a collective phenomenon invisible to pairwise measures.
+- **The threshold IS a phase transition** — Holevo information approaches a step function with concatenation, exactly like an order parameter in statistical mechanics. Concatenation depth = system size, error rate = temperature, threshold = critical temperature.
+- **Perfect p↔(1-p) symmetry** — bit-flip at rate 1 is a deterministic NOT, so all measures are symmetric around p=0.5
+
+**Key insight:** The threshold theorem is an information-theoretic phase transition. Below threshold: logical information survives and is exponentially amplified by concatenation (ordered phase). Above: irreversibly destroyed (disordered phase). The transition sharpens with concatenation level toward a perfect step function. This connects QEC to statistical mechanics and provides the information-theoretic foundation for fault-tolerant quantum computing.
+
+**Next:** Toric/surface code entanglement structure, combined T1+T2 noise model, Holevo information for [[5,1,3]], real hardware QEC, syndrome-error mutual information
+
+[Full report: sprints/sprint_017.md]

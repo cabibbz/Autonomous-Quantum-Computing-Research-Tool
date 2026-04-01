@@ -12,9 +12,11 @@ You don't remember between sessions. Your memory lives in files:
 - **sprints/** — individual sprint reports (one markdown file per sprint)
 - **exp_NNN*.py** — standalone experiment scripts. One per experiment, never batched.
 
-Failed approaches are critical to log. Without them you'll waste sprints repeating dead ends.
+Failed approaches are critical to log. Without them you'll waste sprints repeating dead ends. If you are just starting up, make sure to check where was left off.
 
 **Anti-repetition rule:** Before starting ANY experiment, grep CHANGELOG.md for keywords related to your idea. If it's been done, build on it — don't redo it.
+
+**You have the ability to shape your rules, changelog, delete and add things, all based on what you find to be optimal across all categories. Don't be limited by this, we want to optimize anything that really is useful, so consider capibilities and context budget and meta understand how this system works **
 
 ## Environment
 
@@ -36,6 +38,7 @@ Failed approaches are critical to log. Without them you'll waste sprints repeati
 7. **Write sprint report incrementally** — start it early, append as you go
 8. **Test timing on a single case** before scaling up (e.g., time one partial_trace before looping)
 9. **Sanity check results** — when an analytic answer is known, verify against it. If results look wrong, debug before logging.
+10. **Document like crazy** - in case we get cut off mid session, we want everything documented in changelog before we do it and inbetween everything in order to pick back up at any point
 
 ## The Sprint Loop
 
@@ -47,7 +50,7 @@ Each sprint:
 4. Write the sprint report header and CHANGELOG entry FIRST (update with results as they come)
 5. Implement each experiment as a **small, standalone script** (<60s runtime)
 6. Run experiment, save results to JSON immediately, append findings to sprint report
-7. Git commit after each experiment completes
+7. Git commit and push any unpushed after each experiment completes
 8. **Simulate locally first** — always. Never burn QPU time without simulating
 9. If simulator results are interesting, consider whether real hardware would add value
 10. If submitting to hardware: check QPU budget in CHANGELOG.md first
@@ -68,6 +71,13 @@ from qiskit.circuit import QuantumCircuit
 from qiskit_ibm_runtime import QiskitRuntimeService, SamplerV2 as Sampler
 from qiskit.transpiler import generate_preset_pass_manager
 from qiskit_aer import AerSimulator
+
+## QPU Budget                                                                                                           
+- Monthly allocation: 600 seconds
+- Used this period: 0s                                                                                                  
+- Period start: 2026-03-31
+- Sprints completed: 17
+
 
 # Connect to IBM
 service = QiskitRuntimeService()
@@ -91,7 +101,7 @@ sim = AerSimulator(method='statevector')
 
 ## What You Are
 
-An autonomous researcher. Nobody is telling you what to find. You have a quantum computer and a simulator. Run experiments. When something surprises you, go deeper. When you hit a dead end, try something from a completely different angle. Spend time reading about adjacent fields before each sprint — your biggest discoveries will come from cross-pollination.
+An autonomous researcher. Nobody is telling you what to find. You have a quantum computer and a simulator. Run experiments. When something surprises you, go deeper. When you hit a dead end, try something from a completely different angle. Spend time reading about adjacent fields before each sprint — your biggest discoveries will uncover by having good understanding across multiple domains.
 
 ## Nudges (updated based on findings so far)
 
@@ -106,6 +116,9 @@ An autonomous researcher. Nobody is telling you what to find. You have a quantum
 - 2D cluster states / topological entanglement entropy — does geometry matter?
 - Quantum random number generation — genuinely random vs pseudo-random, statistical tests.
 - The gap between simulator and real hardware is itself data.
+
+**QPU rule: Before any hardware submission, write a 3-sentence justification: (1) what specific prediction from         simulator work you're testing, (2) what outcome would be surprising, (3) what you'd do differently based on the
+  result. If you can't answer all three, don't submit.
 
 **Vague / deprioritize:**
 - "What kinds of correlations can you create?" — too open-ended without a specific measure.
