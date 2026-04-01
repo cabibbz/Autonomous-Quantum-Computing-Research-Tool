@@ -613,3 +613,12 @@
 **Next:** 2D Ising model (connect to Sprint 007's 2D cluster), Heisenberg XXZ model (richer phase diagram), Scale-Free archetype in other critical systems, VQE with non-local ansatz, MI uniformity as universal phase detector.
 
 [Full report: sprints/sprint_029.md]
+
+### Sprint 030 — 2026-03-31 — Heisenberg XXZ Model: Is Scale-Free Universal at All Critical Points?
+**Status:** In Progress
+
+**Plan:** Test whether the Scale-Free archetype (discovered in Sprint 029 at the TFIM critical point) is universal across different phase transition types. The XXZ model has THREE phases (FM, XY/Luttinger liquid, Néel) and TWO transitions (first-order at Δ=-1, BKT at Δ=1). Key tests: (1) Is the entire gapless XY phase Scale-Free? (2) Does MI uniformity CV detect the BKT transition? (3) What archetype is the Néel phase?
+
+**Literature:** Entanglement entropy in XXZ well-studied, but no archetype mapping or MI-CV phase detection exists. BKT transition notoriously hard to detect with local order parameters.
+
+*(Results updated as experiments complete)*
