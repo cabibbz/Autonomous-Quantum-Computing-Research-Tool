@@ -1,0 +1,372 @@
+{
+  "sprint": "020c",
+  "description": "Toric code Page curve and noise fingerprint",
+  "page_curve": {
+    "toric": {
+      "1": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "std": 0.0,
+        "count": 8
+      },
+      "2": {
+        "mean": 0.1429,
+        "min": -0.0,
+        "max": 1.0,
+        "std": 0.3499,
+        "count": 28
+      },
+      "3": {
+        "mean": 0.4286,
+        "min": -0.0,
+        "max": 1.0,
+        "std": 0.4949,
+        "count": 56
+      },
+      "4": {
+        "mean": 0.7714,
+        "min": -0.0,
+        "max": 1.0,
+        "std": 0.4199,
+        "count": 70
+      },
+      "5": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "std": 0.0,
+        "count": 56
+      },
+      "6": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "std": 0.0,
+        "count": 28
+      },
+      "7": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "std": 0.0,
+        "count": 8
+      }
+    },
+    "five_qubit": {
+      "1": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "std": 0.0
+      },
+      "2": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "std": 0.0
+      },
+      "3": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "std": 0.0
+      },
+      "4": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "std": 0.0
+      }
+    }
+  },
+  "noise_fingerprint": {
+    "toric": {
+      "depolarizing": {
+        "0.0": {
+          "holevo": 1.0,
+          "avg_fidelity": 1.0,
+          "codespace_retention": 1.0
+        },
+        "0.02": {
+          "holevo": 0.9763,
+          "avg_fidelity": 0.8862,
+          "codespace_retention": 0.8863
+        },
+        "0.05": {
+          "holevo": 0.9304,
+          "avg_fidelity": 0.7371,
+          "codespace_retention": 0.7376
+        },
+        "0.1": {
+          "holevo": 0.8345,
+          "avg_fidelity": 0.5375,
+          "codespace_retention": 0.5392
+        },
+        "0.15": {
+          "holevo": 0.724,
+          "avg_fidelity": 0.3877,
+          "codespace_retention": 0.3908
+        },
+        "0.2": {
+          "holevo": 0.6084,
+          "avg_fidelity": 0.2764,
+          "codespace_retention": 0.2809
+        },
+        "0.3": {
+          "holevo": 0.3901,
+          "avg_fidelity": 0.1356,
+          "codespace_retention": 0.1423
+        },
+        "0.4": {
+          "holevo": 0.2179,
+          "avg_fidelity": 0.0635,
+          "codespace_retention": 0.0718
+        },
+        "0.5": {
+          "holevo": 0.1038,
+          "avg_fidelity": 0.0289,
+          "codespace_retention": 0.0381
+        }
+      },
+      "amplitude_damping": {
+        "0.0": {
+          "holevo": 1.0,
+          "avg_fidelity": 1.0,
+          "codespace_retention": 1.0
+        },
+        "0.02": {
+          "holevo": 0.9916,
+          "avg_fidelity": 0.9227,
+          "codespace_retention": 0.9228
+        },
+        "0.05": {
+          "holevo": 0.9765,
+          "avg_fidelity": 0.8161,
+          "codespace_retention": 0.8172
+        },
+        "0.1": {
+          "holevo": 0.9445,
+          "avg_fidelity": 0.6616,
+          "codespace_retention": 0.6651
+        },
+        "0.15": {
+          "holevo": 0.9034,
+          "avg_fidelity": 0.5326,
+          "codespace_retention": 0.5392
+        },
+        "0.2": {
+          "holevo": 0.8526,
+          "avg_fidelity": 0.4255,
+          "codespace_retention": 0.4355
+        },
+        "0.3": {
+          "holevo": 0.7228,
+          "avg_fidelity": 0.2654,
+          "codespace_retention": 0.2813
+        },
+        "0.4": {
+          "holevo": 0.5646,
+          "avg_fidelity": 0.1608,
+          "codespace_retention": 0.1811
+        },
+        "0.5": {
+          "holevo": 0.3985,
+          "avg_fidelity": 0.0959,
+          "codespace_retention": 0.1191
+        }
+      },
+      "phase_damping": {
+        "0.0": {
+          "holevo": 1.0,
+          "avg_fidelity": 1.0,
+          "codespace_retention": 1.0
+        },
+        "0.02": {
+          "holevo": 1.0,
+          "avg_fidelity": 0.9606,
+          "codespace_retention": 0.9606
+        },
+        "0.05": {
+          "holevo": 1.0,
+          "avg_fidelity": 0.9037,
+          "codespace_retention": 0.9037
+        },
+        "0.1": {
+          "holevo": 1.0,
+          "avg_fidelity": 0.8145,
+          "codespace_retention": 0.8145
+        },
+        "0.15": {
+          "holevo": 1.0,
+          "avg_fidelity": 0.7321,
+          "codespace_retention": 0.7321
+        },
+        "0.2": {
+          "holevo": 1.0,
+          "avg_fidelity": 0.6562,
+          "codespace_retention": 0.6562
+        },
+        "0.3": {
+          "holevo": 1.0,
+          "avg_fidelity": 0.5225,
+          "codespace_retention": 0.5225
+        },
+        "0.4": {
+          "holevo": 1.0,
+          "avg_fidelity": 0.4112,
+          "codespace_retention": 0.4112
+        },
+        "0.5": {
+          "holevo": 1.0,
+          "avg_fidelity": 0.3203,
+          "codespace_retention": 0.3203
+        }
+      }
+    },
+    "five_qubit": {
+      "depolarizing": {
+        "0.0": {
+          "holevo": 1.0,
+          "avg_fidelity": 1.0,
+          "codespace_retention": 1.0
+        },
+        "0.02": {
+          "holevo": 0.9897,
+          "avg_fidelity": 0.9272,
+          "codespace_retention": 0.9272
+        },
+        "0.05": {
+          "holevo": 0.9501,
+          "avg_fidelity": 0.8261,
+          "codespace_retention": 0.8261
+        },
+        "0.1": {
+          "holevo": 0.8482,
+          "avg_fidelity": 0.6773,
+          "codespace_retention": 0.6776
+        },
+        "0.15": {
+          "holevo": 0.7252,
+          "avg_fidelity": 0.551,
+          "codespace_retention": 0.5519
+        },
+        "0.2": {
+          "holevo": 0.5973,
+          "avg_fidelity": 0.4447,
+          "codespace_retention": 0.4465
+        },
+        "0.3": {
+          "holevo": 0.3638,
+          "avg_fidelity": 0.2825,
+          "codespace_retention": 0.2876
+        },
+        "0.4": {
+          "holevo": 0.1887,
+          "avg_fidelity": 0.1741,
+          "codespace_retention": 0.184
+        },
+        "0.5": {
+          "holevo": 0.0794,
+          "avg_fidelity": 0.1055,
+          "codespace_retention": 0.1211
+        }
+      },
+      "amplitude_damping": {
+        "0.0": {
+          "holevo": 1.0,
+          "avg_fidelity": 1.0,
+          "codespace_retention": 1.0
+        },
+        "0.02": {
+          "holevo": 0.9974,
+          "avg_fidelity": 0.9509,
+          "codespace_retention": 0.9509
+        },
+        "0.05": {
+          "holevo": 0.9865,
+          "avg_fidelity": 0.8804,
+          "codespace_retention": 0.8804
+        },
+        "0.1": {
+          "holevo": 0.9542,
+          "avg_fidelity": 0.7711,
+          "codespace_retention": 0.7712
+        },
+        "0.15": {
+          "holevo": 0.9076,
+          "avg_fidelity": 0.6717,
+          "codespace_retention": 0.6721
+        },
+        "0.2": {
+          "holevo": 0.8495,
+          "avg_fidelity": 0.5815,
+          "codespace_retention": 0.5825
+        },
+        "0.3": {
+          "holevo": 0.7085,
+          "avg_fidelity": 0.427,
+          "codespace_retention": 0.43
+        },
+        "0.4": {
+          "holevo": 0.55,
+          "avg_fidelity": 0.3037,
+          "codespace_retention": 0.31
+        },
+        "0.5": {
+          "holevo": 0.3916,
+          "avg_fidelity": 0.208,
+          "codespace_retention": 0.2188
+        }
+      },
+      "phase_damping": {
+        "0.0": {
+          "holevo": 1.0,
+          "avg_fidelity": 1.0,
+          "codespace_retention": 1.0
+        },
+        "0.02": {
+          "holevo": 1.0,
+          "avg_fidelity": 0.9751,
+          "codespace_retention": 0.9751
+        },
+        "0.05": {
+          "holevo": 1.0,
+          "avg_fidelity": 0.9383,
+          "codespace_retention": 0.9383
+        },
+        "0.1": {
+          "holevo": 1.0,
+          "avg_fidelity": 0.8781,
+          "codespace_retention": 0.8781
+        },
+        "0.15": {
+          "holevo": 1.0,
+          "avg_fidelity": 0.8195,
+          "codespace_retention": 0.8195
+        },
+        "0.2": {
+          "holevo": 1.0,
+          "avg_fidelity": 0.7625,
+          "codespace_retention": 0.7625
+        },
+        "0.3": {
+          "holevo": 1.0,
+          "avg_fidelity": 0.6531,
+          "codespace_retention": 0.6531
+        },
+        "0.4": {
+          "holevo": 1.0,
+          "avg_fidelity": 0.55,
+          "codespace_retention": 0.55
+        },
+        "0.5": {
+          "holevo": 1.0,
+          "avg_fidelity": 0.4531,
+          "codespace_retention": 0.4531
+        }
+      }
+    }
+  },
+  "elapsed_seconds": 2.5
+}
