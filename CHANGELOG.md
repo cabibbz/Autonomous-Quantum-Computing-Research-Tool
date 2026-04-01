@@ -126,3 +126,19 @@ Explicit operator counting: U(1)=0.143 > Z₂=0.099 > S₃=0.072 > Z₃=0.040 (H
 - BW envelope is far more wrong than BW form
 
 [Full report: sprints/sprint_035.md]
+
+### Sprint 036 — MI-CV Finite-Size Scaling: Genuine Divergence Confirmed
+**Status:** Complete (3 experiments).
+
+**MI-CV is a genuine order parameter.** Transition slope at TFIM h/J=1.0 diverges as ~n^1.1: slope 1.72 (n=8) → 3.95 (n=16) → ~7.8 (n=32). Ordered phase CV → 0, disordered CV → ∞ with system size. Crossing point at h/J ≈ 0.93 (7% finite-size shift).
+
+**XXZ BKT dome narrows with size.** CV growth ratio at Δ=1.0 is 1.34 vs 1.17 at Δ=1.5 (n=16→32). Néel phase (Δ=2) shows CV convergence: 1.13 → 0.78. BKT boundary between diverging/converging CV sharpens toward Δ=1.
+
+**New technique: correlation-function MI reconstruction.** All-pairs MI from 9 Pauli correlation matrices computed O(n²·χ²) from MPS. Enables n=50 all-pairs MI. Validated exact at n=8 (diff=0.000000).
+
+**Surprises:**
+- NN-only MI-CV is useless — boundary effects dominate, obscure phase transition
+- Slope ~ n^1.1 suggests logarithmic corrections (expected for Ising universality)
+- XXZ Néel CV drops to 0.78 at n=32 — ordered phases become increasingly Democratic
+
+[Full report: sprints/sprint_036.md]
