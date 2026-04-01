@@ -1,0 +1,430 @@
+{
+  "sprint": "027a",
+  "description": "Flag-FT syndrome circuit for [[5,1,3]] \u2014 build and verify",
+  "flag_circuit": {
+    "gates": {
+      "cx": 16,
+      "h": 8,
+      "cz": 8
+    },
+    "total_2q_gates": 24,
+    "extra_2q_vs_bare": 8,
+    "depth": 13,
+    "qubits": 13
+  },
+  "weight2_errors": {
+    "g1": {
+      "error": "Z2 X3",
+      "syndrome": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "std_correction": "(4, 'Z')"
+    },
+    "g2": {
+      "error": "Z3 X4",
+      "syndrome": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "std_correction": "(0, 'Z')"
+    },
+    "g3": {
+      "error": "Z3 Z4",
+      "syndrome": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "std_correction": "(1, 'Y')"
+    },
+    "g4": {
+      "error": "X3 Z4",
+      "syndrome": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "std_correction": "(2, 'Z')"
+    }
+  },
+  "propagation_tests": [
+    {
+      "stabilizer": 0,
+      "error_position": 0,
+      "position_label": "before gate 0 (\u2261 stabilizer, weight 0 effective)",
+      "syndrome": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "flags": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "flag_triggered": false
+    },
+    {
+      "stabilizer": 0,
+      "error_position": 1,
+      "position_label": "between gate 0 and flag CNOT 1",
+      "syndrome": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "flags": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "flag_triggered": false
+    },
+    {
+      "stabilizer": 0,
+      "error_position": 2,
+      "position_label": "between flag CNOT 1 and gate 1 (in bracket)",
+      "syndrome": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "flags": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "flag_triggered": true
+    },
+    {
+      "stabilizer": 0,
+      "error_position": 3,
+      "position_label": "between gate 2 and flag CNOT 2 (in bracket)",
+      "syndrome": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "flags": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "flag_triggered": true
+    },
+    {
+      "stabilizer": 0,
+      "error_position": 4,
+      "position_label": "between flag CNOT 2 and gate 3",
+      "syndrome": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "flags": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "flag_triggered": false
+    },
+    {
+      "stabilizer": 1,
+      "error_position": 0,
+      "position_label": "before gate 0 (\u2261 stabilizer, weight 0 effective)",
+      "syndrome": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "flags": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "flag_triggered": false
+    },
+    {
+      "stabilizer": 1,
+      "error_position": 1,
+      "position_label": "between gate 0 and flag CNOT 1",
+      "syndrome": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "flags": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "flag_triggered": false
+    },
+    {
+      "stabilizer": 1,
+      "error_position": 2,
+      "position_label": "between flag CNOT 1 and gate 1 (in bracket)",
+      "syndrome": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "flags": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "flag_triggered": true
+    },
+    {
+      "stabilizer": 1,
+      "error_position": 3,
+      "position_label": "between gate 2 and flag CNOT 2 (in bracket)",
+      "syndrome": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "flags": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "flag_triggered": true
+    },
+    {
+      "stabilizer": 1,
+      "error_position": 4,
+      "position_label": "between flag CNOT 2 and gate 3",
+      "syndrome": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "flags": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "flag_triggered": false
+    },
+    {
+      "stabilizer": 2,
+      "error_position": 0,
+      "position_label": "before gate 0 (\u2261 stabilizer, weight 0 effective)",
+      "syndrome": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "flags": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "flag_triggered": false
+    },
+    {
+      "stabilizer": 2,
+      "error_position": 1,
+      "position_label": "between gate 0 and flag CNOT 1",
+      "syndrome": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "flags": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "flag_triggered": false
+    },
+    {
+      "stabilizer": 2,
+      "error_position": 2,
+      "position_label": "between flag CNOT 1 and gate 1 (in bracket)",
+      "syndrome": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "flags": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "flag_triggered": true
+    },
+    {
+      "stabilizer": 2,
+      "error_position": 3,
+      "position_label": "between gate 2 and flag CNOT 2 (in bracket)",
+      "syndrome": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "flags": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "flag_triggered": true
+    },
+    {
+      "stabilizer": 2,
+      "error_position": 4,
+      "position_label": "between flag CNOT 2 and gate 3",
+      "syndrome": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "flags": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "flag_triggered": false
+    },
+    {
+      "stabilizer": 3,
+      "error_position": 0,
+      "position_label": "before gate 0 (\u2261 stabilizer, weight 0 effective)",
+      "syndrome": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "flags": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "flag_triggered": false
+    },
+    {
+      "stabilizer": 3,
+      "error_position": 1,
+      "position_label": "between gate 0 and flag CNOT 1",
+      "syndrome": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "flags": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "flag_triggered": false
+    },
+    {
+      "stabilizer": 3,
+      "error_position": 2,
+      "position_label": "between flag CNOT 1 and gate 1 (in bracket)",
+      "syndrome": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "flags": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "flag_triggered": true
+    },
+    {
+      "stabilizer": 3,
+      "error_position": 3,
+      "position_label": "between gate 2 and flag CNOT 2 (in bracket)",
+      "syndrome": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "flags": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "flag_triggered": true
+    },
+    {
+      "stabilizer": 3,
+      "error_position": 4,
+      "position_label": "between flag CNOT 2 and gate 3",
+      "syndrome": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "flags": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "flag_triggered": false
+    }
+  ],
+  "flagged_correction": {
+    "standard_correct": 0,
+    "flagged_correct": 8,
+    "total": 8
+  },
+  "single_qubit_tests": {
+    "syndrome_matches": 15,
+    "no_false_flags": 15,
+    "total": 15
+  },
+  "elapsed_seconds": 0.1
+}
