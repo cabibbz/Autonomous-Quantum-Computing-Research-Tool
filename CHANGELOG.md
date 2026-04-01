@@ -1,9 +1,14 @@
 # Changelog — Quantum Explorer
 
-## QPU Budget
-- Monthly allocation: 600 seconds
-- Used this period: 0s
-- Period start: 2026-03-31
+
+  ## QPU Budget
+  - Monthly allocation: 600 seconds
+  - Used this period: 0s
+  - Sprints completed on simulator only: 19
+  - Note: Your simulator predictions are now specific enough to test.
+    Real hardware noise is a mixture of channels — your noise fingerprint
+    framework (Sprint 016) can decompose it. The gap between simulator
+    and hardware is unmapped data, not a risk.
 
 ## Constraints (learned the hard way)
 - **Max qubits for partial_trace: 10.** Beyond that, CPU time explodes.
@@ -373,3 +378,24 @@
 **Next:** Toric/surface code, combined T1+T2 noise, real hardware QEC, syndrome decoding strategies, quantum channel capacity
 
 [Full report: sprints/sprint_018.md]
+
+### Sprint 019 — 2026-03-31 — Quantum Channel Capacity: The Fundamental Limit of Error Correction
+**Status:** Complete (3/3 experiments)
+
+**Completed:**
+- **19a: Coherent information** — Computed quantum capacity for depolarizing (threshold p≈0.20), amplitude damping (γ≈0.50), phase damping (non-monotonic, never truly zero). Maximally entangled input near-optimal for symmetric channels; amplitude damping benefits from biased input.
+- **19b: Capacity vs threshold** — 3-qubit code captures 51% of channel capacity at p=0.05, [[5,1,3]] just 28%. Codes operate far below the fundamental limit. 3-qubit code "exceeds" capacity at high noise (finite code, specific basis).
+- **19c: Capacity landscape** — Full cross-channel comparison. Amplitude damping has 2x the capacity of depolarizing at same noise. Entanglement-assisted capacity provides 2-4x boost, largest when channel is most destructive.
+
+**Surprises:**
+- **Phase damping capacity is non-monotonic** — worst at λ≈0.5, perfect at both extremes. Maximum dephasing (λ=1) is a deterministic Z rotation, fully reversible!
+- **3-qubit code "exceeds" channel capacity** at high noise — finite code protecting specific basis beats asymptotic bound for arbitrary states. Hashing bound isn't tight for non-degradable channels.
+- **Entanglement boost largest when channel worst** — depolarizing gets 3.7x boost from pre-shared entanglement vs 2.4x for amplitude damping
+- **Capacity ordering doesn't predict code performance for phase damping** — Q(phase) > Q(depol) but codes do WORSE under phase noise. The capacity exists but our codes can't access it.
+- **Codes are far from optimal** — even the best code captures only 51% of capacity. Shannon's theorem guarantees codes exist that approach 100%.
+
+**Key insight:** The channel capacity reveals the gap between what physics allows and what our codes achieve. Amplitude damping has the most capacity (least destructive), depolarizing the least. But code performance depends on *matching* the code architecture to the noise structure — phase damping has more capacity than depolarizing, yet our codes perform worse under it because they assume symmetric errors. The entanglement-assisted capacity shows that pre-shared entanglement is most valuable when the channel is most destructive, connecting to Hayden-Preskill (Sprint 013). The unifying thread: error correction is the art of spreading information (scrambling) faster than the channel can concentrate its damage.
+
+**Next:** Toric/surface code entanglement structure, combined T1+T2 noise model, capacity-achieving codes, real hardware comparison
+
+[Full report: sprints/sprint_019.md]
