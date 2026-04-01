@@ -204,3 +204,22 @@ Explicit operator counting: U(1)=0.143 > Z₂=0.099 > S₃=0.072 > Z₃=0.040 (H
 - Larger d gives MORE uniform MI (lower CV) above transition
 
 [Full report: sprints/sprint_040.md]
+
+### Sprint 041 — q=5 Clock MI-CV: Crossings Persist, Shifted Dramatically
+**Status:** Complete (4 experiments).
+
+**q=5 clock model STILL shows crossing curves.** All three predictions (BKT dome, first-order step, no crossings) were wrong. MI-CV at n=8,12 shows crossings at g_c≈0.673, confirmed by interpolation between g=0.5 (CV decreases with n) and g=0.8 (CV increases).
+
+**Crossing point shifts 10x more than q=3→4.** g_c trend: 0.93 (q=2) → 0.923 (q=3) → 0.893 (q=4) → 0.673 (q=5). The Δg=0.220 jump from q=4→5 is an order of magnitude larger than q=3→4 (0.030).
+
+**Slope halves from q=4 to q=5.** At g=1.0 n=8: q=5 slope 0.86 vs q=4 slope 1.72. Consistent with gentler BKT-like transition in clock model.
+
+**Clock ≠ Potts for q≥4.** ClockChain uses cos(2π(s_i-s_j)/q) coupling, which equals Potts only for q=2,3. True first-order test requires custom Potts model with Kronecker-delta coupling.
+
+**Surprises:**
+- ALL three predictions wrong — crossings persist at q=5
+- g_c shift is 10x larger from q=4→5 than q=3→4
+- Slope exactly halves (0.86 vs 1.72) — suspiciously clean
+- Larger d continues to give lower CV above transition
+
+[Full report: sprints/sprint_041.md]

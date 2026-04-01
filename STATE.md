@@ -1,19 +1,19 @@
 # Current State — Rewrite this completely each sprint
 
 ## Last Sprint
-Sprint 040 — q=4 Potts MI-CV: Marginal transition shows crossing, not dome
+Sprint 041 — q=5 Clock MI-CV: Crossings persist, shifted dramatically to g≈0.67
 
 ## Active Research Thread
-MI-CV as universal phase transition classifier. q=4 Potts (marginal point where 2D Potts goes first-order) still shows crossing curves at n=8,12, same as q=3 and TFIM. Marginal character not visible at these sizes — possibly hidden by logarithmic corrections.
+MI-CV as universal phase transition classifier. q=5 clock model still shows crossing curves at n=8,12, disproving the prediction that crossings would vanish above q=4. The crossing point shifts dramatically: 0.93 (q=2) → 0.923 (q=3) → 0.893 (q=4) → 0.673 (q=5). Slope halves from q=4→5. Key insight: ClockChain ≠ Potts for q≥4.
 
 ## QPU Budget
 - Used: 20s of 600s (Sprint 025: ibm_kingston, 18 circuits)
 - Remaining: 580s
 
 ## Top 3 Next Experiments
-1. **q=5 Potts MI-CV** — q=5 is definitively first-order (above marginal q=4). Should show step function (no crossings). This would be the definitive test: crossings at q≤4, step at q≥5.
-2. **q=4 at n=16** — Test if logarithmic corrections at q=4 start broadening the crossing region at larger sizes. Would reveal marginal character.
-3. **Universal scaling functions** — Plot collapsed F(x) for q=2,3,4 on same axes. Visually distinct curves = MI-CV captures full universal function.
+1. **True q=5 Potts model** — Build custom Potts model with Kronecker-delta coupling (H = -J Σ δ(s_i,s_j) - g Σ s_i). This IS first-order and should show step function. Would definitively separate clock vs Potts universality.
+2. **q=5 clock n=16** — Check if crossing sharpens or broadens. If slope stays flat (doesn't grow with n), confirms BKT character. If slope grows, it's second-order.
+3. **q=6,8 clock** — Map out how crossing point and slope evolve for large q. Does g_c → 0? Does slope → 0? Would establish the clock model's approach to the XY limit.
 
 ## What's Been Ruled Out
 - Small-scale QEC active correction: exhaustively proven to fail for [[5,1,3]] (Sprints 026-028)
@@ -25,10 +25,12 @@ MI-CV as universal phase transition classifier. q=4 Potts (marginal point where 
 - Fixed g_c collapse: misleading due to finite-size g_c shift (Sprint 039)
 - n=24 qutrit DMRG without symmetry: too slow (>60s per point) (Sprint 039)
 - q=4 marginal showing dome: shows crossing at n=8,12 (Sprint 040)
+- q=5 clock showing no crossings: still shows crossings at g≈0.67 (Sprint 041)
+- ClockChain as Potts proxy for q≥4: clock ≠ Potts at q≥4 (Sprint 041)
 
 ## Key Tools Available
 - Exact diag: n≤10
 - DMRG (TeNPy): n>10, 1D systems only
-- Correlation-function MI reconstruction: all-pairs MI from MPS at any size (d=2 Pauli, d=3 Gell-Mann, d=4 SU(4) generators)
+- Correlation-function MI reconstruction: all-pairs MI from MPS at any size (d=2-5 tested)
 - IBM QPU: 580s remaining, ibm_kingston (Heron, 156 qubits)
-- SU(d) generalized Gell-Mann basis: implemented for d=3,4. ~6.5s/point at d=4 n=8, ~18s at d=4 n=12
+- SU(d) generalized Gell-Mann basis: implemented for d=2-5. ~16.5s/point at d=5 n=8

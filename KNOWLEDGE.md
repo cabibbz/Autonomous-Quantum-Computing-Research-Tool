@@ -43,9 +43,13 @@ MI uniformity coefficient of variation classifies transition TYPE by curve shape
 
 **Potts q=4 MI-CV (Sprint 040):** q=4 (marginal point where 2D Potts transitions from second-order to first-order) shows crossing curves at n=8,12 — same second-order signature as q=3 and TFIM. Crossing at g_c≈0.893 (further below self-dual than q=3's 0.923). Slope at g=1.0 is LOWER than q=3 (1.72 vs 2.27 at n=8). q=4 CV is systematically lower than q=3 above transition (ratio 0.87-0.95) — larger d distributes correlations more evenly. Marginal/BKT character not visible at n≤12.
 
-**Crossing point shifts with q:** g_c(n=8,12) = ~0.93 (q=2, TFIM) → 0.923 (q=3) → 0.893 (q=4). Finite-size shift grows with q.
+**q=5 clock MI-CV (Sprint 041):** q=5 clock model STILL shows crossing curves at n=8,12, disproving prediction that crossings would vanish. Crossing at g_c≈0.673 — a 10x larger shift than q=3→4 (0.220 vs 0.030). Slope at g=1.0 halves vs q=4 (0.86 vs 1.72). CV systematically lower than q=4 above transition (0.521 vs 0.727 at g=1.0 n=8).
 
-**Technique:** All-pairs MI via correlation-function reconstruction of ρ_ij from MPS. Exact for physical states (validated: diff=0 at n=8). Extended to d=3 (Gell-Mann, Sprint 038) and d=4 (SU(4) generators, Sprint 040).
+**Crossing point shifts with q (n=8,12):** g_c = 0.93 (q=2) → 0.923 (q=3) → 0.893 (q=4) → 0.673 (q=5). Shift accelerates dramatically at q=5 (Δg = 0.007, 0.030, 0.220). Consistent with clock model approaching XY limit.
+
+**Clock ≠ Potts for q≥4 (Sprint 041).** TeNPy's ClockChain uses cos(2π(s_i-s_j)/q) coupling, which equals Potts δ(s_i,s_j) only for q=2,3. For q≥5, the clock model has an intermediate "floating" BKT phase absent in Potts. Testing true Potts first-order transition requires custom Kronecker-delta model.
+
+**Technique:** All-pairs MI via correlation-function reconstruction of ρ_ij from MPS. Exact for physical states (validated: diff=0 at n=8). Extended to d=3 (Gell-Mann, Sprint 038), d=4 (SU(4), Sprint 040), d=5 (SU(5), Sprint 041, ~16.5s/point at n=8).
 
 ## Archetype Boundaries ≠ Phase Boundaries
 I3 sign change occurs at Δ≈0.7 in XXZ, inside the XY phase — not at either thermodynamic transition (Δ=-1 or Δ=1). The entanglement phase diagram has its own topology distinct from thermodynamics.
@@ -85,3 +89,4 @@ Backend: ibm_kingston (Heron, 156 qubits). 20s QPU used.
 - **XXZ**: Democratic → Scale-Free → Geometric → Scale-Free → Democratic (loop)
 - **Potts q=3**: GHZ-3 → Product (like TFIM but with triplet spectrum from Z₃)
 - **Potts q=4**: GHZ-4 → Product (crossing signature like q=3, marginal corrections not yet visible)
+- **Clock q=5**: GHZ-5 → Product (crossings persist but shifted to g≈0.67, slope halved vs q=4)
