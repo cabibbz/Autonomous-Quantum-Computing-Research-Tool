@@ -1,0 +1,96 @@
+{
+  "sprint": "027b",
+  "description": "Flag-FT vs bare vs passive under hardware noise",
+  "noise_model": {
+    "p1q": 0.0005,
+    "p2q": 0.008,
+    "p_readout": 0.015
+  },
+  "shots": 50000,
+  "results": {
+    "uncoded": {
+      "Z": {
+        "err": 0.01524,
+        "holevo": 0.8862
+      },
+      "X": {
+        "err": 0.01529,
+        "holevo": 0.8859
+      },
+      "Y": {
+        "err": 0.01487,
+        "holevo": 0.8884
+      },
+      "avg_holevo": 0.8868,
+      "asymmetry": 0.0025,
+      "min_holevo": 0.8859
+    },
+    "passive": {
+      "Z": {
+        "err": 0.10689,
+        "holevo": 0.5095
+      },
+      "X": {
+        "err": 0.10468,
+        "holevo": 0.5163
+      },
+      "Y": {
+        "err": 0.1076,
+        "holevo": 0.5074
+      },
+      "avg_holevo": 0.5111,
+      "asymmetry": 0.0089,
+      "min_holevo": 0.5074
+    },
+    "bare": {
+      "Z": {
+        "err": 0.1606,
+        "holevo": 0.3643
+      },
+      "X": {
+        "err": 0.17467,
+        "holevo": 0.3317
+      },
+      "Y": {
+        "err": 0.19732,
+        "holevo": 0.2835
+      },
+      "avg_holevo": 0.3265,
+      "asymmetry": 0.0808,
+      "min_holevo": 0.2835
+    },
+    "flag_ft": {
+      "Z": {
+        "err": 0.15811,
+        "holevo": 0.3702,
+        "flag_rate": 0.0591,
+        "flag_match_rate": 0.00092
+      },
+      "X": {
+        "err": 0.17362,
+        "holevo": 0.3341,
+        "flag_rate": 0.0597,
+        "flag_match_rate": 0.00102
+      },
+      "Y": {
+        "err": 0.19781,
+        "holevo": 0.2825,
+        "flag_rate": 0.0578,
+        "flag_match_rate": 0.001
+      },
+      "avg_holevo": 0.3289,
+      "asymmetry": 0.0877,
+      "min_holevo": 0.2825
+    }
+  },
+  "flag_statistics": {
+    "frac_flagged": 0.0589,
+    "frac_match": 0.00098,
+    "raw": {
+      "flagged": 17663,
+      "flag_match": 294,
+      "total": 300000
+    }
+  },
+  "elapsed_seconds": 27.7
+}
