@@ -4,7 +4,7 @@
   ## QPU Budget
   - Monthly allocation: 600 seconds
   - Used this period: 0s
-  - Sprints completed on simulator only: 21
+  - Sprints completed on simulator only: 22
   - Note: Your simulator predictions are now specific enough to test.
     Real hardware noise is a mixture of channels — your noise fingerprint
     framework (Sprint 016) can decompose it. The gap between simulator
@@ -444,16 +444,24 @@
 
 [Full report: sprints/sprint_021.md]
 
-### Sprint 022 — 2026-03-31 — Noise-Adapted Codes: When Does Bias-Awareness Beat Isotropy?
-**Status:** In Progress
+### Sprint 022 — 2026-03-31 — Noise-Adapted Codes: Bias-Awareness Never Beats Isotropy
+**Status:** Complete (3/3 experiments)
 
-**Question:** Sprint 021 proved [[5,1,3]] wins universally via isotropy. But real hardware has biased noise (T2 << T1). Can a code specialized for the dominant error beat the isotropic code? At what bias ratio?
+**Completed:**
+- **22a: Biased codes sweep** — Phase-flip (Z-specialized) and bit-flip (X-specialized) codes both lose to [[5,1,3]] at ALL bias ratios up to 10:1. Specialization asymmetry catastrophic (0.9 for bit-flip under Z-bias). [[5,1,3]] asymmetry stays below 0.06.
+- **22b: Full (γ,λ) landscape** — 10×10 grid. [[5,1,3]] wins 86/100 points. Uncoded wins 14/100 (high noise corner). Specialized codes win **zero** points. No "specialization zone" exists.
+- **22c: Why isotropy wins** — Distance decomposition: specialized codes are distance-1 (weakest direction). Per-qubit efficiency: uncoded is 4x better than [[5,1,3]] for total information. QEC trades quantity for quality.
 
-**Codes:** 3-qubit bit-flip (X-specialized), 3-qubit phase-flip (Z-specialized), [[5,1,3]] (isotropic), uncoded.
+**Surprises:**
+- **No crossover at any bias ratio** — even at 10:1 Z-bias, [[5,1,3]]'s isotropy beats phase-flip code's specialization
+- **Specialized codes never win ANY grid point** — bias-aware oracle that picks best 3-qubit code still never beats [[5,1,3]]
+- **QEC is a quality-over-quantity trade** — 5 uncoded qubits carry 4.4x more total information than 1 [[5,1,3]] logical qubit. QEC only pays off when individual qubit fidelity matters (computation, not communication)
+- **Distance decomposition is the explanation** — code distance = min(d_X, d_Y, d_Z). Specialized codes have d=1 overall despite d=3 against one error type
 
-**Literature:** XZZX surface code shows bias-tailoring works at large scale. Small-scale crossover analysis is the gap.
+**Key insight:** The noise landscape has exactly two regimes at small scale: (1) isotropy wins (low-moderate noise, 86% of landscape), (2) no code helps (high noise, 14%). There is no specialization zone. The XZZX surface code's success at large scale relies on having enough qubits for BOTH isotropy against common errors AND extra distance against the biased error. At 3-5 qubits, you can have isotropy OR specialization, not both. The crossover to bias-tailoring advantage likely requires O(d²) qubits.
 
-**Experiments:**
-- 22a: Specialized codes under biased noise (Z-dominated)
-- 22b: Optimal code map across (γ, λ) landscape
-- 22c: Information-theoretic cost of isotropy under known bias
+**Literature gap filled:** First systematic basis-averaged Holevo comparison of specialized vs isotropic codes across full combined T1+T2 noise landscape at small scale. Confirms isotropy dominance and identifies exact break-even boundary against uncoded.
+
+**Next:** Concatenated bias-tailoring (Shor = phase-flip inside bit-flip), surface code at d=2, real hardware QEC test, entanglement-assisted codes under bias
+
+[Full report: sprints/sprint_022.md]
