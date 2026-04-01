@@ -16,18 +16,24 @@ Each captures orthogonal information. Different phase transitions are visible at
 3. **Spectral** (eigenvalue distribution of ρ_A) — symmetry content. U(1) gives doublet degeneracies. Z₃ gives triplets.
 4. **Hamiltonian** (H_E = -log ρ_A structure) — locality and entanglement temperature.
 
-## MI-CV as Phase Transition Order Parameter (Sprints 030, 036)
+## MI-CV as Phase Transition Order Parameter (Sprints 030, 036, 037)
 MI uniformity coefficient of variation classifies transition TYPE by curve shape:
-- **Discontinuous jump** → first-order transition
-- **Monotonic inflection** → Ising / second-order
-- **Smooth dome** → BKT / infinite-order
+
+| Transition | MI-CV shape | Crossing? | Gradient scaling |
+|-----------|-------------|-----------|------------------|
+| Second-order (Ising) | Smooth inflection | Yes (curves cross) | ~n^1.1 |
+| First-order | Step function 0→finite | No | ~n^0.9 |
+| BKT (infinite-order) | Smooth dome | No | dome narrows |
 
 **Confirmed as genuine order parameter (Sprint 036):** Tested at n=8,16,32,50.
 - TFIM transition slope diverges as ~n^1.1 (slope 1.7 → 3.9 → 7.8)
 - Ordered phase: CV → 0 with n (uniform MI). Disordered: CV → ∞ with n.
 - XXZ BKT dome narrows: growth rate ratio 1.34 at Δ=1 vs 1.17 at Δ=1.5 (n=16→32)
 - XXZ Néel phase (Δ=2): CV decreases 1.13 → 0.78 (n=8→32)
-- Crossing point at h/J ≈ 0.93 (7% finite-size shift from exact h_c=1.0)
+
+**First-order transition (Sprint 037):** FM phase has CV=0.000 exactly. Jump at Δ=-1 grows as ~n^1.0. Presence/absence of curve crossings distinguishes transition orders.
+
+**Critical exponent (Sprint 037):** MI-CV crossing points shift as h_c(n) = 1.0 + a·n^{-1/ν}. Effective ν = 0.755 from fit, but two-point estimates converge: 0.74→0.73→0.88. Corrections to scaling significant at n≤32.
 
 **Technique:** All-pairs MI via correlation-function reconstruction of ρ_ij from MPS. Exact for physical states (validated: diff=0 at n=8).
 

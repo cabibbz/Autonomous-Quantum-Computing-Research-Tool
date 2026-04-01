@@ -142,3 +142,19 @@ Explicit operator counting: U(1)=0.143 > Z₂=0.099 > S₃=0.072 > Z₃=0.040 (H
 - XXZ Néel CV drops to 0.78 at n=32 — ordered phases become increasingly Democratic
 
 [Full report: sprints/sprint_036.md]
+
+### Sprint 037 — Critical Exponent & First-Order Transition: MI-CV Classification Complete
+**Status:** Complete (5 experiments).
+
+**TFIM critical exponent from crossing points.** Four crossings at n=8-32: h_c shifts from 0.895 to 0.972. Power-law fit gives ν=0.755, but two-point estimates converge toward Ising ν=1 (0.74→0.88). Corrections to scaling dominate at n≤32.
+
+**XXZ first-order transition at Δ=-1.** FM phase has CV=0.000 exactly. Step-function onset at Δ=-1 with jump growing as ~n^1.0. Gradient scales ~n^0.9. No curve crossings (unlike Ising).
+
+**MI-CV transition classification complete.** Three transition types have three distinct signatures: crossing curves (Ising), step function (first-order), smooth dome (BKT). Presence/absence of crossings is the cleanest first-order diagnostic.
+
+**Surprises:**
+- FM phase CV is exactly zero, not just small — purest Democratic state found
+- First-order gradient (~n^0.9) SLOWER than Ising (~n^1.1) — first-order sharpens width, not slope
+- No crossing at first-order is a qualitative signature, simpler than quantitative gradient analysis
+
+[Full report: sprints/sprint_037.md]
