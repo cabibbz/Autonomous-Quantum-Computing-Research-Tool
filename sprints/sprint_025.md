@@ -77,10 +77,50 @@ The question: does isotropy survive these real-world complications?
 5. **Uncoded still wins overall**: 0.967 > 0.838 > 0.499 — encoding overhead dominates at current error rates
 6. **3-qubit Z-basis champion**: 0.976 — error rates so low that bit-flip correction provides real gain in Z-basis
 
-### 25c: Gap Analysis
+### 25c: Gap Analysis — Simulator vs Hardware
 
-(Results pending)
+**Error ratio (HW/Sim):**
+- Uncoded: 0.19-0.29x (hardware much better — our noise model was conservative)
+- 3-qubit: 0.32-0.90x (varies by basis — Y-basis nearly matches, Z/X better on HW)
+- [[5,1,3]]: 0.98-1.07x (remarkably close! 10-CX circuit is noise-dominated)
+
+**Asymmetry comparison:**
+| Code | Sim Asymmetry | HW Asymmetry | Ratio |
+|------|---------------|--------------|-------|
+| Uncoded | 0.002 | 0.012 | 5.6x |
+| 3-qubit | 0.245 | 0.254 | 1.0x |
+| [[5,1,3]] | 0.010 | 0.040 | 3.9x |
+
+**Noise parameter inference from hardware:**
+- Readout error: ~0.35% (vs model 1.5% — 4.4x better)
+- 2Q gate error: ~0.93% (vs model 0.8% — 1.2x worse)
+- Break-even for [[5,1,3]] WITH active correction: p_2q < 1.86% → **hardware is below threshold!**
+
+**State asymmetry (|0⟩_L vs |1⟩_L):**
+- [[5,1,3]] Y-basis has largest |0⟩/|1⟩ gap (0.015) — suggests T1-type relaxation toward |0⟩
+- 3-qubit Z-basis |0⟩_L has 0% error vs |1⟩_L 0.46% — amplitude damping visible
+
+**What the gap reveals:**
+1. Simulator noise model was conservative for simple circuits (readout 4.4x too high)
+2. But accurate for deep circuits ([[5,1,3]] error within 7% of prediction)
+3. The 4x isotropy degradation comes from: (a) qubit-specific T1/T2, (b) non-uniform CX error rates across the 5 physical qubits, (c) T1-type asymmetry (|0⟩_L ≠ |1⟩_L)
+4. 3-qubit asymmetry is structural (code property), not noise-induced — hardware perfectly confirms this
 
 ## Key Findings
 
-(To be filled)
+1. **[[5,1,3]] basis isotropy survives on real hardware** — the central prediction from 24 sprints of simulation is confirmed. [[5,1,3]] is 6.4x more isotropic than 3-qubit on IBM Heron (asymmetry 0.040 vs 0.254).
+
+2. **Correlated noise partially breaks isotropy but doesn't destroy it** — hardware [[5,1,3]] asymmetry is 4x worse than simulator (0.040 vs 0.010), attributable to qubit-specific T1/T2 and spatially non-uniform gate errors. The isotropy is degraded but remains the dominant code property.
+
+3. **Encoding overhead prevents QEC advantage** — without active error correction, the 10-CX encoding circuit adds more noise than the code structure can protect against. Uncoded (0 gates) wins on average Holevo. But hardware gate errors (0.93%) are below the break-even threshold for active [[5,1,3]] error correction (1.86%), suggesting the next step.
+
+4. **3-qubit code already provides Z-basis gain** — at current error rates, majority vote decoding gives 0.976 Holevo vs 0.959 uncoded in Z-basis. This is the first QEC advantage observed in 25 sprints. But it's basis-specific — the code is worse than uncoded for X and Y information.
+
+5. **Simulator accuracy is circuit-depth dependent** — for shallow circuits (uncoded), our noise model overpredicts error by 4x. For deep circuits ([[5,1,3]]), prediction is within 7%. The noise model is calibrated for the wrong regime (too much readout, not enough gate error).
+
+## Surprises
+
+- **3-qubit Z-basis BEATS uncoded on real hardware** — first actual QEC advantage observed (Holevo 0.976 vs 0.959). The 2-CX encoding is cheap enough, and majority vote correction is effective enough, to provide real gain at current error rates.
+- **[[5,1,3]] is closer to simulator prediction than uncoded** — the deep circuit experiences enough noise that our depolarizing model is a reasonable approximation. Shallow circuits reveal the model's weaknesses.
+- **T1 asymmetry is visible in the data** — |0⟩_L consistently has lower error than |1⟩_L across all codes and bases, because amplitude damping drives toward |0⟩. This is a structured noise effect invisible in symmetric models.
+- **Y-basis has the worst state asymmetry for [[5,1,3]]** (0.015 gap) — possibly because Y-basis preparation involves the most gates (H+S), giving T1 more time to act.

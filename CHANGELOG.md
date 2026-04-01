@@ -3,8 +3,8 @@
 
   ## QPU Budget
   - Monthly allocation: 600 seconds
-  - Used this period: 0s
-  - Sprints completed on simulator only: 24
+  - Used this period: 20s
+  - Sprints completed on simulator only: 24 (Sprint 025 = first hardware run)
   - Note: Your simulator predictions are now specific enough to test.
     Real hardware noise is a mixture of channels — your noise fingerprint
     framework (Sprint 016) can decompose it. The gap between simulator
@@ -509,13 +509,24 @@
 [Full report: sprints/sprint_024.md]
 
 ### Sprint 025 — 2026-03-31 — Real Hardware QPU Test: Does [[5,1,3]] Basis Isotropy Survive?
-**Status:** In Progress
+**Status:** Complete (3/3 experiments)
 
-**Goal:** Test the central prediction from Sprints 021-024 on real IBM hardware: [[5,1,3]]'s basis isotropy should make it universally superior to 3-qubit repetition codes. Real hardware noise (correlated, qubit-specific, crosstalk) may break this.
+**Completed:**
+- **25a: Simulator baseline** — Built efficient [[5,1,3]] encoding circuit via Clifford tableau synthesis (10 CX, depth 16). Gate-level noise model predicts: uncoded 0.886, 3-qubit 0.778, [[5,1,3]] 0.510 avg Holevo. [[5,1,3]] asymmetry 0.010, 3-qubit 0.245.
+- **25b: Real hardware (ibm_kingston)** — 18 circuits, 4096 shots, 20s QPU time. First hardware QEC data in 25 sprints. [[5,1,3]] asymmetry 0.040, 3-qubit 0.254, uncoded 0.012.
+- **25c: Gap analysis** — Hardware readout ~0.35% (4.4x better than model). 2Q gate error ~0.93%. [[5,1,3]] prediction within 7% for deep circuits. Noise model overestimates for shallow circuits.
 
-**QPU budget:** 0s used → planning ~30-60s for this sprint
+**Surprises:**
+- **[[5,1,3]] isotropy CONFIRMED on real hardware** — 6.4x more isotropic than 3-qubit (0.040 vs 0.254). Correlated noise degrades isotropy 4x vs simulator but doesn't destroy it.
+- **3-qubit Z-basis BEATS uncoded** — first actual QEC advantage observed (0.976 vs 0.959 Holevo). Majority vote works at current error rates.
+- **Hardware is below [[5,1,3]] active-correction threshold** — 2Q error 0.93% < break-even 1.86%. Active syndrome extraction is the next step.
+- **T1 asymmetry visible in data** — |0⟩_L consistently lower error than |1⟩_L across all codes and bases
+- **Simulator accuracy depends on circuit depth** — 4x too pessimistic for shallow, within 7% for deep circuits
 
-**Experiments planned:**
-- 25a: Simulator baseline with gate-level noise model
-- 25b: Real hardware QPU submission
-- 25c: Gap analysis (simulator vs hardware)
+**Key insight:** The [[5,1,3]] code's basis isotropy is a genuine physical property, not a simulation artifact. It survives correlated, structured, qubit-specific noise on real hardware, confirming 24 sprints of theoretical predictions. However, the encoding circuit overhead (10 CX gates) prevents passive QEC advantage — active error correction is needed. The 3-qubit code already achieves Z-basis advantage at current error rates, demonstrating that QEC is not just theoretical but practically useful for single-basis protection. The path to full quantum error correction is: (1) reduce encoding overhead (fewer/better gates), (2) add syndrome extraction and correction cycles, (3) increase code distance beyond d=3.
+
+**QPU budget used:** 20s (total: 20s of 600s)
+
+**Next:** Active syndrome extraction on hardware, [[5,1,3]] with correction cycle, XZZX surface code variant, qubit-specific noise characterization from the data
+
+[Full report: sprints/sprint_025.md]
