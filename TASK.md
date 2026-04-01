@@ -159,12 +159,18 @@ Five entanglement archetypes: Democratic (GHZ), Distributed (W), Geometric (Clus
   - XXZ (U(1)): **100.0% BW locality** — symmetry forces H_E = H_phys × β(x)
   - BW locality peaks in gapped phases, NOT at criticality
   - Entanglement temperature gradient: Unruh-like (hot at cut, cold in bulk)
+- **POTTS BW: LOCAL DIMENSION MATTERS MORE THAN GROUP SIZE** (Sprint 033):
+  - S₃ (order 6, d=3): **76.5% BW locality** — LOWER than Z₂ (91%, d=2)
+  - BW accuracy = dim(Hamiltonian terms) / dim(symmetry-allowed terms), depends on BOTH G and d
+  - Sprint 032's "bigger group → better BW" prediction is WRONG
+  - Potts ordered phase = GHZ-3 (S=log₂3, triplet spectrum), transitions to doublets
+  - Z₃ triplet→doublet spectral transition unique to q≥3 models
 
 **Still unexplored — new frontiers:**
 - Size scaling of TFIM doublet spacings — do they converge to CFT predictions?
 - Size scaling of BW locality — does TFIM's 9% gap shrink with n?
-- Potts model BW (S₃ symmetry — between Z₂ and U(1) — intermediate locality?)
-- Potts model spectrum (different CFT, c>1/2) — different multiplet structure?
+- **BW locality vs d: Z₂ at d=3** — isolate local dimension effect from symmetry (Sprint 033 found d matters more than |G|)
+- **BW operator counting:** count S₃-invariant vs Z₂-invariant operators explicitly, predict locality ratio
 - XY model — test BKT dome universality in MI-CV
 - Potts model (q>4) — first-order transition, test MI-CV jump signature
 - 2D XXZ/Ising — richer topology, connect to Sprint 007's 2D cluster
@@ -172,6 +178,7 @@ Five entanglement archetypes: Democratic (GHZ), Distributed (W), Geometric (Clus
 - Alternating bipartition spectra — should distinguish GHZ from Cluster 1D
 - BW entanglement temperature gradient as function of central charge
 - 2D BW — does topology affect entanglement temperature?
+- **Potts q-sweep:** how does BW locality depend on q (=2,3,4,5)? Connects to d-dependence.
 
 **Deprioritize:**
 - Any further small-scale code comparisons under symmetric noise (exhausted in Sprints 015-024)
@@ -185,6 +192,8 @@ Five entanglement archetypes: Democratic (GHZ), Distributed (W), Geometric (Clus
 - Testing Scale-Free at TFIM-like second-order transitions in other models (Sprint 029 already confirmed)
 - Half-cut entanglement spectrum of 1D states at same system size (Sprint 031: GHZ=Cluster 1D, need alternating cut)
 - Re-running archetype spectral analysis without new bipartition type (Sprint 031 is comprehensive)
+- Potts model BW with S₃ symmetry (Sprint 033: done, 76.5%, overturns prediction)
+- Potts model spectrum (Sprint 033: done, triplet→doublet transition found)
 
 ## You Can Edit This File (encouraged to)
 

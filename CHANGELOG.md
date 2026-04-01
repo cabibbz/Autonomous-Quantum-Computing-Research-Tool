@@ -679,3 +679,28 @@
 **Next:** Size scaling of BW locality (does 9% TFIM gap shrink with n?), Potts model (S₃ symmetry — between Z₂ and U(1)?), BW for 2D systems, entanglement temperature gradient as function of central charge.
 
 [Full report: sprints/sprint_032.md]
+
+### Sprint 033 — 2026-04-01 — 3-State Potts Model: S₃ Symmetry Overturns BW Prediction
+**Status:** Complete (3/3 experiments)
+
+**Idea:** Sprint 032 predicted BW locality scales with symmetry group size: Z₂ (91%) < S₃ (intermediate?) < U(1) (100%). The 3-state Potts model (S₃ = Z₃ ⋊ Z₂, order 6, c=4/5 CFT) tests this prediction directly.
+
+**Literature:** Giudici et al. (2018) confirmed BW works qualitatively for Potts. Gap: no quantitative comparison of BW accuracy vs symmetry group across different local dimensions.
+
+**Completed:**
+- **33a: Ground state entanglement sweep** — Ordered Potts IS GHZ-3 (S=log₂(3), MI_CV=0, I3=+1.58). Same GHZ→Product pattern as TFIM. Critical region at h/J≈0.2-0.3. Entropy GROWS with n at h/J=0.25 (n=6: 1.315 → n=8: 1.426), confirming criticality.
+- **33b: Entanglement spectrum** — Deep ordered phase has perfect **triplet** degeneracy [3,3,3] from Z₃ symmetry. Transitions to doublet pattern [1,2,1,2,...] at criticality. Schmidt rank peaks at 24 near critical (vs max 81).
+- **33c: BW locality** — Peak locality is **76.5%** at h/J=0.25. Sprint 032's prediction is **WRONG**: S₃ gives LOWER locality than Z₂, not intermediate.
+
+**Surprises:**
+- **PREDICTION OVERTURNED**: BW locality is NOT monotonic with group order. Ordering: U(1)=100% > Z₂=91% > S₃=76.5%. Larger group, lower locality.
+- **Local Hilbert space dimension is the missing variable** — d=3 (Potts) has 9^{n_A} = 6561 operator space vs d=2 (Ising) with 4^{n_A} = 256. S₃ allows many more non-Hamiltonian invariant operators.
+- **GHZ-3 in ordered phase** — entanglement spectrum has perfect Z₃ triplets [3,3,3], NOT found in any qubit model. The triplet→doublet spectral transition is unique to q≥3 Potts.
+- **BW envelope still qualitatively correct** — couplings decrease from far-from-cut to near-cut (Unruh-like). BW picture works, just captures less of H_E.
+- **Critical point shifted** — NOT at self-dual h/J=1 for our convention (P+P† max eigenvalue=2 shifts effective scale).
+
+**Key insight:** BW locality depends on dim(Hamiltonian terms) / dim(symmetry-allowed terms), NOT just symmetry group size. U(1) wins because it restricts d=2 operators to exactly the Hamiltonian terms (XX+YY+ZZ). Z₂ is less restrictive but still constrains 256 operators well. S₃, despite being larger than Z₂, constrains 6561 operators poorly — many S₃-invariant 2-body operators (P_iP_j + h.c., etc.) are NOT in the physical Hamiltonian. The correct BW accuracy predictor is: **ratio of Hamiltonian operator dimension to symmetry-invariant operator dimension**, which depends on BOTH the symmetry group AND the local Hilbert space dimension d.
+
+**Next:** TFIM at d=3 (Z₂ with d=3 to isolate d-dependence from group-dependence), size scaling of BW locality, Potts model MI-CV as function of q, 2D BW, entanglement temperature gradient vs central charge.
+
+[Full report: sprints/sprint_033.md]
