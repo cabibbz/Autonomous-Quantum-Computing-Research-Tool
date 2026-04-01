@@ -655,3 +655,17 @@
 **Next:** Size scaling of TFIM doublet spacings, entanglement Hamiltonian locality (Bisognano-Wichmann), Potts model spectrum (different CFT), alternating bipartition to distinguish GHZ from Cluster 1D spectrally.
 
 [Full report: sprints/sprint_031.md]
+
+### Sprint 032 — 2026-04-01 — Entanglement Hamiltonian Locality: Testing Bisognano-Wichmann
+**Status:** In Progress
+
+**Idea:** The Bisognano-Wichmann (BW) theorem predicts that the entanglement Hamiltonian H_E = -log(ρ_A) of a ground state is proportional to the physical Hamiltonian restricted to subsystem A, with a position-dependent "entanglement temperature" envelope β(i). For 1D CFT: β(i) ∝ sin(πi/L_A). This connects Sprint 031's spectral analysis to a fundamental QFT result. Testing: does BW hold at small scale? Where does it work best? Is it universal across models?
+
+**Literature:** Giudici et al. (2018), Dalmonte et al. (2018) confirmed BW for 1D critical chains. Gap: systematic comparison across phases and models at small scale.
+
+**Experiments planned:**
+- 32a: H_E decomposition at TFIM criticality, BW fidelity
+- 32b: BW fidelity across TFIM phase diagram
+- 32c: BW fidelity for XXZ model
+
+*(results to be filled in as experiments complete)*
