@@ -4,7 +4,7 @@
   ## QPU Budget
   - Monthly allocation: 600 seconds
   - Used this period: 0s
-  - Sprints completed on simulator only: 22
+  - Sprints completed on simulator only: 23
   - Note: Your simulator predictions are now specific enough to test.
     Real hardware noise is a mixture of channels — your noise fingerprint
     framework (Sprint 016) can decompose it. The gap between simulator
@@ -466,14 +466,23 @@
 
 [Full report: sprints/sprint_022.md]
 
-### Sprint 023 — 2026-03-31 — Concatenated Bias-Tailoring: Does Two-Level Structure Unlock Specialization?
-**Status:** In Progress
+### Sprint 023 — 2026-03-31 — Concatenated Bias-Tailoring: The Figure of Merit IS the Answer
+**Status:** Complete (3/3 experiments)
 
-**Question:** Sprint 022 showed single-level specialization never beats isotropy. Does the Shor code's two-level concatenation (phase-flip inside bit-flip) create a "specialization zone" that single-level codes can't access?
+**Completed:**
+- **23a: Shor vs all codes** — Shor [[9,1,3]] wins 67% of noise landscape on basis-averaged Holevo! Overturns Sprint 022's "isotropy always wins" for average-case metric. Single-level codes win zero points.
+- **23b: Structure vs redundancy** — Shor ALWAYS beats 9-qubit repetition codes (6/6 test points). Concatenation structure genuinely helps. Shor's X-basis Holevo is near-perfect (0.998) even under heavy dephasing — inner phase-flip code's specific contribution.
+- **23c: Figure of merit comparison** — Min-basis Holevo (worst-case, needed for quantum computation): [[5,1,3]] wins 81%, Shor only 8%. The ranking completely reverses depending on the metric.
 
-**Literature:** Elevator codes (arXiv:2601.10786) show concatenated bias-tailoring works at large scale (bias >7×10⁴). No prior basis-averaged comparison of Shor vs [[5,1,3]] under combined T1+T2.
+**Surprises:**
+- **The answer depends entirely on the question:** avg Holevo → Shor wins 67%. Min-basis Holevo → [[5,1,3]] wins 81%. Per-qubit → uncoded always wins. No single "best code."
+- **Shor is self-dual** — phase-flip-inside-bit-flip = bit-flip-inside-phase-flip for 3-qubit inner codes
+- **Concatenation creates structure, not just redundancy** — Shor always beats best 9-qubit repetition code
+- **QEC never beats uncoded per qubit** — error correction trades information density for information quality
+- **Shor's X-basis Holevo = 0.998 under heavy dephasing** — inner code perfectly preserves one axis while Z/Y collapse
 
-**Experiments:**
-- 23a: Shor [[9,1,3]] vs all codes across (γ,λ) landscape — basis-averaged Holevo
-- 23b: Inner vs outer protection decomposition — which level handles which noise?
-- 23c: Concatenation depth scaling — predict crossover to bias advantage
+**Key insight:** "Which code is best?" is meaningless without specifying the metric. For quantum computation (protecting ALL Bloch sphere directions), min-basis Holevo is the correct figure of merit, and [[5,1,3]]'s isotropy dominates. Shor's average-Holevo advantage comes from extreme X-axis specialization — real for classical-like storage, illusory for quantum computing. At 9 qubits, concatenation achieves specialization OR isotropy, not both. Large-scale bias-tailored codes (XZZX) succeed because O(d²) qubits allow both.
+
+**Next:** Surface code at d=2 (planar), entanglement-assisted codes, real hardware QEC test, quantum channel capacity under bias, min-basis Holevo as universal code ranking metric
+
+[Full report: sprints/sprint_023.md]
