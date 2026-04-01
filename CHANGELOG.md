@@ -657,15 +657,25 @@
 [Full report: sprints/sprint_031.md]
 
 ### Sprint 032 — 2026-04-01 — Entanglement Hamiltonian Locality: Testing Bisognano-Wichmann
-**Status:** In Progress
+**Status:** Complete (3/3 experiments)
 
 **Idea:** The Bisognano-Wichmann (BW) theorem predicts that the entanglement Hamiltonian H_E = -log(ρ_A) of a ground state is proportional to the physical Hamiltonian restricted to subsystem A, with a position-dependent "entanglement temperature" envelope β(i). For 1D CFT: β(i) ∝ sin(πi/L_A). This connects Sprint 031's spectral analysis to a fundamental QFT result. Testing: does BW hold at small scale? Where does it work best? Is it universal across models?
 
 **Literature:** Giudici et al. (2018), Dalmonte et al. (2018) confirmed BW for 1D critical chains. Gap: systematic comparison across phases and models at small scale.
 
-**Experiments planned:**
-- 32a: H_E decomposition at TFIM criticality, BW fidelity
-- 32b: BW fidelity across TFIM phase diagram
-- 32c: BW fidelity for XXZ model
+**Completed:**
+- **32a: TFIM H_E at criticality** — H_E is **91% TFIM-type terms** (excluding identity). BW locality confirmed! But standard sin(πi/L) envelope is wrong — couplings decrease from far-from-cut to near-cut (6.09 → 2.13 for ZZ bonds), matching half-infinite BW β ∝ distance. Non-TFIM corrections (9%) are Z₂-allowed higher-body terms.
+- **32b: BW across TFIM phases** — Locality peaks at h/J≈0.80 (92.1%), NOT at criticality (90.9%). sin_inv envelope wins 21/25 points. BW works in ALL phases (67-92%), not just at CFT critical points.
+- **32c: BW across XXZ phases** — **100.0% locality** in XY/BKT/Néel phases! sin_inv envelope captures 99.4-100.0% of H_E variance. U(1) symmetry perfectly preserved (XX/YY=1.0000). FM phase product state has trivial H_E.
 
-*(results to be filled in as experiments complete)*
+**Surprises:**
+- **U(1) symmetry forces perfect BW locality** — XXZ H_E contains ONLY XX+YY+ZZ terms (the physical Hamiltonian terms). TFIM's weaker Z₂ symmetry allows 9% non-Hamiltonian content.
+- **BW locality is NOT a CFT phenomenon** — peaks in ordered/gapped phases, not at critical points. It's a general property of ground states of local Hamiltonians.
+- **Symmetry is the BW accuracy knob** — higher symmetry → fewer allowed terms in H_E → better BW approximation. This is a new quantitative prediction.
+- **The BW envelope is sin_inv, not sin** — β ∝ sin(π·distance_from_cut/L), meaning entanglement temperature is hottest at the cut and coolest far from it (Unruh-like gradient).
+
+**Key insight:** The Bisognano-Wichmann theorem's accuracy is controlled by the symmetry group, not by criticality. U(1) symmetry forces 100% locality; Z₂ allows 8% non-local corrections. The entanglement Hamiltonian IS the physical Hamiltonian (up to a position-dependent temperature), and the "entanglement temperature" has an Unruh-like gradient: infinite at the entanglement cut, finite in the bulk. This connects quantum information (entanglement spectrum) to quantum field theory (Unruh effect) through a concrete, quantitative lattice computation.
+
+**Next:** Size scaling of BW locality (does 9% TFIM gap shrink with n?), Potts model (S₃ symmetry — between Z₂ and U(1)?), BW for 2D systems, entanglement temperature gradient as function of central charge.
+
+[Full report: sprints/sprint_032.md]

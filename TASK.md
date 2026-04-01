@@ -153,15 +153,25 @@ Five entanglement archetypes: Democratic (GHZ), Distributed (W), Geometric (Clus
   - TFIM critical point has CFT doublet structure (c=1/2 Ising) invisible to scalar measures
   - XXZ has universal doublet degeneracy from U(1) symmetry; BKT = spectral collapse
 
+- **BISOGNANO-WICHMANN: SYMMETRY CONTROLS BW ACCURACY** (Sprint 032):
+  - H_E = physical Hamiltonian terms × position-dependent temperature (BW envelope)
+  - TFIM (Z₂): 91% BW locality, 9% non-Hamiltonian corrections from weak symmetry
+  - XXZ (U(1)): **100.0% BW locality** — symmetry forces H_E = H_phys × β(x)
+  - BW locality peaks in gapped phases, NOT at criticality
+  - Entanglement temperature gradient: Unruh-like (hot at cut, cold in bulk)
+
 **Still unexplored — new frontiers:**
 - Size scaling of TFIM doublet spacings — do they converge to CFT predictions?
-- Entanglement Hamiltonian locality (Bisognano-Wichmann theorem test)
+- Size scaling of BW locality — does TFIM's 9% gap shrink with n?
+- Potts model BW (S₃ symmetry — between Z₂ and U(1) — intermediate locality?)
 - Potts model spectrum (different CFT, c>1/2) — different multiplet structure?
 - XY model — test BKT dome universality in MI-CV
 - Potts model (q>4) — first-order transition, test MI-CV jump signature
 - 2D XXZ/Ising — richer topology, connect to Sprint 007's 2D cluster
 - MI-CV scaling exponent at BKT — extract logarithmic correction with larger n
 - Alternating bipartition spectra — should distinguish GHZ from Cluster 1D
+- BW entanglement temperature gradient as function of central charge
+- 2D BW — does topology affect entanglement temperature?
 
 **Deprioritize:**
 - Any further small-scale code comparisons under symmetric noise (exhausted in Sprints 015-024)

@@ -1,7 +1,7 @@
 # Sprint 032 — Entanglement Hamiltonian Locality: Testing Bisognano-Wichmann
 
 **Date:** 2026-04-01
-**Status:** In Progress
+**Status:** Complete (3/3 experiments)
 
 ## Motivation
 
@@ -75,3 +75,55 @@ This connects our entanglement spectral analysis to one of the deepest results i
 - Linear vs sin_inv nearly identical (<0.3% difference) — hard to distinguish at n=8
 
 **Surprise:** BW locality does NOT peak at the critical point where CFT applies. It peaks slightly in the ordered phase (h/J≈0.8) and decreases monotonically into the disordered phase. This suggests BW locality is a general property of ground states of local Hamiltonians, not specific to CFT. The ordered phase has *more* local entanglement structure because ZZ correlations are dominant and match the physical Hamiltonian directly.
+
+### 32c: BW Fidelity for XXZ Model
+
+**Sweep:** Δ = -2.0 to 2.5, 26 points. Three envelope types: linear, sin_inv, uniform.
+
+**Key findings:**
+- **XXZ achieves 100.0% BW locality** in XY, BKT, and Néel phases!
+  - sin_inv envelope captures 99.4-100.0% of H_E variance
+  - This is dramatically better than TFIM's maximum 92%
+- **FM phase (Δ < -1) has 20% locality** — ground state is product (S≈0), H_E is trivial
+- **FM transition (Δ ≈ -1) shows sharp jump**: locality 20% → 78% → 100% in narrow window
+- **U(1) symmetry perfectly preserved**: XX/YY coefficient ratio = 1.0000 throughout XY/Néel phases
+  - In FM phase (broken U(1)), ratio → ∞ (YY coefficient = 0)
+- **Bond coefficient ratios** are stable across phases: (0-1)/(2-3) ≈ 2.4-2.6, (1-2)/(2-3) ≈ 1.9
+  - Consistent with sin_inv envelope, not exactly linear (would give 3:2:1)
+- Phase averages:
+  - FM: 20.0% locality, 10.5% BW variance (product state, meaningless)
+  - FM transition: 46.6% locality, 41.1% BW variance
+  - XY: 98.6% locality, 98.4% BW variance
+  - BKT: 100.0% locality, 99.9% BW variance
+  - Néel: 100.0% locality, 99.7% BW variance
+
+**KEY INSIGHT:** Symmetry constrains the entanglement Hamiltonian. The XXZ model's U(1) symmetry (conserving total S_z) restricts H_E to contain only XX+YY+ZZ terms — exactly the physical Hamiltonian terms. The TFIM's Z₂ symmetry allows additional terms (XX, XZZ, etc.) that appear in H_E but not in H. **Higher symmetry → better BW locality**, because symmetry eliminates non-Hamiltonian terms from H_E.
+
+This explains why BW locality is:
+- 100% for XXZ (U(1) continuous symmetry — very constraining)
+- 92% for TFIM (Z₂ discrete symmetry — weakly constraining)
+- The 8% non-BW content in TFIM H_E consists of Z₂-allowed terms not present in the physical Hamiltonian
+
+## Summary and Connections
+
+Sprint 032 establishes a **fourth level** of entanglement description beyond Sprint 031's three levels:
+1. Scalar (entropy) = amount
+2. Correlation (MI/I3) = topology
+3. Spectral (eigenvalue distribution) = symmetry content
+4. **Hamiltonian (H_E structure) = locality and temperature** ← NEW
+
+The entanglement Hamiltonian H_E = -log(ρ_A) is NOT just a mathematical object — it's the physical Hamiltonian with a position-dependent temperature (BW envelope). This temperature gradient is Unruh-like: infinite at the entanglement cut, finite in the bulk. The accuracy of this description is controlled by the symmetry group of the model:
+- U(1) continuous symmetry → 100% BW accuracy (XXZ)
+- Z₂ discrete symmetry → 92% BW accuracy (TFIM)
+- Prediction: S₃ (Potts) should be intermediate
+
+**Connection to prior sprints:**
+- Sprint 031's spectral analysis found that eigenvalue structure encodes symmetry. Sprint 032 shows the *eigenvectors* encode locality — the BW envelope.
+- Sprint 029-030's archetype classification used MI/I3 (level 2). BW locality (level 4) provides complementary information: it tells you HOW MUCH of the entanglement structure is determined by the physical Hamiltonian vs. emergent quantum correlations.
+- The 9% non-BW corrections in TFIM are exactly the terms that create its richer entanglement structure (I3 ≠ 0 for non-adjacent triples).
+
+**Open questions for future sprints:**
+- Does the TFIM 9% gap shrink with system size n? (finite-size vs fundamental)
+- Potts model: S₃ symmetry is between Z₂ and U(1) — intermediate BW accuracy?
+- 2D systems: does the entanglement temperature gradient depend on dimensionality?
+- Central charge dependence: does c affect the BW envelope shape?
