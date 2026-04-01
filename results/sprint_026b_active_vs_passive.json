@@ -1,0 +1,100 @@
+{
+  "sprint": "026b",
+  "description": "Active syndrome correction vs passive encoding under gate-level noise",
+  "noise_model": {
+    "p1q": 0.0005,
+    "p2q": 0.008,
+    "p_readout": 0.015
+  },
+  "shots": 50000,
+  "results": {
+    "uncoded": {
+      "Z": {
+        "err": 0.01525,
+        "holevo": 0.8861,
+        "depth": 1
+      },
+      "X": {
+        "err": 0.01595,
+        "holevo": 0.8819,
+        "depth": 1
+      },
+      "Y": {
+        "err": 0.0161,
+        "holevo": 0.8811,
+        "depth": 1
+      },
+      "avg_holevo": 0.883,
+      "asymmetry": 0.005,
+      "min_holevo": 0.8811
+    },
+    "passive": {
+      "Z": {
+        "err": 0.10766,
+        "holevo": 0.5072,
+        "depth": 19
+      },
+      "X": {
+        "err": 0.10387,
+        "holevo": 0.5189,
+        "depth": 22
+      },
+      "Y": {
+        "err": 0.10769,
+        "holevo": 0.5071,
+        "depth": 22
+      },
+      "avg_holevo": 0.5111,
+      "asymmetry": 0.0118,
+      "min_holevo": 0.5071
+    },
+    "active": {
+      "Z": {
+        "err_corrected": 0.15883,
+        "holevo_corrected": 0.3685,
+        "err_uncorrected": 0.15619,
+        "holevo_uncorrected": 0.3749,
+        "depth": 37,
+        "top_syndromes": {
+          "(0, 0, 0, 0)": 39454,
+          "(0, 0, 0, 1)": 2547,
+          "(0, 0, 1, 0)": 1510,
+          "(0, 1, 0, 0)": 1296,
+          "(1, 0, 0, 0)": 1217
+        }
+      },
+      "X": {
+        "err_corrected": 0.1737,
+        "holevo_corrected": 0.3339,
+        "err_uncorrected": 0.15712,
+        "holevo_uncorrected": 0.3726,
+        "depth": 37,
+        "top_syndromes": {
+          "(0, 0, 0, 0)": 39416,
+          "(0, 0, 0, 1)": 2511,
+          "(0, 0, 1, 0)": 1559,
+          "(0, 1, 0, 0)": 1225,
+          "(1, 0, 0, 0)": 1205
+        }
+      },
+      "Y": {
+        "err_corrected": 0.19451,
+        "holevo_corrected": 0.2892,
+        "err_uncorrected": 0.15978,
+        "holevo_uncorrected": 0.3662,
+        "depth": 38,
+        "top_syndromes": {
+          "(0, 0, 0, 0)": 39567,
+          "(0, 0, 0, 1)": 2443,
+          "(0, 0, 1, 0)": 1527,
+          "(1, 0, 0, 0)": 1227,
+          "(0, 1, 0, 0)": 1195
+        }
+      },
+      "avg_holevo": 0.3305,
+      "asymmetry": 0.0793,
+      "min_holevo": 0.2892
+    }
+  },
+  "elapsed_seconds": 1.9
+}
