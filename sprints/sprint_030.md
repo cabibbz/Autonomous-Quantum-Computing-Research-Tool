@@ -119,3 +119,40 @@ Key questions:
 5. **The XXZ traces a LOOP in archetype space:** Democratic → Scale-Free → Geometric → Scale-Free → Democratic. The phase diagram is a continuous journey through archetype space, unlike TFIM's sharp GHZ → Scale-Free → Product path.
 
 6. **The I3 sign change at Δ ≈ 0.7** (inside XY phase, before BKT) marks where correlations transition from redundant (broadcast) to irreducible (geometric). This is NOT at a thermodynamic phase boundary.
+
+### 30c: MI Uniformity CV as Universal Phase Detector
+
+**Method:** High-resolution sweep with finite-size scaling (n=4,6,8). Compute MI-CV, derivatives, concurrence, and half-cut entropy. Compare XXZ and TFIM side-by-side.
+
+**MI-CV Peak at BKT Transition:**
+- MI-CV reaches a smooth maximum near Δ ≈ 1.0 at ALL system sizes
+- Peak MI-CV grows with n: 1.00 (n=4), 1.29 (n=6), 1.49 (n=8)
+- The peak LOCATES the BKT transition but is smooth (no discontinuity)
+- This is consistent with BKT physics: essential singularity, not power-law divergence
+
+**Derivative Analysis — Transition Detection Power:**
+
+| Derivative | FM (Δ=-1) | BKT (Δ=1) | Ratio |
+|------------|-----------|-----------|-------|
+| |dS/dΔ| | 2.473 | 0.004 | 618x |
+| |dC/dΔ| | 1.022 | 0.012 | 85x |
+| |dCV/dΔ| | 1.182 | 0.112 | 11x |
+
+The FM transition is DRAMATICALLY sharper than BKT in ALL measures. MI-CV has the smallest ratio (11x vs 618x for entropy) — it's the MOST sensitive to BKT among our measures, but still 11x weaker than FM.
+
+**Finite-Size Scaling of |dCV/dΔ| at BKT:**
+- n=4: 0.091
+- n=6: 0.180
+- n=8: 0.262
+- Growing! Suggests detection improves with system size (likely logarithmically)
+
+**TFIM vs XXZ Comparison:**
+- TFIM: MI-CV increases monotonically from 0 (ordered) to ~1.5 (disordered). Peak dCV/dh near h≈1.
+- XXZ: MI-CV increases to peak at Δ≈1, then DECREASES. Non-monotonic!
+- The XXZ MI-CV curve is **symmetric around Δ≈1** — the BKT point is the maximum of a smooth dome.
+
+**Key Insight:** MI-CV detects different transition types differently:
+- **First-order (FM):** Sharp discontinuity in MI-CV → large derivative
+- **Second-order Ising (TFIM):** Monotonic increase with inflection point → moderate derivative
+- **BKT (infinite-order):** Smooth dome with peak → small derivative that grows with system size
+- The MI-CV "shape" (jump vs inflection vs dome) fingerprints the transition TYPE, not just its location
