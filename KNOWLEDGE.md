@@ -162,7 +162,13 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 
 **Anomalous FSS for q≥5.** Δ₁·N INCREASES with N (sign-flipped correction vs q≤4). Means x₁ is underestimated at small sizes. Coincides with c>1 and novel CFT regime.
 
-**POTENTIALLY NOVEL:** x₁(q) for q≥5 previously unmeasured. Combined with c(q), ν(q), g_c(q), operator content, and OPE coefficients, this provides the most complete characterization of the novel q>4 Potts CFT family.
+**x₁(q) best fit (Sprint 062a):** x₁ ≈ 0.206·q^(-0.449), RMS=0.010. Neither 1/ln(q) nor power of ln(q-1) fits well.
+
+**c·x₁ ≈ 1/9 for q≥3 (Sprint 062).** The product c(q)·x₁(q) = 0.112 ± 0.005 for q=3-10, close to 1/9=0.111. q=2 Ising is an outlier (c·x₁=1/16=0.0625). This is model-independent and constrains the CFT: if c~ln(q) then x₁~1/(9·ln(q)). **POTENTIALLY NOVEL.**
+
+**Single compact boson RULED OUT (Sprint 062a).** c>1 for q≥5 is incompatible with any single free boson (always c=1). Multiple effective DOF required.
+
+**POTENTIALLY NOVEL:** x₁(q) for q≥5 previously unmeasured. Combined with c(q), ν(q), g_c(q), operator content, OPE coefficients, and c·x₁≈1/9, this provides the most complete characterization of the novel q>4 Potts CFT family.
 
 ## OPE Coefficients (Sprint 060)
 
@@ -187,6 +193,18 @@ Validated: q=2 Ising converges to exact C=1/2 with 0.4% error at n=12.
 **Epsilon identification pitfall for large q:** At q≥7, sigma harmonics (sigma^2, sigma^3, ...) densely populate R < R_epsilon. Naive charge detection fails because degenerate pairs (charges k, q-k) in superposition average to misleading charge values. Must use R_epsilon from independent spectrum measurements to identify epsilon correctly.
 
 **POTENTIALLY NOVEL:** First C_{sigma*,sigma,epsilon} measurement for Hermitian q-state Potts at q=5,7,10. Peak at q=3 and monotonic decrease previously unreported.
+
+## Twisted Boundary Conditions & Spin Stiffness (Sprint 062)
+
+**Method:** Replace periodic BC with Z_q twist: δ(s_{n-1}, (s_0+k) mod q). Ground state energy shift ΔE probes spin stiffness ρ_s.
+
+**q=2,3 are Luttinger liquids; q≥4 are NOT.** ρ_s·L converges for q=2 (drift 1.0%) and q=3 (1.3%), but drifts 10-22% for q≥5. ΔE(2)/ΔE(1) deviates strongly from quadratic (free boson) prediction of 4: q=4→1.42, q=5→1.78, q=7→2.22. Grows toward 4 as q→∞ but slowly.
+
+**q=2: twist field = σ field EXACTLY.** ΔE(twist)/Δ₁ = 1.000 at all sizes (n=4,6,8). No FSS correction needed. q=3: ratio ≈ 1.01, nearly exact.
+
+**Twist ratios converge toward spectrum ratios.** ΔE(k)/ΔE(1) at finite n is systematically below R(σᵏ)/R(σ) from periodic BC spectrum (15-33% deficit), converging from below as n increases.
+
+**Conjugate twist symmetry exact:** twist(k) = twist(q−k) to machine precision (Δ < 10⁻¹⁴).
 
 ## Conformal Tower Structure (Sprint 059)
 

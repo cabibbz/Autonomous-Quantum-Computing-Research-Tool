@@ -298,3 +298,24 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - n=4,5 pairs need 21% FSS correction (vs 5% for n=4,6) — odd-n effect
 
 [Full report: sprints/sprint_061.md]
+
+### Sprint 062 — Compactification Radius & Twisted BC: c·x₁ ≈ 1/9 Discovery
+**Status:** Complete (3 experiments).
+
+**c·x₁ ≈ 1/9 for q≥3.** Product c(q)·x₁(q) = 0.112 ± 0.005 for all q=3-10, close to 1/9=0.111. q=2 Ising is an outlier (c·x₁=1/16). Model-independent constraint on the CFT. **POTENTIALLY NOVEL.**
+
+**Single compact boson RULED OUT.** c>1 for q≥5 incompatible with c=1 for any single boson. Multiple DOF required. x₁ ≈ 0.206·q^(-0.449) (best power-law fit).
+
+**q=2,3 are Luttinger liquids; q≥4 are NOT.** Twisted BC spin stiffness ρ_s·L converges for q=2,3 (drift <1.5%) but 10-22% for q≥5. ΔE(2)/ΔE(1) far from free boson prediction of 4: q=4→1.42, q=5→1.78, q=7→2.22.
+
+**q=2 twist field = σ field EXACTLY.** ΔE(twist)/Δ₁ = 1.000 at all sizes. q=3: ratio ≈ 1.01.
+
+**Twist ratios converge toward spectrum ratios from below.** 15-33% deficit at accessible sizes, shrinking with n.
+
+**Surprises:**
+- c·x₁ ≈ 1/9 for q≥3 — no theoretical prediction
+- q=2 twist field has zero FSS correction (exact at n=4)
+- ρ_s·L drift grows dramatically with q (1% → 22%)
+- q=10 twist sector ratios at n=4 saturate near k=4
+
+[Full report: sprints/sprint_062.md]

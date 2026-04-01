@@ -1,0 +1,86 @@
+{
+  "twist_vs_spectrum": {
+    "q4_n8": {
+      "twist_ratio_k2": 1.4193,
+      "spectrum_R_k2": 1.68,
+      "diff_pct": -15.5
+    },
+    "q5_n8": {
+      "twist_ratio_k2": 1.7845,
+      "spectrum_R_k2": 2.41,
+      "diff_pct": -26.0
+    },
+    "q7_n6": {
+      "twist_ratio_k2": 2.2217,
+      "spectrum_R_k2": 3.32,
+      "diff_pct": -33.1
+    },
+    "q10_n6": {
+      "twist_ratio_k2": 2.9172,
+      "spectrum_R_k2": 3.66,
+      "diff_pct": -20.3
+    }
+  },
+  "conjugate_symmetry": "EXACT: twist k and twist q-k have identical energy to 1e-14",
+  "x_twist_convergence": {
+    "q2": {
+      "n4": 0.125,
+      "n6": 0.125,
+      "n8": 0.125,
+      "exact": 0.125,
+      "comment": "EXACT at all sizes"
+    },
+    "q3": {
+      "n4": 0.1346,
+      "n6": 0.1351,
+      "n8": 0.1357,
+      "exact": 0.1337
+    },
+    "q4": {
+      "n4": 0.1322,
+      "n6": 0.1311,
+      "n8": 0.1316,
+      "exact": 0.1172,
+      "comment": "x_twist > x1!"
+    },
+    "q5": {
+      "n4": 0.1248,
+      "n6": 0.1153,
+      "n8": 0.1089,
+      "exact": 0.1015,
+      "comment": "converging toward x1"
+    },
+    "q10": {
+      "n4": 0.0658,
+      "n6": 0.0382,
+      "exact": 0.0831,
+      "comment": "x_twist BELOW x1 at n=6"
+    }
+  },
+  "q10_twist_sectors": {
+    "n4": {
+      "k1": 1.0,
+      "k2": 2.2008,
+      "k3": 3.1309,
+      "k4": 3.6974,
+      "k5": 3.8864
+    },
+    "n6": {
+      "k1": 1.0,
+      "k2": 2.9172,
+      "k3": 4.8296,
+      "k4": 6.1989,
+      "k5": 6.6969
+    }
+  },
+  "key_finding": "Twist ratios converge TOWARD spectrum ratios but slowly. At n=6 q=10: ratio grows from 2.2 to 2.9 (target 3.66). Twist field is NOT identical to sigma field at finite size.",
+  "cx1_product": {
+    "2": 0.0623,
+    "3": 0.107,
+    "4": 0.1172,
+    "5": 0.1117,
+    "7": 0.1118,
+    "10": 0.1163
+  },
+  "cx1_comment": "c*x1 approx constant 0.112 for q>=3 (vs 0.0623 for q=2). Close to 1/9=0.111"
+}
