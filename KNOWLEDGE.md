@@ -98,9 +98,22 @@ For clock model: g_c values (0.93, 0.923, 0.893, 0.673) were from MI-CV crossing
 
 **Rule of thumb: MI-CV requires χ > d² for reliable results.** At d=2 (q=2), χ=20 is fine (d²=4). At d=10 (q=10), need χ > 100. Results for q≥7 (d²≥49) should be scrutinized. q=2,3 results are reliable.
 
-## Entropy FSS and Central Charge (Sprint 049)
+## Entropy FSS and Central Charge (Sprints 049, 054)
 
-**Central charge from entropy scaling.** At the critical point, S(l=n/2, n) = (c/6)ln(n) + const. TFIM validated: c = 0.529 from full fit, pairwise converges 0.544 → 0.516 → exact 0.500. Requires at least 3 system sizes for a reliable fit.
+**Central charge from entropy scaling.** At the critical point, S(l=n/2, n) = (c/6)ln(n) + const. Pairwise c estimates overshoot from above and converge monotonically. Requires at least 3 system sizes. Entropy converges at chi=20 for q=3 (chi is NOT the overshoot source).
+
+**c(q) at true critical points (Sprint 054):**
+
+| q | g_c | c (raw, best pair) | c (CFT) | Overshoot at (n=16,24) |
+|---|-----|-------------------|---------|----------------------|
+| 2 | 1.000 | 0.516 | 0.500 | +9% |
+| 3 | 0.333 | 0.884 | 0.800 | +11% |
+| 4 | 0.392 | 1.229 | 1.000 | +23% (FLAT, not converging) |
+| 5 | 0.441 | 1.335 | ? (no CFT) | — |
+
+**c(q=4) has anomalous FSS.** Pairwise c ≈ 1.23 at ALL size pairs (1.231, 1.222, 1.229) — barely varying. Consistent with logarithmic corrections at marginal q=4 (Ashkin-Teller). Convergence much slower than q=2,3.
+
+**POTENTIALLY NOVEL: c(q=5) > 1.** Even with ~20% overshoot correction, c(q=5) ≈ 1.1-1.2, outside the minimal model series c = 1-6/[m(m+1)]. No CFT prediction exists because 2D classical q=5 Potts is first-order. Needs n=32-64 to confirm.
 
 **Entropy FSS does NOT give ν.** Entropy has a logarithmic singularity at criticality (S ~ (c/6)ln(ξ)), not a power law. Standard FSS collapse y(g,n) = f((g-g_c)·n^{1/ν}) fails for y=S (best collapse gives ν=3 for TFIM, should be 1). Use correlation length ξ or order parameter for ν extraction instead.
 
