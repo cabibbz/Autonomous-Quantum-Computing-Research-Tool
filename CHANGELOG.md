@@ -299,3 +299,27 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - q=7 entanglement tail grows 8× while λ_max drops only 4%
 
 [Full report: sprints/sprint_086.md]
+
+### Sprint 087 — Entanglement Spectrum Scaling via DMRG: Tail Weight is UNBOUNDED
+**Status:** Complete (3 experiments).
+
+**q=5 entanglement spectrum n=8-24 (087a).** DMRG midchain Schmidt spectrum at g_c=1/5. λ_max decreases 0.858→0.787, (q-1) multiplet grows 14.2%→20.9%, tail weight grows 0.05%→0.44%. All trends monotonic, no saturation.
+
+**q=7 entanglement spectrum n=6-12 (087b).** g_c=1/7, limited to n=12 (293s). λ_max: 0.891→0.852, multiplet: 10.9%→14.7%, tail: 0.014%→0.11%.
+
+**Tail weight grows as UNBOUNDED power law (087c).** q=5: w_tail ~ n^1.72 (R²=0.993). q=7: w_tail ~ n^2.52 (R²=0.989). q=7 exponent larger but prefactor 9× smaller. No saturation. Entanglement gap closes logarithmically: Δξ = -0.43·ln(n) (q=5), -0.50·ln(n) (q=7).
+
+**Energy-entropy decoupling is TEMPORARY.** Tail weight reaches 10% at n≈147 (q=5), n≈72 (q=7). Walking breakdown creates a hierarchy of crossover scales. %S(lev0) saturates (~0.225), weight flows from multiplet to tail.
+
+**c_eff size pairs from DMRG.** q=5: converges 1.165→1.010 ×Re(c) from (8,12)→(20,24). q=7: diverges 1.055→0.841. Walking vs breakdown cleanly separated.
+
+**Surprises:**
+- Tail weight is UNBOUNDED — no saturation even at n=24
+- q=7 power law exponent 47% larger (2.52 vs 1.72) — breakdown accelerates
+- Entanglement gap closes logarithmically — will vanish at n ~ 10⁴
+- Weight flows lev1 → tail, NOT lev0 → tail
+- %S(lev0) approaches fixed point (~0.225 for q=5)
+
+**POTENTIALLY NOVEL:** First power-law scaling of entanglement spectrum tail weight across walking boundary. First demonstration that energy-entropy decoupling is finite-size with quantitative crossover scales.
+
+[Full report: sprints/sprint_087.md]

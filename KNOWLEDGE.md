@@ -90,7 +90,7 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **Velocity v(q) = gap×N/(2π·x_σ) decreases monotonically with q.** The decreasing gap×N is primarily velocity reduction, NOT x_σ change. x_σ is nearly constant; v(q) carries all q-dependence.
 
-**Walking breakdown is EXCLUSIVELY an entropy phenomenon (Sprints 082-084).** Three independent probes:
+**Walking breakdown is an entropy phenomenon AT FINITE SIZE (Sprints 082-084, corrected Sprint 087).** Three independent probes:
 1. **Correlators (x_σ)**: perfectly conformal for ALL q=2-8 (Sprint 082)
 2. **Casimir energy (E₀)**: governed by Re(c) for ALL q=2-8, even where c_eff deviates 40% (Sprint 083)
 3. **Entanglement entropy (c_eff)**: deviates from Re(c) for q>5 (Sprints 079-081)
@@ -110,7 +110,17 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 | 7 | 6 | 19.8% | 66.8% | 13.5% | 0.78 | 1.98 |
 | 8 | 7 | 19.2% | 69.1% | 11.7% | 0.74 | 2.13 |
 
-**Why only entropy sees walking breakdown:** Energy/gap/correlator observables depend on lowest entanglement levels (ground + first excited), which are perfectly conformal. Entropy sums over ALL levels → sensitive to weight redistribution in the tail. Entanglement gap is NOT closing — it grows with q.
+**Why only entropy sees walking breakdown at small n:** Energy/gap/correlator observables depend on lowest entanglement levels (ground + first excited), which are perfectly conformal. Entropy sums over ALL levels → sensitive to weight redistribution in the tail. Entanglement gap grows with q at fixed n, but DECREASES with n at fixed q.
+
+**Tail weight grows as unbounded power law (Sprint 087).** DMRG entanglement spectrum at midchain:
+- q=5: w_tail ~ 1.9×10⁻⁵ × n^1.72 (R²=0.993, n=8-24)
+- q=7: w_tail ~ 2.1×10⁻⁶ × n^2.52 (R²=0.989, n=6-12)
+- Entanglement gap: Δξ = -0.43·ln(n) + 4.1 (q=5), -0.50·ln(n) + 4.8 (q=7)
+- NO saturation visible — tail weight is unbounded
+
+**Energy-entropy decoupling is TEMPORARY.** Tail weight reaches 10% at n≈147 (q=5), n≈72 (q=7). At these scales, tail contributes enough to affect spectral observables too. The walking regime creates a **hierarchy of crossover scales**: entropy breaks first (n ~ 10-20), then spectral observables (n ~ 100+).
+
+**Weight flows multiplet → tail, not ground → tail.** %S(lev0) saturates (~0.225 for q=5) while %S(lev1) monotonically decreases, feeding the tail. The ground state entropy fraction stabilizes early.
 
 **Rényi entropy decomposition of walking (Sprints 085-086).** Size-pair extraction c_α = 6·ΔS/((1+1/α)·ln(N₂/N₁)) on periodic BC. Optimal α shifts gradually with q:
 
