@@ -1,0 +1,215 @@
+{
+  "experiment": "069b_2d_entropy_q3q5",
+  "description": "2D entanglement entropy profiles at q=3,5 critical points",
+  "timestamp": "2026-04-01 22:08:54",
+  "q3": {
+    "L2": {
+      "critical": {
+        "g": 1.267,
+        "E0_per_site": -2.89832881,
+        "entropy_profile": [
+          {
+            "w": 1,
+            "nA": 2,
+            "boundary_length": 4,
+            "S": 0.06278496,
+            "S_per_boundary": 0.01569624
+          }
+        ]
+      },
+      "ordered": {
+        "g": 0.1,
+        "E0_per_site": -1.01072178,
+        "entropy_profile": [
+          {
+            "w": 1,
+            "nA": 2,
+            "boundary_length": 4,
+            "S": 1.09812289,
+            "S_per_boundary": 0.27453072
+          }
+        ]
+      },
+      "disordered": {
+        "g": 5.0,
+        "E0_per_site": -10.34082955,
+        "entropy_profile": [
+          {
+            "w": 1,
+            "nA": 2,
+            "boundary_length": 4,
+            "S": 0.00505109,
+            "S_per_boundary": 0.00126277
+          }
+        ]
+      }
+    },
+    "L3": {
+      "critical": {
+        "g": 1.267,
+        "E0_per_site": -3.272911,
+        "entropy_profile": [
+          {
+            "w": 1,
+            "nA": 3,
+            "boundary_length": 6,
+            "S": 0.23522869,
+            "S_per_boundary": 0.03920478
+          },
+          {
+            "w": 2,
+            "nA": 6,
+            "boundary_length": 6,
+            "S": 0.23522869,
+            "S_per_boundary": 0.03920478
+          }
+        ]
+      },
+      "ordered": {
+        "g": 0.1,
+        "E0_per_site": -2.00512808,
+        "entropy_profile": [
+          {
+            "w": 1,
+            "nA": 3,
+            "boundary_length": 6,
+            "S": 1.09862414,
+            "S_per_boundary": 0.18310402
+          },
+          {
+            "w": 2,
+            "nA": 6,
+            "boundary_length": 6,
+            "S": 1.09862414,
+            "S_per_boundary": 0.18310402
+          }
+        ]
+      },
+      "disordered": {
+        "g": 5.0,
+        "E0_per_site": -10.68203041,
+        "entropy_profile": [
+          {
+            "w": 1,
+            "nA": 3,
+            "boundary_length": 6,
+            "S": 0.01476152,
+            "S_per_boundary": 0.00246025
+          },
+          {
+            "w": 2,
+            "nA": 6,
+            "boundary_length": 6,
+            "S": 0.01476152,
+            "S_per_boundary": 0.00246025
+          }
+        ]
+      }
+    }
+  },
+  "q5": {
+    "L2": {
+      "critical": {
+        "g": 1.588,
+        "E0_per_site": -3.40392817,
+        "entropy_profile": [
+          {
+            "w": 1,
+            "nA": 2,
+            "boundary_length": 4,
+            "S": 0.08534379,
+            "S_per_boundary": 0.02133595
+          }
+        ]
+      },
+      "ordered": {
+        "g": 0.1,
+        "E0_per_site": -1.01016747,
+        "entropy_profile": [
+          {
+            "w": 1,
+            "nA": 2,
+            "boundary_length": 4,
+            "S": 1.60910326,
+            "S_per_boundary": 0.40227581
+          }
+        ]
+      },
+      "disordered": {
+        "g": 5.0,
+        "E0_per_site": -10.2082374,
+        "entropy_profile": [
+          {
+            "w": 1,
+            "nA": 2,
+            "boundary_length": 4,
+            "S": 0.00982692,
+            "S_per_boundary": 0.00245673
+          }
+        ]
+      }
+    },
+    "L3": {
+      "critical": {
+        "g": 1.588,
+        "E0_per_site": -3.64067386,
+        "entropy_profile": [
+          {
+            "w": 1,
+            "nA": 3,
+            "boundary_length": 6,
+            "S": 0.32063843,
+            "S_per_boundary": 0.05343974
+          },
+          {
+            "w": 2,
+            "nA": 6,
+            "boundary_length": 6,
+            "S": 0.32063843,
+            "S_per_boundary": 0.05343974
+          }
+        ]
+      },
+      "ordered": {
+        "g": 0.1,
+        "E0_per_site": -2.00500291,
+        "entropy_profile": [
+          {
+            "w": 1,
+            "nA": 3,
+            "boundary_length": 6,
+            "S": 1.6094483,
+            "S_per_boundary": 0.26824138
+          },
+          {
+            "w": 2,
+            "nA": 6,
+            "boundary_length": 6,
+            "S": 1.6094483,
+            "S_per_boundary": 0.26824138
+          }
+        ]
+      },
+      "disordered": {
+        "g": 5.0,
+        "E0_per_site": -10.41694223,
+        "entropy_profile": [
+          {
+            "w": 1,
+            "nA": 3,
+            "boundary_length": 6,
+            "S": 0.02897333,
+            "S_per_boundary": 0.00482889
+          },
+          {
+            "w": 2,
+            "nA": 6,
+            "boundary_length": 6,
+            "S": 0.02897333,
+            "S_per_boundary": 0.00482889
+          }
+        ]
+      }
+    }
+  }
+}

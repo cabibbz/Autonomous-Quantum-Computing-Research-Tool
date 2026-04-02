@@ -72,6 +72,18 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **POTENTIALLY NOVEL:** If the hybrid remains continuous in 2D at q>4, it would contradict the standard Potts (first-order) and clock (BKT) behavior. The Z_q symmetry + δ-coupling combination may suppress first-order transitions even in 2D.
 
+## 2D Entanglement Entropy (Sprint 069)
+
+**Ordered phase entropy = ln(q) EXACTLY** for all q=2,3,5 and all L=2,3,4 tested. The Z_q-symmetric ground state in the ordered phase is a GHZ-like superposition |ψ⟩ = (1/√q) Σ_s |s,s,...,s⟩, giving S = ln(q) for any non-trivial bipartition. Size-independent, geometry-independent.
+
+**Critical entropy follows area law.** S/boundary at w=1 strip, L=3: q=2 (0.065), q=3 (0.039), q=5 (0.053). Non-monotonic in q. L=2 is out of scaling for all q.
+
+**Entropy peak is NOT at g_c for accessible sizes.** At L≤4, the GHZ entropy ln(q) dominates over the critical area-law entropy α·2L. Crossover at L ~ ln(q)/(2α) ≈ 10-16. This is qualitatively different from 1D, where S peaks at g_c for modest n.
+
+**Sharp entropy drop at g ≈ 0.6·g_c** (not at g_c itself). For q=5 L=3: S drops from 1.62 to 0.33 between g=0.68 and g=1.57. This marks destruction of the ordered-phase superposition, not the critical point.
+
+**Complement symmetry:** S(w) = S(L-w) exact on torus for all q, L, g.
+
 ## MI-CV as Phase Transition Order Parameter (Sprints 030, 036, 037)
 MI-CV classifies transition type: second-order (crossing), first-order (step), BKT (dome). Confirmed at n=8-50. Potts crossings vindicated at true g_c. DO NOT use MI-CV for ν extraction (Sprint 053).
 

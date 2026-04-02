@@ -1,0 +1,192 @@
+{
+  "experiment": "069a_2d_entropy_q2",
+  "description": "2D entanglement entropy profiles at q=2 critical point",
+  "timestamp": "2026-04-01 22:06:02",
+  "q": 2,
+  "L2": {
+    "critical": {
+      "g": 0.771,
+      "E0_per_site": -2.08408246,
+      "entropy_profile": [
+        {
+          "w": 1,
+          "nA": 2,
+          "boundary_length": 4,
+          "S": 0.08667715,
+          "S_per_boundary": 0.02166929
+        }
+      ]
+    },
+    "ordered": {
+      "g": 0.1,
+      "E0_per_site": -1.02114287,
+      "entropy_profile": [
+        {
+          "w": 1,
+          "nA": 2,
+          "boundary_length": 4,
+          "S": 0.68874142,
+          "S_per_boundary": 0.17218536
+        }
+      ]
+    },
+    "disordered": {
+      "g": 3.0,
+      "E0_per_site": -6.51044375,
+      "entropy_profile": [
+        {
+          "w": 1,
+          "nA": 2,
+          "boundary_length": 4,
+          "S": 0.00764936,
+          "S_per_boundary": 0.00191234
+        }
+      ]
+    }
+  },
+  "L3": {
+    "critical": {
+      "g": 0.771,
+      "E0_per_site": -2.65904448,
+      "entropy_profile": [
+        {
+          "w": 1,
+          "nA": 3,
+          "boundary_length": 6,
+          "S": 0.39227744,
+          "S_per_boundary": 0.06537957
+        },
+        {
+          "w": 2,
+          "nA": 6,
+          "boundary_length": 6,
+          "S": 0.39227744,
+          "S_per_boundary": 0.06537957
+        }
+      ]
+    },
+    "ordered": {
+      "g": 0.1,
+      "E0_per_site": -2.01000839,
+      "entropy_profile": [
+        {
+          "w": 1,
+          "nA": 3,
+          "boundary_length": 6,
+          "S": 0.69320725,
+          "S_per_boundary": 0.11553454
+        },
+        {
+          "w": 2,
+          "nA": 6,
+          "boundary_length": 6,
+          "S": 0.69320725,
+          "S_per_boundary": 0.11553454
+        }
+      ]
+    },
+    "disordered": {
+      "g": 3.0,
+      "E0_per_site": -7.02187383,
+      "entropy_profile": [
+        {
+          "w": 1,
+          "nA": 3,
+          "boundary_length": 6,
+          "S": 0.02301507,
+          "S_per_boundary": 0.00383585
+        },
+        {
+          "w": 2,
+          "nA": 6,
+          "boundary_length": 6,
+          "S": 0.02301507,
+          "S_per_boundary": 0.00383585
+        }
+      ]
+    }
+  },
+  "L4": {
+    "critical": {
+      "g": 0.771,
+      "E0_per_site": -2.64443991,
+      "entropy_profile": [
+        {
+          "w": 1,
+          "nA": 4,
+          "boundary_length": 8,
+          "S": 0.47669571,
+          "S_per_boundary": 0.05958696
+        },
+        {
+          "w": 2,
+          "nA": 8,
+          "boundary_length": 8,
+          "S": 0.54418506,
+          "S_per_boundary": 0.06802313
+        },
+        {
+          "w": 3,
+          "nA": 12,
+          "boundary_length": 8,
+          "S": 0.47669571,
+          "S_per_boundary": 0.05958696
+        }
+      ]
+    },
+    "ordered": {
+      "g": 0.1,
+      "E0_per_site": -2.01000835,
+      "entropy_profile": [
+        {
+          "w": 1,
+          "nA": 4,
+          "boundary_length": 8,
+          "S": 0.69115788,
+          "S_per_boundary": 0.08639474
+        },
+        {
+          "w": 2,
+          "nA": 8,
+          "boundary_length": 8,
+          "S": 0.69116182,
+          "S_per_boundary": 0.08639523
+        },
+        {
+          "w": 3,
+          "nA": 12,
+          "boundary_length": 8,
+          "S": 0.69115788,
+          "S_per_boundary": 0.08639474
+        }
+      ]
+    },
+    "disordered": {
+      "g": 3.0,
+      "E0_per_site": -7.02102015,
+      "entropy_profile": [
+        {
+          "w": 1,
+          "nA": 4,
+          "boundary_length": 8,
+          "S": 0.02867259,
+          "S_per_boundary": 0.00358407
+        },
+        {
+          "w": 2,
+          "nA": 8,
+          "boundary_length": 8,
+          "S": 0.03119773,
+          "S_per_boundary": 0.00389972
+        },
+        {
+          "w": 3,
+          "nA": 12,
+          "boundary_length": 8,
+          "S": 0.02867259,
+          "S_per_boundary": 0.00358407
+        }
+      ]
+    }
+  }
+}

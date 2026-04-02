@@ -339,3 +339,22 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - L=3 at q=5 (dim=2M) runs at 25s/pt — practical 2D exact diag
 
 [Full report: sprints/sprint_068.md]
+
+### Sprint 069 — 2D Entanglement Entropy: Area Law and Ordered-Phase Dominance
+**Status:** Complete (3 experiments).
+
+**Ordered phase entropy = ln(q) EXACTLY.** For all q=2,3,5 and all L=2,3,4 tested. The Z_q-symmetric ground state is a GHZ-like superposition with S = ln(q) independent of system size and bipartition geometry.
+
+**Critical entropy follows area law.** S/boundary at w=1 strip, L=3: q=2 (0.065), q=3 (0.039), q=5 (0.053). Non-monotonic in q. L=2 out of scaling for all q.
+
+**Entropy peak is NOT at g_c.** At accessible sizes (L≤4), the GHZ entropy ln(q) dominates over the critical area-law entropy. For q=2 L=4: peak at g=0.58 vs g_c=0.771. For q=5 L=3: peak at g=0.68 vs g_c=1.588. Crossover at L ~ ln(q)/(2α) ≈ 10-16.
+
+**Sharp entropy drop at g ≈ 0.6·g_c** for q=5 L=3. S drops from 1.62 to 0.33 between g=0.68 and g=1.57.
+
+**Surprises:**
+- Entropy peak in ordered phase, NOT at criticality — qualitatively different from 1D
+- S_ordered = ln(q) exactly, independent of L and bipartition
+- Area-law coefficient non-monotonic in q (q=3 lowest at 0.039)
+- Sharp entropy crossover well below g_c
+
+[Full report: sprints/sprint_069.md]
