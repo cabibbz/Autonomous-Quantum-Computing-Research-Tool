@@ -2,7 +2,7 @@
 
 ## Open Items — Check each sprint, remove when done
 - ~~Harden Casimir finding~~ **DONE (Sprint 098).** Upgraded to CONFIRMED NOVEL. 5+ points for q=2,3,7. Pairwise convergence verified. 16× more consistent than entropy.
-- ~~Im(c) oscillation detection~~ **RULED OUT (Sprint 099).** Period too long for exact diag. Need DMRG N=10-100 or non-Hermitian formulation.
+- ~~Im(c) oscillation detection~~ **RULED OUT (Sprints 099-100).** Period too long for any accessible size. Open-BC DMRG also fails (boundary corrections). Only route: non-Hermitian formulation.
 - **KNOWLEDGE.md is over budget (~560 lines vs ~200 target).** Compress old sections (2D, MI-CV, hybrid model details from sprints 029-062) into one-line summaries. Full details are in sprints/ reports.
 
 ## Five Entanglement Archetypes
@@ -220,7 +220,9 @@ Non-Potts fraction grows exponentially ~exp(1.6·q). **Biggest jump at q=3→4 (
 
 **Scope:** Holds at all accessible sizes (n≤14 for q=2, n≤8 for q=7). Walking breakdown is exclusively an entropy phenomenon — energy sees Re(c) everywhere entropy fails.
 
-**Im(c) oscillations undetectable at accessible sizes (Sprint 099).** Complex CFT predicts oscillatory corrections ~cos(ω·ln(N))/N⁴ with ω=2·arccosh(√q/2). For q=5: ω=0.962, period=6.53 in ln(N), requiring N ratio ~684 for one cycle. Dense scan at all integer N=4-10 (q=5) shows: monotonic 1/N⁶ beats oscillatory model, pairwise vc is monotonic (non-monotonicity in c/Re(c) is from velocity). Detrended vc RMS grows 8-21× from q=2→7 but sign pattern doesn't match predicted ω. Detection would require DMRG at N=10-100 or non-Hermitian approach.
+**Im(c) oscillations undetectable at accessible sizes (Sprints 099-100).** Complex CFT predicts oscillatory corrections ~cos(ω·ln(N))/N⁴ with period ~e^300 for q=5. Literature confirms: no paper has detected Im(c) from Casimir energy of a real Hamiltonian. Only non-Hermitian deformation (Tang et al. 2024) accesses Im(c) directly.
+
+**Open-BC Casimir extraction FAILS for q≥5 (Sprint 100).** DMRG gives open-BC energies. The open-BC formula E₀ = ε_∞·N + e_s - πvc/(24N) has O(1/N) boundary corrections that scale dramatically with q: c/Re(c) = 0.97 (q=2, N≤24), 0.64 (q=5, N≤12), 0.36 (q=7, N≤8). Periodic BC is 10-100× more accurate at same N (1/N² vs 1/N corrections). DMRG cannot extend the Casimir-Re(c) result beyond exact diag sizes.
 
 **Open BC correlators give WRONG exponents (Sprint 082a).** Raw power-law fit on DMRG open chain inflates η by ~5×. NEVER use open-BC raw power law for x extraction — use periodic chain with chord distance.
 

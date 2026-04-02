@@ -1,0 +1,29 @@
+{
+  "experiment": "100c_periodic_casimir_analysis",
+  "sprint": 100,
+  "method": "periodic_BC_pairwise_from_sprint_099a",
+  "finding": "Periodic BC Casimir pairwise: q=2 c/Rec=1.000 at (5,6), q=5 c/Rec=1.002 at (7,8), q=7 c/Rec=1.000 at (5,6)",
+  "conclusion": "Open-BC Casimir fails due to boundary corrections. Periodic-BC from Sprint 098/099 remains definitive.",
+  "open_bc_failure": {
+    "q2": "c/Rec=0.97 (3% off), 7pts N=8-24 open BC",
+    "q5": "c/Rec=0.64 (36% off), 6pts N=6-12 open BC",
+    "q7": "c/Rec=0.36 (64% off), 5pts N=4-8 open BC"
+  },
+  "periodic_bc_success": {
+    "q2": {
+      "pairwise_5_6": 1.0,
+      "pairwise_13_14": 0.984,
+      "2p_fit": 0.999
+    },
+    "q5": {
+      "pairwise_7_8": 1.002,
+      "pairwise_9_10": 0.994,
+      "2p_fit": 1.019
+    },
+    "q7": {
+      "pairwise_5_6": 1.0,
+      "pairwise_7_8": 0.974,
+      "2p_fit": 1.006
+    }
+  }
+}

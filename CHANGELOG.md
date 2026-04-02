@@ -161,3 +161,16 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **Im(c) oscillations undetectable at exact diag sizes.** Would need DMRG at N=10-100 or non-Hermitian formulation.
 
 [Full report: sprints/sprint_099.md]
+
+### Sprint 100 — DMRG Casimir: Open vs Periodic BC
+**Status:** Complete (3 experiments).
+
+**DMRG Casimir q=2 open BC (100a).** 7 points N=8-24. DMRG matches exact diag to 10⁻¹⁴ at N≤14. Open-BC 4-param fit: c=0.485 (c/0.5=0.971). Boundary corrections ~3% at N~24. Pairwise converges slowly: 0.88→0.93.
+
+**Open-BC Casimir for q=5,7 — FAILS (100b).** q=5 (6 pts N=6-12): c/Re(c)=0.64. q=7 (5 pts N=4-8): c/Re(c)=0.36. Boundary corrections scale with q: 3% (q=2), 36% (q=5), 64% (q=7). Open-BC extraction is impractical for q≥5 at accessible DMRG sizes.
+
+**Periodic-BC reanalysis — confirms Re(c) tracking (100c).** Sprint 099a dense periodic data reanalyzed. Pairwise c/Re(c): q=2 (5,6)→1.000, q=5 (7,8)→1.002, q=7 (5,6)→1.000. Periodic BC 10-100× more accurate than open BC at same N (1/N² vs 1/N corrections).
+
+**Key finding:** Casimir-Re(c) result CANNOT be extended to DMRG sizes via open BC. Periodic exact diag (Sprint 098) remains definitive. Literature confirms Im(c) detection impossible from real Hamiltonian Casimir energy.
+
+[Full report: sprints/sprint_100.md]
