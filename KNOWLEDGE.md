@@ -129,6 +129,17 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **Democracy index (Sprints 089-090):** At q=2, ground state is depleted relative to democratic share. At q=5, multiplet is depleted. q=4 is the crossover point where democracy index ≈ 1.0.
 
+**Entanglement Hamiltonian H_E = -log(ρ_A) across walking boundary (Sprint 091).** BW fidelity measured for S_q Potts at g_c=1/q, periodic chain. At fixed nA=4:
+
+| q | Potts NN locality | non-Potts fraction | BW fidelity | BW alpha |
+|---|---|---|---|---|
+| 2 | 99.97% | 0.029% | 0.9997 | 2.39 |
+| 3 | 99.92% | 0.081% | 0.9994 | 2.40 |
+| 4 | 99.00% | 0.955% | 0.9942 | 3.23 |
+| 5 | 97.08% | 2.729% | 0.9832 | 3.20 |
+
+Non-Potts fraction grows exponentially ~exp(1.6·q). **Biggest jump at q=3→4 (11.7×)**, coinciding with real-to-complex CFT boundary. NNN and 3-body Potts operators add <0.2% — residual is genuinely non-Potts operators. BW locality dominated by nA (subsystem size), not q: q=2 drops from 99.98% (nA=3) to 62.6% (nA=7). q=5 non-Potts grows 1.7× faster per nA than q=2. BW alpha jumps from ~2.4 (q=2,3) to ~3.2 (q≥4) — another q=4 discontinuity.
+
 **Rényi entropy decomposition of walking (Sprints 085-086).** Size-pair extraction c_α = 6·ΔS/((1+1/α)·ln(N₂/N₁)) on periodic BC. Optimal α shifts gradually with q:
 
 | q | pair | c₁/Rec | c₂/Rec | c₃/Rec | c_∞/Rec | best α |

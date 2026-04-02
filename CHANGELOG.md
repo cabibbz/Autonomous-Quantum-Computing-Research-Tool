@@ -70,25 +70,7 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 Full details for sprints 076-079 are in sprints/sprint_NNN.md.
 
 - **080** — c_eff at q=6,8,9: walking boundary mapped. c_eff/Re(c) = 1.004·exp(−0.105(q−5)). q=5 exact walking threshold. gap×N increases with q even as walking breaks.
-
-### Sprint 081 — ξ*(q=6) via DMRG: Walking is MARGINAL BREAKING
-**Status:** Complete (3 experiments).
-
-**q=6 c_eff drops 2.9% from n=8→12 (081a).** DMRG at g_c=1/6: n=10 (chi=40, 48s) c_eff=1.130, n=12 (chi=30, 205s) c_eff=1.115. Drift rate dc/d(ln n) = -0.048. The n=6-8 stability (+0.12%) from Sprint 080 was misleading — too short a range.
-
-**gap×N healthy at 2.10 (081b).** DMRG excited state at n=10, chi=40 (313s). Gap still increasing with n, consistent with walking breakdown being in entropy not spectrum.
-
-**Three-way comparison reveals crossover (081c).** dc/d(ln n): q=5 (+0.014), q=6 (-0.048), q=7 (-0.091). q=6 drift is 2× closer to q=7 than q=5. Walking boundary is a smooth crossover, not a phase boundary. Extrapolated q=6 breakdown at n≈38.
-
-**Surprises:**
-- q=6 c_eff stability at n=6-8 was MISLEADING — drop only visible at n≥10
-- q=6 drift rate 3.4× faster than q=5 (opposite sign!)
-- Extrapolated breakdown n≈38 — tantalizingly close to DMRG reach
-- d=6 DMRG dramatically slower than d=5 (172s vs ~10s at n=8)
-
-**POTENTIALLY NOVEL:** First systematic drift-rate comparison dc/d(ln n) across q=5-7 resolving walking crossover. q=6 breakdown length ξ*≈38.
-
-[Full report: sprints/sprint_081.md]
+- **081** — q=6 marginal breaking: c_eff drops 2.9% n=8→12, drift dc/d(ln n)=-0.048. Walking boundary is smooth crossover. ξ*≈38 for q=6.
 
 ### Sprint 082 — Spin-Spin Correlator: x_σ(q) Nearly Universal, Walking is Entropy-Only
 **Status:** Complete (3 experiments).
@@ -293,3 +275,25 @@ Full details for sprints 076-079 are in sprints/sprint_NNN.md.
 **POTENTIALLY NOVEL:** First entanglement spectrum measurement at q=4 S_q Potts. First confirmation that democracy index crossover occurs at q=4, pinpointing the real-to-complex CFT boundary in the entanglement spectrum. q_cross → 4.0 in the thermodynamic limit.
 
 [Full report: sprints/sprint_090.md]
+
+### Sprint 091 — Entanglement Hamiltonian H_E: BW Fidelity Across Walking Boundary
+**Status:** Complete (3 experiments).
+
+**BW fidelity confounded by nA in naive comparison (091a).** Periodic chain at g_c=1/q, q=2-7 with different n (and thus nA). q=7 (nA=3) showed 99.9% BW fidelity, q=2 (nA=6) showed 82.3% — but this was an nA artifact, not a q effect. Lesson: always compare at fixed nA.
+
+**At fixed nA=4, non-Potts fraction grows EXPONENTIALLY with q (091b).** q=2: 0.029%, q=3: 0.081%, q=4: 0.955%, q=5: 2.729%. Fit: ~exp(1.6·q). NNN and 3-body Potts operators contribute <0.2% — the residual is genuinely non-Potts operators absent from the physical Hamiltonian.
+
+**Biggest BW jump at q=3→4 (11.7×), NOT q=4→5 (2.9×) (091c).** The real-to-complex CFT boundary at q=4 is ALSO a BW locality boundary. d(log non-Potts)/dq spikes to 2.46 at q=3→4, vs 1.05 elsewhere. BW alpha also jumps: 2.4 (q=2,3) → 3.2 (q≥4).
+
+**q=5 non-Potts grows 1.7× faster with nA than q=2.** BW locality scaling: q=2 drops from 99.98% (nA=3) to 62.6% (nA=7), q=5 from 99.93% to 97.1%. Walking-enhanced corrections amplified at larger subsystems.
+
+**Surprises:**
+- BW fidelity dominated by nA, not q — methodological caution for future comparisons
+- Biggest non-Potts jump at q=3→4 (11.7×) coincides with real-to-complex CFT boundary
+- Non-Potts operators dominate BW residual — NNN/3-body Potts operators negligible
+- BW alpha discontinuity at q=4: jumps from 2.4 to 3.2
+- q=5 non-Potts slope 1.7× steeper than q=2 — walking amplifies BW corrections
+
+**POTENTIALLY NOVEL:** First BW fidelity across walking boundary for S_q Potts. First identification of q=4 as BW locality boundary. First demonstration that BW corrections are dominated by non-Potts operators.
+
+[Full report: sprints/sprint_091.md]
