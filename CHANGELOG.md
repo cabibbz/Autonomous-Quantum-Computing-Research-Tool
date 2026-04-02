@@ -135,3 +135,16 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **BW is the optimal compact H_E approximation.** Beyond threshold, H_E requires exponentially many parameters — fundamentally beyond any local Hamiltonian ansatz.
 
 [Full report: sprints/sprint_097.md]
+
+### Sprint 098 — Harden Casimir Finding: CONFIRMED NOVEL
+**Status:** Complete (2 experiments).
+
+**GPU-extended Casimir fit (098a).** Vectorized Hamiltonian builder for large matrices. New sizes: q=3 n=12 (531k), q=5 n=10 (9.8M, 159s), q=7 n=8 (5.7M, 148s), q=8 n=7 (2.1M). All q now have 4-5 data points.
+
+**Pairwise convergence analysis (098b).** Pairwise c_implied/Re(c) from consecutive (N₁,N₂) pairs: q=7 (7,8)→1.000 (exact!), q=8 (6,7)→0.992. Extrapolated ∞: mean=0.998±0.012. 1/N⁴ corrections systematic (|d|/q≈0.044, q-independent).
+
+**Casimir 16× more consistent with Re(c) than entropy.** Pairwise-last spread 0.009 vs entropy spread 0.145. At q=7: Casimir off by 0.0%, entropy off by 21.6%.
+
+**Upgraded from POTENTIALLY NOVEL to CONFIRMED NOVEL.** Five checks passed: 5+ points, pairwise convergence, 16× consistency, systematic corrections, independence from entropy.
+
+[Full report: sprints/sprint_098.md]
