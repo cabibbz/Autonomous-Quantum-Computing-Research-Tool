@@ -52,23 +52,25 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **c_eff(q=5) ≈ 1.15, matches complex CFT Re(c) ≈ 1.138 to ~1% (Sprints 078c, 079c).** q=5 is the unique "sweet spot" where complex CFT quantitatively predicts c_eff at ALL accessible sizes (n=6-24).
 
-**Walking regime boundary mapped (Sprints 079-080).** c_eff/Re(c) ratio decays exponentially for q>5:
+**Walking regime boundary mapped (Sprints 079-081).** c_eff/Re(c) ratio decays exponentially for q>5:
 
-| q | Re(c) | c_eff(best) | n_best | c/Re(c) | Size trend | Walking? |
+| q | Re(c) | c_eff(best) | n_best | c/Re(c) | dc/d(ln n) | Walking? |
 |---|-------|-------------|--------|---------|------------|----------|
-| 3 | 0.800 | 0.893 | 24 | 1.12 | stable | real CFT (+12% FSS) |
-| 5 | 1.138 | 1.147 | 20 | 1.01 | stable | YES — sweet spot |
-| 6 | 1.253 | 1.147 | 8 | 0.92 | stable (+0.1%) | MARGINAL |
-| 7 | 1.351 | 1.059 | 12 | 0.78 | degrading (−5%) | BREAKING |
-| 8 | 1.438 | 1.062 | 7 | 0.74 | degrading (−1%) | BREAKING |
+| 3 | 0.800 | 0.893 | 24 | 1.12 | — | real CFT (+12% FSS) |
+| 5 | 1.138 | 1.152 | 12 | 1.01 | +0.014 | YES — sweet spot |
+| 6 | 1.253 | 1.115 | 12 | 0.89 | **-0.048** | MARGINAL BREAKING |
+| 7 | 1.351 | 1.059 | 12 | 0.78 | -0.091 | BREAKING |
+| 8 | 1.438 | 1.062 | 7 | 0.74 | — | BREAKING |
 | 9 | 1.515 | 1.012 | 6 | 0.67 | — | NO |
 | 10 | 1.584 | 0.946 | 6 | 0.60 | — | NO |
 
-**Fit: c_eff/Re(c) = 1.004 × exp(−0.105(q−5)).** Both linear and exponential fits give ratio=1 crossing at q ≈ 5.0 ± 0.1. q=5 is the exact walking threshold.
+**Fit: c_eff/Re(c) = 1.004 × exp(−0.105(q−5)).** q=5 is the exact walking threshold.
 
-**Key discriminator: size dependence.** q≤6: c_eff stable or increasing with n → walking extends beyond accessible sizes. q≥7: c_eff DECREASING with n → walking breaking down, system "sees" first-order nature. DMRG confirms: q=7 c_eff decreases 1.11→1.06 (n=8→12).
+**Key discriminator: drift rate dc/d(ln n) (Sprint 081).** q=5 c_eff RISES (+0.014), q=6 DROPS (-0.048), q=7 drops faster (-0.091). q=6 drift is 2× closer to q=7 than q=5 → marginal breaking, NOT a second walking case. Walking boundary is a CROSSOVER, not a sharp transition. q=6 stability at n=6-8 was misleading (too short a range).
 
-**gap×N INCREASES with q** (2.01 at q=6, 2.17 at q=8) even as walking breaks down. Breakdown is in entropy, not the gap.
+**q=6 walking extrapolated breakdown at n≈38 (Sprint 081c).** c_eff crosses 0.85×Re(c) at n≈38, just outside DMRG reach with chi=30.
+
+**gap×N INCREASES with q** (2.01 at q=6, 2.10 at q=6 n=10, 2.17 at q=8) even as walking breaks down. Breakdown is in entropy, not the gap.
 
 **c_eff converges to ~1.0-1.15 for ALL q≥5** at moderate sizes — the complex CFT q-dependence only manifests at n << ξ*(q).
 

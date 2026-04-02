@@ -286,3 +286,22 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 **POTENTIALLY NOVEL:** Complete walking boundary curve q=3-10 with exponential decay law. First measurements at q=6,8,9.
 
 [Full report: sprints/sprint_080.md]
+
+### Sprint 081 — ξ*(q=6) via DMRG: Walking is MARGINAL BREAKING
+**Status:** Complete (3 experiments).
+
+**q=6 c_eff drops 2.9% from n=8→12 (081a).** DMRG at g_c=1/6: n=10 (chi=40, 48s) c_eff=1.130, n=12 (chi=30, 205s) c_eff=1.115. Drift rate dc/d(ln n) = -0.048. The n=6-8 stability (+0.12%) from Sprint 080 was misleading — too short a range.
+
+**gap×N healthy at 2.10 (081b).** DMRG excited state at n=10, chi=40 (313s). Gap still increasing with n, consistent with walking breakdown being in entropy not spectrum.
+
+**Three-way comparison reveals crossover (081c).** dc/d(ln n): q=5 (+0.014), q=6 (-0.048), q=7 (-0.091). q=6 drift is 2× closer to q=7 than q=5. Walking boundary is a smooth crossover, not a phase boundary. Extrapolated q=6 breakdown at n≈38.
+
+**Surprises:**
+- q=6 c_eff stability at n=6-8 was MISLEADING — drop only visible at n≥10
+- q=6 drift rate 3.4× faster than q=5 (opposite sign!)
+- Extrapolated breakdown n≈38 — tantalizingly close to DMRG reach
+- d=6 DMRG dramatically slower than d=5 (172s vs ~10s at n=8)
+
+**POTENTIALLY NOVEL:** First systematic drift-rate comparison dc/d(ln n) across q=5-7 resolving walking crossover. q=6 breakdown length ξ*≈38.
+
+[Full report: sprints/sprint_081.md]
