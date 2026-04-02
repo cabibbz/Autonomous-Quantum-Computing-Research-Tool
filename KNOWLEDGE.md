@@ -90,7 +90,26 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **Velocity v(q) = gap×N/(2π·x_σ) decreases monotonically with q.** The decreasing gap×N is primarily velocity reduction, NOT x_σ change. x_σ is nearly constant; v(q) carries all q-dependence.
 
-**Walking breakdown is an ENTROPY phenomenon (Sprint 082).** x_σ and correlator form are perfectly conformal for ALL q at accessible sizes. Only c_eff (entropy) deviates for q>5. No oscillatory corrections from complex Im(x_σ) detectable — period in ln(r) ≈ 80, vs accessible Δln(r) ≈ 1.
+**Walking breakdown is EXCLUSIVELY an entropy phenomenon (Sprints 082-083).** Three independent probes:
+1. **Correlators (x_σ)**: perfectly conformal for ALL q=2-8 (Sprint 082)
+2. **Casimir energy (E₀)**: governed by Re(c) for ALL q=2-8, even where c_eff deviates 40% (Sprint 083)
+3. **Entanglement entropy (c_eff)**: deviates from Re(c) for q>5 (Sprints 079-081)
+
+**Casimir energy cross-validates complex CFT Re(c) (Sprint 083).** E₀/N = ε_∞ - πvc/(6N²). The product vc from Casimir fit, divided by v from gap/correlator, gives c_implied:
+
+| q | c_implied | Re(c) | c_eff | c_imp/Re(c) |
+|---|-----------|-------|-------|-------------|
+| 2 | 0.496 | 0.500 | 0.500 | 0.993 |
+| 3 | 0.804 | 0.800 | 0.800 | 1.005 |
+| 4 | 1.008 | 1.000 | 1.000 | 1.008 |
+| 5 | 1.168 | 1.138 | 1.152 | 1.027 |
+| 6 | 1.283 | 1.253 | 1.115 | 1.024 |
+| 7 | 1.374 | 1.351 | 1.059 | 1.017 |
+| 8 | 1.436 | 1.438 | 1.062 | 0.999 |
+
+**c_implied/Re(c) ≈ 1.00 ± 0.03 for ALL q.** The ground state energy sees Re(c) even where entropy doesn't. No oscillatory corrections from complex Im(x_σ) detectable — period in ln(r) ≈ 80, vs accessible Δln(r) ≈ 1.
+
+**POTENTIALLY NOVEL (Sprint 083):** First demonstration that Casimir energy obeys complex CFT Re(c) across the walking boundary (q=2-8). Establishes hierarchy: energy observables track Re(c), entropy does not.
 
 **Open BC correlators give WRONG exponents (Sprint 082a).** Raw power-law fit on DMRG open chain inflates η by ~5×. NEVER use open-BC raw power law for x extraction — use periodic chain with chord distance.
 

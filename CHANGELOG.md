@@ -54,107 +54,13 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - **061-064** — Large-q limit. c·x₁ ≈ 0.112. BW locality degrades with q.
 - **065-067** — Hybrid ≠ clock universality (3 probes). No first-order signal. No floating phase in hybrid.
 - **068-070** — 2D hybrid model. g_c(2D) measured. q=2 continuous confirmed. q=5 inconclusive.
+- **071** — Ly=2 cylinder: g_c(q=2)=0.451, g_c(q=5)=0.714. DMRG impractical for q≥5 cylinder.
+- **072** — q=3 cylinder g_c=0.565. Cyl/1D ratio monotonically decreasing. Ly=3 q=2: g_c=0.655.
+- **073** — q=3 Ly=3: g_c=0.797 (49.7% to 2D). q=2 Ly=4: g_c=0.688. q=3 converges 1.9× slower.
+- **074** — q=3 Ly=4 infeasible. q=5 Ly=3: g_c=0.974. Convergence saturates for q≥3.
+- **075** — q=2 Ly=5: g_c=0.701 (86.6% to 2D). Power-law 1/Ly² convergence, not exponential.
 
 Full details for all compressed sprints are in sprints/sprint_NNN.md.
-
-### Sprint 071 — 2D Cylinder Geometry: Ly=2 Ladder for q=2,5
-**Status:** Complete (3 experiments).
-
-**Ly=2 cylinder (ladder) extends 2D study beyond torus bottleneck.** Open x-direction, periodic y-direction. Coordination z=3. Enables exact diag gap×Lx crossings for moderate sizes.
-
-**g_c(cylinder) measured for q=2 and q=5.**
-| q | g_c(1D) | g_c(cyl) | g_c(2D) | cyl/1D |
-|---|---------|----------|---------|--------|
-| 2 | 0.250 | 0.451 | 0.771 | 1.80 |
-| 5 | 0.441 | 0.714 | 1.588 | 1.62 |
-
-**q=2 crossings converge (3 pairs): 0.447→0.451→0.454.** q=5 has single pair (3,4)=0.714.
-
-**No first-order signal for q=5 on cylinder (071c).** Order parameter ⟨δ(s_i,s_j)⟩ smooth across g_c. Max slope steeper for q=5 (1.88) vs q=2 (1.21) — more critical, not less. Extends Sprint 066 finding from 1D to ladder geometry.
-
-**DMRG impractical for q≥5 cylinder (071b).** d=5 per site → chi=20 has massive truncation errors. Multi-hour runtimes even at chi=30. Exact diag is the viable approach for Lx≤4-5.
-
-**DMRG on q=2 cylinder works (071a).** g_c≈0.45 from entropy peak (drifts with Lx). c_eff=0.19 truncation-limited.
-
-**Surprises:**
-- DMRG entropy peak drifts strongly on cylinders — unreliable g_c proxy
-- q=5 DMRG completely impractical at chi=20-30
-- Cyl/1D ratio appeared non-monotonic with 2 points (1.80 vs 1.62) — Sprint 072 shows monotonically decreasing (1.80→1.69→1.62)
-- q=5 order parameter slope STEEPER than q=2 — opposite to first-order expectation
-
-[Full report: sprints/sprint_071.md]
-
-### Sprint 072 — q=3 Cylinder & Ly=3 Extension
-**Status:** Complete (3 experiments).
-
-**q=3 fills the Ly=2 cylinder gap (072a).** g_c(q=3, Ly=2 cyl) = 0.565 from 3 crossing pairs (Lx=3-6, dim up to 531k): 0.555→0.567→0.573. Monotonic convergence from below. Cyl/1D ratio = 1.69.
-
-**Cyl/1D ratio monotonically decreasing (072b).** 1.80 (q=2) → 1.69 (q=3) → 1.62 (q=5). NOT non-monotonic as previously noted for 2D/1D. Higher q needs proportionally less coupling boost on cylinder.
-
-**q=3 order parameter smooth (072b).** Max slope 1.99 (Lx=5,6) — steepest of the three q values tested. No first-order signal.
-
-**Ly=3 cylinder for q=2 (072c).** g_c = 0.655 from 4 crossing pairs (Lx=3-7, dim up to 2M): 0.645→0.655→0.659→0.662. 63.7% of the way from Ly=2 (0.451) to 2D (0.771). Gap×Lx at crossing converges toward ~2.4.
-
-**Surprises:**
-- Cyl/1D ratio is monotonically decreasing, not non-monotonic (corrects Sprint 071 note)
-- q=3 has steepest order parameter slope (1.99 > q=5's 1.88 > q=2's 1.21)
-- 2D/cyl ratio peaks at q=3 (2.24) — the 2D jump from cylinder is largest for q=3
-- Ly=3 crossings converge tighter than Ly=2 (spread 0.017 in 4 pairs)
-
-[Full report: sprints/sprint_072.md]
-
-### Sprint 073 — Ly Convergence: q=3 Ly=3, q=2 Ly=4, Cross-q Analysis
-**Status:** Complete (3 experiments).
-
-**q=3 Ly=3 cylinder (073a).** g_c = 0.797 from single crossing pair (Lx=3,4). Only 49.7% of the way to 2D (vs q=2's 77.7% at Ly=3). Lx=5 (dim=14.3M) at 251s/pt — infeasible for full scan.
-
-**q=2 Ly=4 cylinder (073b).** g_c = 0.688 from 2 crossing pairs: (3,4)=0.683, (4,5)=0.693. 84.0% to 2D. Convergence decelerating: Ly=3→4 jump (+0.033) is 6x smaller than Ly=2→3 (+0.204). Exponential fit predicts Ly=5: g_c=0.745.
-
-**Cross-q convergence analysis (073c).** q=3 converges to 2D **1.9x SLOWER** than q=2. Exponential decay lengths: B(q=2)=1.60, B(q=3)=3.03. q=3 has both larger 2D/1D ratio (3.80 vs 3.08) AND slower exponential approach. Ly convergence is NOT universal across q — different models require different cylinder widths to approximate 2D behavior.
-
-**Surprises:**
-- q=3 at Ly=3 only halfway to 2D — much slower than q=2
-- q=2 Ly=3→4 jump surprisingly small (+0.033) — near saturation
-- q=2 convergence ratio non-monotonic (0.61, 0.36, 0.72) — not pure exponential
-- 2D/1D g_c ratio correlates with convergence slowness: bigger gap = slower approach
-
-[Full report: sprints/sprint_073.md]
-
-### Sprint 074 — Cylinder Limits: q=3 Ly=4 Infeasible, q=5 Ly=3 g_c=0.974, Convergence Saturates
-**Status:** Complete (3 experiments).
-
-**q=3 Ly=4 cylinder INFEASIBLE (074a).** Lx=4 (dim=43M) takes 838s per g-point — no scan possible. Only Lx=3 available (no crossing). Exponential fit prediction g_c ≈ 0.917 cannot be tested.
-
-**q=5 Ly=3 cylinder (074b).** g_c = 0.974 from (Lx=2, Lx=3) crossing. 46.5% to 2D. Lx=4 (dim=244M) infeasible. Caveat: Lx=2 known to be out of scaling regime.
-
-**Convergence saturates for q≥3 (074c).** At Ly=3: q=2 at 77.7%, q=3 at 49.7%, q=5 at 46.5%. The big slowdown is q=2→q=3 (B: 1.19→2.49). q=3→q=5 is marginal (B: 2.49→2.83). q=3 Ly increments exactly constant (0.232) — possibly linear, not exponential.
-
-**Surprises:**
-- q=3 Ly=4 hits exact diag wall at dim=43M (838s/pt)
-- q=3 and q=5 converge at nearly identical rates (~47-50% at Ly=3)
-- Convergence slowdown saturates — q≥3 may all approach 2D at similar Ly
-- q=3 increments exactly 0.232 for both Ly=1→2 and Ly=2→3 (linear!)
-- Cyl/1D ratio decreasing at both Ly=2 AND Ly=3 — universal trend
-
-[Full report: sprints/sprint_074.md]
-
-### Sprint 075 — q=2 Ly=5 Cylinder & Cylinder Entanglement Entropy
-**Status:** Complete (3 experiments).
-
-**q=2 Ly=5 cylinder (075a).** g_c = 0.701 from (Lx=3, Lx=4) crossing. 86.6% to 2D. Ly=4→5 increment only +0.013 (Ly=3→4 was +0.033). Lx=5 (dim=33M) takes 541s/pt — infeasible. Exponential prediction (0.745) OVERSHOOTS by 5.9%.
-
-**Cylinder entanglement entropy (075b).** First measurement of S on cylinder geometries at criticality. c_eff from open-BC fit: Ly=1 (0.61), Ly=2 (0.75), Ly=3 (0.82). Growth is FSS overshoot — 2D Ising also has c=0.5. S per bond cut DECREASING: 0.285→0.157→0.107→0.089. Area-law behavior emerging.
-
-**Power-law convergence, NOT exponential (075c).** g_c(Ly) = 0.771 - 1.285/Ly^2.03 fits better (RMS=0.016) than exponential (RMS=0.025). Ly=1→3 increments are nearly linear (+0.201, +0.204), abrupt deceleration at Ly≥4. This supersedes the exponential model from Sprint 073.
-
-**Surprises:**
-- Exponential prediction overshoots by 5.9% — convergence slower than expected
-- Ly=1→2 and Ly=2→3 increments nearly identical (+0.201, +0.204) — linear regime
-- Abrupt deceleration at Ly=3→4 (6x smaller increment)
-- c_eff at Ly=1 already 22% above exact c=0.5 — significant small-Lx overshoot
-- S per bond cut monotonically decreasing — approach to area law
-
-[Full report: sprints/sprint_075.md]
 
 ### Sprint 076 — S_q Potts vs Hybrid: Direct Universality Class Comparison at q=5
 **Status:** Complete (3 experiments).
@@ -299,3 +205,24 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 **POTENTIALLY NOVEL:** First x_σ(q) measurement for S_q Potts chain via correlators. First v(q) extraction. Discovery that walking breakdown manifests in entropy/velocity but NOT in x_σ or correlator form.
 
 [Full report: sprints/sprint_082.md]
+
+### Sprint 083 — Casimir Energy: c_implied Matches Re(c) for ALL q, Walking is Entropy-Only
+**Status:** Complete (3 experiments).
+
+**Casimir energy formula E₀/N = ε_∞ - πvc/(6N²) fits with R² > 0.9999 for all q=2-8 (083a,b).** Periodic chain at g_c=1/q, multiple sizes per q. Extracted vc (product of velocity and central charge) independently of entropy or correlators.
+
+**c_implied = vc/v_gap matches Re(c) to ±3% for ALL q (083c).** Defines c_implied as the central charge that makes Casimir velocity agree with gap-derived velocity. Result: c_implied/Re(c) = 0.993 (q=2), 1.005 (q=3), 1.008 (q=4), 1.027 (q=5), 1.024 (q=6), 1.017 (q=7), 0.999 (q=8). The ground state energy sees Re(c) from complex CFT even at q=8, where entropy c_eff is 40% off.
+
+**Walking breakdown is EXCLUSIVELY an entropy phenomenon.** Energy (Casimir), spectrum (gap×N), correlators (x_σ) — all governed by complex CFT. Only entanglement entropy deviates for q>5. The reduced density matrix is uniquely sensitive to walking breakdown.
+
+**vc(q) monotonically increasing toward ~1.** vc: 0.50 (q=2) → 0.94 (q=8). Best fit: vc = 0.31·ln(q) + 0.34. Pairwise vc decreases with N for all q (-1% to -3.6% drift), converging from above.
+
+**Surprises:**
+- c_implied/Re(c) = 0.999 at q=8 — most precise match at the q where entropy is most wrong
+- Casimir energy formula works perfectly even in walking-broken regime
+- Walking breakdown has zero signature in ground state energy
+- vc approaching 1 at large q — may saturate
+
+**POTENTIALLY NOVEL:** First demonstration that Casimir energy obeys complex CFT Re(c) across the walking boundary. Establishes energy-entropy hierarchy: energy observables track Re(c), entropy does not.
+
+[Full report: sprints/sprint_083.md]
