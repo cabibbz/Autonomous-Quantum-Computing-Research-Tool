@@ -84,6 +84,25 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **Complement symmetry:** S(w) = S(L-w) exact on torus for all q, L, g.
 
+## 2D Transition Diagnostics (Sprint 070)
+
+**q=2 confirmed continuous in 2D** by three independent probes (L=3→4):
+- d²E₀/dg² peak scales as L^0.16 (consistent with α=0, log divergence for 2D Ising)
+- χ_F/N (fidelity susceptibility from overlap) scales as L^0.94 (consistent with ν=1)
+- dE₀/dg smooth across g_c with 1.2% change L=3→4 (no latent heat)
+
+**q=5 INCONCLUSIVE — accessible sizes too small.** Only L=2,3 available; L=2 is out of scaling (10-50x off in all quantities). Cannot extract meaningful L-scaling from single reliable size (L=3). Key observations:
+- dE₀/dg smooth across g_c (no latent heat at L=3)
+- F_min = 0.985 at L=3 (lower than q=2: 0.999, q=3: 0.998 at same L)
+- d²E₀/dg² peak at L=3 is SMALLER for q=5 (1.58) than q=2 (3.00) — less singular
+- Peak positions are far below g_c for all q at accessible L
+
+**L=2 pathologically out of scaling for ALL diagnostics.** Not just gap (Sprint 068) — d²E/dg² peaks are 10-50x smaller, χ_F is 20x smaller, overlap is 1.000. L=2→3 scaling exponents (5-7) are artifacts.
+
+**Eigenstate-sum χ_F fails at dim > 5000.** Truncation to k=10 states out of millions severely underestimates χ_F. Ground state overlap method is the correct approach for large systems.
+
+**Bottleneck: q=5 L=4 has dim ≈ 10^11.** Exact diag impossible. Need cylinder DMRG (Ly=2) or QMC to resolve the 2D transition question.
+
 ## MI-CV as Phase Transition Order Parameter (Sprints 030, 036, 037)
 MI-CV classifies transition type: second-order (crossing), first-order (step), BKT (dome). Confirmed at n=8-50. Potts crossings vindicated at true g_c. DO NOT use MI-CV for ν extraction (Sprint 053).
 

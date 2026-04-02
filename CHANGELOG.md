@@ -358,3 +358,24 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - Sharp entropy crossover well below g_c
 
 [Full report: sprints/sprint_069.md]
+
+### Sprint 070 — 2D Energy Derivatives & Fidelity: q=2 Continuous, q=5 Inconclusive
+**Status:** Complete (3 experiments).
+
+**q=2 2D Ising continuous transition confirmed (L=3→4).** d²E₀/dg² peak scales as L^0.16 (consistent with α=0). Fidelity susceptibility χ_F/N scales as L^0.94 (consistent with ν=1). dE₀/dg smooth — no latent heat.
+
+**q=5 2D transition nature INCONCLUSIVE.** Only L=2,3 accessible; L=2 pathologically out of scaling (all quantities 10-50x too small). dE/dg smooth at L=3 (no latent heat signal). F_min=0.985 (lower than q=2,3 but not diagnostic). d²E peak smaller at q=5 than q=2 — less singular, not more.
+
+**Eigenstate-sum χ_F FAILS for dim > 5000.** Truncation to k=10 states captures negligible fraction. Ground state overlap method works correctly for any dim.
+
+**L=2 out of scaling for ALL diagnostics** — not just gap. L=2→3 apparent exponents (5-7) are artifacts.
+
+**Fundamental bottleneck:** q=5 L=4 dim ≈ 10^11 — infeasible with exact diag. Cylinder DMRG or QMC needed.
+
+**Surprises:**
+- d²E/dg² and χ_F peaks are in ordered phase (far below g_c) for all q at small L
+- q=5 d²E peak (1.58) SMALLER than q=2 (3.00) at L=3 — opposite to first-order expectation
+- Overlap-derived χ_F matches eigenstate sum only at full diag (dim < 5000)
+- dE/dg converges smoothly for all q — no hint of latent heat even at q=5
+
+[Full report: sprints/sprint_070.md]
