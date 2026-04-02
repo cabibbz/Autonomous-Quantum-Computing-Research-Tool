@@ -63,8 +63,7 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 
 Full details for all compressed sprints are in sprints/sprint_NNN.md.
 
-- **054** — c(q) from entropy scaling. c grows with q: 0.5→0.8→1.0→>1. c(q=4) flat (log corrections). c(q=5)>1 confirmed.
-- **055** — Entropy profile method (best for c). iDMRG fails at criticality. c(q=5)>1 by two methods.
+- **054-055** — c(q) from entropy scaling. c grows with q: 0.5→0.8→1.0→>1. Entropy profile best method. iDMRG fails at criticality.
 
 ### Sprint 056 — c(q) Formula: Logarithmic Growth Confirmed, Analytic Continuation Ruled Out
 **Status:** Complete (4 experiments).
@@ -289,3 +288,25 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - Pseudo-critical point drift is linear in n, not 1/N^{1/ν}
 
 [Full report: sprints/sprint_066.md]
+
+### Sprint 067 — Two-Transition Scan: Hybrid Has No Floating Phase
+**Status:** Complete (3 experiments).
+
+**Hybrid model has exactly ONE transition — no floating phase.** Three independent probes confirm:
+
+**Wide gap scan (067a).** Scanned g=[0.02, 3.0] at q=5 (n=4,6,8) and q=7 (n=4,6). No second gap minimum. Gap increases monotonically from g_c. Gap*N → 2·sin(2π/q) at large g.
+
+**Entropy scan (067b).** DMRG n=16,24 at q=5. c_eff=1.22 at g_c=0.44, drops to 0.003 at g=0.55. No c≈1 region above g_c. Sharp critical-to-gapped transition.
+
+**Clock comparison (067c).** Same method on clock model: **floating phase clearly detected** at g=[0.30, 0.92] (Δg=0.62). Hybrid gapless only at g=[0.38, 0.50] (Δg=0.12, just g_c). Validates method — absence in hybrid is real, not a size limitation.
+
+**Fourth difference between hybrid and clock universality:** clock has floating phase, hybrid does not. The Potts δ-function coupling suppresses the intermediate Luttinger-liquid phase that the cosine coupling allows.
+
+**Surprises:**
+- Clock floating phase is WIDE (Δg≈0.62) — easily detectable even at n=4,6
+- Hybrid c_eff drops from 1.22 to 0.003 between g=0.44 and g=0.55 (sharp!)
+- No local gap minima in either model — floating phase creates flat region, not a second dip
+- Large-g gap*N = 2·sin(2π/q): exact formula for paramagnetic limit
+- Clock n=8 scan 7x slower than hybrid (886s vs 128s) due to dense coupling matrix
+
+[Full report: sprints/sprint_067.md]

@@ -10,6 +10,7 @@ You don't remember between sessions. Your memory lives in files:
 - **KNOWLEDGE.md** — Accumulated framework and results, organized by topic. Edit when findings change — add new sections, update existing ones, remove outdated claims. This is NOT a log.
 - **CHANGELOG.md** — Detailed sprint log. Only the last ~10 sprints need full entries. Older sprints should be compressed to one-line summaries.
 - **results/** — raw experiment data (JSON). One file per experiment.
+- **results.db** — SQLite database of key measurements. Query with `from db_utils import record, query`. After each experiment, record key quantities (c, x₁, g_c, ν, gaps, etc.) to the DB. To look up prior results: `query(quantity='c', q=5)` or `query(model='clock')`. This is faster and less error-prone than grepping KNOWLEDGE.md for numbers.
 - **sprints/** — individual sprint reports (one markdown file per sprint). The permanent archive.
 - **exp_NNN*.py** — standalone experiment scripts. One per experiment, never batched.
 
@@ -23,7 +24,7 @@ Failed approaches are critical to log. Without them you'll waste sprints repeati
 
 ### Research rules
 - **Diminishing returns:** If your experiment would confirm a prior result under slightly different conditions, skip it — log the prediction and move on. Only revisit if you expect the prediction is *wrong*.
-- **Literature check:** Before each sprint, search arXiv and Google Scholar for your topic. If results exist, find what's *unresolved* or *contradicted*. Test the gap, not the conclusion.
+- **Literature check:** Before each sprint, search arXiv and Google Scholar for your topic. Use at LEAST 3 different keyword variations — the same physics appears under different names. For our model: try "quantum Potts clock", "Z_q clock model BKT", "complex CFT Potts q>4", and the specific quantity you're measuring. If results exist, find what's *unresolved* or *contradicted*. Test the gap, not the conclusion.
 - **Hardware validation rule:** When a simulator result is mature enough to have specific numerical predictions at n≤10, plan a hardware test. You have QPU time that expires monthly — unspent time is wasted. Every ~10 sprints, ask yourself: what's my strongest simulator prediction that hardware could confirm or break?
 - **Novelty detection:** When you find a quantitative result (a formula, a scaling exponent, a phase boundary, a critical value), search specifically for that result in the literature. If you can't find it, flag it explicitly in the sprint report: "**POTENTIALLY NOVEL:** [result]. Literature search found no prior measurement of [specific thing]." Then copy the sprint report to `unpublished/` so novel findings don't get buried in the archive.
 - **You can shape your own rules.** Edit any file based on what you find optimal. *Including this one*, Consider context budget and how this system works.**
@@ -38,16 +39,28 @@ Failed approaches are critical to log. Without them you'll waste sprints repeati
   Use exact diag for n≤10 (faster), DMRG for n>10. Both give the same ρ_A.
   Key patterns: MPS ground state → reduced density matrix → your existing measures (MI, I3, entropy, H_E).
   DMRG is 1D only — doesn't help with 2D systems.
+- **GPU: NVIDIA TITAN RTX (24GB) with CuPy 14.** Use GPU for exact diag when Hilbert space dim > 50,000 (q=5 n≥7, q=7 n≥6, q=10 n≥5). This gives 10-50x speedup on sparse eigensolves. Pattern:
+  ```python
+  import cupy as cp
+  from cupyx.scipy.sparse import csr_matrix as cp_csr
+  from cupyx.scipy.sparse.linalg import eigsh as cp_eigsh
+  # Convert scipy sparse → cupy sparse, eigsh on GPU, results back to numpy
+  H_gpu = cp_csr(H_cpu)
+  evals_gpu, evecs_gpu = cp_eigsh(H_gpu, k=4, which='SA')
+  evals = cp.asnumpy(evals_gpu)
+  ```
+  Fall back to scipy `eigsh` if CuPy fails (some edge cases with very sparse matrices).
+  **This extends exact diag reach:** q=5 n=10 (dim=9.8M) and q=7 n=7 (dim=823k) are now feasible within 300s.
 - IBM Quantum Open Plan: **10 min/month** of real QPU time
 - Local simulator: ~10 qubits practical limit for density matrix ops on CPU
 - IBM API token is saved in `~/.qiskit/qiskit-ibm.json`
 
 ## Hard Resource Limits
 
-1. **Max 10 qubits** for exact diag density matrix operations. Use DMRG (TeNPy) for n>10.
+1. **Exact diag limits** — CPU: q^n ≤ ~500k (q=5 n=8, q=10 n=6). **GPU: q^n ≤ ~10M** (q=5 n=10, q=7 n=8). Use DMRG (TeNPy) beyond these limits.
 2. **Max 300 seconds** per bash command — design experiments to fit
 3. **Separate script per experiment** — never batch experiments in one script
-4. **Save results immediately** after each experiment (write JSON before doing anything else)
+4. **Save results immediately** after each experiment — write JSON AND call `record()` from `db_utils.py` for key quantities before doing anything else
 5. **Git commit after every experiment** (repo: https://github.com/cabibbz/Autonomous-Quantum-Computing-Research-Tool)
 6. **Write sprint report incrementally** — start it early, append as you go
 7. **Test timing on a single case** before scaling up

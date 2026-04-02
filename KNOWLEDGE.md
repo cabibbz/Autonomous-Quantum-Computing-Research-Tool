@@ -20,11 +20,11 @@ Each captures orthogonal information. Different phase transitions are visible at
 
 Our Hamiltonian H = -Jδ(s_i,s_j) - g(X+X†) is a **Potts-clock hybrid**: Potts coupling + clock transverse field. It is **not the standard quantum Potts model** from the literature.
 
-| Model | Coupling | Transverse field | Symmetry | q>4 transition |
-|-------|----------|-----------------|----------|---------------|
-| S_q Potts (literature standard) | δ(s_i,s_j) | Σ_{k=1}^{q-1} X^k | S_q | **First-order** |
-| Z_q clock (literature standard) | cos(2π(s_i-s_j)/q) | X + X† | Z_q | **Two BKT** (continuous) |
-| **Our hybrid model** | δ(s_i,s_j) | X + X† | Z_q | Continuous (measured) |
+| Model | Coupling | Transverse field | Symmetry | q>4 transition | Floating phase |
+|-------|----------|-----------------|----------|---------------|----------------|
+| S_q Potts | δ(s_i,s_j) | Σ_{k=1}^{q-1} X^k | S_q | **First-order** | No |
+| Z_q clock | cos(2π(s_i-s_j)/q) | X + X† | Z_q | **Two BKT** | **Yes** (Sprint 067c) |
+| **Our hybrid** | δ(s_i,s_j) | X + X† | Z_q | Continuous 2nd order | **No** (Sprint 067) |
 
 For q=2,3 all three are equivalent. For q≥4 they differ.
 
@@ -45,6 +45,8 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 **Retracted claims:** ~~"No CFT predictions exist for q>4"~~ (complex CFTs do). ~~"Analytic continuation is WRONG"~~ (gives complex values, verified). ~~"1D quantum Potts NEVER first-order"~~ (true for our Z_q-field model, but S_q Potts IS first-order for q>4).
 
 **Resolved questions (Sprint 065):** ~~(1) Does hybrid flow to clock universality at large n?~~ **NO** — different ν (power-law vs BKT). ~~(3) One transition or two (like clock's two BKT)?~~ Clock has BKT; hybrid has single power-law transition.
+
+**Resolved (Sprint 067): No floating phase in hybrid model.** Wide gap scan (g=0.02-3.0), DMRG entropy (n=16,24), and clock comparison all confirm: hybrid has ONE transition. Clock q=5 has floating phase spanning g=[0.30, 0.92] (Δg=0.62); hybrid is critical only at g_c±0.06. The δ-function coupling suppresses intermediate phase. Fourth difference between hybrid and clock universality classes.
 
 **Resolved (Sprint 066):** (2) ~~Truly continuous or weakly first-order?~~ **No first-order signal detected.** Three diagnostics: Δ·N decelerates at q=10 (n=4,5,6), gap minimum is size-independent (~0.030), anomalous FSS saturates at ~5.5% for q≥7. Consistent with continuous transition with sign-flipped corrections for q≥5. Cannot rule out ξ >> 12 weakly first-order, but no positive evidence.
 
@@ -70,7 +72,12 @@ MI-CV classifies transition type: second-order (crossing), first-order (step), B
 
 **Hybrid has continuous transitions for all tested q** (q=5,10,20). Power-law second-order with finite ν (Sprint 065). Sprint 066 found NO first-order signal at q=10 up to n=6: gap minimum size-independent, Δ·N decelerating. Clock model has BKT (ν→∞). S_q Potts is first-order for q>4.
 
-**Clock ≠ Hybrid for q≥4 — CONFIRMED (Sprints 041-042, 063, 065).** Clock coupling cos(2π(s_i-s_j)/q) ≠ Potts δ(s_i,s_j) for q≥4. Sprint 065 proved distinct universality classes via ν: hybrid ν≈0.83 (power-law, finite) vs clock ν→∞ (BKT). At q=5: c/x₁ 10.77 vs 9.43 (12%), c 1.27 vs 1.17 (8%), g_c 0.441 vs 0.52 (18%). At q=7: clock has NO gap crossing (BKT), hybrid has clear crossing. NOT FSS artifacts — qualitatively different transition types.
+**Clock ≠ Hybrid for q≥4 — CONFIRMED (Sprints 041-042, 063, 065, 067).** Four independent differences at q=5:
+1. ν: hybrid 0.83 (finite) vs clock →∞ (BKT) [Sprint 065]
+2. c/x₁: hybrid 10.77 vs clock 9.43 (12%) [Sprint 065]
+3. g_c: hybrid 0.441 vs clock 0.52 (18%) [Sprint 063]
+4. **Floating phase: clock has it (g=[0.30,0.92]), hybrid does NOT** [Sprint 067c]
+NOT FSS artifacts — qualitatively different transition types and phase structures.
 
 **ν(q) extraction (Sprint 053, 065).** Energy gap slope: d(Δ·N)/dg ~ N^{1/ν}·(1+b/N), b=0.86 from q=3 calibration.
 
