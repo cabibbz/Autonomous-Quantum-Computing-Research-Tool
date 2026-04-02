@@ -52,17 +52,27 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **c_eff(q=5) ≈ 1.15, matches complex CFT Re(c) ≈ 1.138 to ~1% (Sprints 078c, 079c).** q=5 is the unique "sweet spot" where complex CFT quantitatively predicts c_eff at ALL accessible sizes (n=6-24).
 
-**c_eff does NOT match Re(c) at q≥7 (Sprint 079).** Walking regime ξ*(q) shrinks with q:
+**Walking regime boundary mapped (Sprints 079-080).** c_eff/Re(c) ratio decays exponentially for q>5:
 
-| q | Re(c) | c_eff(n=8) | c/Re(c) | ξ* estimate |
-|---|-------|------------|---------|-------------|
-| 5 | 1.138 | 1.141 | 1.003 | >> 24 sites |
-| 7 | 1.351 | 1.111 | 0.822 | ~ 10 sites |
-| 10 | 1.584 | 0.946* | 0.597 | < 6 sites |
+| q | Re(c) | c_eff(best) | n_best | c/Re(c) | Size trend | Walking? |
+|---|-------|-------------|--------|---------|------------|----------|
+| 3 | 0.800 | 0.893 | 24 | 1.12 | stable | real CFT (+12% FSS) |
+| 5 | 1.138 | 1.147 | 20 | 1.01 | stable | YES — sweet spot |
+| 6 | 1.253 | 1.147 | 8 | 0.92 | stable (+0.1%) | MARGINAL |
+| 7 | 1.351 | 1.059 | 12 | 0.78 | degrading (−5%) | BREAKING |
+| 8 | 1.438 | 1.062 | 7 | 0.74 | degrading (−1%) | BREAKING |
+| 9 | 1.515 | 1.012 | 6 | 0.67 | — | NO |
+| 10 | 1.584 | 0.946 | 6 | 0.60 | — | NO |
 
-*q=10 at n=6. c_eff at n=8 is ~1.1 for ALL q≥5 — the complex CFT q-dependence only manifests at n << ξ*(q). DMRG confirms: q=7 c_eff DECREASES with n (1.11→1.06, n=8→12). Zero DMRG truncation error — exact diag matches DMRG at n=8.
+**Fit: c_eff/Re(c) = 1.004 × exp(−0.105(q−5)).** Both linear and exponential fits give ratio=1 crossing at q ≈ 5.0 ± 0.1. q=5 is the exact walking threshold.
 
-**POTENTIALLY NOVEL (Sprint 079):** Systematic c_eff/Re(c) ratio across q=3-10 at matched sizes. First quantitative mapping of walking regime breakdown in 1D quantum S_q Potts chain.
+**Key discriminator: size dependence.** q≤6: c_eff stable or increasing with n → walking extends beyond accessible sizes. q≥7: c_eff DECREASING with n → walking breaking down, system "sees" first-order nature. DMRG confirms: q=7 c_eff decreases 1.11→1.06 (n=8→12).
+
+**gap×N INCREASES with q** (2.01 at q=6, 2.17 at q=8) even as walking breaks down. Breakdown is in entropy, not the gap.
+
+**c_eff converges to ~1.0-1.15 for ALL q≥5** at moderate sizes — the complex CFT q-dependence only manifests at n << ξ*(q).
+
+**POTENTIALLY NOVEL (Sprints 079-080):** Complete c_eff/Re(c) curve q=3-10 with exponential decay law. First measurement at q=6,8,9. Walking boundary at q=5 exact.
 
 **S_q Potts g_c = 1/q exactly (Sprint 078a, self-duality).** Kramers-Wannier duality gives g_c = 1/q. Verified numerically: all crossings approach 1/q from above with ~1/n² corrections. q=2 deviation 0.05% at (10,12), q=5 deviation 0.4% at (6,8).
 

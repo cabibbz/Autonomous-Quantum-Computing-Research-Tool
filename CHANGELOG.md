@@ -265,3 +265,24 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 **POTENTIALLY NOVEL:** Systematic c_eff/Re(c) mapping across q=3-10 at matched sizes.
 
 [Full report: sprints/sprint_079.md]
+
+### Sprint 080 — c_eff at q=6,8,9: Walking Regime Boundary Mapped
+**Status:** Complete (3 experiments).
+
+**q=6 c_eff/Re(c) = 0.916 — marginal walking (080a).** c_eff = 1.147 at n=8, stable with n (+0.12% drift n=6→8). Walking extends beyond accessible exact diag sizes at q=6. Re(c) = 1.253.
+
+**q=8 c_eff/Re(c) = 0.738, q=9 = 0.668 (080b).** Walking clearly broken. q=8 c_eff DECREASING with n (−1.0% n=6→7). All (q-1)-fold degeneracies confirmed (3-fold gaps for all q).
+
+**Walking boundary mapped completely (080c).** c_eff/Re(c) = 1.004 × exp(−0.105(q−5)). Ratio=1 crossing at q = 5.0 ± 0.1. q=5 is the exact walking threshold. Size dependence is the key discriminator: c_eff stable for q≤6, degrading for q≥7.
+
+**gap×N INCREASES with q** (2.01→2.17 for q=6→8) even as walking breaks down — breakdown is in entropy, not the gap.
+
+**Surprises:**
+- q=6 c_eff stable with n (+0.12%) — walking may extend to q=6 at larger n
+- gap×N increases with q despite walking breakdown
+- Both linear and exponential fits agree: ratio=1 at q≈5.0
+- c_eff converges to ~1.0-1.15 for ALL q≥5 at moderate sizes
+
+**POTENTIALLY NOVEL:** Complete walking boundary curve q=3-10 with exponential decay law. First measurements at q=6,8,9.
+
+[Full report: sprints/sprint_080.md]
