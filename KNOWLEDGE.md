@@ -1,10 +1,9 @@
 # Accumulated Knowledge — Edit by topic, not by sprint
 
 ## Open Items — Check each sprint, remove when done
-- ~~Harden Casimir finding~~ **DONE (Sprint 098).** Upgraded to CONFIRMED NOVEL. 5+ points for q=2,3,7. Pairwise convergence verified. 16× more consistent than entropy.
-- ~~Im(c) oscillation detection~~ **RULED OUT (Sprints 099-100).** Period too long for any accessible size. Open-BC DMRG also fails (boundary corrections). Only route: non-Hermitian formulation.
-- **KNOWLEDGE.md is over budget (~560 lines vs ~200 target).** Compress old sections (2D, MI-CV, hybrid model details from sprints 029-062) into one-line summaries. Full details are in sprints/ reports.
-- ~~SREE as walking discriminator~~ **NOT USEFUL (Sprint 101).** No walking-specific signature at accessible sizes. S_n/S_t universality documented.
+- **Test energy-entropy hierarchy in a DIFFERENT model.** The Casimir finding (Sprint 098) was only measured in S_q Potts. If it also appears in J1-J2 chains or SU(N) Heisenberg at large N, it's a universal principle about walking/pseudo-critical transitions, not a Potts-specific curiosity. This is the highest-impact experiment available — could upgrade the finding from PRB to PRL.
+- **Harden χ_F first-order-like scaling at q=5 (Sprint 102).** Only 2 sizes (n=6,8). Need n=10 (GPU, ~5min) or DMRG to confirm α≈2. Also test at q=6,7 with more sizes.
+- **KNOWLEDGE.md is over budget (~560 lines vs ~200 target).** Compress old sections into one-line summaries.
 
 ## Five Entanglement Archetypes
 | Archetype | Example | MI pattern | I3 sign | Negativity | Source |
@@ -96,10 +95,11 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **Velocity v(q) = gap×N/(2π·x_σ) decreases monotonically with q.** The decreasing gap×N is primarily velocity reduction, NOT x_σ change. x_σ is nearly constant; v(q) carries all q-dependence.
 
-**Walking breakdown is an entropy phenomenon AT FINITE SIZE (Sprints 082-084, corrected Sprint 087).** Three independent probes:
+**Walking breakdown is an entropy phenomenon AT FINITE SIZE (Sprints 082-084, corrected Sprint 087).** Four independent probes:
 1. **Correlators (x_σ)**: perfectly conformal for ALL q=2-8 (Sprint 082)
 2. **Casimir energy (E₀)**: governed by Re(c) for ALL q=2-8, even where c_eff deviates 40% (Sprint 083)
 3. **Entanglement entropy (c_eff)**: deviates from Re(c) for q>5 (Sprints 079-081)
+4. **Fidelity susceptibility (χ_F)**: scaling exponent shifts from continuous (2/ν-1) to first-order-like (≈2) at walking boundary (Sprint 102)
 
 **Microscopic mechanism: entropy concentration in (q-1)-fold multiplet (Sprint 084).** Entanglement spectrum at g_c=1/q shows:
 - First excited entanglement level has **(q-1)-fold degeneracy** for all q (S_q symmetry)
@@ -576,3 +576,26 @@ ibm_kingston, 20s QPU. [[5,1,3]] asymmetry 0.040 vs 3-qubit 0.254. 580s QPU rema
 **Charge-0 always enriched: p(0)*q >> 1.** Increases monotonically with q: 1.55 (q=2) to 5.15 (q=10) at n=6. p(0) → 1/2 as q→∞ (not 1/q). Convergence to equipartition requires n >> 100.
 
 **Not a walking discriminator** at accessible sizes — all q-dependence is smooth and monotonic. No feature at q=4 or q=5.
+
+## Fidelity Susceptibility (Sprint 102)
+
+**χ_F(g) = (2/N)(1 - |⟨ψ(g)|ψ(g+δg)⟩|)/δg².** Measures ground state sensitivity to coupling change. At continuous transition: χ_F_max ~ N^{2/ν-1}. At first-order: χ_F_max ~ N².
+
+**Validates real CFT exponents for q=2,3.** q=2: ν=1.009 (exact 1.0, <1% error). q=3: ν=0.841 (exact 0.833, <1% error).
+
+**Walking gives anomalous first-order-like scaling (q=5).** Scaling exponent α=2.09 (from n=6,8 only), giving ν_eff=0.648 instead of gap-derived 0.83. α≈2 matches first-order prediction for 1D. This is 22% discrepancy, far beyond the 1% FSS error at q=2,3.
+
+| q | ν_exact | α_expected | α_measured | ν_fidelity | deviation |
+|---|---------|------------|------------|------------|-----------|
+| 2 | 1.000 | 1.00 | 0.98 | 1.009 | -2% |
+| 3 | 0.833 | 1.40 | 1.38 | 0.841 | -1% |
+| 4 | 0.667 | 2.00 | 1.69 | 0.743 | -16% |
+| 5 | 0.83* | 1.41 | **2.09** | 0.648 | **+48%** |
+
+*gap-derived ν
+
+**χ_F grows exponentially with q at fixed n.** At n=6: 0.73 (q=2), 4.09 (q=3), 13.98 (q=4), 36.29 (q=5), 166.88 (q=7). Fit: ~exp(1.06q), growth rate 2.88× per unit q.
+
+**No finite-size peak shift for q≥5.** Peak sits exactly at g_c=1/q. For q=2,3 the peak approaches g_c from below as ~1/N. Zero shift consistent with self-duality fixing g_c exactly + sharp transition.
+
+**CAVEAT:** q=5 result based on only 2 sizes (n=6,8). Need more sizes to confirm. q=4 deviation may reflect logarithmic corrections at the marginal case.

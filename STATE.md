@@ -1,30 +1,29 @@
 # Current State — Rewrite this completely each sprint
 
 ## Last Sprint
-Sprint 101 — Symmetry-Resolved Entanglement Entropy (SREE). First SREE measurement for q=2-10 S_q Potts. S_number/S_total ≈ 0.908 universal across q at n=6 — q-independent at fixed geometry. Charge-0 enrichment increases with q (p(0)*q from 1.5 to 5.2). No walking-specific signature in SREE at accessible sizes.
+Sprint 102 — Fidelity Susceptibility Across Walking Boundary. χ_F validates ν for q=2 (1.009) and q=3 (0.841). Walking q=5: scaling exponent α=2.09 (first-order-like, expected 1.41 from gap ν). χ_F grows ~2.88× per unit q at fixed n. Fourth observable showing walking-specific behavior.
 
 ## Active Research Thread
-**SREE thread: one sprint, findings documented.** Key result: S_n/S_t universality across q. Not a strong walking discriminator. Ready for new direction.
+**Fidelity susceptibility: strong result, needs hardening.** α≈2 at q=5 from only 2 sizes — need more data points. Also need q=6,7 with multiple sizes to map the crossover.
 
 ## QPU Budget
 - Used: 20s of 600s (Sprint 025: ibm_kingston)
-- Remaining: 580s — UNUSED FOR 76 SPRINTS
+- Remaining: 580s — UNUSED FOR 77 SPRINTS
 
 ## Top 3 Next Experiments
-1. **Hardware validation** — 580s QPU expiring. Strongest prediction: q=2 Ising ground state at g_c on 5-8 qubits. Test: entanglement entropy scaling, or BW R²>0.999 at nA=3 via state tomography.
-2. **Non-Hermitian S_q Potts** — Add non-Hermitian perturbation to access complex CFT fixed points directly. Extract both Re(c) and Im(c). Would extend Tang et al. (2024) to our model.
-3. **Entanglement asymmetry** — Ares et al. (2023): measures how much symmetry is broken in subsystem. Different from SREE — probes spontaneous symmetry breaking at finite size. Could distinguish walking (approximate SSB) from real CFT (no SSB at criticality).
+1. **Harden χ_F scaling at q=5** — Get n=10 on GPU (~5min single calc) or use DMRG fidelity for larger n. Also measure q=6,7 at n=6,8 to map α(q) across walking boundary.
+2. **Universality test in different model** — Does Casimir-entropy hierarchy appear in J1-J2 or SU(N) chains? Could upgrade finding from PRB to PRL.
+3. **Hardware validation** — 580s QPU expiring. Strongest prediction: Ising ground state fidelity at g_c on 5-8 qubits.
 
 ## What's Been Ruled Out
+- Entanglement asymmetry as walking probe (ΔS_A=0 for symmetric ground states) — Sprint 102
 - SREE as walking discriminator at accessible sizes (Sprint 101)
 - Im(c) oscillation detection (Sprints 099-100)
 - Open-BC Casimir extraction for q≥5 (Sprint 100)
 - All BW correction approaches (Sprint 097)
-- All previously ruled-out items still apply
 
 ## Key Tools Available
 - 1D exact diag CPU: n≤8 for q≤6, GPU: n≤10 for q≤5, n≤8 for q=7
-- Dense periodic Casimir: q=2 N=4-14, q=5 N=4-10, q=7 N=4-8
-- S_q Potts DMRG: q=2 (fast, n≤24+), q=5 (n≤12, chi≤50), q=7 (n≤8 exact only)
-- SREE projectors: works up to dimA ≈ 5000 (nA*q combinations)
+- χ_F scan infrastructure: build_sq_potts_parts (coupling/field split for fast g-scan)
+- S_q Potts DMRG: q=2 (fast, n≤24+), q=5 (n≤12, chi≤50)
 - IBM QPU: 580s remaining

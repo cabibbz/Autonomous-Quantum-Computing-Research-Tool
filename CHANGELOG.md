@@ -189,3 +189,18 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **POTENTIALLY NOVEL:** Universal q-independent S_n/S_t ratio at fixed geometry for critical S_q Potts. First SREE measurement for q=4-10 Potts model.
 
 [Full report: sprints/sprint_101.md]
+
+### Sprint 102 — Fidelity Susceptibility Across the Walking Boundary
+**Status:** Complete (3 experiments).
+
+**χ_F scan near g_c for q=2,3,5,7 (102a).** S_q Potts periodic chain, δg=10⁻⁴. Peak heights at n=6: 0.73 (q=2), 4.09 (q=3), 36.29 (q=5), 166.88 (q=7) — 228× range. Peak at exact g_c for q≥5 (no FSS shift). Peak converges from below for q=2,3.
+
+**FSS analysis + q=2 n=14 (102b).** χ_F_max ~ N^α. q=2: α=0.98 → ν=1.009 (exact 1.0). q=3: α=1.38 → ν=0.841 (exact 0.833). q=5: α=2.09 → ν_eff=0.648 (gap-derived 0.83). q=5 exponent matches first-order prediction (α=2 in 1D).
+
+**q=4 crossover (102c).** n=6,8: α=1.69, ν=0.743 (exact 2/3). χ_F at n=6 grows exponentially with q: ~exp(1.06q), growth 2.88× per unit q.
+
+**Key finding:** Walking regime makes χ_F scale as ~N² (first-order) despite gap/correlators showing continuous behavior. Fourth observable with walking-specific anomaly (after entropy, Casimir, correlators).
+
+**POTENTIALLY NOVEL:** First fidelity susceptibility measurement across walking boundary. Discovery of first-order-like χ_F scaling in walking regime. Need more sizes at q=5 to harden.
+
+[Full report: sprints/sprint_102.md]
