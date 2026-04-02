@@ -148,3 +148,16 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **Upgraded from POTENTIALLY NOVEL to CONFIRMED NOVEL.** Five checks passed: 5+ points, pairwise convergence, 16× consistency, systematic corrections, independence from entropy.
 
 [Full report: sprints/sprint_098.md]
+
+### Sprint 099 — Complex CFT: Im(c) Oscillation Detection (NEGATIVE)
+**Status:** Complete (3 experiments).
+
+**Dense Casimir scan (099a).** E₀(N) at all integer N: q=2 N=4-14 (11 pts), q=5 N=4-10 (7 pts, GPU for N=9,10), q=7 N=4-8 (5 pts, GPU for N=8). Odd sizes (N=5,7,9) newly measured for q=5.
+
+**Oscillatory vs monotonic fit (099b).** Compared 3 models at same parameter count. Monotonic 1/N⁶ correction beats oscillatory cos(ω·ln N)/N⁴ for ALL q (M3/M2 = 5051 for q=2, 1.54 for q=5, 1.61 for q=7). Complex CFT oscillation period (6.53 in ln N for q=5) requires N ratio ~684 — our N=4-10 range covers only 14% of one cycle.
+
+**Pairwise separation (099c).** q=5 pairwise c/Re(c) is non-monotonic (first decreases, then increases from N≈6). Traced to VELOCITY effect: pairwise vc itself is monotonically decreasing for all q. Detrended vc RMS: q=2 4.75e-5, q=5 3.97e-4 (8×), q=7 9.96e-4 (21×). Richardson extrapolation drifts for q>4.
+
+**Im(c) oscillations undetectable at exact diag sizes.** Would need DMRG at N=10-100 or non-Hermitian formulation.
+
+[Full report: sprints/sprint_099.md]
