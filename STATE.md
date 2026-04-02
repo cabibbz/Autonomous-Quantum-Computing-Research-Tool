@@ -1,35 +1,34 @@
 # Current State — Rewrite this completely each sprint
 
 ## Last Sprint
-Sprint 093 — BW entanglement temperature profile. Three experiments: (1) Position-dependent BW coefficients for q=2,3,5: sin-envelope shape confirmed (R²>0.99), field/bond ratio ≠ g_c. (2) Global BW Frobenius R² across q=2-7: degrades monotonically with q, 34× amplification at q=5 from nA=3→4 vs 1.8× at q=2. (3) BW residual spatial profile: bulk-concentrated for real CFT (q=2,3), uniform for walking (q=5).
+Sprint 094 — BW R² vs subsystem size nA for q=2-5. Four experiments: (1) q=2 nA=3-7: threshold at nA=5 (19× jump). (2) q=3 nA=3-6, q=4 nA=3-5: threshold at nA=5 for both (261× for q=3, 178× for q=4). (3) q=5 nA=3-4: threshold at nA=4 (33×), nA=5 infeasible (24GB memory). (4) Compilation: B(q) = 0.48q + 1.09 (R²=0.999). Walking shifts nA* down by 1 site.
 
 ## Active Research Thread
 **BW entanglement Hamiltonian structure across walking/CFT boundary.**
 
-Sprint 093 established the SPATIAL structure of BW — the sin-envelope works for all q, but the residual has a q-dependent spatial distribution. Key new finding: walking makes BW corrections uniform in space (boundary enrichment ≈ 1.0), while real CFT concentrates corrections in the bulk (enrichment ≈ 0.4).
+Sprint 094 mapped the full nA-dependence of BW fidelity. Key result: BW breakdown has THRESHOLD behavior (not power law). The threshold nA*(q) decreases with q: q=2,3,4 → nA*=5; q=5 → nA*=4. The exponential rate B scales linearly with q. Walking amplification is nA-dependent: mild at nA=3 (3.5×), dramatic at nA=4 (64×).
 
-BW Frobenius R² at nA=4:
-| q | R² | 1-R² | residual profile |
-|---|-----|------|-----------------|
-| 2 | 0.9995 | 5e-4 | bulk-concentrated (0.42×) |
-| 3 | 0.9992 | 8e-4 | bulk-concentrated (0.47×) |
-| 4 | 0.9984 | 2e-3 | — |
-| 5 | 0.9655 | 3e-2 | uniform (0.98×) |
+Complete BW R² table (1-R²):
+| q | nA=3 | nA=4 | nA=5 | nA=6 | nA=7 |
+|---|------|------|------|------|------|
+| 2 | 2.9e-4 | 5.3e-4 | 1.0e-2 | 2.4e-1 | 3.6e-1 |
+| 3 | 5.6e-4 | 8.4e-4 | 2.2e-1 | 4.4e-1 | — |
+| 4 | 8.1e-4 | 1.8e-3 | 3.1e-1 | — | — |
+| 5 | 1.0e-3 | 3.4e-2 | — | — | — |
 
 ## QPU Budget
 - Used: 20s of 600s (Sprint 025: ibm_kingston)
 - Remaining: 580s
 
 ## Top 3 Next Experiments
-1. **Hardware validation** — 580s QPU unused for 68 sprints. Measure entanglement entropy S(n/2) at g_c on real hardware for q=2 n=6-8. Prediction: S matches simulator to ~10%. Would validate all finite-size results.
-2. **BW residual operator decomposition at larger nA** — At q=2 nA=6, residual is 19% of H_E. What operators dominate the residual? Are they still MM/DFD (Sprint 092) or do new types emerge? Could identify the CFT operators responsible for BW breakdown.
-3. **nA scaling of BW R²** — Map R²(nA) for q=2-5 with nA=3-7 (q=2) and nA=3-5 (q=3-5). Extract the walking amplification exponent: does 1-R² ~ nA^gamma with gamma(q) depending on q? Would quantify the walking-BW connection.
+1. **Hardware validation** — 580s QPU unused for 69 sprints. Measure entanglement entropy S(n/2) at g_c on real hardware for q=2 n=6-8. Prediction: S matches simulator to ~10%. Would validate all finite-size results.
+2. **BW threshold mechanism** — WHY does BW collapse at nA*≈5 for q=2-4 and nA*≈4 for q=5? Is it the number of entanglement spectrum levels exceeding BW-compatible subspace? Check: at nA*, does the tail weight (beyond (q-1) multiplet) suddenly dominate?
+3. **DMRG BW at large n** — Use DMRG to get ρ_A at n=20-24 with nA=3-5 (subsystem of larger chain, NOT equal partition). Does the threshold persist when n≫nA? If BW improves, the threshold is a finite-n/nA artifact.
 
 ## What's Been Ruled Out
-- 093a: nA=3 is too small for meaningful BW envelope analysis (only 2 bonds)
-- 093b: 2-parameter fit (separate coupling/field alpha) is WORSE — BW's single envelope is the right decomposition
-- Walking boundary doesn't change BW operator types (Sprint 092) — it changes amplitudes and spatial profile (Sprint 093)
-- All previously ruled-out items still apply
+- Power-law fit to 1-R²(nA): doesn't fit (R²=0.42-0.80). Threshold/two-regime behavior.
+- q=5 nA=5 exact diag: infeasible (lil_matrix construction >24GB at dim=9.8M, not eigsolver).
+- All previously ruled-out items still apply.
 
 ## Key Tools Available
 - 1D exact diag CPU: n≤8 for q≤6, GPU: n≤10 for q≤5, n≤8 for q=6

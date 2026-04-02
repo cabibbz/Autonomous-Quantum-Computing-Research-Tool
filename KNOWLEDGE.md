@@ -153,6 +153,13 @@ Non-Potts fraction grows exponentially ~exp(1.6·q). **Biggest jump at q=3→4 (
 - **BW residual is BULK-concentrated for real CFT, UNIFORM for walking.** Boundary enrichment (fraction at boundaries / expected if uniform): q=2 nA=4: 0.42×, q=3: 0.47×, q=5: 0.98×. Real CFT's BW corrections concentrate in the bulk of A; walking generates corrections uniformly.
 - **BW scale α increases with q:** 6.5 (q=2) → 10.3 (q=7). Higher local dimension → higher entanglement temperature.
 
+**BW breakdown vs subsystem size nA — threshold behavior (Sprint 094).** Mapped 1-R²(nA) for q=2 (nA=3-7), q=3 (3-6), q=4 (3-5), q=5 (3-4):
+- **NOT a power law.** Data shows two-regime threshold: slow growth for nA ≤ nA*, then catastrophic collapse.
+- **nA*(q) decreases with q.** q=2,3,4 share nA*≈5 (threshold jump 19-261×). q=5 has nA*≈4 (33× jump). Walking shifts threshold down by 1 site.
+- **Exponential rate B(q) = 0.48q + 1.09 (R²=0.999).** Rate of BW breakdown scales linearly with q — connected to local Hilbert space dimension.
+- **Walking amplification is nA-dependent.** At nA=3: q=5/q=2 = 3.5×. At nA=4: 64×. Amplification itself grows exponentially.
+- **q=3 has sharpest threshold** (261× at nA=4→5), not q=5. Alpha stable within q (~6.5 for q=2, ~9.5 for q=5).
+
 **Rényi entropy decomposition of walking (Sprints 085-086).** Size-pair extraction c_α = 6·ΔS/((1+1/α)·ln(N₂/N₁)) on periodic BC. Optimal α shifts gradually with q:
 
 | q | pair | c₁/Rec | c₂/Rec | c₃/Rec | c_∞/Rec | best α |

@@ -274,3 +274,25 @@ Full details for sprints 076-079 are in sprints/sprint_NNN.md.
 **POTENTIALLY NOVEL:** First BW entanglement temperature profile measurement for S_q Potts. First demonstration that BW residual concentrates in the bulk for real CFT. First spatial signature distinguishing real CFT from walking in the entanglement Hamiltonian.
 
 [Full report: sprints/sprint_093.md]
+
+### Sprint 094 — BW R² vs Subsystem Size nA: Threshold Behavior, Not Power Law
+**Status:** Complete (4 experiments).
+
+**q=2 nA=3-7 (094a).** R²: 0.9997 (nA=3), 0.9995 (4), 0.990 (5), 0.760 (6), 0.638 (7). Sharp threshold at nA=5: 19× jump in 1-R² from nA=4. BW collapses by nA=6.
+
+**q=3 nA=3-6, q=4 nA=3-5 (094b).** q=3 threshold at nA=5: 261× jump (sharpest of all q). q=4 threshold at nA=5: 178× jump. Real CFT q=2,3,4 share nA*≈5.
+
+**q=5 nA=3-4 (094c).** nA=5 infeasible (24GB memory for H build). Threshold at nA=4: 33× jump from nA=3. Walking shifts threshold down by exactly 1 site.
+
+**Compilation: B(q) = 0.48q + 1.09 (R²=0.999) (094c2-c3).** Exponential rate of BW breakdown scales linearly with q. Power-law fits are poor (R²<0.81) — data has two-regime threshold structure. Walking amplification at nA=4: q=5 has 64× more BW deviation than q=2. At nA=3: only 3.5×.
+
+**Surprises:**
+- BW breakdown is threshold/two-regime, NOT power law or clean exponential
+- q=3 has the sharpest threshold (261× jump at nA=4→5), not q=5
+- Walking shifts nA* down by exactly 1 site (5→4) — clean integer shift
+- B(q) ∝ q (not ln(q)) — connected to local Hilbert space dimension
+- Walking amplification is nA-dependent: mild at nA=3 (3.5×), dramatic at nA=4 (64×)
+
+**POTENTIALLY NOVEL:** First systematic BW fidelity vs subsystem size mapping across walking boundary. First demonstration of threshold nA*(q) in BW breakdown. First B(q) = 0.48q + 1.09 linear rate law.
+
+[Full report: sprints/sprint_094.md]
