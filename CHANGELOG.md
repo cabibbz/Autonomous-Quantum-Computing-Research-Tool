@@ -273,6 +273,29 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - Factor-of-2 periodic/open BC distinction nearly led to wrong physical conclusions
 - c_α profile shape changes at walking boundary: peak shifts from α=3-5 to α=2
 
-**POTENTIALLY NOVEL:** First systematic Rényi c_α(q,α) mapping across walking boundary for S_q Potts chain. Discovery of α=3 as optimal probe for walking-broken regime. Rényi spread as new walking discriminator.
+**POTENTIALLY NOVEL:** First systematic Rényi c_α(q,α) mapping across walking boundary for S_q Potts chain. ~~Discovery of α=3 as optimal probe for walking-broken regime~~ (RETRACTED Sprint 086 — single-size extraction artifact). Rényi spread as new walking discriminator (needs recheck with size pairs).
 
 [Full report: sprints/sprint_085.md]
+
+### Sprint 086 — Rényi Entropy Scaling via DMRG: α=3 Was an Extraction Artifact
+**Status:** Complete (3 experiments).
+
+**DMRG Rényi entropies at q=5 n=8,10,12 and q=7 n=6,8,10,12 (086a-b).** Open-BC DMRG Schmidt spectra at g_c=1/q. Profile fits to CC gave poor R² (0.79-0.88) due to boundary corrections. Midchain S_α extracted for size-pair analysis.
+
+**Sprint 085's α=3 finding was a SINGLE-SIZE EXTRACTION ARTIFACT (086c).** Single-size formula c_α = 12·S/((1+1/α)·ln(N/π)) includes non-universal constant c'_α which varies with α. At n=6-7 periodic BC, c'₃ coincidentally compensates walking deviation. Size-pair extraction (cancels c'_α) shows α=1-2 is best for ALL q.
+
+**Corrected optimal α progression: 0.5 (real CFT) → 1 (walking) → 2 (broken).** Periodic size-pair: q=2,3 best at α=0.5; q=5,6 at α=1; q=7,8 at α=2. Smoother progression than Sprint 085 suggested.
+
+**No Rényi index recovers Re(c) for broken walking.** q=7 periodic pair: best c_α/Re(c) = 0.90 (α=2). q=8: 0.88. Walking breakdown is genuine for ALL Rényi indices.
+
+**DMRG walking breakdown in c₁ size pairs (086b).** q=7 c₁/Re(c): 1.05 (6,8 pair) → 0.83 (10,12 pair). 22% drop. q=5: only 5% drop. Clear walking vs stable walking separation.
+
+**Entanglement tail grows 8× at q=7 n=6→12.** λ_max: 0.891→0.852. (q-1) multiplet: 0.109→0.147. Tail: 0.014%→0.11%. Direct microscopic evidence of progressive walking breakdown.
+
+**Surprises:**
+- Single-size vs size-pair extraction gives qualitatively different "optimal α"
+- Open-BC profile R² < 0.9 even at n=12 — boundary corrections dominate
+- Periodic and open BC give different optimal α (periodic: α=2, open: α=1 for q=7)
+- q=7 entanglement tail grows 8× while λ_max drops only 4%
+
+[Full report: sprints/sprint_086.md]

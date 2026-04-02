@@ -112,20 +112,28 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **Why only entropy sees walking breakdown:** Energy/gap/correlator observables depend on lowest entanglement levels (ground + first excited), which are perfectly conformal. Entropy sums over ALL levels → sensitive to weight redistribution in the tail. Entanglement gap is NOT closing — it grows with q.
 
-**Rényi entropy decomposition of walking (Sprint 085).** Extracted c_α from size pairs using periodic-chain formula S_α = (c/6)(1+1/α)ln(N/π) + const. Key: α=1 is MOST accurate for walking q≤6, α=3 uniquely recovers Re(c) for broken q=7-8:
+**Rényi entropy decomposition of walking (Sprints 085-086).** Size-pair extraction c_α = 6·ΔS/((1+1/α)·ln(N₂/N₁)) on periodic BC. Optimal α shifts gradually with q:
 
-| q | c₁/Rec | c₂/Rec | c₃/Rec | c_∞/Rec | best α |
-|---|--------|--------|--------|---------|--------|
-| 2 | 0.996 | 1.055 | 1.114 | 1.101 | 0.5 |
-| 5 | 0.999 | 1.126 | 1.132 | 1.041 | 1 |
-| 7 | 0.938 | 1.050 | 1.027 | 0.932 | 3 |
-| 8 | 0.922 | 1.024 | 0.991 | 0.896 | 3 |
+| q | pair | c₁/Rec | c₂/Rec | c₃/Rec | c_∞/Rec | best α |
+|---|------|--------|--------|--------|---------|--------|
+| 2 | (10,14) | 0.996 | 1.055 | 1.114 | 1.101 | 0.5 (1.000) |
+| 3 | (8,10) | 0.994 | 1.081 | 1.131 | 1.080 | 0.5 (1.001) |
+| 5 | (6,8) | 1.004 | 1.114 | 1.127 | 1.040 | 1 (1.004) |
+| 6 | (6,8) | 0.997 | 1.102 | 1.098 | 1.006 | 1 (0.997) |
+| 7 | (6,7) | 0.817 | 0.904 | 0.889 | 0.809 | 2 (0.904) |
+| 8 | (6,7) | 0.799 | 0.877 | 0.852 | 0.772 | 2 (0.877) |
 
-**Rényi spread (c₂-c_∞)/Re(c) is a new monotonic walking discriminator:** -0.046 (q=2) → +0.086 (q=5) → +0.129 (q=8). Changes sign near q=3.
+**~~α=3 as optimal probe for broken walking~~ RETRACTED (Sprint 086).** Sprint 085's single-size extraction c_α = 12·S/((1+1/α)·ln(N/π)) is contaminated by non-universal constant c'_α which varies with α. Size-pair extraction (cancels c'_α) shows α=1-2 is best for all q. The "α=3 recovery" was c'₃ coincidentally compensating the walking deviation.
+
+**No Rényi index recovers Re(c) for broken walking (q≥7).** Best size-pair c_α/Re(c) ≈ 0.90 at q=7, 0.88 at q=8. Walking breakdown is a genuine multi-eigenvalue phenomenon.
+
+**DMRG confirms walking breakdown in Rényi c₁ (Sprint 086b).** q=7 size-pair c₁/Re(c) drops from 1.05 (n=6,8) to 0.83 (n=10,12). q=5 drops only 5% over same range.
+
+**Open-BC CC profile fit unreliable for Rényi extraction** (R² < 0.9 at n≤12, Sprint 086a). Size-pair extraction from midchain entropy is more robust.
 
 **c_∞ does NOT recover Re(c) at large q** — disproves the hypothesis that min-entropy (probing only λ_max) is insensitive to walking breakdown.
 
-**POTENTIALLY NOVEL (Sprints 084-085):** First entanglement spectrum decomposition across walking boundary. Entropy concentration mechanism. First systematic Rényi c_α(q,α) mapping. α=3 as optimal probe for walking-broken regime.
+**POTENTIALLY NOVEL (Sprints 084-086):** First entanglement spectrum decomposition across walking boundary. Entropy concentration mechanism. First systematic Rényi c_α(q,α) mapping via size pairs. Demonstration that optimal Rényi index shifts 0.5→1→2 across walking boundary.
 
 **Casimir energy cross-validates complex CFT Re(c) (Sprint 083).** E₀/N = ε_∞ - πvc/(6N²). The product vc from Casimir fit, divided by v from gap/correlator, gives c_implied:
 

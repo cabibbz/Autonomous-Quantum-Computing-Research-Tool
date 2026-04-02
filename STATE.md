@@ -1,34 +1,34 @@
 # Current State — Rewrite this completely each sprint
 
 ## Last Sprint
-Sprint 085 — Rényi entropies across walking boundary. Computed c_α from size pairs for α=0.5,1,2,3,5,10,∞ across q=2-8. α=1 closest to Re(c) for walking q≤6 (q=5: 0.06% accuracy). α=3 uniquely recovers Re(c) in walking-broken regime (q=8: 0.9%). α=2 always overshoots by 5-13% but most stable. Rényi spread (c₂-c_∞) is new monotonic walking discriminator. Original hypothesis (c_∞ recovers Re(c)) WRONG.
+Sprint 086 — Rényi entropy scaling via DMRG. Sprint 085's α=3 finding was a single-size extraction artifact. Size-pair extraction (cancels non-universal c'_α) shows α=1 is consistently best for both walking and broken regimes. Optimal α shifts gradually: 0.5 (real CFT) → 1 (walking) → 2 (broken). No Rényi index recovers Re(c) for q≥7. Open-BC profile fits unreliable (R²<0.9).
 
 ## Active Research Thread
-**S_q Potts walking regime: Rényi entropy decomposition complete.**
+**S_q Potts walking regime: Rényi analysis corrected, entropy-only breakdown fully characterized.**
 
-Walking breakdown is visible in ALL Rényi entropies, but with different signatures:
+Walking breakdown is confirmed in ALL Rényi entropies, with NO α that recovers Re(c) for q≥7:
 
-| q | c_1/Rec | c_2/Rec | c_3/Rec | c_∞/Rec | best α |
-|---|---------|---------|---------|---------|--------|
-| 2 | 0.996 | 1.055 | 1.114 | 1.101 | 0.5 |
-| 5 | 0.999 | 1.126 | 1.132 | 1.041 | 1 |
-| 6 | 0.995 | 1.116 | 1.106 | 1.010 | 1 |
-| 7 | 0.938 | 1.050 | 1.027 | 0.932 | 3 |
-| 8 | 0.922 | 1.024 | 0.991 | 0.896 | 3 |
+| q | pair(periodic) best | c_best/Rec | pair(DMRG) best | c_best/Rec |
+|---|---------------------|------------|-----------------|------------|
+| 2 | α=0.5 | 1.000 | — | — |
+| 5 | α=1 | 1.004 | α=0.5 | 0.97 |
+| 7 | α=2 | 0.904 | α=1 | 0.999→0.83 (degrades) |
 
-The "optimal α" shifts from 0.5-1 (walking) to 3 (broken). Rényi spread (c₂-c_∞) monotonically increases with q.
+Key correction: Sprint 085's α=3 was contaminated by non-universal constant c'_α.
 
 ## QPU Budget
 - Used: 20s of 600s (Sprint 025: ibm_kingston)
 - Remaining: 580s
 
 ## Top 3 Next Experiments
-1. **Hardware validation** — 580s QPU, 60 sprints since last use. Encode q=2 S_q Potts at n=6-8, measure entanglement spectrum or gap×N.
-2. **Entanglement spectrum scaling with n** — Does level 1 concentration GROW with n at q=7? DMRG for n=10-16.
-3. **Rényi entropy at larger n via DMRG** — Does c_3 remain closest to Re(c) at q=7-8 for n>8? Test at n=10,12 with DMRG.
+1. **Hardware validation** — 580s QPU, 61 sprints since last use. q=2 S_q Potts at n=6-8 on QPU, measure gap or entanglement.
+2. **Entanglement spectrum scaling at q=7 n=16-24** — DMRG. Does tail weight saturate or grow indefinitely?
+3. **Rényi spread from size pairs** — Recompute (c₂-c_∞) spread using size-pair extraction. Still a walking discriminator?
 
 ## What's Been Ruled Out
-- c_∞ (min-entropy) as Re(c) recovery probe at large q — c_∞ degrades like c_1
+- α=3 as Re(c) recovery probe (single-size extraction artifact, Sprint 086)
+- c_∞ (min-entropy) as Re(c) recovery probe (degrades like c_1)
+- Open-BC CC profile fit for Rényi c_α extraction (R²<0.9 at n≤12)
 - Oscillatory correlator corrections at r ≤ 7 (Im(x_σ) too small)
 - Open-BC raw power law for x extraction (inflates η by 5×)
 - x_σ as walking discriminator (nearly constant across q)
