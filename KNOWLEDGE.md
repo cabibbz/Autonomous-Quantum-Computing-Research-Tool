@@ -112,7 +112,20 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **Why only entropy sees walking breakdown:** Energy/gap/correlator observables depend on lowest entanglement levels (ground + first excited), which are perfectly conformal. Entropy sums over ALL levels → sensitive to weight redistribution in the tail. Entanglement gap is NOT closing — it grows with q.
 
-**POTENTIALLY NOVEL (Sprint 084):** First entanglement spectrum decomposition across walking boundary. First identification of entropy concentration in (q-1)-fold multiplet as microscopic mechanism.
+**Rényi entropy decomposition of walking (Sprint 085).** Extracted c_α from size pairs using periodic-chain formula S_α = (c/6)(1+1/α)ln(N/π) + const. Key: α=1 is MOST accurate for walking q≤6, α=3 uniquely recovers Re(c) for broken q=7-8:
+
+| q | c₁/Rec | c₂/Rec | c₃/Rec | c_∞/Rec | best α |
+|---|--------|--------|--------|---------|--------|
+| 2 | 0.996 | 1.055 | 1.114 | 1.101 | 0.5 |
+| 5 | 0.999 | 1.126 | 1.132 | 1.041 | 1 |
+| 7 | 0.938 | 1.050 | 1.027 | 0.932 | 3 |
+| 8 | 0.922 | 1.024 | 0.991 | 0.896 | 3 |
+
+**Rényi spread (c₂-c_∞)/Re(c) is a new monotonic walking discriminator:** -0.046 (q=2) → +0.086 (q=5) → +0.129 (q=8). Changes sign near q=3.
+
+**c_∞ does NOT recover Re(c) at large q** — disproves the hypothesis that min-entropy (probing only λ_max) is insensitive to walking breakdown.
+
+**POTENTIALLY NOVEL (Sprints 084-085):** First entanglement spectrum decomposition across walking boundary. Entropy concentration mechanism. First systematic Rényi c_α(q,α) mapping. α=3 as optimal probe for walking-broken regime.
 
 **Casimir energy cross-validates complex CFT Re(c) (Sprint 083).** E₀/N = ε_∞ - πvc/(6N²). The product vc from Casimir fit, divided by v from gap/correlator, gives c_implied:
 

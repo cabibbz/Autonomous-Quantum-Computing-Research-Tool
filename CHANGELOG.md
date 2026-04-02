@@ -250,3 +250,29 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 **POTENTIALLY NOVEL:** First entanglement spectrum decomposition across walking boundary for S_q Potts chain. First identification of entropy concentration in (q-1)-fold multiplet as the microscopic mechanism for walking breakdown. No prior literature found on entanglement spectrum at q>4.
 
 [Full report: sprints/sprint_084.md]
+
+### Sprint 085 — Rényi Entropies: α=3 Recovers Re(c) in Walking-Broken Regime
+**Status:** Complete (3 experiments).
+
+**Rényi c_α from size pairs across q=2-8 (085a-c).** Computed S_α for α=0.5,1,2,3,5,10,∞ on periodic S_q Potts chains. Extracted c_α using CFT formula for periodic chain (two entanglement cuts): c_α = 6·ΔS_α/((1+1/α)·ln(N₂/N₁)). Initially used wrong prefactor (c/12, one cut) — corrected to c/6 (two cuts).
+
+**α=1 (von Neumann) is MOST accurate for walking q≤6 (085c).** c₁/Re(c): q=2: 0.996, q=5: 0.999 (0.06% accuracy!), q=6: 0.995. von Neumann entropy is uniquely accurate in the walking regime — counterintuitive given it sums all eigenvalues.
+
+**α=3 uniquely recovers Re(c) in walking-broken regime (085c).** c₃/Re(c): q=7: 1.027 (2.7%), q=8: 0.991 (0.9%). The "magic" Rényi index shifts from α≈1 (walking) to α≈3 (broken) — a crossover in optimal probe.
+
+**c_∞ does NOT recover Re(c) — original hypothesis WRONG (085c).** c_∞ deviates comparably to c₁ for q≥7 (both ~7% off). Spectral redistribution affects ALL eigenvalues including λ_max.
+
+**Rényi spread (c₂-c_∞)/Re(c) is a new monotonic walking discriminator (085c).** Values: -0.046 (q=2), +0.008 (q=3), +0.086 (q=5), +0.106 (q=6), +0.118 (q=7), +0.129 (q=8). Changes sign near q=3, monotonically increases. Cleaner than c_eff/Re(c).
+
+**α=2 always overshoots Re(c) (085c).** c₂/Re(c) = 1.02-1.13 for ALL q. Most stable (smallest variation across q) but most biased.
+
+**Surprises:**
+- von Neumann (α=1) is literally the most accurate Rényi entropy for walking regime
+- α=3 (not α=∞) is the "corrective" index in broken regime — deep non-triviality
+- Rényi spread is monotonic in q — better discriminator than c_eff/Re(c)
+- Factor-of-2 periodic/open BC distinction nearly led to wrong physical conclusions
+- c_α profile shape changes at walking boundary: peak shifts from α=3-5 to α=2
+
+**POTENTIALLY NOVEL:** First systematic Rényi c_α(q,α) mapping across walking boundary for S_q Potts chain. Discovery of α=3 as optimal probe for walking-broken regime. Rényi spread as new walking discriminator.
+
+[Full report: sprints/sprint_085.md]
