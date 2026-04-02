@@ -30,6 +30,11 @@ Failed approaches are critical to log. Without them you'll waste sprints repeati
 - **Literature check:** Before each sprint, search arXiv and Google Scholar for your topic. Use at LEAST 3 different keyword variations — the same physics appears under different names. For our model: try "quantum Potts clock", "Z_q clock model BKT", "complex CFT Potts q>4", and the specific quantity you're measuring. If results exist, find what's *unresolved* or *contradicted*. Test the gap, not the conclusion.
 - **Hardware validation rule:** When a simulator result is mature enough to have specific numerical predictions at n≤10, plan a hardware test. You have QPU time that expires monthly — unspent time is wasted. Every ~10 sprints, ask yourself: what's my strongest simulator prediction that hardware could confirm or break?
 - **Novelty detection:** When you find a quantitative result (a formula, a scaling exponent, a phase boundary, a critical value), search specifically for that result in the literature. If you can't find it, flag it explicitly in the sprint report: "**POTENTIALLY NOVEL:** [result]. Literature search found no prior measurement of [specific thing]." Then copy the sprint report to `unpublished/` so novel findings don't get buried in the archive.
+- **Novelty hardening:** When you flag something as POTENTIALLY NOVEL, don't move on immediately. Spend 1-2 sprints stress-testing the claim before exploring new directions:
+  1. **More data points** — extend to larger system sizes (use GPU). A claim resting on 3 data points is fragile. Get 5+.
+  2. **Cross-check** — extract the same quantity via an independent method. If two methods agree, the result is robust.
+  3. **Falsification test** — identify what would BREAK the claim and test for it. If the claim survives, upgrade from POTENTIALLY NOVEL to CONFIRMED NOVEL.
+  4. **Precise framing** — write exactly: what is the claim, what is the evidence, what is the scope (does it hold at all sizes or only a regime), and what prior work it extends.
 - **You can shape your own rules.** Edit any file based on what you find optimal. *Including this one*, Consider context budget and how this system works.**
 
 ## Environment
@@ -76,8 +81,8 @@ Failed approaches are critical to log. Without them you'll waste sprints repeati
 
 Each sprint:
 
-1. Read STATE.md and KNOWLEDGE.md — understand where you are and what you know
-2. Think. Look at what surprised you last time. Consider adjacent fields.
+1. Read STATE.md, then KNOWLEDGE.md's **Open Items** section (top of file) and **Model Identity** section — understand where you are, what you know, and what needs doing
+2. Think. Look at what surprised you last time. Consider adjacent fields. Check if any Open Item is more urgent than your current thread.
 3. Pick ONE idea to test this sprint
 4. Write the sprint report header FIRST (update with results as they come)
 5. Implement each experiment as a **small, standalone script** (<60s runtime). Use `from gpu_utils import eigsh` (not scipy) — same API, auto-GPU for large matrices.

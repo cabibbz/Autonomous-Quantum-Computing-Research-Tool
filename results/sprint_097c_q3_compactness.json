@@ -1,0 +1,234 @@
+{
+  "experiment": "097c_q3_compactness",
+  "timestamp": "2026-04-02 11:32:52",
+  "q": 3,
+  "n": 10,
+  "g_c": 0.3333333333333333,
+  "data": {
+    "nA3": {
+      "nA": 3,
+      "dimA": 27,
+      "n_nonzero": 728,
+      "n_total_basis": 728,
+      "participation_ratio": 8.158487583415884,
+      "n_bw_ops": 10,
+      "bw_fraction": 0.9990776641294424,
+      "non_bw_fraction": 0.0009223358705575634,
+      "non_bw_n": 718,
+      "non_bw_PR": 17.453265278097074,
+      "milestones": {
+        "0.9000": 8,
+        "0.9500": 9,
+        "0.9900": 10,
+        "0.9990": 10,
+        "0.9999": 32
+      },
+      "type_fraction": {
+        "S": 0.5022029483294375,
+        "D": 0.49690730562197444,
+        "SM": 0.0008872745799693945,
+        "M": 2.4714686184298924e-06
+      },
+      "top_10": [
+        {
+          "label": "X0Z0_X1Z0_X0Z0",
+          "frac": 0.16289210007361088,
+          "body": 1,
+          "range": 0,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "X0Z0_X2Z0_X0Z0",
+          "frac": 0.1628921000736108,
+          "body": 1,
+          "range": 0,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "X0Z0_X0Z1_X0Z2",
+          "frac": 0.12422180240079657,
+          "body": 2,
+          "range": 1,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "X0Z0_X0Z2_X0Z1",
+          "frac": 0.12422180240079651,
+          "body": 2,
+          "range": 1,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "X0Z1_X0Z2_X0Z0",
+          "frac": 0.12422180240066848,
+          "body": 2,
+          "range": 1,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "X0Z2_X0Z1_X0Z0",
+          "frac": 0.12422180240066848,
+          "body": 2,
+          "range": 1,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "X0Z0_X0Z0_X2Z0",
+          "frac": 0.04410156359491933,
+          "body": 1,
+          "range": 0,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "X0Z0_X0Z0_X1Z0",
+          "frac": 0.04410156359491931,
+          "body": 1,
+          "range": 0,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "X1Z0_X0Z0_X0Z0",
+          "frac": 0.04410156359472605,
+          "body": 1,
+          "range": 0,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "X2Z0_X0Z0_X0Z0",
+          "frac": 0.04410156359472605,
+          "body": 1,
+          "range": 0,
+          "type": "S",
+          "is_bw": true
+        }
+      ],
+      "time": 0.05791449546813965
+    },
+    "nA4": {
+      "nA": 4,
+      "dimA": 81,
+      "n_nonzero": 6560,
+      "n_total_basis": 6560,
+      "participation_ratio": 10.687297876598347,
+      "n_bw_ops": 14,
+      "bw_fraction": 0.9992400581572671,
+      "non_bw_fraction": 0.0007599418427328655,
+      "non_bw_n": 6546,
+      "non_bw_PR": 28.59498137760299,
+      "milestones": {
+        "0.9000": 10,
+        "0.9500": 12,
+        "0.9900": 14,
+        "0.9990": 14,
+        "0.9999": 43
+      },
+      "type_fraction": {
+        "D": 0.4992576889969681,
+        "S": 0.5000194371630204,
+        "SM": 0.0007157361114625453,
+        "M": 7.137728549422283e-06
+      },
+      "top_10": [
+        {
+          "label": "X0Z0_X0Z1_X0Z2_X0Z0",
+          "frac": 0.12521499626040905,
+          "body": 2,
+          "range": 1,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "X0Z0_X0Z2_X0Z1_X0Z0",
+          "frac": 0.12521499626040905,
+          "body": 2,
+          "range": 1,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "X0Z0_X0Z0_X1Z0_X0Z0",
+          "frac": 0.10649560546655219,
+          "body": 1,
+          "range": 0,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "X0Z0_X0Z0_X2Z0_X0Z0",
+          "frac": 0.10649560546655219,
+          "body": 1,
+          "range": 0,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "X0Z0_X1Z0_X0Z0_X0Z0",
+          "frac": 0.10649549653630151,
+          "body": 1,
+          "range": 0,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "X0Z0_X2Z0_X0Z0_X0Z0",
+          "frac": 0.10649549653630148,
+          "body": 1,
+          "range": 0,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "X0Z0_X0Z0_X0Z2_X0Z1",
+          "frac": 0.06220231803171438,
+          "body": 2,
+          "range": 1,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "X0Z0_X0Z0_X0Z1_X0Z2",
+          "frac": 0.06220231803171436,
+          "body": 2,
+          "range": 1,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "X0Z1_X0Z2_X0Z0_X0Z0",
+          "frac": 0.06220231444920332,
+          "body": 2,
+          "range": 1,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "X0Z2_X0Z1_X0Z0_X0Z0",
+          "frac": 0.06220231444920332,
+          "body": 2,
+          "range": 1,
+          "type": "D",
+          "is_bw": true
+        }
+      ],
+      "time": 0.8305861949920654
+    },
+    "nA5_threshold": {
+      "nA": 5,
+      "dimA": 243,
+      "bw_R2": 0.7475408637970848,
+      "bw_1mR2": 0.25245913620291516,
+      "potts_free_R2": 0.776502856547313,
+      "non_potts_fraction": 0.223497143452687,
+      "time": 0.05745649337768555
+    }
+  }
+}

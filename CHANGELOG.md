@@ -78,200 +78,17 @@ Full details for sprints 076-079 are in sprints/sprint_NNN.md.
 
 - **085** — Rényi c_α(q,α) mapping. α=1 best for walking (q≤6), optimal α shifts to 2 for broken (q≥7). ~~α=3 recovery~~ RETRACTED in Sprint 086. Rényi spread is monotonic walking discriminator.
 
-### Sprint 086 — Rényi Entropy Scaling via DMRG: α=3 Was an Extraction Artifact
-**Status:** Complete (3 experiments).
-
-**DMRG Rényi entropies at q=5 n=8,10,12 and q=7 n=6,8,10,12 (086a-b).** Open-BC DMRG Schmidt spectra at g_c=1/q. Profile fits to CC gave poor R² (0.79-0.88) due to boundary corrections. Midchain S_α extracted for size-pair analysis.
-
-**Sprint 085's α=3 finding was a SINGLE-SIZE EXTRACTION ARTIFACT (086c).** Single-size formula c_α = 12·S/((1+1/α)·ln(N/π)) includes non-universal constant c'_α which varies with α. At n=6-7 periodic BC, c'₃ coincidentally compensates walking deviation. Size-pair extraction (cancels c'_α) shows α=1-2 is best for ALL q.
-
-**Corrected optimal α progression: 0.5 (real CFT) → 1 (walking) → 2 (broken).** Periodic size-pair: q=2,3 best at α=0.5; q=5,6 at α=1; q=7,8 at α=2. Smoother progression than Sprint 085 suggested.
-
-**No Rényi index recovers Re(c) for broken walking.** q=7 periodic pair: best c_α/Re(c) = 0.90 (α=2). q=8: 0.88. Walking breakdown is genuine for ALL Rényi indices.
-
-**DMRG walking breakdown in c₁ size pairs (086b).** q=7 c₁/Re(c): 1.05 (6,8 pair) → 0.83 (10,12 pair). 22% drop. q=5: only 5% drop. Clear walking vs stable walking separation.
-
-**Entanglement tail grows 8× at q=7 n=6→12.** λ_max: 0.891→0.852. (q-1) multiplet: 0.109→0.147. Tail: 0.014%→0.11%. Direct microscopic evidence of progressive walking breakdown.
-
-**Surprises:**
-- Single-size vs size-pair extraction gives qualitatively different "optimal α"
-- Open-BC profile R² < 0.9 even at n=12 — boundary corrections dominate
-- Periodic and open BC give different optimal α (periodic: α=2, open: α=1 for q=7)
-- q=7 entanglement tail grows 8× while λ_max drops only 4%
-
-[Full report: sprints/sprint_086.md]
-
-### Sprint 087 — Entanglement Spectrum Scaling via DMRG: Tail Weight is UNBOUNDED
-**Status:** Complete (3 experiments).
-
-**q=5 entanglement spectrum n=8-24 (087a).** DMRG midchain Schmidt spectrum at g_c=1/5. λ_max decreases 0.858→0.787, (q-1) multiplet grows 14.2%→20.9%, tail weight grows 0.05%→0.44%. All trends monotonic, no saturation.
-
-**q=7 entanglement spectrum n=6-12 (087b).** g_c=1/7, limited to n=12 (293s). λ_max: 0.891→0.852, multiplet: 10.9%→14.7%, tail: 0.014%→0.11%.
-
-**Tail weight grows as UNBOUNDED power law (087c).** q=5: w_tail ~ n^1.72 (R²=0.993). q=7: w_tail ~ n^2.52 (R²=0.989). q=7 exponent larger but prefactor 9× smaller. No saturation. Entanglement gap closes logarithmically: Δξ = -0.43·ln(n) (q=5), -0.50·ln(n) (q=7).
-
-**Energy-entropy decoupling is TEMPORARY.** Tail weight reaches 10% at n≈147 (q=5), n≈72 (q=7). Walking breakdown creates a hierarchy of crossover scales. %S(lev0) saturates (~0.225), weight flows from multiplet to tail.
-
-**c_eff size pairs from DMRG.** q=5: converges 1.165→1.010 ×Re(c) from (8,12)→(20,24). q=7: diverges 1.055→0.841. Walking vs breakdown cleanly separated.
-
-**Surprises:**
-- Tail weight is UNBOUNDED — no saturation even at n=24
-- q=7 power law exponent 47% larger (2.52 vs 1.72) — breakdown accelerates
-- Entanglement gap closes logarithmically — will vanish at n ~ 10⁴
-- Weight flows lev1 → tail, NOT lev0 → tail
-- %S(lev0) approaches fixed point (~0.225 for q=5)
-
-**POTENTIALLY NOVEL:** First power-law scaling of entanglement spectrum tail weight across walking boundary. First demonstration that energy-entropy decoupling is finite-size with quantitative crossover scales.
-
-**NOTE (Sprint 088 correction):** Exponents 1.72 (q=5) and 2.52 (q=7) were from real-space curve_fit (biased by large-n). Log-log fit gives b≈2.0 for q=2,3,5 — universal, not walking-specific.
-
-[Full report: sprints/sprint_087.md]
-
-### Sprint 088 — Tail Weight at q=2,3: UNIVERSAL Power Law, Not Walking-Specific
-**Status:** Complete (3 experiments).
-
-**q=3 entanglement spectrum n=8-24 (088a).** DMRG at g_c=1/3 (c=4/5 real CFT). λ_max: 0.860→0.791, w_mult: 0.139→0.205, w_tail: 0.00047→0.00429. (q-1)=2 multiplet perfectly degenerate. %S(tail) reaches 4.2% at n=24.
-
-**q=2 entanglement spectrum n=8-24 (088b).** DMRG at g_c=1/2 (c=1/2 Ising). λ_max: 0.890→0.839, w_mult: 0.110→0.158, w_tail: 0.00037→0.00324. %S(tail) reaches 4.4% at n=24.
-
-**Tail weight exponent is UNIVERSAL: b ≈ 2.0 for q=2,3,5 (088c).** Log-log power-law fit: q=2 b=1.98, q=3 b=2.01, q=5 b=2.01 — identical within fit error. q=7 shows b=2.97 but only 4 data points (n=6-12), uncertain. Sprint 087's exponents (1.72, 2.52) were real-space fitting artifacts.
-
-**Walking breakdown is NOT in tail growth.** %S(tail) ≈ 4% at n=24 for ALL q=2,3,5. Entanglement gap closure Δξ ~ -0.43·ln(n) also universal. Walking-specific effects must reside in level REDISTRIBUTION (how multiplet vs ground state share weight), not in the tail.
-
-**Surprises:**
-- q=2,3,5 tail exponents identical to <1% — far more universal than expected
-- Real-space vs log-log fitting gives qualitatively different conclusions (1.72 vs 2.01)
-- %S(tail) at n=24 is nearly q-independent (3.8-4.4%)
-- Sprint 087 narrative partially corrected: tail growth is universal, only redistribution is q-dependent
-
-[Full report: sprints/sprint_088.md]
-
-### Sprint 089 — q=7 Tail Exponent Resolution & Level Redistribution as Walking Discriminator
-**Status:** Complete (3 experiments).
-
-**q=7 tail exponent b≈3.0 was PRE-ASYMPTOTIC (089a).** Extended DMRG to n=14 (chi=30, 237s) and n=16 (chi=25, 138s). With n≥8 data (5 points): b = 2.07 ± 0.14, consistent with universal b≈2.0. Sprint 088's b≈3.0 from 4 points (n=6-12) resolved — n=6 was in a crossover regime.
-
-**Static entropy partition is the walking discriminator (089b).** %S(lev0) and %S(lev1) are MONOTONIC in q. Weight always flows multiplet→tail. d(%S)/d(ln n) rates are NOT monotonic — dynamic rates don't cleanly discriminate. %S(lev0) saturation: 0.338 (q=2) → 0.203 (q=7), R² > 0.999.
-
-**Multiplet dominance M/[(q-1)/q] crosses 1.0 at walking boundary (089c).** M = %S(lev1)/[%S(lev0)+%S(lev1)]. At n=16: M = 0.676 (q=2), 0.724 (q=3), 0.771 (q=5), 0.797 (q=7). Ratio M/[(q-1)/q]: 1.33 (q=2), 1.07 (q=3), 0.96 (q=5), 0.93 (q=7). Crosses 1.0 between q=3 and q=5 — the real-to-complex CFT boundary. Democracy index flips: ground-depleted for real CFT, multiplet-depleted for complex CFT.
-
-**Mean tail exponent across all q: b = 2.017 ± 0.032.** Universal.
-
-**Surprises:**
-- q=7 b≈3.0 completely resolved — was pre-asymptotic crossover at small n
-- M/[(q-1)/q] = 1.0 crossing coincides with real→complex CFT boundary
-- Democracy index flips sign at q≈4 — unexpected structural connection
-- c_eff/Re(c) anticorrelates with M (r = −0.82) — multiplet trapping explains c_eff deviation
-- %S(lev1) → 0 as n→∞ for all q — multiplet is transient entropy reservoir
-
-**POTENTIALLY NOVEL:** First identification of multiplet dominance M as walking discriminator. M/[(q-1)/q] crossover at q=4 connects real-to-complex CFT transition to entanglement spectrum entropy partition. Universal tail exponent b=2.0 confirmed for all q=2-7.
-
-[Full report: sprints/sprint_089.md]
-
-### Sprint 090 — q=4 Entanglement Spectrum: M/[(q-1)/q] Crossover CONFIRMED at q≈4
-**Status:** Complete (3 experiments).
-
-**q=4 DMRG entanglement spectrum n=8-24 (090a).** g_c=1/4, chi=50-130. M/[(q-1)/q] = 1.021 (n=8), 1.010 (n=12), 1.003 (n=16), 0.998 (n=20), 0.994 (n=24). **Crosses 1.0 between n=16 and n=20.** (q-1)=3-fold multiplet perfectly degenerate. %S(lev0) saturates at 0.251 (≈1/4). c_eff converges from above: 1.25→1.09.
-
-**q=4 tail exponent b = 2.024 — universal b≈2.0 confirmed (090b).** Updated mean across q=2,3,4,5,7: b = 2.018 ± 0.029. q=4 slots perfectly into universal pattern. %S(tail) at n=24 = 4.0%, between q=3 (4.2%) and q=5 (3.8%).
-
-**M/[(q-1)/q] = 1.0 crossover at q≈4 CONFIRMED (090c).** Full curve at n=16: 1.352 (q=2), 1.086 (q=3), **1.003 (q=4)**, 0.964 (q=5), 0.930 (q=7). Linear interpolation: q_cross = 4.07. **q_cross converges to q≈4.0 as n→∞:** 4.49 (n=8) → 3.92 (n=24). The democracy index quantitatively pins the real-to-complex CFT boundary.
-
-**Surprises:**
-- M/[(q-1)/q] at q=4 n=16 is 1.003 — within 0.3% of exactly 1.0
-- q_cross converges monotonically toward q=4 with increasing n
-- Periodic vs open BC give different M/[(q-1)/q] at same finite n (0.95 vs 1.02 at n=8)
-- %S(lev0) → 0.251 ≈ 1/4 for q=4 — may saturate at exactly 1/q
-
-**POTENTIALLY NOVEL:** First entanglement spectrum measurement at q=4 S_q Potts. First confirmation that democracy index crossover occurs at q=4, pinpointing the real-to-complex CFT boundary in the entanglement spectrum. q_cross → 4.0 in the thermodynamic limit.
-
-[Full report: sprints/sprint_090.md]
-
-### Sprint 091 — Entanglement Hamiltonian H_E: BW Fidelity Across Walking Boundary
-**Status:** Complete (3 experiments).
-
-**BW fidelity confounded by nA in naive comparison (091a).** Periodic chain at g_c=1/q, q=2-7 with different n (and thus nA). q=7 (nA=3) showed 99.9% BW fidelity, q=2 (nA=6) showed 82.3% — but this was an nA artifact, not a q effect. Lesson: always compare at fixed nA.
-
-**At fixed nA=4, non-Potts fraction grows EXPONENTIALLY with q (091b).** q=2: 0.029%, q=3: 0.081%, q=4: 0.955%, q=5: 2.729%. Fit: ~exp(1.6·q). NNN and 3-body Potts operators contribute <0.2% — the residual is genuinely non-Potts operators absent from the physical Hamiltonian.
-
-**Biggest BW jump at q=3→4 (11.7×), NOT q=4→5 (2.9×) (091c).** The real-to-complex CFT boundary at q=4 is ALSO a BW locality boundary. d(log non-Potts)/dq spikes to 2.46 at q=3→4, vs 1.05 elsewhere. BW alpha also jumps: 2.4 (q=2,3) → 3.2 (q≥4).
-
-**q=5 non-Potts grows 1.7× faster with nA than q=2.** BW locality scaling: q=2 drops from 99.98% (nA=3) to 62.6% (nA=7), q=5 from 99.93% to 97.1%. Walking-enhanced corrections amplified at larger subsystems.
-
-**Surprises:**
-- BW fidelity dominated by nA, not q — methodological caution for future comparisons
-- Biggest non-Potts jump at q=3→4 (11.7×) coincides with real-to-complex CFT boundary
-- Non-Potts operators dominate BW residual — NNN/3-body Potts operators negligible
-- BW alpha discontinuity at q=4: jumps from 2.4 to 3.2
-- q=5 non-Potts slope 1.7× steeper than q=2 — walking amplifies BW corrections
-
-**POTENTIALLY NOVEL:** First BW fidelity across walking boundary for S_q Potts. First identification of q=4 as BW locality boundary. First demonstration that BW corrections are dominated by non-Potts operators.
-
-[Full report: sprints/sprint_091.md]
-
-### Sprint 092 — Non-Potts Operator Identification in H_E: Mixed Operators Dominate
-**Status:** Complete (3 experiments).
-
-**Pauli decomposition of H_E at q=2, nA=3-6 (092a).** Non-BW weight grows from 0.005% (nA=3) to 6.3% (nA=6). Dominant non-BW operators: YY (MM-type, 2-body NN) and ZXZ (DFD, 3-body range-2). At large nA, 3-body ZZZ and 4-body ZXXZ emerge. Body order and range of corrections increase with nA.
-
-**Clock-shift decomposition at fixed nA=3 for q=2-5 (092b).** Non-BW weight is FLAT: 0.005% (q=2), 0.007% (q=3), 0.008% (q=4), 0.009% (q=5). The q-dependent BW breakdown (Sprint 091) is a LARGE-SUBSYSTEM effect that only manifests at nA≥4.
-
-**nA=4 for q=2,3 — same operator types (092c).** Both dominated by MM (mixed×mixed) and DFD/DMD (3-body). Non-BW weight: 0.0075% (q=2) vs 0.0080% (q=3). No qualitative change in operator content at the walking boundary — the 11.7× jump at q=3→4 is purely an amplitude effect.
-
-**Physical interpretation:** BW corrections are "position-momentum" correlators (φ·π type). The entanglement Hamiltonian knows about operator content beyond the physical Hamiltonian. Walking doesn't introduce new operator types — it amplifies the mixed (M) operators already present.
-
-**Surprises:**
-- MM (YY-type) is #1 non-BW operator at q=2 nA=4, not ZXZ
-- Non-BW weight at nA=3 varies <2× across q=2-5 — essentially flat
-- No qualitative operator change at q=4 walking boundary
-- 3-body DFD operators are "mediated" correlations (density→field→density)
-- Body order of dominant corrections increases with nA (2→3→4-body)
-
-**POTENTIALLY NOVEL:** First operator decomposition of H_E for S_q Potts using generalized clock-shift basis. First identification of mixed (XZ-type) operators as dominant BW correction. First demonstration that walking boundary amplifies but doesn't change the type of BW corrections.
-
-[Full report: sprints/sprint_092.md]
-
-### Sprint 093 — BW Entanglement Temperature Profile: Bulk-Concentrated Residual
-**Status:** Complete (3 experiments).
-
-**Position-dependent BW coefficients for q=2,3,5 (093a).** Projected H_E onto local Potts coupling and field operators at each bond/site within A. BW sin-envelope shape confirmed: R² > 0.99 for bond coefficients at nA≥4. The field-to-bond coefficient ratio is NOT g_c — field terms are over-weighted in H_E relative to the physical Hamiltonian (0.95 vs 0.50 at q=2, 0.23 vs 0.20 at q=5).
-
-**Global BW Frobenius R² across q=2-7 (093b).** 1-param fit H_E ≈ α·H_BW + c·I. At nA=4: R² = 0.9995 (q=2), 0.9992 (q=3), 0.9984 (q=4), 0.9655 (q=5). At nA=3: smooth monotonic degradation from 0.9997 (q=2) to 0.9986 (q=7). **Walking amplification: 1-R² jumps 34× from nA=3→4 at q=5, vs 1.8× at q=2.** BW scale α increases with q: 6.5 (q=2) → 10.3 (q=7).
-
-**BW residual spatial profile (093c).** Per-site Frobenius decomposition of H_res = H_E - α·H_BW. Boundary enrichment (boundary fraction / expected if uniform): q=2 nA=4: 0.42× (strongly bulk-concentrated), q=3: 0.47×, **q=5: 0.98× (uniform)**. Walking makes BW corrections uniform in space; real CFT concentrates corrections in the bulk.
-
-**Surprises:**
-- BW envelope shape works even where BW accuracy fails (R² drops but profile is correct)
-- BW residual is BULK-concentrated, not boundary-concentrated (counterintuitive)
-- Walking makes residual spatially uniform — cleanest spatial walking signature found
-- 34× walking amplification from nA=3 to nA=4 at q=5 vs 1.8× at q=2
-- BW scale α increases monotonically with q
-
-**POTENTIALLY NOVEL:** First BW entanglement temperature profile measurement for S_q Potts. First demonstration that BW residual concentrates in the bulk for real CFT. First spatial signature distinguishing real CFT from walking in the entanglement Hamiltonian.
-
-[Full report: sprints/sprint_093.md]
-
-### Sprint 094 — BW R² vs Subsystem Size nA: Threshold Behavior, Not Power Law
-**Status:** Complete (4 experiments).
-
-**q=2 nA=3-7 (094a).** R²: 0.9997 (nA=3), 0.9995 (4), 0.990 (5), 0.760 (6), 0.638 (7). Sharp threshold at nA=5: 19× jump in 1-R² from nA=4. BW collapses by nA=6.
-
-**q=3 nA=3-6, q=4 nA=3-5 (094b).** q=3 threshold at nA=5: 261× jump (sharpest of all q). q=4 threshold at nA=5: 178× jump. Real CFT q=2,3,4 share nA*≈5.
-
-**q=5 nA=3-4 (094c).** nA=5 infeasible (24GB memory for H build). Threshold at nA=4: 33× jump from nA=3. Walking shifts threshold down by exactly 1 site.
-
-**Compilation: B(q) = 0.48q + 1.09 (R²=0.999) (094c2-c3).** Exponential rate of BW breakdown scales linearly with q. Power-law fits are poor (R²<0.81) — data has two-regime threshold structure. Walking amplification at nA=4: q=5 has 64× more BW deviation than q=2. At nA=3: only 3.5×.
-
-**Surprises:**
-- BW breakdown is threshold/two-regime, NOT power law or clean exponential
-- q=3 has the sharpest threshold (261× jump at nA=4→5), not q=5
-- Walking shifts nA* down by exactly 1 site (5→4) — clean integer shift
-- B(q) ∝ q (not ln(q)) — connected to local Hilbert space dimension
-- Walking amplification is nA-dependent: mild at nA=3 (3.5×), dramatic at nA=4 (64×)
-
-**POTENTIALLY NOVEL:** First systematic BW fidelity vs subsystem size mapping across walking boundary. First demonstration of threshold nA*(q) in BW breakdown. First B(q) = 0.48q + 1.09 linear rate law.
-
-[Full report: sprints/sprint_094.md]
+- **086** — Rényi DMRG: α=3 recovery was extraction artifact. Corrected: optimal α = 0.5 (real) → 1 (walking) → 2 (broken). q=7 tail grows 8×. No Rényi index recovers Re(c) for broken walking.
+- **087** — Entanglement spectrum DMRG: tail weight unbounded power law ~n^b. c_eff size pairs confirm walking vs breakdown. NOTE: exponents corrected in Sprint 088.
+- **088** — Tail exponent UNIVERSAL b≈2.0 for q=2,3,5. Walking breakdown NOT in tail growth — must be in level redistribution.
+- **089** — q=7 b≈3.0 resolved (pre-asymptotic). M/[(q-1)/q] crosses 1.0 at walking boundary. Democracy index flips at q≈4.
+- **090** — q=4 M/[(q-1)/q]=1.003 at n=16. q_cross→4.0 in thermodynamic limit. b=2.024 confirms universal.
+- **091** — BW fidelity across walking: non-Potts grows ~exp(1.6q). Biggest jump at q=3→4. BW alpha discontinuity at q=4.
+- **092** — Non-Potts operators = mixed clock-shift (XZ-type). Walking amplifies but doesn't change type. Flat at nA=3.
+- **093** — BW temperature profile: sin-envelope correct, residual bulk-concentrated (real CFT) vs uniform (walking). 34× amplification at q=5.
+- **094** — BW threshold nA*(q): two-regime, B(q)=0.48q+1.09. Walking shifts nA* down by 1 site. NOTE: nA*=5 was artifact (Sprint 095).
+
+Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 
 ### Sprint 095 — BW R² vs n at Fixed nA: Equal-Bipartition Anomaly Discovered
 **Status:** Complete (3 experiments).
@@ -292,3 +109,29 @@ Full details for sprints 076-079 are in sprints/sprint_NNN.md.
 **POTENTIALLY NOVEL:** First BW fidelity vs subsystem-to-system ratio mapping. Discovery of equal-bipartition anomaly in BW accuracy. Revision of BW threshold from nA*=5 to nA*=6 for q=2.
 
 [Full report: sprints/sprint_095.md]
+
+### Sprint 096 — BW Threshold Mechanism: Non-Potts Operators, Not Spectrum
+**Status:** Complete (4 experiments).
+
+**Entanglement spectrum smooth across BW threshold (096a-b).** q=2 n=14 nA=3-7: tail weight changes 8% from nA=5→6, but 1-R² jumps 212×. Confirmed for q=3,5. Spectrum does NOT predict BW breakdown.
+
+**BW residual dominated by max-range operators (096c).** At nA=6, 96% of residual in operators spanning ≥4 sites. Top operators: ZIIIXI, ZIIXXI — non-Potts mixed types.
+
+**Adding longer-range Potts operators barely helps (096d).** Free-fit 21 Potts ops: 1-R² improves from 0.171 to 0.163 (5%). Non-Potts fraction itself has 244× threshold jump at nA=6. BW envelope is optimal for Potts subspace.
+
+**Mechanism:** BW breaks when H_E develops significant non-Potts operators (mixed clock×shift). Threshold is in EIGENVECTORS of ρ_A, not eigenvalues. UV lattice effect.
+
+[Full report: sprints/sprint_096.md]
+
+### Sprint 097 — H_E Operator Compactness: BW Breakdown is Fundamental
+**Status:** Complete (3 experiments).
+
+**Pre-threshold H_E is maximally compact (097a).** q=2 n=14, full Pauli decomposition. nA=3-5: exactly 2nA-1 BW operators capture >99.9%. PR=4-7. At nA=6 (threshold): need 206 ops for 90%, 1052 for 99%. PR jumps to 12.
+
+**Non-BW content is DIFFUSE at threshold (097b).** nA=6: non-BW PR=357, need 743 operators for 90% of non-BW weight. XZ-mixed 44%, XYZ 21%. High-body (4-6) long-range (3-5) operators dominate. No compact "BW + corrections" ansatz exists.
+
+**Universal across q (097c).** q=3 n=10 clock-shift basis: nA=3,4 compact (10-14 BW ops, >99.9%). nA=5 threshold: non-Potts 22.4% (even larger than q=2 at 16.3%). Free-fit all Potts ops only 3% improvement.
+
+**BW is the optimal compact H_E approximation.** Beyond threshold, H_E requires exponentially many parameters — fundamentally beyond any local Hamiltonian ansatz.
+
+[Full report: sprints/sprint_097.md]

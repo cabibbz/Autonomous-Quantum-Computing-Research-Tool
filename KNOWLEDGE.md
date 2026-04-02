@@ -1,5 +1,9 @@
 # Accumulated Knowledge — Edit by topic, not by sprint
 
+## Open Items — Check each sprint, remove when done
+- **Harden Casimir finding (Sprint 083).** Strongest novel result has only 3 data points at q≥7. Use GPU eigsh to extend to N=8-10 at q=5,7. See HARDENING NEEDED note in Casimir section below.
+- **KNOWLEDGE.md is over budget (548 lines vs ~200 target).** Compress old sections (2D, MI-CV, hybrid model details from sprints 029-062) into one-line summaries. Full details are in sprints/ reports.
+
 ## Five Entanglement Archetypes
 | Archetype | Example | MI pattern | I3 sign | Negativity | Source |
 |-----------|---------|-----------|---------|------------|--------|
@@ -159,6 +163,22 @@ Non-Potts fraction grows exponentially ~exp(1.6·q). **Biggest jump at q=3→4 (
 - **Equal-bipartition anomaly (Sprint 095).** At nA/n=0.5, BW accuracy is 2-18× worse than at nA/n<0.4. Penalty peaks at threshold nA: nA=5 q=2 has 18× penalty, nA=3 has 2×. This is a systematic bias in all Sprint 094 data.
 - **BW corrections are UV (lattice-scale), not IR.** 1-R² depends on nA alone, not nA/n. Increasing chain length n at fixed nA does NOT improve BW. This means corrections come from lattice UV structure, not finite-size effects.
 - **B(q) = 0.48q + 1.09 still valid** for exponential rate within each regime. Walking amplification at nA=3 (q=5/q=2): 10-15×, ratio-independent.
+
+**BW threshold mechanism (Sprint 096).** The threshold is NOT in the entanglement spectrum (eigenvalues of ρ_A are smooth across the threshold) but in the OPERATOR CONTENT (eigenvectors) of H_E:
+- **Entanglement spectrum is smooth:** tail weight changes 8% from nA=5→6, but 1-R² jumps 212× (q=2 n=14). Confirmed for q=3,5 too.
+- **BW residual dominated by max-range operators:** at nA=6, 96% of residual in operators spanning ≥4 sites.
+- **Adding longer-range Potts operators barely helps:** free-fit with all Potts ops (21 params) gives 1-R²=0.163, vs BW 0.171. Only 5% improvement.
+- **The threshold is non-Potts operator content.** Non-Potts fraction: 6.7e-4 (nA=5) → 0.163 (nA=6) — a 244× jump.
+- **BW envelope is optimal for Potts subspace.** Free NN coefficients only 2× better than BW envelope at small nA.
+- **Implication:** BW accuracy is limited by operator algebra completeness, not entanglement structure or operator range. To improve beyond BW, need mixed (clock×shift) operators.
+
+**H_E operator compactness — BW breakdown is fundamental (Sprint 097).** Full operator basis decomposition (Pauli for q=2, clock-shift for q=3):
+- **Pre-threshold: H_E is maximally compact.** Exactly 2nA-1 BW operators capture >99.9%. Participation ratio 4-11. Nothing to add.
+- **At threshold: compactness transition.** Non-BW content erupts (0.07%→18% for q=2, 0.08%→22% for q=3). PR jumps to 12 (total), 357 (non-BW). Need 1052 operators for 99% R² at q=2 nA=6.
+- **Non-BW content is DIFFUSE.** 743 operators for 90% of non-BW weight. No compact "BW + corrections" ansatz exists.
+- **XZ (mixed) operators dominate:** 44% of non-BW at q=2 threshold. High-body (4-6), long-range (3-5) operators.
+- **Universal across q=2,3.** Non-Potts fraction larger for q=3 (22.4%) than q=2 (16.3%), consistent with exp(1.6q) growth.
+- **BW is the optimal compact H_E approximation.** The BW story is now complete: it works perfectly until operator algebra mismatch becomes O(1), then fails fundamentally.
 
 **Rényi entropy decomposition of walking (Sprints 085-086).** Size-pair extraction c_α = 6·ΔS/((1+1/α)·ln(N₂/N₁)) on periodic BC. Optimal α shifts gradually with q:
 

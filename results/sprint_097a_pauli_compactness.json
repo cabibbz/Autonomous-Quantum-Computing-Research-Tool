@@ -1,0 +1,853 @@
+{
+  "experiment": "097a_pauli_compactness",
+  "timestamp": "2026-04-02 11:29:50",
+  "q": 2,
+  "n": 14,
+  "g_c": 0.5,
+  "data": {
+    "nA3": {
+      "nA": 3,
+      "dimA": 8,
+      "n_nonzero": 35,
+      "n_total_basis": 63,
+      "participation_ratio": 4.114945109155937,
+      "n_bw_ops": 5,
+      "bw_fraction": 0.9999026759099539,
+      "milestones": {
+        "0.9000": 4,
+        "0.9500": 5,
+        "0.9900": 5,
+        "0.9990": 5,
+        "0.9999": 5
+      },
+      "type_fraction": {
+        "S": 0.5041977681098585,
+        "D": 0.4957049078000954,
+        "DxS": 5.6380096036755546e-05,
+        "M": 4.094399400929806e-05
+      },
+      "type_count": {
+        "S": 7,
+        "D": 7,
+        "DxS": 12,
+        "M": 9
+      },
+      "top_20": [
+        {
+          "label": "IXI",
+          "coeff": -2.5343047273155777,
+          "frac": 0.3217245539564192,
+          "range": 0,
+          "body": 1,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "ZZI",
+          "coeff": -2.224402330924711,
+          "frac": 0.2478524539000483,
+          "range": 1,
+          "body": 2,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "IZZ",
+          "coeff": -2.224402330924706,
+          "frac": 0.24785245390004712,
+          "range": 1,
+          "body": 2,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "IIX",
+          "coeff": -1.3495882644051682,
+          "frac": 0.09123660707672185,
+          "range": 0,
+          "body": 1,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "XII",
+          "coeff": -1.3495882644051358,
+          "frac": 0.09123660707671746,
+          "range": 0,
+          "body": 1,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "ZXZ",
+          "coeff": 0.03354900432609953,
+          "frac": 5.6380096036755546e-05,
+          "range": 2,
+          "body": 3,
+          "type": "DxS",
+          "is_bw": false
+        },
+        {
+          "label": "YYI",
+          "coeff": 0.0202082430139432,
+          "frac": 2.0456138325702972e-05,
+          "range": 1,
+          "body": 2,
+          "type": "M",
+          "is_bw": false
+        },
+        {
+          "label": "IYY",
+          "coeff": 0.020208243013918208,
+          "frac": 2.045613832565237e-05,
+          "range": 1,
+          "body": 2,
+          "type": "M",
+          "is_bw": false
+        },
+        {
+          "label": "YXY",
+          "coeff": -0.0007957290836313725,
+          "frac": 3.171735794271667e-08,
+          "range": 2,
+          "body": 3,
+          "type": "M",
+          "is_bw": false
+        },
+        {
+          "label": "IIZ",
+          "coeff": -9.637846076770984e-13,
+          "frac": 4.65292992706567e-26,
+          "range": 0,
+          "body": 1,
+          "type": "D",
+          "is_bw": false
+        },
+        {
+          "label": "IZI",
+          "coeff": 9.046097204645775e-13,
+          "frac": 4.0991049742928037e-26,
+          "range": 0,
+          "body": 1,
+          "type": "D",
+          "is_bw": false
+        },
+        {
+          "label": "ZII",
+          "coeff": -9.00612917575927e-13,
+          "frac": 4.0629631523713257e-26,
+          "range": 0,
+          "body": 1,
+          "type": "D",
+          "is_bw": false
+        },
+        {
+          "label": "XXX",
+          "coeff": -7.071267128701958e-13,
+          "frac": 2.5047306346835922e-26,
+          "range": 2,
+          "body": 3,
+          "type": "S",
+          "is_bw": false
+        },
+        {
+          "label": "ZZZ",
+          "coeff": 6.7346128673762e-13,
+          "frac": 2.2719136017345177e-26,
+          "range": 2,
+          "body": 3,
+          "type": "D",
+          "is_bw": false
+        },
+        {
+          "label": "XIZ",
+          "coeff": 5.708766792622555e-13,
+          "frac": 1.6324923104801827e-26,
+          "range": 2,
+          "body": 2,
+          "type": "DxS",
+          "is_bw": false
+        },
+        {
+          "label": "ZIX",
+          "coeff": 5.697664562376303e-13,
+          "frac": 1.6261488452891673e-26,
+          "range": 2,
+          "body": 2,
+          "type": "DxS",
+          "is_bw": false
+        },
+        {
+          "label": "IZX",
+          "coeff": -4.994893387788579e-13,
+          "frac": 1.2497380307066811e-26,
+          "range": 1,
+          "body": 2,
+          "type": "DxS",
+          "is_bw": false
+        },
+        {
+          "label": "IXX",
+          "coeff": 4.976513992560605e-13,
+          "frac": 1.2405577868714708e-26,
+          "range": 1,
+          "body": 2,
+          "type": "S",
+          "is_bw": false
+        },
+        {
+          "label": "XZI",
+          "coeff": -4.840572387365683e-13,
+          "frac": 1.1737077661584881e-26,
+          "range": 1,
+          "body": 2,
+          "type": "DxS",
+          "is_bw": false
+        },
+        {
+          "label": "IXZ",
+          "coeff": 4.808375919651553e-13,
+          "frac": 1.1581461482562273e-26,
+          "range": 1,
+          "body": 2,
+          "type": "DxS",
+          "is_bw": false
+        }
+      ],
+      "time": 0.014664888381958008
+    },
+    "nA4": {
+      "nA": 4,
+      "dimA": 16,
+      "n_nonzero": 135,
+      "n_total_basis": 255,
+      "participation_ratio": 5.441151133622403,
+      "n_bw_ops": 7,
+      "bw_fraction": 0.9998535829031838,
+      "milestones": {
+        "0.9000": 5,
+        "0.9500": 6,
+        "0.9900": 7,
+        "0.9990": 7,
+        "0.9999": 8
+      },
+      "type_fraction": {
+        "D": 0.4988449446344326,
+        "S": 0.5010086382687513,
+        "M": 7.349181215109157e-05,
+        "DxS": 7.292528466500667e-05
+      },
+      "type_count": {
+        "D": 15,
+        "S": 15,
+        "M": 55,
+        "DxS": 50
+      },
+      "top_20": [
+        {
+          "label": "IZZI",
+          "coeff": -3.5150604126665934,
+          "frac": 0.24445067052155936,
+          "range": 1,
+          "body": 2,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "IIXI",
+          "coeff": -3.2601271467289283,
+          "frac": 0.21027842815840198,
+          "range": 0,
+          "body": 1,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "IXII",
+          "coeff": -3.260127146499795,
+          "frac": 0.21027842812884376,
+          "range": 0,
+          "body": 1,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "ZZII",
+          "coeff": -2.5355714049375706,
+          "frac": 0.12719713708071426,
+          "range": 1,
+          "body": 2,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "IIZZ",
+          "coeff": -2.5355714044536155,
+          "frac": 0.12719713703215896,
+          "range": 1,
+          "body": 2,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "IIIX",
+          "coeff": -1.4259031010509402,
+          "frac": 0.04022589102979939,
+          "range": 0,
+          "body": 1,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "XIII",
+          "coeff": -1.4259030996668387,
+          "frac": 0.040225890951706124,
+          "range": 0,
+          "body": 1,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "IYYI",
+          "coeff": 0.05621114298378288,
+          "frac": 6.251301971834072e-05,
+          "range": 1,
+          "body": 2,
+          "type": "M",
+          "is_bw": false
+        },
+        {
+          "label": "IZXZ",
+          "coeff": 0.04288491702859387,
+          "frac": 3.638604012308911e-05,
+          "range": 2,
+          "body": 3,
+          "type": "DxS",
+          "is_bw": false
+        },
+        {
+          "label": "ZXZI",
+          "coeff": 0.04288491680108969,
+          "frac": 3.638603973703374e-05,
+          "range": 2,
+          "body": 3,
+          "type": "DxS",
+          "is_bw": false
+        },
+        {
+          "label": "YYII",
+          "coeff": 0.01658436292862531,
+          "frac": 5.441557618958502e-06,
+          "range": 1,
+          "body": 2,
+          "type": "M",
+          "is_bw": false
+        },
+        {
+          "label": "IIYY",
+          "coeff": 0.01658436188516709,
+          "frac": 5.441556934212532e-06,
+          "range": 1,
+          "body": 2,
+          "type": "M",
+          "is_bw": false
+        },
+        {
+          "label": "ZXXZ",
+          "coeff": -0.0027827447376961843,
+          "frac": 1.532048048791661e-07,
+          "range": 3,
+          "body": 4,
+          "type": "DxS",
+          "is_bw": false
+        },
+        {
+          "label": "IYXY",
+          "coeff": -0.0015544368344948844,
+          "frac": 4.780483280096948e-08,
+          "range": 2,
+          "body": 3,
+          "type": "M",
+          "is_bw": false
+        },
+        {
+          "label": "YXYI",
+          "coeff": -0.0015544360139094875,
+          "frac": 4.7804782328751526e-08,
+          "range": 2,
+          "body": 3,
+          "type": "M",
+          "is_bw": false
+        },
+        {
+          "label": "YXXY",
+          "coeff": 5.8740069371516205e-05,
+          "frac": 6.826444377713194e-11,
+          "range": 3,
+          "body": 4,
+          "type": "M",
+          "is_bw": false
+        },
+        {
+          "label": "XXXX",
+          "coeff": 1.1025331621438921e-08,
+          "frac": 2.4049661495531575e-18,
+          "range": 3,
+          "body": 4,
+          "type": "S",
+          "is_bw": false
+        },
+        {
+          "label": "IXXX",
+          "coeff": -9.434468952411847e-09,
+          "frac": 1.761004902342698e-18,
+          "range": 2,
+          "body": 3,
+          "type": "S",
+          "is_bw": false
+        },
+        {
+          "label": "IIXX",
+          "coeff": 9.147837588992236e-09,
+          "frac": 1.6556271392513475e-18,
+          "range": 1,
+          "body": 2,
+          "type": "S",
+          "is_bw": false
+        },
+        {
+          "label": "XXXI",
+          "coeff": -8.013283900906547e-09,
+          "frac": 1.2704181941491906e-18,
+          "range": 2,
+          "body": 3,
+          "type": "S",
+          "is_bw": false
+        }
+      ],
+      "time": 0.017107009887695312
+    },
+    "nA5": {
+      "nA": 5,
+      "dimA": 32,
+      "n_nonzero": 527,
+      "n_total_basis": 1023,
+      "participation_ratio": 6.722798679041816,
+      "n_bw_ops": 9,
+      "bw_fraction": 0.9992651276945548,
+      "milestones": {
+        "0.9000": 7,
+        "0.9500": 7,
+        "0.9900": 9,
+        "0.9990": 9,
+        "0.9999": 115
+      },
+      "type_fraction": {
+        "S": 0.5009076624177199,
+        "D": 0.4985107996187285,
+        "DxS": 0.00022627987400774846,
+        "M": 0.00035525808954379106
+      },
+      "type_count": {
+        "S": 31,
+        "D": 31,
+        "DxS": 180,
+        "M": 285
+      },
+      "top_20": [
+        {
+          "label": "IIXII",
+          "coeff": -4.588963323598474,
+          "frac": 0.1991113289012167,
+          "range": 0,
+          "body": 1,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "IZZII",
+          "coeff": -4.355978126522526,
+          "frac": 0.179406501808171,
+          "range": 1,
+          "body": 2,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "IIZZI",
+          "coeff": -4.355974036950393,
+          "frac": 0.1794061649398651,
+          "range": 1,
+          "body": 2,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "IIIXI",
+          "coeff": -3.7181268051106633,
+          "frac": 0.1307119193381823,
+          "range": 0,
+          "body": 1,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "IXIII",
+          "coeff": -3.7181214901447803,
+          "frac": 0.1307115456398489,
+          "range": 0,
+          "body": 1,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "ZZIII",
+          "coeff": -2.717136322350248,
+          "frac": 0.06980550185536419,
+          "range": 1,
+          "body": 2,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "IIIZZ",
+          "coeff": -2.71712239915687,
+          "frac": 0.06980478646026014,
+          "range": 1,
+          "body": 2,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "XIIII",
+          "coeff": -1.4599769021600744,
+          "frac": 0.020153884602338263,
+          "range": 0,
+          "body": 1,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "IIIIX",
+          "coeff": -1.459962759597052,
+          "frac": 0.02015349414930821,
+          "range": 0,
+          "body": 1,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "IZXZI",
+          "coeff": 0.0938506730512193,
+          "frac": 8.328016569281934e-05,
+          "range": 2,
+          "body": 3,
+          "type": "DxS",
+          "is_bw": false
+        },
+        {
+          "label": "IYYII",
+          "coeff": 0.07345658650257925,
+          "frac": 5.1018570225419446e-05,
+          "range": 1,
+          "body": 2,
+          "type": "M",
+          "is_bw": false
+        },
+        {
+          "label": "IIYYI",
+          "coeff": 0.07345472772225425,
+          "frac": 5.1015988261861965e-05,
+          "range": 1,
+          "body": 2,
+          "type": "M",
+          "is_bw": false
+        },
+        {
+          "label": "IIZXZ",
+          "coeff": 0.05190810344666119,
+          "frac": 2.5476344941209563e-05,
+          "range": 2,
+          "body": 3,
+          "type": "DxS",
+          "is_bw": false
+        },
+        {
+          "label": "ZXZII",
+          "coeff": 0.05189395971306365,
+          "frac": 2.5462463426718906e-05,
+          "range": 2,
+          "body": 3,
+          "type": "DxS",
+          "is_bw": false
+        },
+        {
+          "label": "YXXXY",
+          "coeff": 0.04097196690375997,
+          "frac": 1.5872320487532647e-05,
+          "range": 4,
+          "body": 5,
+          "type": "M",
+          "is_bw": false
+        },
+        {
+          "label": "XXXXX",
+          "coeff": 0.03674564496843493,
+          "frac": 1.276669687245578e-05,
+          "range": 4,
+          "body": 5,
+          "type": "S",
+          "is_bw": false
+        },
+        {
+          "label": "ZIIIZ",
+          "coeff": -0.03639168960623368,
+          "frac": 1.252192899469528e-05,
+          "range": 4,
+          "body": 2,
+          "type": "D",
+          "is_bw": false
+        },
+        {
+          "label": "XYXXY",
+          "coeff": -0.03443748660057984,
+          "frac": 1.1213203191618868e-05,
+          "range": 4,
+          "body": 5,
+          "type": "M",
+          "is_bw": false
+        },
+        {
+          "label": "YXXYX",
+          "coeff": -0.03443556448519311,
+          "frac": 1.1211951505097674e-05,
+          "range": 4,
+          "body": 5,
+          "type": "M",
+          "is_bw": false
+        },
+        {
+          "label": "XXYXY",
+          "coeff": 0.031120393859305873,
+          "frac": 9.157079129467278e-06,
+          "range": 4,
+          "body": 5,
+          "type": "M",
+          "is_bw": false
+        }
+      ],
+      "time": 0.08632731437683105
+    },
+    "nA6": {
+      "nA": 6,
+      "dimA": 64,
+      "n_nonzero": 2079,
+      "n_total_basis": 4095,
+      "participation_ratio": 12.007895990171091,
+      "n_bw_ops": 11,
+      "bw_fraction": 0.7986281092463078,
+      "milestones": {
+        "0.9000": 206,
+        "0.9500": 465,
+        "0.9900": 1052,
+        "0.9990": 1578,
+        "0.9999": 1839
+      },
+      "type_fraction": {
+        "D": 0.42193856912413547,
+        "S": 0.40374477379445206,
+        "DxS": 0.08267056158438772,
+        "M": 0.09164609549702477
+      },
+      "type_count": {
+        "D": 63,
+        "S": 63,
+        "DxS": 602,
+        "M": 1351
+      },
+      "top_20": [
+        {
+          "label": "IIZZII",
+          "coeff": -6.6334451111255115,
+          "frac": 0.13905669378009464,
+          "range": 1,
+          "body": 2,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "IIIXII",
+          "coeff": -6.577362026627279,
+          "frac": 0.1367152978276519,
+          "range": 0,
+          "body": 1,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "IIXIII",
+          "coeff": -6.495887435529093,
+          "frac": 0.13334925716925844,
+          "range": 0,
+          "body": 1,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "IZZIII",
+          "coeff": -5.619350543059307,
+          "frac": 0.09978973498821879,
+          "range": 1,
+          "body": 2,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "IIIZZI",
+          "coeff": -5.487390940665643,
+          "frac": 0.0951580258220575,
+          "range": 1,
+          "body": 2,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "IXIIII",
+          "coeff": -4.14434874257312,
+          "frac": 0.054278296238725564,
+          "range": 0,
+          "body": 1,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "IIIIXI",
+          "coeff": -4.059980254990267,
+          "frac": 0.052090852201947216,
+          "range": 0,
+          "body": 1,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "ZZIIII",
+          "coeff": -3.4152929611071325,
+          "frac": 0.036861206476162235,
+          "range": 1,
+          "body": 2,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "IIIIZZ",
+          "coeff": -3.30616576892225,
+          "frac": 0.034543224060637,
+          "range": 1,
+          "body": 2,
+          "type": "D",
+          "is_bw": true
+        },
+        {
+          "label": "XIIIII",
+          "coeff": -1.9366944492112328,
+          "frac": 0.011853206082706649,
+          "range": 0,
+          "body": 1,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "IIIIIX",
+          "coeff": -1.2493052785686993,
+          "frac": 0.004932314598847881,
+          "range": 0,
+          "body": 1,
+          "type": "S",
+          "is_bw": true
+        },
+        {
+          "label": "ZZZIZZ",
+          "coeff": -0.7445619932493809,
+          "frac": 0.001751924340892116,
+          "range": 5,
+          "body": 5,
+          "type": "D",
+          "is_bw": false
+        },
+        {
+          "label": "IXZIZI",
+          "coeff": 0.7208436595257774,
+          "frac": 0.001642085571762858,
+          "range": 3,
+          "body": 3,
+          "type": "DxS",
+          "is_bw": false
+        },
+        {
+          "label": "ZIXXII",
+          "coeff": -0.7063502179152581,
+          "frac": 0.0015767171320677687,
+          "range": 3,
+          "body": 3,
+          "type": "DxS",
+          "is_bw": false
+        },
+        {
+          "label": "ZZZIII",
+          "coeff": 0.6290777460781363,
+          "frac": 0.001250611056045426,
+          "range": 2,
+          "body": 3,
+          "type": "D",
+          "is_bw": false
+        },
+        {
+          "label": "YXXYYY",
+          "coeff": -0.6246439341375227,
+          "frac": 0.0012330442816320985,
+          "range": 5,
+          "body": 6,
+          "type": "M",
+          "is_bw": false
+        },
+        {
+          "label": "ZIIXZZ",
+          "coeff": -0.6139051780517253,
+          "frac": 0.001191012206660235,
+          "range": 5,
+          "body": 4,
+          "type": "DxS",
+          "is_bw": false
+        },
+        {
+          "label": "ZIIIZZ",
+          "coeff": 0.6085506316657425,
+          "frac": 0.001170326542302175,
+          "range": 5,
+          "body": 3,
+          "type": "D",
+          "is_bw": false
+        },
+        {
+          "label": "ZIIXII",
+          "coeff": 0.597620752893663,
+          "frac": 0.0011286647465372226,
+          "range": 3,
+          "body": 2,
+          "type": "DxS",
+          "is_bw": false
+        },
+        {
+          "label": "IXIZII",
+          "coeff": -0.5903031905224166,
+          "frac": 0.001101194112181128,
+          "range": 2,
+          "body": 2,
+          "type": "DxS",
+          "is_bw": false
+        }
+      ],
+      "time": 0.3766911029815674
+    }
+  }
+}
