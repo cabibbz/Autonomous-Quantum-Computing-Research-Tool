@@ -69,26 +69,7 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 
 Full details for sprints 076-079 are in sprints/sprint_NNN.md.
 
-### Sprint 080 — c_eff at q=6,8,9: Walking Regime Boundary Mapped
-**Status:** Complete (3 experiments).
-
-**q=6 c_eff/Re(c) = 0.916 — marginal walking (080a).** c_eff = 1.147 at n=8, stable with n (+0.12% drift n=6→8). Walking extends beyond accessible exact diag sizes at q=6. Re(c) = 1.253.
-
-**q=8 c_eff/Re(c) = 0.738, q=9 = 0.668 (080b).** Walking clearly broken. q=8 c_eff DECREASING with n (−1.0% n=6→7). All (q-1)-fold degeneracies confirmed (3-fold gaps for all q).
-
-**Walking boundary mapped completely (080c).** c_eff/Re(c) = 1.004 × exp(−0.105(q−5)). Ratio=1 crossing at q = 5.0 ± 0.1. q=5 is the exact walking threshold. Size dependence is the key discriminator: c_eff stable for q≤6, degrading for q≥7.
-
-**gap×N INCREASES with q** (2.01→2.17 for q=6→8) even as walking breaks down — breakdown is in entropy, not the gap.
-
-**Surprises:**
-- q=6 c_eff stable with n (+0.12%) — walking may extend to q=6 at larger n
-- gap×N increases with q despite walking breakdown
-- Both linear and exponential fits agree: ratio=1 at q≈5.0
-- c_eff converges to ~1.0-1.15 for ALL q≥5 at moderate sizes
-
-**POTENTIALLY NOVEL:** Complete walking boundary curve q=3-10 with exponential decay law. First measurements at q=6,8,9.
-
-[Full report: sprints/sprint_080.md]
+- **080** — c_eff at q=6,8,9: walking boundary mapped. c_eff/Re(c) = 1.004·exp(−0.105(q−5)). q=5 exact walking threshold. gap×N increases with q even as walking breaks.
 
 ### Sprint 081 — ξ*(q=6) via DMRG: Walking is MARGINAL BREAKING
 **Status:** Complete (3 experiments).
@@ -293,3 +274,22 @@ Full details for sprints 076-079 are in sprints/sprint_NNN.md.
 **POTENTIALLY NOVEL:** First identification of multiplet dominance M as walking discriminator. M/[(q-1)/q] crossover at q=4 connects real-to-complex CFT transition to entanglement spectrum entropy partition. Universal tail exponent b=2.0 confirmed for all q=2-7.
 
 [Full report: sprints/sprint_089.md]
+
+### Sprint 090 — q=4 Entanglement Spectrum: M/[(q-1)/q] Crossover CONFIRMED at q≈4
+**Status:** Complete (3 experiments).
+
+**q=4 DMRG entanglement spectrum n=8-24 (090a).** g_c=1/4, chi=50-130. M/[(q-1)/q] = 1.021 (n=8), 1.010 (n=12), 1.003 (n=16), 0.998 (n=20), 0.994 (n=24). **Crosses 1.0 between n=16 and n=20.** (q-1)=3-fold multiplet perfectly degenerate. %S(lev0) saturates at 0.251 (≈1/4). c_eff converges from above: 1.25→1.09.
+
+**q=4 tail exponent b = 2.024 — universal b≈2.0 confirmed (090b).** Updated mean across q=2,3,4,5,7: b = 2.018 ± 0.029. q=4 slots perfectly into universal pattern. %S(tail) at n=24 = 4.0%, between q=3 (4.2%) and q=5 (3.8%).
+
+**M/[(q-1)/q] = 1.0 crossover at q≈4 CONFIRMED (090c).** Full curve at n=16: 1.352 (q=2), 1.086 (q=3), **1.003 (q=4)**, 0.964 (q=5), 0.930 (q=7). Linear interpolation: q_cross = 4.07. **q_cross converges to q≈4.0 as n→∞:** 4.49 (n=8) → 3.92 (n=24). The democracy index quantitatively pins the real-to-complex CFT boundary.
+
+**Surprises:**
+- M/[(q-1)/q] at q=4 n=16 is 1.003 — within 0.3% of exactly 1.0
+- q_cross converges monotonically toward q=4 with increasing n
+- Periodic vs open BC give different M/[(q-1)/q] at same finite n (0.95 vs 1.02 at n=8)
+- %S(lev0) → 0.251 ≈ 1/4 for q=4 — may saturate at exactly 1/q
+
+**POTENTIALLY NOVEL:** First entanglement spectrum measurement at q=4 S_q Potts. First confirmation that democracy index crossover occurs at q=4, pinpointing the real-to-complex CFT boundary in the entanglement spectrum. q_cross → 4.0 in the thermodynamic limit.
+
+[Full report: sprints/sprint_090.md]

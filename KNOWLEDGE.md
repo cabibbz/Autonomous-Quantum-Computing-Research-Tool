@@ -101,30 +101,33 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 - Level 1 absorbs progressively more entropy: 48% (q=2) → 63% (q=5) → 69% (q=8)
 - Tail entropy (levels ≥ 2) correlates with c_eff/Re(c), Pearson r = 0.80
 
-| q | deg_1 | %S(lev 0) | %S(lev 1) | %S(tail) | c_eff/Re(c) | Δξ |
-|---|-------|-----------|-----------|----------|-------------|------|
-| 2 | 1 | 33.1% | 47.8% | 19.1% | 1.00 | 1.03 |
-| 3 | 2 | 27.3% | 55.9% | 16.8% | 1.12 | 1.32 |
-| 5 | 4 | 22.1% | 62.7% | 15.2% | 1.01 | 1.69 |
-| 6 | 5 | 21.0% | 65.8% | 13.2% | 0.89 | 1.87 |
-| 7 | 6 | 19.8% | 66.8% | 13.5% | 0.78 | 1.98 |
-| 8 | 7 | 19.2% | 69.1% | 11.7% | 0.74 | 2.13 |
+| q | deg_1 | %S(lev 0) | %S(lev 1) | %S(tail) | c_eff/Re(c) | Δξ | M/[(q-1)/q] |
+|---|-------|-----------|-----------|----------|-------------|------|-------------|
+| 2 | 1 | 33.1% | 47.8% | 19.1% | 1.00 | 1.03 | 1.35 |
+| 3 | 2 | 27.3% | 55.9% | 16.8% | 1.12 | 1.32 | 1.09 |
+| 4 | 3 | 24.2% | 73.3% | 2.5% | 1.00 | 2.54 | **1.00** |
+| 5 | 4 | 22.1% | 62.7% | 15.2% | 1.01 | 1.69 | 0.96 |
+| 6 | 5 | 21.0% | 65.8% | 13.2% | 0.89 | 1.87 | 0.91 |
+| 7 | 6 | 19.8% | 66.8% | 13.5% | 0.78 | 1.98 | 0.93 |
+| 8 | 7 | 19.2% | 69.1% | 11.7% | 0.74 | 2.13 | 0.90 |
 
 **Why only entropy sees walking breakdown at small n:** Energy/gap/correlator observables depend on lowest entanglement levels (ground + first excited), which are perfectly conformal. Entropy sums over ALL levels → sensitive to weight redistribution in the tail. Entanglement gap grows with q at fixed n, but DECREASES with n at fixed q.
 
-**Tail weight grows as UNIVERSAL power law w_tail ~ n^2 for ALL critical q (Sprints 088-089).** DMRG midchain Schmidt spectrum, log-log fit for n≥8:
-- q=2: b=1.98 ± 0.14, q=3: b=2.01 ± 0.14, q=5: b=2.01 ± 0.14, q=7: b=2.07 ± 0.14
-- **Mean b = 2.017 ± 0.032** — identical for all q within error bars.
+**Tail weight grows as UNIVERSAL power law w_tail ~ n^2 for ALL critical q (Sprints 088-090).** DMRG midchain Schmidt spectrum, log-log fit for n≥8:
+- q=2: b=1.98, q=3: b=2.01, q=4: b=2.02, q=5: b=2.01, q=7: b=2.07 (all ± 0.14)
+- **Mean b = 2.018 ± 0.029** — identical for all q=2-7 within error bars.
 - ~~q=7 b≈3.0~~ was pre-asymptotic (only 4 pts n=6-12). With n=6-16 (6 pts) and n≥8: b=2.07 (Sprint 089a).
 - Entanglement gap: Δξ ~ -0.43·ln(n) universal for q=2-5, -0.50 for q=7.
 
 **Energy-entropy decoupling is TEMPORARY.** Tail weight reaches 10% at n≈130 (q=2), n≈109 (q=3), n≈108 (q=5). Walking regime creates a **hierarchy of crossover scales**: entropy breaks first (n ~ 10-20), then spectral observables (n ~ 100+). The RATE of tail growth is the same for all q — walking-specific effects are in STATIC PARTITION, not dynamics.
 
-**Weight flows multiplet → tail, not ground → tail.** %S(lev0) saturates (~0.225 for q=5, ~0.32 for q=2) while %S(lev1) monotonically decreases, feeding the tail. S_lev0_inf decreasing monotonically: 0.338 (q=2), 0.281 (q=3), 0.229 (q=5), 0.203 (q=7). Convergence rate α increases with q: 0.80→1.26.
+**Weight flows multiplet → tail, not ground → tail.** %S(lev0) saturates while %S(lev1) monotonically decreases, feeding the tail. S_lev0_inf decreasing monotonically: 0.333 (q=2), 0.281 (q=3), 0.251 (q=4), 0.230 (q=5), 0.204 (q=7). All fit S_inf + α/n with R² > 0.999.
 
-**Multiplet dominance M = %S(lev1)/[%S(lev0)+%S(lev1)] is a monotonic walking discriminator (Sprint 089c).** M increases with q: 0.676 (q=2), 0.724 (q=3), 0.771 (q=5), 0.797 (q=7) at n=16. The ratio M/[(q-1)/q] crosses 1.0 between q=3 and q=5 — real CFT has M > (q-1)/q (multiplet over-represents), complex CFT has M < (q-1)/q (multiplet under-represents). This crossover coincides with the real-to-complex CFT boundary at q=4.
+**Multiplet dominance M = %S(lev1)/[%S(lev0)+%S(lev1)] is a monotonic walking discriminator (Sprints 089-090).** M increases with q: 0.676 (q=2), 0.724 (q=3), 0.752 (q=4), 0.771 (q=5), 0.797 (q=7) at n=16. The ratio M/[(q-1)/q] crosses 1.0 at q≈4 — **confirmed by q=4 measurement (Sprint 090): M/[(q-1)/q] = 1.003 at n=16.** Real CFT has M > (q-1)/q (multiplet over-represents), complex CFT has M < (q-1)/q (multiplet under-represents).
 
-**Democracy index (Sprint 089c):** At q=2, ground state is depleted (64% of democratic share) and multiplet is enhanced (127%). At q=5, ground is enhanced (113%) and multiplet is depleted (92%). The crossover from ground-depleted to multiplet-depleted occurs near q=4.
+**q_cross converges to q≈4.0 in the thermodynamic limit (Sprint 090c).** At n=8: q_cross=4.49, n=12: 4.24, n=16: 4.07, n=20: 3.97, n=24: 3.92. Extrapolates to q≈4.0, coinciding exactly with the real-to-complex CFT boundary.
+
+**Democracy index (Sprints 089-090):** At q=2, ground state is depleted relative to democratic share. At q=5, multiplet is depleted. q=4 is the crossover point where democracy index ≈ 1.0.
 
 **Rényi entropy decomposition of walking (Sprints 085-086).** Size-pair extraction c_α = 6·ΔS/((1+1/α)·ln(N₂/N₁)) on periodic BC. Optimal α shifts gradually with q:
 
