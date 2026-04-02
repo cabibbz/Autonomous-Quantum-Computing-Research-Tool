@@ -46,7 +46,7 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **Resolved questions (Sprint 065):** ~~(1) Does hybrid flow to clock universality at large n?~~ **NO** — different ν (power-law vs BKT). ~~(3) One transition or two (like clock's two BKT)?~~ Clock has BKT; hybrid has single power-law transition.
 
-**Remaining open question:** (2) Truly continuous or weakly first-order with ξ >> n? Need Δ·N scaling at q=10 with n=4,5,6.
+**Resolved (Sprint 066):** (2) ~~Truly continuous or weakly first-order?~~ **No first-order signal detected.** Three diagnostics: Δ·N decelerates at q=10 (n=4,5,6), gap minimum is size-independent (~0.030), anomalous FSS saturates at ~5.5% for q≥7. Consistent with continuous transition with sign-flipped corrections for q≥5. Cannot rule out ξ >> 12 weakly first-order, but no positive evidence.
 
 **In future sprints: call this "Potts-clock hybrid" or "Z_q Potts chain", not "quantum Potts."**
 
@@ -68,7 +68,7 @@ MI-CV classifies transition type: second-order (crossing), first-order (step), B
 
 **Energy gap method (Sprint 051).** Δ·N scale-invariant at g_c. FSS correction: n=4,6 pairs +4.8%, n=6,8 pairs +2.5% (calibrated from q=2,3). Crossings approach from below.
 
-**Hybrid has continuous transitions for all tested q** (q=5,10,20). Power-law second-order with finite ν (Sprint 065). Clock model has BKT (ν→∞). S_q Potts is first-order for q>4.
+**Hybrid has continuous transitions for all tested q** (q=5,10,20). Power-law second-order with finite ν (Sprint 065). Sprint 066 found NO first-order signal at q=10 up to n=6: gap minimum size-independent, Δ·N decelerating. Clock model has BKT (ν→∞). S_q Potts is first-order for q>4.
 
 **Clock ≠ Hybrid for q≥4 — CONFIRMED (Sprints 041-042, 063, 065).** Clock coupling cos(2π(s_i-s_j)/q) ≠ Potts δ(s_i,s_j) for q≥4. Sprint 065 proved distinct universality classes via ν: hybrid ν≈0.83 (power-law, finite) vs clock ν→∞ (BKT). At q=5: c/x₁ 10.77 vs 9.43 (12%), c 1.27 vs 1.17 (8%), g_c 0.441 vs 0.52 (18%). At q=7: clock has NO gap crossing (BKT), hybrid has clear crossing. NOT FSS artifacts — qualitatively different transition types.
 
@@ -166,7 +166,7 @@ MI-CV classifies transition type: second-order (crossing), first-order (step), B
 
 **q=4 has logarithmic FSS corrections.** The excess (c/x₁ - 8)·N² grows as ~N², confirming sub-power-law (logarithmic) convergence. Consistent with marginal Ashkin-Teller point. Cannot determine if c/x₁(∞) = 8.0 or ~8.5 from n≤10.
 
-**Anomalous FSS for q≥5.** Δ₁·N INCREASES with N (sign-flipped correction vs q≤4). Means x₁ is underestimated at small sizes. Coincides with c>1 and novel CFT regime.
+**Anomalous FSS for q≥5 (Sprint 058, 066).** Δ₁·N INCREASES with N (sign-flipped correction vs q≤4). At q=10 (n=4,5,6): increases decelerate (+3.1%, +2.2%), consistent with convergence from below. The anomaly saturates at ~5.5% (n=4→6) for q≥7. NOT a first-order signal — gap minimum stays ~0.030 (size-independent). Coincides with c>1 and novel CFT regime.
 
 **x₁(q) best fit (Sprint 062a):** x₁ ≈ 0.206·q^(-0.449), RMS=0.010. Neither 1/ln(q) nor power of ln(q-1) fits well.
 

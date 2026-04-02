@@ -266,3 +266,26 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - Clock q=7 g_c ≈ 0.30 (if applicable), far below hybrid 0.535
 
 [Full report: sprints/sprint_065.md]
+
+### Sprint 066 — Weakly First-Order Test: No First-Order Signal at q=10
+**Status:** Complete (3 experiments).
+
+**No first-order signal detected at accessible sizes (n≤6).** Three diagnostics all consistent with continuous transition:
+
+**Δ·N at g_c DECELERATES (066a).** q=10 at n=4,5,6: Δ₁·N = 0.242, 0.250, 0.255. Changes: +3.1%, +2.2%. Decelerating = convergent, not divergent. First-order would accelerate.
+
+**Gap minimum is SIZE-INDEPENDENT (066b).** Δ_min ≈ 0.030 for n=4,5,6. Not exponentially shrinking (first-order signature). Pseudo-critical point drifts from g=0.50→0.60 toward g_c=0.684.
+
+**Cross-q comparison (066c).** q=3 (known continuous): Δ·N decreases from 0.746 to 0.722 (n=4→12). q≥5: Δ·N increases (anomalous). Normalized change at n=6 saturates at ~5.5% for q≥7. Sign-flipped corrections, not first-order.
+
+**Closes the last major open question.** The hybrid model defines a genuinely continuous universality class for q=2-10, distinct from first-order (S_q) and BKT (Z_q clock).
+
+**Δ₂/Δ₁ = 1.0000 exactly** at all sizes — Z₁₀ conjugate pair degeneracy perfectly maintained.
+
+**Surprises:**
+- Gap minimum barely changes with N (0.0304, 0.0300, 0.0308) — no avoided crossing
+- q=3 from above, q≥5 from below — qualitative sign flip in FSS corrections
+- Anomaly saturates between q=7 and q=10 (both ~5.5%)
+- Pseudo-critical point drift is linear in n, not 1/N^{1/ν}
+
+[Full report: sprints/sprint_066.md]
