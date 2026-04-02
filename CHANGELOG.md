@@ -269,3 +269,22 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - q=3 verification perfect: confirms code correctness
 
 [Full report: sprints/sprint_076.md]
+
+### Sprint 077 — S_q Potts at q=7,10: g_c Found, NO First-Order Signal at n≤8
+**Status:** Complete (3 experiments).
+
+**S_q Potts g_c(q=7) = 0.144 (077a).** From (4,6) gap×N crossing. Targeted n=8 test: gap×N=0.649, matches (4,6) crossing to 0.5%. Three sizes converge within 2.4% band. Previous "69% gap collapse" (Sprint 076c) was artifact of wrong g_c estimate.
+
+**Conformal tower at q=7 (077b).** S_q has 6-fold degenerate 1st excited (S₇ symmetry). Hybrid has 2-fold (Z₇ pairs). R_ε = 3.48 (S_q) vs 8.07 (hybrid) — 2.3x ratio. Completely different operator content.
+
+**NO first-order signal at q=5,7,10 up to n≤8 (077c).** Δ·N drift: S_q q=5 (-4.8%), q=7 (+1.3%), q=10 (+0.6%). All <5%. Hybrid similarly stable. S_q Δ·N ≈ 0.6 nearly q-independent; hybrid Δ·N drops with q (0.48→0.25).
+
+**S_q g_c(q=10) = 0.101** from (4,5) crossing. g_c ratio (hybrid/S_q) grows: 2.2 (q=5), 3.7 (q=7), 6.8 (q=10).
+
+**Surprises:**
+- S_q q=7 n=8 gap×N convergence BETTER than q=5 (1.3% vs 4.8% drift)
+- Complex CFT walking regime extends to n≥8 even at q=10
+- S_q Δ·N nearly q-independent (~0.6) while hybrid varies 2x across q=5-10
+- Sprint 076c "69% gap collapse" completely explained by wrong g_c
+
+[Full report: sprints/sprint_077.md]

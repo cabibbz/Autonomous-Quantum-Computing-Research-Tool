@@ -46,7 +46,22 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 - FSS corrections: S_q 10x larger (Δ·N drifts 4.8% vs 0.46% over n=4-8)
 - z_eff: S_q 1.071, hybrid 1.007 (both power-law at n≤8)
 
-**Surprise: S_q Potts at q=5 also looks CFT-like at n≤8.** Clean conformal tower, exact degeneracies, power-law gap scaling. First-order nature (if real) requires n >> 8 to manifest. The complex CFT (Gorbenko et al.) may describe S_q behavior at moderate sizes even if eventually first-order.
+**Surprise: S_q Potts looks CFT-like at n≤8 for ALL q=5,7,10 (Sprints 076-077).** Clean conformal towers, exact degeneracies, Δ·N stable to <5%. The "walking" correlation length ξ* exceeds n=8 even at q=10. First-order nature requires much larger systems. Complex CFT (Gorbenko et al.) describes S_q behavior at moderate sizes.
+
+**S_q Potts critical points (Sprint 076-077):**
+
+| q | g_c (S_q) | g_c (hybrid) | g_c ratio | S_q 1st degen | Hybrid 1st degen |
+|---|-----------|-------------|-----------|---------------|-----------------|
+| 3 | 0.333 | 0.333 | 1.00 | identical | identical |
+| 5 | 0.200 | 0.441 | 2.21 | 4-fold (S₅) | 2-fold (Z₅) |
+| 7 | 0.144 | 0.535 | 3.72 | 6-fold (S₇) | 2-fold (Z₇) |
+| 10 | 0.101 | 0.684 | 6.77 | (q-1)-fold | 2-fold |
+
+**S_q 1st excited degeneracy = q-1 exactly** (full S_q permutation merges all spin fields). Hybrid always has 2-fold (Z_q conjugate pairs). Sharpest discriminator between models.
+
+**R_ε (energy field) differs 2-3x between models.** At q=7: S_q R_ε=3.48, hybrid R_ε=8.07. Different operator content = different universality classes.
+
+**Δ·N drift comparison (Sprint 077c):** S_q Δ·N ≈ 0.6 nearly q-independent (q=5-10). Hybrid Δ·N decreases: 0.48 (q=5) → 0.36 (q=7) → 0.25 (q=10).
 
 **Genuinely novel (for our hybrid model):** g_c(q) formula, c·x₁ ≈ 0.112, systematic CFT data q=2-30, distinct universality class from both S_q Potts AND Z_q clock (Sprints 065, 076). A new universality class with continuous power-law transitions (finite ν) that is neither first-order nor BKT.
 
