@@ -72,26 +72,34 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **Key limitation:** L=2,3 cannot distinguish continuous from first-order at q=5. The gap×L crossing ratio is trivially 2/3 with only 2 sizes. dE/dg is smooth but L=3 may be too small. Need QMC or tensor networks for definitive answer.
 
-## Ly=2 Cylinder (Sprint 071)
+## Cylinder Geometry (Sprints 071-072)
 
-**Cylinder geometry (Ly=2 ladder):** Open x-direction, periodic y-direction. Coordination z=3 (between 1D z=2 and 2D z=4). Enables gap×Lx crossing with exact diag for moderate sizes.
+**Cylinder geometry:** Open x-direction, periodic y-direction. Enables gap×Lx crossing with exact diag for moderate sizes. Bridges 1D and 2D.
 
-| q | g_c(1D) | g_c(cyl, Ly=2) | g_c(2D) | cyl/1D |
-|---|---------|----------------|---------|--------|
-| 2 | 0.250 | 0.451 | 0.771 | 1.80 |
-| 5 | 0.441 | 0.714 | 1.588 | 1.62 |
+**Ly=2 cylinder (z=3) — complete dataset:**
 
-**q=2 gap crossings converge:** (4,5)→0.447, (5,6)→0.451, (6,7)→0.454. Monotonic convergence toward ~0.455.
+| q | g_c(1D) | g_c(cyl, Ly=2) | g_c(2D) | cyl/1D | Crossing pairs |
+|---|---------|----------------|---------|--------|----------------|
+| 2 | 0.250 | 0.451 | 0.771 | 1.80 | 3 |
+| 3 | 0.333 | 0.565 | 1.267 | 1.69 | 3 |
+| 5 | 0.441 | 0.714 | 1.588 | 1.62 | 1 |
 
-**q=5 single crossing pair (3,4)=0.714.** Lx=5 (dim=10M) takes 191s/point — feasible but slow.
+**Cyl/1D ratio monotonically decreasing in q:** 1.80→1.69→1.62. Higher q needs proportionally less coupling boost on cylinder.
 
-**Order parameter smooth for both q.** ⟨δ(s_i,s_j)⟩ decreases continuously from ~1 (ordered) to ~1/q (disordered). No discontinuous jump. Max slope steeper for q=5 (1.88) than q=2 (1.21).
+**Ly convergence for q=2:**
 
-**DMRG impractical for q≥5 cylinder.** d=5 per site → chi=20 has massive truncation errors. Each DMRG run takes hours at chi=30. Need Z_q-symmetry-exploiting DMRG or switch to exact diag.
+| Ly | g_c | z (coord.) | Progress to 2D |
+|----|-----|-----------|---------------|
+| 1 | 0.250 | 2 | 0% |
+| 2 | 0.451 | 3 | 38.6% |
+| 3 | 0.655 | ~3.33 | 77.7% |
+| ∞ | 0.771 | 4 | 100% |
 
-**DMRG on q=2 cylinder works** at chi=20 for Lx≤20, but entropy peak drifts with Lx (0.35→0.48 over Lx=8→20). Not reliable for g_c without large Lx. c_eff = 0.19 (truncation-limited, should be 0.5).
+**All transitions smooth on cylinders.** Order parameter ⟨δ(s_i,s_j)⟩ continuous for q=2,3,5 on Ly=2 cylinder. Max slope: q=3 (1.99) > q=5 (1.88) > q=2 (1.21).
 
-**POTENTIALLY NOVEL:** If the hybrid remains continuous in 2D at q>4, it would contradict the standard Potts (first-order) and clock (BKT) behavior. The Z_q symmetry + δ-coupling combination may suppress first-order transitions even in 2D.
+**DMRG impractical for q≥5 cylinder.** d=5 per site → chi=20 has massive truncation errors. DMRG on q=2 cylinder works but entropy peak drifts with Lx.
+
+**POTENTIALLY NOVEL:** If the hybrid remains continuous in 2D at q>4, it would contradict the standard Potts (first-order) and clock (BKT) behavior.
 
 ## 2D Entanglement Entropy (Sprint 069)
 

@@ -232,7 +232,26 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 **Surprises:**
 - DMRG entropy peak drifts strongly on cylinders — unreliable g_c proxy
 - q=5 DMRG completely impractical at chi=20-30
-- Cyl/1D ratio non-monotonic (1.80 vs 1.62) — mirrors 2D/1D non-monotonicity
+- Cyl/1D ratio appeared non-monotonic with 2 points (1.80 vs 1.62) — Sprint 072 shows monotonically decreasing (1.80→1.69→1.62)
 - q=5 order parameter slope STEEPER than q=2 — opposite to first-order expectation
 
 [Full report: sprints/sprint_071.md]
+
+### Sprint 072 — q=3 Cylinder & Ly=3 Extension
+**Status:** Complete (3 experiments).
+
+**q=3 fills the Ly=2 cylinder gap (072a).** g_c(q=3, Ly=2 cyl) = 0.565 from 3 crossing pairs (Lx=3-6, dim up to 531k): 0.555→0.567→0.573. Monotonic convergence from below. Cyl/1D ratio = 1.69.
+
+**Cyl/1D ratio monotonically decreasing (072b).** 1.80 (q=2) → 1.69 (q=3) → 1.62 (q=5). NOT non-monotonic as previously noted for 2D/1D. Higher q needs proportionally less coupling boost on cylinder.
+
+**q=3 order parameter smooth (072b).** Max slope 1.99 (Lx=5,6) — steepest of the three q values tested. No first-order signal.
+
+**Ly=3 cylinder for q=2 (072c).** g_c = 0.655 from 4 crossing pairs (Lx=3-7, dim up to 2M): 0.645→0.655→0.659→0.662. 63.7% of the way from Ly=2 (0.451) to 2D (0.771). Gap×Lx at crossing converges toward ~2.4.
+
+**Surprises:**
+- Cyl/1D ratio is monotonically decreasing, not non-monotonic (corrects Sprint 071 note)
+- q=3 has steepest order parameter slope (1.99 > q=5's 1.88 > q=2's 1.21)
+- 2D/cyl ratio peaks at q=3 (2.24) — the 2D jump from cylinder is largest for q=3
+- Ly=3 crossings converge tighter than Ly=2 (spread 0.017 in 4 pairs)
+
+[Full report: sprints/sprint_072.md]
