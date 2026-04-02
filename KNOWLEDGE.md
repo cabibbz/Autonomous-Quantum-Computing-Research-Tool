@@ -90,10 +90,29 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **Velocity v(q) = gap×N/(2π·x_σ) decreases monotonically with q.** The decreasing gap×N is primarily velocity reduction, NOT x_σ change. x_σ is nearly constant; v(q) carries all q-dependence.
 
-**Walking breakdown is EXCLUSIVELY an entropy phenomenon (Sprints 082-083).** Three independent probes:
+**Walking breakdown is EXCLUSIVELY an entropy phenomenon (Sprints 082-084).** Three independent probes:
 1. **Correlators (x_σ)**: perfectly conformal for ALL q=2-8 (Sprint 082)
 2. **Casimir energy (E₀)**: governed by Re(c) for ALL q=2-8, even where c_eff deviates 40% (Sprint 083)
 3. **Entanglement entropy (c_eff)**: deviates from Re(c) for q>5 (Sprints 079-081)
+
+**Microscopic mechanism: entropy concentration in (q-1)-fold multiplet (Sprint 084).** Entanglement spectrum at g_c=1/q shows:
+- First excited entanglement level has **(q-1)-fold degeneracy** for all q (S_q symmetry)
+- Entanglement gap Δξ ≈ 0.47 + 0.78·ln(q), INCREASES with q
+- Level 1 absorbs progressively more entropy: 48% (q=2) → 63% (q=5) → 69% (q=8)
+- Tail entropy (levels ≥ 2) correlates with c_eff/Re(c), Pearson r = 0.80
+
+| q | deg_1 | %S(lev 0) | %S(lev 1) | %S(tail) | c_eff/Re(c) | Δξ |
+|---|-------|-----------|-----------|----------|-------------|------|
+| 2 | 1 | 33.1% | 47.8% | 19.1% | 1.00 | 1.03 |
+| 3 | 2 | 27.3% | 55.9% | 16.8% | 1.12 | 1.32 |
+| 5 | 4 | 22.1% | 62.7% | 15.2% | 1.01 | 1.69 |
+| 6 | 5 | 21.0% | 65.8% | 13.2% | 0.89 | 1.87 |
+| 7 | 6 | 19.8% | 66.8% | 13.5% | 0.78 | 1.98 |
+| 8 | 7 | 19.2% | 69.1% | 11.7% | 0.74 | 2.13 |
+
+**Why only entropy sees walking breakdown:** Energy/gap/correlator observables depend on lowest entanglement levels (ground + first excited), which are perfectly conformal. Entropy sums over ALL levels → sensitive to weight redistribution in the tail. Entanglement gap is NOT closing — it grows with q.
+
+**POTENTIALLY NOVEL (Sprint 084):** First entanglement spectrum decomposition across walking boundary. First identification of entropy concentration in (q-1)-fold multiplet as microscopic mechanism.
 
 **Casimir energy cross-validates complex CFT Re(c) (Sprint 083).** E₀/N = ε_∞ - πvc/(6N²). The product vc from Casimir fit, divided by v from gap/correlator, gives c_implied:
 

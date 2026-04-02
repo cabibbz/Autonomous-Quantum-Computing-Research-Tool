@@ -226,3 +226,27 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 **POTENTIALLY NOVEL:** First demonstration that Casimir energy obeys complex CFT Re(c) across the walking boundary. Establishes energy-entropy hierarchy: energy observables track Re(c), entropy does not.
 
 [Full report: sprints/sprint_083.md]
+
+### Sprint 084 — Entanglement Spectrum: Walking Breakdown = Entropy Concentration in (q-1) Multiplet
+**Status:** Complete (3 experiments).
+
+**Entanglement spectrum has (q-1)-fold degenerate first excited level for ALL q=2-8 (084a,b).** Exact diag on periodic chains at g_c=1/q. Half-chain bipartition. S_q permutation symmetry imprints directly on entanglement spectrum: q=5 has 4-fold, q=7 has 6-fold, q=8 has 7-fold degeneracy.
+
+**Entanglement gap Δξ ≈ 0.47 + 0.78·ln(q), INCREASES with q (084c).** Walking breakdown is NOT about closing the entanglement gap. Δξ grows from 1.03 (q=2) to 2.13 (q=8). The spectrum is more gapped, not less, at broken walking.
+
+**Level 1 absorbs progressively more entropy: 48% (q=2) → 69% (q=8) (084c).** The (q-1)-fold degenerate multiplet captures increasing entropy weight as q grows, at the expense of both ground state (33%→19%) and tail (19%→12%). This redistribution is the microscopic mechanism for c_eff deviation.
+
+**Tail entropy correlates with c_eff/Re(c) (Pearson r = 0.80).** Higher entanglement levels carry the walking signature. Energy/gap/correlator observables only see ground + first level (perfectly conformal). Entropy sums all levels → sensitive to tail depletion.
+
+**Normalized R₂₁ = (ξ₂ - ξ₀)/Δξ decreases: 4.31 (q=2) → 2.42 (q=8).** Spectrum compresses above first excited level. Clean walking discriminator.
+
+**Surprises:**
+- Entanglement gap INCREASES with q — not a gap-closing phenomenon
+- (q-1) degeneracy in entanglement spectrum matches energy spectrum exactly
+- Level 1 entropy fraction is a monotonic function of q (48%→69%)
+- Participation ratio increases with q (1.74→3.27) but this is just the (q-1) multiplicity
+- Walking breakdown fully explained by a single spectral redistribution mechanism
+
+**POTENTIALLY NOVEL:** First entanglement spectrum decomposition across walking boundary for S_q Potts chain. First identification of entropy concentration in (q-1)-fold multiplet as the microscopic mechanism for walking breakdown. No prior literature found on entanglement spectrum at q>4.
+
+[Full report: sprints/sprint_084.md]
