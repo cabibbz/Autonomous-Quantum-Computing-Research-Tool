@@ -254,3 +254,23 @@ Full details for sprints 076-079 are in sprints/sprint_NNN.md.
 **POTENTIALLY NOVEL:** First operator decomposition of H_E for S_q Potts using generalized clock-shift basis. First identification of mixed (XZ-type) operators as dominant BW correction. First demonstration that walking boundary amplifies but doesn't change the type of BW corrections.
 
 [Full report: sprints/sprint_092.md]
+
+### Sprint 093 — BW Entanglement Temperature Profile: Bulk-Concentrated Residual
+**Status:** Complete (3 experiments).
+
+**Position-dependent BW coefficients for q=2,3,5 (093a).** Projected H_E onto local Potts coupling and field operators at each bond/site within A. BW sin-envelope shape confirmed: R² > 0.99 for bond coefficients at nA≥4. The field-to-bond coefficient ratio is NOT g_c — field terms are over-weighted in H_E relative to the physical Hamiltonian (0.95 vs 0.50 at q=2, 0.23 vs 0.20 at q=5).
+
+**Global BW Frobenius R² across q=2-7 (093b).** 1-param fit H_E ≈ α·H_BW + c·I. At nA=4: R² = 0.9995 (q=2), 0.9992 (q=3), 0.9984 (q=4), 0.9655 (q=5). At nA=3: smooth monotonic degradation from 0.9997 (q=2) to 0.9986 (q=7). **Walking amplification: 1-R² jumps 34× from nA=3→4 at q=5, vs 1.8× at q=2.** BW scale α increases with q: 6.5 (q=2) → 10.3 (q=7).
+
+**BW residual spatial profile (093c).** Per-site Frobenius decomposition of H_res = H_E - α·H_BW. Boundary enrichment (boundary fraction / expected if uniform): q=2 nA=4: 0.42× (strongly bulk-concentrated), q=3: 0.47×, **q=5: 0.98× (uniform)**. Walking makes BW corrections uniform in space; real CFT concentrates corrections in the bulk.
+
+**Surprises:**
+- BW envelope shape works even where BW accuracy fails (R² drops but profile is correct)
+- BW residual is BULK-concentrated, not boundary-concentrated (counterintuitive)
+- Walking makes residual spatially uniform — cleanest spatial walking signature found
+- 34× walking amplification from nA=3 to nA=4 at q=5 vs 1.8× at q=2
+- BW scale α increases monotonically with q
+
+**POTENTIALLY NOVEL:** First BW entanglement temperature profile measurement for S_q Potts. First demonstration that BW residual concentrates in the bulk for real CFT. First spatial signature distinguishing real CFT from walking in the entanglement Hamiltonian.
+
+[Full report: sprints/sprint_093.md]

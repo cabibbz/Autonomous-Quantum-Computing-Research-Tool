@@ -146,6 +146,13 @@ Non-Potts fraction grows exponentially ~exp(1.6·q). **Biggest jump at q=3→4 (
 - **q=2 vs q=3 at nA=4: same operator types, similar weight** (0.008% both). The 11.7× jump at q=3→4 (Sprint 091) is an AMPLITUDE effect, not new operator types.
 - **For q=2 (Pauli basis), non-BW grows from 0.005% (nA=3) to 6.3% (nA=6).** At large nA: 3-body ZXZ/ZZZ dominate, then 4-body ZXXZ appears. Body order and range of dominant corrections increase with nA.
 
+**BW entanglement temperature profile (Sprint 093).** BW predicts H_E = Σ β(x) h_x with sin-envelope β(x). Verified:
+- **BW envelope shape is correct** for both Potts coupling and field operators (R² > 0.99 at nA≥4).
+- **BW Frobenius R² degrades with q.** nA=4: q=2 R²=0.9995, q=3 0.9992, q=4 0.9984, q=5 0.965. nA=3: monotonic from 0.9997 (q=2) to 0.9986 (q=7).
+- **Walking amplifies BW deviation with subsystem size.** 1-R² amplification from nA=3→4: 1.8× (q=2), 1.5× (q=3), 2.0× (q=4), **34× (q=5)**. The 34× at q=5 vs 1.8× at q=2 is the clearest walking amplification measured.
+- **BW residual is BULK-concentrated for real CFT, UNIFORM for walking.** Boundary enrichment (fraction at boundaries / expected if uniform): q=2 nA=4: 0.42×, q=3: 0.47×, q=5: 0.98×. Real CFT's BW corrections concentrate in the bulk of A; walking generates corrections uniformly.
+- **BW scale α increases with q:** 6.5 (q=2) → 10.3 (q=7). Higher local dimension → higher entanglement temperature.
+
 **Rényi entropy decomposition of walking (Sprints 085-086).** Size-pair extraction c_α = 6·ΔS/((1+1/α)·ln(N₂/N₁)) on periodic BC. Optimal α shifts gradually with q:
 
 | q | pair | c₁/Rec | c₂/Rec | c₃/Rec | c_∞/Rec | best α |
