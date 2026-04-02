@@ -52,6 +52,8 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **In future sprints: call this "Potts-clock hybrid" or "Z_q Potts chain", not "quantum Potts."**
 
+**2D status (Sprints 068-071):** L=2 is out of scaling regime for all q. Full 2D (torus) exhausted at q=5: L=3 only usable size. Sprint 071 extended to Ly=2 cylinder (ladder) geometry: g_c(cyl, q=2)=0.451, g_c(cyl, q=5)=0.714. Order parameter smooth for both — no first-order signal on cylinder either. DMRG impractical for q≥5 cylinder (d=5 per site → chi≥50 needed, too slow). Exact diag gap×Lx crossing on cylinder reliable for Lx=3-7 (q=2) and Lx=3-4 (q=5).
+
 ## 2D Extension (Sprint 068)
 
 **First study of the hybrid model on 2D square lattices.** H = -Σ_{<ij>} δ(s_i,s_j) - g Σ_i (X+X†) on periodic L×L torus. Method: gap×L crossing (z=1 at Lorentz-invariant critical point).
@@ -69,6 +71,25 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 **L=2 (2×2) is out of scaling regime for q=2.** Gap×L = 4.19 at the L=3,4 g_c, far from converged 2.36. L≥3 needed for 2D Ising. This FSS correction likely worsens for larger q.
 
 **Key limitation:** L=2,3 cannot distinguish continuous from first-order at q=5. The gap×L crossing ratio is trivially 2/3 with only 2 sizes. dE/dg is smooth but L=3 may be too small. Need QMC or tensor networks for definitive answer.
+
+## Ly=2 Cylinder (Sprint 071)
+
+**Cylinder geometry (Ly=2 ladder):** Open x-direction, periodic y-direction. Coordination z=3 (between 1D z=2 and 2D z=4). Enables gap×Lx crossing with exact diag for moderate sizes.
+
+| q | g_c(1D) | g_c(cyl, Ly=2) | g_c(2D) | cyl/1D |
+|---|---------|----------------|---------|--------|
+| 2 | 0.250 | 0.451 | 0.771 | 1.80 |
+| 5 | 0.441 | 0.714 | 1.588 | 1.62 |
+
+**q=2 gap crossings converge:** (4,5)→0.447, (5,6)→0.451, (6,7)→0.454. Monotonic convergence toward ~0.455.
+
+**q=5 single crossing pair (3,4)=0.714.** Lx=5 (dim=10M) takes 191s/point — feasible but slow.
+
+**Order parameter smooth for both q.** ⟨δ(s_i,s_j)⟩ decreases continuously from ~1 (ordered) to ~1/q (disordered). No discontinuous jump. Max slope steeper for q=5 (1.88) than q=2 (1.21).
+
+**DMRG impractical for q≥5 cylinder.** d=5 per site → chi=20 has massive truncation errors. Each DMRG run takes hours at chi=30. Need Z_q-symmetry-exploiting DMRG or switch to exact diag.
+
+**DMRG on q=2 cylinder works** at chi=20 for Lx≤20, but entropy peak drifts with Lx (0.35→0.48 over Lx=8→20). Not reliable for g_c without large Lx. c_eff = 0.19 (truncation-limited, should be 0.5).
 
 **POTENTIALLY NOVEL:** If the hybrid remains continuous in 2D at q>4, it would contradict the standard Potts (first-order) and clock (BKT) behavior. The Z_q symmetry + δ-coupling combination may suppress first-order transitions even in 2D.
 

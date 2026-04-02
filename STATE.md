@@ -1,53 +1,54 @@
 # Current State — Rewrite this completely each sprint
 
 ## Last Sprint
-Sprint 070 — 2D energy derivatives and fidelity susceptibility. q=2 confirmed continuous (d²E~L^0.16, χ_F~L^0.94). q=5 INCONCLUSIVE — only L=2,3 accessible, L=2 out of scaling. No latent heat detected. Need larger lattices.
+Sprint 071 — Ly=2 cylinder geometry for q=2,5. g_c(cyl) measured: q=2 = 0.451, q=5 = 0.714. No first-order signal for q=5 (smooth order parameter, convergent gap crossing). DMRG impractical for q≥5 cylinder; exact diag gap×Lx crossing is reliable.
 
 ## Active Research Thread
-**2D extension of Potts-clock hybrid — transition nature unknown at q=5.**
+**2D extension of Potts-clock hybrid — still inconclusive for full 2D at q=5.**
 
-2D critical points (square lattice, periodic BC):
+Cylinder (Ly=2 ladder) geometry results:
 
-| q | g_c (1D) | g_c (2D) | 2D/1D | Sizes | gap×L |
-|---|----------|----------|-------|-------|-------|
-| 2 | 0.250 | 0.771 | 3.08 | L=2,3,4 | 2.363 |
-| 3 | 0.333 | 1.267 | 3.80 | L=2,3 | 6.10 |
-| 5 | 0.441 | 1.588 | 3.60 | L=2,3 | 3.50 |
+| q | g_c(1D) | g_c(cyl) | g_c(2D) | cyl/1D | Lx pairs |
+|---|---------|----------|---------|--------|----------|
+| 2 | 0.250 | 0.451 | 0.771 | 1.80 | (4,5),(5,6),(6,7) |
+| 5 | 0.441 | 0.714 | 1.588 | 1.62 | (3,4) |
 
-Sprint 070 diagnostics at q=2 (L=3→4, validation):
-- d²E/dg² peak scaling: L^0.16 (consistent with α=0, continuous)
-- χ_F/N peak scaling: L^0.94 (consistent with continuous ν=1)
-- dE/dg smooth across g_c, no latent heat
+Full 2D (torus) results from Sprint 068:
 
-Sprint 070 at q=5 (L=2,3 only):
-- L=2 out of scaling (10-50x off) — no valid L=2→3 scaling
-- dE/dg smooth at g_c (no latent heat signal)
-- F_min = 0.985 at L=3 (lower than q=2,3, but not diagnostic)
-- d²E/dg² peak smaller at q=5 than q=2,3
+| q | g_c(2D) | Sizes | gap×L | Verdict |
+|---|---------|-------|-------|---------|
+| 2 | 0.771 | L=2,3,4 | 2.363 | Continuous confirmed |
+| 3 | 1.267 | L=2,3 | 6.10 | Consistent with continuous |
+| 5 | 1.588 | L=2,3 | 3.50 | Inconclusive (2 sizes only) |
 
-**Fundamental bottleneck:** q=5 L=4 has dim = 5^16 ≈ 10^11 — infeasible.
+Sprint 071 cylinder findings:
+- Order parameter ⟨δ(s_i,s_j)⟩ smooth for q=5 on cylinder — no first-order signal
+- Gap×Lx crossing exists and converges for q=2 (3 pairs)
+- q=5 has single crossing pair (Lx=3,4) — needs more sizes
+- DMRG impractical for q≥5 cylinder (d=5 per site too large for modest chi)
 
 ## QPU Budget
 - Used: 20s of 600s (Sprint 025: ibm_kingston)
 - Remaining: 580s
 
 ## Top 3 Next Experiments
-1. **Ly=2 cylinder DMRG** — 2D hybrid on cylinder geometry. Ly=2 with varying Lx=4-20. TeNPy can handle d=q² per rung site (d=25 for q=5). Extract entropy scaling, energy convergence, correlation length. Bypasses L_max=3 limitation.
-2. **Hardware validation** — 580s QPU remaining. Best candidate: 1D q=2 conformal tower (n=6-8 physical qubits). Clear numerical prediction to test.
-3. **2D order parameter** — Compute ⟨δ(s_i,s_j)⟩ across the transition at q=5 L=3. First-order shows discontinuous jump.
+1. **q=3 cylinder comparison** — q=3 is exactly solvable (like q=2). Measure g_c(cyl, q=3) from gap crossings Lx=3-6 (dim up to 3^12=531k). Compare cyl/1D ratio to q=2,5. Continuous behavior would further support universality of the hybrid's continuous transition.
+2. **Hardware validation** — 580s QPU remaining. Best candidate: 1D q=2 conformal tower (n=6-8 qubits). Clearest numerical prediction to test.
+3. **Cylinder Ly=3** — For q=2 only (dim=2^{3·Lx}=8^Lx). Lx=4: dim=4096, Lx=5: dim=32k. Compare g_c convergence as Ly→∞ toward 2D g_c=0.771.
 
 ## What's Been Ruled Out
 - Floating phase in 1D hybrid model (Sprint 067)
 - Weakly first-order in 1D at q=10 (Sprint 066)
 - Hybrid = clock universality (Sprint 065+067)
 - c·x₁ = 1/9 exact (Sprint 063c)
-- L=2 in scaling regime for 2D (Sprints 068-070)
-- Entropy peak at g_c in 2D at small L (Sprint 069)
-- Eigenstate-sum χ_F at dim > 5000 (truncation too severe, Sprint 070b)
+- L=2 in scaling regime for 2D torus (Sprints 068-070)
+- DMRG for q≥5 cylinders at chi<50 (Sprint 071b — too slow/inaccurate)
+- Entropy peak as g_c proxy on finite-width cylinders (Sprint 071a — drifts with Lx)
+- First-order transition on Ly=2 cylinder for q=5 (Sprint 071c — smooth order parameter)
 
 ## Key Tools Available
-- 2D exact diag: L×L up to ~10 sites total (q=5 L=3 in 17-70s/pt, q=2 L=4 in 1-4s/pt)
+- 2D torus exact diag: L×L up to ~10 sites total
+- Cylinder exact diag: Ly=2, Lx up to 4-5 for q=5 (dim≤10M)
 - 1D exact diag CPU: n≤8 for q≤5. GPU extends to n≤10.
-- DMRG: q≤15 at n≤8 (chi=30), q≤5 at n≤24
+- DMRG: q≤5 1D chains at n≤24. q=2 cylinder at Lx≤20. q≥5 cylinder IMPRACTICAL.
 - IBM QPU: 580s remaining
-- results.db: all key measurements from sprints 50-70
