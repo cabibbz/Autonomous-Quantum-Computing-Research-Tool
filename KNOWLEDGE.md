@@ -96,7 +96,7 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 | 4 | 0.688 | 84.0% |
 | ∞ | 0.771 | 100% |
 
-**Ly convergence for q=3 (to Ly=3):**
+**Ly convergence for q=3 (to Ly=3, Ly=4 infeasible):**
 
 | Ly | g_c | Progress to 2D |
 |----|-----|---------------|
@@ -105,7 +105,20 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 | 3 | 0.797 | 49.7% |
 | ∞ | 1.267 | 100% |
 
-**Convergence is q-dependent (Sprint 073).** Exponential fit g_c(Ly) = g_c(2D) - A·exp(-Ly/B): q=2 has B=1.60, q=3 has B=3.03. q=3 converges 1.9x slower. Larger q has both a bigger 2D/1D gap (3.80 vs 3.08) AND slower approach. Convergence is NOT universal in Ly across different q.
+**Ly convergence for q=5 (to Ly=3, Sprint 074):**
+
+| Ly | g_c | Progress to 2D |
+|----|-----|---------------|
+| 1 | 0.441 | 0% |
+| 2 | 0.714 | 23.8% |
+| 3 | 0.974 | 46.5% |
+| ∞ | 1.588 | 100% |
+
+Note: q=5 Ly=3 from (Lx=2,3) crossing only — Lx=2 has known FSS issues. Lower confidence than q=2,3 values.
+
+**Convergence is q-dependent, saturating for q≥3 (Sprints 073-074).** Exponential fit decay lengths B: q=2 (1.19), q=3 (2.49), q=5 (2.83). The big slowdown is q=2→q=3 (B doubles). q=3→q=5 shows only marginal additional slowdown. At Ly=3: q=2 at 77.7%, q=3 at 49.7%, q=5 at 46.5% — the latter two nearly identical. Correlation(2D/1D ratio, B) = 0.89.
+
+**Computational limits (Sprint 074a):** q=3 Ly=4 cylinder Lx=4 has dim=43M, 838s/pt — infeasible. q=5 Ly=4 even worse (dim=244M). Cylinder convergence with exact diag is capped at Ly=3 for q≥3 and Ly=4 for q=2.
 
 **All transitions smooth on cylinders.** Order parameter continuous for q=2,3,5 on Ly=2 cylinder. Max slope: q=3 (1.99) > q=5 (1.88) > q=2 (1.21).
 

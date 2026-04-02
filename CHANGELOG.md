@@ -272,3 +272,21 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - 2D/1D g_c ratio correlates with convergence slowness: bigger gap = slower approach
 
 [Full report: sprints/sprint_073.md]
+
+### Sprint 074 — Cylinder Limits: q=3 Ly=4 Infeasible, q=5 Ly=3 g_c=0.974, Convergence Saturates
+**Status:** Complete (3 experiments).
+
+**q=3 Ly=4 cylinder INFEASIBLE (074a).** Lx=4 (dim=43M) takes 838s per g-point — no scan possible. Only Lx=3 available (no crossing). Exponential fit prediction g_c ≈ 0.917 cannot be tested.
+
+**q=5 Ly=3 cylinder (074b).** g_c = 0.974 from (Lx=2, Lx=3) crossing. 46.5% to 2D. Lx=4 (dim=244M) infeasible. Caveat: Lx=2 known to be out of scaling regime.
+
+**Convergence saturates for q≥3 (074c).** At Ly=3: q=2 at 77.7%, q=3 at 49.7%, q=5 at 46.5%. The big slowdown is q=2→q=3 (B: 1.19→2.49). q=3→q=5 is marginal (B: 2.49→2.83). q=3 Ly increments exactly constant (0.232) — possibly linear, not exponential.
+
+**Surprises:**
+- q=3 Ly=4 hits exact diag wall at dim=43M (838s/pt)
+- q=3 and q=5 converge at nearly identical rates (~47-50% at Ly=3)
+- Convergence slowdown saturates — q≥3 may all approach 2D at similar Ly
+- q=3 increments exactly 0.232 for both Ly=1→2 and Ly=2→3 (linear!)
+- Cyl/1D ratio decreasing at both Ly=2 AND Ly=3 — universal trend
+
+[Full report: sprints/sprint_074.md]
