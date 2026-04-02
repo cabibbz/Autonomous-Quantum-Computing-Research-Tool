@@ -30,7 +30,13 @@ Dimensions: 2^{4·Lx} = 16^Lx. Lx=3: 4096, Lx=4: 65536, Lx=5: 1M, Lx=6: 16M.
 Target: g_c(q=2, Ly=4) and Ly convergence rate.
 Expected: ~85-90% progress toward 2D g_c=0.771.
 
-**Results:** [pending]
+**Results:**
+- Lx=6 (dim=16.8M): 268s/pt — infeasible. Lx=3,4,5 scanned.
+- Two crossing pairs: (3,4)=0.683, (4,5)=0.693. Mean **g_c = 0.688**.
+- gap×Lx at crossings: 2.276 (3,4), 2.444 (4,5) — converging toward ~2.4 (consistent with Ly=3 value)
+- Ly convergence for q=2: Ly=1 (0%), Ly=2 (38.6%), Ly=3 (77.7%), **Ly=4 (84.0%)**, 2D (100%)
+- Exponential fit: g_c(Ly) = 0.771 - 1.678·exp(-Ly/1.20). Predicts g_c(Ly=5) = 0.745.
+- **Convergence decelerating**: Ly=2→3 jump was +0.204, Ly=3→4 jump only +0.033.
 
 ### 073c — Cross-q Ly Convergence Analysis
 
