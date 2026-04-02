@@ -255,3 +255,20 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - Ly=3 crossings converge tighter than Ly=2 (spread 0.017 in 4 pairs)
 
 [Full report: sprints/sprint_072.md]
+
+### Sprint 073 — Ly Convergence: q=3 Ly=3, q=2 Ly=4, Cross-q Analysis
+**Status:** Complete (3 experiments).
+
+**q=3 Ly=3 cylinder (073a).** g_c = 0.797 from single crossing pair (Lx=3,4). Only 49.7% of the way to 2D (vs q=2's 77.7% at Ly=3). Lx=5 (dim=14.3M) at 251s/pt — infeasible for full scan.
+
+**q=2 Ly=4 cylinder (073b).** g_c = 0.688 from 2 crossing pairs: (3,4)=0.683, (4,5)=0.693. 84.0% to 2D. Convergence decelerating: Ly=3→4 jump (+0.033) is 6x smaller than Ly=2→3 (+0.204). Exponential fit predicts Ly=5: g_c=0.745.
+
+**Cross-q convergence analysis (073c).** q=3 converges to 2D **1.9x SLOWER** than q=2. Exponential decay lengths: B(q=2)=1.60, B(q=3)=3.03. q=3 has both larger 2D/1D ratio (3.80 vs 3.08) AND slower exponential approach. Ly convergence is NOT universal across q — different models require different cylinder widths to approximate 2D behavior.
+
+**Surprises:**
+- q=3 at Ly=3 only halfway to 2D — much slower than q=2
+- q=2 Ly=3→4 jump surprisingly small (+0.033) — near saturation
+- q=2 convergence ratio non-monotonic (0.61, 0.36, 0.72) — not pure exponential
+- 2D/1D g_c ratio correlates with convergence slowness: bigger gap = slower approach
+
+[Full report: sprints/sprint_073.md]

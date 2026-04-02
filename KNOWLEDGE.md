@@ -72,7 +72,7 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **Key limitation:** L=2,3 cannot distinguish continuous from first-order at q=5. The gap×L crossing ratio is trivially 2/3 with only 2 sizes. dE/dg is smooth but L=3 may be too small. Need QMC or tensor networks for definitive answer.
 
-## Cylinder Geometry (Sprints 071-072)
+## Cylinder Geometry (Sprints 071-073)
 
 **Cylinder geometry:** Open x-direction, periodic y-direction. Enables gap×Lx crossing with exact diag for moderate sizes. Bridges 1D and 2D.
 
@@ -84,22 +84,34 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 | 3 | 0.333 | 0.565 | 1.267 | 1.69 | 3 |
 | 5 | 0.441 | 0.714 | 1.588 | 1.62 | 1 |
 
-**Cyl/1D ratio monotonically decreasing in q:** 1.80→1.69→1.62. Higher q needs proportionally less coupling boost on cylinder.
+**Cyl/1D ratio monotonically decreasing in q:** 1.80→1.69→1.62.
 
-**Ly convergence for q=2:**
+**Ly convergence for q=2 (complete to Ly=4):**
 
-| Ly | g_c | z (coord.) | Progress to 2D |
-|----|-----|-----------|---------------|
-| 1 | 0.250 | 2 | 0% |
-| 2 | 0.451 | 3 | 38.6% |
-| 3 | 0.655 | ~3.33 | 77.7% |
-| ∞ | 0.771 | 4 | 100% |
+| Ly | g_c | Progress to 2D |
+|----|-----|---------------|
+| 1 | 0.250 | 0% |
+| 2 | 0.451 | 38.6% |
+| 3 | 0.655 | 77.7% |
+| 4 | 0.688 | 84.0% |
+| ∞ | 0.771 | 100% |
 
-**All transitions smooth on cylinders.** Order parameter ⟨δ(s_i,s_j)⟩ continuous for q=2,3,5 on Ly=2 cylinder. Max slope: q=3 (1.99) > q=5 (1.88) > q=2 (1.21).
+**Ly convergence for q=3 (to Ly=3):**
 
-**DMRG impractical for q≥5 cylinder.** d=5 per site → chi=20 has massive truncation errors. DMRG on q=2 cylinder works but entropy peak drifts with Lx.
+| Ly | g_c | Progress to 2D |
+|----|-----|---------------|
+| 1 | 0.333 | 0% |
+| 2 | 0.565 | 24.8% |
+| 3 | 0.797 | 49.7% |
+| ∞ | 1.267 | 100% |
 
-**POTENTIALLY NOVEL:** If the hybrid remains continuous in 2D at q>4, it would contradict the standard Potts (first-order) and clock (BKT) behavior.
+**Convergence is q-dependent (Sprint 073).** Exponential fit g_c(Ly) = g_c(2D) - A·exp(-Ly/B): q=2 has B=1.60, q=3 has B=3.03. q=3 converges 1.9x slower. Larger q has both a bigger 2D/1D gap (3.80 vs 3.08) AND slower approach. Convergence is NOT universal in Ly across different q.
+
+**All transitions smooth on cylinders.** Order parameter continuous for q=2,3,5 on Ly=2 cylinder. Max slope: q=3 (1.99) > q=5 (1.88) > q=2 (1.21).
+
+**DMRG impractical for q≥5 cylinder.** d=5 per site → chi=20 has massive truncation errors.
+
+**POTENTIALLY NOVEL:** If the hybrid remains continuous in 2D at q>4, it would contradict the standard Potts (first-order) and clock (BKT) behavior. The q-dependent convergence rate itself may be a novel characterization of the 1D→2D crossover.
 
 ## 2D Entanglement Entropy (Sprint 069)
 

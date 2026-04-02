@@ -13,6 +13,9 @@ You don't remember between sessions. Your memory lives in files:
 - **results.db** — SQLite database of key measurements. Query with `from db_utils import record, query`. After each experiment, record key quantities (c, x₁, g_c, ν, gaps, etc.) to the DB. To look up prior results: `query(quantity='c', q=5)` or `query(model='clock')`. This is faster and less error-prone than grepping KNOWLEDGE.md for numbers.
 - **sprints/** — individual sprint reports (one markdown file per sprint). The permanent archive.
 - **exp_NNN*.py** — standalone experiment scripts. One per experiment, never batched.
+- **gpu_utils.py** — Drop-in GPU eigensolver. **USE THIS** in every experiment script:
+  `from gpu_utils import eigsh` instead of `from scipy.sparse.linalg import eigsh`.
+  Same API, automatic GPU when dim > 50k, 14x speedup at q=5 n=8. Enables q=5 n=10 (10M dim, 19s).
 
 Failed approaches are critical to log. Without them you'll waste sprints repeating dead ends.
 
@@ -57,7 +60,7 @@ Failed approaches are critical to log. Without them you'll waste sprints repeati
 
 ## Hard Resource Limits
 
-1. **Exact diag limits** — CPU: q^n ≤ ~500k (q=5 n=8, q=10 n=6). **GPU: q^n ≤ ~10M** (q=5 n=10, q=7 n=8). Use DMRG (TeNPy) beyond these limits.
+1. **Exact diag limits** — CPU: q^n ≤ ~500k (q=5 n=8, q=10 n=6). GPU via `gpu_utils.eigsh`: q^n ≤ ~10M (q=5 n=10, q=7 n=8). Use DMRG beyond these limits.
 2. **Max 300 seconds** per bash command — design experiments to fit
 3. **Separate script per experiment** — never batch experiments in one script
 4. **Save results immediately** after each experiment — write JSON AND call `record()` from `db_utils.py` for key quantities before doing anything else
@@ -77,7 +80,7 @@ Each sprint:
 2. Think. Look at what surprised you last time. Consider adjacent fields.
 3. Pick ONE idea to test this sprint
 4. Write the sprint report header FIRST (update with results as they come)
-5. Implement each experiment as a **small, standalone script** (<60s runtime)
+5. Implement each experiment as a **small, standalone script** (<60s runtime). Use `from gpu_utils import eigsh` (not scipy) — same API, auto-GPU for large matrices.
 6. Run experiment, save results to JSON immediately, append findings to sprint report
 7. Git commit and push after each experiment completes
 8. If hardware is needed: check QPU budget in STATE.md first

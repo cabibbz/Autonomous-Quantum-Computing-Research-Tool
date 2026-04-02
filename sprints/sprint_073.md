@@ -1,7 +1,7 @@
 # Sprint 073 — Cylinder Ly Convergence: q=3 Ly=3 & q=2 Ly=4
 
 **Date:** 2026-04-02
-**Status:** In progress
+**Status:** Complete
 
 ## Motivation
 
@@ -43,4 +43,28 @@ Expected: ~85-90% progress toward 2D g_c=0.771.
 Compare convergence rates for q=2 and q=3 as function of Ly.
 Does q=3 approach 2D faster or slower?
 
-**Results:** [pending]
+**Results:**
+- **q=3 converges 1.9x SLOWER than q=2** to 2D. Exponential decay length: B(q=3)=3.03 vs B(q=2)=1.60.
+- q=3 at Ly=3: 49.7% of way to 2D. q=2 at Ly=3: 77.7%. At same Ly, q=3 is ~28% behind.
+- q=3 has larger 2D/1D g_c ratio (3.80 vs 3.08) — more ground to cover AND slower convergence.
+- Convergence ratio (deficit reduction per Ly step): q=2 irregular (0.61, 0.36, 0.72), q=3 steady (~0.70).
+- Free g_c(2D) fit for q=3 from 3 Ly points is underdetermined (only 3 data points for 3 parameters).
+- Exponential fit with known g_c(2D)=1.267 predicts q=3 reaches 80% at Ly≈5 (vs q=2 at Ly≈3.5).
+
+## Key Findings
+
+1. **q-dependent Ly convergence rate.** Larger q converges more slowly to 2D. The 1D→2D crossover requires more circumference for higher-q models. Decay length B ∝ q^α with α ≈ 1.6 (from 2 points).
+
+2. **q=2 Ly=4: 84% to 2D.** Convergence decelerating as expected for exponential approach. The Ly=3→4 jump (+0.033) is 6x smaller than Ly=2→3 (+0.204). Gap×Lx at crossing converging toward ~2.4.
+
+3. **q=3 needs larger cylinders.** At Ly=3, q=3 has only 1 crossing pair (Lx=3,4) due to dim=27^Lx scaling. Ly=4 would need 81^Lx: Lx=3 (531k), Lx=4 (43M) — borderline GPU feasible.
+
+4. **Convergence is NOT universal in Ly.** Different q values have qualitatively different Ly-scaling. This is expected: correlation length ξ at criticality depends on q, and the Ly→2D crossover occurs when Ly ≫ ξ.
+
+## Surprises
+
+- q=3 at Ly=3 is only halfway to 2D — much slower than naive extrapolation from q=2
+- q=2 Ly=4 convergence jump (+0.033) is surprisingly small — plateau effect
+- Convergence ratio for q=2 is non-monotonic (0.61, 0.36, 0.72) — not pure exponential
+- q=3's larger 2D/1D ratio (3.80 vs 3.08) correlates with slower convergence — bigger gap to close
+- Exponential fit residuals suggest power-law corrections may be needed
