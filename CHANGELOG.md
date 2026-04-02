@@ -77,69 +77,11 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - **063** — c·x₁ NOT exactly 1/9 (q=3 exact: 8/75). Potts-specific, not Z_q-universal. Clock c > Potts c at same q.
 - **064** — BW locality degrades monotonically with q (~15% drop per unit q). G-inv fraction = exactly 1/q. Peak shifts to ordered phase for q≥4.
 
-### Sprint 065 — Hybrid vs Clock Universality: DIFFERENT Classes Confirmed
-**Status:** Complete (3 experiments).
+- **065** — Hybrid ≠ clock universality: 3 probes at q=5 (c/x₁, ν, gap crossing). Clock BKT, hybrid power-law. NEW universality class. POTENTIALLY NOVEL.
+- **066** — No first-order signal at q=10 (n≤6). Δ·N decelerates, gap minimum size-independent. Continuous confirmed.
+- **067** — Hybrid has ONE transition, no floating phase. Clock has wide floating phase (Δg=0.62). Fourth hybrid-clock difference.
 
-**Hybrid ≠ clock universality — confirmed by THREE independent probes at q=5.** c/x₁: hybrid 10.77 vs clock 9.43 (12% diff, shrinking but nonzero). ν: hybrid 0.83 (finite, power-law) vs clock ~2+ (diverging → BKT). Clock q=7 has NO gap crossing (BKT); hybrid has clear crossing.
-
-**Clock q=5 has BKT transition.** Gap slopes barely grow: 2.29→2.67→2.95 for n=4,6,8. Hybrid slopes clearly grow: 3.99→6.16→8.43. BKT confirmed as expected from Sun et al. 2020.
-
-**Potts-clock hybrid defines a NEW universality class for q≥5.** Not first-order (like S_q Potts), not BKT (like Z_q clock). Continuous, second-order, power-law transition with finite ν ≈ 0.83. **POTENTIALLY NOVEL.**
-
-**Clock DMRG ~10x slower than hybrid** due to dense cos coupling (q² terms vs q terms in MPO). Limits clock characterization at large q.
-
-**Surprises:**
-- ν comparison is the sharpest discriminator: qualitatively different (finite vs diverging)
-- Clock q=7 gap monotonically increasing — no crossing possible
-- c/x₁ difference slowly shrinks (14%→12%) suggesting SOME shared structure
-- Clock q=7 g_c ≈ 0.30 (if applicable), far below hybrid 0.535
-
-[Full report: sprints/sprint_065.md]
-
-### Sprint 066 — Weakly First-Order Test: No First-Order Signal at q=10
-**Status:** Complete (3 experiments).
-
-**No first-order signal detected at accessible sizes (n≤6).** Three diagnostics all consistent with continuous transition:
-
-**Δ·N at g_c DECELERATES (066a).** q=10 at n=4,5,6: Δ₁·N = 0.242, 0.250, 0.255. Changes: +3.1%, +2.2%. Decelerating = convergent, not divergent. First-order would accelerate.
-
-**Gap minimum is SIZE-INDEPENDENT (066b).** Δ_min ≈ 0.030 for n=4,5,6. Not exponentially shrinking (first-order signature). Pseudo-critical point drifts from g=0.50→0.60 toward g_c=0.684.
-
-**Cross-q comparison (066c).** q=3 (known continuous): Δ·N decreases from 0.746 to 0.722 (n=4→12). q≥5: Δ·N increases (anomalous). Normalized change at n=6 saturates at ~5.5% for q≥7. Sign-flipped corrections, not first-order.
-
-**Closes the last major open question.** The hybrid model defines a genuinely continuous universality class for q=2-10, distinct from first-order (S_q) and BKT (Z_q clock).
-
-**Δ₂/Δ₁ = 1.0000 exactly** at all sizes — Z₁₀ conjugate pair degeneracy perfectly maintained.
-
-**Surprises:**
-- Gap minimum barely changes with N (0.0304, 0.0300, 0.0308) — no avoided crossing
-- q=3 from above, q≥5 from below — qualitative sign flip in FSS corrections
-- Anomaly saturates between q=7 and q=10 (both ~5.5%)
-- Pseudo-critical point drift is linear in n, not 1/N^{1/ν}
-
-[Full report: sprints/sprint_066.md]
-
-### Sprint 067 — Two-Transition Scan: Hybrid Has No Floating Phase
-**Status:** Complete (3 experiments).
-
-**Hybrid model has exactly ONE transition — no floating phase.** Three independent probes confirm:
-
-**Wide gap scan (067a).** Scanned g=[0.02, 3.0] at q=5 (n=4,6,8) and q=7 (n=4,6). No second gap minimum. Gap increases monotonically from g_c. Gap*N → 2·sin(2π/q) at large g.
-
-**Entropy scan (067b).** DMRG n=16,24 at q=5. c_eff=1.22 at g_c=0.44, drops to 0.003 at g=0.55. No c≈1 region above g_c. Sharp critical-to-gapped transition.
-
-**Clock comparison (067c).** Same method on clock model: **floating phase clearly detected** at g=[0.30, 0.92] (Δg=0.62). Hybrid gapless only at g=[0.38, 0.50] (Δg=0.12, just g_c). Validates method — absence in hybrid is real, not a size limitation.
-
-**Fourth difference between hybrid and clock universality:** clock has floating phase, hybrid does not. The Potts δ-function coupling suppresses the intermediate Luttinger-liquid phase that the cosine coupling allows.
-
-**Surprises:**
-- Clock floating phase is WIDE (Δg≈0.62) — easily detectable even at n=4,6
-- Hybrid c_eff drops from 1.22 to 0.003 between g=0.44 and g=0.55 (sharp!)
-- No local gap minima in either model — floating phase creates flat region, not a second dip
-- Large-g gap*N = 2·sin(2π/q): exact formula for paramagnetic limit
-- Clock n=8 scan 7x slower than hybrid (886s vs 128s) due to dense coupling matrix
-
-[Full report: sprints/sprint_067.md]
+Full details for all compressed sprints are in sprints/sprint_NNN.md.
 
 ### Sprint 068 — 2D Hybrid Model: First Study, No First-Order Signal at q=5
 **Status:** Complete (3 experiments).
@@ -308,3 +250,22 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - S per bond cut monotonically decreasing — approach to area law
 
 [Full report: sprints/sprint_075.md]
+
+### Sprint 076 — S_q Potts vs Hybrid: Direct Universality Class Comparison at q=5
+**Status:** Complete (3 experiments).
+
+**First head-to-head comparison of S_q Potts vs Potts-clock hybrid at q=5.** Built standard S_q Potts Hamiltonian (field = Σ_{k=1}^{q-1} X^k, full S_q symmetry) and compared to hybrid (field = X+X†, Z_q symmetry).
+
+**S_q Potts g_c(q=5) = 0.200 (076a).** From gap×N crossings at n=4,6,8. Verified S_q ≡ hybrid at q=3 (10-digit match). S_q field strength (q-1)=4 per unit g, hybrid 2cos(2π/5)≈0.618. Ratio 6.47x → g_c ratio 2.19x.
+
+**Qualitatively different conformal towers (076b).** S_q has 4-fold degenerate first excited state (S₅ symmetry). Hybrid has 2+2 split (Z₅ conjugate pairs, x₃=2.41). x₃ is 141% different between models. Both show clean CFT convergence at n≤8.
+
+**S_q Potts FSS corrections 10x larger than hybrid (076c).** Δ·N drift n=4→8: S_q 4.8% vs hybrid 0.46%. Power-law fits better than exponential for both (25x for S_q, 50x for hybrid). q=7 S_q gap collapses 69% from n=4→6 (possible first-order signal at larger q).
+
+**Surprises:**
+- S_q Potts at q=5 looks like genuine CFT at n≤8 — no first-order signature visible
+- Degeneracy structure is sharpest discriminator (exact integers, no fitting needed)
+- Δ₂/Δ₁ = 1.0000 exactly for BOTH models — conjugate pair degeneracy universal
+- q=3 verification perfect: confirms code correctness
+
+[Full report: sprints/sprint_076.md]

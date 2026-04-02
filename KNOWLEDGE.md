@@ -40,7 +40,15 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 - **Sun, Luo & Chen (arXiv:2006.11361, 2020):** Z_q clock has two BKT transitions for q>4. Continuous transitions known for clock-type fields.
 - **Jacobsen & Wiese (PRL 133, 077101, 2024):** All S_q Potts exponents for q>4 via analytic continuation.
 
-**Genuinely novel (for our hybrid model):** g_c(q) formula, c·x₁ ≈ 0.112, systematic CFT data q=2-30, distinct universality class from both S_q Potts AND Z_q clock (Sprint 065). A new universality class with continuous power-law transitions (finite ν) that is neither first-order nor BKT.
+**Sprint 076 CONFIRMED: hybrid ≠ S_q Potts universality class.** Direct head-to-head at q=5:
+- Degeneracy: S_q has 4-fold (S₅ permutation), hybrid has 2+2 split (Z₅ conjugate pairs, x₃=2.41)
+- g_c: S_q 0.200, hybrid 0.438 (field strength ratio 6.47x → g_c ratio 2.19x)
+- FSS corrections: S_q 10x larger (Δ·N drifts 4.8% vs 0.46% over n=4-8)
+- z_eff: S_q 1.071, hybrid 1.007 (both power-law at n≤8)
+
+**Surprise: S_q Potts at q=5 also looks CFT-like at n≤8.** Clean conformal tower, exact degeneracies, power-law gap scaling. First-order nature (if real) requires n >> 8 to manifest. The complex CFT (Gorbenko et al.) may describe S_q behavior at moderate sizes even if eventually first-order.
+
+**Genuinely novel (for our hybrid model):** g_c(q) formula, c·x₁ ≈ 0.112, systematic CFT data q=2-30, distinct universality class from both S_q Potts AND Z_q clock (Sprints 065, 076). A new universality class with continuous power-law transitions (finite ν) that is neither first-order nor BKT.
 
 **Retracted claims:** ~~"No CFT predictions exist for q>4"~~ (complex CFTs do). ~~"Analytic continuation is WRONG"~~ (gives complex values, verified). ~~"1D quantum Potts NEVER first-order"~~ (true for our Z_q-field model, but S_q Potts IS first-order for q>4).
 
