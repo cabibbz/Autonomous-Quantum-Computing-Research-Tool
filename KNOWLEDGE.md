@@ -2,7 +2,7 @@
 
 ## Open Items — Check each sprint, remove when done
 - **Test energy-entropy hierarchy in a DIFFERENT model.** The Casimir finding (Sprint 098) was only measured in S_q Potts. If it also appears in J1-J2 chains or SU(N) Heisenberg at large N, it's a universal principle about walking/pseudo-critical transitions, not a Potts-specific curiosity. This is the highest-impact experiment available — could upgrade the finding from PRB to PRL.
-- **Harden χ_F first-order-like scaling at q=5 (Sprint 102).** Only 2 sizes (n=6,8). Need n=10 (GPU, ~5min) or DMRG to confirm α≈2. Also test at q=6,7 with more sizes.
+- **~~Harden χ_F scaling at q=5~~** DONE (Sprint 103). 4 sizes, α=2.091±0.002. Confirmed novel. α(q) mapped for q=2-7.
 - **KNOWLEDGE.md is over budget (~560 lines vs ~200 target).** Compress old sections into one-line summaries.
 
 ## Five Entanglement Archetypes
@@ -99,7 +99,8 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 1. **Correlators (x_σ)**: perfectly conformal for ALL q=2-8 (Sprint 082)
 2. **Casimir energy (E₀)**: governed by Re(c) for ALL q=2-8, even where c_eff deviates 40% (Sprint 083)
 3. **Entanglement entropy (c_eff)**: deviates from Re(c) for q>5 (Sprints 079-081)
-4. **Fidelity susceptibility (χ_F)**: scaling exponent shifts from continuous (2/ν-1) to first-order-like (≈2) at walking boundary (Sprint 102)
+4. **Fidelity susceptibility (χ_F)**: scaling exponent α crosses 2.0 at walking boundary, then increases linearly with q (Sprints 102-103)
+5. **Entanglement spectrum multiplet dominance**: M/[(q-1)/q] crosses 1.0 at q≈4 (Sprints 089-090)
 
 **Microscopic mechanism: entropy concentration in (q-1)-fold multiplet (Sprint 084).** Entanglement spectrum at g_c=1/q shows:
 - First excited entanglement level has **(q-1)-fold degeneracy** for all q (S_q symmetry)
@@ -204,6 +205,19 @@ Non-Potts fraction grows exponentially ~exp(1.6·q). **Biggest jump at q=3→4 (
 **c_∞ does NOT recover Re(c) at large q** — disproves the hypothesis that min-entropy (probing only λ_max) is insensitive to walking breakdown.
 
 **POTENTIALLY NOVEL (Sprints 084-086):** First entanglement spectrum decomposition across walking boundary. Entropy concentration mechanism. First systematic Rényi c_α(q,α) mapping via size pairs. Demonstration that optimal Rényi index shifts 0.5→1→2 across walking boundary.
+
+**✅ CONFIRMED NOVEL: Fidelity susceptibility α(q) across walking boundary (Sprints 102-103).** χ_F_max ~ N^α. Complete α(q) curve:
+
+| q | α | ν_eff | #sizes | regime |
+|---|---|-------|--------|--------|
+| 2 | 0.980 | 1.010 | 5 | real CFT (exact ν=1.0) |
+| 3 | 1.379 | 0.841 | 3 | real CFT (exact ν=5/6) |
+| 4 | 1.693 | 0.743 | 2 | BKT crossover (log corrections) |
+| 5 | 2.091 | 0.647 | 4 | walking (sweet spot) |
+| 6 | 2.371 | 0.593 | 2 | broken walking |
+| 7 | 2.649 | 0.548 | 3 | broken walking |
+
+**α(q) = 0.315·q + 0.469 for q≥4** (linear, residuals ±0.05). α crosses 2.0 at q≈4.9 (walking boundary). Super-first-order scaling (α>2) for all q≥5 — wavefunction changes MORE abruptly at g_c than at a true first-order transition. Pairwise α at q=5 is stable to 0.3% across 4 sizes and converging upward. χ_F(n=6) ~ exp(1.06·q), growth 2.89× per unit q.
 
 **✅ CONFIRMED NOVEL: Casimir energy obeys complex CFT Re(c) (Sprints 083, 098).** E₀/N = ε_∞ - πv·Re(c)/(6N²) + O(1/N⁴). Hardened with GPU-extended sizes (Sprint 098):
 

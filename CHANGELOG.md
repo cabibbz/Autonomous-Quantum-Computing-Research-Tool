@@ -204,3 +204,16 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **POTENTIALLY NOVEL:** First fidelity susceptibility measurement across walking boundary. Discovery of first-order-like χ_F scaling in walking regime. Need more sizes at q=5 to harden.
 
 [Full report: sprints/sprint_102.md]
+
+### Sprint 103 — Harden χ_F Scaling: α(q) Confirmed Novel
+**Status:** Complete (3 experiments).
+
+**q=5 GPU extension (103a).** n=6,8,9,10 (4 sizes, GPU for n≥9). α=2.091 (4-point fit, err=0.002). Pairwise: (6,8)→2.088, (8,9)→2.094, (9,10)→2.100 — converging UPWARD. n=10 (dim=9.8M) at 156s on GPU.
+
+**q=6,7 mapping (103b).** q=6 n=6,8: α=2.37. q=7 n=6,7,8: α=2.65 (pairwise 2.63, 2.67). Super-first-order scaling (α>2) for ALL q≥5, increasing with q.
+
+**Full α(q) analysis (103c).** α(q) = 0.315q + 0.469 linear for q≥4 (residuals ±0.05). α=2 crossing at q≈4.9 (walking boundary). χ_F(n=6) ~ exp(1.06q). q=4 α=1.69 (15% below BKT prediction due to log corrections).
+
+**Upgraded to CONFIRMED NOVEL.** Five checks: 4+ sizes at q=5 (0.3% stability), three walking q values, q=2,3 match exact ν to <2%, independent reproduction of q=7 n=6, simple linear functional form.
+
+[Full report: sprints/sprint_103.md]
