@@ -1,30 +1,30 @@
 # Current State — Rewrite this completely each sprint
 
 ## Last Sprint
-Sprint 104 — Energy-Entropy Hierarchy Universality Test. Tested in J1-J2 spin-1/2 chain (XX, Heisenberg, BKT). Result: **NOT universal.** Hierarchy direction is model-dependent. Potts walking gives O(1) entropy deviations (26% at q=7); J1-J2 gives only O(1%) differences. The Casimir-Re(c) finding is walking-specific.
+Sprint 105 — χ_F scaling at J1-J2 BKT transition. Result: **Walking χ_F super-scaling is unique.** BKT gives α→0 (invisible at N≤20), MG first-order gives saturating peak, only Potts walking gives persistent α>2 with upward-converging pairwise exponents.
 
 ## Active Research Thread
-**Walking regime: five confirmed novel findings + one scope constraint.** Casimir (098), χ_F scaling (103), entropy concentration, Rényi mapping, multiplet dominance. Sprint 104 established that energy-entropy decoupling is NOT universal — constrains Casimir finding to walking-specific mechanism.
+**Walking regime: five confirmed novel findings + two scope constraints.** Casimir (098), χ_F scaling (103), entropy concentration, Rényi mapping, multiplet dominance. Sprint 104: energy-entropy hierarchy walking-specific. Sprint 105: χ_F super-scaling walking-specific. Both confirmed novel results now properly scoped to walking mechanism only.
 
 ## QPU Budget
 - Used: 20s of 600s (Sprint 025: ibm_kingston)
-- Remaining: 580s — UNUSED FOR 79 SPRINTS
+- Remaining: 580s — UNUSED FOR 80 SPRINTS
 
 ## Top 3 Next Experiments
-1. **Hardware validation** — 580s QPU unspent. Strongest predictions: (a) Heisenberg chain c_eff on 5-10 qubits, (b) q=2 Ising χ_F at g_c with exact α=0.98.
-2. **χ_F in J1-J2 chain** — Does χ_F show BKT-specific scaling? α should be different from Potts walking. Quick test at J2c with same infrastructure.
-3. **Publish preparation** — Five confirmed novel results. Write a unified summary of the walking research program with scope constraints from Sprint 104.
+1. **Hardware validation** — 580s QPU unspent. Strongest prediction: q=2 Ising χ_F at g_c with exact α=0.98 (measurable on ~10 qubits via VQE).
+2. **Walking χ_F mechanism** — WHY does walking give α>2? Is it the entanglement spectrum reorganization (multiplet dominance) that drives super-susceptibility? Test: decompose χ_F into spectral contributions.
+3. **2D walking test** — Can we detect walking signatures in 2D S_q Potts? We have g_c for Ly=2,3 cylinders. Even a single 2D χ_F measurement would be novel.
 
 ## What's Been Ruled Out
-- Energy-entropy hierarchy universality (Sprint 104) — NOT universal, walking-specific
-- Entanglement asymmetry as walking probe (Sprint 102)
+- Energy-entropy hierarchy universality (Sprint 104) — walking-specific
+- χ_F super-scaling universality (Sprint 105) — walking-specific, BKT invisible
 - SREE as walking discriminator (Sprint 101)
 - Im(c) oscillation detection (Sprints 099-100)
 - Open-BC Casimir extraction for q≥5 (Sprint 100)
 - All BW correction approaches (Sprint 097)
 
 ## Key Tools Available
-- J1-J2 chain Sz-sector exact diag (Sprint 104): N≤20 in <20s
+- J1-J2 chain Sz-sector exact diag (Sprint 104-105): N≤20 in <100s
 - Vectorized S_q Potts builder (Sprint 098/103)
 - χ_F infrastructure: coupling/field split for fast g-scan
 - GPU eigsh: q=5 n=10 (156s), q=7 n=8 (90s)

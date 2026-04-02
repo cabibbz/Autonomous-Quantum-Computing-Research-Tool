@@ -230,3 +230,19 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **Key finding: Energy-entropy hierarchy is NOT universal.** Direction depends on correction type: marginal operator logs → entropy wins (Heisenberg); BKT log³ corrections → Casimir wins; walking spectrum reorganization → Casimir wins by O(1) (Potts only). The O(1) entropy deviation is unique to walking.
 
 [Full report: sprints/sprint_104.md]
+
+### Sprint 105 — χ_F Scaling at J1-J2 BKT: Walking Super-Scaling is Unique
+**Status:** Complete (3 experiments).
+
+**Wide χ_F scan (105a).** J1-J2 Heisenberg, S_z=0 periodic BC, N=8-20. No peak near J2_c=0.2412 at any size — χ_F monotonically increasing through BKT region. Peak instead at J2≈0.487 (Majumdar-Ghosh point). N=16 has level-crossing spike.
+
+**BKT vs MG resolution (105b).** BKT region (J2=0.15-0.35): MONOTONIC for all N. MG region (J2=0.40-0.55): peak saturates at N≈16 (χ_F=1.88) then DECREASES. Pairwise α: 4.24→0.28→-0.16. MG is a finite-size level crossing, not divergent.
+
+**Exact-point scaling (105c).** χ_F at J2_c=0.2412: grows as N^0.58 (global), but pairwise α decreases 1.01→0.29 — trending to logarithmic. Three-way comparison:
+- BKT: α→0 (invisible, exponential gap closing too slow)
+- MG first-order: saturates then decreases (finite discontinuity)
+- Potts walking: α=2.09-2.65, increasing with N (genuine super-first-order)
+
+**Walking χ_F super-scaling confirmed as walking-specific.** Combined with Sprint 104 (Casimir-Re(c) walking-specific), both confirmed novel results now properly scoped.
+
+[Full report: sprints/sprint_105.md]

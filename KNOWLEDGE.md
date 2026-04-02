@@ -3,8 +3,9 @@
 ## Open Items — Check each sprint, remove when done
 - **~~Test energy-entropy hierarchy in a DIFFERENT model~~** DONE (Sprint 104). Tested in J1-J2 chain. Result: **NOT universal.** Hierarchy direction is model-dependent. Potts walking gives O(1) entropy deviation — unique to walking mechanism. J1-J2 gives only O(1%) differences. The Casimir-Re(c) finding is walking-specific, not a general CFT principle.
 - **~~Harden χ_F scaling at q=5~~** DONE (Sprint 103). 4 sizes, α=2.091±0.002. Confirmed novel. α(q) mapped for q=2-7.
+- **~~Test χ_F in different model~~** DONE (Sprint 105). J1-J2 BKT: invisible (α→0). MG first-order: saturates. Walking super-scaling is unique.
 - **KNOWLEDGE.md is over budget (~560 lines vs ~200 target).** Compress old sections into one-line summaries.
-- **Hardware validation** — 580s QPU unused for 79 sprints. Strongest prediction: q=2 Ising fidelity at g_c, or Heisenberg chain c_eff on 5-10 qubits.
+- **Hardware validation** — 580s QPU unused for 80 sprints. Strongest prediction: q=2 Ising χ_F at g_c, or Heisenberg chain c_eff on 5-10 qubits.
 
 ## Five Entanglement Archetypes
 | Archetype | Example | MI pattern | I3 sign | Negativity | Source |
@@ -100,7 +101,7 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 1. **Correlators (x_σ)**: perfectly conformal for ALL q=2-8 (Sprint 082)
 2. **Casimir energy (E₀)**: governed by Re(c) for ALL q=2-8, even where c_eff deviates 40% (Sprint 083)
 3. **Entanglement entropy (c_eff)**: deviates from Re(c) for q>5 (Sprints 079-081)
-4. **Fidelity susceptibility (χ_F)**: scaling exponent α crosses 2.0 at walking boundary, then increases linearly with q (Sprints 102-103)
+4. **Fidelity susceptibility (χ_F)**: scaling exponent α crosses 2.0 at walking boundary, then increases linearly with q (Sprints 102-103). **Walking-specific** (Sprint 105): BKT gives α→0, MG first-order saturates, only walking gives persistent α>2.
 5. **Entanglement spectrum multiplet dominance**: M/[(q-1)/q] crosses 1.0 at q≈4 (Sprints 089-090)
 
 **Microscopic mechanism: entropy concentration in (q-1)-fold multiplet (Sprint 084).** Entanglement spectrum at g_c=1/q shows:
