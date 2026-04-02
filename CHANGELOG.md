@@ -322,4 +322,25 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 
 **POTENTIALLY NOVEL:** First power-law scaling of entanglement spectrum tail weight across walking boundary. First demonstration that energy-entropy decoupling is finite-size with quantitative crossover scales.
 
+**NOTE (Sprint 088 correction):** Exponents 1.72 (q=5) and 2.52 (q=7) were from real-space curve_fit (biased by large-n). Log-log fit gives b≈2.0 for q=2,3,5 — universal, not walking-specific.
+
 [Full report: sprints/sprint_087.md]
+
+### Sprint 088 — Tail Weight at q=2,3: UNIVERSAL Power Law, Not Walking-Specific
+**Status:** Complete (3 experiments).
+
+**q=3 entanglement spectrum n=8-24 (088a).** DMRG at g_c=1/3 (c=4/5 real CFT). λ_max: 0.860→0.791, w_mult: 0.139→0.205, w_tail: 0.00047→0.00429. (q-1)=2 multiplet perfectly degenerate. %S(tail) reaches 4.2% at n=24.
+
+**q=2 entanglement spectrum n=8-24 (088b).** DMRG at g_c=1/2 (c=1/2 Ising). λ_max: 0.890→0.839, w_mult: 0.110→0.158, w_tail: 0.00037→0.00324. %S(tail) reaches 4.4% at n=24.
+
+**Tail weight exponent is UNIVERSAL: b ≈ 2.0 for q=2,3,5 (088c).** Log-log power-law fit: q=2 b=1.98, q=3 b=2.01, q=5 b=2.01 — identical within fit error. q=7 shows b=2.97 but only 4 data points (n=6-12), uncertain. Sprint 087's exponents (1.72, 2.52) were real-space fitting artifacts.
+
+**Walking breakdown is NOT in tail growth.** %S(tail) ≈ 4% at n=24 for ALL q=2,3,5. Entanglement gap closure Δξ ~ -0.43·ln(n) also universal. Walking-specific effects must reside in level REDISTRIBUTION (how multiplet vs ground state share weight), not in the tail.
+
+**Surprises:**
+- q=2,3,5 tail exponents identical to <1% — far more universal than expected
+- Real-space vs log-log fitting gives qualitatively different conclusions (1.72 vs 2.01)
+- %S(tail) at n=24 is nearly q-independent (3.8-4.4%)
+- Sprint 087 narrative partially corrected: tail growth is universal, only redistribution is q-dependent
+
+[Full report: sprints/sprint_088.md]

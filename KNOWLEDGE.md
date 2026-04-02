@@ -112,15 +112,18 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **Why only entropy sees walking breakdown at small n:** Energy/gap/correlator observables depend on lowest entanglement levels (ground + first excited), which are perfectly conformal. Entropy sums over ALL levels → sensitive to weight redistribution in the tail. Entanglement gap grows with q at fixed n, but DECREASES with n at fixed q.
 
-**Tail weight grows as unbounded power law (Sprint 087).** DMRG entanglement spectrum at midchain:
-- q=5: w_tail ~ 1.9×10⁻⁵ × n^1.72 (R²=0.993, n=8-24)
-- q=7: w_tail ~ 2.1×10⁻⁶ × n^2.52 (R²=0.989, n=6-12)
-- Entanglement gap: Δξ = -0.43·ln(n) + 4.1 (q=5), -0.50·ln(n) + 4.8 (q=7)
-- NO saturation visible — tail weight is unbounded
+**Tail weight grows as UNIVERSAL power law w_tail ~ n^2 for ALL critical q (Sprint 088).** DMRG midchain Schmidt spectrum:
+- q=2: w_tail ~ 6.7×10⁻⁶ × n^1.98 (n=8-24, log-log fit)
+- q=3: w_tail ~ 7.9×10⁻⁶ × n^2.01 (n=8-24)
+- q=5: w_tail ~ 8.1×10⁻⁶ × n^2.01 (n=8-24)
+- q=7: w_tail ~ 7.5×10⁻⁷ × n^2.97 (n=6-12, only 4 pts — uncertain)
+- Exponent b≈2.0 is **identical** for q=2,3,5. NOT walking-specific.
+- ~~Sprint 087 exponents (1.72, 2.52)~~ were real-space curve_fit artifacts; log-log gives universal b≈2.0.
+- Entanglement gap: Δξ ~ -0.43·ln(n) universal for q=2-5, -0.50 for q=7.
 
-**Energy-entropy decoupling is TEMPORARY.** Tail weight reaches 10% at n≈147 (q=5), n≈72 (q=7). At these scales, tail contributes enough to affect spectral observables too. The walking regime creates a **hierarchy of crossover scales**: entropy breaks first (n ~ 10-20), then spectral observables (n ~ 100+).
+**Energy-entropy decoupling is TEMPORARY.** Tail weight reaches 10% at n≈130 (q=2), n≈109 (q=3), n≈108 (q=5). Walking regime creates a **hierarchy of crossover scales**: entropy breaks first (n ~ 10-20), then spectral observables (n ~ 100+). But the RATE of tail growth is the same for all q — the walking-specific effect is in the level REDISTRIBUTION, not tail growth.
 
-**Weight flows multiplet → tail, not ground → tail.** %S(lev0) saturates (~0.225 for q=5) while %S(lev1) monotonically decreases, feeding the tail. The ground state entropy fraction stabilizes early.
+**Weight flows multiplet → tail, not ground → tail.** %S(lev0) saturates (~0.225 for q=5, ~0.32 for q=2) while %S(lev1) monotonically decreases, feeding the tail. The ground state entropy fraction stabilizes early. At n=24, %S(tail) ≈ 4% for ALL q=2,3,5 — universal.
 
 **Rényi entropy decomposition of walking (Sprints 085-086).** Size-pair extraction c_α = 6·ΔS/((1+1/α)·ln(N₂/N₁)) on periodic BC. Optimal α shifts gradually with q:
 
