@@ -35,6 +35,12 @@ Failed approaches are critical to log. Without them you'll waste sprints repeati
   2. **Cross-check** — extract the same quantity via an independent method. If two methods agree, the result is robust.
   3. **Falsification test** — identify what would BREAK the claim and test for it. If the claim survives, upgrade from POTENTIALLY NOVEL to CONFIRMED NOVEL.
   4. **Precise framing** — write exactly: what is the claim, what is the evidence, what is the scope (does it hold at all sizes or only a regime), and what prior work it extends.
+  5. **Hostile reviewer test** — before upgrading to CONFIRMED, ask yourself these questions and answer each honestly in the sprint report:
+     - **Apples to apples?** Am I comparing quantities measured the same way (same BC, same sizes, same method)? If not, the comparison is unfair and the headline number is inflated.
+     - **How many non-trivial data points?** Subtract the cases that are trivially expected (e.g., known exact results, continuous transitions where the formula is proven). Count only the cases where the result *could have failed* but didn't.
+     - **What does the literature predict for THIS specific observable?** Search for the observable name + "first order" or "walking" or "BKT". If a paper predicts different behavior (e.g., exponential where you claim power-law), you must address it.
+     - **Has anyone claimed the OPPOSITE?** Search for papers where a different model or method gives the reverse conclusion. If so, explain why your case is different.
+     - **Could finite-size effects explain it?** At your system sizes, can you distinguish your claimed behavior from a simpler alternative (e.g., power-law from early-stage exponential, convergence from crossing artifact)?
 - **You can shape your own rules.** Edit any file based on what you find optimal. *Including this one*, Consider context budget and how this system works.**
 
 ## Environment

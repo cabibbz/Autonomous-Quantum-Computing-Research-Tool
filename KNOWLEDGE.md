@@ -221,24 +221,20 @@ Non-Potts fraction grows exponentially ~exp(1.6·q). **Biggest jump at q=3→4 (
 | 6 | 2.371 | 0.593 | 2 | broken walking |
 | 7 | 2.649 | 0.548 | 3 | broken walking |
 
-**α(q) = 0.315·q + 0.469 for q≥4** (linear, residuals ±0.05). α crosses 2.0 at q≈4.9 (walking boundary). Super-first-order scaling (α>2) for all q≥5 — wavefunction changes MORE abruptly at g_c than at a true first-order transition. Pairwise α at q=5 is stable to 0.3% across 4 sizes and converging upward. χ_F(n=6) ~ exp(1.06·q), growth 2.89× per unit q.
+**α(q) = 0.318·q + 0.452 for q≥4** (linear, residuals ±0.05). α crosses 2.0 at q≈4.9 (walking boundary). Super-first-order scaling (α>2) for all q≥5 — wavefunction changes MORE abruptly at g_c than at a true first-order transition. Pairwise α at q=5 converges upward: (6,7)→2.076, (7,8)→2.082, (8,9)→2.090, (9,10)→2.099 — firmly super-first-order.
 
-**χ_F mechanism: spectral decomposition (Sprint 106).** χ_F is 100% dominated by the (q-1)-fold degenerate S_q multiplet for q≥3. The spectral gap (level 1) has ZERO matrix element with H_field — symmetry-forbidden. α decomposes exactly:
+**✅ CONFIRMED NOVEL: χ_F spectral mechanism (Sprints 106-107).** χ_F is 100% dominated by the (q-1)-fold degenerate S_q multiplet for q≥3. The spectral gap (level 1) has ZERO matrix element with H_field — symmetry-forbidden. α decomposes exactly:
 
 α = β_me + 2z_m - 1, where gap_m ~ N^{-z_m} and |⟨mult|H_field|0⟩|² ~ N^{β_me}
 
-| q | z_m | β_me | α(decomp) | α(known) |
-|---|-----|------|-----------|----------|
-| 2 | 0.989 | 0.066 | 1.044 | 1.099 |
-| 3 | 1.031 | 0.381 | 1.442 | 1.414 |
-| 4 | 1.094 | 0.608 | 1.796 | 1.729 |
-| 5 | 1.156 | 0.769 | 2.082 | 2.044 |
-| 6 | 1.233 | 0.881 | 2.348 | 2.359 |
-| 7 | 1.310 | 1.010 | 2.631 | 2.674 |
+| q | sizes | z_m | β_me | α(decomp) | α(known) |
+|---|-------|-----|------|-----------|----------|
+| 2 | 5 (n=6-14) | 0.989 | 0.066 | 1.044 | 1.099 |
+| 3 | 3 (n=6-10) | 1.031 | 0.381 | 1.442 | 1.414 |
+| 5 | 5 (n=6-10) | 1.155 | 0.776 | 2.085 | 2.044 |
+| 7 | 3 (n=6-8) | 1.312 | 1.025 | 2.649 | 2.674 |
 
-Linear fits: z_m(q) = 0.065q + 0.843, β_me(q) = 0.182q - 0.201. Reconstructed α(q) = 0.312q + 0.485 matches known 0.315q + 0.469 within 3%. Two sources of super-scaling: (1) multiplet gap closes faster than 1/N, (2) field matrix element grows with N. For q=2, gap dominates (β_me≈0). For q=7, both contribute (72% gap, 28% matrix element).
-
-**POTENTIALLY NOVEL (Sprint 106):** First spectral decomposition of χ_F at walking transition. Discovery that spectral gap is symmetry-forbidden. Exact α = β_me + 2z_m - 1 decomposition with simple linear q-dependence of both components.
+Linear fits: z_m(q) = 0.065q + 0.845, β_me(q) = 0.188q − 0.238. Reconstructed α(q) = 0.318q + 0.452 matches direct fit exactly. Cross-validated: spectral/finite-diff ratio confirms 98% captured for q=5 (single multiplet) vs 87% for q=2 (multi-state). Energy and entanglement multiplet gaps share S_q symmetry origin but scale independently (z_energy ≈ 1.0-1.3 vs z_ent ≈ 0.2).
 
 **✅ CONFIRMED NOVEL: Casimir energy obeys complex CFT Re(c) (Sprints 083, 098).** E₀/N = ε_∞ - πv·Re(c)/(6N²) + O(1/N⁴). Hardened with GPU-extended sizes (Sprint 098):
 

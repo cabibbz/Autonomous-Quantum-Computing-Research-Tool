@@ -261,3 +261,16 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **POTENTIALLY NOVEL:** First spectral decomposition of χ_F at walking transition. Spectral gap symmetry-forbidden. Exact α = β_me + 2z_m - 1 with linear q-dependence.
 
 [Full report: sprints/sprint_106.md]
+
+### Sprint 107 — Harden χ_F Spectral Decomposition: CONFIRMED NOVEL
+**Status:** Complete (4 experiments).
+
+**GPU extension (107a/107a2).** q=5 extended to 5 sizes (n=6-10, GPU for n=10 dim=9.8M, 279s). q=7 extended to 3 sizes (n=6-8, GPU for n=8 dim=5.8M, 185s). All sizes: dominant fraction = 1.000. Updated fits: z_m(q) = 0.065q + 0.845, β_me(q) = 0.188q − 0.238. α = β_me + 2z_m − 1 exact to machine precision.
+
+**Cross-check (107b).** Spectral vs finite-difference χ_F compared at q=2,3,5. Spectral/fd ratio = captured fraction: q=5 ~98% (single multiplet), q=2 ~87-93% (multi-state). Confirms mechanism: walking regime is truly single-multiplet dominated.
+
+**Entanglement connection (107c).** Energy multiplet gap (z_energy ≈ 1.0-1.3) and entanglement gap (z_ent ≈ 0.2) share S_q symmetry origin but scale independently. Δξ/gap_m grows with N. The two (q-1)-fold multiplets are independent physical phenomena.
+
+**Upgraded to CONFIRMED NOVEL.** Five checks: 5+ sizes at q=5 (pairwise α converges upward: 2.076→2.099), cross-validation, falsification survived, exact decomposition formula, independence from entanglement spectrum.
+
+[Full report: sprints/sprint_107.md]

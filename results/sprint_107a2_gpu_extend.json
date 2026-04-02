@@ -1,0 +1,34 @@
+{
+  "experiment": "107a2_gpu_extend",
+  "timestamp": "2026-04-02 18:21:40",
+  "data": {
+    "q5_n10": {
+      "q": 5,
+      "n": 10,
+      "dim": 9765625,
+      "chi_F": 103.52495104316695,
+      "gap_spectral": 0.06316075821818501,
+      "gap_multiplet": 0.2788274041018628,
+      "me_sq": 80.48518464188606,
+      "dominant_level": 5,
+      "dominant_fraction": 1.0,
+      "time_build_s": 28.56395983695984,
+      "time_eigsh_s": 249.69080638885498,
+      "time_total_s": 278.755206823349
+    },
+    "q7_n8": {
+      "q": 7,
+      "n": 8,
+      "dim": 5764801,
+      "chi_F": 354.76830360963896,
+      "gap_spectral": 0.06866916313416738,
+      "gap_multiplet": 0.25045452523845313,
+      "me_sq": 178.02974273772583,
+      "dominant_level": 6,
+      "dominant_fraction": 1.0,
+      "time_build_s": 19.228558778762817,
+      "time_eigsh_s": 165.42285108566284,
+      "time_total_s": 184.93946480751038
+    }
+  }
+}

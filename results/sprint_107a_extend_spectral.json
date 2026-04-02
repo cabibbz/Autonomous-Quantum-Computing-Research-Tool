@@ -1,0 +1,52 @@
+{
+  "experiment": "107a_extend_spectral",
+  "timestamp": "2026-04-02 17:22:06",
+  "data": {
+    "q5": {
+      "q": 5,
+      "g_c": 0.2,
+      "sizes": {
+        "6": {
+          "dim": 15625,
+          "chi_F": 35.6738946944241,
+          "gap_spectral": 0.10844903056416033,
+          "gap_multiplet": 0.5029468370081611,
+          "me_sq": 54.14345168045083,
+          "dominant_level": 5,
+          "dominant_fraction": 1.0,
+          "time_s": 1.17189621925354
+        },
+        "7": {
+          "dim": 78125,
+          "chi_F": 49.13092824418727,
+          "gap_spectral": 0.09205420879341375,
+          "gap_multiplet": 0.4206341237968916,
+          "me_sq": 60.85020042290008,
+          "dominant_level": 5,
+          "dominant_fraction": 1.0,
+          "time_s": 6.722357273101807
+        },
+        "8": {
+          "dim": 390625,
+          "chi_F": 64.87960811396773,
+          "gap_spectral": 0.07991833586744335,
+          "gap_multiplet": 0.3604829183311189,
+          "me_sq": 67.44776847715497,
+          "dominant_level": 5,
+          "dominant_fraction": 1.0,
+          "time_s": 40.63258361816406
+        },
+        "9": {
+          "dim": 1953125,
+          "chi_F": 82.98904025410144,
+          "gap_spectral": 0.07057466768322485,
+          "gap_multiplet": 0.31472893277771874,
+          "me_sq": 73.9837924524345,
+          "dominant_level": 5,
+          "dominant_fraction": 1.0,
+          "time_s": 229.85922646522522
+        }
+      }
+    }
+  }
+}
