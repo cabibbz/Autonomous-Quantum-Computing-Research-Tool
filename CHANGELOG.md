@@ -284,6 +284,19 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 
 **Multiplet structure (108c).** Gap ratio (multiplet/spectral) decreases with q: 6.2 (q=3) → 5.2 (q=4) → 4.6 (q=5). Spectral gap is (q-1)-fold degenerate and symmetry-forbidden. Dominant state is a singlet above the multiplet.
 
-**Key finding:** Linear formula α=0.315q+0.469 valid ONLY for walking regime (q≥5) where log corrections vanish. For q≤4, finite-size α is inflated. Walking regime is a cleaner measurement regime than continuous or BKT.
+**Key finding:** Linear formula α=0.315q+0.469 valid ONLY for walking regime (q≥5) where log corrections vanish. For q≤4, finite-size α is inflated. Walking regime is a cleaner measurement regime than continuous or BKT. **NOTE:** 1/ln(N) extrapolation for q=2,3 RETRACTED in Sprint 109 — power-law 1/N² is correct.
 
 [Full report: sprints/sprint_108.md]
+
+### Sprint 109 — α(q) Correction Form: Power-Law Recovers Exact ν
+**Status:** Complete (3 experiments).
+
+**q=3 GPU extension (109a).** 9 sizes n=4-14 (GPU for n=12,14). Pairwise α converges to 1.416 at (n=12,14) — heading straight to exact 1.4 (ν=5/6). Single multiplet dominance (frac=1.000) confirmed at all sizes.
+
+**q=2 and q=4 extension (109b).** q=2: 11 sizes n=4-18. Pairwise α converges to 1.012 at (n=16,18) — approaching exact 1.0 (ν=1). q=4: 8 sizes n=4-11 (GPU for n=11). Pairwise α flat at 1.771 for last 3 pairs — BKT slow convergence.
+
+**Power-law vs log correction analysis (109c).** Power-law 1/N^ω fits vs 1/ln(N) fits. Power-law overwhelmingly wins for q=2 (AIC: -140 vs -87) and q=3 (AIC: -109 vs -71). Fitted ω≈2 — standard FSS correction, not leading irrelevant operator. Power-law α_∞: q=2→1.001 (exact 1.0, 0.1% error), q=3→1.405 (exact 1.4, 0.4% error). Log α_∞: q=2→0.874 (12.6% error), q=3→1.301 (7.1% error). Neither model works for q=4 BKT.
+
+**Partial retraction of Sprint 108:** 1/ln(N) form was wrong for q=2,3 (continuous transitions have power-law, not log corrections). Extrapolated α_∞(q=3)=1.22 retracted → correct value 1.40. Walking (q≥5) zero-correction finding CONFIRMED.
+
+[Full report: sprints/sprint_109.md]
