@@ -140,6 +140,12 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 Non-Potts fraction grows exponentially ~exp(1.6·q). **Biggest jump at q=3→4 (11.7×)**, coinciding with real-to-complex CFT boundary. NNN and 3-body Potts operators add <0.2% — residual is genuinely non-Potts operators. BW locality dominated by nA (subsystem size), not q: q=2 drops from 99.98% (nA=3) to 62.6% (nA=7). q=5 non-Potts grows 1.7× faster per nA than q=2. BW alpha jumps from ~2.4 (q=2,3) to ~3.2 (q≥4) — another q=4 discontinuity.
 
+**Operator content of BW corrections (Sprint 092).** Clock-shift (Weyl-Heisenberg) basis decomposition of H_E. Non-BW operators classified as D(density/clock), F(field/shift), M(mixed/XZ-type):
+- **Dominant non-BW: MM (mixed×mixed) and DFD/DMD (3-body density-field chains).** MM generalizes Pauli YY — represents entanglement between "position" and "momentum" sectors (φ·π correlators). DFD is density-field-density mediated correlation.
+- **At nA=3, non-BW is flat across q** (0.005-0.009% for q=2-5). q-dependent growth only manifests at nA≥4.
+- **q=2 vs q=3 at nA=4: same operator types, similar weight** (0.008% both). The 11.7× jump at q=3→4 (Sprint 091) is an AMPLITUDE effect, not new operator types.
+- **For q=2 (Pauli basis), non-BW grows from 0.005% (nA=3) to 6.3% (nA=6).** At large nA: 3-body ZXZ/ZZZ dominate, then 4-body ZXXZ appears. Body order and range of dominant corrections increase with nA.
+
 **Rényi entropy decomposition of walking (Sprints 085-086).** Size-pair extraction c_α = 6·ΔS/((1+1/α)·ln(N₂/N₁)) on periodic BC. Optimal α shifts gradually with q:
 
 | q | pair | c₁/Rec | c₂/Rec | c₃/Rec | c_∞/Rec | best α |

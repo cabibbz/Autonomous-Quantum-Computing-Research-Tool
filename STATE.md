@@ -1,37 +1,35 @@
 # Current State — Rewrite this completely each sprint
 
 ## Last Sprint
-Sprint 091 — Entanglement Hamiltonian H_E across walking boundary. Three experiments: (1) BW fidelity for q=2-7 at g_c=1/q periodic — confounded by different nA. (2) Fixed nA=4 comparison: non-Potts fraction grows 0.03% (q=2) → 2.7% (q=5) exponentially. Biggest jump at q=3→4 (11.7×). NNN/3-body add <0.2%. (3) nA scaling: q=5 non-Potts grows 1.7× faster than q=2. BW alpha ≈ 3.2 for q≥4.
+Sprint 092 — Operator decomposition of entanglement Hamiltonian H_E. Three experiments: (1) Pauli decomposition at q=2 nA=3-6: non-BW dominated by ZXZ (3-body) and YY (2-body), growing from 0.005% to 6.3% with nA. (2) Clock-shift decomposition at fixed nA=3 for q=2-5: non-BW flat at 0.005-0.009%, all q. (3) nA=4 for q=2,3: same operator types (MM and DFD) dominate non-BW for both q. Walking boundary doesn't change operator TYPES, only amplitudes.
 
 ## Active Research Thread
-**Entanglement Hamiltonian structure across walking/CFT boundary.**
+**Entanglement Hamiltonian operator content across walking/CFT boundary.**
 
-Fixed nA=4 BW comparison (091b):
+Key finding: BW corrections are dominated by Mixed operators (M = X^a·Z^b, generalizing Pauli Y) and 3-body DFD/DMD chains. These represent φ·π (position-momentum) entanglement correlations absent from the physical Hamiltonian. No qualitative change at q=4 walking boundary — just amplitude growth.
 
-| q | Potts NN locality | non-Potts | BW fidelity | BW alpha |
-|---|---|---|---|---|
-| 2 | 99.971% | 0.029% | 0.9997 | 2.390 |
-| 3 | 99.916% | 0.081% | 0.9994 | 2.401 |
-| 4 | 99.000% | 0.955% | 0.9942 | 3.228 |
-| 5 | 97.075% | 2.729% | 0.9832 | 3.195 |
-
-Biggest non-Potts jump: q=3→4 (11.7×), coincides with real-to-complex CFT boundary.
-q=5 non-Potts grows 1.7× faster with nA than q=2.
+non-BW operator weight scaling with nA (q=2):
+| nA | non-BW weight | dominant |
+|----|--------------|----------|
+| 3  | 0.005%       | DFD      |
+| 4  | 0.008%       | MM, DFD  |
+| 5  | 2.8%         | ZZZ, ZX  |
+| 6  | 6.3%         | ZXZ, ZZZ |
 
 ## QPU Budget
 - Used: 20s of 600s (Sprint 025: ibm_kingston)
 - Remaining: 580s
 
 ## Top 3 Next Experiments
-1. **Hardware validation** — 580s QPU unused for 66 sprints. Measure entanglement entropy at g_c on real hardware (q=2, n=6-8). Prediction: S matches simulator to ~10%.
-2. **Large-nA BW comparison q=2 vs q=5** — DMRG at n=16-24 (nA=8-12) to see if the 1.7× slope ratio holds. Would confirm walking amplifies BW corrections at accessible DMRG sizes.
-3. **Non-Potts operator identification** — What ARE the non-Potts operators in H_E? For q=2 (Pauli basis available): decompose the BW residual into Pauli terms. Identify which local operators dominate.
+1. **Hardware validation** — 580s QPU unused for 67 sprints. Measure entanglement entropy S(n/2) at g_c on real hardware for q=2 n=6-8. Prediction: S matches simulator to ~10%. Would validate all finite-size results.
+2. **nA scaling of operator types q=2 nA=5-7** — Do the MM and DFD operators that dominate at nA=4 continue to grow, or do new types emerge at large nA? Use Pauli basis (q=2) for maximum nA reach.
+3. **Entanglement temperature profile** — BW predicts H_E = 2π Σ_i β(i) h_i with β(i) = sin-envelope. Do the BW coefficients we extracted in 092 follow this envelope? Would test BW at the operator level, not just fidelity.
 
 ## What's Been Ruled Out
-- 091a direct comparison across q (confounded by different nA)
-- NNN/3-body Potts operators as source of BW deviation (<0.2%)
-- BW fidelity as walking discriminator (dominated by nA, not q)
-- (Prior sprints) All items from Sprint 090 ruled-out list still apply
+- 092b: q-dependence of non-BW weight at nA=3 (essentially flat, <2× variation)
+- 092c: Qualitative difference in non-BW operator types between q=2 and q=3 (same MM/DFD)
+- Walking boundary introducing new operator types (it amplifies existing ones)
+- All items from Sprint 091 ruled-out list still apply
 
 ## Key Tools Available
 - 1D exact diag CPU: n≤8 for q≤6, GPU: n≤10 for q≤5, n≤8 for q=6

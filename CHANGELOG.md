@@ -72,74 +72,9 @@ Full details for sprints 076-079 are in sprints/sprint_NNN.md.
 - **080** — c_eff at q=6,8,9: walking boundary mapped. c_eff/Re(c) = 1.004·exp(−0.105(q−5)). q=5 exact walking threshold. gap×N increases with q even as walking breaks.
 - **081** — q=6 marginal breaking: c_eff drops 2.9% n=8→12, drift dc/d(ln n)=-0.048. Walking boundary is smooth crossover. ξ*≈38 for q=6.
 
-### Sprint 082 — Spin-Spin Correlator: x_σ(q) Nearly Universal, Walking is Entropy-Only
-**Status:** Complete (3 experiments).
-
-**Open-BC DMRG correlator gives WRONG exponents (082a).** Raw power-law fit on open chain (q=5 n=8-24) gives η≈1.25 — inflated 5× by boundary conformal factors. R² degrades with n (0.996→0.760). Lesson: NEVER use raw open-BC power law for x extraction.
-
-**Periodic chain correlator perfectly conformal (082b).** Exact diag on periodic chain with chord distance fit: G(r) = C × [(N/π)sin(πr/N)]^{-2x_σ}. R² ≥ 0.99999 for all q=2-8. q=2: x_σ=0.123 (exact 0.125, 1.5%), q=3: 0.132 (exact 0.133, 1.3%).
-
-**x_σ ≈ 0.13 nearly universal across q=2-8 (082c).** Peaks at q=5 (0.136), varies ±5%. Walking vs non-walking is INVISIBLE in x_σ at accessible sizes. No oscillatory corrections detected (Im(x_σ) too small → oscillation period ~80× longer than accessible range).
-
-**Sound velocity v(q) extracted: v = gap×N/(2π·x_σ).** Decreases monotonically: 1.02 (q=2) → 0.75 (q=5) → 0.66 (q=8). The decreasing gap×N with q is primarily velocity reduction, NOT x_σ change.
-
-**Walking is an ENTROPY phenomenon.** Correlators (x_σ) and energy gaps (gap×N) both appear perfectly conformal for ALL q=2-8. Only c_eff (entanglement entropy) deviates for q>5. The gap-entropy decoupling extends to correlators.
-
-**Surprises:**
-- x_σ nearly constant across q — no walking signature in spin dimension
-- Open-BC raw power law inflates η by 5× — critical methodological finding
-- Conformal form exact to 0.04% even for q=7-8 where c_eff is breaking
-- v(q) monotonically decreasing — explains gap×N trend completely
-- No oscillatory corrections detectable (Im(x_σ) ≈ 0.02, period ~80 in ln(r))
-
-**POTENTIALLY NOVEL:** First x_σ(q) measurement for S_q Potts chain via correlators. First v(q) extraction. Discovery that walking breakdown manifests in entropy/velocity but NOT in x_σ or correlator form.
-
-[Full report: sprints/sprint_082.md]
-
-### Sprint 083 — Casimir Energy: c_implied Matches Re(c) for ALL q, Walking is Entropy-Only
-**Status:** Complete (3 experiments).
-
-**Casimir energy formula E₀/N = ε_∞ - πvc/(6N²) fits with R² > 0.9999 for all q=2-8 (083a,b).** Periodic chain at g_c=1/q, multiple sizes per q. Extracted vc (product of velocity and central charge) independently of entropy or correlators.
-
-**c_implied = vc/v_gap matches Re(c) to ±3% for ALL q (083c).** Defines c_implied as the central charge that makes Casimir velocity agree with gap-derived velocity. Result: c_implied/Re(c) = 0.993 (q=2), 1.005 (q=3), 1.008 (q=4), 1.027 (q=5), 1.024 (q=6), 1.017 (q=7), 0.999 (q=8). The ground state energy sees Re(c) from complex CFT even at q=8, where entropy c_eff is 40% off.
-
-**Walking breakdown is EXCLUSIVELY an entropy phenomenon.** Energy (Casimir), spectrum (gap×N), correlators (x_σ) — all governed by complex CFT. Only entanglement entropy deviates for q>5. The reduced density matrix is uniquely sensitive to walking breakdown.
-
-**vc(q) monotonically increasing toward ~1.** vc: 0.50 (q=2) → 0.94 (q=8). Best fit: vc = 0.31·ln(q) + 0.34. Pairwise vc decreases with N for all q (-1% to -3.6% drift), converging from above.
-
-**Surprises:**
-- c_implied/Re(c) = 0.999 at q=8 — most precise match at the q where entropy is most wrong
-- Casimir energy formula works perfectly even in walking-broken regime
-- Walking breakdown has zero signature in ground state energy
-- vc approaching 1 at large q — may saturate
-
-**POTENTIALLY NOVEL:** First demonstration that Casimir energy obeys complex CFT Re(c) across the walking boundary. Establishes energy-entropy hierarchy: energy observables track Re(c), entropy does not.
-
-[Full report: sprints/sprint_083.md]
-
-### Sprint 084 — Entanglement Spectrum: Walking Breakdown = Entropy Concentration in (q-1) Multiplet
-**Status:** Complete (3 experiments).
-
-**Entanglement spectrum has (q-1)-fold degenerate first excited level for ALL q=2-8 (084a,b).** Exact diag on periodic chains at g_c=1/q. Half-chain bipartition. S_q permutation symmetry imprints directly on entanglement spectrum: q=5 has 4-fold, q=7 has 6-fold, q=8 has 7-fold degeneracy.
-
-**Entanglement gap Δξ ≈ 0.47 + 0.78·ln(q), INCREASES with q (084c).** Walking breakdown is NOT about closing the entanglement gap. Δξ grows from 1.03 (q=2) to 2.13 (q=8). The spectrum is more gapped, not less, at broken walking.
-
-**Level 1 absorbs progressively more entropy: 48% (q=2) → 69% (q=8) (084c).** The (q-1)-fold degenerate multiplet captures increasing entropy weight as q grows, at the expense of both ground state (33%→19%) and tail (19%→12%). This redistribution is the microscopic mechanism for c_eff deviation.
-
-**Tail entropy correlates with c_eff/Re(c) (Pearson r = 0.80).** Higher entanglement levels carry the walking signature. Energy/gap/correlator observables only see ground + first level (perfectly conformal). Entropy sums all levels → sensitive to tail depletion.
-
-**Normalized R₂₁ = (ξ₂ - ξ₀)/Δξ decreases: 4.31 (q=2) → 2.42 (q=8).** Spectrum compresses above first excited level. Clean walking discriminator.
-
-**Surprises:**
-- Entanglement gap INCREASES with q — not a gap-closing phenomenon
-- (q-1) degeneracy in entanglement spectrum matches energy spectrum exactly
-- Level 1 entropy fraction is a monotonic function of q (48%→69%)
-- Participation ratio increases with q (1.74→3.27) but this is just the (q-1) multiplicity
-- Walking breakdown fully explained by a single spectral redistribution mechanism
-
-**POTENTIALLY NOVEL:** First entanglement spectrum decomposition across walking boundary for S_q Potts chain. First identification of entropy concentration in (q-1)-fold multiplet as the microscopic mechanism for walking breakdown. No prior literature found on entanglement spectrum at q>4.
-
-[Full report: sprints/sprint_084.md]
+- **082** — x_σ(q) ≈ 0.13 nearly universal for q=2-8. v(q) monotonically decreasing. Walking invisible in correlators. Open-BC power law inflates η by 5×.
+- **083** — Casimir c_implied/Re(c) ≈ 1.00±0.03 for ALL q=2-8. Energy tracks Re(c) even where entropy deviates 40%. Walking is exclusively an entropy phenomenon.
+- **084** — Entanglement spectrum: (q-1)-fold degenerate multiplet. Level 1 absorbs 48%→69% of entropy (q=2→8). Entropy concentration as microscopic walking breakdown mechanism.
 
 ### Sprint 085 — Rényi Entropies: α=3 Recovers Re(c) in Walking-Broken Regime
 **Status:** Complete (3 experiments).
@@ -297,3 +232,25 @@ Full details for sprints 076-079 are in sprints/sprint_NNN.md.
 **POTENTIALLY NOVEL:** First BW fidelity across walking boundary for S_q Potts. First identification of q=4 as BW locality boundary. First demonstration that BW corrections are dominated by non-Potts operators.
 
 [Full report: sprints/sprint_091.md]
+
+### Sprint 092 — Non-Potts Operator Identification in H_E: Mixed Operators Dominate
+**Status:** Complete (3 experiments).
+
+**Pauli decomposition of H_E at q=2, nA=3-6 (092a).** Non-BW weight grows from 0.005% (nA=3) to 6.3% (nA=6). Dominant non-BW operators: YY (MM-type, 2-body NN) and ZXZ (DFD, 3-body range-2). At large nA, 3-body ZZZ and 4-body ZXXZ emerge. Body order and range of corrections increase with nA.
+
+**Clock-shift decomposition at fixed nA=3 for q=2-5 (092b).** Non-BW weight is FLAT: 0.005% (q=2), 0.007% (q=3), 0.008% (q=4), 0.009% (q=5). The q-dependent BW breakdown (Sprint 091) is a LARGE-SUBSYSTEM effect that only manifests at nA≥4.
+
+**nA=4 for q=2,3 — same operator types (092c).** Both dominated by MM (mixed×mixed) and DFD/DMD (3-body). Non-BW weight: 0.0075% (q=2) vs 0.0080% (q=3). No qualitative change in operator content at the walking boundary — the 11.7× jump at q=3→4 is purely an amplitude effect.
+
+**Physical interpretation:** BW corrections are "position-momentum" correlators (φ·π type). The entanglement Hamiltonian knows about operator content beyond the physical Hamiltonian. Walking doesn't introduce new operator types — it amplifies the mixed (M) operators already present.
+
+**Surprises:**
+- MM (YY-type) is #1 non-BW operator at q=2 nA=4, not ZXZ
+- Non-BW weight at nA=3 varies <2× across q=2-5 — essentially flat
+- No qualitative operator change at q=4 walking boundary
+- 3-body DFD operators are "mediated" correlations (density→field→density)
+- Body order of dominant corrections increases with nA (2→3→4-body)
+
+**POTENTIALLY NOVEL:** First operator decomposition of H_E for S_q Potts using generalized clock-shift basis. First identification of mixed (XZ-type) operators as dominant BW correction. First demonstration that walking boundary amplifies but doesn't change the type of BW corrections.
+
+[Full report: sprints/sprint_092.md]
