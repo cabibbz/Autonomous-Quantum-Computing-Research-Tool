@@ -4,8 +4,10 @@
 - **~~Test energy-entropy hierarchy in a DIFFERENT model~~** DONE (Sprint 104). Tested in J1-J2 chain. Result: **NOT universal.** Hierarchy direction is model-dependent. Potts walking gives O(1) entropy deviation — unique to walking mechanism. J1-J2 gives only O(1%) differences. The Casimir-Re(c) finding is walking-specific, not a general CFT principle.
 - **~~Harden χ_F scaling at q=5~~** DONE (Sprint 103). 4 sizes, α=2.091±0.002. Confirmed novel. α(q) mapped for q=2-7.
 - **~~Test χ_F in different model~~** DONE (Sprint 105). J1-J2 BKT: invisible (α→0). MG first-order: saturates. Walking super-scaling is unique.
+- **~~Understand χ_F mechanism~~** DONE (Sprint 106). α = β_me + 2z_m - 1. Single multiplet dominates. Spectral gap symmetry-forbidden.
+- **Harden χ_F mechanism** — Need more sizes at q=5 (currently 3 pts). Also cross-check z_m and β_me independently.
 - **KNOWLEDGE.md is over budget (~560 lines vs ~200 target).** Compress old sections into one-line summaries.
-- **Hardware validation** — 580s QPU unused for 80 sprints. Strongest prediction: q=2 Ising χ_F at g_c, or Heisenberg chain c_eff on 5-10 qubits.
+- **Hardware validation** — 580s QPU unused for 81 sprints. Strongest prediction: q=2 Ising χ_F at g_c, or Heisenberg chain c_eff on 5-10 qubits.
 
 ## Five Entanglement Archetypes
 | Archetype | Example | MI pattern | I3 sign | Negativity | Source |
@@ -101,7 +103,7 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 1. **Correlators (x_σ)**: perfectly conformal for ALL q=2-8 (Sprint 082)
 2. **Casimir energy (E₀)**: governed by Re(c) for ALL q=2-8, even where c_eff deviates 40% (Sprint 083)
 3. **Entanglement entropy (c_eff)**: deviates from Re(c) for q>5 (Sprints 079-081)
-4. **Fidelity susceptibility (χ_F)**: scaling exponent α crosses 2.0 at walking boundary, then increases linearly with q (Sprints 102-103). **Walking-specific** (Sprint 105): BKT gives α→0, MG first-order saturates, only walking gives persistent α>2.
+4. **Fidelity susceptibility (χ_F)**: scaling exponent α crosses 2.0 at walking boundary, then increases linearly with q (Sprints 102-103). **Walking-specific** (Sprint 105): BKT gives α→0, MG first-order saturates, only walking gives persistent α>2. **Mechanism identified (Sprint 106):** α = β_me + 2z_m - 1, where z_m is the multiplet gap exponent and β_me is the matrix element growth exponent. Both are linear in q.
 5. **Entanglement spectrum multiplet dominance**: M/[(q-1)/q] crosses 1.0 at q≈4 (Sprints 089-090)
 
 **Microscopic mechanism: entropy concentration in (q-1)-fold multiplet (Sprint 084).** Entanglement spectrum at g_c=1/q shows:
@@ -220,6 +222,23 @@ Non-Potts fraction grows exponentially ~exp(1.6·q). **Biggest jump at q=3→4 (
 | 7 | 2.649 | 0.548 | 3 | broken walking |
 
 **α(q) = 0.315·q + 0.469 for q≥4** (linear, residuals ±0.05). α crosses 2.0 at q≈4.9 (walking boundary). Super-first-order scaling (α>2) for all q≥5 — wavefunction changes MORE abruptly at g_c than at a true first-order transition. Pairwise α at q=5 is stable to 0.3% across 4 sizes and converging upward. χ_F(n=6) ~ exp(1.06·q), growth 2.89× per unit q.
+
+**χ_F mechanism: spectral decomposition (Sprint 106).** χ_F is 100% dominated by the (q-1)-fold degenerate S_q multiplet for q≥3. The spectral gap (level 1) has ZERO matrix element with H_field — symmetry-forbidden. α decomposes exactly:
+
+α = β_me + 2z_m - 1, where gap_m ~ N^{-z_m} and |⟨mult|H_field|0⟩|² ~ N^{β_me}
+
+| q | z_m | β_me | α(decomp) | α(known) |
+|---|-----|------|-----------|----------|
+| 2 | 0.989 | 0.066 | 1.044 | 1.099 |
+| 3 | 1.031 | 0.381 | 1.442 | 1.414 |
+| 4 | 1.094 | 0.608 | 1.796 | 1.729 |
+| 5 | 1.156 | 0.769 | 2.082 | 2.044 |
+| 6 | 1.233 | 0.881 | 2.348 | 2.359 |
+| 7 | 1.310 | 1.010 | 2.631 | 2.674 |
+
+Linear fits: z_m(q) = 0.065q + 0.843, β_me(q) = 0.182q - 0.201. Reconstructed α(q) = 0.312q + 0.485 matches known 0.315q + 0.469 within 3%. Two sources of super-scaling: (1) multiplet gap closes faster than 1/N, (2) field matrix element grows with N. For q=2, gap dominates (β_me≈0). For q=7, both contribute (72% gap, 28% matrix element).
+
+**POTENTIALLY NOVEL (Sprint 106):** First spectral decomposition of χ_F at walking transition. Discovery that spectral gap is symmetry-forbidden. Exact α = β_me + 2z_m - 1 decomposition with simple linear q-dependence of both components.
 
 **✅ CONFIRMED NOVEL: Casimir energy obeys complex CFT Re(c) (Sprints 083, 098).** E₀/N = ε_∞ - πv·Re(c)/(6N²) + O(1/N⁴). Hardened with GPU-extended sizes (Sprint 098):
 

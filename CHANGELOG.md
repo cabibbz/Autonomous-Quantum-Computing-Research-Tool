@@ -246,3 +246,18 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **Walking χ_F super-scaling confirmed as walking-specific.** Combined with Sprint 104 (Casimir-Re(c) walking-specific), both confirmed novel results now properly scoped.
 
 [Full report: sprints/sprint_105.md]
+
+### Sprint 106 — χ_F Spectral Decomposition: Walking Super-Scaling Mechanism
+**Status:** Complete (3 experiments).
+
+**Spectral decomposition at g_c (106a).** S_q Potts periodic chain, 20 eigenstates per config. χ_F is 100% dominated by a SINGLE excited state: the (q-1)-fold degenerate S_q multiplet (level q-1). The spectral gap (level 1) has ZERO matrix element with H_field — symmetry-forbidden. For q≥3, one multiplet captures 100%; for q=2, 91-93%.
+
+**Size scaling of components (106b).** Decomposition: α = β_me + 2z_m - 1, where gap_m ~ N^{-z_m} and |me|² ~ N^{β_me}. Extended to n=14 (q=2), n=10 (q=3), n=9 (q=5, GPU), n=7 (q=7, GPU). Decomposition is exact (predicted = measured to all digits). z_m: 0.989 (q=2) → 1.310 (q=7). β_me: 0.066 (q=2) → 1.010 (q=7). Both increase linearly with q.
+
+**Mechanism analysis (106c).** Added q=4 (5 sizes) and q=6 (3 sizes). Linear fits: z_m(q) = 0.065q + 0.843, β_me(q) = 0.182q - 0.201. Reconstructed α(q) = 0.312q + 0.485 matches known 0.315q + 0.469 within 3%.
+
+**Two sources of walking super-scaling:** (1) Multiplet gap closes faster than 1/N (z_m > 1 for q≥3), (2) Field matrix element grows with system size (β_me > 0 for q≥3). For q=2 (real CFT): gap only. For q=7 (broken walking): both contribute (72%/28%).
+
+**POTENTIALLY NOVEL:** First spectral decomposition of χ_F at walking transition. Spectral gap symmetry-forbidden. Exact α = β_me + 2z_m - 1 with linear q-dependence.
+
+[Full report: sprints/sprint_106.md]

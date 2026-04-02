@@ -1,0 +1,798 @@
+{
+  "experiment": "106a_chi_f_spectral",
+  "timestamp": "2026-04-02 17:03:46",
+  "data": {
+    "q2_n6": {
+      "q": 2,
+      "n": 6,
+      "dim": 64,
+      "g_c": 0.5,
+      "chi_F": 0.622008467928149,
+      "chi_total_Nchi": 3.732050807568894,
+      "n_states_computed": 20,
+      "n_contributing": 19,
+      "top1_fraction": 0.9330127018922199,
+      "top3_fraction": 1.0,
+      "n_for_90pct": 1,
+      "n_for_99pct": 2,
+      "E0": -6.8637033051562675,
+      "gap1": 0.13165249758738717,
+      "contributions_top10": [
+        {
+          "level": 2,
+          "gap": 1.0352761804100803,
+          "matrix_element": -1.9318516525781362,
+          "matrix_element_sq": 3.732050807568876,
+          "chi_contribution": 3.482050807568895,
+          "cumulative_fraction": 0.9330127018922199
+        },
+        {
+          "level": 17,
+          "gap": 2.8284271247461925,
+          "matrix_element": -1.414213562373094,
+          "matrix_element_sq": 1.9999999999999971,
+          "chi_contribution": 0.2499999999999992,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 3,
+          "gap": 1.1316524975873898,
+          "matrix_element": 4.6851411639181606e-14,
+          "matrix_element_sq": 2.1950547725840417e-27,
+          "chi_contribution": 1.714033039272393e-27,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 18,
+          "gap": 2.863703305156255,
+          "matrix_element": 1.1191048088221578e-13,
+          "matrix_element_sq": 1.2523955731288783e-26,
+          "chi_contribution": 1.5271633125009147e-27,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 1,
+          "gap": 0.13165249758738717,
+          "matrix_element": 2.886579864025407e-15,
+          "matrix_element_sq": 8.332343311396937e-30,
+          "chi_contribution": 4.807385513835389e-28,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 11,
+          "gap": 2.1316524975873943,
+          "matrix_element": -9.603429163007604e-15,
+          "matrix_element_sq": 9.222585168890493e-29,
+          "chi_contribution": 2.029643956055585e-29,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 4,
+          "gap": 1.1316524975873916,
+          "matrix_element": 4.9960036108132044e-15,
+          "matrix_element_sq": 2.4960052079258577e-29,
+          "chi_contribution": 1.9490335485088976e-29,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 5,
+          "gap": 1.8637033051562666,
+          "matrix_element": 4.884981308350689e-15,
+          "matrix_element_sq": 2.3863042382935607e-29,
+          "chi_contribution": 6.870245586195343e-30,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 10,
+          "gap": 1.93185165257814,
+          "matrix_element": 4.468647674116255e-15,
+          "matrix_element_sq": 1.9968812035384616e-29,
+          "chi_contribution": 5.350627058690173e-30,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 8,
+          "gap": 1.9318516525781293,
+          "matrix_element": 9.992007221626409e-16,
+          "matrix_element_sq": 9.98402083170343e-31,
+          "chi_contribution": 2.6752103190704604e-31,
+          "cumulative_fraction": 1.0
+        }
+      ],
+      "time_s": 0.23382568359375
+    },
+    "q2_n8": {
+      "q": 2,
+      "n": 8,
+      "dim": 256,
+      "g_c": 0.5,
+      "chi_F": 0.8598115993103831,
+      "chi_total_Nchi": 6.878492794483065,
+      "n_states_computed": 20,
+      "n_contributing": 19,
+      "top1_fraction": 0.9185930379021392,
+      "top3_fraction": 1.0,
+      "n_for_90pct": 1,
+      "n_for_99pct": 2,
+      "E0": -9.125830895483018,
+      "gap1": 0.09849140335717088,
+      "contributions_top10": [
+        {
+          "level": 2,
+          "gap": 0.7803612880645066,
+          "matrix_element": 1.9615705608064644,
+          "matrix_element_sq": 3.8477590650225872,
+          "chi_contribution": 6.318535592272173,
+          "cumulative_fraction": 0.9185930379021392
+        },
+        {
+          "level": 19,
+          "gap": 2.2222809320784087,
+          "matrix_element": -1.6629392246050965,
+          "matrix_element_sq": 2.7653668647301997,
+          "chi_contribution": 0.5599572022108916,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 1,
+          "gap": 0.09849140335717088,
+          "matrix_element": 8.215650382226158e-15,
+          "matrix_element_sq": 6.749691120297282e-29,
+          "chi_contribution": 6.958045237672481e-27,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 3,
+          "gap": 0.8638582680873164,
+          "matrix_element": -3.697042672001771e-14,
+          "matrix_element_sq": 1.3668124518601997e-27,
+          "chi_contribution": 1.8315717570283004e-27,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 14,
+          "gap": 2.053119868637335,
+          "matrix_element": 2.4424906541753444e-14,
+          "matrix_element_sq": 5.965760595733902e-28,
+          "chi_contribution": 1.4152631851834397e-28,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 7,
+          "gap": 1.5013211100714878,
+          "matrix_element": -1.3877787807814457e-14,
+          "matrix_element_sq": 1.9259299443872359e-28,
+          "chi_contribution": 8.544630816519888e-29,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 18,
+          "gap": 2.0984914033571735,
+          "matrix_element": 1.2545520178264269e-14,
+          "matrix_element_sq": 1.5739007654323593e-28,
+          "chi_contribution": 3.5740692066248073e-29,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 4,
+          "gap": 0.8638582680873661,
+          "matrix_element": -4.884981308350689e-15,
+          "matrix_element_sq": 2.3863042382935607e-29,
+          "chi_contribution": 3.197722877477822e-29,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 12,
+          "gap": 1.9462504683797404,
+          "matrix_element": -9.880984919163893e-15,
+          "matrix_element_sq": 9.763386297274429e-29,
+          "chi_contribution": 2.577525750336316e-29,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 10,
+          "gap": 1.5127049657302845,
+          "matrix_element": -3.774758283725532e-15,
+          "matrix_element_sq": 1.4248800100554526e-29,
+          "chi_contribution": 6.226870425331311e-30,
+          "cumulative_fraction": 1.0
+        }
+      ],
+      "time_s": 0.01374053955078125
+    },
+    "q2_n10": {
+      "q": 2,
+      "n": 10,
+      "dim": 1024,
+      "g_c": 0.5,
+      "chi_F": 1.0928824546347904,
+      "chi_total_Nchi": 10.928824546347904,
+      "n_states_computed": 20,
+      "n_contributing": 19,
+      "top1_fraction": 0.9118880539260178,
+      "top3_fraction": 1.0,
+      "n_for_90pct": 1,
+      "n_for_99pct": 2,
+      "E0": -11.392453221499657,
+      "gap1": 0.07870170682464206,
+      "contributions_top10": [
+        {
+          "level": 2,
+          "gap": 0.6257378601608377,
+          "matrix_element": -1.9753766811902755,
+          "matrix_element_sq": 3.9021130325903073,
+          "chi_contribution": 9.965864547268085,
+          "cumulative_fraction": 0.9118880539260178
+        },
+        {
+          "level": 18,
+          "gap": 1.8159619989581621,
+          "matrix_element": 1.7820130483767334,
+          "matrix_element_sq": 3.175570504584938,
+          "chi_contribution": 0.9629599990798198,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 1,
+          "gap": 0.07870170682464206,
+          "matrix_element": 1.4876988529977098e-13,
+          "matrix_element_sq": 2.2132478772107012e-26,
+          "chi_contribution": 3.573236438492284e-24,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 11,
+          "gap": 1.3147696843244585,
+          "matrix_element": -2.947087018867478e-13,
+          "matrix_element_sq": 8.685321896777199e-26,
+          "chi_contribution": 5.0244271726727935e-26,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 12,
+          "gap": 1.6967356955744926,
+          "matrix_element": 2.071676163950542e-13,
+          "matrix_element_sq": 4.2918421282808334e-26,
+          "chi_contribution": 1.490786136400137e-26,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 17,
+          "gap": 1.7270824924535653,
+          "matrix_element": 1.3369860774048448e-13,
+          "matrix_element_sq": 1.7875317711743936e-26,
+          "chi_contribution": 5.992769947050542e-27,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 10,
+          "gap": 1.2542722114096208,
+          "matrix_element": -2.7755575615628914e-14,
+          "matrix_element_sq": 7.703719777548943e-28,
+          "chi_contribution": 4.8968508455170996e-28,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 19,
+          "gap": 1.8723062001593842,
+          "matrix_element": 3.338995746560158e-14,
+          "matrix_element_sq": 1.1148892595546829e-27,
+          "chi_contribution": 3.1803724351536515e-28,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 4,
+          "gap": 0.6967356955745281,
+          "matrix_element": -1.1657341758564144e-14,
+          "matrix_element_sq": 1.3589361687596336e-28,
+          "chi_contribution": 2.7993869614780687e-28,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 9,
+          "gap": 1.2542722114095852,
+          "matrix_element": 1.887379141862766e-14,
+          "matrix_element_sq": 3.5622000251386314e-28,
+          "chi_contribution": 2.264303830967235e-28,
+          "cumulative_fraction": 1.0
+        }
+      ],
+      "time_s": 0.055567264556884766
+    },
+    "q3_n6": {
+      "q": 3,
+      "n": 6,
+      "dim": 729,
+      "g_c": 0.3333333333333333,
+      "chi_F": 3.697844832880007,
+      "chi_total_Nchi": 22.187068997280043,
+      "n_states_computed": 20,
+      "n_contributing": 19,
+      "top1_fraction": 1.0,
+      "top3_fraction": 1.0,
+      "n_for_90pct": 1,
+      "n_for_99pct": 1,
+      "E0": -6.933031943717655,
+      "gap1": 0.123156246051364,
+      "contributions_top10": [
+        {
+          "level": 3,
+          "gap": 0.7683639309279124,
+          "matrix_element": 3.61923627964902,
+          "matrix_element_sq": 13.098871247927677,
+          "chi_contribution": 22.187068997280043,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 1,
+          "gap": 0.123156246051364,
+          "matrix_element": -3.343907963864091e-14,
+          "matrix_element_sq": 1.118172047079369e-27,
+          "chi_contribution": 7.372176868592169e-26,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 2,
+          "gap": 0.12315624605138975,
+          "matrix_element": 7.809715965660453e-15,
+          "matrix_element_sq": 6.099166346429179e-29,
+          "chi_contribution": 4.021217770044165e-27,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 9,
+          "gap": 1.1662704724782573,
+          "matrix_element": 4.537971424190702e-14,
+          "matrix_element_sq": 2.0593184646771393e-27,
+          "chi_contribution": 1.513996784857459e-27,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 8,
+          "gap": 1.1662704724782404,
+          "matrix_element": 1.7223555243652926e-14,
+          "matrix_element_sq": 2.966508552311642e-28,
+          "chi_contribution": 2.1809567036326543e-28,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 12,
+          "gap": 1.5869456632083967,
+          "matrix_element": -2.9595105983571425e-15,
+          "matrix_element_sq": 8.758702981788251e-30,
+          "chi_contribution": 3.477888747745704e-30,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 10,
+          "gap": 1.485933272273316,
+          "matrix_element": -2.7602251402883626e-15,
+          "matrix_element_sq": 7.618842825079911e-30,
+          "chi_contribution": 3.450566484193857e-30,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 17,
+          "gap": 1.6302864608474978,
+          "matrix_element": -2.2448054629148303e-15,
+          "matrix_element_sq": 5.039151566332266e-30,
+          "chi_contribution": 1.895961776282784e-30,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 4,
+          "gap": 0.9943785050426746,
+          "matrix_element": 9.184790560442385e-16,
+          "matrix_element_sq": 8.436037763919154e-31,
+          "chi_contribution": 8.531689855231603e-31,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 15,
+          "gap": 1.6302864608474739,
+          "matrix_element": -5.750039558634751e-16,
+          "matrix_element_sq": 3.306295492586452e-31,
+          "chi_contribution": 1.2439812124172223e-31,
+          "cumulative_fraction": 1.0
+        }
+      ],
+      "time_s": 0.04090309143066406
+    },
+    "q3_n8": {
+      "q": 3,
+      "n": 8,
+      "dim": 6561,
+      "g_c": 0.3333333333333333,
+      "chi_F": 5.6130179090598995,
+      "chi_total_Nchi": 44.904143272479196,
+      "n_states_computed": 20,
+      "n_contributing": 19,
+      "top1_fraction": 1.0,
+      "top3_fraction": 1.0,
+      "n_for_90pct": 1,
+      "n_for_99pct": 1,
+      "E0": -9.208240738652707,
+      "gap1": 0.09188058687196587,
+      "contributions_top10": [
+        {
+          "level": 3,
+          "gap": 0.5710777189280911,
+          "matrix_element": -3.8268234236613337,
+          "matrix_element_sq": 14.644577515883052,
+          "chi_contribution": 44.904143272479196,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 2,
+          "gap": 0.09188058687197653,
+          "matrix_element": -6.890912445362082e-14,
+          "matrix_element_sq": 4.748467432964603e-27,
+          "chi_contribution": 5.624785206889817e-25,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 1,
+          "gap": 0.09188058687196587,
+          "matrix_element": 2.8972018479687597e-14,
+          "matrix_element_sq": 8.393778547873596e-28,
+          "chi_contribution": 9.942829359687302e-26,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 7,
+          "gap": 0.7578987800592856,
+          "matrix_element": 4.937355197853262e-14,
+          "matrix_element_sq": 2.4377476349768625e-27,
+          "chi_contribution": 4.243911587413321e-27,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 8,
+          "gap": 0.8869787663048694,
+          "matrix_element": 4.8399302611747155e-14,
+          "matrix_element_sq": 2.342492493303475e-27,
+          "chi_contribution": 2.977499939806076e-27,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 9,
+          "gap": 0.8869787663049173,
+          "matrix_element": 7.233747506328771e-15,
+          "matrix_element_sq": 5.23271029853177e-29,
+          "chi_contribution": 6.651203640327237e-29,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 17,
+          "gap": 1.3211314117261903,
+          "matrix_element": -7.835355034370007e-15,
+          "matrix_element_sq": 6.139278851462741e-29,
+          "chi_contribution": 3.517428860047379e-29,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 5,
+          "gap": 0.7578987800592429,
+          "matrix_element": 3.804944463926224e-15,
+          "matrix_element_sq": 1.4477602373562818e-29,
+          "chi_contribution": 2.520427610699576e-29,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 14,
+          "gap": 1.298898796870498,
+          "matrix_element": -5.0693711253762444e-15,
+          "matrix_element_sq": 2.569852360679841e-29,
+          "chi_contribution": 1.523202151781033e-29,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 4,
+          "gap": 0.7578987800591968,
+          "matrix_element": 2.6396569995455516e-15,
+          "matrix_element_sq": 6.967789075249825e-30,
+          "chi_contribution": 1.2130328985179091e-29,
+          "cumulative_fraction": 1.0
+        }
+      ],
+      "time_s": 0.40682291984558105
+    },
+    "q5_n6": {
+      "q": 5,
+      "n": 6,
+      "dim": 15625,
+      "g_c": 0.2,
+      "chi_F": 35.67389469441988,
+      "chi_total_Nchi": 214.0433681665193,
+      "n_states_computed": 20,
+      "n_contributing": 19,
+      "top1_fraction": 1.0,
+      "top3_fraction": 1.0,
+      "n_for_90pct": 1,
+      "n_for_99pct": 1,
+      "E0": -6.821221698513105,
+      "gap1": 0.1084490305641781,
+      "contributions_top10": [
+        {
+          "level": 5,
+          "gap": 0.5029468370081904,
+          "matrix_element": 7.358223405174019,
+          "matrix_element_sq": 54.14345168045074,
+          "chi_contribution": 214.0433681665193,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 3,
+          "gap": 0.10844903056418254,
+          "matrix_element": -1.4477308241112041e-13,
+          "matrix_element_sq": 2.0959245390817063e-26,
+          "chi_contribution": 1.782068091430459e-24,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 11,
+          "gap": 0.9037123980610611,
+          "matrix_element": 1.8540724511240114e-13,
+          "matrix_element_sq": 3.437584654017e-26,
+          "chi_contribution": 4.209135638963603e-26,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 4,
+          "gap": 0.10844903056422694,
+          "matrix_element": -1.432187701766452e-14,
+          "matrix_element_sq": 2.0511616130910715e-28,
+          "chi_contribution": 1.7440082373648554e-26,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 13,
+          "gap": 0.9037123980610859,
+          "matrix_element": -7.739642260418123e-14,
+          "matrix_element_sq": 5.9902062319250145e-27,
+          "chi_contribution": 7.33468207279569e-27,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 1,
+          "gap": 0.1084490305641781,
+          "matrix_element": -7.91033905045424e-15,
+          "matrix_element_sq": 6.257346389314129e-29,
+          "chi_contribution": 5.320333403945376e-27,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 10,
+          "gap": 0.8572305476508859,
+          "matrix_element": -4.490852134608758e-14,
+          "matrix_element_sq": 2.016775289492004e-27,
+          "chi_contribution": 2.7444936723132154e-27,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 14,
+          "gap": 0.9037123980611161,
+          "matrix_element": -4.424238753131249e-14,
+          "matrix_element_sq": 1.9573888544708347e-27,
+          "chi_contribution": 2.3967163039998796e-27,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 12,
+          "gap": 0.9037123980610833,
+          "matrix_element": 2.2148949341271873e-14,
+          "matrix_element_sq": 4.905759569222277e-28,
+          "chi_contribution": 6.006836054166622e-28,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 15,
+          "gap": 1.2542775505410022,
+          "matrix_element": 4.218847493575595e-15,
+          "matrix_element_sq": 1.779867417404908e-29,
+          "chi_contribution": 1.1313587874900385e-29,
+          "cumulative_fraction": 1.0
+        }
+      ],
+      "time_s": 1.2035210132598877
+    },
+    "q5_n8": {
+      "q": 5,
+      "n": 8,
+      "dim": 390625,
+      "g_c": 0.2,
+      "chi_F": 64.879608113964,
+      "chi_total_Nchi": 519.036864911712,
+      "n_states_computed": 20,
+      "n_contributing": 19,
+      "top1_fraction": 1.0,
+      "top3_fraction": 1.0,
+      "n_for_90pct": 1,
+      "n_for_99pct": 1,
+      "E0": -9.05127344578811,
+      "gap1": 0.07991833586745045,
+      "contributions_top10": [
+        {
+          "level": 5,
+          "gap": 0.36048291833112955,
+          "matrix_element": -8.212659038165109,
+          "matrix_element_sq": 67.44776847715505,
+          "chi_contribution": 519.036864911712,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 4,
+          "gap": 0.07991833586753394,
+          "matrix_element": -9.976464099281657e-13,
+          "matrix_element_sq": 9.952983592425576e-25,
+          "chi_contribution": 1.5583335614364796e-22,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 1,
+          "gap": 0.07991833586745045,
+          "matrix_element": -1.5587531265737198e-13,
+          "matrix_element_sq": 2.429711309603347e-26,
+          "chi_contribution": 3.8041865971185155e-24,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 12,
+          "gap": 0.6777407456499649,
+          "matrix_element": -8.871792189779626e-13,
+          "matrix_element_sq": 7.870869665863477e-25,
+          "chi_contribution": 1.7135450576743244e-24,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 14,
+          "gap": 0.6777407456500004,
+          "matrix_element": 7.133182933216631e-13,
+          "matrix_element_sq": 5.088229875873302e-25,
+          "chi_contribution": 1.1077443187665985e-24,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 11,
+          "gap": 0.6777407456499418,
+          "matrix_element": -2.8554936193359026e-13,
+          "matrix_element_sq": 8.153843810068053e-26,
+          "chi_contribution": 1.7751505684802421e-25,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 13,
+          "gap": 0.6777407456499773,
+          "matrix_element": -2.4569235534954714e-13,
+          "matrix_element_sq": 6.036473347720815e-26,
+          "chi_contribution": 1.3141837573084292e-25,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 9,
+          "gap": 0.6520539566615362,
+          "matrix_element": -1.3933298959045715e-13,
+          "matrix_element_sq": 1.941368198821444e-26,
+          "chi_contribution": 4.566051884860163e-26,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 3,
+          "gap": 0.0799183358675215,
+          "matrix_element": -6.661338147750939e-15,
+          "matrix_element_sq": 4.4373425918681914e-29,
+          "chi_contribution": 6.947524649557585e-27,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 2,
+          "gap": 0.07991833586751618,
+          "matrix_element": -3.497202527569243e-15,
+          "matrix_element_sq": 1.2230425518836703e-29,
+          "chi_contribution": 1.9149114815345646e-27,
+          "cumulative_fraction": 1.0
+        }
+      ],
+      "time_s": 45.30167245864868
+    },
+    "q7_n6": {
+      "q": 7,
+      "n": 6,
+      "dim": 117649,
+      "g_c": 0.14285714285714285,
+      "chi_F": 165.5360827756031,
+      "chi_total_Nchi": 993.2164966536185,
+      "n_states_computed": 20,
+      "n_contributing": 19,
+      "top1_fraction": 1.0,
+      "top3_fraction": 1.0,
+      "n_for_90pct": 1,
+      "n_for_99pct": 1,
+      "E0": -6.695336177668139,
+      "gap1": 0.09541241335342843,
+      "contributions_top10": [
+        {
+          "level": 7,
+          "gap": 0.36530875473446844,
+          "matrix_element": 11.51282869087146,
+          "matrix_element_sq": 132.54522446535307,
+          "chi_contribution": 993.2164966536185,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 5,
+          "gap": 0.09541241335344708,
+          "matrix_element": 8.416600749683312e-13,
+          "matrix_element_sq": 7.0839168179569685e-25,
+          "chi_contribution": 7.781506613702369e-23,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 3,
+          "gap": 0.09541241335343109,
+          "matrix_element": -7.16093850883226e-14,
+          "matrix_element_sq": 5.127904032727679e-27,
+          "chi_contribution": 5.632875169280007e-25,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 10,
+          "gap": 0.7750138818836092,
+          "matrix_element": -4.1933123640092163e-13,
+          "matrix_element_sq": 1.7583868582152562e-25,
+          "chi_contribution": 2.9274903093902334e-25,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 11,
+          "gap": 0.7750138818836296,
+          "matrix_element": -3.2729374765949615e-13,
+          "matrix_element_sq": 1.0712119725699794e-25,
+          "chi_contribution": 1.7834315892147959e-25,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 8,
+          "gap": 0.7750138818835905,
+          "matrix_element": 2.7236546351616653e-13,
+          "matrix_element_sq": 7.418294571637624e-26,
+          "chi_contribution": 1.2350516252558253e-25,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 12,
+          "gap": 0.7750138818836412,
+          "matrix_element": -2.0095036745715333e-13,
+          "matrix_element_sq": 4.038105018116495e-26,
+          "chi_contribution": 6.72293088042858e-26,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 9,
+          "gap": 0.7750138818836083,
+          "matrix_element": 1.212363542890671e-13,
+          "matrix_element_sq": 1.4698253601304197e-26,
+          "chi_contribution": 2.4470721435243328e-26,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 1,
+          "gap": 0.09541241335342843,
+          "matrix_element": 7.327471962526033e-15,
+          "matrix_element_sq": 5.369184536160512e-29,
+          "chi_contribution": 5.897915807315687e-27,
+          "cumulative_fraction": 1.0
+        },
+        {
+          "level": 2,
+          "gap": 0.0954124133534302,
+          "matrix_element": 6.661338147750939e-15,
+          "matrix_element_sq": 4.4373425918681914e-29,
+          "chi_contribution": 4.874310584558237e-27,
+          "cumulative_fraction": 1.0
+        }
+      ],
+      "time_s": 14.209299087524414
+    }
+  }
+}
