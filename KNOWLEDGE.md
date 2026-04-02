@@ -112,18 +112,19 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **Why only entropy sees walking breakdown at small n:** Energy/gap/correlator observables depend on lowest entanglement levels (ground + first excited), which are perfectly conformal. Entropy sums over ALL levels → sensitive to weight redistribution in the tail. Entanglement gap grows with q at fixed n, but DECREASES with n at fixed q.
 
-**Tail weight grows as UNIVERSAL power law w_tail ~ n^2 for ALL critical q (Sprint 088).** DMRG midchain Schmidt spectrum:
-- q=2: w_tail ~ 6.7×10⁻⁶ × n^1.98 (n=8-24, log-log fit)
-- q=3: w_tail ~ 7.9×10⁻⁶ × n^2.01 (n=8-24)
-- q=5: w_tail ~ 8.1×10⁻⁶ × n^2.01 (n=8-24)
-- q=7: w_tail ~ 7.5×10⁻⁷ × n^2.97 (n=6-12, only 4 pts — uncertain)
-- Exponent b≈2.0 is **identical** for q=2,3,5. NOT walking-specific.
-- ~~Sprint 087 exponents (1.72, 2.52)~~ were real-space curve_fit artifacts; log-log gives universal b≈2.0.
+**Tail weight grows as UNIVERSAL power law w_tail ~ n^2 for ALL critical q (Sprints 088-089).** DMRG midchain Schmidt spectrum, log-log fit for n≥8:
+- q=2: b=1.98 ± 0.14, q=3: b=2.01 ± 0.14, q=5: b=2.01 ± 0.14, q=7: b=2.07 ± 0.14
+- **Mean b = 2.017 ± 0.032** — identical for all q within error bars.
+- ~~q=7 b≈3.0~~ was pre-asymptotic (only 4 pts n=6-12). With n=6-16 (6 pts) and n≥8: b=2.07 (Sprint 089a).
 - Entanglement gap: Δξ ~ -0.43·ln(n) universal for q=2-5, -0.50 for q=7.
 
-**Energy-entropy decoupling is TEMPORARY.** Tail weight reaches 10% at n≈130 (q=2), n≈109 (q=3), n≈108 (q=5). Walking regime creates a **hierarchy of crossover scales**: entropy breaks first (n ~ 10-20), then spectral observables (n ~ 100+). But the RATE of tail growth is the same for all q — the walking-specific effect is in the level REDISTRIBUTION, not tail growth.
+**Energy-entropy decoupling is TEMPORARY.** Tail weight reaches 10% at n≈130 (q=2), n≈109 (q=3), n≈108 (q=5). Walking regime creates a **hierarchy of crossover scales**: entropy breaks first (n ~ 10-20), then spectral observables (n ~ 100+). The RATE of tail growth is the same for all q — walking-specific effects are in STATIC PARTITION, not dynamics.
 
-**Weight flows multiplet → tail, not ground → tail.** %S(lev0) saturates (~0.225 for q=5, ~0.32 for q=2) while %S(lev1) monotonically decreases, feeding the tail. The ground state entropy fraction stabilizes early. At n=24, %S(tail) ≈ 4% for ALL q=2,3,5 — universal.
+**Weight flows multiplet → tail, not ground → tail.** %S(lev0) saturates (~0.225 for q=5, ~0.32 for q=2) while %S(lev1) monotonically decreases, feeding the tail. S_lev0_inf decreasing monotonically: 0.338 (q=2), 0.281 (q=3), 0.229 (q=5), 0.203 (q=7). Convergence rate α increases with q: 0.80→1.26.
+
+**Multiplet dominance M = %S(lev1)/[%S(lev0)+%S(lev1)] is a monotonic walking discriminator (Sprint 089c).** M increases with q: 0.676 (q=2), 0.724 (q=3), 0.771 (q=5), 0.797 (q=7) at n=16. The ratio M/[(q-1)/q] crosses 1.0 between q=3 and q=5 — real CFT has M > (q-1)/q (multiplet over-represents), complex CFT has M < (q-1)/q (multiplet under-represents). This crossover coincides with the real-to-complex CFT boundary at q=4.
+
+**Democracy index (Sprint 089c):** At q=2, ground state is depleted (64% of democratic share) and multiplet is enhanced (127%). At q=5, ground is enhanced (113%) and multiplet is depleted (92%). The crossover from ground-depleted to multiplet-depleted occurs near q=4.
 
 **Rényi entropy decomposition of walking (Sprints 085-086).** Size-pair extraction c_α = 6·ΔS/((1+1/α)·ln(N₂/N₁)) on periodic BC. Optimal α shifts gradually with q:
 

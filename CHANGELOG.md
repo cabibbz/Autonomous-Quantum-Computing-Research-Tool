@@ -62,85 +62,12 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 
 Full details for all compressed sprints are in sprints/sprint_NNN.md.
 
-### Sprint 076 — S_q Potts vs Hybrid: Direct Universality Class Comparison at q=5
-**Status:** Complete (3 experiments).
+- **076** — S_q Potts vs hybrid head-to-head at q=5. g_c(S_q)=0.200. 4-fold vs 2+2 degeneracy. S_q FSS 10x larger.
+- **077** — S_q at q=7,10: g_c=0.144/0.101. No first-order signal at n≤8. Δ·N≈0.6 q-independent.
+- **078** — Self-duality: g_c=1/q exact. DMRG walking holds at n≤12. c(q=5)=1.15 matches Re(c)=1.138.
+- **079** — c_eff at q=7,10: walking breaks down. c_eff/Re(c) degrades monotonically. q=5 unique sweet spot.
 
-**First head-to-head comparison of S_q Potts vs Potts-clock hybrid at q=5.** Built standard S_q Potts Hamiltonian (field = Σ_{k=1}^{q-1} X^k, full S_q symmetry) and compared to hybrid (field = X+X†, Z_q symmetry).
-
-**S_q Potts g_c(q=5) = 0.200 (076a).** From gap×N crossings at n=4,6,8. Verified S_q ≡ hybrid at q=3 (10-digit match). S_q field strength (q-1)=4 per unit g, hybrid 2cos(2π/5)≈0.618. Ratio 6.47x → g_c ratio 2.19x.
-
-**Qualitatively different conformal towers (076b).** S_q has 4-fold degenerate first excited state (S₅ symmetry). Hybrid has 2+2 split (Z₅ conjugate pairs, x₃=2.41). x₃ is 141% different between models. Both show clean CFT convergence at n≤8.
-
-**S_q Potts FSS corrections 10x larger than hybrid (076c).** Δ·N drift n=4→8: S_q 4.8% vs hybrid 0.46%. Power-law fits better than exponential for both (25x for S_q, 50x for hybrid). q=7 S_q gap collapses 69% from n=4→6 (possible first-order signal at larger q).
-
-**Surprises:**
-- S_q Potts at q=5 looks like genuine CFT at n≤8 — no first-order signature visible
-- Degeneracy structure is sharpest discriminator (exact integers, no fitting needed)
-- Δ₂/Δ₁ = 1.0000 exactly for BOTH models — conjugate pair degeneracy universal
-- q=3 verification perfect: confirms code correctness
-
-[Full report: sprints/sprint_076.md]
-
-### Sprint 077 — S_q Potts at q=7,10: g_c Found, NO First-Order Signal at n≤8
-**Status:** Complete (3 experiments).
-
-**S_q Potts g_c(q=7) = 0.144 (077a).** From (4,6) gap×N crossing. Targeted n=8 test: gap×N=0.649, matches (4,6) crossing to 0.5%. Three sizes converge within 2.4% band. Previous "69% gap collapse" (Sprint 076c) was artifact of wrong g_c estimate.
-
-**Conformal tower at q=7 (077b).** S_q has 6-fold degenerate 1st excited (S₇ symmetry). Hybrid has 2-fold (Z₇ pairs). R_ε = 3.48 (S_q) vs 8.07 (hybrid) — 2.3x ratio. Completely different operator content.
-
-**NO first-order signal at q=5,7,10 up to n≤8 (077c).** Δ·N drift: S_q q=5 (-4.8%), q=7 (+1.3%), q=10 (+0.6%). All <5%. Hybrid similarly stable. S_q Δ·N ≈ 0.6 nearly q-independent; hybrid Δ·N drops with q (0.48→0.25).
-
-**S_q g_c(q=10) = 0.101** from (4,5) crossing. g_c ratio (hybrid/S_q) grows: 2.2 (q=5), 3.7 (q=7), 6.8 (q=10).
-
-**Surprises:**
-- S_q q=7 n=8 gap×N convergence BETTER than q=5 (1.3% vs 4.8% drift)
-- Complex CFT walking regime extends to n≥8 even at q=10
-- S_q Δ·N nearly q-independent (~0.6) while hybrid varies 2x across q=5-10
-- Sprint 076c "69% gap collapse" completely explained by wrong g_c
-
-[Full report: sprints/sprint_077.md]
-
-### Sprint 078 — S_q Potts Self-Duality: g_c = 1/q Exact, DMRG Walking, Complex CFT c Confirmed
-**Status:** Complete (3 experiments).
-
-**g_c(S_q Potts) = 1/q exactly from self-duality (078a).** Kramers-Wannier duality verified numerically for q=2,5,7,10. All crossings approach 1/q from above with ~1/n² corrections. q=2 best: 0.50025 (dev 0.05%), q=5: 0.20076 (dev 0.4%).
-
-**q=2 S_q ≠ hybrid (078a).** S_q field = X, hybrid = X+X† = 2X at q=2. Factor-of-2 gives S_q g_c = 0.500 ≠ hybrid 0.250. S_q = hybrid ONLY at q=3.
-
-**No walking breakdown at n≤12 for q=5 (078b).** DMRG gap×N INCREASES: 1.88 (n=8) → 2.00 (n=12). System becomes more CFT-like, not less. Walking length ξ* > 12.
-
-**S_q c(q=5) = 1.15, matches complex CFT Re(c) ≈ 1.138 to ~1% (078c).** Calabrese-Cardy fits with R² > 0.999. q=3 c_eff = 0.89-0.91, converging toward exact c = 4/5 with ~12% FSS overshoot. S_q c > hybrid c (1.15 vs 1.11) confirms different universality classes.
-
-**Surprises:**
-- q=2 S_q ≠ hybrid — field operator differs by factor 2
-- DMRG gap×N INCREASES with n — opposite to walking breakdown
-- Complex CFT quantitatively confirmed: Re(c) within 1% of DMRG measurement
-- q=3 FSS overshoot persists at 12% even at n=24
-
-[Full report: sprints/sprint_078.md]
-
-### Sprint 079 — c(q=7,10): Walking Regime Breaks Down at Higher q
-**Status:** Complete (3 experiments).
-
-**Complex CFT c_eff ≈ Re(c) works at q=5 but FAILS at q≥7 (079a-c).** Exact diag and DMRG entropy profiles at g_c=1/q for q=7,10. Correct Coulomb gas formula: √Q=2cos(π/p), c=1-6/[p(p-1)], Re(c)=1+6α²/(π²+α²) for q>4. Verified q=2→0.5, q=3→0.8, q=5→1.138.
-
-**c_eff/Re(c) ratio degrades monotonically with q.** At n=8: q=3 (+12%), q=5 (+0.3%), q=7 (-18%), q=10 (-40%). q=5 is the unique "sweet spot" where walking regime extends beyond all accessible sizes.
-
-**DMRG = exact at q=7 n=8 (079b).** chi=56 DMRG and exact diag give identical c=1.1108. Zero truncation error — the low c is genuine physics, not numerical artifact.
-
-**q=7 c_eff DECREASING with n (079a).** n=8: 1.111, n=12: 1.059. Opposite to q=3,5 (where c_eff overshoots and converges from above). The walking breakdown shows up as c_eff trending away from Re(c) at larger n.
-
-**c_eff at n=8 ≈ 1.1 for ALL q≥5.** Nearly q-independent at moderate sizes (1.14, 1.11, 0.95 for q=5,7,10). The complex CFT q-dependence only manifests at n << ξ*(q).
-
-**Surprises:**
-- DMRG has zero chi truncation error at q=7 n=8 (ground state has low entanglement)
-- c_eff(q=7) DECREASING with n — opposite to q=3,5 behavior
-- q=5 unique sweet spot: only q where c_eff ≈ Re(c) to 1%
-- c_eff nearly q-independent (~1.1) at moderate sizes for all q≥5
-
-**POTENTIALLY NOVEL:** Systematic c_eff/Re(c) mapping across q=3-10 at matched sizes.
-
-[Full report: sprints/sprint_079.md]
+Full details for sprints 076-079 are in sprints/sprint_NNN.md.
 
 ### Sprint 080 — c_eff at q=6,8,9: Walking Regime Boundary Mapped
 **Status:** Complete (3 experiments).
@@ -344,3 +271,25 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - Sprint 087 narrative partially corrected: tail growth is universal, only redistribution is q-dependent
 
 [Full report: sprints/sprint_088.md]
+
+### Sprint 089 — q=7 Tail Exponent Resolution & Level Redistribution as Walking Discriminator
+**Status:** Complete (3 experiments).
+
+**q=7 tail exponent b≈3.0 was PRE-ASYMPTOTIC (089a).** Extended DMRG to n=14 (chi=30, 237s) and n=16 (chi=25, 138s). With n≥8 data (5 points): b = 2.07 ± 0.14, consistent with universal b≈2.0. Sprint 088's b≈3.0 from 4 points (n=6-12) resolved — n=6 was in a crossover regime.
+
+**Static entropy partition is the walking discriminator (089b).** %S(lev0) and %S(lev1) are MONOTONIC in q. Weight always flows multiplet→tail. d(%S)/d(ln n) rates are NOT monotonic — dynamic rates don't cleanly discriminate. %S(lev0) saturation: 0.338 (q=2) → 0.203 (q=7), R² > 0.999.
+
+**Multiplet dominance M/[(q-1)/q] crosses 1.0 at walking boundary (089c).** M = %S(lev1)/[%S(lev0)+%S(lev1)]. At n=16: M = 0.676 (q=2), 0.724 (q=3), 0.771 (q=5), 0.797 (q=7). Ratio M/[(q-1)/q]: 1.33 (q=2), 1.07 (q=3), 0.96 (q=5), 0.93 (q=7). Crosses 1.0 between q=3 and q=5 — the real-to-complex CFT boundary. Democracy index flips: ground-depleted for real CFT, multiplet-depleted for complex CFT.
+
+**Mean tail exponent across all q: b = 2.017 ± 0.032.** Universal.
+
+**Surprises:**
+- q=7 b≈3.0 completely resolved — was pre-asymptotic crossover at small n
+- M/[(q-1)/q] = 1.0 crossing coincides with real→complex CFT boundary
+- Democracy index flips sign at q≈4 — unexpected structural connection
+- c_eff/Re(c) anticorrelates with M (r = −0.82) — multiplet trapping explains c_eff deviation
+- %S(lev1) → 0 as n→∞ for all q — multiplet is transient entropy reservoir
+
+**POTENTIALLY NOVEL:** First identification of multiplet dominance M as walking discriminator. M/[(q-1)/q] crossover at q=4 connects real-to-complex CFT transition to entanglement spectrum entropy partition. Universal tail exponent b=2.0 confirmed for all q=2-7.
+
+[Full report: sprints/sprint_089.md]
