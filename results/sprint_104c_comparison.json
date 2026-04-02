@@ -1,0 +1,41 @@
+{
+  "potts_data": {
+    "q=2": {
+      "Re_c": 0.5,
+      "c_eff_ratio": 1.0,
+      "c_Cas_ratio": 0.986
+    },
+    "q=3": {
+      "Re_c": 0.8,
+      "c_eff_ratio": 1.116,
+      "c_Cas_ratio": 0.988
+    },
+    "q=5": {
+      "Re_c": 1.138,
+      "c_eff_ratio": 1.012,
+      "c_Cas_ratio": 1.01
+    },
+    "q=7": {
+      "Re_c": 1.351,
+      "c_eff_ratio": 0.784,
+      "c_Cas_ratio": 1.0
+    },
+    "q=8": {
+      "Re_c": 1.438,
+      "c_eff_ratio": 0.739,
+      "c_Cas_ratio": 0.992
+    }
+  },
+  "j1j2_models": {
+    "XX": {
+      "v": 1.0
+    },
+    "Heisenberg": {
+      "v": 1.5707963267948966
+    },
+    "BKT": {
+      "v": 1.177
+    }
+  },
+  "conclusion": "Energy-entropy hierarchy is NOT universal. Specific to walking mechanism."
+}

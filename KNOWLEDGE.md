@@ -1,9 +1,10 @@
 # Accumulated Knowledge — Edit by topic, not by sprint
 
 ## Open Items — Check each sprint, remove when done
-- **Test energy-entropy hierarchy in a DIFFERENT model.** The Casimir finding (Sprint 098) was only measured in S_q Potts. If it also appears in J1-J2 chains or SU(N) Heisenberg at large N, it's a universal principle about walking/pseudo-critical transitions, not a Potts-specific curiosity. This is the highest-impact experiment available — could upgrade the finding from PRB to PRL.
+- **~~Test energy-entropy hierarchy in a DIFFERENT model~~** DONE (Sprint 104). Tested in J1-J2 chain. Result: **NOT universal.** Hierarchy direction is model-dependent. Potts walking gives O(1) entropy deviation — unique to walking mechanism. J1-J2 gives only O(1%) differences. The Casimir-Re(c) finding is walking-specific, not a general CFT principle.
 - **~~Harden χ_F scaling at q=5~~** DONE (Sprint 103). 4 sizes, α=2.091±0.002. Confirmed novel. α(q) mapped for q=2-7.
 - **KNOWLEDGE.md is over budget (~560 lines vs ~200 target).** Compress old sections into one-line summaries.
+- **Hardware validation** — 580s QPU unused for 79 sprints. Strongest prediction: q=2 Ising fidelity at g_c, or Heisenberg chain c_eff on 5-10 qubits.
 
 ## Five Entanglement Archetypes
 | Archetype | Example | MI pattern | I3 sign | Negativity | Source |
@@ -234,6 +235,16 @@ Non-Potts fraction grows exponentially ~exp(1.6·q). **Biggest jump at q=3→4 (
 1/N⁴ corrections: |d|/q ≈ 0.044 (q-independent, universal lattice correction). 2-param fits biased 2-4%, but pairwise at largest sizes and extrapolated ∞ values all within 1-2% of Re(c).
 
 **Scope:** Holds at all accessible sizes (n≤14 for q=2, n≤8 for q=7). Walking breakdown is exclusively an entropy phenomenon — energy sees Re(c) everywhere entropy fails.
+
+**Energy-entropy hierarchy is NOT universal (Sprint 104).** Tested in J1-J2 spin-1/2 chain at three regimes:
+
+| Model | c | c_eff(18,20) | c_Cas(18,20) | Winner |
+|-------|---|-------------|-------------|--------|
+| XX (Δ=0) | 1.000 | 0.994 | 1.006 | tied |
+| Heisenberg (Δ=1) | 1.000 | 0.999 | 1.014 | entropy 21× |
+| J1-J2 BKT (J2=0.2412) | 1.000 | 0.996 | 1.000 | Casimir 14× |
+
+Hierarchy direction depends on correction type: (1) marginal operator logs pollute Casimir → entropy wins (Heisenberg), (2) BKT log³ corrections pollute entropy → Casimir wins. **Max J1-J2 entropy deviation = 0.6% vs Potts walking = 26% — the Potts effect is 41× larger.** The O(1) entropy deviation with accurate Casimir is unique to the walking mechanism (entanglement spectrum reorganization).
 
 **Im(c) oscillations undetectable at accessible sizes (Sprints 099-100).** Complex CFT predicts oscillatory corrections ~cos(ω·ln(N))/N⁴ with period ~e^300 for q=5. Literature confirms: no paper has detected Im(c) from Casimir energy of a real Hamiltonian. Only non-Hermitian deformation (Tang et al. 2024) accesses Im(c) directly.
 

@@ -217,3 +217,16 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **Upgraded to CONFIRMED NOVEL.** Five checks: 4+ sizes at q=5 (0.3% stability), three walking q values, q=2,3 match exact ν to <2%, independent reproduction of q=7 n=6, simple linear functional form.
 
 [Full report: sprints/sprint_103.md]
+
+### Sprint 104 — Energy-Entropy Hierarchy Universality Test (NEGATIVE)
+**Status:** Complete (3 experiments).
+
+**J1-J2 chain at three regimes (104a).** Spin-1/2 chain, periodic BC, S_z=0 sector exact diag, N=8-20. Compared c_eff (entropy) vs c_Cas (Casimir) convergence to c=1. XX (Δ=0): tied (1.0×). Heisenberg (Δ=1): entropy wins 21× (c_eff 0.07% off, c_Cas 1.4% off). BKT (J2=0.2412): Casimir wins 14× (c_Cas 0.03% off, c_eff 0.37% off).
+
+**Velocity extraction (104b).** Independent v from S_z=0→S_z=1 gap. XX: v_gap=1.002 (exact 1.0). Heisenberg: v_gap=1.387 (exact π/2=1.571, 12% log correction). BKT: v_gap=1.177 (smoothly converging, minimal log correction). Multi-size Casimir fit confirms: c_Cas(fit) = 0.998-1.005 for all models.
+
+**Cross-model comparison (104c).** Potts max |Δc_eff| = 26% (q=7-8). J1-J2 max |Δc_eff| = 0.6%. Potts effect is 41× LARGER. Heisenberg c_Cas deviation follows 1/ln(N) (fit: 0.283/ln(N) - 0.084).
+
+**Key finding: Energy-entropy hierarchy is NOT universal.** Direction depends on correction type: marginal operator logs → entropy wins (Heisenberg); BKT log³ corrections → Casimir wins; walking spectrum reorganization → Casimir wins by O(1) (Potts only). The O(1) entropy deviation is unique to walking.
+
+[Full report: sprints/sprint_104.md]
