@@ -48,7 +48,21 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **S_q Potts looks CFT-like at n≤12 for q=5 (Sprints 076-078).** Clean conformal towers, exact degeneracies, Δ·N stable to <5%. DMRG gap×N INCREASES n=8→12 (1.88→2.00, open BC) — no walking breakdown. Walking correlation length ξ* > 12 sites.
 
-**S_q Potts c(q=5) ≈ 1.15, matches complex CFT Re(c) ≈ 1.138 to ~1% (Sprint 078c).** Calabrese-Cardy entropy profile fits with R² > 0.999. q=3 c_eff = 0.89 (n=24), converging toward exact c = 4/5 = 0.800 with ~12% FSS overshoot. S_q c(q=5) > hybrid c(q=5) ≈ 1.11 — different universality classes confirmed at central charge level.
+**Complex CFT central charge formula (verified Sprint 079c):** √Q = 2·cos(π/p), c = 1 - 6/[p(p-1)]. For q>4, p is complex: α = arccosh(√q/2), p = iπ/α. Re(c) = 1 + 6α²/(π² + α²). Verified: q=2→0.5, q=3→0.8, q=5→1.138 (all exact).
+
+**c_eff(q=5) ≈ 1.15, matches complex CFT Re(c) ≈ 1.138 to ~1% (Sprints 078c, 079c).** q=5 is the unique "sweet spot" where complex CFT quantitatively predicts c_eff at ALL accessible sizes (n=6-24).
+
+**c_eff does NOT match Re(c) at q≥7 (Sprint 079).** Walking regime ξ*(q) shrinks with q:
+
+| q | Re(c) | c_eff(n=8) | c/Re(c) | ξ* estimate |
+|---|-------|------------|---------|-------------|
+| 5 | 1.138 | 1.141 | 1.003 | >> 24 sites |
+| 7 | 1.351 | 1.111 | 0.822 | ~ 10 sites |
+| 10 | 1.584 | 0.946* | 0.597 | < 6 sites |
+
+*q=10 at n=6. c_eff at n=8 is ~1.1 for ALL q≥5 — the complex CFT q-dependence only manifests at n << ξ*(q). DMRG confirms: q=7 c_eff DECREASES with n (1.11→1.06, n=8→12). Zero DMRG truncation error — exact diag matches DMRG at n=8.
+
+**POTENTIALLY NOVEL (Sprint 079):** Systematic c_eff/Re(c) ratio across q=3-10 at matched sizes. First quantitative mapping of walking regime breakdown in 1D quantum S_q Potts chain.
 
 **S_q Potts g_c = 1/q exactly (Sprint 078a, self-duality).** Kramers-Wannier duality gives g_c = 1/q. Verified numerically: all crossings approach 1/q from above with ~1/n² corrections. q=2 deviation 0.05% at (10,12), q=5 deviation 0.4% at (6,8).
 

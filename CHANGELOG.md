@@ -242,3 +242,26 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - q=3 FSS overshoot persists at 12% even at n=24
 
 [Full report: sprints/sprint_078.md]
+
+### Sprint 079 — c(q=7,10): Walking Regime Breaks Down at Higher q
+**Status:** Complete (3 experiments).
+
+**Complex CFT c_eff ≈ Re(c) works at q=5 but FAILS at q≥7 (079a-c).** Exact diag and DMRG entropy profiles at g_c=1/q for q=7,10. Correct Coulomb gas formula: √Q=2cos(π/p), c=1-6/[p(p-1)], Re(c)=1+6α²/(π²+α²) for q>4. Verified q=2→0.5, q=3→0.8, q=5→1.138.
+
+**c_eff/Re(c) ratio degrades monotonically with q.** At n=8: q=3 (+12%), q=5 (+0.3%), q=7 (-18%), q=10 (-40%). q=5 is the unique "sweet spot" where walking regime extends beyond all accessible sizes.
+
+**DMRG = exact at q=7 n=8 (079b).** chi=56 DMRG and exact diag give identical c=1.1108. Zero truncation error — the low c is genuine physics, not numerical artifact.
+
+**q=7 c_eff DECREASING with n (079a).** n=8: 1.111, n=12: 1.059. Opposite to q=3,5 (where c_eff overshoots and converges from above). The walking breakdown shows up as c_eff trending away from Re(c) at larger n.
+
+**c_eff at n=8 ≈ 1.1 for ALL q≥5.** Nearly q-independent at moderate sizes (1.14, 1.11, 0.95 for q=5,7,10). The complex CFT q-dependence only manifests at n << ξ*(q).
+
+**Surprises:**
+- DMRG has zero chi truncation error at q=7 n=8 (ground state has low entanglement)
+- c_eff(q=7) DECREASING with n — opposite to q=3,5 behavior
+- q=5 unique sweet spot: only q where c_eff ≈ Re(c) to 1%
+- c_eff nearly q-independent (~1.1) at moderate sizes for all q≥5
+
+**POTENTIALLY NOVEL:** Systematic c_eff/Re(c) mapping across q=3-10 at matched sizes.
+
+[Full report: sprints/sprint_079.md]
