@@ -81,76 +81,11 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - **066** — No first-order signal at q=10 (n≤6). Δ·N decelerates, gap minimum size-independent. Continuous confirmed.
 - **067** — Hybrid has ONE transition, no floating phase. Clock has wide floating phase (Δg=0.62). Fourth hybrid-clock difference.
 
+- **068** — 2D hybrid model first study. g_c(2D): q=2 (0.771), q=3 (1.267), q=5 (1.588). No first-order signal at q=5.
+- **069** — 2D entanglement entropy. Ordered phase S=ln(q) exactly. Entropy peak NOT at g_c.
+- **070** — 2D diagnostics: q=2 continuous confirmed (α=0, ν=1). q=5 inconclusive (only L=2,3).
+
 Full details for all compressed sprints are in sprints/sprint_NNN.md.
-
-### Sprint 068 — 2D Hybrid Model: First Study, No First-Order Signal at q=5
-**Status:** Complete (3 experiments).
-
-**First study of Potts-clock hybrid in 2D.** Built Hamiltonian on periodic L×L square lattices. Gap×L crossing method validated on q=2 (2D Ising, L=2,3,4).
-
-**2D critical points measured.**
-| q | g_c(2D) | 2D/1D ratio | Sizes |
-|---|---------|-------------|-------|
-| 2 | 0.771 | 3.08 | L=2,3,4 |
-| 3 | 1.267 | 3.80 | L=2,3 |
-| 5 | 1.588 | 3.60 | L=2,3 |
-
-**q=2 continuous transition confirmed (068b).** L=3 and L=4 gap×L agree to 4 decimal places (2.3632 vs 2.3631). L=2 completely out of scaling regime (gap×L=4.19).
-
-**q=5: no first-order signal detected (068c).** dE₀/dg smooth across g_c (no kink). Z₅ conjugate pair degeneracy exact in 2D. But only L=2,3 available — **inconclusive** for definitive determination. Need larger lattices.
-
-**Gap×L crossing ratio is circular with 2 sizes.** gap(L₂)/gap(L₁) = L₁/L₂ at the crossing BY DEFINITION. Not an independent z=1 test. Three sizes needed (only available for q=2).
-
-**POTENTIALLY NOVEL:** First measurements of 2D g_c for the hybrid model. If continuous behavior at q=5 is confirmed by larger lattices (QMC), the hybrid would be unique: continuous in 2D where both standard Potts (first-order) and clock (BKT) show different behavior.
-
-**Surprises:**
-- L=2 is out of scaling regime for q=2 2D Ising (gap×L off by 77%)
-- gap₂/gap₁ = 1.000 for ALL q,L,g in 2D — Z_q degeneracy is exact
-- 2D/1D ratio is non-monotonic: 3.08, 3.80, 3.60 for q=2,3,5
-- Gap×L at g_c varies widely: 2.36 (q=2), 6.10 (q=3), 3.50 (q=5)
-- L=3 at q=5 (dim=2M) runs at 25s/pt — practical 2D exact diag
-
-[Full report: sprints/sprint_068.md]
-
-### Sprint 069 — 2D Entanglement Entropy: Area Law and Ordered-Phase Dominance
-**Status:** Complete (3 experiments).
-
-**Ordered phase entropy = ln(q) EXACTLY.** For all q=2,3,5 and all L=2,3,4 tested. The Z_q-symmetric ground state is a GHZ-like superposition with S = ln(q) independent of system size and bipartition geometry.
-
-**Critical entropy follows area law.** S/boundary at w=1 strip, L=3: q=2 (0.065), q=3 (0.039), q=5 (0.053). Non-monotonic in q. L=2 out of scaling for all q.
-
-**Entropy peak is NOT at g_c.** At accessible sizes (L≤4), the GHZ entropy ln(q) dominates over the critical area-law entropy. For q=2 L=4: peak at g=0.58 vs g_c=0.771. For q=5 L=3: peak at g=0.68 vs g_c=1.588. Crossover at L ~ ln(q)/(2α) ≈ 10-16.
-
-**Sharp entropy drop at g ≈ 0.6·g_c** for q=5 L=3. S drops from 1.62 to 0.33 between g=0.68 and g=1.57.
-
-**Surprises:**
-- Entropy peak in ordered phase, NOT at criticality — qualitatively different from 1D
-- S_ordered = ln(q) exactly, independent of L and bipartition
-- Area-law coefficient non-monotonic in q (q=3 lowest at 0.039)
-- Sharp entropy crossover well below g_c
-
-[Full report: sprints/sprint_069.md]
-
-### Sprint 070 — 2D Energy Derivatives & Fidelity: q=2 Continuous, q=5 Inconclusive
-**Status:** Complete (3 experiments).
-
-**q=2 2D Ising continuous transition confirmed (L=3→4).** d²E₀/dg² peak scales as L^0.16 (consistent with α=0). Fidelity susceptibility χ_F/N scales as L^0.94 (consistent with ν=1). dE₀/dg smooth — no latent heat.
-
-**q=5 2D transition nature INCONCLUSIVE.** Only L=2,3 accessible; L=2 pathologically out of scaling (all quantities 10-50x too small). dE/dg smooth at L=3 (no latent heat signal). F_min=0.985 (lower than q=2,3 but not diagnostic). d²E peak smaller at q=5 than q=2 — less singular, not more.
-
-**Eigenstate-sum χ_F FAILS for dim > 5000.** Truncation to k=10 states captures negligible fraction. Ground state overlap method works correctly for any dim.
-
-**L=2 out of scaling for ALL diagnostics** — not just gap. L=2→3 apparent exponents (5-7) are artifacts.
-
-**Fundamental bottleneck:** q=5 L=4 dim ≈ 10^11 — infeasible with exact diag. Cylinder DMRG or QMC needed.
-
-**Surprises:**
-- d²E/dg² and χ_F peaks are in ordered phase (far below g_c) for all q at small L
-- q=5 d²E peak (1.58) SMALLER than q=2 (3.00) at L=3 — opposite to first-order expectation
-- Overlap-derived χ_F matches eigenstate sum only at full diag (dim < 5000)
-- dE/dg converges smoothly for all q — no hint of latent heat even at q=5
-
-[Full report: sprints/sprint_070.md]
 
 ### Sprint 071 — 2D Cylinder Geometry: Ly=2 Ladder for q=2,5
 **Status:** Complete (3 experiments).
@@ -288,3 +223,22 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - Sprint 076c "69% gap collapse" completely explained by wrong g_c
 
 [Full report: sprints/sprint_077.md]
+
+### Sprint 078 — S_q Potts Self-Duality: g_c = 1/q Exact, DMRG Walking, Complex CFT c Confirmed
+**Status:** Complete (3 experiments).
+
+**g_c(S_q Potts) = 1/q exactly from self-duality (078a).** Kramers-Wannier duality verified numerically for q=2,5,7,10. All crossings approach 1/q from above with ~1/n² corrections. q=2 best: 0.50025 (dev 0.05%), q=5: 0.20076 (dev 0.4%).
+
+**q=2 S_q ≠ hybrid (078a).** S_q field = X, hybrid = X+X† = 2X at q=2. Factor-of-2 gives S_q g_c = 0.500 ≠ hybrid 0.250. S_q = hybrid ONLY at q=3.
+
+**No walking breakdown at n≤12 for q=5 (078b).** DMRG gap×N INCREASES: 1.88 (n=8) → 2.00 (n=12). System becomes more CFT-like, not less. Walking length ξ* > 12.
+
+**S_q c(q=5) = 1.15, matches complex CFT Re(c) ≈ 1.138 to ~1% (078c).** Calabrese-Cardy fits with R² > 0.999. q=3 c_eff = 0.89-0.91, converging toward exact c = 4/5 with ~12% FSS overshoot. S_q c > hybrid c (1.15 vs 1.11) confirms different universality classes.
+
+**Surprises:**
+- q=2 S_q ≠ hybrid — field operator differs by factor 2
+- DMRG gap×N INCREASES with n — opposite to walking breakdown
+- Complex CFT quantitatively confirmed: Re(c) within 1% of DMRG measurement
+- q=3 FSS overshoot persists at 12% even at n=24
+
+[Full report: sprints/sprint_078.md]

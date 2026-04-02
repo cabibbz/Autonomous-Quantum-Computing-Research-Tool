@@ -46,16 +46,23 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 - FSS corrections: S_q 10x larger (Δ·N drifts 4.8% vs 0.46% over n=4-8)
 - z_eff: S_q 1.071, hybrid 1.007 (both power-law at n≤8)
 
-**Surprise: S_q Potts looks CFT-like at n≤8 for ALL q=5,7,10 (Sprints 076-077).** Clean conformal towers, exact degeneracies, Δ·N stable to <5%. The "walking" correlation length ξ* exceeds n=8 even at q=10. First-order nature requires much larger systems. Complex CFT (Gorbenko et al.) describes S_q behavior at moderate sizes.
+**S_q Potts looks CFT-like at n≤12 for q=5 (Sprints 076-078).** Clean conformal towers, exact degeneracies, Δ·N stable to <5%. DMRG gap×N INCREASES n=8→12 (1.88→2.00, open BC) — no walking breakdown. Walking correlation length ξ* > 12 sites.
 
-**S_q Potts critical points (Sprint 076-077):**
+**S_q Potts c(q=5) ≈ 1.15, matches complex CFT Re(c) ≈ 1.138 to ~1% (Sprint 078c).** Calabrese-Cardy entropy profile fits with R² > 0.999. q=3 c_eff = 0.89 (n=24), converging toward exact c = 4/5 = 0.800 with ~12% FSS overshoot. S_q c(q=5) > hybrid c(q=5) ≈ 1.11 — different universality classes confirmed at central charge level.
 
-| q | g_c (S_q) | g_c (hybrid) | g_c ratio | S_q 1st degen | Hybrid 1st degen |
-|---|-----------|-------------|-----------|---------------|-----------------|
-| 3 | 0.333 | 0.333 | 1.00 | identical | identical |
-| 5 | 0.200 | 0.441 | 2.21 | 4-fold (S₅) | 2-fold (Z₅) |
-| 7 | 0.144 | 0.535 | 3.72 | 6-fold (S₇) | 2-fold (Z₇) |
-| 10 | 0.101 | 0.684 | 6.77 | (q-1)-fold | 2-fold |
+**S_q Potts g_c = 1/q exactly (Sprint 078a, self-duality).** Kramers-Wannier duality gives g_c = 1/q. Verified numerically: all crossings approach 1/q from above with ~1/n² corrections. q=2 deviation 0.05% at (10,12), q=5 deviation 0.4% at (6,8).
+
+**S_q Potts critical points (Sprints 076-078):**
+
+| q | g_c (S_q) = 1/q | g_c (hybrid) | g_c ratio | S_q 1st degen | Hybrid 1st degen |
+|---|-----------------|-------------|-----------|---------------|-----------------|
+| 2 | 1/2 = 0.500 | 0.250 | 2.00 | identical (Ising) | identical |
+| 3 | 1/3 = 0.333 | 0.333 | 1.00 | identical | identical |
+| 5 | 1/5 = 0.200 | 0.441 | 2.21 | 4-fold (S₅) | 2-fold (Z₅) |
+| 7 | 1/7 = 0.143 | 0.535 | 3.75 | 6-fold (S₇) | 2-fold (Z₇) |
+| 10 | 1/10 = 0.100 | 0.684 | 6.84 | (q-1)-fold | 2-fold |
+
+**q=2: S_q ≠ hybrid (Sprint 078a).** S_q field = Σ X^k = X (one operator). Hybrid field = X+X† = 2X. Factor-of-2 field difference gives S_q g_c = 0.500, hybrid g_c = 0.250. S_q = hybrid ONLY at q=3.
 
 **S_q 1st excited degeneracy = q-1 exactly** (full S_q permutation merges all spin fields). Hybrid always has 2-fold (Z_q conjugate pairs). Sharpest discriminator between models.
 
