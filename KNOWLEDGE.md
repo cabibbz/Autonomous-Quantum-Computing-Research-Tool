@@ -153,12 +153,12 @@ Non-Potts fraction grows exponentially ~exp(1.6·q). **Biggest jump at q=3→4 (
 - **BW residual is BULK-concentrated for real CFT, UNIFORM for walking.** Boundary enrichment (fraction at boundaries / expected if uniform): q=2 nA=4: 0.42×, q=3: 0.47×, q=5: 0.98×. Real CFT's BW corrections concentrate in the bulk of A; walking generates corrections uniformly.
 - **BW scale α increases with q:** 6.5 (q=2) → 10.3 (q=7). Higher local dimension → higher entanglement temperature.
 
-**BW breakdown vs subsystem size nA — threshold behavior (Sprint 094).** Mapped 1-R²(nA) for q=2 (nA=3-7), q=3 (3-6), q=4 (3-5), q=5 (3-4):
+**BW breakdown vs subsystem size nA — threshold behavior (Sprints 094-095).** Mapped 1-R²(nA) for q=2 (nA=3-7), q=3 (3-6), q=4 (3-5), q=5 (3-4):
 - **NOT a power law.** Data shows two-regime threshold: slow growth for nA ≤ nA*, then catastrophic collapse.
-- **nA*(q) decreases with q.** q=2,3,4 share nA*≈5 (threshold jump 19-261×). q=5 has nA*≈4 (33× jump). Walking shifts threshold down by 1 site.
-- **Exponential rate B(q) = 0.48q + 1.09 (R²=0.999).** Rate of BW breakdown scales linearly with q — connected to local Hilbert space dimension.
-- **Walking amplification is nA-dependent.** At nA=3: q=5/q=2 = 3.5×. At nA=4: 64×. Amplification itself grows exponentially.
-- **q=3 has sharpest threshold** (261× at nA=4→5), not q=5. Alpha stable within q (~6.5 for q=2, ~9.5 for q=5).
+- **Real threshold at nA*=6 for q=2 (corrected Sprint 095).** Sprint 094's nA*=5 was inflated 18× by equal-bipartition penalty. At n≫nA, nA=5 gives 1-R²=5.6e-4 (same order as nA=4). nA=6 collapses at ALL n tested (1-R²≈0.17 even at n=18).
+- **Equal-bipartition anomaly (Sprint 095).** At nA/n=0.5, BW accuracy is 2-18× worse than at nA/n<0.4. Penalty peaks at threshold nA: nA=5 q=2 has 18× penalty, nA=3 has 2×. This is a systematic bias in all Sprint 094 data.
+- **BW corrections are UV (lattice-scale), not IR.** 1-R² depends on nA alone, not nA/n. Increasing chain length n at fixed nA does NOT improve BW. This means corrections come from lattice UV structure, not finite-size effects.
+- **B(q) = 0.48q + 1.09 still valid** for exponential rate within each regime. Walking amplification at nA=3 (q=5/q=2): 10-15×, ratio-independent.
 
 **Rényi entropy decomposition of walking (Sprints 085-086).** Size-pair extraction c_α = 6·ΔS/((1+1/α)·ln(N₂/N₁)) on periodic BC. Optimal α shifts gradually with q:
 
@@ -198,6 +198,12 @@ Non-Potts fraction grows exponentially ~exp(1.6·q). **Biggest jump at q=3→4 (
 **c_implied/Re(c) ≈ 1.00 ± 0.03 for ALL q.** The ground state energy sees Re(c) even where entropy doesn't. No oscillatory corrections from complex Im(x_σ) detectable — period in ln(r) ≈ 80, vs accessible Δln(r) ≈ 1.
 
 **POTENTIALLY NOVEL (Sprint 083):** First demonstration that Casimir energy obeys complex CFT Re(c) across the walking boundary (q=2-8). Establishes hierarchy: energy observables track Re(c), entropy does not.
+
+**⚠ HARDENING NEEDED (external review, April 2026):** This is the strongest novel finding. To upgrade from POTENTIALLY NOVEL to CONFIRMED:
+- **More data points at q≥7:** Current Casimir fit uses only N=4,5,6 (3 points). Use GPU eigsh to get N=8 (q=7 dim=5.7M, ~20s) and N=10 (q=5 dim=10M, ~19s). Need 5+ points per q.
+- **Pairwise convergence test:** Check if vc from consecutive (N₁,N₂) pairs converges or drifts. Drift = 1/N⁴ corrections contaminating the fit.
+- **Finite-size scope:** Sprint 087 showed tail weight grows as n². At large enough n, energy must also break. Estimate WHERE: at what n does c_Casimir deviate from Re(c) by >5%? This defines the scope of the claim.
+- **Independence check:** c_Casimir and x_σ both use the energy spectrum. The truly independent comparison is c_Casimir vs c_entropy. Frame it that way.
 
 **Open BC correlators give WRONG exponents (Sprint 082a).** Raw power-law fit on DMRG open chain inflates η by ~5×. NEVER use open-BC raw power law for x extraction — use periodic chain with chord distance.
 

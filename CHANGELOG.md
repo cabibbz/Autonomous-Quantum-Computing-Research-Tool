@@ -76,31 +76,7 @@ Full details for sprints 076-079 are in sprints/sprint_NNN.md.
 - **083** — Casimir c_implied/Re(c) ≈ 1.00±0.03 for ALL q=2-8. Energy tracks Re(c) even where entropy deviates 40%. Walking is exclusively an entropy phenomenon.
 - **084** — Entanglement spectrum: (q-1)-fold degenerate multiplet. Level 1 absorbs 48%→69% of entropy (q=2→8). Entropy concentration as microscopic walking breakdown mechanism.
 
-### Sprint 085 — Rényi Entropies: α=3 Recovers Re(c) in Walking-Broken Regime
-**Status:** Complete (3 experiments).
-
-**Rényi c_α from size pairs across q=2-8 (085a-c).** Computed S_α for α=0.5,1,2,3,5,10,∞ on periodic S_q Potts chains. Extracted c_α using CFT formula for periodic chain (two entanglement cuts): c_α = 6·ΔS_α/((1+1/α)·ln(N₂/N₁)). Initially used wrong prefactor (c/12, one cut) — corrected to c/6 (two cuts).
-
-**α=1 (von Neumann) is MOST accurate for walking q≤6 (085c).** c₁/Re(c): q=2: 0.996, q=5: 0.999 (0.06% accuracy!), q=6: 0.995. von Neumann entropy is uniquely accurate in the walking regime — counterintuitive given it sums all eigenvalues.
-
-**α=3 uniquely recovers Re(c) in walking-broken regime (085c).** c₃/Re(c): q=7: 1.027 (2.7%), q=8: 0.991 (0.9%). The "magic" Rényi index shifts from α≈1 (walking) to α≈3 (broken) — a crossover in optimal probe.
-
-**c_∞ does NOT recover Re(c) — original hypothesis WRONG (085c).** c_∞ deviates comparably to c₁ for q≥7 (both ~7% off). Spectral redistribution affects ALL eigenvalues including λ_max.
-
-**Rényi spread (c₂-c_∞)/Re(c) is a new monotonic walking discriminator (085c).** Values: -0.046 (q=2), +0.008 (q=3), +0.086 (q=5), +0.106 (q=6), +0.118 (q=7), +0.129 (q=8). Changes sign near q=3, monotonically increases. Cleaner than c_eff/Re(c).
-
-**α=2 always overshoots Re(c) (085c).** c₂/Re(c) = 1.02-1.13 for ALL q. Most stable (smallest variation across q) but most biased.
-
-**Surprises:**
-- von Neumann (α=1) is literally the most accurate Rényi entropy for walking regime
-- α=3 (not α=∞) is the "corrective" index in broken regime — deep non-triviality
-- Rényi spread is monotonic in q — better discriminator than c_eff/Re(c)
-- Factor-of-2 periodic/open BC distinction nearly led to wrong physical conclusions
-- c_α profile shape changes at walking boundary: peak shifts from α=3-5 to α=2
-
-**POTENTIALLY NOVEL:** First systematic Rényi c_α(q,α) mapping across walking boundary for S_q Potts chain. ~~Discovery of α=3 as optimal probe for walking-broken regime~~ (RETRACTED Sprint 086 — single-size extraction artifact). Rényi spread as new walking discriminator (needs recheck with size pairs).
-
-[Full report: sprints/sprint_085.md]
+- **085** — Rényi c_α(q,α) mapping. α=1 best for walking (q≤6), optimal α shifts to 2 for broken (q≥7). ~~α=3 recovery~~ RETRACTED in Sprint 086. Rényi spread is monotonic walking discriminator.
 
 ### Sprint 086 — Rényi Entropy Scaling via DMRG: α=3 Was an Extraction Artifact
 **Status:** Complete (3 experiments).
@@ -296,3 +272,23 @@ Full details for sprints 076-079 are in sprints/sprint_NNN.md.
 **POTENTIALLY NOVEL:** First systematic BW fidelity vs subsystem size mapping across walking boundary. First demonstration of threshold nA*(q) in BW breakdown. First B(q) = 0.48q + 1.09 linear rate law.
 
 [Full report: sprints/sprint_094.md]
+
+### Sprint 095 — BW R² vs n at Fixed nA: Equal-Bipartition Anomaly Discovered
+**Status:** Complete (3 experiments).
+
+**q=2 BW R² with varying n at fixed nA (095a).** Periodic exact diag, nA=3-6, n up to 18. Key: 1-R² is flat in n for nA≤4 (varies <2× as n doubles). nA=6 collapses at ALL n (1-R²≈0.17 at n=18, nA/n=0.33). nA=5 at n≥16: 1-R²=5.6e-4 (20× better than Sprint 094's n=10).
+
+**q=5 periodic nA=3 (095b).** n=7: 1-R²=1.66e-3, n=8: 2.11e-3. Walking amplification 10-15× at matched nA/n. DMRG attempt at chi≥125 too expensive (251s at n=10).
+
+**Equal-bipartition penalty discovered (095c).** At nA/n=0.5, BW accuracy is systematically worse: 2× (nA=3), 2.1× (nA=4), **18× (nA=5)**, 1.4× (nA=6). Sprint 094's "threshold at nA=5" was an ARTIFACT. True threshold: nA*=6 for q=2.
+
+**Surprises:**
+- nA=5 is NOT at the BW threshold — 18× equal-bipartition artifact inflated Sprint 094's result
+- BW corrections are UV (lattice), not IR — increasing n doesn't help
+- nA=6 threshold is genuine: persists at nA/n=0.33
+- Equal-bipartition penalty peaks at threshold nA — most dangerous where it matters most
+- Walking amplification (q=5/q=2) is ~10-15× regardless of nA/n ratio
+
+**POTENTIALLY NOVEL:** First BW fidelity vs subsystem-to-system ratio mapping. Discovery of equal-bipartition anomaly in BW accuracy. Revision of BW threshold from nA*=5 to nA*=6 for q=2.
+
+[Full report: sprints/sprint_095.md]
