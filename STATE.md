@@ -1,21 +1,23 @@
 # Current State — Rewrite this completely each sprint
 
 ## Last Sprint
-Sprint 067 — Two-transition scan: hybrid has NO floating phase, unlike clock model.
+Sprint 068 — 2D hybrid model: first study. g_c found for q=2,3,5. No first-order signal at q=5 but inconclusive (only L=2,3).
 
 ## Active Research Thread
-**Potts-clock hybrid universality class — FULLY characterized, phase structure confirmed.**
+**2D extension of Potts-clock hybrid — promising but inconclusive.**
 
-Four differences from clock model (q≥5):
+2D critical points (square lattice, periodic BC):
 
-| Property | Hybrid | Clock |
-|----------|--------|-------|
-| Transition type | Power-law 2nd order | BKT |
-| ν | ~0.83 (finite) | →∞ |
-| Floating phase | **None** (Sprint 067) | **Yes** (g=[0.30,0.92] at q=5) |
-| c·x₁ | 0.112 | 0.146 |
+| q | g_c (1D) | g_c (2D) | 2D/1D | Sizes | gap×L | Verdict |
+|---|----------|----------|-------|-------|-------|---------|
+| 2 | 0.250 | 0.771 | 3.08 | L=2,3,4 | 2.363 | Continuous confirmed |
+| 3 | 0.333 | 1.267 | 3.80 | L=2,3 | 6.10 | Consistent |
+| 5 | 0.441 | 1.588 | 3.60 | L=2,3 | 3.50 | No 1st-order signal |
 
-Key CFT data for hybrid:
+Key finding: Z_q conjugate pair degeneracy (gap₂=gap₁) is exact in 2D for all q.
+Caveat: L=2,3 only — too small for conclusive first-order test. Need QMC or tensor networks.
+
+1D hybrid universality (Sprints 053-067, fully characterized):
 
 | q | g_c | c | ν | x₁ | c·x₁ | C_sse |
 |---|-----|---|---|-----|------|-------|
@@ -24,31 +26,25 @@ Key CFT data for hybrid:
 | 5 | 0.441 | ~1.10 | 0.83 | ~0.10 | 0.112 | 0.38 |
 | 10 | 0.684 | ~1.40 | 1.12? | ~0.083 | 0.116 | ~0.21 |
 
-Sprint 067 findings:
-- No second gap minimum at q=5,7 (scanned g=0.02-3.0)
-- DMRG entropy: c_eff = 1.22 at g_c, drops to 0.003 at g=0.55 (sharp transition)
-- Clock q=5 floating phase Δg=0.62 validated with same method
-- Large-g gap*N → 2·sin(2π/q): 1.90 (q=5), 1.56 (q=7)
-
 ## QPU Budget
 - Used: 20s of 600s (Sprint 025: ibm_kingston)
 - Remaining: 580s
 
 ## Top 3 Next Experiments
-1. **Hardware validation** — QPU budget 580s unspent. Strongest prediction: energy gap scaling at q=3 (exact ν=5/6) or q=2 conformal tower on real hardware. Measure Δ·N at multiple n to test FSS.
-2. **2D generalization** — Does the hybrid universality class persist in 2D? Small plaquette exact diag (e.g., 2×3 at q=3) to check if 1D results extend.
-3. **Entanglement Hamiltonian in floating phase** — The clock model's floating phase has c=1 (free boson). Measure BW locality in the floating phase vs at g_c — does the entanglement Hamiltonian become exactly local (BW=100%)?
+1. **2D with larger lattices** — Use DMRG on 2D strips (cylinder geometry) at q=5 to get more sizes. Ly=3 cylinder with Lx=4,6,8 could test gap scaling. Also: quantum Monte Carlo (stochastic series expansion) is sign-problem-free for this Hamiltonian.
+2. **Hardware validation** — QPU budget 580s unspent. Strongest prediction: q=2 2D Ising g_c=0.771 on a 2×2 plaquette (4 qubits). Or 1D q=2 conformal tower on real hardware.
+3. **Entanglement entropy in 2D** — Compute entanglement entropy at 2D g_c to extract effective c. Does the area-law→log-law transition occur? Compare with 1D c values.
 
 ## What's Been Ruled Out
-- Floating phase in hybrid model (Sprint 067: 3 independent probes)
-- Weakly first-order at q=10 (Sprint 066: no signal up to n=6)
-- Hybrid = clock universality (Sprint 065+067: 4 differences)
-- c·x₁ = 1/9 exact (Sprint 063c: q=3 exact is 8/75)
-- c·x₁ universal to Z_q models (Sprint 063b: clock ≠ hybrid)
-- Single compact boson for q≥5 (Sprint 062)
+- Floating phase in 1D hybrid model (Sprint 067)
+- Weakly first-order in 1D at q=10 (Sprint 066)
+- Hybrid = clock universality (Sprint 065+067)
+- c·x₁ = 1/9 exact (Sprint 063c)
+- L=2 in scaling regime for 2D Ising (Sprint 068: gap×L=4.19 vs 2.36)
 
 ## Key Tools Available
-- Exact diag CPU: n=4 for q≤30, n=6 for q≤10, n=8 for q≤5
-- DMRG: q≤15 at n≤8 (chi=30), q≤5 at n≤24. Clock DMRG ~10x slower.
+- 2D exact diag: L×L up to ~10 sites total (q=5 L=3 in 25s/pt, q=3 L=3 in 0.2s/pt)
+- 1D exact diag CPU: n≤8 for q≤5. GPU would extend to n≤10.
+- DMRG: q≤15 at n≤8 (chi=30), q≤5 at n≤24
 - IBM QPU: 580s remaining
-- results.db: SQLite with all key measurements from sprints 50-67
+- results.db: all key measurements from sprints 50-68

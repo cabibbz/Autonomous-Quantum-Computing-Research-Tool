@@ -52,6 +52,26 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **In future sprints: call this "Potts-clock hybrid" or "Z_q Potts chain", not "quantum Potts."**
 
+## 2D Extension (Sprint 068)
+
+**First study of the hybrid model on 2D square lattices.** H = -Σ_{<ij>} δ(s_i,s_j) - g Σ_i (X+X†) on periodic L×L torus. Method: gap×L crossing (z=1 at Lorentz-invariant critical point).
+
+| q | g_c (2D) | Sizes | gap×L at g_c | Verdict |
+|---|----------|-------|--------------|---------|
+| 2 | 0.771 | L=2,3,4 | 2.363 | **Continuous confirmed** (L=3,4 collapse to 4 decimals) |
+| 3 | 1.267 | L=2,3 | 6.10 | Consistent with continuous |
+| 5 | 1.588 | L=2,3 | 3.50 | No first-order signal (inconclusive, only 2 sizes) |
+
+**2D/1D g_c ratio ≈ 3-4 for all q.** Non-monotonic: 3.08 (q=2), 3.80 (q=3), 3.60 (q=5). Consistent with doubling coordination number z=2→4.
+
+**Z_q conjugate pair degeneracy (gap₂=gap₁) is EXACT in 2D** for all q, all L, all g tested. The symmetry structure carries over from 1D.
+
+**L=2 (2×2) is out of scaling regime for q=2.** Gap×L = 4.19 at the L=3,4 g_c, far from converged 2.36. L≥3 needed for 2D Ising. This FSS correction likely worsens for larger q.
+
+**Key limitation:** L=2,3 cannot distinguish continuous from first-order at q=5. The gap×L crossing ratio is trivially 2/3 with only 2 sizes. dE/dg is smooth but L=3 may be too small. Need QMC or tensor networks for definitive answer.
+
+**POTENTIALLY NOVEL:** If the hybrid remains continuous in 2D at q>4, it would contradict the standard Potts (first-order) and clock (BKT) behavior. The Z_q symmetry + δ-coupling combination may suppress first-order transitions even in 2D.
+
 ## MI-CV as Phase Transition Order Parameter (Sprints 030, 036, 037)
 MI-CV classifies transition type: second-order (crossing), first-order (step), BKT (dome). Confirmed at n=8-50. Potts crossings vindicated at true g_c. DO NOT use MI-CV for ν extraction (Sprint 053).
 

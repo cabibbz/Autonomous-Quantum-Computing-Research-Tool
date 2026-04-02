@@ -310,3 +310,32 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - Clock n=8 scan 7x slower than hybrid (886s vs 128s) due to dense coupling matrix
 
 [Full report: sprints/sprint_067.md]
+
+### Sprint 068 — 2D Hybrid Model: First Study, No First-Order Signal at q=5
+**Status:** Complete (3 experiments).
+
+**First study of Potts-clock hybrid in 2D.** Built Hamiltonian on periodic L×L square lattices. Gap×L crossing method validated on q=2 (2D Ising, L=2,3,4).
+
+**2D critical points measured.**
+| q | g_c(2D) | 2D/1D ratio | Sizes |
+|---|---------|-------------|-------|
+| 2 | 0.771 | 3.08 | L=2,3,4 |
+| 3 | 1.267 | 3.80 | L=2,3 |
+| 5 | 1.588 | 3.60 | L=2,3 |
+
+**q=2 continuous transition confirmed (068b).** L=3 and L=4 gap×L agree to 4 decimal places (2.3632 vs 2.3631). L=2 completely out of scaling regime (gap×L=4.19).
+
+**q=5: no first-order signal detected (068c).** dE₀/dg smooth across g_c (no kink). Z₅ conjugate pair degeneracy exact in 2D. But only L=2,3 available — **inconclusive** for definitive determination. Need larger lattices.
+
+**Gap×L crossing ratio is circular with 2 sizes.** gap(L₂)/gap(L₁) = L₁/L₂ at the crossing BY DEFINITION. Not an independent z=1 test. Three sizes needed (only available for q=2).
+
+**POTENTIALLY NOVEL:** First measurements of 2D g_c for the hybrid model. If continuous behavior at q=5 is confirmed by larger lattices (QMC), the hybrid would be unique: continuous in 2D where both standard Potts (first-order) and clock (BKT) show different behavior.
+
+**Surprises:**
+- L=2 is out of scaling regime for q=2 2D Ising (gap×L off by 77%)
+- gap₂/gap₁ = 1.000 for ALL q,L,g in 2D — Z_q degeneracy is exact
+- 2D/1D ratio is non-monotonic: 3.08, 3.80, 3.60 for q=2,3,5
+- Gap×L at g_c varies widely: 2.36 (q=2), 6.10 (q=3), 3.50 (q=5)
+- L=3 at q=5 (dim=2M) runs at 25s/pt — practical 2D exact diag
+
+[Full report: sprints/sprint_068.md]
