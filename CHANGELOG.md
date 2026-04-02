@@ -46,44 +46,14 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 
 ---
 
-## Detailed Sprint Log (Recent)
+## Compressed Sprint History (Sprints 035-070)
 
-- **035-043** — BW scaling, MI-CV FSS/classification, Potts phase transitions. Many results invalidated by Sprint 049 (wrong g_c).
-- **044** — g_c scaling law g_c∝(q-3)^{-0.85}. Blind prediction q=7 accurate to 1.6%. (INVALIDATED Sprint 049)
-- **045** — ν(q=5)≈2 from MI-CV data collapse. Gell-Mann MI WRONG for d≥5. (ALL ν VALUES WRONG, Sprint 053)
-- **046** — ν(q=4)≥2.2, BKT-like. Gell-Mann misleading at d=4. (WRONG, Sprint 053)
-- **047** — ν(q=7)≈0.5. q=4 confirmed unique BKT peak. (WRONG, Sprint 053)
-- **048** — Dead-pair bias invalidates raw MI-CV at d≥10. χ convergence ≠ MI convergence.
-
-- **049** — q=3 Potts g_c WRONG (was at 1.0, true ≈ 0.33). 10 sprints of Potts results invalidated. Entropy FSS gives c not ν.
-- **050** — True Potts critical points via self-duality (q=2: g_c=0.25, q=3: g_c=1/3 exact). MI-CV crossings vindicated at true g_c.
-- **051** — Energy gap method: g_c INCREASES with q (0.25→0.33→0.39→0.44→0.52). Reverses 10 sprints of wrong results.
-- **052** — g_c(q) ≈ (1/5)√(q-1) + 1/20. q=10 measured (g_c≈0.684). POTENTIALLY NOVEL.
-- **053** — ν(q) at true critical points: ν(q=3,4,5) ≈ 0.82-0.86, nearly constant. All old ν values WRONG.
-
-Full details for all compressed sprints are in sprints/sprint_NNN.md.
-
-- **054-055** — c(q) from entropy scaling. c grows with q: 0.5→0.8→1.0→>1. Entropy profile best method. iDMRG fails at criticality.
-- **056** — c(q) ≈ 0.40·ln(q-1) + 0.55. Analytic continuation and quadratic interpolation RULED OUT for q>4.
-- **057** — CFT operator content: Z_q spin field degeneracy, harmonic ratios sub-quadratic, free boson is q→∞ limit. POTENTIALLY NOVEL.
-- **058** — x₁ peaks at q=3. c/x₁ = 2q for q=2,3 only. Δ₁·N sign flip at q≥5 (anomalous FSS).
-- **059** — Conformal towers confirm genuine CFT for ALL q=2-10. Descendant degeneracy=4 exact for q≥3.
-- **060** — OPE C_{σ*,σ,ε} peaks at q=3 (~0.54), decreases ~q^{-0.8}. Z_q charge detection fails for conjugate pairs.
-
-Full details for all compressed sprints are in sprints/sprint_NNN.md.
-
-- **061** — Large-q limit: harmonic ratios → k² as O(q^{-3}). x₁ decreases to 0.038 at q=30. R_ε grows linearly with q. POTENTIALLY NOVEL.
-- **062** — c·x₁ ≈ 0.112 for q≥3 (near 1/9). Single boson RULED OUT (c>1). Twist field = σ for q=2 exactly.
-- **063** — c·x₁ NOT exactly 1/9 (q=3 exact: 8/75). Potts-specific, not Z_q-universal. Clock c > Potts c at same q.
-- **064** — BW locality degrades monotonically with q (~15% drop per unit q). G-inv fraction = exactly 1/q. Peak shifts to ordered phase for q≥4.
-
-- **065** — Hybrid ≠ clock universality: 3 probes at q=5 (c/x₁, ν, gap crossing). Clock BKT, hybrid power-law. NEW universality class. POTENTIALLY NOVEL.
-- **066** — No first-order signal at q=10 (n≤6). Δ·N decelerates, gap minimum size-independent. Continuous confirmed.
-- **067** — Hybrid has ONE transition, no floating phase. Clock has wide floating phase (Δg=0.62). Fourth hybrid-clock difference.
-
-- **068** — 2D hybrid model first study. g_c(2D): q=2 (0.771), q=3 (1.267), q=5 (1.588). No first-order signal at q=5.
-- **069** — 2D entanglement entropy. Ordered phase S=ln(q) exactly. Entropy peak NOT at g_c.
-- **070** — 2D diagnostics: q=2 continuous confirmed (α=0, ν=1). q=5 inconclusive (only L=2,3).
+- **035-048** — BW scaling, MI-CV FSS/classification, Potts phase transitions. Sprints 044-047 INVALIDATED (wrong g_c).
+- **049-053** — g_c correction (true g_c from self-duality). g_c(q) formula. ν(q) ≈ 0.82-0.86.
+- **054-060** — c(q) ≈ 0.40·ln(q-1)+0.55. CFT operator content. x₁ peaks at q=3. OPE coefficients.
+- **061-064** — Large-q limit. c·x₁ ≈ 0.112. BW locality degrades with q.
+- **065-067** — Hybrid ≠ clock universality (3 probes). No first-order signal. No floating phase in hybrid.
+- **068-070** — 2D hybrid model. g_c(2D) measured. q=2 continuous confirmed. q=5 inconclusive.
 
 Full details for all compressed sprints are in sprints/sprint_NNN.md.
 
@@ -305,3 +275,27 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 **POTENTIALLY NOVEL:** First systematic drift-rate comparison dc/d(ln n) across q=5-7 resolving walking crossover. q=6 breakdown length ξ*≈38.
 
 [Full report: sprints/sprint_081.md]
+
+### Sprint 082 — Spin-Spin Correlator: x_σ(q) Nearly Universal, Walking is Entropy-Only
+**Status:** Complete (3 experiments).
+
+**Open-BC DMRG correlator gives WRONG exponents (082a).** Raw power-law fit on open chain (q=5 n=8-24) gives η≈1.25 — inflated 5× by boundary conformal factors. R² degrades with n (0.996→0.760). Lesson: NEVER use raw open-BC power law for x extraction.
+
+**Periodic chain correlator perfectly conformal (082b).** Exact diag on periodic chain with chord distance fit: G(r) = C × [(N/π)sin(πr/N)]^{-2x_σ}. R² ≥ 0.99999 for all q=2-8. q=2: x_σ=0.123 (exact 0.125, 1.5%), q=3: 0.132 (exact 0.133, 1.3%).
+
+**x_σ ≈ 0.13 nearly universal across q=2-8 (082c).** Peaks at q=5 (0.136), varies ±5%. Walking vs non-walking is INVISIBLE in x_σ at accessible sizes. No oscillatory corrections detected (Im(x_σ) too small → oscillation period ~80× longer than accessible range).
+
+**Sound velocity v(q) extracted: v = gap×N/(2π·x_σ).** Decreases monotonically: 1.02 (q=2) → 0.75 (q=5) → 0.66 (q=8). The decreasing gap×N with q is primarily velocity reduction, NOT x_σ change.
+
+**Walking is an ENTROPY phenomenon.** Correlators (x_σ) and energy gaps (gap×N) both appear perfectly conformal for ALL q=2-8. Only c_eff (entanglement entropy) deviates for q>5. The gap-entropy decoupling extends to correlators.
+
+**Surprises:**
+- x_σ nearly constant across q — no walking signature in spin dimension
+- Open-BC raw power law inflates η by 5× — critical methodological finding
+- Conformal form exact to 0.04% even for q=7-8 where c_eff is breaking
+- v(q) monotonically decreasing — explains gap×N trend completely
+- No oscillatory corrections detectable (Im(x_σ) ≈ 0.02, period ~80 in ln(r))
+
+**POTENTIALLY NOVEL:** First x_σ(q) measurement for S_q Potts chain via correlators. First v(q) extraction. Discovery that walking breakdown manifests in entropy/velocity but NOT in x_σ or correlator form.
+
+[Full report: sprints/sprint_082.md]

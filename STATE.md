@@ -1,41 +1,42 @@
 # Current State — Rewrite this completely each sprint
 
 ## Last Sprint
-Sprint 081 — DMRG c_eff(q=6) at n=10,12. q=6 walking is MARGINAL BREAKING: c_eff drops 2.9% (n=8→12), drift rate closer to q=7 than q=5. Extrapolated breakdown at n≈38. q=5 confirmed truly unique walking sweet spot.
+Sprint 082 — Spin-spin correlator in walking regime. x_σ(q) ≈ 0.13 nearly universal (q=2-8). Conformal form exact to 0.04%. No oscillatory corrections from complex exponents. Walking breakdown is an ENTROPY phenomenon — invisible in correlators and x_σ. First velocity extraction: v(q) decreases from 1.0 (q=2) to 0.66 (q=8).
 
 ## Active Research Thread
-**S_q Potts walking regime: q=6 resolved as marginal breaking.**
+**S_q Potts walking regime: correlator analysis complete.**
 
-Complete c_eff convergence picture at n=12 (best common size):
+x_σ from periodic chain correlators (Sprint 082c):
 
-| q | Re(c) | c_eff(n=12) | c/Re(c) | dc/d(ln n) | Status |
-|---|-------|-------------|---------|------------|--------|
-| 5 | 1.138 | 1.152 | 1.013 | +0.014 | WALKING — stable |
-| 6 | 1.253 | 1.115 | 0.890 | -0.048 | MARGINAL — slowly breaking |
-| 7 | 1.351 | 1.059 | 0.784 | -0.091 | BROKEN |
+| q | x_σ | v(q) | gap×N | Walking? |
+|---|-----|------|-------|----------|
+| 2 | 0.123 | 1.02 | 0.786 | real CFT |
+| 3 | 0.132 | 0.89 | 0.733 | real CFT |
+| 5 | 0.136 | 0.75 | 0.639 | YES |
+| 7 | 0.132 | 0.68 | 0.560 | BREAKING |
+| 8 | 0.130 | 0.66 | 0.536 | NO |
 
-Key insight: Walking boundary is a CROSSOVER, not a sharp transition. q=5 uniquely stable. q=6 drifts 3.4x faster than q=5. Breakdown extrapolates to n≈38 for q=6.
-
-gap×N remains healthy for all q (2.0-2.1) even as entropy degrades.
+Key insight: Walking vs non-walking is invisible in x_σ and correlator form at accessible sizes. Only c_eff (entropy) and velocity distinguish them. This means the gap-entropy decoupling (Sprints 079-081) extends to correlators too.
 
 ## QPU Budget
 - Used: 20s of 600s (Sprint 025: ibm_kingston)
 - Remaining: 580s
 
 ## Top 3 Next Experiments
-1. **Walking length ξ*(q=7) from DMRG** — At n=12, c_eff=1.06 and falling. Push to n=16 to quantify breakdown rate. Compare dc/d(ln n) = -0.091.
-2. **Hardware validation** — 580s QPU, 56 sprints since last use. Best candidate: gap×N at g_c for q=5 (walking signature) vs q=7 (non-walking) on n=6-8 qubits. Encode q-state system in qubits.
-3. **Non-Hermitian walking extension** — arXiv:2502.02001 shows complex entanglement entropy recovers Re(c) even at q>5. Could extend our walking curve with non-Hermitian perturbation.
+1. **Hardware validation** — 580s QPU, 57 sprints since last use. Best candidate: encode q=2 S_q Potts at n=6-8 on qubits, measure gap×N and/or correlator. Compare to exact diag predictions.
+2. **Velocity v(q) from Casimir energy** — Independent v extraction from E₀/N at two sizes. Cross-validate Sprint 082 v(q) curve. If they match, v(q) is established.
+3. **Correlator at larger sizes (DMRG periodic)** — DMRG with periodic BC (expensive but clean) for q=5 at n=16-24. Need 5+ data points to detect oscillatory corrections. Requires DMRG-X or period-BC DMRG.
 
 ## What's Been Ruled Out
-- q=6 as second walking case (c_eff drops 2.9% n=8→12, drift closer to q=7)
-- Sharp walking-to-first-order transition (smooth crossover q=5→6→7)
-- c_eff stability at n=6-8 as evidence of walking (too short a range)
-- DMRG for q≥6 at n>12 with chi>30 (timing infeasible)
+- Oscillatory correlator corrections at r ≤ 7 (Im(x_σ) too small)
+- Open-BC raw power law for x extraction (inflates η by 5×)
+- x_σ as walking-regime discriminator (nearly constant across q)
+- q=6 as second walking case (c_eff drops 2.9% n=8→12)
+- Sharp walking-to-first-order transition (smooth crossover)
 
 ## Key Tools Available
 - 1D exact diag CPU: n≤8 for q≤6, GPU: n≤10 for q≤5, n≤8 for q=6
-- S_q Potts DMRG: q=5 (fast, n≤24), q=6 (slow, n≤12 chi=30), q=7 (n≤12 chi=56)
+- S_q Potts DMRG: q=5 (fast, n≤24), q=6 (slow, n≤12), q=7 (n≤12)
+- Periodic exact diag correlator: q=2 n≤14, q=3 n≤10, q=5 n≤8, q=7 n≤7
 - Exact g_c = 1/q for S_q Potts
-- Complex CFT formula verified q=2-5
 - IBM QPU: 580s remaining

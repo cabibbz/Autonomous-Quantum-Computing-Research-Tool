@@ -76,6 +76,24 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **POTENTIALLY NOVEL (Sprints 079-080):** Complete c_eff/Re(c) curve q=3-10 with exponential decay law. First measurement at q=6,8,9. Walking boundary at q=5 exact.
 
+**Spin-spin correlator x_σ(q) ≈ 0.13 nearly universal (Sprint 082).** Periodic chain correlator G(r) = C × [chord(r)]^{-2x_σ} fits to 0.04% accuracy for ALL q=2-8. Validated: q=2 gives 0.123 (exact 0.125, 1.5% FSS), q=3 gives 0.132 (exact 0.133, 1.3%).
+
+| q | x_σ(corr) | v(q) | gap×N |
+|---|-----------|------|-------|
+| 2 | 0.123 | 1.02 | 0.786 |
+| 3 | 0.132 | 0.89 | 0.733 |
+| 4 | 0.135 | 0.81 | 0.686 |
+| 5 | 0.136 | 0.75 | 0.639 |
+| 6 | 0.135 | 0.71 | 0.601 |
+| 7 | 0.132 | 0.68 | 0.560 |
+| 8 | 0.130 | 0.66 | 0.536 |
+
+**Velocity v(q) = gap×N/(2π·x_σ) decreases monotonically with q.** The decreasing gap×N is primarily velocity reduction, NOT x_σ change. x_σ is nearly constant; v(q) carries all q-dependence.
+
+**Walking breakdown is an ENTROPY phenomenon (Sprint 082).** x_σ and correlator form are perfectly conformal for ALL q at accessible sizes. Only c_eff (entropy) deviates for q>5. No oscillatory corrections from complex Im(x_σ) detectable — period in ln(r) ≈ 80, vs accessible Δln(r) ≈ 1.
+
+**Open BC correlators give WRONG exponents (Sprint 082a).** Raw power-law fit on DMRG open chain inflates η by ~5×. NEVER use open-BC raw power law for x extraction — use periodic chain with chord distance.
+
 **S_q Potts g_c = 1/q exactly (Sprint 078a, self-duality).** Kramers-Wannier duality gives g_c = 1/q. Verified numerically: all crossings approach 1/q from above with ~1/n² corrections. q=2 deviation 0.05% at (10,12), q=5 deviation 0.4% at (6,8).
 
 **S_q Potts critical points (Sprints 076-078):**
