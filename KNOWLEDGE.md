@@ -72,7 +72,7 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **Key limitation:** L=2,3 cannot distinguish continuous from first-order at q=5. The gap×L crossing ratio is trivially 2/3 with only 2 sizes. dE/dg is smooth but L=3 may be too small. Need QMC or tensor networks for definitive answer.
 
-## Cylinder Geometry (Sprints 071-073)
+## Cylinder Geometry (Sprints 071-075)
 
 **Cylinder geometry:** Open x-direction, periodic y-direction. Enables gap×Lx crossing with exact diag for moderate sizes. Bridges 1D and 2D.
 
@@ -86,15 +86,18 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 **Cyl/1D ratio monotonically decreasing in q:** 1.80→1.69→1.62.
 
-**Ly convergence for q=2 (complete to Ly=4):**
+**Ly convergence for q=2 (complete to Ly=5, Sprint 075):**
 
-| Ly | g_c | Progress to 2D |
-|----|-----|---------------|
-| 1 | 0.250 | 0% |
-| 2 | 0.451 | 38.6% |
-| 3 | 0.655 | 77.7% |
-| 4 | 0.688 | 84.0% |
-| ∞ | 0.771 | 100% |
+| Ly | g_c | Progress to 2D | Increment |
+|----|-----|---------------|-----------|
+| 1 | 0.250 | 0% | — |
+| 2 | 0.451 | 38.6% | +0.201 |
+| 3 | 0.655 | 77.7% | +0.204 |
+| 4 | 0.688 | 84.0% | +0.033 |
+| 5 | 0.701 | 86.6% | +0.013 |
+| ∞ | 0.771 | 100% | — |
+
+**Convergence is POWER-LAW ~1/Ly², NOT exponential (Sprint 075c).** Best fit: g_c(Ly) = 0.771 - 1.285/Ly^2.03 (RMS=0.016). Exponential fit RMS=0.025. The Ly=1→3 regime is nearly linear (+0.201, +0.204), with abrupt deceleration at Ly≥4 (+0.033, +0.013). Exponential model from Sprint 073 predicted Ly=5: 0.745, actual: 0.701 (5.9% error).
 
 **Ly convergence for q=3 (to Ly=3, Ly=4 infeasible):**
 
@@ -116,15 +119,17 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 
 Note: q=5 Ly=3 from (Lx=2,3) crossing only — Lx=2 has known FSS issues. Lower confidence than q=2,3 values.
 
-**Convergence is q-dependent, saturating for q≥3 (Sprints 073-074).** Exponential fit decay lengths B: q=2 (1.19), q=3 (2.49), q=5 (2.83). The big slowdown is q=2→q=3 (B doubles). q=3→q=5 shows only marginal additional slowdown. At Ly=3: q=2 at 77.7%, q=3 at 49.7%, q=5 at 46.5% — the latter two nearly identical. Correlation(2D/1D ratio, B) = 0.89.
+**Convergence is q-dependent, saturating for q≥3 (Sprints 073-074).** At Ly=3: q=2 at 77.7%, q=3 at 49.7%, q=5 at 46.5%. The big slowdown is q=2→q=3.
 
-**Computational limits (Sprint 074a):** q=3 Ly=4 cylinder Lx=4 has dim=43M, 838s/pt — infeasible. q=5 Ly=4 even worse (dim=244M). Cylinder convergence with exact diag is capped at Ly=3 for q≥3 and Ly=4 for q=2.
+**Cylinder entanglement entropy (Sprint 075b).** c_eff from S ~ (c/6)·ln(Lx) at g_c: Ly=1 (0.61), Ly=2 (0.75), Ly=3 (0.82). c_eff growth is FSS overshoot — 2D Ising also has c=0.5. S per bond cut DECREASING with Ly: 0.285→0.157→0.107→0.089 — area-law behavior emerging.
+
+**Computational limits:** q=2 Ly=5 Lx=5 (dim=33M) takes 541s/pt. q=3 Ly=4 Lx=4 (dim=43M) 838s/pt. Cylinder convergence with exact diag capped at Ly=5 for q=2, Ly=3 for q≥3.
 
 **All transitions smooth on cylinders.** Order parameter continuous for q=2,3,5 on Ly=2 cylinder. Max slope: q=3 (1.99) > q=5 (1.88) > q=2 (1.21).
 
 **DMRG impractical for q≥5 cylinder.** d=5 per site → chi=20 has massive truncation errors.
 
-**POTENTIALLY NOVEL:** If the hybrid remains continuous in 2D at q>4, it would contradict the standard Potts (first-order) and clock (BKT) behavior. The q-dependent convergence rate itself may be a novel characterization of the 1D→2D crossover.
+**POTENTIALLY NOVEL:** If the hybrid remains continuous in 2D at q>4, it would contradict the standard Potts (first-order) and clock (BKT) behavior. The 1/Ly² convergence law and q-dependent convergence rate may be novel characterizations of the 1D→2D crossover.
 
 ## 2D Entanglement Entropy (Sprint 069)
 

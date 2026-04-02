@@ -290,3 +290,21 @@ Full details for all compressed sprints are in sprints/sprint_NNN.md.
 - Cyl/1D ratio decreasing at both Ly=2 AND Ly=3 — universal trend
 
 [Full report: sprints/sprint_074.md]
+
+### Sprint 075 — q=2 Ly=5 Cylinder & Cylinder Entanglement Entropy
+**Status:** Complete (3 experiments).
+
+**q=2 Ly=5 cylinder (075a).** g_c = 0.701 from (Lx=3, Lx=4) crossing. 86.6% to 2D. Ly=4→5 increment only +0.013 (Ly=3→4 was +0.033). Lx=5 (dim=33M) takes 541s/pt — infeasible. Exponential prediction (0.745) OVERSHOOTS by 5.9%.
+
+**Cylinder entanglement entropy (075b).** First measurement of S on cylinder geometries at criticality. c_eff from open-BC fit: Ly=1 (0.61), Ly=2 (0.75), Ly=3 (0.82). Growth is FSS overshoot — 2D Ising also has c=0.5. S per bond cut DECREASING: 0.285→0.157→0.107→0.089. Area-law behavior emerging.
+
+**Power-law convergence, NOT exponential (075c).** g_c(Ly) = 0.771 - 1.285/Ly^2.03 fits better (RMS=0.016) than exponential (RMS=0.025). Ly=1→3 increments are nearly linear (+0.201, +0.204), abrupt deceleration at Ly≥4. This supersedes the exponential model from Sprint 073.
+
+**Surprises:**
+- Exponential prediction overshoots by 5.9% — convergence slower than expected
+- Ly=1→2 and Ly=2→3 increments nearly identical (+0.201, +0.204) — linear regime
+- Abrupt deceleration at Ly=3→4 (6x smaller increment)
+- c_eff at Ly=1 already 22% above exact c=0.5 — significant small-Lx overshoot
+- S per bond cut monotonically decreasing — approach to area law
+
+[Full report: sprints/sprint_075.md]
