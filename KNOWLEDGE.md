@@ -5,9 +5,10 @@
 - **~~Harden χ_F scaling at q=5~~** DONE (Sprint 103). 4 sizes, α=2.091±0.002. Confirmed novel. α(q) mapped for q=2-7.
 - **~~Test χ_F in different model~~** DONE (Sprint 105). J1-J2 BKT: invisible (α→0). MG first-order: saturates. Walking super-scaling is unique.
 - **~~Understand χ_F mechanism~~** DONE (Sprint 106). α = β_me + 2z_m - 1. Single multiplet dominates. Spectral gap symmetry-forbidden.
-- **Harden χ_F mechanism** — Need more sizes at q=5 (currently 3 pts). Also cross-check z_m and β_me independently.
+- **~~Harden χ_F mechanism~~** DONE (Sprint 107). 5 sizes at q=5, cross-validated. CONFIRMED NOVEL.
+- **Log corrections to α(q)** — Sprint 108: walking (q≥5) has zero log correction. q≤4 values are inflated. Linear formula α=0.315q+0.469 only valid for walking regime. True α_∞: q=3→1.22, q=4→1.66, q=5→2.08.
 - **KNOWLEDGE.md is over budget (~560 lines vs ~200 target).** Compress old sections into one-line summaries.
-- **Hardware validation** — 580s QPU unused for 81 sprints. Strongest prediction: q=2 Ising χ_F at g_c, or Heisenberg chain c_eff on 5-10 qubits.
+- **Hardware validation** — 580s QPU unused for 83 sprints. Strongest prediction: q=2 Ising χ_F at g_c, or Heisenberg chain c_eff on 5-10 qubits.
 
 ## Five Entanglement Archetypes
 | Archetype | Example | MI pattern | I3 sign | Negativity | Source |
@@ -212,16 +213,18 @@ Non-Potts fraction grows exponentially ~exp(1.6·q). **Biggest jump at q=3→4 (
 
 **✅ CONFIRMED NOVEL: Fidelity susceptibility α(q) across walking boundary (Sprints 102-103).** χ_F_max ~ N^α. Complete α(q) curve:
 
-| q | α | ν_eff | #sizes | regime |
-|---|---|-------|--------|--------|
-| 2 | 0.980 | 1.010 | 5 | real CFT (exact ν=1.0) |
-| 3 | 1.379 | 0.841 | 3 | real CFT (exact ν=5/6) |
-| 4 | 1.693 | 0.743 | 2 | BKT crossover (log corrections) |
-| 5 | 2.091 | 0.647 | 4 | walking (sweet spot) |
-| 6 | 2.371 | 0.593 | 2 | broken walking |
-| 7 | 2.649 | 0.548 | 3 | broken walking |
+| q | α_meas | α_∞ (log-corrected) | #sizes | regime |
+|---|--------|--------------------:|--------|--------|
+| 2 | 0.980 | — | 5 | real CFT (exact ν=1.0) |
+| 3 | 1.43 | 1.22 | 7 | real CFT (exact ν=5/6), strong log correction |
+| 4 | 1.77 | 1.66 | 7 | BKT crossover (moderate log correction) |
+| 5 | 2.09 | 2.08 | 6 | walking (NO log correction) |
+| 6 | 2.37 | — | 2 | broken walking |
+| 7 | 2.65 | — | 3 | broken walking |
 
-**α(q) = 0.318·q + 0.452 for q≥4** (linear, residuals ±0.05). α crosses 2.0 at q≈4.9 (walking boundary). Super-first-order scaling (α>2) for all q≥5 — wavefunction changes MORE abruptly at g_c than at a true first-order transition. Pairwise α at q=5 converges upward: (6,7)→2.076, (7,8)→2.082, (8,9)→2.090, (9,10)→2.099 — firmly super-first-order.
+**α(q) = 0.318·q + 0.452 for q≥5 ONLY** (walking regime, no log corrections). For q≤4, finite-size α is inflated by log corrections: +0.46/ln(N) for q=3, +0.24/ln(N) for q=4 (Sprint 108b). Walking eliminates log corrections entirely (α_log = -0.003, R²=0.001 for q=5). Pairwise α at q=5 converges upward: (6,7)→2.076, (7,8)→2.082, (8,9)→2.090, (9,10)→2.099.
+
+**Gap ratio (multiplet/spectral) decreases with q** (Sprint 108c): 6.2 (q=3) → 5.2 (q=4) → 4.6 (q=5). The χ_F-dominant singlet approaches the symmetry-forbidden spectral gap as q increases.
 
 **✅ CONFIRMED NOVEL: χ_F spectral mechanism (Sprints 106-107).** χ_F is 100% dominated by the (q-1)-fold degenerate S_q multiplet for q≥3. The spectral gap (level 1) has ZERO matrix element with H_field — symmetry-forbidden. α decomposes exactly:
 

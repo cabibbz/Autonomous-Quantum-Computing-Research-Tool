@@ -274,3 +274,16 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **Upgraded to CONFIRMED NOVEL.** Five checks: 5+ sizes at q=5 (pairwise α converges upward: 2.076→2.099), cross-validation, falsification survived, exact decomposition formula, independence from entanglement spectrum.
 
 [Full report: sprints/sprint_107.md]
+
+### Sprint 108 — q=4 BKT Crossover: Log Corrections Map Three Regimes
+**Status:** Complete (3 experiments).
+
+**q=4 GPU extension (108a).** 7 sizes n=4-10 (GPU for n=9,10). Dominant fraction=1.000 at all sizes (single multiplet). Pairwise α converges downward: 1.825→1.771. Global α=1.788.
+
+**Log correction analysis (108b).** Pairwise exponent drift vs 1/ln(N) for q=3,4,5 (7 sizes each). Walking (q=5): α_log = -0.003/ln(N), R²=0.001 — zero correction. BKT (q=4): α_log = +0.243/ln(N), R²=0.92 — moderate. Continuous (q=3): α_log = +0.460/ln(N), R²=0.98 — strong. Extrapolated α_∞: q=3→1.22, q=4→1.66, q=5→2.08.
+
+**Multiplet structure (108c).** Gap ratio (multiplet/spectral) decreases with q: 6.2 (q=3) → 5.2 (q=4) → 4.6 (q=5). Spectral gap is (q-1)-fold degenerate and symmetry-forbidden. Dominant state is a singlet above the multiplet.
+
+**Key finding:** Linear formula α=0.315q+0.469 valid ONLY for walking regime (q≥5) where log corrections vanish. For q≤4, finite-size α is inflated. Walking regime is a cleaner measurement regime than continuous or BKT.
+
+[Full report: sprints/sprint_108.md]
