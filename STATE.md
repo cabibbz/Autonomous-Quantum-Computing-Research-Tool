@@ -1,33 +1,30 @@
 # Current State — Rewrite this completely each sprint
 
 ## Last Sprint
-Sprint 100 — DMRG Casimir: Open vs Periodic BC. Open-BC extraction fails for q≥5 (boundary corrections 36-64%). Periodic-BC pairwise c/Re(c) ≈ 1.00 for all q=2-7 at exact diag sizes (N≤14). Casimir-Re(c) result confirmed but size-limited. Im(c) oscillation detection impossible at any accessible size (literature confirms).
+Sprint 101 — Symmetry-Resolved Entanglement Entropy (SREE). First SREE measurement for q=2-10 S_q Potts. S_number/S_total ≈ 0.908 universal across q at n=6 — q-independent at fixed geometry. Charge-0 enrichment increases with q (p(0)*q from 1.5 to 5.2). No walking-specific signature in SREE at accessible sizes.
 
 ## Active Research Thread
-**Casimir/walking thread FULLY CLOSED.** Three confirmed findings:
-1. Casimir energy tracks Re(c) across walking boundary (periodic BC, Sprint 098)
-2. Walking breakdown is exclusively an entropy phenomenon (Sprints 082-084)
-3. Open-BC extension to DMRG sizes fails due to boundary corrections (Sprint 100)
-
-**Need a NEW research direction.**
+**SREE thread: one sprint, findings documented.** Key result: S_n/S_t universality across q. Not a strong walking discriminator. Ready for new direction.
 
 ## QPU Budget
 - Used: 20s of 600s (Sprint 025: ibm_kingston)
-- Remaining: 580s — UNUSED FOR 75 SPRINTS
+- Remaining: 580s — UNUSED FOR 76 SPRINTS
 
 ## Top 3 Next Experiments
-1. **Hardware validation** — 580s QPU expiring. Strongest prediction: q=2 Ising ground state at g_c on 5-8 qubits. Test: BW R²>0.999 at nA=3 via state tomography. Or: entanglement entropy scaling.
-2. **Non-Hermitian S_q Potts** — Following Tang et al. (2024): add non-Hermitian perturbation to access complex CFT fixed points directly. Extract both Re(c) and Im(c). Would be first measurement on our hybrid model.
-3. **Entanglement asymmetry / symmetry resolution** — New observable: decompose entanglement entropy by symmetry sector. Recent literature (Ares et al. 2023) on symmetry-resolved entanglement in critical chains. Could reveal new structure at walking boundary.
+1. **Hardware validation** — 580s QPU expiring. Strongest prediction: q=2 Ising ground state at g_c on 5-8 qubits. Test: entanglement entropy scaling, or BW R²>0.999 at nA=3 via state tomography.
+2. **Non-Hermitian S_q Potts** — Add non-Hermitian perturbation to access complex CFT fixed points directly. Extract both Re(c) and Im(c). Would extend Tang et al. (2024) to our model.
+3. **Entanglement asymmetry** — Ares et al. (2023): measures how much symmetry is broken in subsystem. Different from SREE — probes spontaneous symmetry breaking at finite size. Could distinguish walking (approximate SSB) from real CFT (no SSB at criticality).
 
 ## What's Been Ruled Out
-- Im(c) oscillation detection (any method at accessible sizes): RULED OUT (Sprints 099-100)
-- Open-BC Casimir extraction for q≥5: RULED OUT (Sprint 100)
-- All BW correction approaches: RULED OUT (Sprint 097)
+- SREE as walking discriminator at accessible sizes (Sprint 101)
+- Im(c) oscillation detection (Sprints 099-100)
+- Open-BC Casimir extraction for q≥5 (Sprint 100)
+- All BW correction approaches (Sprint 097)
 - All previously ruled-out items still apply
 
 ## Key Tools Available
 - 1D exact diag CPU: n≤8 for q≤6, GPU: n≤10 for q≤5, n≤8 for q=7
 - Dense periodic Casimir: q=2 N=4-14, q=5 N=4-10, q=7 N=4-8
 - S_q Potts DMRG: q=2 (fast, n≤24+), q=5 (n≤12, chi≤50), q=7 (n≤8 exact only)
+- SREE projectors: works up to dimA ≈ 5000 (nA*q combinations)
 - IBM QPU: 580s remaining

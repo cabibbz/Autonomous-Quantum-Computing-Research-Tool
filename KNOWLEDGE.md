@@ -4,6 +4,7 @@
 - ~~Harden Casimir finding~~ **DONE (Sprint 098).** Upgraded to CONFIRMED NOVEL. 5+ points for q=2,3,7. Pairwise convergence verified. 16× more consistent than entropy.
 - ~~Im(c) oscillation detection~~ **RULED OUT (Sprints 099-100).** Period too long for any accessible size. Open-BC DMRG also fails (boundary corrections). Only route: non-Hermitian formulation.
 - **KNOWLEDGE.md is over budget (~560 lines vs ~200 target).** Compress old sections (2D, MI-CV, hybrid model details from sprints 029-062) into one-line summaries. Full details are in sprints/ reports.
+- ~~SREE as walking discriminator~~ **NOT USEFUL (Sprint 101).** No walking-specific signature at accessible sizes. S_n/S_t universality documented.
 
 ## Five Entanglement Archetypes
 | Archetype | Example | MI pattern | I3 sign | Negativity | Source |
@@ -565,3 +566,13 @@ ibm_kingston, 20s QPU. [[5,1,3]] asymmetry 0.040 vs 3-qubit 0.254. 580s QPU rema
 - **Hybrid q=3**: GHZ-3 → Product (like TFIM but with triplet spectrum from Z₃)
 - **Hybrid q=5**: GHZ-5 → Product (continuous transition at g_c≈0.44)
 - **Hybrid q=10,20**: Continuous transitions confirmed
+
+## Symmetry-Resolved Entanglement Entropy (Sprint 101)
+
+**S_q Potts at g_c=1/q, periodic BC.** SREE decomposes ρ_A into Z_q charge sectors via P_α = (1/q) Σ_k ω^{-αk} G_A^k.
+
+**S_number/S_total is q-independent at fixed geometry (Sprint 101c).** At n=4 nA=2: ratio=0.953 for ALL q=2-7. At n=6 nA=3: 0.908. At n=8 nA=4: 0.875. Decreasing with n (→0 thermodynamically since S_n=O(1), S_t=O(log n)). Implies S_number ∝ c(q) at fixed size.
+
+**Charge-0 always enriched: p(0)*q >> 1.** Increases monotonically with q: 1.55 (q=2) to 5.15 (q=10) at n=6. p(0) → 1/2 as q→∞ (not 1/q). Convergence to equipartition requires n >> 100.
+
+**Not a walking discriminator** at accessible sizes — all q-dependence is smooth and monotonic. No feature at q=4 or q=5.

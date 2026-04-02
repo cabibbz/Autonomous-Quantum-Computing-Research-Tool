@@ -174,3 +174,18 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **Key finding:** Casimir-Re(c) result CANNOT be extended to DMRG sizes via open BC. Periodic exact diag (Sprint 098) remains definitive. Literature confirms Im(c) detection impossible from real Hamiltonian Casimir energy.
 
 [Full report: sprints/sprint_100.md]
+
+### Sprint 101 — Symmetry-Resolved Entanglement Entropy (SREE)
+**Status:** Complete (3 experiments, 101a partially retracted).
+
+**SREE for S_q Potts q=2-10 at g_c=1/q (101b).** Charge-sector decomposition via Z_q projectors. Charge-0 enrichment increases with q: p(0)*q from 1.55 (q=2) to 5.15 (q=10). p(0)→1/2 as q→∞ (not 1/q). S_n/S_t ≈ 0.908 universal across q at n=6.
+
+**Size scaling (101c).** S_n/S_t is q-INDEPENDENT at fixed geometry: 0.953 (n=4), 0.908 (n=6), 0.875 (n=8) for all q tested. Implies S_number ∝ c(q). p(0)*q decreases slowly with n but stays >>1 at accessible sizes.
+
+**101a RETRACTED:** Used hybrid field (X+X†) with S_q critical coupling g_c=1/q. For q≥4 this put the system far from criticality. Corrected in 101b.
+
+**SREE is NOT a walking discriminator** at accessible sizes — all q-dependence is smooth and monotonic. No feature at q=4 or q=5.
+
+**POTENTIALLY NOVEL:** Universal q-independent S_n/S_t ratio at fixed geometry for critical S_q Potts. First SREE measurement for q=4-10 Potts model.
+
+[Full report: sprints/sprint_101.md]
