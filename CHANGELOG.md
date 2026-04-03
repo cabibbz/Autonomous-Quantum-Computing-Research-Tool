@@ -324,3 +324,14 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **Key findings:** (1) Single-multiplet dominance universal through q=10. (2) Power-law α(q) slightly preferred, but discrimination weak — all models fit comparably. (3) χ_F super-scaling (α>2) persists where walking has broken down (c_eff/Re(c)=0.60), confirming single-multiplet mechanism is independent of entropy-based walking.
 
 [Full report: sprints/sprint_111.md]
+
+### Sprint 112 — q=12 χ_F Measurement: Quadratic α(q) Strongly Preferred
+**Status:** Complete (2 experiments).
+
+**q=12 spectral decomposition (112a).** 3 sizes n=4,5,6 (GPU for n=6, dim=3.0M, 160s). Pairwise α: (4,5)→3.553, (5,6)→3.734 — converging upward. Global α=3.631. Single-multiplet dominance (frac=1.000) at all sizes. z_m=1.662, β_me=1.307. All three prior fits (linear, power-law, quadratic from Sprint 111) overshoot.
+
+**α(q) refit with q=12 (112b).** 7 data points (q=5-12). AIC model comparison: **quadratic −0.010q²+0.41q+0.30 strongly preferred** (ΔAIC=12.2 over linear). Ranking: quadratic (0) > √q (+2.2) > log (+5.3) > power-law (+5.5) > linear (+12.2). Linear model RULED OUT. α(q) is sublinear — growth slows with q, approaching saturation near α≈4-5.
+
+**Key findings:** (1) Linear α(q) from Sprint 110 definitively wrong at q≥12. (2) Sublinear growth — quadratic or √q form. (3) Single-multiplet dominance universal through q=12. (4) χ_F super-scaling persists at q=12 where walking is fully broken (c_eff/Re(c)≈0.51).
+
+[Full report: sprints/sprint_112.md]

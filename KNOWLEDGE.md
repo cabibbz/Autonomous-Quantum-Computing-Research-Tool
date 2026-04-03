@@ -2,7 +2,7 @@
 
 ## Open Items — Check each sprint, remove when done
 - **~~Test energy-entropy hierarchy in a DIFFERENT model~~** DONE (Sprint 104). Tested in J1-J2 chain. Result: **NOT universal.** Hierarchy direction is model-dependent. Potts walking gives O(1) entropy deviation — unique to walking mechanism. J1-J2 gives only O(1%) differences. The Casimir-Re(c) finding is walking-specific, not a general CFT principle.
-- **~~Harden χ_F scaling at q=5~~** DONE (Sprint 103, updated Sprint 110). α(q) mapped q=2-9. Formula revised: α ≈ 0.26q + 0.81 (walking-only, q=5-9). Old 0.315q+0.469 biased by q=4 BKT inclusion.
+- **~~Harden χ_F scaling at q=5~~** DONE (Sprint 103, updated Sprint 112). α(q) mapped q=2-12. Linear formula ruled out — α(q) is sublinear, best fit quadratic: −0.010q²+0.41q+0.30.
 - **~~Test χ_F in different model~~** DONE (Sprint 105). J1-J2 BKT: invisible (α→0). MG first-order: saturates. Walking super-scaling is unique.
 - **~~Understand χ_F mechanism~~** DONE (Sprint 106). α = β_me + 2z_m - 1. Single multiplet dominates. Spectral gap symmetry-forbidden.
 - **~~Harden χ_F mechanism~~** DONE (Sprint 107). 5 sizes at q=5, cross-validated. CONFIRMED NOVEL.
@@ -104,7 +104,7 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 1. **Correlators (x_σ)**: perfectly conformal for ALL q=2-8 (Sprint 082)
 2. **Casimir energy (E₀)**: governed by Re(c) for ALL q=2-8, even where c_eff deviates 40% (Sprint 083)
 3. **Entanglement entropy (c_eff)**: deviates from Re(c) for q>5 (Sprints 079-081)
-4. **Fidelity susceptibility (χ_F)**: scaling exponent α crosses 2.0 at walking boundary, then increases sublinearly with q (Sprints 102-103, revised Sprint 110-111). **Walking-specific** (Sprint 105): BKT gives α→0, MG first-order saturates, only walking gives persistent α>2. **Mechanism identified (Sprint 106):** α = β_me + 2z_m - 1, where z_m is the multiplet gap exponent and β_me is the matrix element growth exponent. Both linear in q. **Updated fits (Sprint 111, walking-only q=5-10):** z_m(q) = 0.083q + 0.734, β_me(q) = 0.094q + 0.360, α(q) ≈ 0.69·q^0.69 (power-law, AIC-preferred) or 0.26q + 0.83 (linear). Single-multiplet dominance (frac=1.000) confirmed through q=10.
+4. **Fidelity susceptibility (χ_F)**: scaling exponent α crosses 2.0 at walking boundary, then increases sublinearly with q (Sprints 102-103, revised Sprint 110-111). **Walking-specific** (Sprint 105): BKT gives α→0, MG first-order saturates, only walking gives persistent α>2. **Mechanism identified (Sprint 106):** α = β_me + 2z_m - 1, where z_m is the multiplet gap exponent and β_me is the matrix element growth exponent. Both linear in q. **Updated fits (Sprint 112, walking-only q=5-12):** z_m(q) = 0.098q + 0.533, β_me(q) = 0.187q − 0.858. α(q) is **sublinear**: best fit α(q) ≈ −0.010q² + 0.41q + 0.30 (quadratic, AIC-best). Linear 0.26q+0.83 ruled out (ΔAIC=12.2). √q form (1.35√q−0.91) nearly as good as quadratic (ΔAIC=+2.2). Single-multiplet dominance (frac=1.000) confirmed through q=12.
 5. **Entanglement spectrum multiplet dominance**: M/[(q-1)/q] crosses 1.0 at q≈4 (Sprints 089-090)
 
 **Microscopic mechanism: entropy concentration in (q-1)-fold multiplet (Sprint 084).** Entanglement spectrum at g_c=1/q shows:
