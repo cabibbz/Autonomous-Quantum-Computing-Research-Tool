@@ -350,3 +350,14 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **POTENTIALLY NOVEL:** First systematic mapping of χ_F boundary condition dependence across walking boundary. Discovery that boundary fidelity susceptibility is enhanced (divergent ratio) at walking transitions.
 
 [Full report: sprints/sprint_113.md]
+
+### Sprint 114 — q=15 χ_F: Logarithmic α(q) Growth Emerging
+**Status:** Complete (2 experiments).
+
+**q=15 spectral decomposition (114a).** 3 sizes n=3,4,5 (GPU for n=5, dim=759k, 56s). Pairwise α: (3,4)→3.815, (4,5)→4.070 — converging upward. Global α=3.921. Single-multiplet dominance (frac=1.000) at all sizes. z_m=1.784, β_me=1.353. ALL prior models overpredict: quadratic by 0.28, √q by 0.40, log by 0.25, linear by 0.81.
+
+**α(q) refit with 8 points q=5-15 (114b).** Quadratic overwhelmingly AIC-best (ΔAIC=14.9 over logarithmic). BUT quadratic −0.0134q²+0.451q+0.159 peaks at q≈17 then DECREASES — physically unreasonable. Logarithmic α(q) ≈ 1.73 ln(q) − 0.68 is the best physically unbounded model (RMS=0.041). Components also logarithmic: z_m ≈ 0.75 ln(q) − 0.21, β_me ≈ 1.31 ln(q) − 2.05.
+
+**Key findings:** (1) α(q) sublinearity is stronger than any prior model predicted. (2) Logarithmic growth is the most physically plausible form — both components are individually logarithmic. (3) Single-multiplet dominance universal through q=15 where walking is fully broken.
+
+[Full report: sprints/sprint_114.md]

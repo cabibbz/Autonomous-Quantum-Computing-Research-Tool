@@ -2,13 +2,13 @@
 
 ## Open Items — Check each sprint, remove when done
 - **~~Test energy-entropy hierarchy in a DIFFERENT model~~** DONE (Sprint 104). Tested in J1-J2 chain. Result: **NOT universal.** Hierarchy direction is model-dependent. Potts walking gives O(1) entropy deviation — unique to walking mechanism. J1-J2 gives only O(1%) differences. The Casimir-Re(c) finding is walking-specific, not a general CFT principle.
-- **~~Harden χ_F scaling at q=5~~** DONE (Sprint 103, updated Sprint 112). α(q) mapped q=2-12. Linear formula ruled out — α(q) is sublinear, best fit quadratic: −0.010q²+0.41q+0.30.
+- **~~Harden χ_F scaling at q=5~~** DONE (Sprint 103, updated Sprint 114). α(q) mapped q=2-15. Linear ruled out. Best physical form: α(q) ≈ 1.73 ln(q) − 0.68 (logarithmic). Quadratic AIC-best but peaks at q≈17 (unphysical).
 - **~~Test χ_F in different model~~** DONE (Sprint 105). J1-J2 BKT: invisible (α→0). MG first-order: saturates. Walking super-scaling is unique.
 - **~~Understand χ_F mechanism~~** DONE (Sprint 106). α = β_me + 2z_m - 1. Single multiplet dominates. Spectral gap symmetry-forbidden.
 - **~~Harden χ_F mechanism~~** DONE (Sprint 107). 5 sizes at q=5, cross-validated. CONFIRMED NOVEL.
 - **~~Log corrections to α(q)~~** CORRECTED (Sprint 109). Sprint 108's 1/ln(N) extrapolation was WRONG for q=2,3. Power-law 1/N² corrections recover exact ν: q=2→α_∞=1.00 (exact 1.0), q=3→α_∞=1.40 (exact 7/5). Walking (q≥5) zero corrections confirmed. q=4 BKT genuinely slow (neither model converges at accessible sizes).
 - **KNOWLEDGE.md is over budget (~560 lines vs ~200 target).** Compress old sections into one-line summaries.
-- **Hardware validation** — 580s QPU unused for 86 sprints. Strongest prediction: q=2 Ising χ_F at g_c, or Heisenberg chain c_eff on 5-10 qubits.
+- **Hardware validation** — 580s QPU unused for 89 sprints. Strongest prediction: q=2 Ising χ_F at g_c, or Heisenberg chain c_eff on 5-10 qubits.
 
 ## Five Entanglement Archetypes
 | Archetype | Example | MI pattern | I3 sign | Negativity | Source |
@@ -104,7 +104,7 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 1. **Correlators (x_σ)**: perfectly conformal for ALL q=2-8 (Sprint 082)
 2. **Casimir energy (E₀)**: governed by Re(c) for ALL q=2-8, even where c_eff deviates 40% (Sprint 083)
 3. **Entanglement entropy (c_eff)**: deviates from Re(c) for q>5 (Sprints 079-081)
-4. **Fidelity susceptibility (χ_F)**: scaling exponent α crosses 2.0 at walking boundary, then increases sublinearly with q (Sprints 102-103, revised Sprint 110-111). **Walking-specific** (Sprint 105): BKT gives α→0, MG first-order saturates, only walking gives persistent α>2. **Mechanism identified (Sprint 106):** α = β_me + 2z_m - 1, where z_m is the multiplet gap exponent and β_me is the matrix element growth exponent. Both linear in q. **Updated fits (Sprint 112, walking-only q=5-12):** z_m(q) = 0.098q + 0.533, β_me(q) = 0.187q − 0.858. α(q) is **sublinear**: best fit α(q) ≈ −0.010q² + 0.41q + 0.30 (quadratic, AIC-best). Linear 0.26q+0.83 ruled out (ΔAIC=12.2). √q form (1.35√q−0.91) nearly as good as quadratic (ΔAIC=+2.2). Single-multiplet dominance (frac=1.000) confirmed through q=12. **CRITICAL: χ_F α(q) requires periodic BC** (Sprint 113). Open-BC α is suppressed by 0.03 (q=2), 0.29 (q=4), 0.49 (q=5). Periodic/open ratio diverges ~N^{Δα}. Boundary fidelity susceptibility enhanced at walking transitions. DMRG (open BC) cannot extend α(q).
+4. **Fidelity susceptibility (χ_F)**: scaling exponent α crosses 2.0 at walking boundary, then increases sublinearly with q (Sprints 102-114). **Walking-specific** (Sprint 105): BKT gives α→0, MG first-order saturates, only walking gives persistent α>2. **Mechanism identified (Sprint 106):** α = β_me + 2z_m - 1, where z_m is the multiplet gap exponent and β_me is the matrix element growth exponent. **Updated fits (Sprint 114, walking-only q=5-15, 8 points):** Quadratic AIC-best (RMS=0.014) but **peaks at q≈17 — unphysical**. Logarithmic α(q) ≈ 1.73 ln(q) − 0.68 is physically preferred (RMS=0.041, ΔAIC=+14.9). Components also logarithmic: z_m ≈ 0.75 ln(q) − 0.21, β_me ≈ 1.31 ln(q) − 2.05. Single-multiplet dominance (frac=1.000) confirmed through q=15. **CRITICAL: χ_F α(q) requires periodic BC** (Sprint 113). Open-BC α suppressed by 0.03 (q=2) to 0.49 (q=5). DMRG (open BC) cannot extend α(q).
 5. **Entanglement spectrum multiplet dominance**: M/[(q-1)/q] crosses 1.0 at q≈4 (Sprints 089-090)
 
 **Microscopic mechanism: entropy concentration in (q-1)-fold multiplet (Sprint 084).** Entanglement spectrum at g_c=1/q shows:
