@@ -335,3 +335,18 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **Key findings:** (1) Linear α(q) from Sprint 110 definitively wrong at q≥12. (2) Sublinear growth — quadratic or √q form. (3) Single-multiplet dominance universal through q=12. (4) χ_F super-scaling persists at q=12 where walking is fully broken (c_eff/Re(c)≈0.51).
 
 [Full report: sprints/sprint_112.md]
+
+### Sprint 113 — DMRG Fidelity Susceptibility: Boundary Conditions Matter
+**Status:** Complete (3 experiments).
+
+**DMRG overlap χ_F validated (113a).** q=2 open BC, n=8-20 (DMRG extends to n=20). DMRG matches exact diag to 6 decimal places at all overlapping sizes (n=8-14). Open-BC pairwise α converges: 1.097→1.037. Global α=1.065, heading toward exact 1.0.
+
+**q=4 and q=5 DMRG χ_F (113b).** Open-BC α dramatically different from periodic: q=4 α_open=1.51 (vs periodic 1.77), q=5 α_open=1.60 (vs periodic 2.09). Boundary effects dominate.
+
+**Periodic vs open BC comparison (113c).** Overlap method matches spectral method exactly at periodic BC (q=4: 1.79 vs 1.77, q=5: 2.09 vs 2.09). BC effect on α: Δα=0.03 (q=2), 0.29 (q=4), 0.49 (q=5). **Periodic/open χ_F ratio diverges with N** (~N^{Δα}). Boundary fidelity susceptibility is enhanced at walking transitions.
+
+**Key finding: Open-BC DMRG CANNOT extend α(q) to larger sizes.** Boundary effects for q≥4 are too large and growing. The q=4 open-BC α≈1.5 is coincidental, not evidence for BKT ν=2/3. Periodic exact diag remains the definitive measurement.
+
+**POTENTIALLY NOVEL:** First systematic mapping of χ_F boundary condition dependence across walking boundary. Discovery that boundary fidelity susceptibility is enhanced (divergent ratio) at walking transitions.
+
+[Full report: sprints/sprint_113.md]
