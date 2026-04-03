@@ -361,3 +361,14 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **Key findings:** (1) α(q) sublinearity is stronger than any prior model predicted. (2) Logarithmic growth is the most physically plausible form — both components are individually logarithmic. (3) Single-multiplet dominance universal through q=15 where walking is fully broken.
 
 [Full report: sprints/sprint_114.md]
+
+### Sprint 115 — q=20 χ_F: Logarithmic α(q) Confirmed as AIC-Best
+**Status:** Complete (2 experiments).
+
+**q=20 spectral decomposition (115a).** 3 sizes n=3,4,5 (GPU for n=5, dim=3.2M, 333s). Pairwise α: (3,4)→4.416, (4,5)→4.835 — converging upward. Global α=4.590. Single-multiplet dominance (frac=1.000) at all sizes. z_m=2.047 (first time >2.0), β_me=1.496. Quadratic predicted 3.82 — off by 0.77 (DECISIVELY RULED OUT). Logarithmic predicted 4.49 — closest (off by 0.10).
+
+**α(q) refit with 9 points q=5-20 (115b).** **Logarithmic NOW AIC-BEST** (ΔAIC=0, was +14.9 behind quadratic in Sprint 114). Updated: α(q) ≈ 1.78 ln(q) − 0.79 (RMS=0.046). Quadratic falls to ΔAIC=+9.4 and peaks at q≈24 (unphysical). All other models ΔAIC≥11.3. Components also logarithmic: z_m ≈ 0.76 ln(q) − 0.23, β_me ≈ 1.13 ln(q) − 1.68 (both AIC-best).
+
+**Key findings:** (1) q=20 measurement flips AIC ranking — logarithmic goes from second-best to best. (2) Quadratic definitively ruled out (17% error at q=20). (3) z_m crosses 2.0 — multiplet gap closes faster than 1/N² (super-quartic χ_F). (4) Single-multiplet dominance universal through q=20 where walking is fully broken.
+
+[Full report: sprints/sprint_115.md]

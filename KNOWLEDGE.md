@@ -2,7 +2,7 @@
 
 ## Open Items — Check each sprint, remove when done
 - **~~Test energy-entropy hierarchy in a DIFFERENT model~~** DONE (Sprint 104). Tested in J1-J2 chain. Result: **NOT universal.** Hierarchy direction is model-dependent. Potts walking gives O(1) entropy deviation — unique to walking mechanism. J1-J2 gives only O(1%) differences. The Casimir-Re(c) finding is walking-specific, not a general CFT principle.
-- **~~Harden χ_F scaling at q=5~~** DONE (Sprint 103, updated Sprint 114). α(q) mapped q=2-15. Linear ruled out. Best physical form: α(q) ≈ 1.73 ln(q) − 0.68 (logarithmic). Quadratic AIC-best but peaks at q≈17 (unphysical).
+- **~~Harden χ_F scaling at q=5~~** DONE (Sprint 103, updated Sprint 115). α(q) mapped q=2-20. All polynomial/power-law forms ruled out. **Logarithmic α(q) ≈ 1.78 ln(q) − 0.79 is AIC-BEST** with 9 data points (Sprint 115).
 - **~~Test χ_F in different model~~** DONE (Sprint 105). J1-J2 BKT: invisible (α→0). MG first-order: saturates. Walking super-scaling is unique.
 - **~~Understand χ_F mechanism~~** DONE (Sprint 106). α = β_me + 2z_m - 1. Single multiplet dominates. Spectral gap symmetry-forbidden.
 - **~~Harden χ_F mechanism~~** DONE (Sprint 107). 5 sizes at q=5, cross-validated. CONFIRMED NOVEL.
@@ -104,7 +104,7 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 1. **Correlators (x_σ)**: perfectly conformal for ALL q=2-8 (Sprint 082)
 2. **Casimir energy (E₀)**: governed by Re(c) for ALL q=2-8, even where c_eff deviates 40% (Sprint 083)
 3. **Entanglement entropy (c_eff)**: deviates from Re(c) for q>5 (Sprints 079-081)
-4. **Fidelity susceptibility (χ_F)**: scaling exponent α crosses 2.0 at walking boundary, then increases sublinearly with q (Sprints 102-114). **Walking-specific** (Sprint 105): BKT gives α→0, MG first-order saturates, only walking gives persistent α>2. **Mechanism identified (Sprint 106):** α = β_me + 2z_m - 1, where z_m is the multiplet gap exponent and β_me is the matrix element growth exponent. **Updated fits (Sprint 114, walking-only q=5-15, 8 points):** Quadratic AIC-best (RMS=0.014) but **peaks at q≈17 — unphysical**. Logarithmic α(q) ≈ 1.73 ln(q) − 0.68 is physically preferred (RMS=0.041, ΔAIC=+14.9). Components also logarithmic: z_m ≈ 0.75 ln(q) − 0.21, β_me ≈ 1.31 ln(q) − 2.05. Single-multiplet dominance (frac=1.000) confirmed through q=15. **CRITICAL: χ_F α(q) requires periodic BC** (Sprint 113). Open-BC α suppressed by 0.03 (q=2) to 0.49 (q=5). DMRG (open BC) cannot extend α(q).
+4. **Fidelity susceptibility (χ_F)**: scaling exponent α crosses 2.0 at walking boundary, then increases sublinearly with q (Sprints 102-115). **Walking-specific** (Sprint 105): BKT gives α→0, MG first-order saturates, only walking gives persistent α>2. **Mechanism identified (Sprint 106):** α = β_me + 2z_m - 1, where z_m is the multiplet gap exponent and β_me is the matrix element growth exponent. **Updated fits (Sprint 115, walking-only q=5-20, 9 points):** **Logarithmic α(q) ≈ 1.78 ln(q) − 0.79 is NOW AIC-BEST** (RMS=0.046, ΔAIC=0). Quadratic ruled out (ΔAIC=+9.4, peaks at q≈24 unphysically). Components also logarithmic: z_m ≈ 0.76 ln(q) − 0.23 (AIC-best), β_me ≈ 1.13 ln(q) − 1.68 (AIC-best). Single-multiplet dominance (frac=1.000) confirmed through q=20. **CRITICAL: χ_F α(q) requires periodic BC** (Sprint 113). Open-BC α suppressed by 0.03 (q=2) to 0.49 (q=5). DMRG (open BC) cannot extend α(q).
 5. **Entanglement spectrum multiplet dominance**: M/[(q-1)/q] crosses 1.0 at q≈4 (Sprints 089-090)
 
 **Microscopic mechanism: entropy concentration in (q-1)-fold multiplet (Sprint 084).** Entanglement spectrum at g_c=1/q shows:
@@ -211,7 +211,7 @@ Non-Potts fraction grows exponentially ~exp(1.6·q). **Biggest jump at q=3→4 (
 
 **POTENTIALLY NOVEL (Sprints 084-086):** First entanglement spectrum decomposition across walking boundary. Entropy concentration mechanism. First systematic Rényi c_α(q,α) mapping via size pairs. Demonstration that optimal Rényi index shifts 0.5→1→2 across walking boundary.
 
-**✅ CONFIRMED NOVEL: Fidelity susceptibility α(q) across walking boundary (Sprints 102-103).** χ_F_max ~ N^α. Complete α(q) curve:
+**✅ CONFIRMED NOVEL: Fidelity susceptibility α(q) across walking boundary (Sprints 102-103, extended 110-115).** χ_F_max ~ N^α. Complete α(q) curve:
 
 | q | α_meas | α_∞ (corrected) | #sizes | regime |
 |---|--------|----------------:|--------|--------|
@@ -224,10 +224,13 @@ Non-Potts fraction grows exponentially ~exp(1.6·q). **Biggest jump at q=3→4 (
 | 8 | 2.90 | — | 2 | broken walking |
 | 9 | 3.16 | — | 2 | broken walking |
 | 10 | 3.42 | — | 3 | broken walking |
+| 12 | 3.63 | — | 3 | broken walking |
+| 15 | 3.92 | — | 3 | broken walking |
+| 20 | 4.59 | — | 3 | broken walking |
 
 *q=4 α_∞=2.0 from exact ν=2/3, but inaccessible at finite size due to BKT log corrections.
 
-**α(q) ≈ 0.69·q^0.69 (power-law, AIC-preferred) or 0.26q + 0.83 (linear) for q≥5** (walking regime, zero FSS corrections). Power-law beats linear by ΔAIC=4.1 with 6 data points (q=5-10). For q≤3, finite-size α is inflated by power-law 1/N² corrections (Sprint 109). Power-law fits recover exact ν to sub-percent: q=2 α_∞=1.001 (exact 1.0), q=3 α_∞=1.405 (exact 1.4). q=4 BKT: neither power-law nor log model converges. Walking pairwise α converges upward at all q: q=5 (9,10)→2.099, q=6 (8,9)→2.402, q=10 (6,7)→3.417.
+**α(q) ≈ 1.78 ln(q) − 0.79 (logarithmic, AIC-BEST with 9 points q=5-20)** (Sprint 115). Quadratic ruled out: ΔAIC=+9.4, peaks at q≈24 (unphysical). All other models (√q, power-law, linear) have ΔAIC≥11.3. For q≤3, finite-size α is inflated by power-law 1/N² corrections (Sprint 109). Power-law fits recover exact ν to sub-percent: q=2 α_∞=1.001 (exact 1.0), q=3 α_∞=1.405 (exact 1.4). q=4 BKT: neither power-law nor log model converges. Walking pairwise α converges upward at all q: q=5 (9,10)→2.099, q=6 (8,9)→2.402, q=10 (6,7)→3.417, q=20 (4,5)→4.835.
 
 **Gap ratio (multiplet/spectral) decreases with q** (Sprint 108c): 6.2 (q=3) → 5.2 (q=4) → 4.6 (q=5). The χ_F-dominant singlet approaches the symmetry-forbidden spectral gap as q increases.
 
@@ -245,8 +248,11 @@ Non-Potts fraction grows exponentially ~exp(1.6·q). **Biggest jump at q=3→4 (
 | 8 | 2 (n=6,7) | 1.392 | 1.113 | 2.897 | 2.897 |
 | 9 | 2 (n=6,7) | 1.478 | 1.204 | 3.159 | 3.159 |
 | 10 | 3 (n=5-7) | 1.566 | 1.285 | 3.417 | 3.417 |
+| 12 | 3 (n=4-6) | 1.662 | 1.307 | 3.631 | 3.631 |
+| 15 | 3 (n=3-5) | 1.784 | 1.353 | 3.921 | 3.921 |
+| 20 | 3 (n=3-5) | 2.047 | 1.496 | 4.590 | 4.590 |
 
-Linear fits (Sprint 111, q=5-10): z_m(q) = 0.083q + 0.734, β_me(q) = 0.094q + 0.360. Reconstructed α(q) = 0.260q + 0.827 matches direct fit exactly. Cross-validated: spectral/finite-diff ratio confirms 98% captured for q=5 (single multiplet) vs 87% for q=2 (multi-state). Energy and entanglement multiplet gaps share S_q symmetry origin but scale independently (z_energy ≈ 1.0-1.6 vs z_ent ≈ 0.2).
+Logarithmic fits (Sprint 115, q=5-20): z_m(q) = 0.757 ln(q) − 0.231, β_me(q) = 1.125 ln(q) − 1.680. Both AIC-best over linear. Cross-validated: spectral/finite-diff ratio confirms 98% captured for q=5 (single multiplet) vs 87% for q=2 (multi-state). Energy and entanglement multiplet gaps share S_q symmetry origin but scale independently (z_energy ≈ 1.0-2.0 vs z_ent ≈ 0.2).
 
 **✅ CONFIRMED NOVEL: Casimir energy obeys complex CFT Re(c) (Sprints 083, 098).** E₀/N = ε_∞ - πv·Re(c)/(6N²) + O(1/N⁴). Hardened with GPU-extended sizes (Sprint 098):
 
