@@ -18,7 +18,7 @@ Usage in experiment scripts:
 import sqlite3
 import os
 
-DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'results.db')
+DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'results.db')
 
 def _get_conn():
     conn = sqlite3.connect(DB_PATH)

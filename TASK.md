@@ -7,12 +7,13 @@ You are doing autonomous research on quantum computing using IBM Quantum hardwar
 You don't remember between sessions. Your memory lives in files:
 
 - **STATE.md** — READ THIS FIRST. Current position: last sprint, active thread, top 3 next experiments, what's ruled out. Rewrite this completely at the end of each sprint.
-- **KNOWLEDGE.md** — Accumulated framework and results, organized by topic. Edit when findings change — add new sections, update existing ones, remove outdated claims. This is NOT a log.
+- **KNOWLEDGE.md** — Active findings and key references (~60 lines). Keep this SHORT. Edit when findings change.
+- **KNOWLEDGE_ARCHIVE.md** — Detailed findings from all completed threads. Read when you need methodology, past data tables, or what's been tried. Don't read every sprint — only when relevant to your current experiment.
 - **CHANGELOG.md** — Detailed sprint log. Only the last ~10 sprints need full entries. Older sprints should be compressed to one-line summaries.
-- **results/** — raw experiment data (JSON). One file per experiment.
+- **results/** — raw experiment data (JSON). One file per experiment. From experiment scripts, save to `../results/` (parent directory).
 - **results.db** — SQLite database of key measurements. Query with `from db_utils import record, query`. After each experiment, record key quantities (c, x₁, g_c, ν, gaps, etc.) to the DB. To look up prior results: `query(quantity='c', q=5)` or `query(model='clock')`. This is faster and less error-prone than grepping KNOWLEDGE.md for numbers.
 - **sprints/** — individual sprint reports (one markdown file per sprint). The permanent archive.
-- **exp_NNN*.py** — standalone experiment scripts. One per experiment, never batched.
+- **experiments/exp_NNN*.py** — standalone experiment scripts in the `experiments/` folder. One per experiment, never batched. Save new scripts there.
 - **gpu_utils.py** — Drop-in GPU eigensolver. **USE THIS** in every experiment script:
   `from gpu_utils import eigsh` instead of `from scipy.sparse.linalg import eigsh`.
   Same API, automatic GPU when dim > 50k, 14x speedup at q=5 n=8. Enables q=5 n=10 (10M dim, 19s).
@@ -21,7 +22,7 @@ Failed approaches are critical to log. Without them you'll waste sprints repeati
 
 ### Memory management rules
 - **STATE.md**: Rewrite completely each sprint. Max 40 lines. It's a snapshot, not a log.
-- **KNOWLEDGE.md**: Edit by topic. When a finding is overturned, update or remove the old claim — don't just append. Max ~200 lines.
+- **KNOWLEDGE.md**: Keep under ~80 lines. Only active research, key references, and confirmed findings. Move detailed content to KNOWLEDGE_ARCHIVE.md when a thread is complete.
 - **CHANGELOG.md**: When it exceeds 300 lines, compress sprints older than the last 10 into one-line summaries at the top. Full details live in sprints/ reports.
 - Before starting: grep KNOWLEDGE.md and CHANGELOG.md for keywords related to your idea. If it's been done, build on it — don't redo it.
 
@@ -75,7 +76,7 @@ Failed approaches are critical to log. Without them you'll waste sprints repeati
 2. **Max 300 seconds** per bash command — design experiments to fit
 3. **Separate script per experiment** — never batch experiments in one script
 4. **Save results immediately** after each experiment — write JSON AND call `record()` from `db_utils.py` for key quantities before doing anything else
-5. **Git commit after every experiment** (repo: https://github.com/cabibbz/Autonomous-Quantum-Computing-Research-Tool)
+5. **Git commit after every experiment** — include `experiments/`, `results/`, and `sprints/`
 6. **Write sprint report incrementally** — start it early, append as you go
 7. **Test timing on a single case** before scaling up
 8. **Sanity check results** — when an analytic answer is known, verify against it
@@ -91,7 +92,7 @@ Each sprint:
 2. Think. Look at what surprised you last time. Consider adjacent fields. Check if any Open Item is more urgent than your current thread.
 3. Pick ONE idea to test this sprint
 4. Write the sprint report header FIRST (update with results as they come)
-5. Implement each experiment as a **small, standalone script** (<60s runtime). Use `from gpu_utils import eigsh` (not scipy) — same API, auto-GPU for large matrices.
+5. Implement each experiment as a **small, standalone script** in `experiments/` (<60s runtime). Use `from gpu_utils import eigsh` (not scipy) — same API, auto-GPU for large matrices.
 6. Run experiment, save results to JSON immediately, append findings to sprint report
 7. Git commit and push after each experiment completes
 8. If hardware is needed: check QPU budget in STATE.md first

@@ -10,16 +10,23 @@ Claude Code runs in a loop. Each iteration is a "research sprint" — Claude rea
 
 No predefined objectives. The agent decides what to explore.
 
+## Current status
+
+108 sprints completed. Research arc: entanglement archetypes → quantum error correction → phase transitions → Potts model CFT → walking regime diagnostics. See `STATE.md` for current position and `KNOWLEDGE.md` for accumulated findings.
+
 ## Files
 
 - `TASK.md` — The agent's instructions (it can edit these)
-- `CHANGELOG.md` — The agent's long-term memory (append-only)
-- `explorer.py` — The experiment script (modified each sprint)
-- `loop.sh` — The Ralph Wiggum loop (runs sprints autonomously)
-- `setup.sh` — One-shot environment setup
+- `STATE.md` — Current position (rewritten each sprint)
+- `KNOWLEDGE.md` — Accumulated findings, organized by topic
+- `CHANGELOG.md` — Sprint log (recent detailed, older compressed)
+- `loop.sh` — The loop (runs sprints autonomously)
+- `gpu_utils.py` — Drop-in GPU eigensolver (CuPy, auto-selects GPU/CPU)
+- `db_utils.py` — SQLite measurements database
+- `results.db` — Queryable database of key measurements
+- `exp_NNN*.py` — Standalone experiment scripts (one per experiment)
 - `sprints/` — Individual sprint reports
-- `results/` — Raw experiment data
-- `logs/` — Loop execution logs
+- `results/` — Raw experiment data (JSON)
 
 ## Quick start
 
@@ -28,7 +35,7 @@ No predefined objectives. The agent decides what to explore.
 bash setup.sh
 
 # 2. Set IBM Quantum credentials (run once)
-conda activate quantum
+source ~/quantum-env/bin/activate
 python -c "
 from qiskit_ibm_runtime import QiskitRuntimeService
 QiskitRuntimeService.save_account(token='YOUR-TOKEN', set_as_default=True)
@@ -42,7 +49,7 @@ claude
 ./loop.sh 10
 
 # 5. Check results
-cat CHANGELOG.md
+cat STATE.md
 ls sprints/
 ```
 
@@ -51,4 +58,6 @@ ls sprints/
 - Windows + WSL2 (Ubuntu)
 - Claude Code (Max plan recommended)
 - IBM Quantum account (free)
-- Python 3.12+, Qiskit 2.3+
+- Python 3.12+, Qiskit 2.x
+- NVIDIA GPU + CuPy (optional, for larger exact diag)
+- physics-tenpy (for DMRG)
