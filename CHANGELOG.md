@@ -313,3 +313,14 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **Partial revision of Sprint 103:** Formula coefficients updated but confirmed novel phenomenon (linear α(q) in walking regime) unchanged.
 
 [Full report: sprints/sprint_110.md]
+
+### Sprint 111 — q=10 χ_F Measurement: Power-Law α(q) Preferred
+**Status:** Complete (2 experiments).
+
+**q=10 spectral decomposition (111a).** 3 sizes n=5,6,7 (GPU for n=7, dim=10M, 700s). Pairwise α: (5,6)→3.295, (6,7)→3.417 — converging upward. Global α=3.349. Single-multiplet dominance (frac=1.000) at all sizes. z_m=1.566, β_me=1.285.
+
+**α(q) refit with q=10 (111b).** 6 data points (q=5-10). AIC model comparison: power-law 0.69·q^0.69 preferred (ΔAIC=4.1 over linear). Linear 0.260q+0.827 (RMS=0.018) vs quadratic (RMS=0.013) vs power-law (RMS=0.013). Component fits stable: z_m=0.083q+0.734, β_me=0.094q+0.360. Reconstructed α matches direct linear fit exactly.
+
+**Key findings:** (1) Single-multiplet dominance universal through q=10. (2) Power-law α(q) slightly preferred, but discrimination weak — all models fit comparably. (3) χ_F super-scaling (α>2) persists where walking has broken down (c_eff/Re(c)=0.60), confirming single-multiplet mechanism is independent of entropy-based walking.
+
+[Full report: sprints/sprint_111.md]

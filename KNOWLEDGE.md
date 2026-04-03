@@ -8,7 +8,7 @@
 - **~~Harden χ_F mechanism~~** DONE (Sprint 107). 5 sizes at q=5, cross-validated. CONFIRMED NOVEL.
 - **~~Log corrections to α(q)~~** CORRECTED (Sprint 109). Sprint 108's 1/ln(N) extrapolation was WRONG for q=2,3. Power-law 1/N² corrections recover exact ν: q=2→α_∞=1.00 (exact 1.0), q=3→α_∞=1.40 (exact 7/5). Walking (q≥5) zero corrections confirmed. q=4 BKT genuinely slow (neither model converges at accessible sizes).
 - **KNOWLEDGE.md is over budget (~560 lines vs ~200 target).** Compress old sections into one-line summaries.
-- **Hardware validation** — 580s QPU unused for 83 sprints. Strongest prediction: q=2 Ising χ_F at g_c, or Heisenberg chain c_eff on 5-10 qubits.
+- **Hardware validation** — 580s QPU unused for 86 sprints. Strongest prediction: q=2 Ising χ_F at g_c, or Heisenberg chain c_eff on 5-10 qubits.
 
 ## Five Entanglement Archetypes
 | Archetype | Example | MI pattern | I3 sign | Negativity | Source |
@@ -104,7 +104,7 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 1. **Correlators (x_σ)**: perfectly conformal for ALL q=2-8 (Sprint 082)
 2. **Casimir energy (E₀)**: governed by Re(c) for ALL q=2-8, even where c_eff deviates 40% (Sprint 083)
 3. **Entanglement entropy (c_eff)**: deviates from Re(c) for q>5 (Sprints 079-081)
-4. **Fidelity susceptibility (χ_F)**: scaling exponent α crosses 2.0 at walking boundary, then increases linearly with q (Sprints 102-103, revised Sprint 110). **Walking-specific** (Sprint 105): BKT gives α→0, MG first-order saturates, only walking gives persistent α>2. **Mechanism identified (Sprint 106):** α = β_me + 2z_m - 1, where z_m is the multiplet gap exponent and β_me is the matrix element growth exponent. Both linear in q. **Updated fits (Sprint 110, walking-only q=5-9):** z_m(q) = 0.082q + 0.741, β_me(q) = 0.098q + 0.333, α(q) ≈ 0.26q + 0.81. Single-multiplet dominance (frac=1.000) confirmed through q=9.
+4. **Fidelity susceptibility (χ_F)**: scaling exponent α crosses 2.0 at walking boundary, then increases sublinearly with q (Sprints 102-103, revised Sprint 110-111). **Walking-specific** (Sprint 105): BKT gives α→0, MG first-order saturates, only walking gives persistent α>2. **Mechanism identified (Sprint 106):** α = β_me + 2z_m - 1, where z_m is the multiplet gap exponent and β_me is the matrix element growth exponent. Both linear in q. **Updated fits (Sprint 111, walking-only q=5-10):** z_m(q) = 0.083q + 0.734, β_me(q) = 0.094q + 0.360, α(q) ≈ 0.69·q^0.69 (power-law, AIC-preferred) or 0.26q + 0.83 (linear). Single-multiplet dominance (frac=1.000) confirmed through q=10.
 5. **Entanglement spectrum multiplet dominance**: M/[(q-1)/q] crosses 1.0 at q≈4 (Sprints 089-090)
 
 **Microscopic mechanism: entropy concentration in (q-1)-fold multiplet (Sprint 084).** Entanglement spectrum at g_c=1/q shows:
@@ -213,18 +213,21 @@ Non-Potts fraction grows exponentially ~exp(1.6·q). **Biggest jump at q=3→4 (
 
 **✅ CONFIRMED NOVEL: Fidelity susceptibility α(q) across walking boundary (Sprints 102-103).** χ_F_max ~ N^α. Complete α(q) curve:
 
-| q | α_meas | α_∞ (log-corrected) | #sizes | regime |
-|---|--------|--------------------:|--------|--------|
-| 2 | 0.980 | — | 5 | real CFT (exact ν=1.0) |
-| 3 | 1.43 | 1.22 | 7 | real CFT (exact ν=5/6), strong log correction |
+| q | α_meas | α_∞ (corrected) | #sizes | regime |
+|---|--------|----------------:|--------|--------|
+| 2 | 0.980 | 1.001 | 5 | real CFT (exact ν=1.0) |
+| 3 | 1.43 | 1.405 | 7 | real CFT (exact ν=5/6), power-law 1/N² correction |
 | 4 | 1.77 | ~2.0* | 8 | BKT (extremely slow convergence) |
-| 5 | 2.09 | 2.08 | 6 | walking (ZERO correction) |
-| 6 | 2.37 | — | 2 | broken walking |
-| 7 | 2.65 | — | 3 | broken walking |
+| 5 | 2.10 | 2.08 | 5 | walking (ZERO correction) |
+| 6 | 2.40 | — | 4 | broken walking |
+| 7 | 2.67 | — | 3 | broken walking |
+| 8 | 2.90 | — | 2 | broken walking |
+| 9 | 3.16 | — | 2 | broken walking |
+| 10 | 3.42 | — | 3 | broken walking |
 
 *q=4 α_∞=2.0 from exact ν=2/3, but inaccessible at finite size due to BKT log corrections.
 
-**α(q) = 0.315·q + 0.469 for q≥5 ONLY** (walking regime, zero FSS corrections). For q≤3, finite-size α is inflated by power-law 1/N² corrections (Sprint 109, correcting Sprint 108). Power-law fits recover exact ν to sub-percent: q=2 α_∞=1.001 (exact 1.0), q=3 α_∞=1.405 (exact 1.4). q=4 BKT: neither power-law nor log model converges — would need n>100. Walking pairwise α at q=5 converges upward: (6,7)→2.076, (7,8)→2.082, (8,9)→2.090, (9,10)→2.099.
+**α(q) ≈ 0.69·q^0.69 (power-law, AIC-preferred) or 0.26q + 0.83 (linear) for q≥5** (walking regime, zero FSS corrections). Power-law beats linear by ΔAIC=4.1 with 6 data points (q=5-10). For q≤3, finite-size α is inflated by power-law 1/N² corrections (Sprint 109). Power-law fits recover exact ν to sub-percent: q=2 α_∞=1.001 (exact 1.0), q=3 α_∞=1.405 (exact 1.4). q=4 BKT: neither power-law nor log model converges. Walking pairwise α converges upward at all q: q=5 (9,10)→2.099, q=6 (8,9)→2.402, q=10 (6,7)→3.417.
 
 **Gap ratio (multiplet/spectral) decreases with q** (Sprint 108c): 6.2 (q=3) → 5.2 (q=4) → 4.6 (q=5). The χ_F-dominant singlet approaches the symmetry-forbidden spectral gap as q increases.
 
@@ -232,14 +235,18 @@ Non-Potts fraction grows exponentially ~exp(1.6·q). **Biggest jump at q=3→4 (
 
 α = β_me + 2z_m - 1, where gap_m ~ N^{-z_m} and |⟨mult|H_field|0⟩|² ~ N^{β_me}
 
-| q | sizes | z_m | β_me | α(decomp) | α(known) |
-|---|-------|-----|------|-----------|----------|
+| q | sizes | z_m | β_me | α(decomp) | α(meas) |
+|---|-------|-----|------|-----------|---------|
 | 2 | 5 (n=6-14) | 0.989 | 0.066 | 1.044 | 1.099 |
 | 3 | 3 (n=6-10) | 1.031 | 0.381 | 1.442 | 1.414 |
-| 5 | 5 (n=6-10) | 1.155 | 0.776 | 2.085 | 2.044 |
-| 7 | 3 (n=6-8) | 1.312 | 1.025 | 2.649 | 2.674 |
+| 5 | 5 (n=6-10) | 1.150 | 0.799 | 2.099 | 2.099 |
+| 6 | 4 (n=6-9) | 1.231 | 0.941 | 2.402 | 2.402 |
+| 7 | 3 (n=6-8) | 1.314 | 1.044 | 2.672 | 2.672 |
+| 8 | 2 (n=6,7) | 1.392 | 1.113 | 2.897 | 2.897 |
+| 9 | 2 (n=6,7) | 1.478 | 1.204 | 3.159 | 3.159 |
+| 10 | 3 (n=5-7) | 1.566 | 1.285 | 3.417 | 3.417 |
 
-Linear fits: z_m(q) = 0.065q + 0.845, β_me(q) = 0.188q − 0.238. Reconstructed α(q) = 0.318q + 0.452 matches direct fit exactly. Cross-validated: spectral/finite-diff ratio confirms 98% captured for q=5 (single multiplet) vs 87% for q=2 (multi-state). Energy and entanglement multiplet gaps share S_q symmetry origin but scale independently (z_energy ≈ 1.0-1.3 vs z_ent ≈ 0.2).
+Linear fits (Sprint 111, q=5-10): z_m(q) = 0.083q + 0.734, β_me(q) = 0.094q + 0.360. Reconstructed α(q) = 0.260q + 0.827 matches direct fit exactly. Cross-validated: spectral/finite-diff ratio confirms 98% captured for q=5 (single multiplet) vs 87% for q=2 (multi-state). Energy and entanglement multiplet gaps share S_q symmetry origin but scale independently (z_energy ≈ 1.0-1.6 vs z_ent ≈ 0.2).
 
 **✅ CONFIRMED NOVEL: Casimir energy obeys complex CFT Re(c) (Sprints 083, 098).** E₀/N = ε_∞ - πv·Re(c)/(6N²) + O(1/N⁴). Hardened with GPU-extended sizes (Sprint 098):
 
