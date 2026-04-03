@@ -300,3 +300,16 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **Partial retraction of Sprint 108:** 1/ln(N) form was wrong for q=2,3 (continuous transitions have power-law, not log corrections). Extrapolated α_∞(q=3)=1.22 retracted → correct value 1.40. Walking (q≥5) zero-correction finding CONFIRMED.
 
 [Full report: sprints/sprint_109.md]
+
+### Sprint 110 — Extend α(q) to q=5-9: Formula Revision
+**Status:** Complete (3 experiments).
+
+**q=6 GPU extension (110a).** 4 sizes n=6-9 (GPU for n=9, dim=10M, 305s). Vectorized builder. Pairwise α converges upward: 2.358→2.380→2.402. Global α=2.377. Single-multiplet dominance (frac=1.000) confirmed.
+
+**q=8,9 new measurements (110b).** q=8 n=6,7: α=2.897. q=9 n=6,7: α=3.159. Both below Sprint 103 formula prediction (2.99, 3.30). Single-multiplet dominance universal through q=9.
+
+**α(q) formula refit (110c).** Sprint 103's α=0.315q+0.469 **REVISED** — was biased by including q=4 (BKT). Pure walking data (q=5-9): α ≈ 0.262q + 0.815 (linear, RMS=0.019) or α ≈ -0.009q²+0.389q+0.386 (quadratic, RMS=0.011, AIC-preferred ΔAIC=3.3). Bias-corrected: α ≈ 0.272q + 0.754. Component fits updated: z_m=0.082q+0.741, β_me=0.098q+0.333. Reconstructed α exactly matches direct fit.
+
+**Partial revision of Sprint 103:** Formula coefficients updated but confirmed novel phenomenon (linear α(q) in walking regime) unchanged.
+
+[Full report: sprints/sprint_110.md]
