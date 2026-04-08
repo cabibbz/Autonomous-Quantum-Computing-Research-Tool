@@ -1,3 +1,8 @@
+## ⚠ MODEL IDENTITY NOTE (April 2026 Audit)
+All findings from Sprint 076 onward are on the **standard S_q Potts model** (field = Σ X^k), NOT the Potts-clock hybrid (X+X†). The hybrid was studied in Sprints 033-075 only. See KNOWLEDGE.md for full audit details.
+
+---
+
 **Sprint 076 CONFIRMED: hybrid ≠ S_q Potts universality class.** Direct head-to-head at q=5:
 - Degeneracy: S_q has 4-fold (S₅ permutation), hybrid has 2+2 split (Z₅ conjugate pairs, x₃=2.41)
 - g_c: S_q 0.200, hybrid 0.438 (field strength ratio 6.47x → g_c ratio 2.19x)

@@ -393,9 +393,13 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 
 [Full report: sprints/sprint_117.md]
 
-### Sprint 118 -- q=4 chi_F Extended: Anomalous Exponent Confirmed
-**Status:** Complete (1 experiment).
+### Sprint 118 -- q=4 chi_F Extended + Model Identity Audit
+**Status:** Complete (1 experiment + audit).
 
-**q=4 chi_F with 8 sizes n=4-11 (118a).** Pairwise alpha converges: 1.825->1.794->1.780->1.774->1.772->1.771->1.771. **alpha(q=4) = 1.771 +/- 0.001** (stable last 3 pairs). NOT consistent with exact q=4 Potts prediction alpha=2.0 (11.5% discrepancy). Confirms hybrid != standard Potts universality at q=4. Logarithmic formula (q>=5) underpredicts: 1.62 vs 1.77. Single-multiplet dominance at all sizes.
+**q=4 chi_F with 8 sizes n=4-11 (118a).** Pairwise alpha converges: 1.825->1.794->1.780->1.774->1.772->1.771->1.771. **alpha(q=4) = 1.771 +/- 0.001** (stable last 3 pairs). Differs from exact q=4 Potts alpha=2.0 by 11.5% — likely logarithmic corrections at the marginal Ashkin-Teller point.
+
+**⚠ MODEL IDENTITY AUDIT:** Code audit confirmed ALL experiments from Sprint 076 onward use the **standard S_q Potts model** (Σ X^k field), NOT the "Potts-clock hybrid" (X+X† field) described in KNOWLEDGE.md. All six claimed novel findings are on the known S_q Potts chain. KNOWLEDGE.md, STATE.md, and sprint report corrected. The novel contributions are the probes (chi_F spectral decomposition, systematic scaling data), not the model itself.
+
+~~Original Sprint 118 interpretation "confirms hybrid != S_q Potts" was WRONG~~ — the code IS S_q Potts.
 
 [Full report: sprints/sprint_118.md]

@@ -1,25 +1,28 @@
 # Current State -- Rewrite this completely each sprint
 
 ## Last Sprint
-Sprint 118 -- q=4 chi_F extended to 8 sizes (n=4-11). **alpha(q=4) = 1.771 +/- 0.001 (converged).** NOT consistent with exact q=4 Potts alpha=2.0 (11.5% off). Confirms hybrid model q=4 is NOT in standard Potts universality class. Logarithmic formula from q>=5 underpredicts (1.62 vs 1.77).
+Sprint 118 -- q=4 chi_F extended to 8 sizes (n=4-11). **alpha(q=4) = 1.771 +/- 0.001 (converged).** Differs from exact q=4 prediction alpha=2.0 by 11.5%. Likely due to **multiplicative logarithmic corrections at the marginal Ashkin-Teller point** (q=4 is exactly at the second-order/first-order boundary and has known log corrections that modify effective exponents at finite size).
+
+## ⚠ CRITICAL: Model Identity Correction (April 2026 Audit)
+**All experiments from Sprint 076 onward use the STANDARD S_q Potts model**, not the "Potts-clock hybrid." Code audit confirmed: all scripts use `for k in range(1, q)` (field = Σ X^k), not X+X†. The model is NOT novel — it is the same model studied by Gorbenko-Rychkov-Zan, Ma & He, Tang et al. See KNOWLEDGE.md for full details. The novel contributions are the PROBES (chi_F spectral decomposition, systematic chi_F scaling), not the model itself.
 
 ## Active Research Thread
-**Walking regime findings stabilized.** alpha(q) logarithmic for q>=5 with 11 pts q=5-30. q=4 anomalous exponent 1.77 (distinct from both exact Potts 2.0 and log formula 1.62). Six confirmed novel findings.
+**S_q Potts walking regime: chi_F findings need reframing.** alpha(q) data for q=5-30 (11 pts) is new. Spectral decomposition/selection rule mechanism (Sprint 107) is the strongest novel result. Casimir vs entropy comparison is useful but expected. Model identity confusion in old knowledge files being corrected.
 
 ## QPU Budget
 - Used: 20s of 600s (Sprint 025: ibm_kingston)
 - Remaining: 580s -- UNUSED FOR 93 SPRINTS
 
 ## Top 3 Next Experiments
-1. **Hardware validation** -- 580s QPU unspent. q=2 Ising chi_F or Casimir on ~10 qubits.
-2. **alpha(q) unified formula q=2-30** -- Can we find a single formula covering q=2 (exact 1.0), q=3 (exact 1.4), q=4 (1.77), q=5-30 (logarithmic)?
-3. **Cross-model validation** -- Test chi_F in Z_q clock model at its BKT critical point. BKT should give different alpha behavior.
+1. **Validate alpha(q) at larger sizes** -- Use QMC or transfer matrix methods (quantum-classical mapping) to verify chi_F exponents at n=20-50 for q=5-7. Current 3-size fits at large q are unreliable.
+2. **Derive logarithmic alpha(q) theoretically** -- The spectral decomposition (alpha = beta_me + 2*z_m - 1) is empirically strong but needs a theory for why z_m(q) and beta_me(q) are logarithmic.
+3. **Revisit hybrid model** -- The Potts-clock hybrid (Sprints 033-075) IS potentially novel (continuous transitions for q>4, no floating phase). Run chi_F spectral decomposition on the HYBRID to compare with S_q results.
 
 ## What's Been Ruled Out
-- alpha(q=4) = 2.0 (exact Potts) -- measured 1.77, stable 8 sizes (Sprint 118)
-- alpha(q) log+loglog subleading -- dAIC narrowed to 0.8 (Sprint 117)
+- alpha(q=4) = 2.0 -- measured 1.77, likely log corrections at marginal point (Sprint 118)
 - alpha(q) quadratic, linear, sqrt, power-law -- dAIC>=7.7 (Sprint 117)
 - DMRG open-BC chi_F -- boundary effects (Sprint 113)
+- "Our model is novel" for sprints 076+ -- it's the standard S_q Potts (April 2026 audit)
 - Plus all prior ruled-out items
 
 ## Key Tools Available

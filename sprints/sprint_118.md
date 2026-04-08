@@ -1,11 +1,10 @@
-# Sprint 118 -- q=4 chi_F Extended: Anomalous Exponent Confirmed
+# Sprint 118 -- q=4 chi_F Extended + Model Identity Audit
 
 **Status:** Complete
 
-## Motivation
-Sprint 102c measured q=4 chi_F with only n=6,8, giving alpha=1.69. Exact q=4 Potts predicts alpha=2/nu-1=2.0 (nu=2/3). Extended to 8 sizes (n=4-11) to determine if alpha converges to 2.0 or stabilizes at a different value.
-
 ## Experiment 118a -- q=4 chi_F spectral decomposition (n=4 to n=11)
+
+Model: **S_q Potts** (field = Σ_{k=1}^{q-1} X^k), g_c = 1/q = 0.25.
 
 | n | dim | gap_m | |me|^2 | chi_F | dominant_frac | time |
 |---|-----|-------|---------|-------|---------------|------|
@@ -29,35 +28,36 @@ Pairwise alpha convergence:
 
 **Alpha stabilizes at 1.771 +/- 0.001 (last 3 pairs).** Not converging to 2.0.
 
-Progressive global fits converge: n=4-11 gives 1.786, n=8-11 gives 1.771.
+## Analysis (CORRECTED — Model Identity Audit)
 
-## Analysis
+### Original interpretation (WRONG):
+~~"alpha=1.77 != 2.0 confirms hybrid model != standard Potts universality class."~~
 
-1. **alpha(q=4) = 1.77 is NOT consistent with exact q=4 Potts (alpha=2.0).**
-   - Discrepancy is 11.5%, stable across 8 sizes
-   - Not a finite-size effect: pairwise alpha is flat for n>=8
+### Corrected interpretation:
+The code uses `build_sq_potts` with `for k in range(1, q)` — this IS the standard S_q Potts model, NOT the hybrid. The discrepancy between measured alpha=1.77 and exact alpha=2.0 (from nu=2/3) is most likely due to **multiplicative logarithmic corrections at the marginal q=4 Ashkin-Teller point**.
 
-2. **Our hybrid model at q=4 is NOT in the standard Potts universality class.**
-   - This is consistent with Sprint 065: hybrid != S_q Potts for q>=4
-   - The hybrid has Z_4 symmetry, standard Potts has S_4 symmetry
-   - Different symmetry -> different critical exponents
+q=4 is exactly at the boundary between second-order (q<=4) and first-order (q>4) for the S_q Potts model. At this marginal point:
+- The q=4 Potts transition has known logarithmic corrections
+- The formula alpha = 2/nu - 1 with nu=2/3 gives alpha=2.0, but this assumes pure power-law FSS
+- Multiplicative log corrections modify the effective exponent at finite size
+- The apparent convergence at alpha=1.77 may be a plateau — convergence to 2.0 could require much larger sizes (n >> 100)
+- This is analogous to known behavior at the q=4 BKT/Ashkin-Teller point where exponents converge logarithmically slowly
 
-3. **Logarithmic formula underpredicts: 1.62 vs measured 1.77 (9% off).**
-   - The formula alpha(q) = 1.87*ln(q) - 0.97 was fit to q=5-30 data
-   - q=4 is below the walking threshold and may follow different scaling
+### What holds:
+1. alpha(q=4) = 1.77 is a clean measurement with 8 converged sizes
+2. Single-multiplet dominance at q=4 (frac=1.000) — same as q>=5
+3. z_m = 1.079 at n=10-11
 
-4. **q=4 is a crossover point.** The effective alpha places q=4 between:
-   - Known exact q=3: alpha=1.40 (nu=5/6)
-   - Walking q=5: alpha=2.09
-   - q=4 alpha=1.77 falls naturally in this progression
+### What does NOT hold:
+1. ~~This does NOT confirm "hybrid != S_q Potts"~~ — the code IS S_q Potts
+2. The 11.5% discrepancy with exact alpha=2.0 is likely log corrections, NOT a different universality class
 
-5. **z_m = 1.079 at n=10-11.** Converging slowly from 1.097.
+## Model Identity Audit (April 2026)
 
-6. **Single-multiplet dominance universal at q=4** (frac=1.000 at all sizes).
+Code audit of ALL experiments from Sprint 076 onward confirms they use the **standard S_q Potts model**:
+- Exact diag: `for k in range(1, q)` (Σ_{k=1}^{q-1} X^k)
+- TeNPy DMRG: `SqField = ones(q,q) - eye(q)` (same operator)
 
-## Conclusions
-- q=4 chi_F gives a clean power-law with alpha=1.77 and 8 sizes
-- The hybrid model q=4 exponent is distinct from standard q=4 Potts (alpha=2.0)
-- This confirms q=4 is NOT in the standard Potts universality class for our hybrid
-- The logarithmic formula for alpha(q) applies for q>=5 (walking regime) only
-- alpha(q) can be extended down to q=4 with measured value 1.77
+Sprints 033-075 used the **Potts-clock hybrid** (X + X†). The switch happened at Sprint 076 and was never reversed. All six claimed novel findings (098, 102-118) are on the standard S_q Potts model — the same model studied by Gorbenko-Rychkov-Zan, Ma & He, Tang et al., and Jacobsen & Wiese.
+
+See KNOWLEDGE.md Model Identity section for full details.

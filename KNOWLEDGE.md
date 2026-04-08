@@ -26,34 +26,46 @@ Each captures orthogonal information. Different phase transitions are visible at
 3. **Spectral** (eigenvalue distribution of ρ_A) — symmetry content. U(1) gives doublet degeneracies. Z₃ gives triplets.
 4. **Hamiltonian** (H_E = -log ρ_A structure) — locality and entanglement temperature.
 
-## ⚠ Model Identity — READ THIS (External Review, April 2026)
+## ⚠ Model Identity — READ THIS (Audit April 2026)
 
-Our Hamiltonian H = -Jδ(s_i,s_j) - g(X+X†) is a **Potts-clock hybrid**: Potts coupling + clock transverse field. It is **not the standard quantum Potts model** from the literature.
+### TWO MODELS WERE STUDIED — NOT ONE
 
-| Model | Coupling | Transverse field | Symmetry | q>4 transition | Floating phase |
-|-------|----------|-----------------|----------|---------------|----------------|
-| S_q Potts | δ(s_i,s_j) | Σ_{k=1}^{q-1} X^k | S_q | **First-order** | No |
-| Z_q clock | cos(2π(s_i-s_j)/q) | X + X† | Z_q | **Two BKT** | **Yes** (Sprint 067c) |
-| **Our hybrid** | δ(s_i,s_j) | X + X† | Z_q | Continuous 2nd order | **No** (Sprint 067) |
+**Sprints 033-075:** Studied the **Potts-clock hybrid** H = -Jδ(s_i,s_j) - g(X+X†). Z_q symmetry.
+**Sprints 076-118:** Switched to the **standard S_q Potts model** H = -Jδ(s_i,s_j) - gΣ_{k=1}^{q-1} X^k. S_q symmetry. All six claimed novel findings (098, 102-118) are on this model.
 
-For q=2,3 all three are equivalent. For q≥4 they differ.
+The switch happened at Sprint 076 (introduced S_q for comparison) and was never reversed. Code audit confirms: all experiment scripts from 076+ use `build_sq_potts` with `for k in range(1, q)` or TeNPy `SqField = ones(q,q) - eye(q)`.
 
-**Sprint 065 CONFIRMED: hybrid ≠ clock universality class.** Three independent probes at q=5:
-- c/x₁: hybrid 10.77 vs clock 9.43 (12% diff, slowly shrinking but nonzero)
-- ν: hybrid 0.83 (finite, power-law) vs clock ~2+ (diverging, BKT)
-- Clock q=7 has NO gap crossing (BKT); hybrid has clear crossing (second-order)
+| Model | Coupling | Transverse field | Symmetry | Sprints | q>4 transition |
+|-------|----------|-----------------|----------|---------|---------------|
+| S_q Potts | δ(s_i,s_j) | Σ_{k=1}^{q-1} X^k | S_q | **076-118** | Weakly 1st-order (walking) |
+| Z_q clock | cos(2π(s_i-s_j)/q) | X + X† | Z_q | 034,065,067 | Two BKT |
+| Potts-clock hybrid | δ(s_i,s_j) | X + X† | Z_q | **033-075** | Continuous 2nd order |
+
+For q=2,3 all three are equivalent (up to field rescaling at q=2). For q≥4 they differ.
+
+### Implications for novelty claims
+
+The S_q Potts model is the SAME model studied by Gorbenko-Rychkov-Zan, Ma & He, Tang et al., and Jacobsen & Wiese. Therefore:
+- Agreement between Casimir energy and Re(c) is **expected** (GRZ predictions are for this model)
+- g_c = 1/q is a **known exact result** (Kramers-Wannier self-duality)
+- The model is NOT novel — but our **probes** (χ_F spectral decomposition, Casimir vs entropy comparison) may be
+
+### What IS still potentially novel on the S_q model
+- **χ_F spectral decomposition** (Sprint 107): selection rule + single-multiplet dominance mechanism
+- **χ_F scaling data across q** (Sprints 102-117): systematic measurement, appears to be new data
+- **Casimir vs entropy systematic comparison** (Sprint 098): useful quantitative observation
+
+### Hybrid model findings (Sprints 033-075) — separate body of work
+Sprint 065 confirmed hybrid ≠ clock, Sprint 076 confirmed hybrid ≠ S_q Potts. The hybrid model at q≥4 may genuinely be a new universality class with continuous transitions, but this was NOT further pursued after Sprint 076. The hybrid findings (g_c scaling, ν≈0.83, no floating phase, CFT content) are potentially novel but less well hardened.
 
 **Key literature (search before claiming novelty):**
-- **Gorbenko, Rychkov & Zan (JHEP 2018, SciPost 2018):** Complex CFT for q>4 S_q Potts. Predicts complex c (e.g., c ≈ 1.138 ± 0.021i for q=5).
-- **Ma & He (PRB 99, 195130, 2019):** Measured effective c from entropy for q=5,6,7 on Hermitian S_q chain.
-- **Tang et al. (PRL 133, 076504, 2024):** Non-Hermitian q=5 S_q Potts. 11 scaling dimensions, 9 OPE coefficients.
-- **Sun, Luo & Chen (arXiv:2006.11361, 2020):** Z_q clock has two BKT transitions for q>4. Continuous transitions known for clock-type fields.
-- **Jacobsen & Wiese (PRL 133, 077101, 2024):** All S_q Potts exponents for q>4 via analytic continuation.
+- **Gorbenko, Rychkov & Zan (JHEP 2018, SciPost 2018):** Complex CFT for q>4 S_q Potts.
+- **Ma & He (PRB 99, 195130, 2019):** Measured c_eff for q=5,6,7 on Hermitian S_q chain.
+- **Tang et al. (PRL 133, 076504, 2024):** Non-Hermitian q=5 S_q Potts.
+- **Jacobsen & Wiese (PRL 133, 077101, 2024):** All S_q Potts exponents via analytic continuation.
+- **Sun, Luo & Chen (arXiv:2006.11361, 2020):** Z_q clock has two BKT transitions for q>4.
 
-
-**Genuinely novel (confirmed):** Casimir tracks Re(c) (Sprint 098), chi_F spectral mechanism (Sprint 107), alpha(q) scaling (Sprints 103-116, 10 pts q=5-25). Walking-specific, not universal (Sprint 104-105).
-
-**Retracted:** ~~"No CFT predictions for q>4"~~, ~~"Analytic continuation WRONG"~~, ~~"Potts NEVER first-order"~~ — see archive for details.
+**Retracted:** ~~"No CFT predictions for q>4"~~, ~~"Analytic continuation WRONG"~~, ~~"Potts NEVER first-order"~~, ~~"Our model is a novel Potts-clock hybrid" (for sprints 076+)~~ — see archive for details.
 
 ## Detailed Findings
 
