@@ -55,19 +55,19 @@ The S_q Potts model is the SAME model studied by Gorbenko-Rychkov-Zan, Ma & He, 
 - **χ_F scaling data across q** (Sprints 102-117): systematic measurement, appears to be new data
 - **Casimir vs entropy systematic comparison** (Sprint 098): useful quantitative observation
 
-### ⚠ Spectral chi_F Prefactor Error (Sprint 125)
-All spectral chi_F VALUES in Sprints 106-124 are missing a factor of 2 in the Lehmann sum. Scaling EXPONENTS are unaffected (prefactor cancels in log-log slopes). "frac=1.000" was wrong — true dominant fraction is 0.92-0.99. Increasing k from 12 to 200 adds zero new states (only 2-6 contribute due to Z_q selection rules). The selection rule itself is standard Z_q representation theory, not a novel finding. The formula alpha = beta_me + 2*z_m - 1 is a tautological identity from definitions, not a physics discovery.
+### ⚠ Spectral chi_F: Methodology Status (Sprints 125-126)
+Spectral Lehmann sum was missing factor 2 (Sprint 125). Even corrected, spectral method captures only the dominant state — non-dominant states at high eigenvalue indices cause **systematic negative alpha bias of 0.005–0.038** (Sprint 126). Bias grows with system size. **Use exact chi_F (finite-difference) for all exponent claims.** The selection rule is standard Z_q representation theory. The formula alpha = beta_me + 2·z_m − 1 is a tautological identity.
 
-### χ_F Spectral Decomposition: Model-Specific Exponents (Sprints 119-121)
-Single-multiplet dominance (frac=0.92-0.99) and spectral gap selection rule hold in both S_q Potts and hybrid Potts-clock. Exponents diverge between models:
+### χ_F Exponents: Authoritative Values (Sprint 126, exact chi_F with error bars)
 
 | q | Hybrid alpha | S_q alpha | Hybrid z_m | S_q z_m |
 |---|-------------|-----------|-----------|---------|
-| 3 | 1.47 | 1.40 | 1.03 | 1.03 |
-| **4** | **1.55** | **1.77** | **1.00** | **~1.05** |
-| 5 | 1.41 | 2.09 | 0.91 | 1.31 |
-| 7 | 0.95 | 2.65 | 0.77 | ~1.4 |
-| 10 | 0.55 | ~3.2 | 0.69 | — |
+| 3 | 1.481±0.014 | 1.481±0.014 | 1.030±0.000 | 1.030±0.000 |
+| **4** | **1.557±0.019** | **1.800±0.010** | **1.002±0.001** | **1.093±0.002** |
+| 5 | 1.436±0.043 | 2.094±0.005 | 0.912±0.002 | 1.163±0.002 |
+| 7 | 1.028±0.067 | 2.606±0.019 | 0.778±0.005 | 1.307±0.001 |
+
+Prior spectral-only values (Sprints 119-121) were ~1-4% low on alpha. Trends and model comparisons unchanged.
 
 **z_m crosses 1 at q_cross = 3.58 ± 0.04 for hybrid** (Sprint 121a, 5 fit forms all converge). z_m > 1 → walking/super-scaling, z_m < 1 → continuous/ordinary. Hybrid q=4 is barely walking (z_m=1.004), not exactly marginal. Alpha peak also at q≈3.58. **S_q q=4: alpha=1.777±0.003, z_m=1.092±0.001** (Sprint 121b, 8 sizes n=4-11) — firmly walking, z_m slowly drifting toward 1 (1.097→1.079). 19% alpha divergence between models at largest sizes.
 

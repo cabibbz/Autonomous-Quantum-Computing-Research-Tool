@@ -4,6 +4,9 @@
 - Used: 20s of 600s (Sprint 025)
 - Remaining: 580s
 
+## Sprint 126 — Corrected spectral chi_F: systematic exponent bias quantified
+Factor-2 corrected spectral still shows 0.5-4% alpha underestimate because non-dominant fraction grows with size. Extracted authoritative exponents via exact chi_F (finite-difference) with error bars for S_q and hybrid at q=3,4,5,7. S_q alpha: 1.48→2.61 (monotonic with q). Hybrid alpha: peaks at q≈3-4 then decreases. Model comparison survives all corrections — >10σ divergence at q≥4.
+
 ## Sprint 125 — Factor-2 prefactor error found in spectral chi_F
 Spectral method captures exactly 50% of true chi_F due to missing factor-2 in Lehmann sum. After correction, matches exact to 0-2.2%. k-truncation is NOT the issue (k=200 same as k=12). Dominant fraction is 0.92-0.99, not 1.000. Scaling exponents UNAFFECTED.
 
