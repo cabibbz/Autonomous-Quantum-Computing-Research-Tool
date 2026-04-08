@@ -383,3 +383,12 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **Key findings:** (1) alpha(q=25)=5.17 confirms continued growth. (2) Subleading ln(ln(q)) correction improves fit but dAIC=1.4 is not decisive (need >4). (3) z_m=2.29 continues past 2.0. (4) n=5 at q=25 (9.8M) took 1616s -- practical GPU limit reached. (5) q=30 predictions: log+loglog 5.47, pure log 5.37.
 
 [Full report: sprints/sprint_116.md]
+
+### Sprint 117 -- q=30 chi_F: Logarithmic Model Stabilizes
+**Status:** Complete (2 experiments).
+
+**q=30 spectral decomposition (117a).** n=3,4 only (n=5=24.3M exceeds GPU). Pair(3,4) alpha=5.384. z_m=2.384. Single-multiplet dominance at q=30. Pure log predicted 5.37, log+loglog predicted 5.47.
+
+**alpha(q) refit with 11 points (117b).** dAIC gap narrowed from 1.4 to 0.8. LOO cross-validation: log+loglog 0.081 vs pure log 0.085 -- nearly identical. **Pure logarithmic alpha(q) = 1.87 ln(q) - 0.97 is the preferred model** (Occam's razor). alpha(q) mapping q=5-30 now complete with diminishing returns.
+
+[Full report: sprints/sprint_117.md]
