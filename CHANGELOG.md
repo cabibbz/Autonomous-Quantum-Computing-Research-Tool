@@ -4,6 +4,9 @@
 - Used: 20s of 600s (Sprint 025)
 - Remaining: 580s
 
+## Sprint 125 — Factor-2 prefactor error found in spectral chi_F
+Spectral method captures exactly 50% of true chi_F due to missing factor-2 in Lehmann sum. After correction, matches exact to 0-2.2%. k-truncation is NOT the issue (k=200 same as k=12). Dominant fraction is 0.92-0.99, not 1.000. Scaling exponents UNAFFECTED.
+
 ## Compressed Sprint History (Sprints 001-024)
 
 - **001** — Bell states & CHSH. S=2.834 matches Tsirelson bound. GHZ scaling timed out (partial_trace limit).

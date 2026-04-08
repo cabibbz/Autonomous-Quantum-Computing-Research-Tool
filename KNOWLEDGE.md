@@ -55,8 +55,11 @@ The S_q Potts model is the SAME model studied by Gorbenko-Rychkov-Zan, Ma & He, 
 - **χ_F scaling data across q** (Sprints 102-117): systematic measurement, appears to be new data
 - **Casimir vs entropy systematic comparison** (Sprint 098): useful quantitative observation
 
-### χ_F Spectral Decomposition: Universal Mechanism, Model-Specific Exponents (Sprints 119-120)
-Single-multiplet dominance (frac=1.000) and spectral gap selection rule are **universal** — identical in both S_q Potts and hybrid Potts-clock. The decomposition alpha = beta_me + 2*z_m - 1 is exact in both. But the exponents diverge:
+### ⚠ Spectral chi_F Prefactor Error (Sprint 125)
+All spectral chi_F VALUES in Sprints 106-124 are missing a factor of 2 in the Lehmann sum. Scaling EXPONENTS are unaffected (prefactor cancels in log-log slopes). "frac=1.000" was wrong — true dominant fraction is 0.92-0.99. Increasing k from 12 to 200 adds zero new states (only 2-6 contribute due to Z_q selection rules). The selection rule itself is standard Z_q representation theory, not a novel finding. The formula alpha = beta_me + 2*z_m - 1 is a tautological identity from definitions, not a physics discovery.
+
+### χ_F Spectral Decomposition: Model-Specific Exponents (Sprints 119-121)
+Single-multiplet dominance (frac=0.92-0.99) and spectral gap selection rule hold in both S_q Potts and hybrid Potts-clock. Exponents diverge between models:
 
 | q | Hybrid alpha | S_q alpha | Hybrid z_m | S_q z_m |
 |---|-------------|-----------|-----------|---------|
