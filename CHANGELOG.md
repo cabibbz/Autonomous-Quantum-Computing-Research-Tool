@@ -483,3 +483,14 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 3. 6 QPU-ready circuits saved, need credentials to submit (~30s QPU time)
 
 [Full report: sprints/sprint_123.md]
+
+### Sprint 124 -- DMRG chi_F for S_q q=4: Open-BC Alpha Drift
+**Status:** Complete (3 experiments).
+
+**iDMRG overlap chi_F (124a,b).** FAILED. Both random-start and warm-start produce wildly non-monotonic chi_F vs bond dimension. Root cause: S_q symmetry is non-abelian, TeNPy iDMRG converges to different local minima at different chi. iDMRG overlap chi_F is not viable for S_q Potts.
+
+**Finite DMRG extension (124c).** Extended open-BC chi_F to n=20 (from n=12 in Sprint 113b). q=4: 8 sizes, pairwise alpha drifts UPWARD (1.505->1.523). Power+1/N^2: alpha_open=1.524+/-0.002, R^2=0.999999. Log-corrected (alpha=2): p=1.237, R^2=0.99971. q=2 cross-check: alpha drifts DOWN toward exact 1.0 (validates method).
+
+**Key finding:** Open-BC alpha at q=4 is NOT converged -- it drifts upward, consistent with approach to higher asymptotic value (periodic 1.77 or log-corrected 2.0). The q=4 log correction regime requires n>>20.
+
+[Full report: sprints/sprint_124.md]

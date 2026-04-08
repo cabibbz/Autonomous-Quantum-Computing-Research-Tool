@@ -70,7 +70,9 @@ Single-multiplet dominance (frac=1.000) and spectral gap selection rule are **un
 
 **g_c(hybrid):** q=2→0.250, q=3→0.333, q=4→0.393, q=5→0.438, q=7→0.535, q=10→0.684 (Sprint 120a).
 
-**Literature on S_q q=4:** Marginal operator gives log corrections: chi_F ~ L^2(ln L)^{-p} (Salas-Sokal 1997, Balog et al. 2007). Predicted p=3/2 (specific heat sector) but NO prior chi_F log correction measurement exists. At n=4-11, alpha=2 with log corrections is the WORST fit (dAIC=42 vs power+1/N^2). Best fit: alpha=1.757 with 1/N^2 correction. Asymptotic regime needs L>>11 (Lv et al. 2019 needed L=1024). Hybrid q=4 alpha=1.460 with 1/N^2 correction — clearly different universality class.
+**Literature on S_q q=4:** Marginal operator gives log corrections: chi_F ~ L^2(ln L)^{-p} (Salas-Sokal 1997, Balog et al. 2007). Predicted p=3/2 (specific heat sector) but NO prior chi_F log correction measurement exists. At n=4-11 (periodic BC), alpha=2 with log corrections is the WORST fit (dAIC=42 vs power+1/N^2). Best fit: alpha=1.757 with 1/N^2 correction. Hybrid q=4 alpha=1.460 with 1/N^2 correction -- clearly different universality class.
+
+**DMRG extension (Sprint 124):** Open-BC chi_F at n=6-20 (8 sizes). Pairwise alpha drifts UPWARD: 1.505->1.523. Power+1/N^2 corrected alpha_open=1.524+/-0.002. Log-corrected alpha=2 still worst fit (R^2=0.9997 vs 0.999999). **But drift direction is upward** -- consistent with eventual convergence to higher value (periodic 1.77 or log-corrected 2.0). Asymptotic regime needs L>>20 (likely L>100). iDMRG overlap method FAILED for S_q Potts (non-abelian symmetry).
 
 ### Hybrid model findings (Sprints 033-075, 119-121) — separate body of work
 Sprint 065 confirmed hybrid ≠ clock, Sprint 076 confirmed hybrid ≠ S_q Potts. Sprints 119-121: chi_F spectral decomposition on hybrid confirms continuous transitions for q≥5 and walking→continuous boundary at q_cross=3.58. The hybrid model at q≥4 is genuinely a different universality class from S_q Potts.
