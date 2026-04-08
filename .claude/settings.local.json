@@ -64,7 +64,9 @@
       "Bash(mv gpu_utils.py experiments/)",
       "Bash(mv db_utils.py experiments/)",
       "Bash(mv KNOWLEDGE.md KNOWLEDGE_old_backup.md)",
-      "Bash(mv KNOWLEDGE_short.md KNOWLEDGE.md)"
+      "Bash(mv KNOWLEDGE_short.md KNOWLEDGE.md)",
+      "Bash(ls -lah /c/Users/me/Desktop/autoquantum/experiments/*.py)",
+      "Bash(sqlite3:*)"
     ]
   }
 }

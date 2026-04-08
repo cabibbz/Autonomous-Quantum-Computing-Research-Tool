@@ -27,6 +27,7 @@ for i in $(seq 1 $SPRINTS); do
     
     claude -p "Follow the instructions in TASK.md." \
         --dangerously-skip-permissions \
+        --verbose \
         --max-turns 30 \
         2>&1 | tee -a "logs/loop-$TIMESTAMP.log"
     
