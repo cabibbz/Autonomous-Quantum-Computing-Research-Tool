@@ -2,7 +2,7 @@
 
 ## Open Items — Check each sprint, remove when done
 - **~~Test energy-entropy hierarchy in a DIFFERENT model~~** DONE (Sprint 104). Tested in J1-J2 chain. Result: **NOT universal.** Hierarchy direction is model-dependent. Potts walking gives O(1) entropy deviation — unique to walking mechanism. J1-J2 gives only O(1%) differences. The Casimir-Re(c) finding is walking-specific, not a general CFT principle.
-- **~~Harden χ_F scaling at q=5~~** DONE (Sprint 103, updated Sprint 115). α(q) mapped q=2-20. All polynomial/power-law forms ruled out. **Logarithmic α(q) ≈ 1.78 ln(q) − 0.79 is AIC-BEST** with 9 data points (Sprint 115).
+- **~~Harden chi_F scaling at q=5~~** DONE (Sprint 103, updated Sprint 116). alpha(q) mapped q=2-25. All polynomial/power-law forms ruled out. **Log+loglog alpha(q) = 2.62 ln(q) - 1.77 ln(ln(q)) - 1.26 marginally AIC-best** (dAIC=1.4 over pure log) with 10 data points (Sprint 116). Pure log: 1.86 ln(q) - 0.96.
 - **~~Test χ_F in different model~~** DONE (Sprint 105). J1-J2 BKT: invisible (α→0). MG first-order: saturates. Walking super-scaling is unique.
 - **~~Understand χ_F mechanism~~** DONE (Sprint 106). α = β_me + 2z_m - 1. Single multiplet dominates. Spectral gap symmetry-forbidden.
 - **~~Harden χ_F mechanism~~** DONE (Sprint 107). 5 sizes at q=5, cross-validated. CONFIRMED NOVEL.
@@ -51,7 +51,7 @@ For q=2,3 all three are equivalent. For q≥4 they differ.
 - **Jacobsen & Wiese (PRL 133, 077101, 2024):** All S_q Potts exponents for q>4 via analytic continuation.
 
 
-**Genuinely novel (confirmed):** Casimir tracks Re(c) (Sprint 098), χ_F spectral mechanism (Sprint 107), α(q) scaling (Sprints 103-115). Walking-specific, not universal (Sprint 104-105).
+**Genuinely novel (confirmed):** Casimir tracks Re(c) (Sprint 098), chi_F spectral mechanism (Sprint 107), alpha(q) scaling (Sprints 103-116, 10 pts q=5-25). Walking-specific, not universal (Sprint 104-105).
 
 **Retracted:** ~~"No CFT predictions for q>4"~~, ~~"Analytic continuation WRONG"~~, ~~"Potts NEVER first-order"~~ — see archive for details.
 

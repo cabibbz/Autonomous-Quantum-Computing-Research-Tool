@@ -372,3 +372,14 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **Key findings:** (1) q=20 measurement flips AIC ranking — logarithmic goes from second-best to best. (2) Quadratic definitively ruled out (17% error at q=20). (3) z_m crosses 2.0 — multiplet gap closes faster than 1/N² (super-quartic χ_F). (4) Single-multiplet dominance universal through q=20 where walking is fully broken.
 
 [Full report: sprints/sprint_115.md]
+
+### Sprint 116 -- q=25 chi_F: Log+Loglog Subleading Correction Emerges
+**Status:** Complete (2 experiments).
+
+**q=25 spectral decomposition (116a).** 3 sizes n=3,4,5 (GPU for n=5, dim=9.8M, 1616s -- pushing GPU limit). Pairwise alpha: (3,4)->4.932, (4,5)->5.504 -- converging upward. Global alpha=5.170. Single-multiplet dominance (frac=1.000) at all sizes. z_m=2.286, beta_me=1.598. Pure log predicted 4.94 -- underpredicts by 4.7% (+0.23).
+
+**alpha(q) refit with 10 points q=5-25 (116b).** **Log+loglog marginally AIC-best** (dAIC=1.4 over pure log): alpha(q) = 2.62 ln(q) - 1.77 ln(ln(q)) - 1.26. Pure log updated: 1.86 ln(q) - 0.96 (RMS=0.072). Quadratic peaks at q=32.6 (dAIC=+7.7, unphysical). Sqrt/power-law dAIC>=4.2. z_m(q) = 0.786 ln(q) - 0.290 (log AIC-best for components).
+
+**Key findings:** (1) alpha(q=25)=5.17 confirms continued growth. (2) Subleading ln(ln(q)) correction improves fit but dAIC=1.4 is not decisive (need >4). (3) z_m=2.29 continues past 2.0. (4) n=5 at q=25 (9.8M) took 1616s -- practical GPU limit reached. (5) q=30 predictions: log+loglog 5.47, pure log 5.37.
+
+[Full report: sprints/sprint_116.md]
