@@ -55,20 +55,25 @@ The S_q Potts model is the SAME model studied by Gorbenko-Rychkov-Zan, Ma & He, 
 - **χ_F scaling data across q** (Sprints 102-117): systematic measurement, appears to be new data
 - **Casimir vs entropy systematic comparison** (Sprint 098): useful quantitative observation
 
-### χ_F Spectral Decomposition: Universal Mechanism, Model-Specific Exponents (Sprint 119)
+### χ_F Spectral Decomposition: Universal Mechanism, Model-Specific Exponents (Sprints 119-120)
 Single-multiplet dominance (frac=1.000) and spectral gap selection rule are **universal** — identical in both S_q Potts and hybrid Potts-clock. The decomposition alpha = beta_me + 2*z_m - 1 is exact in both. But the exponents diverge:
 
 | q | Hybrid alpha | S_q alpha | Hybrid z_m | S_q z_m |
 |---|-------------|-----------|-----------|---------|
-| 3 | 1.46→1.40 | 1.40 | 1.03 | 1.03 |
+| 3 | 1.47 | 1.40 | 1.03 | 1.03 |
+| **4** | **1.55** | **1.77** | **1.00** | **~1.05** |
 | 5 | 1.41 | 2.09 | 0.91 | 1.31 |
 | 7 | 0.95 | 2.65 | 0.77 | ~1.4 |
 | 10 | 0.55 | ~3.2 | 0.69 | — |
 
-**z_m crosses 1 at the walking boundary:** z_m > 1 (S_q, walking) → multiplet gap closes faster than 1/N → super-scaling. z_m < 1 (hybrid, continuous) → gap closes slower → ordinary scaling. This is the microscopic origin of walking vs continuous as seen through χ_F.
+**z_m crosses 1 at q=4 for hybrid:** z_m > 1 (walking) → super-scaling. z_m < 1 (continuous) → ordinary scaling. Hybrid z_m=1.004 at q=4 is exactly marginal. S_q maintains z_m>1 at q=4. **Hybrid alpha peaks at q=4 (1.55) then declines** — non-monotonic. Models diverge starting at q=4.
 
-### Hybrid model findings (Sprints 033-075, 119) — separate body of work
-Sprint 065 confirmed hybrid ≠ clock, Sprint 076 confirmed hybrid ≠ S_q Potts. Sprint 119: chi_F spectral decomposition on hybrid confirms continuous transitions (alpha decreasing with q, ν≈0.83 at q=5) and opposite trend from S_q walking. The hybrid model at q≥4 may genuinely be a new universality class.
+**g_c(hybrid):** q=2→0.250, q=3→0.333, q=4→0.393, q=5→0.438, q=7→0.535, q=10→0.684 (Sprint 120a).
+
+**Literature on S_q q=4:** Marginal operator gives log corrections: chi_F ~ L²(ln L)^{-p} (Salas-Sokal 1997, Balog et al. 2007). Measured alpha=1.77 consistent with asymptotic 2.0. Hybrid q=4 alpha drifts *downward* (1.64→1.49), confirming different universality class.
+
+### Hybrid model findings (Sprints 033-075, 119-120) — separate body of work
+Sprint 065 confirmed hybrid ≠ clock, Sprint 076 confirmed hybrid ≠ S_q Potts. Sprints 119-120: chi_F spectral decomposition on hybrid confirms continuous transitions for q≥5 and marginal behavior at q=4 (z_m=1.004). The hybrid model at q≥4 is genuinely a different universality class from S_q Potts, with z_m crossing 1 at q≈4 as the walking→continuous boundary.
 
 **Key literature (search before claiming novelty):**
 - **Gorbenko, Rychkov & Zan (JHEP 2018, SciPost 2018):** Complex CFT for q>4 S_q Potts.

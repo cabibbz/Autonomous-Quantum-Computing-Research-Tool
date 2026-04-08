@@ -421,3 +421,19 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **POTENTIALLY NOVEL:** First chi_F spectral decomposition on hybrid Potts-clock model. Universal mechanism with model-specific exponents. z_m crossing 1 as microscopic walking/continuous discriminator.
 
 [Full report: sprints/sprint_119.md]
+
+### Sprint 120 — Hybrid q=4 chi_F: z_m=1 Transition Point
+**Status:** Complete (2 experiments).
+
+**Hybrid q=4 g_c scan (120a).** Gap×N crossings at n=6,8,10 (GPU). Coarse scan g∈[0.33,0.43], 30 points. **g_c(hybrid,q=4) = 0.3933 ± 0.0002.** Excellent convergence: (6,8)→0.3934, (8,10)→0.3933.
+
+**Hybrid q=4 chi_F spectral (120b).** 8 sizes n=4-11 (up to dim=4.2M, GPU). Plus q=3 sanity check. Single-multiplet dominance frac=1.000 at ALL sizes. **Global alpha=1.548, z_m=1.004, beta_me=0.541, nu_eff=0.785.** Pairwise alpha DECREASING (1.64→1.49), opposite to S_q q=4 (expected upward toward 2.0).
+
+**Key findings:**
+1. **z_m=1.004 at q=4** — exactly marginal. Hybrid z_m crosses 1 between q=3 (1.03) and q=5 (0.91), with q=4 at the boundary
+2. **Hybrid alpha peaks at q=4** (1.55), then declines: alpha(q)=[1.40, 1.55, 1.41, 0.95, 0.55] for q=[3,4,5,7,10]. Non-monotonic
+3. **Model divergence starts at q=4** — 12% gap (hybrid 1.55 vs S_q 1.77), growing to 64% at q=7
+4. Pairwise alpha drift is OPPOSITE between models at q=4: hybrid downward, S_q upward. Different universality classes
+5. Literature confirms S_q q=4 has log corrections from marginal operator (Salas-Sokal 1997): alpha→2.0 asymptotically
+
+[Full report: sprints/sprint_120.md]
