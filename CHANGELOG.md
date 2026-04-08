@@ -392,3 +392,10 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 **alpha(q) refit with 11 points (117b).** dAIC gap narrowed from 1.4 to 0.8. LOO cross-validation: log+loglog 0.081 vs pure log 0.085 -- nearly identical. **Pure logarithmic alpha(q) = 1.87 ln(q) - 0.97 is the preferred model** (Occam's razor). alpha(q) mapping q=5-30 now complete with diminishing returns.
 
 [Full report: sprints/sprint_117.md]
+
+### Sprint 118 -- q=4 chi_F Extended: Anomalous Exponent Confirmed
+**Status:** Complete (1 experiment).
+
+**q=4 chi_F with 8 sizes n=4-11 (118a).** Pairwise alpha converges: 1.825->1.794->1.780->1.774->1.772->1.771->1.771. **alpha(q=4) = 1.771 +/- 0.001** (stable last 3 pairs). NOT consistent with exact q=4 Potts prediction alpha=2.0 (11.5% discrepancy). Confirms hybrid != standard Potts universality at q=4. Logarithmic formula (q>=5) underpredicts: 1.62 vs 1.77. Single-multiplet dominance at all sizes.
+
+[Full report: sprints/sprint_118.md]
