@@ -467,3 +467,19 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 4. chi_F log correction at q=4 has never been measured — would need DMRG at n=50+ to probe
 
 [Full report: sprints/sprint_122.md]
+
+### Sprint 123 — QPU Hardware Validation: TFIM Critical State
+**Status:** Complete (simulation only — QPU credentials empty).
+
+**VQE + adiabatic prep (123b,c).** Both FAILED for critical GS. HEA VQE: 50-56% fidelity. Adiabatic Trotter: <ZZ>=0.33 vs exact 0.65 (total time too short for critical gap).
+
+**Exact state prep (123d).** Qiskit `initialize` decomposes n=4 TFIM GS into **11 CX gates** (depth=32). Signal survival: 88% at 1% CX error, 79% at 2%.
+
+**Noisy phase scan (123e).** 3 coupling values (ordered/critical/paramagnetic): phase transition clearly resolvable with 88% signal. Self-dual symmetry <ZZ>=<X> at h_c is noise-robust criticality signature. QPU submission blocked — ~/.qiskit/qiskit-ibm.json empty.
+
+**Key findings:**
+1. `initialize` decomposition far superior to VQE/adiabatic for small n
+2. Phase transition resolvable on noisy hardware (88% signal at 1% CX error)
+3. 6 QPU-ready circuits saved, need credentials to submit (~30s QPU time)
+
+[Full report: sprints/sprint_123.md]
