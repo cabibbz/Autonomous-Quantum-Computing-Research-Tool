@@ -1,30 +1,31 @@
 # Current State -- Rewrite this completely each sprint
 
 ## Last Sprint
-Sprint 121 — z_m(q) fit & S_q q=4 extended sizes. **q_cross = 3.58 ± 0.04** (all 5 fit forms converge). S_q q=4: alpha=1.777, z_m=1.092 — firmly walking. Hybrid q=4: alpha=1.55, z_m=1.004 — barely walking. Alpha drift: S_q converges to 1.77, hybrid still decreasing (1.49 at n=10-11). 19% divergence at largest sizes.
+Sprint 122 — Log correction fits at q=4. Power+1/N^2 correction best fit for both models at n=4-11. S_q: alpha=1.757, hybrid: alpha=1.460. Log-corrected alpha=2 form is the WORST fit (dAIC=42-70). Asymptotic log correction regime beyond exact diag reach. No prior chi_F log correction measurement in literature.
 
-## ⚠ CRITICAL: Model Identity Correction (April 2026 Audit)
-**All experiments from Sprint 076 onward use the STANDARD S_q Potts model**, not the "Potts-clock hybrid." Sprints 119-121 return to the hybrid model for comparison. See KNOWLEDGE.md for full details.
+## CRITICAL: Model Identity Correction (April 2026 Audit)
+**All experiments from Sprint 076 onward use the STANDARD S_q Potts model**, not the "Potts-clock hybrid." Sprints 119-122 compare both models. See KNOWLEDGE.md for full details.
 
 ## Active Research Thread
-**chi_F spectral decomposition as universal diagnostic.** z_m crosses 1 at q_cross=3.58 for the hybrid, marking the walking→continuous boundary. The S_q model maintains z_m>1 (walking) at all q tested (1.09 at q=4, slowly drifting toward 1). The two models are in different universality classes for all q≥4.
+**chi_F spectral decomposition as universal diagnostic.** Model comparison nearly complete. Key results: q_cross=3.58 for hybrid z_m crossing, S_q alpha=1.76 at q=4 with no sign of approaching 2.0 at accessible sizes. Literature search: no prior chi_F log correction for q=4, no prior study of hybrid model z_m crossing.
 
 ## QPU Budget
 - Used: 20s of 600s (Sprint 025: ibm_kingston)
-- Remaining: 580s — UNUSED FOR 96 SPRINTS
+- Remaining: 580s — UNUSED FOR 97 SPRINTS
 
 ## Top 3 Next Experiments
-1. **Log correction fit at q=4** — fit S_q chi_F = A·N²·(ln N)^{-p} to extract p. Compare with Salas-Sokal predictions. Also fit hybrid to see if different correction form.
-2. **QPU hardware test** — strongest prediction: q=2 Ising chi_F ~ N^1.0 at g_c=0.5. Test on 5-8 qubits. Budget: 580s available.
-3. **Hybrid q=3.5 interpolation** — non-integer q test to directly verify q_cross prediction.
+1. **QPU hardware test** — q=2 Ising chi_F ~ N^1.0 at g_c=0.5 (exact alpha=1.0). 5-8 qubits. Budget: 580s. Test strongest simulator prediction on real hardware.
+2. **DMRG chi_F for S_q q=4** — reach n=50+ to probe log correction regime. Need method to compute chi_F from DMRG (ground state overlap or spectral decomposition via excited states).
+3. **Compile hybrid model paper dataset** — systematic chi_F data across q=[3,4,5,7,10], z_m(q) crossing at q_cross=3.58, model comparison. Unstudied model in the literature.
 
 ## What's Been Ruled Out
-- Hybrid chi_F super-scaling — hybrid alpha < 2 for all q≥5 (Sprint 119)
-- alpha(q=4) = 2.0 for S_q — measured 1.77 at accessible sizes (Sprint 118, 121), log corrections
-- alpha(q) quadratic, linear, sqrt, power-law for S_q — dAIC>=7.7 (Sprint 117)
+- Hybrid chi_F super-scaling — hybrid alpha < 2 for all q>=5 (Sprint 119)
+- alpha(q=4) = 2.0 for S_q at n<=11 — measured 1.76, no sign of approaching 2.0 (Sprints 118, 121, 122)
+- Log-corrected alpha=2 fit at n<=11 — worst AIC model for both S_q and hybrid (Sprint 122)
+- alpha(q) polynomial forms for S_q — log+loglog marginally best (Sprint 116-117)
 - DMRG open-BC chi_F — boundary effects (Sprint 113)
-- "Our model is novel" for sprints 076+ — it's the standard S_q Potts (April 2026 audit)
-- q_cross at integer q=4 — actually q_cross=3.58±0.04 (Sprint 121)
+- "Our model is novel" for sprints 076+ — standard S_q Potts (April 2026 audit)
+- q_cross at integer q=4 — actually q_cross=3.58+/-0.04 (Sprint 121)
 
 ## Key Tools Available
 - chi_F spectral (periodic BC): q=2 n<=18, q=3 n<=14, q=4 n<=11, q=5 n<=10, q=7 n<=8, q=10 n<=7

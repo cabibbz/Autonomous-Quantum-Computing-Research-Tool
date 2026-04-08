@@ -452,3 +452,18 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 4. S_q z_m drift (1.097→1.079) suggests logarithmic approach to z_m=1 at larger sizes — consistent with BKT marginal operator
 
 [Full report: sprints/sprint_121.md]
+
+### Sprint 122 — Log Correction Fits at q=4 & Literature Context
+**Status:** Complete (1 experiment + literature search).
+
+**Log correction fits (122a).** 4 models fitted to S_q and hybrid q=4 chi_F data (n=4-11). Power + 1/N^2 correction wins decisively: S_q alpha=1.757±0.002 (AIC best, dAIC=22 over pure power), hybrid alpha=1.460±0.001. **Log-corrected alpha=2 form is WORST fit** for both models (dAIC=42-70 vs best). Free log fit gives negative p (wrong direction).
+
+**Literature search.** Salas-Sokal (1997) predicts p=3/2 for thermal quantities at q=4 Potts. BUT: no prior measurement of chi_F log corrections exists. Lv et al. (2019) needed L=1024 for classical observables — asymptotic regime is far beyond n=11.
+
+**Key findings:**
+1. At n≤11, alpha=2 with log corrections cannot fit the data — dAIC=42 (S_q) and 70 (hybrid) vs best model
+2. S_q best alpha=1.757 (with 1/N^2 correction), not approaching 2.0 at accessible sizes
+3. Hybrid alpha=1.460 — clearly NOT Ashkin-Teller universality
+4. chi_F log correction at q=4 has never been measured — would need DMRG at n=50+ to probe
+
+[Full report: sprints/sprint_122.md]
