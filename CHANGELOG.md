@@ -437,3 +437,18 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 5. Literature confirms S_q q=4 has log corrections from marginal operator (Salas-Sokal 1997): alpha→2.0 asymptotically
 
 [Full report: sprints/sprint_120.md]
+
+### Sprint 121 — z_m(q) Continuous Fit & S_q q=4 Extended Sizes
+**Status:** Complete (2 experiments).
+
+**z_m(q) fitting (121a).** 5 functional forms (linear, log, 1/√q, rational, power-law) fitted to hybrid z_m data at q=[3,4,5,7,10]. All converge: **q_cross = 3.58 ± 0.04.** Best fit: rational z_m = 1.368/(1+0.102q), R²=0.973. Alpha peak also at q≈3.58 from quadratic-in-ln(q) fit.
+
+**S_q q=4 extended (121b).** 8 sizes n=4-11 (up to dim=4.2M, GPU). Single-multiplet dominance frac=1.000. **Global alpha=1.777±0.003, z_m=1.092±0.001, beta_me=0.604±0.002.** Pairwise alpha converges from above: 1.825→1.771. S_q z_m slowly drifting down: 1.097→1.079.
+
+**Key findings:**
+1. **q_cross = 3.58 ± 0.04** — walking→continuous boundary at non-integer q. Hybrid q=4 is barely walking (z_m=1.004), not exactly marginal
+2. **S_q q=4: alpha=1.777, z_m=1.092** — firmly walking, consistent with asymptotic alpha=2.0 plus log corrections
+3. **Alpha drift comparison:** S_q converges to ~1.77 (stable), hybrid decreasing from 1.64→1.49 (still drifting). 19% divergence at (10,11)
+4. S_q z_m drift (1.097→1.079) suggests logarithmic approach to z_m=1 at larger sizes — consistent with BKT marginal operator
+
+[Full report: sprints/sprint_121.md]

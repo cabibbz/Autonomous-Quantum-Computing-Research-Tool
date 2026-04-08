@@ -66,14 +66,14 @@ Single-multiplet dominance (frac=1.000) and spectral gap selection rule are **un
 | 7 | 0.95 | 2.65 | 0.77 | ~1.4 |
 | 10 | 0.55 | ~3.2 | 0.69 | — |
 
-**z_m crosses 1 at q=4 for hybrid:** z_m > 1 (walking) → super-scaling. z_m < 1 (continuous) → ordinary scaling. Hybrid z_m=1.004 at q=4 is exactly marginal. S_q maintains z_m>1 at q=4. **Hybrid alpha peaks at q=4 (1.55) then declines** — non-monotonic. Models diverge starting at q=4.
+**z_m crosses 1 at q_cross = 3.58 ± 0.04 for hybrid** (Sprint 121a, 5 fit forms all converge). z_m > 1 → walking/super-scaling, z_m < 1 → continuous/ordinary. Hybrid q=4 is barely walking (z_m=1.004), not exactly marginal. Alpha peak also at q≈3.58. **S_q q=4: alpha=1.777±0.003, z_m=1.092±0.001** (Sprint 121b, 8 sizes n=4-11) — firmly walking, z_m slowly drifting toward 1 (1.097→1.079). 19% alpha divergence between models at largest sizes.
 
 **g_c(hybrid):** q=2→0.250, q=3→0.333, q=4→0.393, q=5→0.438, q=7→0.535, q=10→0.684 (Sprint 120a).
 
 **Literature on S_q q=4:** Marginal operator gives log corrections: chi_F ~ L²(ln L)^{-p} (Salas-Sokal 1997, Balog et al. 2007). Measured alpha=1.77 consistent with asymptotic 2.0. Hybrid q=4 alpha drifts *downward* (1.64→1.49), confirming different universality class.
 
-### Hybrid model findings (Sprints 033-075, 119-120) — separate body of work
-Sprint 065 confirmed hybrid ≠ clock, Sprint 076 confirmed hybrid ≠ S_q Potts. Sprints 119-120: chi_F spectral decomposition on hybrid confirms continuous transitions for q≥5 and marginal behavior at q=4 (z_m=1.004). The hybrid model at q≥4 is genuinely a different universality class from S_q Potts, with z_m crossing 1 at q≈4 as the walking→continuous boundary.
+### Hybrid model findings (Sprints 033-075, 119-121) — separate body of work
+Sprint 065 confirmed hybrid ≠ clock, Sprint 076 confirmed hybrid ≠ S_q Potts. Sprints 119-121: chi_F spectral decomposition on hybrid confirms continuous transitions for q≥5 and walking→continuous boundary at q_cross=3.58. The hybrid model at q≥4 is genuinely a different universality class from S_q Potts.
 
 **Key literature (search before claiming novelty):**
 - **Gorbenko, Rychkov & Zan (JHEP 2018, SciPost 2018):** Complex CFT for q>4 S_q Potts.
