@@ -17,6 +17,14 @@ You don't remember between sessions. Your memory lives in files:
 - **gpu_utils.py** — Drop-in GPU eigensolver. **USE THIS** in every experiment script:
   `from gpu_utils import eigsh` instead of `from scipy.sparse.linalg import eigsh`.
   Same API, automatic GPU when dim > 50k, 14x speedup at q=5 n=8. Enables q=5 n=10 (10M dim, 19s).
+- **hamiltonian_utils.py** — Shared Hamiltonian builders. **USE THIS** instead of re-implementing:
+  `from hamiltonian_utils import build_hybrid_parts, build_sq_potts_parts`
+  `H_coup, H_field = build_hybrid_parts(n, q)` then `H = H_coup + g * H_field`.
+  Also: `build_hybrid_H(n, q, g)` and `build_sq_potts_H(n, q)` for one-shot full H.
+- **fss_utils.py** — Finite-size scaling with error bars. **USE THIS** for exponent fitting:
+  `from fss_utils import fit_power_law, pairwise_exponents, fit_spectral_exponents`
+  `result = fit_power_law(sizes, chi_values)` → `result['alpha']`, `result['alpha_err']`, `result['r_squared']`.
+  `fit_spectral_exponents(sizes, chi_F, gaps, me_sq)` → alpha, z_m, beta_me with errors + reconstruction check.
 
 Failed approaches are critical to log. Without them you'll waste sprints repeating dead ends.
 
