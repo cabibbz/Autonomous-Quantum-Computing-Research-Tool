@@ -403,3 +403,21 @@ Full details for sprints 086-094 are in sprints/sprint_NNN.md.
 ~~Original Sprint 118 interpretation "confirms hybrid != S_q Potts" was WRONG~~ — the code IS S_q Potts.
 
 [Full report: sprints/sprint_118.md]
+
+### Sprint 119 — Hybrid Potts-Clock chi_F Spectral Decomposition
+**Status:** Complete (2 experiments).
+
+**Hybrid q=5 chi_F spectral (119a).** 7 sizes n=4-10 (GPU for n≥8). g_c=0.438. Single-multiplet dominance frac=1.000 at ALL sizes — identical to S_q. Spectral gap symmetry-forbidden. Global alpha=1.408, z_m=0.909, beta_me=0.590, nu_eff=0.831. **Prediction confirmed: alpha≈1.41, nu≈0.83.** Pairwise alpha DECREASING (1.56→1.26), opposite to S_q (INCREASING 2.08→2.10).
+
+**Hybrid q=3,7,10 chi_F spectral (119b).** q=3 (sanity: hybrid=S_q): alpha=1.46→1.40, matches exact. q=7 (5 sizes n=4-8): alpha=0.952, z_m=0.770. q=10 (4 sizes n=4-7): alpha=0.552, z_m=0.688. Pairwise alpha STRONGLY decreasing at q≥7.
+
+**Key findings:**
+1. Single-multiplet dominance UNIVERSAL (both models, all q)
+2. Decomposition alpha = beta_me + 2*z_m - 1 EXACT in both models
+3. Hybrid alpha DECREASES with q (1.41→0.95→0.55) while S_q INCREASES (2.09→2.65→3.35)
+4. z_m < 1 in hybrid (gap closes slower than 1/N) vs z_m > 1 in S_q (faster)
+5. Walking super-scaling (alpha>2) is S_q-specific, NOT universal
+
+**POTENTIALLY NOVEL:** First chi_F spectral decomposition on hybrid Potts-clock model. Universal mechanism with model-specific exponents. z_m crossing 1 as microscopic walking/continuous discriminator.
+
+[Full report: sprints/sprint_119.md]

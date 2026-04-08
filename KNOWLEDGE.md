@@ -55,8 +55,20 @@ The S_q Potts model is the SAME model studied by Gorbenko-Rychkov-Zan, Ma & He, 
 - **χ_F scaling data across q** (Sprints 102-117): systematic measurement, appears to be new data
 - **Casimir vs entropy systematic comparison** (Sprint 098): useful quantitative observation
 
-### Hybrid model findings (Sprints 033-075) — separate body of work
-Sprint 065 confirmed hybrid ≠ clock, Sprint 076 confirmed hybrid ≠ S_q Potts. The hybrid model at q≥4 may genuinely be a new universality class with continuous transitions, but this was NOT further pursued after Sprint 076. The hybrid findings (g_c scaling, ν≈0.83, no floating phase, CFT content) are potentially novel but less well hardened.
+### χ_F Spectral Decomposition: Universal Mechanism, Model-Specific Exponents (Sprint 119)
+Single-multiplet dominance (frac=1.000) and spectral gap selection rule are **universal** — identical in both S_q Potts and hybrid Potts-clock. The decomposition alpha = beta_me + 2*z_m - 1 is exact in both. But the exponents diverge:
+
+| q | Hybrid alpha | S_q alpha | Hybrid z_m | S_q z_m |
+|---|-------------|-----------|-----------|---------|
+| 3 | 1.46→1.40 | 1.40 | 1.03 | 1.03 |
+| 5 | 1.41 | 2.09 | 0.91 | 1.31 |
+| 7 | 0.95 | 2.65 | 0.77 | ~1.4 |
+| 10 | 0.55 | ~3.2 | 0.69 | — |
+
+**z_m crosses 1 at the walking boundary:** z_m > 1 (S_q, walking) → multiplet gap closes faster than 1/N → super-scaling. z_m < 1 (hybrid, continuous) → gap closes slower → ordinary scaling. This is the microscopic origin of walking vs continuous as seen through χ_F.
+
+### Hybrid model findings (Sprints 033-075, 119) — separate body of work
+Sprint 065 confirmed hybrid ≠ clock, Sprint 076 confirmed hybrid ≠ S_q Potts. Sprint 119: chi_F spectral decomposition on hybrid confirms continuous transitions (alpha decreasing with q, ν≈0.83 at q=5) and opposite trend from S_q walking. The hybrid model at q≥4 may genuinely be a new universality class.
 
 **Key literature (search before claiming novelty):**
 - **Gorbenko, Rychkov & Zan (JHEP 2018, SciPost 2018):** Complex CFT for q>4 S_q Potts.
