@@ -68,22 +68,23 @@ Spectral Lehmann sum was missing factor 2 (Sprint 125). Even corrected, spectral
 | **6** | **1.186+/-0.038** | **2.375+/-0.006** | 6 (n=4-9) | Increasing (2.35->2.40) |
 | 7 | 0.971+/-0.058 | 2.584+/-0.015 | 4 (n=4-8) | Noisy |
 
-Hybrid alpha(q) non-monotonic: peaks at q~4 (1.55), drops to ~1.0 at q=7. Extrapolation gives alpha_inf=0 for q>=5 (sub-power-law, possibly logarithmic). S_q alpha(q) monotonically increasing, pairwise trending upward for q>=5.
+S_q alpha(q) monotonically increasing. Quadratic in ln(q) fits best: alpha(q) = 0.449*ln(q)^2 + 0.010*ln(q) + 0.917 (chi2/dof=0.06). Pure log: 1.354*ln(q) - 0.081 (chi2/dof=25).
 
-**z_m crosses 1 at q_cross = 3.58 +/- 0.04 for hybrid** (Sprint 121a). z_m > 1 = walking, z_m < 1 = continuous. **S_q q=4 pairwise alpha oscillates around 1.79** -- no clear drift direction at accessible sizes.
+**Asymptotic extrapolation (Sprint 128c, DB-sourced):** alpha_eff(N) = alpha_inf + c/N^p. Validated at q=3 (alpha_inf=1.407 vs exact 1.400). S_q q=4: alpha_inf=1.771+/-0.001 (clean monotonic decrease). S_q q=5: alpha_inf=2.093+/-0.015 (stable). S_q q>=6: insufficient convergence. Hybrid: closed.
 
-**alpha(q) for S_q:** alpha(q) = 1.337*ln(q) - 0.023, chi2/dof=5.0 (Sprint 128, 5 data points q=3-7). Quadratic-in-ln(q) marginally better (chi2/dof=3.7). q=6 sits exactly on the log curve.
+**S_q q=4 log correction analysis (Sprint 128d, exact chi_F):** 4-model AIC comparison:
+- BEST: Power+1/N^2, alpha=1.760+/-0.001 (AIC=-52)
+- 2nd: Free log, alpha=1.643, p=-0.31 (AIC=-41, log *amplification*)
+- 3rd: Pure power, alpha=1.795 (AIC=-21)
+- WORST: Log alpha=2, p=0.41 (AIC=-11) — **Salas-Sokal p=3/2 rejected**
+Exact chi_F is 2.07x spectral but model ranking identical. Pairwise: 1.846->1.799->1.786->1.782->1.779 (monotonically decreasing, converging to ~1.77). No prior chi_F log correction measurement at q=4 exists in the literature.
 
 **g_c(hybrid):** q=2->0.250, q=3->0.333, q=4->0.393, q=5->0.438, q=6->0.474, q=7->0.535, q=10->0.684.
 
-**Asymptotic extrapolation (Sprint 128):** alpha_eff(N) = alpha_inf + c/N^p. Validated at q=3 (alpha_inf=1.412 vs exact 1.400). S_q q=4 too noisy. S_q q>=5 alpha still growing with N. Hybrid q>=5 collapses to alpha_inf=0.
-
-**Literature on S_q q=4:** Marginal operator gives log corrections: chi_F ~ L^2(ln L)^{-p} (Salas-Sokal 1997, Balog et al. 2007). Predicted p=3/2 (specific heat sector) but NO prior chi_F log correction measurement exists. At n=4-11 (periodic BC), alpha=2 with log corrections is the WORST fit (dAIC=42 vs power+1/N^2). Best fit: alpha=1.757 with 1/N^2 correction. Hybrid q=4 alpha=1.460 with 1/N^2 correction -- clearly different universality class.
-
 **DMRG extension (Sprint 124):** Open-BC chi_F at n=6-20 (8 sizes). Pairwise alpha drifts UPWARD: 1.505->1.523. Power+1/N^2 corrected alpha_open=1.524+/-0.002. Log-corrected alpha=2 still worst fit (R^2=0.9997 vs 0.999999). **But drift direction is upward** -- consistent with eventual convergence to higher value (periodic 1.77 or log-corrected 2.0). Asymptotic regime needs L>>20 (likely L>100). iDMRG overlap method FAILED for S_q Potts (non-abelian symmetry).
 
-### Hybrid model findings (Sprints 033-075, 119-121) — separate body of work
-Sprint 065 confirmed hybrid ≠ clock, Sprint 076 confirmed hybrid ≠ S_q Potts. Sprints 119-121: chi_F spectral decomposition on hybrid confirms continuous transitions for q≥5 and walking→continuous boundary at q_cross=3.58. The hybrid model at q≥4 is genuinely a different universality class from S_q Potts.
+### Hybrid model findings — CLOSED (Sprint 128e)
+Sprint 065 confirmed hybrid ≠ clock, Sprint 076 confirmed hybrid ≠ S_q Potts. Sprints 119-121: chi_F spectral decomposition confirms continuous transitions for q>=5 and walking->continuous boundary at q_cross=3.58. **Sprint 128e:** Power law wins for q<=4, logarithmic chi_F ~ A*(ln N)^beta wins for q>=6 (dAIC=20 at q=6), marginal at q=5. This is consistent with BKT-class transitions at large q. Thread closed — no further compute needed.
 
 **Key literature (search before claiming novelty):**
 - **Gorbenko, Rychkov & Zan (JHEP 2018, SciPost 2018):** Complex CFT for q>4 S_q Potts.

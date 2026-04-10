@@ -3,13 +3,13 @@
 Fit alpha_eff(N) = alpha_inf + c/N^p to extract converged alpha.
 Also refit alpha(q) with q=6 added.
 
-Uses all exact chi_F data from Sprints 126-128.
+Data loaded from results.db (single source of truth).
 """
 import numpy as np
 import json, time, os, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from fss_utils import fit_power_law, pairwise_exponents
-from db_utils import record
+from db_utils import record, query
 
 results = {
     'experiment': '128c_asymptotic_extrapolation',
@@ -27,57 +27,26 @@ def save():
         json.dump(results, f, indent=2, default=str)
 
 
-# All exact chi_F data (Sprints 126-128)
-all_data = {
-    ('sq', 3): {4: 4.086420, 6: 7.717202, 8: 11.868345, 10: 16.456744, 12: 21.427516, 14: 26.749478},
-    ('sq', 4): {4: 12.839321, 6: 27.138030, 8: 45.527791, 9: 56.571892, 10: 67.784201, 11: 80.413},
-    ('sq', 5): {4: 30.943214, 6: 72.624695, 8: 132.424150, 9: 171.217, 10: 215.741},
-    ('sq', 6): {4: 63.565710, 5: 107.344523, 6: 164.724878, 7: 237.086100, 8: 325.804672, 9: 432.259953},
-    ('sq', 7): {4: 117.243073, 6: 333.985930, 7: 501.054584, 8: 703.901},
-    ('hybrid', 3): {4: 4.094578, 6: 7.732527, 8: 11.891721, 10: 16.488781, 12: 21.468582},
-    ('hybrid', 4): {4: 4.312760, 6: 8.354260, 8: 13.064844, 9: 15.617, 10: 18.341038, 11: 21.219},
-    ('hybrid', 5): {4: 4.003316, 6: 7.390136, 8: 10.988427, 9: 12.687, 10: 14.417},
-    ('hybrid', 6): {4: 3.465667, 5: 4.702946, 6: 5.889064, 7: 7.011443, 8: 8.066003},
-    ('hybrid', 7): {4: 2.775864, 6: 4.330642, 7: 4.943292, 8: 5.519},
-}
+# Load all exact chi_F data from database (single source of truth)
+all_data = {}
+for model_name in ['sq', 'hybrid']:
+    for q_val in [3, 4, 5, 6, 7]:
+        rows = query(quantity='chi_F_exact', model=model_name, q=q_val)
+        if rows:
+            data = {}
+            for r in rows:
+                n, val = r[4], r[6]
+                if n is not None and val is not None:
+                    # Keep the most recent (highest sprint) value per n
+                    if n not in data or r[1] > data[n][1]:
+                        data[n] = (val, r[1])
+            if data:
+                all_data[(model_name, q_val)] = {n: v[0] for n, v in data.items()}
 
-# Load Sprint 127 data from results file to get exact values
-try:
-    with open(os.path.join(os.path.dirname(__file__), '..', 'results',
-              'sprint_127a_extended_exact_chif.json')) as f:
-        s127 = json.load(f)
-    # Update from actual Sprint 127 data
-    for label, fit_data in s127.get('combined_fits', {}).items():
-        if 'sizes' in fit_data and 'chi_F' in fit_data:
-            parts = label.split('_')
-            if len(parts) == 2 and parts[1].startswith('q'):
-                model = parts[0]
-                q = int(parts[1][1:])
-                key = (model, q)
-                if key in all_data:
-                    for s, c in zip(fit_data['sizes'], fit_data['chi_F']):
-                        all_data[key][s] = c
-    print("Loaded Sprint 127 data from results file.")
-except Exception as e:
-    print(f"Note: Could not load Sprint 127 results: {e}")
-    print("Using hardcoded values.")
-
-# Load Sprint 128a/b data
-for fname, model, q_val in [
-    ('sprint_128a_sq_q6_chif.json', 'sq', 6),
-    ('sprint_128b_hybrid_q6_gc_chif.json', 'hybrid', 6),
-]:
-    try:
-        with open(os.path.join(os.path.dirname(__file__), '..', 'results', fname)) as f:
-            data = json.load(f)
-        key = (model, q_val)
-        if key not in all_data:
-            all_data[key] = {}
-        for d in data.get('data', []) + data.get('chi_F_data', []):
-            all_data[key][d['n']] = d['chi_F_exact']
-        print(f"Loaded {fname}")
-    except Exception as e:
-        print(f"Note: Could not load {fname}: {e}")
+print(f"Loaded {sum(len(d) for d in all_data.values())} data points from DB")
+for key in sorted(all_data.keys()):
+    sizes = sorted(all_data[key].keys())
+    print(f"  {key[0]:>7} q={key[1]}: n={sizes}")
 
 
 print("=" * 80)
@@ -117,10 +86,9 @@ for (model, q), data in sorted(all_data.items()):
     N_mid = np.array(N_mid)
     alpha_eff = np.array(alpha_eff)
 
-    # Try extrapolation: alpha_eff = alpha_inf + c/N^p
-    if len(N_mid) >= 3:
+    # Need >=4 pairwise points for 3-param fit (otherwise singular)
+    if len(N_mid) >= 4:
         try:
-            # Good initial guess: alpha_inf = last pairwise, c from trend
             a0 = alpha_eff[-1]
             c0 = (alpha_eff[0] - alpha_eff[-1]) * N_mid[-1]
             popt, pcov = curve_fit(alpha_correction_model, N_mid, alpha_eff,
@@ -128,29 +96,38 @@ for (model, q), data in sorted(all_data.items()):
                                     bounds=([0, -100, 0.1], [10, 100, 5]),
                                     maxfev=5000)
             perr = np.sqrt(np.diag(pcov))
-            alpha_inf, c_corr, p_corr = popt
-            alpha_inf_err = perr[0]
 
-            predicted = alpha_correction_model(N_mid, *popt)
-            ss_res = np.sum((alpha_eff - predicted)**2)
-            ss_tot = np.sum((alpha_eff - alpha_eff.mean())**2)
-            r2 = 1 - ss_res / ss_tot if ss_tot > 0 else 0
+            # Check for singular covariance (inf/nan errors)
+            if np.any(np.isinf(perr)) or np.any(np.isnan(perr)):
+                print(f"    Extrapolation: SINGULAR covariance -- skipping")
+                results['extrapolations'][label] = {
+                    'status': 'singular_covariance',
+                    'N_mid': [float(n) for n in N_mid],
+                    'alpha_eff': [float(a) for a in alpha_eff],
+                }
+            else:
+                alpha_inf, c_corr, p_corr = popt
+                alpha_inf_err = perr[0]
 
-            print(f"    Extrapolation: alpha_inf = {alpha_inf:.4f} +/- {alpha_inf_err:.4f}")
-            print(f"      correction: {c_corr:.4f} / N^{p_corr:.2f}, R2={r2:.6f}")
+                predicted = alpha_correction_model(N_mid, *popt)
+                ss_res = np.sum((alpha_eff - predicted)**2)
+                ss_tot = np.sum((alpha_eff - alpha_eff.mean())**2)
+                r2 = 1 - ss_res / ss_tot if ss_tot > 0 else 0
 
-            results['extrapolations'][label] = {
-                'alpha_inf': float(alpha_inf),
-                'alpha_inf_err': float(alpha_inf_err),
-                'c': float(c_corr),
-                'p': float(p_corr),
-                'r_squared': float(r2),
-                'N_mid': [float(n) for n in N_mid],
-                'alpha_eff': [float(a) for a in alpha_eff],
-            }
+                print(f"    Extrapolation: alpha_inf = {alpha_inf:.4f} +/- {alpha_inf_err:.4f}")
+                print(f"      correction: {c_corr:.4f} / N^{p_corr:.2f}, R2={r2:.6f}")
+
+                results['extrapolations'][label] = {
+                    'alpha_inf': float(alpha_inf),
+                    'alpha_inf_err': float(alpha_inf_err),
+                    'c': float(c_corr),
+                    'p': float(p_corr),
+                    'r_squared': float(r2),
+                    'N_mid': [float(n) for n in N_mid],
+                    'alpha_eff': [float(a) for a in alpha_eff],
+                }
         except Exception as e:
             print(f"    Extrapolation failed: {e}")
-
             # Fallback: linear extrapolation in 1/N
             try:
                 inv_N = 1.0 / N_mid
@@ -163,6 +140,14 @@ for (model, q), data in sorted(all_data.items()):
                 }
             except:
                 pass
+    else:
+        print(f"    Skipping extrapolation: only {len(N_mid)} pairwise points (need >=4 for 3-param fit)")
+        results['extrapolations'][label] = {
+            'status': 'insufficient_points',
+            'n_points': int(len(N_mid)),
+            'N_mid': [float(n) for n in N_mid],
+            'alpha_eff': [float(a) for a in alpha_eff],
+        }
 
     # Also do standard power-law fit
     fit = fit_power_law(sizes, chi_vals)
@@ -179,7 +164,7 @@ for model_name in ['sq', 'hybrid']:
     qs = []
     alphas = []
     errs = []
-    alpha_infs = []  # from extrapolation
+    alpha_infs = []
 
     for (m, q), data in sorted(all_data.items()):
         if m != model_name:
@@ -192,10 +177,10 @@ for model_name in ['sq', 'hybrid']:
             alphas.append(fit['alpha'])
             errs.append(fit['alpha_err'])
 
-            # Get extrapolated alpha if available
             label = f"{model_name}_q{q}"
-            if label in results['extrapolations'] and 'alpha_inf' in results['extrapolations'][label]:
-                alpha_infs.append(results['extrapolations'][label]['alpha_inf'])
+            extrap = results['extrapolations'].get(label, {})
+            if 'alpha_inf' in extrap:
+                alpha_infs.append(extrap['alpha_inf'])
             else:
                 alpha_infs.append(None)
 
@@ -212,7 +197,6 @@ for model_name in ['sq', 'hybrid']:
         log_q = np.log(qs)
         weights = 1.0 / errs
 
-        # Weighted linear regression: alpha = a*ln(q) + b
         W = np.diag(weights**2)
         X = np.column_stack([log_q, np.ones_like(log_q)])
         beta = np.linalg.solve(X.T @ W @ X, X.T @ W @ alphas)
@@ -235,7 +219,6 @@ for model_name in ['sq', 'hybrid']:
             'errors': [float(e) for e in errs],
         }
 
-        # Quadratic in ln(q): alpha = a*ln(q)^2 + b*ln(q) + c
         X3 = np.column_stack([log_q**2, log_q, np.ones_like(log_q)])
         if len(qs) > 3:
             beta3 = np.linalg.solve(X3.T @ W @ X3, X3.T @ W @ alphas)
@@ -266,12 +249,13 @@ for (model, q), data in sorted(all_data.items()):
         label = f"{model}_q{q}"
         alpha_str = f"{fit['alpha']:.4f}+/-{fit['alpha_err']:.4f}"
         extrap = results['extrapolations'].get(label, {})
-        if 'alpha_inf' in extrap:
+        if 'alpha_inf' in extrap and 'alpha_inf_err' in extrap:
             inf_str = f"{extrap['alpha_inf']:.4f}+/-{extrap['alpha_inf_err']:.4f}"
+        elif 'status' in extrap:
+            inf_str = extrap['status'][:12]
         else:
             inf_str = "---"
 
-        # Drift direction from pairwise
         pairs = pairwise_exponents(sizes, chi_vals)
         if len(pairs) >= 2:
             drift = pairs[-1]['alpha'] - pairs[0]['alpha']
