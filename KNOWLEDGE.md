@@ -58,22 +58,25 @@ The S_q Potts model is the SAME model studied by Gorbenko-Rychkov-Zan, Ma & He, 
 ### ⚠ Spectral chi_F: Methodology Status (Sprints 125-126)
 Spectral Lehmann sum was missing factor 2 (Sprint 125). Even corrected, spectral method captures only the dominant state — non-dominant states at high eigenvalue indices cause **systematic negative alpha bias of 0.005–0.038** (Sprint 126). Bias grows with system size. **Use exact chi_F (finite-difference) for all exponent claims.** The selection rule is standard Z_q representation theory. The formula alpha = beta_me + 2·z_m − 1 is a tautological identity.
 
-### chi_F Exponents: Authoritative Values (Sprint 127, exact chi_F, GPU-extended sizes)
+### chi_F Exponents: Authoritative Values (Sprints 127-128, exact chi_F, GPU-extended sizes)
 
 | q | Hybrid alpha | S_q alpha | # sizes (S_q) | Pairwise drift (S_q) |
 |---|-------------|-----------|---------------|---------------------|
-| 3 | 1.468+/-0.012 | 1.468+/-0.012 | 6 (n=4-14) | Decreasing (1.57->1.44) |
-| **4** | **1.545+/-0.014** | **1.795+/-0.007** | 6 (n=4-11) | Decreasing (1.85->1.78) |
-| 5 | 1.382+/-0.030 | **2.094+/-0.002** | 5 (n=4-10) | Stable (~2.09) |
-| 7 | 0.957+/-0.067 | 2.636+/-0.018 | 4 (n=4-8) | Increasing (2.58->2.67) |
+| 3 | 1.481+/-0.014 | 1.468+/-0.012 | 6 (n=4-14) | Decreasing (1.57->1.44) |
+| **4** | **1.549+/-0.012** | **1.794+/-0.011** | 6 (n=4-11) | Oscillating ~1.79 |
+| 5 | 1.352+/-0.043 | **2.139+/-0.019** | 5 (n=4-10) | Increasing |
+| **6** | **1.186+/-0.038** | **2.375+/-0.006** | 6 (n=4-9) | Increasing (2.35->2.40) |
+| 7 | 0.971+/-0.058 | 2.584+/-0.015 | 4 (n=4-8) | Noisy |
 
-Error bars reduced 17-62% vs Sprint 126 by adding GPU-sized data points. S_q q=5 is the tightest (62% reduction). Hybrid alpha(q) is non-monotonic: peaks near q=3-4, then drops below 1.0 for q>=7.
+Hybrid alpha(q) non-monotonic: peaks at q~4 (1.55), drops to ~1.0 at q=7. Extrapolation gives alpha_inf=0 for q>=5 (sub-power-law, possibly logarithmic). S_q alpha(q) monotonically increasing, pairwise trending upward for q>=5.
 
-**z_m crosses 1 at q_cross = 3.58 +/- 0.04 for hybrid** (Sprint 121a). z_m > 1 = walking, z_m < 1 = continuous. **S_q q=4 pairwise alpha at (10,11)=1.779** -- settling well below 2.0, contradicting log-corrected alpha=2 prediction.
+**z_m crosses 1 at q_cross = 3.58 +/- 0.04 for hybrid** (Sprint 121a). z_m > 1 = walking, z_m < 1 = continuous. **S_q q=4 pairwise alpha oscillates around 1.79** -- no clear drift direction at accessible sizes.
 
-**alpha(q) for S_q:** Prior fit alpha(q) = 1.86*ln(q) - 0.96 (spectral, Sprint 116) is obsolete. New exact chi_F fit: alpha(q) = 1.306*ln(q) - 0.006 (chi2/dof=22, mediocre -- need q=6,8 to distinguish functional forms).
+**alpha(q) for S_q:** alpha(q) = 1.337*ln(q) - 0.023, chi2/dof=5.0 (Sprint 128, 5 data points q=3-7). Quadratic-in-ln(q) marginally better (chi2/dof=3.7). q=6 sits exactly on the log curve.
 
-**g_c(hybrid):** q=2→0.250, q=3→0.333, q=4→0.393, q=5→0.438, q=7→0.535, q=10→0.684 (Sprint 120a).
+**g_c(hybrid):** q=2->0.250, q=3->0.333, q=4->0.393, q=5->0.438, q=6->0.474, q=7->0.535, q=10->0.684.
+
+**Asymptotic extrapolation (Sprint 128):** alpha_eff(N) = alpha_inf + c/N^p. Validated at q=3 (alpha_inf=1.412 vs exact 1.400). S_q q=4 too noisy. S_q q>=5 alpha still growing with N. Hybrid q>=5 collapses to alpha_inf=0.
 
 **Literature on S_q q=4:** Marginal operator gives log corrections: chi_F ~ L^2(ln L)^{-p} (Salas-Sokal 1997, Balog et al. 2007). Predicted p=3/2 (specific heat sector) but NO prior chi_F log correction measurement exists. At n=4-11 (periodic BC), alpha=2 with log corrections is the WORST fit (dAIC=42 vs power+1/N^2). Best fit: alpha=1.757 with 1/N^2 correction. Hybrid q=4 alpha=1.460 with 1/N^2 correction -- clearly different universality class.
 

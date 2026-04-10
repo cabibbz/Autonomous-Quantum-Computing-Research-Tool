@@ -4,6 +4,9 @@
 - Used: 20s of 600s (Sprint 025)
 - Remaining: 580s
 
+## Sprint 128 -- q=6 fills alpha(q) gap + asymptotic extrapolation
+S_q q=6: alpha=2.375+/-0.006 (6 sizes n=4-9, GPU to 10M dim). Hybrid q=6: g_c=0.474, alpha=1.186+/-0.038 (pairwise dropping to 1.05). alpha(q) log fit improved: 1.337*ln(q)-0.023, chi2/dof=5.0 (was 22). Asymptotic extrapolation validated: S_q q=3 alpha_inf=1.412 vs exact 1.400. Hybrid q>=5 extrapolates to alpha_inf=0 (sub-power-law growth). S_q q=4 pairwise still oscillating around 1.79.
+
 ## Sprint 127 -- Extended exact chi_F to GPU sizes (up to 10M dim)
 12 new data points across S_q and hybrid models at q=3,4,5,7. GPU-accelerated eigsh at dim up to 9.8M. Error bars reduced 17-62%. S_q q=5: alpha=2.094+/-0.002 (62% tighter). S_q q=4: alpha=1.795, pairwise (10,11)=1.779, still drifting below 2.0. S_q q=7: alpha=2.636, pairwise increasing. Hybrid alpha(q) confirmed non-monotonic (peaks q~3-4, drops to 0.96 at q=7). Prior alpha(q)=1.86*ln(q) fit obsolete -- new slope 1.306.
 
